@@ -3,7 +3,7 @@
 import { useLocale } from "next-intl";
 import clsx from "clsx";
 import { Link, usePathname } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
+import { routing, type StaticPathname } from "@/i18n/routing";
 import styles from "./LanguageSwitcher.module.scss";
 
 // Switches locale while staying on the current (localized) route.
@@ -16,7 +16,7 @@ export function LanguageSwitcher() {
       {routing.locales.map((loc) => (
         <Link
           key={loc}
-          href={pathname}
+          href={pathname as StaticPathname}
           locale={loc}
           className={clsx(styles.item, loc === active && styles.active)}
           aria-current={loc === active ? "true" : undefined}

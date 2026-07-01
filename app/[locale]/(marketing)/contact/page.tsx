@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LeadForm } from "@/components/marketing/LeadForm";
 import { SITE, whatsappLink } from "@/lib/site";
+import { buildAlternates } from "@/lib/seo";
 import styles from "./page.module.scss";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Contact" });
+  return {
+    title: t("title"),
+    description: t("intro"),
+    alternates: buildAlternates("/contact", locale),
+  };
+}
 
 export default async function Page({
   params,

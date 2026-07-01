@@ -2,6 +2,7 @@
   "Meta": {
     "title": "MİNADA Enerji",
     "titleTemplate": "%s · MİNADA Enerji",
+    "homeTitle": "MİNADA Enerji — Çatı Güneş Enerjisi, Batarya, EV Şarj ve Isı Pompası",
     "description": "Güneş enerjisi, batarya depolama, EV şarj ve ısı pompası çözümlerini tek elden tasarlar, kurar ve işletiriz. Enerji dönüşümünüzde güvenilir bir liman."
   },
   "Nav": {
@@ -188,6 +189,22 @@
       "desc": "Bir sorun oluştu. Lütfen tekrar deneyin ya da WhatsApp'tan yazın."
     },
     "whatsappMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Haberler & rehberler",
+    "intro": "Güneş enerjisi, tasarruf ve teşvikler üzerine yazılar.",
+    "emptyTitle": "Yakında yeni yazılar",
+    "emptyDesc": "İçerikler hazırlanıyor; çok yakında burada olacak.",
+    "back": "Tüm yazılar",
+    "by": "Yazan:"
+  },
+  "Projects": {
+    "eyebrow": "Referanslar",
+    "title": "Tamamlanan kurulumlar",
+    "intro": "Konut ve işletmelerde hayata geçirdiğimiz projeler.",
+    "emptyTitle": "Referanslar yakında",
+    "emptyDesc": "Tamamlanan kurulumların görselleri çok yakında burada."
   },
   "Footer": {
     "tagline": "Enerji dönüşümünüzde güvenilir bir liman.",

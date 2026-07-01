@@ -20,10 +20,6 @@ export async function Hero() {
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.copy}>
-            <p className={styles.kicker}>
-              <span className={styles.dot} />
-              {t("kicker")}
-            </p>
             <h1 className={styles.title}>
               <span className={styles.lead}>{t("titleLead")}</span>
               <span className={styles.accent}>{t("titleAccent")}</span>

@@ -1,8 +1,8 @@
-import type { AppPathname } from "@/i18n/routing";
+import type { StaticPathname } from "@/i18n/routing";
 
 // Primary navigation. `key` maps to the `Nav` message namespace; `href` is the
 // canonical (localized) route from i18n/routing.
-export const NAV_ITEMS: ReadonlyArray<{ href: AppPathname; key: string }> = [
+export const NAV_ITEMS: ReadonlyArray<{ href: StaticPathname; key: string }> = [
   { href: "/services", key: "services" },
   { href: "/solutions", key: "solutions" },
   { href: "/how-it-works", key: "howItWorks" },

@@ -15,6 +15,7 @@ export const routing = defineRouting({
     "/calculator": { tr: "/hesaplayici", en: "/calculator" },
     "/projects": { tr: "/referanslar", en: "/projects" },
     "/blog": "/blog",
+    "/blog/[slug]": "/blog/[slug]",
     "/about": { tr: "/hakkimizda", en: "/about" },
     "/faq": { tr: "/sss", en: "/faq" },
     "/contact": { tr: "/iletisim", en: "/contact" },
@@ -25,3 +26,6 @@ export const routing = defineRouting({
 
 export type Locale = (typeof routing.locales)[number];
 export type AppPathname = keyof typeof routing.pathnames;
+
+// Static (non-parameterized) pathnames — safe to pass to <Link> as a string.
+export type StaticPathname = Exclude<AppPathname, `${string}[${string}`>;

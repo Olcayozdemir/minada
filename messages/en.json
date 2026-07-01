@@ -2,6 +2,7 @@
   "Meta": {
     "title": "MİNADA Energy",
     "titleTemplate": "%s · MİNADA Energy",
+    "homeTitle": "MİNADA Energy — Rooftop Solar, Battery, EV Charging and Heat Pumps",
     "description": "We design, install and operate solar, battery storage, EV charging and heat pump systems — end to end. A reliable harbor for your energy transition."
   },
   "Nav": {
@@ -188,6 +189,22 @@
       "desc": "Something went wrong. Please try again or message us on WhatsApp."
     },
     "whatsappMessage": "Hello, I'd like to get a free survey from MİNADA."
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "News & guides",
+    "intro": "Articles on solar energy, savings and incentives.",
+    "emptyTitle": "New posts soon",
+    "emptyDesc": "Content is being prepared and will be here shortly.",
+    "back": "All posts",
+    "by": "By"
+  },
+  "Projects": {
+    "eyebrow": "Projects",
+    "title": "Completed installations",
+    "intro": "Projects we've delivered for homes and businesses.",
+    "emptyTitle": "References coming soon",
+    "emptyDesc": "Photos of completed installations will be here shortly."
   },
   "Footer": {
     "tagline": "A reliable harbor for your energy transition.",

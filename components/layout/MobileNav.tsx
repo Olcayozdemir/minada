@@ -3,12 +3,12 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Link } from "@/i18n/navigation";
-import type { AppPathname } from "@/i18n/routing";
+import type { StaticPathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import styles from "./MobileNav.module.scss";
 
-type Item = { href: AppPathname; label: string };
+type Item = { href: StaticPathname; label: string };
 
 export function MobileNav({
   items,
