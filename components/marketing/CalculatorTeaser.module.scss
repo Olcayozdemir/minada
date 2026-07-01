@@ -1,0 +1,45 @@
+@use "../../styles/mixins" as *;
+
+.copy {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  color: var(--gold-300);
+  @include glass;
+}
+
+.title {
+  font-size: clamp(30px, 4.6vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+}
+
+.desc {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--on-dark-2);
+}
+
+.actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--on-dark-3);
+}

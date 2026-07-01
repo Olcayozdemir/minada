@@ -1,0 +1,56 @@
+// Shared SCSS helpers. Import in a module with:  @use "../../styles/mixins" as *;
+
+@mixin container($max: var(--container)) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+
+  @media (max-width: 640px) {
+    padding-inline: var(--space-4);
+  }
+}
+
+// Premium glass surface: sheen gradient + rim highlight + depth shadow, and a
+// real refractive backdrop. The first backdrop-filter is the everywhere-safe
+// blur; the second (with the SVG #glassDistort filter) enhances it in Chromium
+// and is discarded by browsers that can't parse url() in backdrop-filter.
+@mixin glass {
+  position: relative;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.03) 42%,
+      rgba(255, 255, 255, 0.015) 100%
+    ),
+    var(--glass-tint);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(5px) saturate(1.7) url(#glassDistort);
+  -webkit-backdrop-filter: blur(5px) saturate(1.7) url(#glassDistort);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -14px 26px -14px rgba(0, 0, 0, 0.3),
+    0 24px 50px -24px rgba(0, 0, 0, 0.6);
+}
+
+@mixin bp-down($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+
+@mixin bp-up($w) {
+  @media (min-width: $w) {
+    @content;
+  }
+}
+
+// Reset a list/nav to unstyled.
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

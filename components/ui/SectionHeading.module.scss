@@ -1,0 +1,45 @@
+.wrap {
+  max-width: 620px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(30px, 4.2vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.dark {
+  .eyebrow {
+    color: var(--gold-300);
+  }
+  .title {
+    color: var(--on-dark);
+  }
+  .intro {
+    color: var(--on-dark-2);
+  }
+}

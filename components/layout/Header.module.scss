@@ -1,0 +1,57 @@
+@use "../../styles/mixins" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-top: 14px;
+}
+
+.inner {
+  @include container(var(--container-wide));
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 14px 12px 22px;
+  border-radius: var(--r-lg);
+  @include glass;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--on-dark-2);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--paper);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.langDesktop,
+.ctaDesktop {
+  display: inline-flex;
+}
+
+@include bp-down(980px) {
+  .nav,
+  .langDesktop,
+  .ctaDesktop {
+    display: none;
+  }
+}

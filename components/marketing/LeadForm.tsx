@@ -1,0 +1,215 @@
+"use client";
+
+import { useState, type ReactNode } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { useTranslations } from "next-intl";
+import clsx from "clsx";
+import { leadSchema, type LeadInput, PROPERTY_TYPES } from "@/lib/lead-schema";
+import { whatsappLink } from "@/lib/site";
+import { IconCheck } from "@/components/ui/icons";
+import styles from "./LeadForm.module.scss";
+
+function Field({
+  label,
+  optional,
+  error,
+  children,
+}: {
+  label: string;
+  optional?: string;
+  error?: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <label className={styles.field}>
+      <span className={styles.fieldLabel}>
+        {label}
+        {optional ? <em className={styles.opt}>{optional}</em> : null}
+      </span>
+      {children}
+      {error}
+    </label>
+  );
+}
+
+export function LeadForm({ defaultCity, defaultBill }: { defaultCity?: string; defaultBill?: string }) {
+  const t = useTranslations("Contact");
+  const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
+  const [token, setToken] = useState("");
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<LeadInput>({
+    resolver: zodResolver(leadSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      city: defaultCity ?? "",
+      bill: defaultBill ?? "",
+      message: "",
+      company: "",
+    },
+  });
+
+  async function onSubmit(values: LeadInput) {
+    setStatus("idle");
+    if (siteKey && !token) {
+      setStatus("error");
+      return;
+    }
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, token }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setStatus("success");
+      reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className={styles.success} role="status">
+        <span className={styles.successIcon}>
+          <IconCheck size={28} />
+        </span>
+        <h3 className={styles.successTitle}>{t("success.title")}</h3>
+        <p className={styles.successDesc}>{t("success.desc")}</p>
+      </div>
+    );
+  }
+
+  const fieldError = (k: keyof LeadInput) =>
+    errors[k] ? <span className={styles.err}>{t(`errors.${k}`)}</span> : null;
+
+  return (
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className={styles.hp}
+        {...register("company")}
+      />
+
+      <div className={styles.row2}>
+        <Field label={t("form.name")} error={fieldError("name")}>
+          <input
+            {...register("name")}
+            className={clsx(styles.input, errors.name && styles.invalid)}
+            placeholder={t("form.namePh")}
+            autoComplete="name"
+          />
+        </Field>
+        <Field label={t("form.phone")} error={fieldError("phone")}>
+          <input
+            {...register("phone")}
+            className={clsx(styles.input, errors.phone && styles.invalid)}
+            placeholder="05xx xxx xx xx"
+            inputMode="tel"
+            autoComplete="tel"
+          />
+        </Field>
+      </div>
+
+      <div className={styles.row2}>
+        <Field label={t("form.email")} error={fieldError("email")}>
+          <input
+            {...register("email")}
+            type="email"
+            className={clsx(styles.input, errors.email && styles.invalid)}
+            placeholder="ornek@eposta.com"
+            autoComplete="email"
+          />
+        </Field>
+        <Field label={t("form.city")} error={fieldError("city")}>
+          <input
+            {...register("city")}
+            className={clsx(styles.input, errors.city && styles.invalid)}
+            placeholder={t("form.cityPh")}
+            autoComplete="address-level2"
+          />
+        </Field>
+      </div>
+
+      <div className={styles.row2}>
+        <Field label={t("form.propertyType")} error={fieldError("propertyType")}>
+          <select
+            {...register("propertyType")}
+            className={clsx(styles.input, errors.propertyType && styles.invalid)}
+          >
+            <option value="">{t("form.propertyPh")}</option>
+            {PROPERTY_TYPES.map((pt) => (
+              <option key={pt} value={pt}>
+                {t(`form.property.${pt}`)}
+              </option>
+            ))}
+          </select>
+        </Field>
+        <Field label={t("form.bill")} optional={t("form.optional")}>
+          <input
+            {...register("bill")}
+            className={styles.input}
+            placeholder="1500"
+            inputMode="numeric"
+          />
+        </Field>
+      </div>
+
+      <Field label={t("form.message")} optional={t("form.optional")}>
+        <textarea
+          {...register("message")}
+          className={clsx(styles.input, styles.textarea)}
+          rows={4}
+          placeholder={t("form.messagePh")}
+        />
+      </Field>
+
+      <label className={styles.consent}>
+        <input type="checkbox" {...register("consent")} />
+        <span>{t("form.consent")}</span>
+      </label>
+      {errors.consent ? <span className={styles.err}>{t("errors.consent")}</span> : null}
+
+      {siteKey ? (
+        <div className={styles.turnstile}>
+          <Turnstile
+            siteKey={siteKey}
+            onSuccess={setToken}
+            onError={() => setToken("")}
+            onExpire={() => setToken("")}
+            options={{ theme: "auto" }}
+          />
+        </div>
+      ) : null}
+
+      {status === "error" ? <p className={styles.formError}>{t("error.desc")}</p> : null}
+
+      <div className={styles.actions}>
+        <button type="submit" className={styles.submit} disabled={isSubmitting}>
+          {isSubmitting ? t("form.submitting") : t("form.submit")}
+        </button>
+        <a
+          href={whatsappLink(t("whatsappMessage"))}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.whatsapp}
+        >
+          {t("form.whatsapp")}
+        </a>
+      </div>
+    </form>
+  );
+}

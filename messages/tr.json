@@ -1,0 +1,203 @@
+{
+  "Meta": {
+    "title": "MİNADA Enerji",
+    "titleTemplate": "%s · MİNADA Enerji",
+    "description": "Güneş enerjisi, batarya depolama, EV şarj ve ısı pompası çözümlerini tek elden tasarlar, kurar ve işletiriz. Enerji dönüşümünüzde güvenilir bir liman."
+  },
+  "Nav": {
+    "services": "Hizmetler",
+    "solutions": "Uygulama Alanları",
+    "howItWorks": "Nasıl Çalışır",
+    "projects": "Referanslar",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "calculator": "Hesaplayıcı",
+    "blog": "Blog",
+    "faq": "SSS"
+  },
+  "Services": {
+    "solar": "Güneş Enerjisi",
+    "storage": "Batarya Depolama",
+    "ev": "EV Şarj İstasyonu",
+    "heatpump": "Isı Pompası"
+  },
+  "Common": {
+    "getQuote": "Ücretsiz keşif al",
+    "getQuoteShort": "Ücretsiz keşif",
+    "calculate": "Tasarrufumu hesapla",
+    "whatsapp": "WhatsApp'tan yaz",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "language": "Dil",
+    "skipToContent": "İçeriğe geç",
+    "backHome": "Ana sayfa",
+    "pageComingDesc": "Bu sayfanın içeriği hazırlanıyor. O zamana kadar ücretsiz keşif oluşturabilirsiniz."
+  },
+  "Hero": {
+    "kicker": "Güneş · Batarya · EV şarj · Isı pompası",
+    "titleLead": "Evinizin kendi",
+    "titleAccent": "enerjisi.",
+    "subtitle": "Güneşten batarya depolamaya — çatınızdaki sistemi tasarlar, kurar ve işletiriz. Enerji dönüşümü yolculuğunuzda güvenilir bir liman.",
+    "statBillValue": "~0₺",
+    "statBillLabel": "elektrik faturası",
+    "statUptimeValue": "7/24",
+    "statUptimeLabel": "kesintisiz enerji",
+    "statWarrantyValue": "10 yıl",
+    "statWarrantyLabel": "garanti & servis",
+    "statServicesValue": "4",
+    "statServicesLabel": "hizmet · tek çatı"
+  },
+  "Home": {
+    "services": {
+      "eyebrow": "Hizmetler",
+      "title": "Tek çatı altında dört çözüm",
+      "intro": "Güneşten depolamaya, şarjdan ısıtmaya — evinizin ve işletmenizin enerji ihtiyacını uçtan uca tasarlar, kurar ve işletiriz.",
+      "cta": "Detaylı bilgi",
+      "solar": { "desc": "Çatınıza özel tasarlanan panellerle kendi elektriğinizi üretin, faturanızı düşürün." },
+      "storage": { "desc": "Ürettiğiniz enerjiyi depolayın; kesintide ve gece de kendi gücünüzü kullanın." },
+      "ev": { "desc": "Evde veya iş yerinde güvenli, hızlı elektrikli araç şarj istasyonu kurulumu." },
+      "heatpump": { "desc": "Yüksek verimli ısı pompalarıyla ısıtma ve soğutma maliyetini ciddi biçimde azaltın." }
+    },
+    "how": {
+      "eyebrow": "Nasıl Çalışır",
+      "title": "Keşiften devreye alışa, yanınızdayız",
+      "intro": "Şeffaf, adım adım bir süreç. Her aşamada ne olacağını önceden bilirsiniz.",
+      "discovery": { "title": "Ücretsiz Keşif", "desc": "Çatınızı, tüketiminizi ve ihtiyaçlarınızı yerinde değerlendirir, danışmanlık veririz." },
+      "design": { "title": "Projelendirme & Teklif", "desc": "Size özel sistem tasarımı, üretim/tasarruf öngörüsü ve net bir teklif sunarız." },
+      "install": { "title": "Kurulum & Devreye Alma", "desc": "Uzman ekiple hızlı, güvenli kurulum; izin ve mahsuplaşma süreçlerini yönetiriz." },
+      "support": { "title": "İzleme & Servis", "desc": "Kurulum sonrası performans takibi, bakım ve uzun süreli garanti desteği." }
+    },
+    "areas": {
+      "eyebrow": "Uygulama Alanları",
+      "title": "Her ölçek için çözüm",
+      "intro": "Bireysel evlerden endüstriyel tesislere; ihtiyacınıza göre ölçeklenen sistemler.",
+      "konut": { "title": "Konut & Bireysel", "desc": "Villa ve müstakil evler için anahtar teslim çatı güneş enerjisi." },
+      "ticari": { "title": "Ticari & Endüstriyel", "desc": "İşletmeler ve OSB tesisleri için yüksek kapasiteli enerji çözümleri." },
+      "tarim": { "title": "Tarımsal Tesisler", "desc": "Sulama ve tarımsal işletmeler için sürdürülebilir enerji." },
+      "kamu": { "title": "Kamu & Kurumsal", "desc": "Kurumlar ve kamu projeleri için ölçeklenebilir, güvenilir sistemler." }
+    },
+    "calc": {
+      "title": "Faturanız neredeyse sıfıra insin",
+      "desc": "Birkaç bilgiyle tahmini sistem gücünüzü, yıllık tasarrufunuzu ve geri ödeme sürenizi hesaplayın.",
+      "cta": "Tasarrufumu hesapla",
+      "note": "Sonuçlar tahminidir; kesin teklif için ücretsiz keşif oluşturun."
+    },
+    "testimonials": {
+      "eyebrow": "Referanslar",
+      "title": "Evini MİNADA'ya emanet edenler",
+      "t1": { "quote": "Keşiften kuruluma kadar her şey şeffaftı. Faturamız gerçekten neredeyse sıfırlandı.", "name": "Ayşe K.", "meta": "Villa sahibi · İzmir" },
+      "t2": { "quote": "Ekip çok profesyoneldi; kurulum söz verilen sürede, sorunsuz tamamlandı.", "name": "Mehmet D.", "meta": "Müstakil ev · Antalya" },
+      "t3": { "quote": "Batarya ile birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.", "name": "Zeynep A.", "meta": "Villa sahibi · Muğla" }
+    },
+    "faq": {
+      "eyebrow": "SSS",
+      "title": "Sık sorulan sorular",
+      "cta": "Tüm soruları gör",
+      "cost": { "q": "Kurulum maliyeti ne kadar?", "a": "Maliyet; sistem gücüne, çatı tipine ve seçilen ekipmana göre değişir. Ücretsiz keşifte size net bir aralık sunarız." },
+      "payback": { "q": "Yatırım kaç yılda geri döner?", "a": "Konut sistemlerinde geri ödeme genellikle birkaç yıl içindedir; tüketiminize ve tarifelere göre hesaplayıcıyla öngörebilirsiniz." },
+      "warranty": { "q": "Garanti ve servis kapsamı nedir?", "a": "Panel ve ekipmanlarda üretici garantisi, kurulumda işçilik garantisi ve satış sonrası bakım desteği sağlarız." },
+      "incentives": { "q": "Teşvik ve mahsuplaşma nasıl işliyor?", "a": "Ürettiğiniz fazla enerji şebekeye verilerek faturanızdan mahsup edilebilir; ilgili izin süreçlerini biz yönetiriz." }
+    },
+    "finalCta": {
+      "eyebrow": "Hazır mısınız?",
+      "title": "Enerji geleceğinize bugün yatırım yapın",
+      "desc": "Ücretsiz keşif oluşturun; size özel tasarruf ve sistem önerinizi sunalım.",
+      "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
+    }
+  },
+  "Calculator": {
+    "eyebrow": "Hesaplayıcı",
+    "title": "Ne kadar tasarruf edersiniz?",
+    "intro": "Aylık faturanızı veya tüketiminizi ve şehrinizi girin; tahmini sistem gücünüzü ve tasarrufunuzu görün.",
+    "modeLabel": "Girdi türü",
+    "modeBill": "Aylık fatura",
+    "modeConsumption": "Aylık tüketim",
+    "billLabel": "Aylık elektrik faturanız",
+    "consumptionLabel": "Aylık tüketiminiz",
+    "unitBill": "₺/ay",
+    "unitKwh": "kWh/ay",
+    "cityLabel": "Şehir",
+    "cityPlaceholder": "Şehir seçin",
+    "cities": {
+      "istanbul": "İstanbul",
+      "ankara": "Ankara",
+      "izmir": "İzmir",
+      "antalya": "Antalya",
+      "bursa": "Bursa",
+      "adana": "Adana",
+      "konya": "Konya",
+      "gaziantep": "Gaziantep"
+    },
+    "note": "Bilgileriniz kaydedilmez; yalnızca tahmini hesap için kullanılır.",
+    "emptyState": "Sonuçları görmek için fatura/tüketim ve şehir bilgisini girin.",
+    "systemLabel": "Önerilen sistem",
+    "costLabel": "Tahmini maliyet",
+    "annualSavingsLabel": "Yıllık tasarruf",
+    "savings25Label": "25 yıllık tasarruf",
+    "paybackLabel": "Geri ödeme süresi",
+    "co2Label": "Yıllık CO₂ tasarrufu",
+    "years": "yıl",
+    "warning": "Bu değerler tahminidir; katsayılar güncel piyasa verileriyle doğrulanacaktır. Kesin teklif için ücretsiz keşif oluşturun.",
+    "cta": "Kesin teklif al"
+  },
+  "Contact": {
+    "eyebrow": "İletişim",
+    "title": "Ücretsiz keşif alın",
+    "intro": "Formu doldurun; en kısa sürede size özel tasarruf ve sistem önerinizle dönelim.",
+    "info": {
+      "title": "İletişim bilgileri",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-posta",
+      "whatsappLabel": "WhatsApp",
+      "hoursLabel": "Çalışma saatleri",
+      "hours": "Hafta içi 09:00 – 18:00",
+      "note": "İletişim bilgileri yakında güncellenecek."
+    },
+    "form": {
+      "name": "Ad Soyad",
+      "namePh": "Adınız Soyadınız",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "city": "Şehir",
+      "cityPh": "Şehriniz",
+      "propertyType": "Konut tipi",
+      "propertyPh": "Seçin",
+      "property": { "villa": "Villa", "detached": "Müstakil ev", "apartment": "Apartman" },
+      "bill": "Aylık fatura (₺)",
+      "message": "Mesajınız",
+      "messagePh": "İhtiyacınızı kısaca yazın…",
+      "optional": "opsiyonel",
+      "consent": "Kişisel verilerimin işlenmesine ilişkin KVKK Aydınlatma Metni'ni okudum ve onaylıyorum.",
+      "submit": "Teklif talebi gönder",
+      "submitting": "Gönderiliyor…",
+      "whatsapp": "WhatsApp'tan yaz"
+    },
+    "errors": {
+      "name": "Lütfen ad soyad girin.",
+      "phone": "Geçerli bir telefon numarası girin (05xx…).",
+      "email": "Geçerli bir e-posta girin.",
+      "city": "Lütfen şehir girin.",
+      "propertyType": "Lütfen konut tipini seçin.",
+      "consent": "Devam etmek için onay gerekli."
+    },
+    "success": {
+      "title": "Teşekkürler!",
+      "desc": "Talebiniz alındı. En kısa sürede sizinle iletişime geçeceğiz."
+    },
+    "error": {
+      "desc": "Bir sorun oluştu. Lütfen tekrar deneyin ya da WhatsApp'tan yazın."
+    },
+    "whatsappMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
+  },
+  "Footer": {
+    "tagline": "Enerji dönüşümünüzde güvenilir bir liman.",
+    "servicesTitle": "Hizmetler",
+    "companyTitle": "Kurumsal",
+    "legalTitle": "Yasal",
+    "contactTitle": "İletişim",
+    "privacy": "Gizlilik & KVKK",
+    "cookies": "Çerez Politikası",
+    "rights": "Tüm hakları saklıdır.",
+    "placeholderNote": "İletişim bilgileri yakında güncellenecek."
+  }
+}

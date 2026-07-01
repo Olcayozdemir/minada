@@ -1,0 +1,109 @@
+@use "../../styles/mixins" as *;
+
+.trigger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  color: var(--paper);
+  @include glass;
+
+  @include bp-down(980px) {
+    display: inline-flex;
+  }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(4, 20, 18, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 151;
+  width: min(90vw, 380px);
+  background: linear-gradient(160deg, var(--green-700), var(--green-850));
+  border-left: 1px solid var(--glass-brd);
+  padding: 22px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--paper);
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-dark-2);
+  border-radius: var(--r-md);
+
+  &:hover {
+    color: var(--paper);
+    background: var(--glass-bg);
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  font-family: var(--font-display), sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--paper);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--glass-brd);
+
+  &:hover {
+    color: var(--gold-300);
+  }
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.cta {
+  width: 100%;
+}

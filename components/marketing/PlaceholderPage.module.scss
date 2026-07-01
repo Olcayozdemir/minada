@@ -1,0 +1,25 @@
+.hero {
+  max-width: 640px;
+  padding-block: clamp(16px, 5vw, 56px);
+}
+
+.title {
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  color: var(--on-dark);
+}
+
+.intro {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--on-dark-2);
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}

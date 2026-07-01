@@ -1,0 +1,84 @@
+@use "../../styles/mixins" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 232px;
+  padding: 26px 24px 24px;
+  border-radius: var(--r-lg);
+  background: #fff;
+  border: 1px solid rgba(16, 38, 43, 0.08);
+  box-shadow: 0 1px 2px rgba(16, 38, 43, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 44px -26px rgba(16, 38, 43, 0.4);
+    border-color: rgba(242, 168, 44, 0.5);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  color: var(--gold-600);
+  background: linear-gradient(160deg, rgba(242, 168, 44, 0.18), rgba(242, 168, 44, 0.07));
+}
+
+.cardTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.cardDesc {
+  flex: 1;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-600);
+  transition: gap 0.2s ease;
+}
+
+.card:hover .more {
+  gap: 10px;
+}
+
+@include bp-down(1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include bp-down(560px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

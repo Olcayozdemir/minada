@@ -1,0 +1,34 @@
+@use "../../styles/mixins" as *;
+
+.section {
+  padding-block: clamp(56px, 8vw, 104px);
+  position: relative;
+}
+
+.inner {
+  @include container(var(--container-wide));
+  position: relative;
+}
+
+.light {
+  background: var(--sand-50);
+  color: var(--ink);
+}
+
+.sand {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+.dark {
+  background: linear-gradient(180deg, var(--green-850), var(--green-800));
+  color: var(--on-dark);
+}
+
+.band {
+  background:
+    radial-gradient(900px 380px at 80% -10%, rgba(255, 194, 77, 0.14), transparent 60%),
+    linear-gradient(150deg, var(--green-700), var(--green-850));
+  color: var(--on-dark);
+  overflow: hidden;
+}

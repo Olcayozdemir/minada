@@ -1,0 +1,61 @@
+import { Resend } from "resend";
+import type { LeadInput } from "./lead-schema";
+
+const PROPERTY_LABELS: Record<string, string> = {
+  villa: "Villa",
+  detached: "Müstakil ev",
+  apartment: "Apartman",
+};
+
+function escapeHtml(s: string) {
+  return s.replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] ?? c,
+  );
+}
+
+// Sends the lead notification via Resend. If RESEND_API_KEY is unset (e.g. local
+// dev before keys are provisioned) it logs and no-ops so the form still works.
+export async function sendLeadEmail(data: LeadInput) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.CONTACT_EMAIL ?? "info@minada.com";
+  const from = process.env.RESEND_FROM ?? "MİNADA <onboarding@resend.dev>";
+
+  if (!apiKey) {
+    console.warn("[lead] RESEND_API_KEY not set — email skipped:", JSON.stringify(data));
+    return { sent: false as const };
+  }
+
+  const rows: [string, string][] = [
+    ["Ad Soyad", data.name],
+    ["Telefon", data.phone],
+    ["E-posta", data.email],
+    ["Şehir", data.city],
+    ["Konut tipi", PROPERTY_LABELS[data.propertyType] ?? data.propertyType],
+    ["Aylık fatura", data.bill || "—"],
+    ["Mesaj", data.message || "—"],
+  ];
+  const html = `<h2 style="font-family:sans-serif;color:#0f2a4a">Yeni teklif talebi</h2>
+    <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
+      ${rows
+        .map(
+          ([k, v]) =>
+            `<tr><td style="font-weight:600;color:#0f2a4a">${k}</td><td>${escapeHtml(v)}</td></tr>`,
+        )
+        .join("")}
+    </table>`;
+
+  const resend = new Resend(apiKey);
+  const { error } = await resend.emails.send({
+    from,
+    to,
+    replyTo: data.email,
+    subject: `Yeni teklif talebi — ${data.name}`,
+    html,
+  });
+  if (error) {
+    console.error("[lead] resend error:", error);
+    throw new Error("email_failed");
+  }
+  return { sent: true as const };
+}

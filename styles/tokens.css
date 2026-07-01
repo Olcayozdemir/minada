@@ -1,0 +1,79 @@
+/* MİNADA design tokens — navy + gold (per brief md & logo)
+   Single source of truth for color, spacing, radius, typography and glass. */
+:root {
+  /* Brand navy (base) — token names kept, values are navy */
+  --green-900: #081a30;
+  --green-850: #0b2140;
+  --green-800: #0f2a4a; /* primary background (brief --navy) */
+  --green-700: #16375e;
+  --green-600: #204a78;
+  --green-500: #2c5c90;
+
+  /* Gold / amber accent (from logo) */
+  --gold-700: #7a5210;
+  --gold-600: #9c6c14; /* gold-toned text on light surfaces (AA) */
+  --gold-500: #c98a1c;
+  --gold: #f2a82c; /* primary accent */
+  --gold-300: #ffc24d; /* highlight / glow */
+
+  /* Cool neutrals (no cream — cool blue-gray) */
+  --paper: #eef2f7;
+  --sand: #e0e7f0; /* alt light section bg */
+  --sand-50: #edf1f7; /* light section bg */
+  --ink: #12243f; /* primary text on light */
+  --ink-2: #45566e; /* secondary text on light */
+
+  /* Text on dark surfaces */
+  --on-dark: #eef2f7;
+  --on-dark-2: #a7b6cc;
+  --on-dark-3: #7d8ea8;
+
+  /* Glass */
+  --glass-tint: rgba(18, 42, 76, 0.34);
+  --glass-bg: rgba(233, 240, 250, 0.06);
+  --glass-bg-2: rgba(233, 240, 250, 0.1);
+  --glass-brd: rgba(233, 240, 250, 0.15);
+  --glass-blur: 16px;
+
+  /* Semantic roles */
+  --bg: var(--green-800);
+  --fg: var(--on-dark);
+  --accent: var(--gold);
+  --on-accent: #14243d;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container: 1200px;
+  --container-wide: 1320px;
+  --header-h: 76px;
+
+  /* Line heights */
+  --lh-tight: 1.03;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+
+  /* Effects */
+  --glow-gold: 0 16px 44px -14px rgba(242, 168, 44, 0.5);
+  --shadow-card: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.16);
+}
