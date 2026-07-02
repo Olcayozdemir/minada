@@ -17,12 +17,14 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: var(--space-3);
+    /* Side padding sized so the resting card sits dead-centre. */
+    padding-inline: calc((100% - 82vw) / 2);
     row-gap: 0;
     -webkit-overflow-scrolling: touch;
 
     > * {
       flex: 0 0 82vw;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
     }
   }
 }
