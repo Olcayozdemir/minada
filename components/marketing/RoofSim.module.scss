@@ -1,12 +1,12 @@
 .scene {
   display: flex;
   justify-content: center;
-  padding-block: 2px 6px;
+  padding-block: 0 4px;
 }
 
 .svg {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   height: auto;
   overflow: visible;
 }
@@ -20,8 +20,8 @@
 
 /* Empty mounting slot. */
 .slot {
-  fill: transparent;
-  stroke: rgba(238, 242, 247, 0.22);
+  fill: rgba(238, 242, 247, 0.05);
+  stroke: rgba(238, 242, 247, 0.28);
   stroke-width: 0.9;
   stroke-dasharray: 3 2.4;
   opacity: 0.65;
@@ -31,11 +31,51 @@
     opacity 0.3s ease;
 }
 
-/* Live panel: navy glass with a cyan seam. */
+/* Live panel: glass-blue with a bright rim. */
 .on {
-  fill: url(#simPanel);
-  stroke: rgba(96, 214, 234, 0.65);
+  fill: url(#simGlassPanel);
+  stroke: rgba(255, 255, 255, 0.65);
   stroke-width: 0.9;
   stroke-dasharray: none;
   opacity: 1;
+}
+
+/* Floating glass dashboard cards. */
+.glassCard {
+  fill: rgba(238, 242, 247, 0.1);
+  stroke: rgba(255, 255, 255, 0.38);
+  stroke-width: 1;
+}
+
+.cardFloat,
+.cardFloatAlt {
+  animation: bob 5.5s ease-in-out infinite alternate;
+}
+
+.cardFloatAlt {
+  animation-duration: 6.5s;
+  animation-delay: 0.8s;
+}
+
+@keyframes bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+/* Sparkles drifting in the light stream. */
+.spark {
+  animation: twinkle 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.95;
+  }
 }
