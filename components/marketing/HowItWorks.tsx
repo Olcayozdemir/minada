@@ -15,13 +15,8 @@ export async function HowItWorks() {
   const t = await getTranslations("Home.how");
 
   return (
-    <Section tone="dark" id="nasil-calisir">
-      <SectionHeading
-        tone="dark"
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        intro={t("intro")}
-      />
+    <Section tone="light" id="nasil-calisir">
+      <SectionHeading eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <ol className={styles.grid}>
         {STEPS.map(({ id, Icon }, i) => (
           <li key={id} className={styles.step}>
