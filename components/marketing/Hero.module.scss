@@ -13,29 +13,36 @@
 
 .photo {
   object-fit: cover;
-  /* Bias toward the house + EV story on narrow crops. */
-  object-position: 60% 62%;
+  /* Keep the door/battery/car slice centered on narrow crops.
+     NOTE: base photo and the sky-less overlay share this class so the two
+     layers stay pixel-aligned at every viewport. */
+  object-position: 52% 62%;
+}
+
+/* Sky-removed duplicate above the display type: the roofline passes in
+   front of the letters. Interactive elements sit above it (z 5+). */
+.overlay {
+  z-index: 4;
+  pointer-events: none;
 }
 
 .scrim {
   position: absolute;
   inset: 0;
-  /* Edge vignette gives the scene depth; the linear ramp keeps text legible. */
-  background:
-    radial-gradient(120% 95% at 50% 32%, transparent 42%, rgba(8, 26, 48, 0.6) 100%),
-    linear-gradient(
-      180deg,
-      rgba(8, 26, 48, 0.5) 0%,
-      rgba(8, 26, 48, 0.14) 30%,
-      rgba(8, 26, 48, 0.2) 56%,
-      rgba(8, 26, 48, 0.82) 100%
-    );
+  /* The flat navy sky needs almost nothing — a touch at the top for the
+     header, a ramp at the bottom for the CTA row. */
+  background: linear-gradient(
+    180deg,
+    rgba(8, 26, 48, 0.3) 0%,
+    rgba(8, 26, 48, 0) 30%,
+    rgba(8, 26, 48, 0.06) 58%,
+    rgba(8, 26, 48, 0.68) 100%
+  );
 }
 
 .inner {
   @include container(var(--container-wide));
   position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   padding-top: calc(var(--header-h) + var(--space-8));

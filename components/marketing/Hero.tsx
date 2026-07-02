@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
@@ -35,7 +36,7 @@ export async function Hero() {
   return (
     <section className={styles.hero} data-hero="">
       <Image
-        src="/images/energy-scene2.jpeg"
+        src="/images/v2/hero.jpeg"
         alt={t("imageAlt")}
         fill
         preload
@@ -43,6 +44,17 @@ export async function Hero() {
         className={styles.photo}
       />
       <div className={styles.scrim} aria-hidden="true" />
+      {/* Same frame with the sky removed — layered above the display type so
+          the roofline passes in front of the letters (depth sandwich). */}
+      <Image
+        src="/images/v2/hero-without-bg.png"
+        alt=""
+        fill
+        preload
+        sizes="100vw"
+        className={clsx(styles.photo, styles.overlay)}
+        aria-hidden="true"
+      />
 
       <div className={styles.inner}>
         <p className={styles.tagline}>
