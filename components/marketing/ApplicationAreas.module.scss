@@ -52,6 +52,11 @@
   color: var(--gold-300);
   flex: none;
   margin-top: 2px;
+
+  /* Cramped inside the narrow 2-col tiles on phones. */
+  @include bp-down(640px) {
+    display: none;
+  }
 }
 
 .title {
