@@ -2,6 +2,7 @@
 
 .hero {
   position: relative;
+  margin-top: calc(-1 * var(--header-h));
   min-height: 95svh;
   display: flex;
   align-items: stretch;
@@ -263,18 +264,16 @@
     margin-top: var(--space-6);
   }
 
+  /* In-flow on mobile so it can't collide with the copy below. */
   .house {
-    left: 50%;
-    width: min(74vw, 380px);
-    bottom: 26%;
-    opacity: 0.92;
+    position: static;
+    transform: none;
+    width: min(78vw, 380px);
+    margin: var(--space-2) auto 0;
   }
 
   .houseCard {
-    left: 50%;
-    bottom: 27%;
-    width: min(80vw, 420px);
-    height: min(46vw, 240px);
+    display: none;
   }
 
   .bottom {

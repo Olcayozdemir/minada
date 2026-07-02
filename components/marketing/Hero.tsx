@@ -33,7 +33,7 @@ export async function Hero() {
   const [pre, post] = tagline.split(accent);
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} data-hero="">
       <Image
         src="/images/v2/hero.jpg"
         alt={t("imageAlt")}
