@@ -13,25 +13,20 @@
 
 .photo {
   object-fit: cover;
-  object-position: center 62%;
+  /* Bias toward the house + EV story on narrow crops. */
+  object-position: 60% 62%;
 }
 
 .scrim {
   position: absolute;
   inset: 0;
-  /* The extra washes bury the render's garbled dashboard text (mid-band
-     wall panels + top-right cards) without flattening the scene. */
-  background:
-    radial-gradient(46% 26% at 24% 55%, rgba(8, 26, 48, 0.55), transparent 78%),
-    radial-gradient(40% 20% at 66% 50%, rgba(8, 26, 48, 0.5), transparent 78%),
-    radial-gradient(34% 22% at 82% 16%, rgba(8, 26, 48, 0.45), transparent 75%),
-    linear-gradient(
-      180deg,
-      rgba(8, 26, 48, 0.52) 0%,
-      rgba(8, 26, 48, 0.22) 30%,
-      rgba(8, 26, 48, 0.34) 56%,
-      rgba(8, 26, 48, 0.84) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(8, 26, 48, 0.5) 0%,
+    rgba(8, 26, 48, 0.16) 30%,
+    rgba(8, 26, 48, 0.22) 56%,
+    rgba(8, 26, 48, 0.82) 100%
+  );
 }
 
 .inner {

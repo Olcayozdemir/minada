@@ -35,7 +35,7 @@ export async function Hero() {
   return (
     <section className={styles.hero} data-hero="">
       <Image
-        src="/images/energy-scene.jpeg"
+        src="/images/energy-scene2.jpeg"
         alt={t("imageAlt")}
         fill
         preload
