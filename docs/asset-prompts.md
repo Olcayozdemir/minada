@@ -14,15 +14,31 @@ tutarlı); her birinin başına STYLE CORE bloğunu aynen yapıştır.
 
 ---
 
-## STYLE CORE (her prompta önek)
+## STYLE CORE (her prompta önek — ışıktan bağımsız)
 
 ```
 Ultra-realistic premium architectural 3D render, modern minimalist
-concrete-and-white architecture, matte black solar panels with warm sunset
-reflections, thin glowing cyan energy lines tracing along surfaces like
-circuitry, subtle translucent frosted-glass panels, deep navy dusk sky fading
-to a golden horizon, warm amber interior window light, lush landscaped garden,
-cinematic soft lighting, high-end tech brand aesthetic, photorealistic, 8k.
+concrete-and-white architecture, matte black solar panels, thin glowing cyan
+energy lines tracing along surfaces like circuitry, subtle translucent
+frosted-glass panels, lush landscaped garden, cinematic soft lighting,
+high-end tech brand aesthetic, photorealistic, 8k.
+```
+
+## MOOD (STYLE CORE'dan hemen sonra BİRİNİ ekle)
+
+Hepsi şafak olmak zorunda değil 🙂 — sayfada çeşitlilik iyi durur; koyu
+zemin isteyen slotlar (hero, CTA, batarya) B, açık gövde bölümleri A alır.
+
+**MOOD A — Berrak gün ışığı:**
+```
+crisp clear morning daylight, vivid blue sky with a few soft white clouds,
+fresh green foliage, clean bright shadows, solar panels sparkling in the sun.
+```
+
+**MOOD B — Altın saat / alacakaranlık:**
+```
+dusk golden hour, deep navy sky fading to a golden horizon, warm amber
+interior window light, solar panels catching the last warm reflections.
 ```
 
 ## AVOID (her prompta sonek — negative prompt alanı varsa oraya)
@@ -88,78 +104,78 @@ plants, frosted glass slabs behind, isolated on plain solid black background.
 
 ## 3 · Hizmet kartları — 4:3 yatay (≥1600px, kartta ~200px yükseklik kırpılır → odak merkezde dursun)
 
-**S1 — Güneş Enerjisi:**
+**S1 — Güneş Enerjisi (MOOD A önerilir):**
 ```
-Close-up of matte black rooftop solar panels at golden hour, warm sun flare
-skimming across the glass, thin cyan energy lines glowing in the seams
-between panels, deep navy sky above the roof line.
+Close-up of matte black rooftop solar panels, sun sparkle skimming across the
+glass, thin cyan energy lines glowing in the seams between panels, sky above
+the roof line.
 ```
 
-**S2 — Batarya Depolama (öncelikli — şu an eğreti duran slot):**
+**S2 — Batarya Depolama (MOOD B önerilir — cyan ışıma koyuda parlar; öncelikli slot):**
 ```
 A sleek wall-mounted home energy storage battery with a softly glowing cyan
 translucent front face, mounted on a clean concrete wall in a minimalist
-covered outdoor utility area, warm dusk light from the side, small plants at
-the base, single cyan energy line entering the unit from above.
+covered outdoor utility area, small plants at the base, single cyan energy
+line entering the unit from above.
 ```
 
-**S3 — EV Şarj:**
+**S3 — EV Şarj (MOOD A önerilir):**
 ```
-A minimalist matte wallbox EV charger on a concrete garden wall, coiled cyan
-glowing charging cable plugged into a generic modern electric car, dusk
-lighting with warm reflections on the car body, landscaped driveway.
+A minimalist matte wallbox EV charger on a concrete garden wall, coiled
+softly glowing cyan charging cable plugged into a generic modern electric
+car, clean reflections on the car body, landscaped driveway.
 ```
 
-**S4 — Isı Pompası:**
+**S4 — Isı Pompası (MOOD A önerilir):**
 ```
 A modern matte dark-grey air-source heat pump unit beside a concrete villa
 wall, soft stylized cyan airflow ribbons curling out of the fan grille,
-evening garden with warm path lights, clean premium composition.
+tidy garden, clean premium composition.
 ```
 
 ## 4 · Uygulama alanı karoları — 3:4 DİKEY (≥1600px kısa kenar)
 
 Alt %25'e cam etiket biniyor → **alt bölge sade/koyu** kalsın.
 
-**A1 — Konut & Bireysel:**
+**A1 — Konut & Bireysel (MOOD A):**
 ```
-Vertical composition, modern family villa with full solar roof at dusk, warm
-windows, cyan energy line tracing the roof edge, garden in the dark lower
-quarter of the frame.
+Vertical composition, modern family villa with full solar roof, cyan energy
+line tracing the roof edge, garden filling the shaded lower quarter of the
+frame.
 ```
 
-**A2 — Ticari & Endüstriyel:**
+**A2 — Ticari & Endüstriyel (MOOD A):**
 ```
 Vertical composition, elevated view of a large industrial warehouse roof
-covered in solar arrays at blue hour, faint cyan grid lines across the
-panels, dark loading yard at the bottom of the frame.
+covered in solar arrays, faint cyan grid lines across the panels, shaded
+loading yard at the bottom of the frame.
 ```
 
-**A3 — Tarımsal Tesisler:**
+**A3 — Tarımsal Tesisler (MOOD A — veya çeşitlilik için B):**
 ```
-Vertical composition, agrivoltaic solar rows standing over green crops,
-golden late sun grazing the panels, cyan energy pulse along the mounting
-rail, soft dark soil in the lower quarter.
+Vertical composition, agrivoltaic solar rows standing over green crops, sun
+grazing the panels, cyan energy pulse along the mounting rail, soft shaded
+soil in the lower quarter.
 ```
 
-**A4 — Kamu & Kurumsal:**
+**A4 — Kamu & Kurumsal (MOOD A):**
 ```
 Vertical composition, modern public building with a solar canopy over its
-plaza at dusk, warm facade lighting, single cyan energy line running from
-canopy to building, empty calm plaza in the lower quarter.
+plaza, single cyan energy line running from canopy to building, calm shaded
+plaza in the lower quarter.
 ```
 
-## 5 · Hesaplayıcı görseli — 4:3 yatay
+## 5 · Hesaplayıcı görseli — 4:3 yatay (MOOD B önerilir — "akşam = fatura vakti" hissi; A da olur)
 
 Sol-alt köşeye cam gösterge rozeti biniyor → **sol-alt sade** kalsın.
 
 ```
-Cozy modern home exterior at blue hour, warm glowing windows, rooftop solar
-panels barely catching the last light, a subtle cyan glow from a small energy
-meter on the side wall, quiet garden, calm dark lower-left corner.
+Cozy modern home exterior, warm glowing windows, rooftop solar panels, a
+subtle cyan glow from a small energy meter on the side wall, quiet garden,
+calm uncluttered lower-left corner.
 ```
 
-## 6 · Final CTA bandı — 21:9 veya 16:9 geniş
+## 6 · Final CTA bandı — 21:9 veya 16:9 geniş (MOOD B şart — üstüne cam kart biniyor)
 
 Ortaya cam kart + metin biniyor → **merkez sakin ve koyu**.
 
