@@ -81,10 +81,8 @@ export async function Hero() {
           </div>
         </div>
 
-        <div className={styles.chipWarranty}>
-          <strong>{t("chipWarrantyValue")}</strong>
-          <span>{t("chipWarrantyLabel")}</span>
-        </div>
+        {/* TODO(olcay): "10 yıl garanti" chip collides with the display word at
+            some widths — disabled for now, will return in a different form. */}
 
         <div className={styles.bottom}>
           <div className={styles.bottomLeft}>
