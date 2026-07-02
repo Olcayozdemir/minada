@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as *;
 
 .section {
-  padding-block: clamp(56px, 8vw, 104px);
+  padding-block: clamp(64px, 8.5vw, 120px);
   position: relative;
 }
 
@@ -11,18 +11,22 @@
 }
 
 .light {
-  background: var(--sand-50);
+  background: var(--bg);
   color: var(--ink);
 }
 
 .sand {
-  background: var(--sand);
+  background: var(--surface-2);
   color: var(--ink);
 }
 
+/* Inset rounded dark band — the page's contrast beat. */
 .dark {
   background: linear-gradient(180deg, var(--green-850), var(--green-800));
   color: var(--on-dark);
+  border-radius: var(--r-xl);
+  margin-inline: clamp(8px, 1.5vw, 24px);
+  overflow: hidden;
 }
 
 .band {
@@ -30,5 +34,7 @@
     radial-gradient(900px 380px at 80% -10%, rgba(255, 194, 77, 0.14), transparent 60%),
     linear-gradient(150deg, var(--green-700), var(--green-850));
   color: var(--on-dark);
+  border-radius: var(--r-xl);
+  margin-inline: clamp(8px, 1.5vw, 24px);
   overflow: hidden;
 }

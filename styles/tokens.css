@@ -1,50 +1,54 @@
-/* MİNADA design tokens — navy + gold (per brief md & logo)
-   Single source of truth for color, spacing, radius, typography and glass. */
+/* MİNADA v2 "Altın Saat" tokens — light-first editorial + navy/gold brand.
+   Navy is ink & dark-band; gold is the light. Single source of truth. */
 :root {
-  /* Brand navy (base) — token names kept, values are navy */
+  /* Brand navy scale (dark surfaces, ink) */
   --green-900: #081a30;
   --green-850: #0b2140;
-  --green-800: #0f2a4a; /* primary background (brief --navy) */
+  --green-800: #0f2a4a;
   --green-700: #16375e;
   --green-600: #204a78;
   --green-500: #2c5c90;
 
-  /* Gold / amber accent (from logo) */
+  /* Gold / amber accent (logo) */
   --gold-700: #7a5210;
-  --gold-600: #9c6c14; /* gold-toned text on light surfaces (AA) */
+  --gold-600: #9c6c14; /* gold text on light (AA) */
   --gold-500: #c98a1c;
-  --gold: #f2a82c; /* primary accent */
-  --gold-300: #ffc24d; /* highlight / glow */
+  --gold: #f2a82c;
+  --gold-300: #ffc24d;
 
-  /* Cool neutrals (no cream — cool blue-gray) */
+  /* Light body (v2): airy cool neutrals */
+  --bg: #f5f7fb; /* page background */
+  --surface: #ffffff; /* cards */
+  --surface-2: #edf1f7; /* alt section bg */
+  --line: rgba(18, 36, 63, 0.09);
   --paper: #eef2f7;
-  --sand: #e0e7f0; /* alt light section bg */
-  --sand-50: #edf1f7; /* light section bg */
-  --ink: #12243f; /* primary text on light */
-  --ink-2: #45566e; /* secondary text on light */
+  --sand: #e7edf5;
+  --sand-50: #f5f7fb;
+  --ink: #12243f;
+  --ink-2: #4a5b73;
 
-  /* Text on dark surfaces */
+  /* Text on dark surfaces (dark band, footer, hero scrim) */
   --on-dark: #eef2f7;
   --on-dark-2: #a7b6cc;
   --on-dark-3: #7d8ea8;
 
-  /* Glass */
-  --glass-tint: rgba(18, 42, 76, 0.34);
+  /* Glass — used ONLY on photos / dark surfaces */
+  --glass-tint: rgba(10, 26, 48, 0.38);
   --glass-bg: rgba(233, 240, 250, 0.06);
   --glass-bg-2: rgba(233, 240, 250, 0.1);
   --glass-brd: rgba(233, 240, 250, 0.15);
   --glass-blur: 16px;
 
-  /* Semantic roles */
-  --bg: var(--green-800);
-  --fg: var(--on-dark);
+  /* Semantic */
+  --fg: var(--ink);
   --accent: var(--gold);
   --on-accent: #14243d;
 
-  /* Radius */
-  --r-sm: 8px;
-  --r-md: 12px;
-  --r-lg: 18px;
+  /* Radius (v2: bigger, editorial) */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
   --r-pill: 999px;
 
   /* Spacing scale */
@@ -64,16 +68,19 @@
 
   /* Layout */
   --container: 1200px;
-  --container-wide: 1320px;
-  --header-h: 76px;
+  --container-wide: 1360px;
+  --header-h: 84px;
 
-  /* Line heights */
+  /* Type */
   --lh-tight: 1.03;
   --lh-snug: 1.25;
   --lh-normal: 1.6;
+  --fs-display: clamp(3.4rem, 11.5vw, 11.5rem); /* hero display words */
+  --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
 
   /* Effects */
   --glow-gold: 0 16px 44px -14px rgba(242, 168, 44, 0.5);
-  --shadow-card: 0 24px 60px -30px rgba(0, 0, 0, 0.55);
-  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.16);
+  --shadow-card: 0 24px 60px -30px rgba(0, 0, 0, 0.55); /* on dark */
+  --shadow-card-light: 0 20px 50px -28px rgba(18, 36, 63, 0.22); /* on light */
+  --shadow-soft: 0 2px 10px rgba(18, 36, 63, 0.08);
 }

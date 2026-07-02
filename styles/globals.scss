@@ -15,8 +15,8 @@ html {
 
 body {
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
-  background: var(--green-800);
-  color: var(--on-dark);
+  background: var(--bg);
+  color: var(--ink);
   line-height: var(--lh-normal);
   font-weight: 400;
   min-height: 100dvh;
@@ -63,7 +63,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold-300);
+  outline: 2px solid var(--gold-500);
   outline-offset: 3px;
   border-radius: 4px;
 }
