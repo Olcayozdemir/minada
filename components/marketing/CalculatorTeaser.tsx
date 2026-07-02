@@ -39,27 +39,6 @@ export async function CalculatorTeaser() {
             sizes="(max-width: 900px) 92vw, 46vw"
             className={styles.img}
           />
-          <div className={styles.badge}>
-            <svg className={styles.gauge} width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
-              <circle cx="26" cy="26" r="20" fill="none" stroke="rgba(238,242,247,0.18)" strokeWidth="4" />
-              <circle
-                cx="26"
-                cy="26"
-                r="20"
-                fill="none"
-                stroke="var(--gold-300)"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeDasharray="126"
-                strokeDashoffset="13"
-                transform="rotate(-90 26 26)"
-              />
-            </svg>
-            <div>
-              <strong>{t("badgeValue")}</strong>
-              <span>{t("badgeLabel")}</span>
-            </div>
-          </div>
         </div>
       </div>
     </Section>

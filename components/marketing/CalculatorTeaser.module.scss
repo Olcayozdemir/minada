@@ -66,33 +66,3 @@
   object-fit: cover;
 }
 
-/* Pokes past the photo's corner — half in, half out. */
-.badge {
-  @include glass;
-  position: absolute;
-  left: -14px;
-  bottom: -18px;
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--r-lg);
-  color: var(--on-dark);
-
-  strong {
-    display: block;
-    font-family: var(--font-display), sans-serif;
-    font-size: 1.35rem;
-    line-height: 1.1;
-  }
-
-  span {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--on-dark-2);
-  }
-}
-
-.gauge {
-  flex: none;
-}
