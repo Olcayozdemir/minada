@@ -60,7 +60,7 @@
 /* Transparent diorama floating above the card top. */
 .media {
   display: block;
-  margin: -130px calc(-1 * var(--space-3)) var(--space-2);
+  margin: -130px calc(-1 * var(--space-3)) -50px;
 
   img {
     width: 100%;
