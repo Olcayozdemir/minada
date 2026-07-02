@@ -91,10 +91,13 @@ export async function Hero() {
               <Button href="/contact" size="lg" withArrow>
                 {tc("getQuote")}
               </Button>
-              <Button href="/calculator" size="lg" variant="glass">
+              <Button href="/calculator" size="lg" variant="glass" className={styles.calcBtn}>
                 {tc("calculate")}
               </Button>
             </div>
+            <Link href="/calculator" className={styles.calcLink}>
+              {tc("calculate")} <IconArrowRight size={15} />
+            </Link>
           </div>
 
           <Link href="/calculator" className={styles.calcCard}>

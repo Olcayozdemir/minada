@@ -20,13 +20,16 @@
 .scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 26, 48, 0.5) 0%,
-    rgba(8, 26, 48, 0.16) 30%,
-    rgba(8, 26, 48, 0.22) 56%,
-    rgba(8, 26, 48, 0.82) 100%
-  );
+  /* Edge vignette gives the scene depth; the linear ramp keeps text legible. */
+  background:
+    radial-gradient(120% 95% at 50% 32%, transparent 42%, rgba(8, 26, 48, 0.6) 100%),
+    linear-gradient(
+      180deg,
+      rgba(8, 26, 48, 0.5) 0%,
+      rgba(8, 26, 48, 0.14) 30%,
+      rgba(8, 26, 48, 0.2) 56%,
+      rgba(8, 26, 48, 0.82) 100%
+    );
 }
 
 .inner {
@@ -158,6 +161,21 @@
   flex-wrap: wrap;
 }
 
+/* Mobile-only quiet link to the calculator (replaces the second pill). */
+.calcLink {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-4);
+  font-weight: 650;
+  font-size: 0.95rem;
+  color: var(--on-dark-2);
+
+  svg {
+    color: var(--gold-300);
+  }
+}
+
 .calcCard {
   @include glass;
   display: flex;
@@ -216,18 +234,33 @@
 
 @include bp-down(760px) {
   .hero {
-    min-height: 88svh;
+    min-height: 86svh;
   }
 
-  .chipSaving {
-    position: static;
-    align-self: flex-start;
-    margin-top: var(--space-6);
+  /* Radical declutter: type + one CTA breathe over the photo. */
+  .chipSaving,
+  .sub,
+  .calcBtn {
+    display: none;
   }
 
   .bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: var(--space-5);
+  }
+
+  .bottomLeft {
+    max-width: none;
+  }
+
+  .actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .calcLink {
+    display: inline-flex;
+    align-self: center;
   }
 }
