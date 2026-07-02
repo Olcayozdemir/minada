@@ -39,22 +39,28 @@ no logos, no watermarks, no people, no cars with visible badges
 Kompozisyon şartı: **üst üçte bir sakin gökyüzü** (dev tipografi oraya gelecek),
 hikâye ögeleri alt yarıda; sol-alt köşe metin+butonlar için nispeten sade kalsın.
 
-**H1 — villa + batarya + EV (mevcudun kardeşi):**
+**H1 — villa + batarya + EV, geniş sinematik plan:**
 ```
-Wide establishing shot of a two-storey modern villa at dusk, rooftop solar
-array catching the last golden light, a glowing translucent battery unit by
-the entrance, an electric car charging in the driveway with a softly glowing
-cyan cable, one continuous cyan energy line flowing from the roof panels down
-the facade to the battery and the car, calm gradient dusk sky occupying the
-upper third of the frame, garden framing left and right.
+Very wide cinematic establishing shot of a modern two-storey villa estate at
+dusk, seen from across the landscaped garden, rooftop solar array catching
+the last golden light, a glowing translucent battery unit by the entrance,
+an electric car charging on the wide driveway with a softly glowing cyan
+cable, one continuous cyan energy line flowing from the roof panels down the
+facade to the battery, the car, and onward along the garden path lights, a
+still reflecting pool in the foreground mirroring the golden sky, dramatic
+layered clouds with warm underlight, vast calm gradient dusk sky occupying
+the upper third, tall trees framing the far left and right edges.
 ```
 
-**H2 — konut + tarla hibrit (geniş nefes):**
+**H2 — epik altın saat vadisi (dramatik):**
 ```
-Cinematic aerial-eye view over a modern solar villa in the foreground and
-gentle green fields with a small ground-mounted solar array in the distance,
-golden sunset on the horizon line, deep navy sky above, faint cyan energy
-pulses connecting roof and landscape, vast calm sky in the upper half.
+Breathtaking cinematic aerial shot at golden hour: rows of solar panels
+sweeping in a bold S-curve across rolling green hills like a river of dark
+glass, each panel row edge-lit by the setting sun, thin cyan energy pulses
+racing along the rows toward a striking modern glass villa on the hilltop
+with warm lit windows, low golden mist drifting between the tree lines,
+dramatic sun star flaring on the horizon, deep navy sky with sparse
+pink-edged clouds, the upper third of the frame calm open sky.
 ```
 
 ## 2 · Intro kesiti (MİNADA kimdir) — 3:2, düz zemin → şeffaf PNG
