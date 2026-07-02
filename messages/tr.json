@@ -124,7 +124,12 @@
       "title": "Faturanız neredeyse sıfıra insin",
       "desc": "Birkaç bilgiyle tahmini sistem gücünüzü, yıllık tasarrufunuzu ve geri ödeme sürenizi hesaplayın.",
       "cta": "Tasarrufumu hesapla",
-      "note": "Sonuçlar tahminidir; kesin teklif için ücretsiz keşif oluşturun."
+      "note": "Sonuçlar tahminidir; kesin teklif için ücretsiz keşif oluşturun.",
+      "point1": "Fatura ve şehir bilgisiyle 2 dakikada sonuç",
+      "point2": "kWp, maliyet aralığı ve geri ödeme süresi",
+      "point3": "25 yıllık tasarruf ve CO₂ etkisi",
+      "badgeValue": "%90",
+      "badgeLabel": "fatura tasarrufuna kadar"
     },
     "testimonials": {
       "eyebrow": "Referanslar",

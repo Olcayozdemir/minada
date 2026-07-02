@@ -124,7 +124,12 @@
       "title": "Bring your bill close to zero",
       "desc": "With a few details, estimate your system size, annual savings and payback period.",
       "cta": "Calculate my savings",
-      "note": "Results are estimates; create a free survey for a precise quote."
+      "note": "Results are estimates; create a free survey for a precise quote.",
+      "point1": "Results in 2 minutes from your bill and city",
+      "point2": "kWp, cost range and payback period",
+      "point3": "25-year savings and CO₂ impact",
+      "badgeValue": "90%",
+      "badgeLabel": "up to, in bill savings"
     },
     "testimonials": {
       "eyebrow": "Projects",

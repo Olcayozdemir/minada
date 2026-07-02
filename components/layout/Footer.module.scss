@@ -1,15 +1,35 @@
 @use "../../styles/mixins" as *;
 
 .footer {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(180deg, var(--green-850), var(--green-900));
-  border-top: 1px solid var(--glass-brd);
   color: var(--on-dark-2);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  margin-top: var(--space-6);
+}
+
+/* Giant ghost wordmark peeking from the bottom edge. */
+.ghost {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.24em;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(6rem, 17vw, 16rem);
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: rgba(238, 242, 247, 0.045);
+  pointer-events: none;
+  user-select: none;
 }
 
 .inner {
   @include container(var(--container-wide));
+  position: relative;
   padding-top: var(--space-16);
-  padding-bottom: var(--space-8);
+  padding-bottom: var(--space-20);
 }
 
 .top {

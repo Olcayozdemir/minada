@@ -12,6 +12,9 @@ export async function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <div className={styles.ghost} aria-hidden="true">
+        MİNADA
+      </div>
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brandCol}>
