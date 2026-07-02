@@ -69,6 +69,15 @@
     filter: drop-shadow(0 20px 28px rgba(4, 14, 28, 0.55));
     transition: transform 0.3s ease;
   }
+
+  /* Phones: release the pull-up so the diorama doesn't crowd the chip. */
+  @include bp-down(640px) {
+    margin-bottom: -8px;
+
+    img {
+      height: 212px;
+    }
+  }
 }
 
 .iconChip {
