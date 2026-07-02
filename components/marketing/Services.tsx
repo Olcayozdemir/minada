@@ -13,10 +13,10 @@ import {
 import styles from "./Services.module.scss";
 
 const CARDS = [
-  { id: "solar", Icon: IconSolar, img: "/images/v2/service-solar.jpg" },
-  { id: "storage", Icon: IconBattery, img: "/images/v2/service-battery.jpg" },
-  { id: "ev", Icon: IconEvCharge, img: "/images/v2/service-ev.jpg" },
-  { id: "heatpump", Icon: IconHeatPump, img: "/images/v2/service-heatpump.jpg" },
+  { id: "solar", Icon: IconSolar, img: "/images/v2/service-solar.png" },
+  { id: "storage", Icon: IconBattery, img: "/images/v2/service-battery.png" },
+  { id: "ev", Icon: IconEvCharge, img: "/images/v2/service-ev.png" },
+  { id: "heatpump", Icon: IconHeatPump, img: "/images/v2/service-heatpump.png" },
 ] as const;
 
 export async function Services() {
