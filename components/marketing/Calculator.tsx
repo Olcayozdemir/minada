@@ -23,6 +23,37 @@ function Metric({ label, value, highlight }: { label: string; value: string; hig
   );
 }
 
+/* Glass gauge chip — same language as the hero's stat chips. */
+const RING_C = 126; // 2πr for r=20
+
+function Gauge({ pct, value, label }: { pct: number; value: string; label: string }) {
+  const offset = RING_C * (1 - Math.max(0, Math.min(1, pct)));
+  return (
+    <div className={styles.gauge}>
+      <svg className={styles.gaugeRing} width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+        <circle cx="26" cy="26" r="20" fill="none" stroke="rgba(238,242,247,0.16)" strokeWidth="4" />
+        <circle
+          cx="26"
+          cy="26"
+          r="20"
+          fill="none"
+          stroke="var(--gold-300)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray={RING_C}
+          strokeDashoffset={offset}
+          transform="rotate(-90 26 26)"
+          className={styles.gaugeArc}
+        />
+      </svg>
+      <div>
+        <strong>{value}</strong>
+        <span>{label}</span>
+      </div>
+    </div>
+  );
+}
+
 export function Calculator() {
   const t = useTranslations("Calculator");
   const locale = useLocale();
@@ -147,16 +178,26 @@ export function Calculator() {
                 })}
               </p>
             )}
+            <div className={styles.gauges}>
+              <Gauge
+                pct={Math.min(1, result.annualProduction / result.annualConsumption)}
+                value={`%${fmt(
+                  Math.min(100, (result.annualProduction / result.annualConsumption) * 100),
+                )}`}
+                label={t("coverageLabel")}
+              />
+              <Gauge
+                pct={1 - Math.min(1, result.paybackYears / 25)}
+                value={`${fmt(result.paybackYears, 1)} ${t("years")}`}
+                label={t("paybackShort")}
+              />
+            </div>
             <div className={styles.metrics}>
               <Metric
                 label={t("costLabel")}
                 value={`${fmtTL(result.costLow)} – ${fmtTL(result.costHigh)}`}
               />
               <Metric label={t("annualSavingsLabel")} value={fmtTL(result.annualSavings)} highlight />
-              <Metric
-                label={t("paybackLabel")}
-                value={`${fmt(result.paybackYears, 1)} ${t("years")}`}
-              />
               <Metric label={t("savings25Label")} value={fmtTL(result.savings25yr)} />
               <Metric label={t("co2Label")} value={`${fmt(result.co2Savings)} kg`} />
             </div>

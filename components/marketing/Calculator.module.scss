@@ -177,6 +177,51 @@
   color: var(--on-dark-2);
 }
 
+/* Glass gauge chips — hero stat-chip language, simulation dashboard feel. */
+.gauges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.gauge {
+  @include glass;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-lg);
+
+  strong {
+    display: block;
+    font-family: var(--font-display), sans-serif;
+    font-size: 19px;
+    line-height: 1.15;
+    color: var(--on-dark);
+  }
+
+  span {
+    display: block;
+    font-size: 12px;
+    color: var(--on-dark-2);
+  }
+}
+
+.gaugeRing {
+  flex: none;
+}
+
+.gaugeArc {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+@include bp-down(420px) {
+  .gauges {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Simulation caption + roof-limited notice */
 .simCaption {
   margin: 4px 0 18px;

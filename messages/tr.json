@@ -227,7 +227,9 @@
     "roofCapacity": "≈ {count} panel kapasitesi",
     "simInstalled": "{installed} panel · {kwp} kWp kurulu güç",
     "simIdle": "Çatınıza ≈ {count} panel sığıyor — tabloyu görmek için fatura ve şehir girin",
-    "roofLimited": "İhtiyacınız {needed} panel; tam sistem için yaklaşık {area} m² çatı alanı gerekir. Tablo, sığan sisteme göre hesaplandı."
+    "roofLimited": "İhtiyacınız {needed} panel; tam sistem için yaklaşık {area} m² çatı alanı gerekir. Tablo, sığan sisteme göre hesaplandı.",
+    "coverageLabel": "tüketim karşılama",
+    "paybackShort": "geri ödeme"
   },
   "Contact": {
     "eyebrow": "İletişim",

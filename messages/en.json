@@ -227,7 +227,9 @@
     "roofCapacity": "≈ {count} panel capacity",
     "simInstalled": "{installed} panels · {kwp} kWp installed",
     "simIdle": "Your roof fits ≈ {count} panels — enter your bill and city to see the numbers",
-    "roofLimited": "You need {needed} panels; the full system requires about {area} m² of roof. Figures below reflect the system that fits."
+    "roofLimited": "You need {needed} panels; the full system requires about {area} m² of roof. Figures below reflect the system that fits.",
+    "coverageLabel": "consumption covered",
+    "paybackShort": "payback"
   },
   "Contact": {
     "eyebrow": "Contact",
