@@ -4,9 +4,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
+  /* Room for the dioramas floating above the card tops. */
+  padding-top: 130px;
 
   @include bp-down(1080px) {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: calc(var(--space-5) + 120px);
   }
 
   @include bp-down(640px) {
@@ -16,6 +19,7 @@
     margin-inline: calc(-1 * var(--space-4));
     padding-inline: var(--space-4);
     padding-bottom: var(--space-3);
+    row-gap: 0;
     -webkit-overflow-scrolling: touch;
 
     > * {
@@ -26,13 +30,15 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  background: rgba(238, 242, 247, 0.05);
+  background:
+    linear-gradient(180deg, rgba(238, 242, 247, 0.07), rgba(238, 242, 247, 0.03) 55%),
+    rgba(238, 242, 247, 0.03);
   border: 1px solid rgba(238, 242, 247, 0.1);
   border-radius: var(--r-xl);
-  padding: var(--space-3);
+  padding: 0 var(--space-5) var(--space-5);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease;
@@ -44,54 +50,46 @@
     .more svg {
       transform: translateX(3px);
     }
+
+    .media img {
+      transform: translateY(-6px) scale(1.02);
+    }
   }
 }
 
-/* Transparent diorama cutouts float on a soft glow instead of cropping. */
+/* Transparent diorama floating above the card top. */
 .media {
-  position: relative;
   display: block;
-  border-radius: calc(var(--r-xl) - 8px);
-  overflow: hidden;
-  background: radial-gradient(70% 85% at 50% 55%, rgba(44, 92, 144, 0.4), rgba(11, 33, 64, 0) 100%);
+  margin: -130px calc(-1 * var(--space-3)) var(--space-2);
 
   img {
     width: 100%;
-    height: 200px;
+    height: 240px;
     object-fit: contain;
-    padding: 10px 6px;
-    filter: drop-shadow(0 14px 22px rgba(4, 14, 28, 0.5));
+    filter: drop-shadow(0 20px 28px rgba(4, 14, 28, 0.55));
     transition: transform 0.3s ease;
   }
 }
 
-.card:hover .media img {
-  transform: translateY(-3px) scale(1.02);
-}
-
 .iconChip {
   @include glass;
-  position: absolute;
-  top: 10px;
-  left: 10px;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   color: var(--gold-300);
+  margin-bottom: var(--space-4);
 }
 
 .cardTitle {
   font-size: 1.15rem;
-  margin-top: var(--space-2);
-  padding-inline: var(--space-2);
 }
 
 .cardDesc {
   font-size: 0.92rem;
   color: var(--on-dark-2);
-  padding-inline: var(--space-2);
+  margin-top: var(--space-2);
   flex: 1;
 }
 
@@ -102,7 +100,7 @@
   color: var(--gold-300);
   font-weight: 650;
   font-size: 0.9rem;
-  padding: var(--space-2);
+  margin-top: var(--space-4);
 
   svg {
     transition: transform 0.2s ease;

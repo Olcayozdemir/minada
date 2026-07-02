@@ -37,9 +37,9 @@ export async function Services() {
                 height={400}
                 sizes="(max-width: 640px) 78vw, (max-width: 1080px) 46vw, 24vw"
               />
-              <span className={styles.iconChip}>
-                <Icon size={20} />
-              </span>
+            </span>
+            <span className={styles.iconChip}>
+              <Icon size={20} />
             </span>
             <h3 className={styles.cardTitle}>{ts(id)}</h3>
             <p className={styles.cardDesc}>{t(`${id}.desc`)}</p>
