@@ -1,9 +1,10 @@
 import type { ComponentProps, ReactNode } from "react";
 import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
+import { IconArrowRight } from "@/components/ui/icons";
 import styles from "./Button.module.scss";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "glass";
 type Size = "md" | "lg";
 
 type ButtonProps = {
@@ -19,6 +20,8 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit";
   ariaLabel?: string;
+  /** Trailing arrow-in-circle motif. */
+  withArrow?: boolean;
 };
 
 export function Button({
@@ -32,13 +35,24 @@ export function Button({
   onClick,
   type = "button",
   ariaLabel,
+  withArrow = false,
 }: ButtonProps) {
   const cn = clsx(styles.btn, styles[variant], styles[size], className);
+  const content = (
+    <>
+      {children}
+      {withArrow && (
+        <span className={styles.arrow} aria-hidden="true">
+          <IconArrowRight size={15} />
+        </span>
+      )}
+    </>
+  );
 
   if (href) {
     return (
       <Link href={href} className={cn} aria-label={ariaLabel}>
-        {children}
+        {content}
       </Link>
     );
   }
@@ -51,14 +65,14 @@ export function Button({
         aria-label={ariaLabel}
         {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
-        {children}
+        {content}
       </a>
     );
   }
 
   return (
     <button type={type} onClick={onClick} aria-label={ariaLabel} className={cn}>
-      {children}
+      {content}
     </button>
   );
 }
