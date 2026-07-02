@@ -99,7 +99,7 @@ export async function Hero() {
 
           <Link href="/calculator" className={styles.calcCard}>
             <span className={styles.calcThumb}>
-              <Image src="/images/v2/calc.jpg" alt="" width={96} height={72} />
+              <Image src="/images/v2/calc-2.jpg" alt="" width={96} height={72} />
             </span>
             <span className={styles.calcText}>
               <strong>{t("calcCardTitle")}</strong>

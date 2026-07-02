@@ -32,7 +32,7 @@ export async function CalculatorTeaser() {
 
         <div className={styles.media}>
           <Image
-            src="/images/v2/calc.jpg"
+            src="/images/v2/calc-2.jpg"
             alt=""
             width={720}
             height={560}

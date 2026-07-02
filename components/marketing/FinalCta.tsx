@@ -10,7 +10,7 @@ export async function FinalCta() {
 
   return (
     <section className={styles.cta}>
-      <Image src="/images/v2/cta.jpg" alt="" fill sizes="100vw" className={styles.photo} />
+      <Image src="/images/v2/cta-2.jpg" alt="" fill sizes="100vw" className={styles.photo} />
       <div className={styles.scrim} aria-hidden="true" />
       <div className={styles.card}>
         <p className={styles.eyebrow}>{t("eyebrow")}</p>
