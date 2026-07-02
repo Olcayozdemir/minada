@@ -46,7 +46,18 @@
     "statWarrantyValue": "10 yıl",
     "statWarrantyLabel": "garanti & servis",
     "statServicesValue": "4",
-    "statServicesLabel": "hizmet · tek çatı"
+    "statServicesLabel": "hizmet · tek çatı",
+    "display1": "GÜNEŞ",
+    "display2": "ENERJİSİ",
+    "tagline": "Enerji dönüşümü yolculuğunuzda güvenilir bir liman.",
+    "taglineAccent": "liman",
+    "chipSavingValue": "%90'a varan",
+    "chipSavingLabel": "fatura tasarrufu",
+    "chipWarrantyValue": "10 yıl",
+    "chipWarrantyLabel": "garanti & servis",
+    "calcCardTitle": "Tasarrufunu hesapla",
+    "calcCardDesc": "2 dakikada kaba bir tablo görün.",
+    "imageAlt": "Akşam ışığında yeşil tarlalar arasında güneş enerjisi santrali"
   },
   "Home": {
     "services": {
@@ -54,28 +65,60 @@
       "title": "Tek çatı altında dört çözüm",
       "intro": "Güneşten depolamaya, şarjdan ısıtmaya — evinizin ve işletmenizin enerji ihtiyacını uçtan uca tasarlar, kurar ve işletiriz.",
       "cta": "Detaylı bilgi",
-      "solar": { "desc": "Çatınıza özel tasarlanan panellerle kendi elektriğinizi üretin, faturanızı düşürün." },
-      "storage": { "desc": "Ürettiğiniz enerjiyi depolayın; kesintide ve gece de kendi gücünüzü kullanın." },
-      "ev": { "desc": "Evde veya iş yerinde güvenli, hızlı elektrikli araç şarj istasyonu kurulumu." },
-      "heatpump": { "desc": "Yüksek verimli ısı pompalarıyla ısıtma ve soğutma maliyetini ciddi biçimde azaltın." }
+      "solar": {
+        "desc": "Çatınıza özel tasarlanan panellerle kendi elektriğinizi üretin, faturanızı düşürün."
+      },
+      "storage": {
+        "desc": "Ürettiğiniz enerjiyi depolayın; kesintide ve gece de kendi gücünüzü kullanın."
+      },
+      "ev": {
+        "desc": "Evde veya iş yerinde güvenli, hızlı elektrikli araç şarj istasyonu kurulumu."
+      },
+      "heatpump": {
+        "desc": "Yüksek verimli ısı pompalarıyla ısıtma ve soğutma maliyetini ciddi biçimde azaltın."
+      }
     },
     "how": {
       "eyebrow": "Nasıl Çalışır",
       "title": "Keşiften devreye alışa, yanınızdayız",
       "intro": "Şeffaf, adım adım bir süreç. Her aşamada ne olacağını önceden bilirsiniz.",
-      "discovery": { "title": "Ücretsiz Keşif", "desc": "Çatınızı, tüketiminizi ve ihtiyaçlarınızı yerinde değerlendirir, danışmanlık veririz." },
-      "design": { "title": "Projelendirme & Teklif", "desc": "Size özel sistem tasarımı, üretim/tasarruf öngörüsü ve net bir teklif sunarız." },
-      "install": { "title": "Kurulum & Devreye Alma", "desc": "Uzman ekiple hızlı, güvenli kurulum; izin ve mahsuplaşma süreçlerini yönetiriz." },
-      "support": { "title": "İzleme & Servis", "desc": "Kurulum sonrası performans takibi, bakım ve uzun süreli garanti desteği." }
+      "discovery": {
+        "title": "Ücretsiz Keşif",
+        "desc": "Çatınızı, tüketiminizi ve ihtiyaçlarınızı yerinde değerlendirir, danışmanlık veririz."
+      },
+      "design": {
+        "title": "Projelendirme & Teklif",
+        "desc": "Size özel sistem tasarımı, üretim/tasarruf öngörüsü ve net bir teklif sunarız."
+      },
+      "install": {
+        "title": "Kurulum & Devreye Alma",
+        "desc": "Uzman ekiple hızlı, güvenli kurulum; izin ve mahsuplaşma süreçlerini yönetiriz."
+      },
+      "support": {
+        "title": "İzleme & Servis",
+        "desc": "Kurulum sonrası performans takibi, bakım ve uzun süreli garanti desteği."
+      }
     },
     "areas": {
       "eyebrow": "Uygulama Alanları",
       "title": "Her ölçek için çözüm",
       "intro": "Bireysel evlerden endüstriyel tesislere; ihtiyacınıza göre ölçeklenen sistemler.",
-      "konut": { "title": "Konut & Bireysel", "desc": "Villa ve müstakil evler için anahtar teslim çatı güneş enerjisi." },
-      "ticari": { "title": "Ticari & Endüstriyel", "desc": "İşletmeler ve OSB tesisleri için yüksek kapasiteli enerji çözümleri." },
-      "tarim": { "title": "Tarımsal Tesisler", "desc": "Sulama ve tarımsal işletmeler için sürdürülebilir enerji." },
-      "kamu": { "title": "Kamu & Kurumsal", "desc": "Kurumlar ve kamu projeleri için ölçeklenebilir, güvenilir sistemler." }
+      "konut": {
+        "title": "Konut & Bireysel",
+        "desc": "Villa ve müstakil evler için anahtar teslim çatı güneş enerjisi."
+      },
+      "ticari": {
+        "title": "Ticari & Endüstriyel",
+        "desc": "İşletmeler ve OSB tesisleri için yüksek kapasiteli enerji çözümleri."
+      },
+      "tarim": {
+        "title": "Tarımsal Tesisler",
+        "desc": "Sulama ve tarımsal işletmeler için sürdürülebilir enerji."
+      },
+      "kamu": {
+        "title": "Kamu & Kurumsal",
+        "desc": "Kurumlar ve kamu projeleri için ölçeklenebilir, güvenilir sistemler."
+      }
     },
     "calc": {
       "title": "Faturanız neredeyse sıfıra insin",
@@ -86,18 +129,42 @@
     "testimonials": {
       "eyebrow": "Referanslar",
       "title": "Evini MİNADA'ya emanet edenler",
-      "t1": { "quote": "Keşiften kuruluma kadar her şey şeffaftı. Faturamız gerçekten neredeyse sıfırlandı.", "name": "Ayşe K.", "meta": "Villa sahibi · İzmir" },
-      "t2": { "quote": "Ekip çok profesyoneldi; kurulum söz verilen sürede, sorunsuz tamamlandı.", "name": "Mehmet D.", "meta": "Müstakil ev · Antalya" },
-      "t3": { "quote": "Batarya ile birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.", "name": "Zeynep A.", "meta": "Villa sahibi · Muğla" }
+      "t1": {
+        "quote": "Keşiften kuruluma kadar her şey şeffaftı. Faturamız gerçekten neredeyse sıfırlandı.",
+        "name": "Ayşe K.",
+        "meta": "Villa sahibi · İzmir"
+      },
+      "t2": {
+        "quote": "Ekip çok profesyoneldi; kurulum söz verilen sürede, sorunsuz tamamlandı.",
+        "name": "Mehmet D.",
+        "meta": "Müstakil ev · Antalya"
+      },
+      "t3": {
+        "quote": "Batarya ile birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.",
+        "name": "Zeynep A.",
+        "meta": "Villa sahibi · Muğla"
+      }
     },
     "faq": {
       "eyebrow": "SSS",
       "title": "Sık sorulan sorular",
       "cta": "Tüm soruları gör",
-      "cost": { "q": "Kurulum maliyeti ne kadar?", "a": "Maliyet; sistem gücüne, çatı tipine ve seçilen ekipmana göre değişir. Ücretsiz keşifte size net bir aralık sunarız." },
-      "payback": { "q": "Yatırım kaç yılda geri döner?", "a": "Konut sistemlerinde geri ödeme genellikle birkaç yıl içindedir; tüketiminize ve tarifelere göre hesaplayıcıyla öngörebilirsiniz." },
-      "warranty": { "q": "Garanti ve servis kapsamı nedir?", "a": "Panel ve ekipmanlarda üretici garantisi, kurulumda işçilik garantisi ve satış sonrası bakım desteği sağlarız." },
-      "incentives": { "q": "Teşvik ve mahsuplaşma nasıl işliyor?", "a": "Ürettiğiniz fazla enerji şebekeye verilerek faturanızdan mahsup edilebilir; ilgili izin süreçlerini biz yönetiriz." }
+      "cost": {
+        "q": "Kurulum maliyeti ne kadar?",
+        "a": "Maliyet; sistem gücüne, çatı tipine ve seçilen ekipmana göre değişir. Ücretsiz keşifte size net bir aralık sunarız."
+      },
+      "payback": {
+        "q": "Yatırım kaç yılda geri döner?",
+        "a": "Konut sistemlerinde geri ödeme genellikle birkaç yıl içindedir; tüketiminize ve tarifelere göre hesaplayıcıyla öngörebilirsiniz."
+      },
+      "warranty": {
+        "q": "Garanti ve servis kapsamı nedir?",
+        "a": "Panel ve ekipmanlarda üretici garantisi, kurulumda işçilik garantisi ve satış sonrası bakım desteği sağlarız."
+      },
+      "incentives": {
+        "q": "Teşvik ve mahsuplaşma nasıl işliyor?",
+        "a": "Ürettiğiniz fazla enerji şebekeye verilerek faturanızdan mahsup edilebilir; ilgili izin süreçlerini biz yönetiriz."
+      }
     },
     "finalCta": {
       "eyebrow": "Hazır mısınız?",
@@ -163,7 +230,11 @@
       "cityPh": "Şehriniz",
       "propertyType": "Konut tipi",
       "propertyPh": "Seçin",
-      "property": { "villa": "Villa", "detached": "Müstakil ev", "apartment": "Apartman" },
+      "property": {
+        "villa": "Villa",
+        "detached": "Müstakil ev",
+        "apartment": "Apartman"
+      },
       "bill": "Aylık fatura (₺)",
       "message": "Mesajınız",
       "messagePh": "İhtiyacınızı kısaca yazın…",

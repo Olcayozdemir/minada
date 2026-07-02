@@ -46,7 +46,18 @@
     "statWarrantyValue": "10 yr",
     "statWarrantyLabel": "warranty & service",
     "statServicesValue": "4",
-    "statServicesLabel": "services · one roof"
+    "statServicesLabel": "services · one roof",
+    "display1": "SOLAR",
+    "display2": "POWER",
+    "tagline": "A safe harbor for your energy transition journey.",
+    "taglineAccent": "harbor",
+    "chipSavingValue": "Up to 90%",
+    "chipSavingLabel": "bill savings",
+    "chipWarrantyValue": "10-year",
+    "chipWarrantyLabel": "warranty & service",
+    "calcCardTitle": "Calculate your savings",
+    "calcCardDesc": "See a rough picture in 2 minutes.",
+    "imageAlt": "Solar farm among green fields in evening light"
   },
   "Home": {
     "services": {
@@ -54,28 +65,60 @@
       "title": "Four solutions under one roof",
       "intro": "From sun to storage, charging to heating — we design, install and operate the full energy setup for your home or business.",
       "cta": "Learn more",
-      "solar": { "desc": "Generate your own electricity with panels designed for your roof, and cut your bill." },
-      "storage": { "desc": "Store the energy you produce; use your own power at night and during outages." },
-      "ev": { "desc": "Safe, fast electric vehicle charging stations for home or workplace." },
-      "heatpump": { "desc": "Cut heating and cooling costs dramatically with high-efficiency heat pumps." }
+      "solar": {
+        "desc": "Generate your own electricity with panels designed for your roof, and cut your bill."
+      },
+      "storage": {
+        "desc": "Store the energy you produce; use your own power at night and during outages."
+      },
+      "ev": {
+        "desc": "Safe, fast electric vehicle charging stations for home or workplace."
+      },
+      "heatpump": {
+        "desc": "Cut heating and cooling costs dramatically with high-efficiency heat pumps."
+      }
     },
     "how": {
       "eyebrow": "How it works",
       "title": "With you from survey to commissioning",
       "intro": "A transparent, step-by-step process. You always know what comes next.",
-      "discovery": { "title": "Free Survey", "desc": "We assess your roof, consumption and needs on site, and advise you." },
-      "design": { "title": "Design & Quote", "desc": "A tailored system design, production/savings estimate and a clear quote." },
-      "install": { "title": "Install & Commission", "desc": "Fast, safe installation by experts; we handle permits and net-metering." },
-      "support": { "title": "Monitor & Service", "desc": "Post-install performance tracking, maintenance and long-term warranty support." }
+      "discovery": {
+        "title": "Free Survey",
+        "desc": "We assess your roof, consumption and needs on site, and advise you."
+      },
+      "design": {
+        "title": "Design & Quote",
+        "desc": "A tailored system design, production/savings estimate and a clear quote."
+      },
+      "install": {
+        "title": "Install & Commission",
+        "desc": "Fast, safe installation by experts; we handle permits and net-metering."
+      },
+      "support": {
+        "title": "Monitor & Service",
+        "desc": "Post-install performance tracking, maintenance and long-term warranty support."
+      }
     },
     "areas": {
       "eyebrow": "Solutions",
       "title": "A solution for every scale",
       "intro": "From individual homes to industrial facilities — systems that scale to your needs.",
-      "konut": { "title": "Residential", "desc": "Turnkey rooftop solar for villas and detached homes." },
-      "ticari": { "title": "Commercial & Industrial", "desc": "High-capacity energy solutions for businesses and industrial zones." },
-      "tarim": { "title": "Agricultural", "desc": "Sustainable energy for irrigation and farming operations." },
-      "kamu": { "title": "Public & Institutional", "desc": "Scalable, reliable systems for institutions and public projects." }
+      "konut": {
+        "title": "Residential",
+        "desc": "Turnkey rooftop solar for villas and detached homes."
+      },
+      "ticari": {
+        "title": "Commercial & Industrial",
+        "desc": "High-capacity energy solutions for businesses and industrial zones."
+      },
+      "tarim": {
+        "title": "Agricultural",
+        "desc": "Sustainable energy for irrigation and farming operations."
+      },
+      "kamu": {
+        "title": "Public & Institutional",
+        "desc": "Scalable, reliable systems for institutions and public projects."
+      }
     },
     "calc": {
       "title": "Bring your bill close to zero",
@@ -86,18 +129,42 @@
     "testimonials": {
       "eyebrow": "Projects",
       "title": "Homeowners who chose MİNADA",
-      "t1": { "quote": "Everything was transparent from survey to install. Our bill really did drop to almost zero.", "name": "Ayşe K.", "meta": "Villa owner · İzmir" },
-      "t2": { "quote": "The team was very professional; installation finished on time, without a hitch.", "name": "Mehmet D.", "meta": "Detached home · Antalya" },
-      "t3": { "quote": "With the battery we use our own energy at night too. We're delighted.", "name": "Zeynep A.", "meta": "Villa owner · Muğla" }
+      "t1": {
+        "quote": "Everything was transparent from survey to install. Our bill really did drop to almost zero.",
+        "name": "Ayşe K.",
+        "meta": "Villa owner · İzmir"
+      },
+      "t2": {
+        "quote": "The team was very professional; installation finished on time, without a hitch.",
+        "name": "Mehmet D.",
+        "meta": "Detached home · Antalya"
+      },
+      "t3": {
+        "quote": "With the battery we use our own energy at night too. We're delighted.",
+        "name": "Zeynep A.",
+        "meta": "Villa owner · Muğla"
+      }
     },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Frequently asked questions",
       "cta": "See all questions",
-      "cost": { "q": "How much does installation cost?", "a": "Cost depends on system size, roof type and chosen equipment. We give you a clear range during the free survey." },
-      "payback": { "q": "How many years until payback?", "a": "For residential systems payback is usually within a few years; estimate it with the calculator based on your usage and tariffs." },
-      "warranty": { "q": "What do warranty and service cover?", "a": "Manufacturer warranty on panels and equipment, workmanship warranty on installation, and after-sales maintenance support." },
-      "incentives": { "q": "How do incentives and net-metering work?", "a": "Excess energy you produce can be fed to the grid and offset against your bill; we manage the relevant permit processes." }
+      "cost": {
+        "q": "How much does installation cost?",
+        "a": "Cost depends on system size, roof type and chosen equipment. We give you a clear range during the free survey."
+      },
+      "payback": {
+        "q": "How many years until payback?",
+        "a": "For residential systems payback is usually within a few years; estimate it with the calculator based on your usage and tariffs."
+      },
+      "warranty": {
+        "q": "What do warranty and service cover?",
+        "a": "Manufacturer warranty on panels and equipment, workmanship warranty on installation, and after-sales maintenance support."
+      },
+      "incentives": {
+        "q": "How do incentives and net-metering work?",
+        "a": "Excess energy you produce can be fed to the grid and offset against your bill; we manage the relevant permit processes."
+      }
     },
     "finalCta": {
       "eyebrow": "Ready?",
@@ -163,7 +230,11 @@
       "cityPh": "Your city",
       "propertyType": "Property type",
       "propertyPh": "Select",
-      "property": { "villa": "Villa", "detached": "Detached house", "apartment": "Apartment" },
+      "property": {
+        "villa": "Villa",
+        "detached": "Detached house",
+        "apartment": "Apartment"
+      },
       "bill": "Monthly bill (₺)",
       "message": "Your message",
       "messagePh": "Briefly describe your needs…",

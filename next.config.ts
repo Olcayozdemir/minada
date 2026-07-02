@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+    // Largest source asset is 2400px — serving 2K+ variants is wasted bytes
+    // (and some constrained renderers refuse to composite ≥2048px decodes).
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
 };
 
