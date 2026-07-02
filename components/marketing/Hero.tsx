@@ -36,14 +36,14 @@ export async function Hero() {
   // Art direction: portrait renders below 760px, widescreen above — both for
   // the base photo and its sky-removed twin (the depth-sandwich overlay).
   const baseCommon = { alt: t("imageAlt"), sizes: "100vw", fill: true } as const;
-  const { props: basePhoto } = getImageProps({ ...baseCommon, src: "/images/v2/hero.jpeg" });
+  const { props: basePhoto } = getImageProps({ ...baseCommon, src: "/images/v2/hero-2.jpeg" });
   const {
     props: { srcSet: basePhotoMobile },
   } = getImageProps({ ...baseCommon, src: "/images/v2/mobile-hero.jpeg" });
   const overlayCommon = { alt: "", sizes: "100vw", fill: true } as const;
   const { props: overlayPhoto } = getImageProps({
     ...overlayCommon,
-    src: "/images/v2/hero-without-bg.png",
+    src: "/images/v2/hero-2-without-bg.png",
   });
   const {
     props: { srcSet: overlayPhotoMobile },
