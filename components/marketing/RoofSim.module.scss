@@ -40,32 +40,6 @@
   opacity: 1;
 }
 
-/* Floating glass dashboard cards. */
-.glassCard {
-  fill: rgba(238, 242, 247, 0.1);
-  stroke: rgba(255, 255, 255, 0.38);
-  stroke-width: 1;
-}
-
-.cardFloat,
-.cardFloatAlt {
-  animation: bob 5.5s ease-in-out infinite alternate;
-}
-
-.cardFloatAlt {
-  animation-duration: 6.5s;
-  animation-delay: 0.8s;
-}
-
-@keyframes bob {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-5px);
-  }
-}
-
 /* Sparkles drifting in the light stream. */
 .spark {
   animation: twinkle 2.6s ease-in-out infinite alternate;

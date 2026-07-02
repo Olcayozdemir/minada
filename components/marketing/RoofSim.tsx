@@ -160,37 +160,6 @@ export function RoofSim({ installed, max }: { installed: number; max: number }) 
           />
         ))}
 
-        {/* floating glass cards */}
-        <g className={styles.cardFloat}>
-          <g transform="translate(18 66) rotate(-4)">
-            <rect width="74" height="46" rx="8" className={styles.glassCard} />
-            <polyline
-              points="10,32 22,22 32,27 44,14 56,20 64,12"
-              fill="none"
-              stroke="rgba(255,214,138,0.85)"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </g>
-        </g>
-        <g className={styles.cardFloatAlt}>
-          <g transform={`translate(${VIEW_W - 78} 128) rotate(4)`}>
-            <rect width="62" height="44" rx="8" className={styles.glassCard} />
-            {[0, 1, 2, 3].map((b) => (
-              <rect
-                key={b}
-                x={11 + b * 12}
-                y={32 - (8 + b * 5)}
-                width="7"
-                height={8 + b * 5}
-                rx="2"
-                fill="rgba(255,214,138,0.8)"
-              />
-            ))}
-          </g>
-        </g>
-
         <g className={styles.house} style={{ transform: `scale(${scale.toFixed(3)})` }}>
           {/* base slab */}
           <rect
