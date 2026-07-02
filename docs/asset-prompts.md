@@ -22,14 +22,14 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide es
 Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide elevated shot over the solar-covered roof of a modern concrete-and-white house in crisp clear morning light, rows of matte black panels sparkling subtly in the sun with thin cyan light lines along the panel rails, the neighborhood of modern homes and green gardens stretching softly blurred into the distance, vivid blue sky with a few soft clouds filling the calm upper third of the frame, fresh clean atmosphere. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
-**H7 — MODUS düzeni: ev sağda yakın plan, sol gökyüzü tipografiye (ÖNERİLEN):**
+**H7 — Düz gökyüzü + ürün hikâyesi (ÖNERİLEN):** üst yarı tek ton lacivert
+gökyüzü (tipografi alanı), alt yarı panel + batarya + EV tek karede.
 
-Not: beğenilen karenin bir de **arka planı silinmiş PNG'si** üretilirse
-(sadece ev + ön plan), tipografi evin arkasına katmanlanır; display rengi
-bu görselde laciverte döner.
+Not: beğenilen karenin bir de **arka planı (gökyüzü) silinmiş PNG'si**
+üretilirse, tipografi evin/çatının arkasına katmanlanır (MODUS efekti).
 
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide composition with the house placed in the RIGHT half of the frame: a modern single-storey timber-and-dark-metal villa seen from a close three-quarter angle at blue-hour dusk, its full matte black rooftop solar array clearly visible and dominant — individual panel cells and mounting rails readable, a thin cyan light line tracing the rail down to a slim home battery unit with a soft cyan status glow beside the entrance. Warm amber light from the large windows. The LEFT half of the frame stays open: soft hazy blue mountain silhouettes low on the horizon and a vast calm pale-blue misty sky filling the upper-left — smooth and empty, made for large typography. Dark moody meadow foreground along the bottom. High-end tech brand aesthetic, cinematic soft lighting, natural colors. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Clean horizontal composition: the entire upper half of the frame is a smooth, single-tone deep navy-blue dusk sky — completely empty, no clouds, no mountains, a flawless backdrop for large typography. In the lower half, a modern minimalist concrete-and-white villa at dusk shows the full product story: a large matte black rooftop solar array with readable panel cells, a slim wall-mounted home battery with a soft cyan status glow beside the entrance, and a generic modern electric car charging at a minimalist wallbox in the driveway with a softly glowing cyan cable. One thin cyan light line connects roof rail, battery and charger along the facade. Warm amber window light, tidy low landscaping, clean paved foreground. High-end tech brand aesthetic, cinematic soft lighting, natural believable colors. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people, no visible car badges.
 ```
 
 ## 2 · INTRO KESİTİ — 4:3 üret (obje ortada, bol marjlı), düz zeminde → şeffaf PNG (`public/hero/`)
