@@ -66,11 +66,12 @@
   object-fit: cover;
 }
 
+/* Pokes past the photo's corner — half in, half out. */
 .badge {
   @include glass;
   position: absolute;
-  left: 18px;
-  bottom: 18px;
+  left: -14px;
+  bottom: -18px;
   display: flex;
   align-items: center;
   gap: var(--space-3);
