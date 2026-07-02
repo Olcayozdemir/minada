@@ -63,28 +63,31 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. A modern mat
 
 ## 4 · UYGULAMA ALANLARI — 3:4 DİKEY, ≥1600px kısa kenar, alt çeyrek sade (`area-*.jpg`)
 
+Hizmet kartlarıyla aynı dil: premium render + gerçek kurulum + yüzeylerde
+ince cyan detay, gün ışığı. Dördü aynı oturumda üret.
+
 **A1 — Konut & Bireysel:**
 
 ```
-Professional architectural photograph, full-frame camera, ultra sharp, photorealistic. Vertical composition: a modern family house with a full matte black solar roof in crisp morning light, vivid blue sky above, tidy green garden filling the shaded lower quarter of the frame. Real installation look, natural colors. No text, no letters, no numbers, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: a modern concrete-and-white family villa with a full matte black solar roof in crisp clear daylight, a thin cyan light line tracing the roof edge along the panel rail, vivid blue sky above, tidy green garden filling the shaded lower quarter of the frame. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 **A2 — Ticari & Endüstriyel:**
 
 ```
-Professional aerial photograph, ultra sharp, photorealistic. Vertical composition: elevated view of a large industrial warehouse roof fully covered with solar panel arrays in clear daylight, clean panel rows, vivid blue sky, shaded loading yard at the bottom of the frame. Real installation look, natural colors. No text, no letters, no numbers, no logos, no watermarks, no people, no trucks with visible branding.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: dramatic low three-quarter view of a sleek modern logistics facility — clean concrete facade with a glass office corner — its long roofline topped by a crisp row of matte black solar panels seen edge-on against a vivid blue sky, a thin cyan light line running along the panel rail and down the facade conduit, landscaped strip with young trees in the shaded lower quarter of the frame. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people, no trucks.
 ```
 
 **A3 — Tarımsal Tesisler:**
 
 ```
-Professional photograph, full-frame camera, ultra sharp, photorealistic. Vertical composition: ground-mounted solar panel rows standing over green crops on a real agrivoltaic farm, warm late-afternoon light grazing the panels, clear sky, soft shaded soil in the lower quarter of the frame. Natural colors, believable farm setting. No text, no letters, no numbers, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: ground-mounted solar panel rows standing over fresh green crops on an agrivoltaic farm in crisp clear daylight, sun sparkle on the matte black panels, a thin cyan light line along the mounting rail, vivid blue sky, soft shaded soil in the lower quarter of the frame. High-end tech brand aesthetic, believable farm setting. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 **A4 — Kamu & Kurumsal:**
 
 ```
-Professional architectural photograph, full-frame camera, ultra sharp, photorealistic. Vertical composition: a modern public building with solar panels integrated on its roof and a solar canopy over the entrance plaza in clear daylight, vivid blue sky, calm shaded plaza in the lower quarter of the frame. Real installation look, natural colors. No text, no letters, no numbers, no logos, no watermarks, no people, no flags.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: a modern public building with matte black solar panels on its roof and a slim solar canopy over the entrance plaza in crisp clear daylight, a thin cyan light line tracing the canopy edge, vivid blue sky, calm shaded plaza in the lower quarter of the frame. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people, no flags.
 ```
 
 ## 5 · HESAPLAYICI — 4:3, ≥1600px, sol-alt sade (`calc.jpg`)
