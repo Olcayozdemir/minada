@@ -33,32 +33,32 @@ Professional product-style 3D visualization, photorealistic, believable material
 
 ## 3 · HİZMET KARTLARI — 4:3, ≥1600px, odak merkezde (`service-*.jpg`)
 
-Koyu lacivert bantta duruyorlar → hero (energy-scene2) ile aynı dil:
-alacakaranlık, lacivert tonlar, gerçek ürün, cyan ışıma yüzeylerde/kablolarda
-(havada uçmuyor). Dördü aynı oturumda üret ki ton tutsun.
+Hero'yla aynı dil: premium render estetiği + gerçek ürün + cyan ışıma
+yüzeylerde/kablolarda (havada uçmuyor) — ama gün ışığında; mavi gökyüzü koyu
+bantta iyi kontrast verir. Dördü aynı oturumda üret ki ton tutsun.
 
 **S1 — Güneş Enerjisi:**
 
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k, dusk scene with deep navy sky tones. Close-up of matte black solar panels on the flat roof of a modern concrete-and-white house at dusk, the last warm golden light reflecting on the glass, thin cyan light lines tracing along the panel seams and mounting rails exactly like a premium smart-energy visualization, dark navy sky above the roof line. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Close-up of matte black solar panels on the flat roof of a modern concrete-and-white house in crisp clear daylight, sun sparkle on the glass, thin cyan light lines tracing along the panel seams and mounting rails like a premium smart-energy visualization, vivid blue sky above the roof line. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 **S2 — Batarya Depolama:**
 
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k, dusk scene with deep navy sky tones. A sleek modern home battery unit with a softly glowing translucent cyan front panel, mounted on a clean concrete wall beside a villa entrance at dusk, a thin cyan light line running along the wall conduit into the unit, warm amber light spilling from a nearby window, small plants at the base. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A sleek modern home battery unit with a softly glowing translucent cyan front panel, mounted on a clean concrete wall beside a villa entrance in soft bright daylight under a covered walkway, a thin cyan light line running along the wall conduit into the unit, small plants at the base, fresh green garden blurred behind. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 **S3 — EV Şarj:**
 
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k, dusk scene with deep navy sky tones. A minimalist matte wallbox EV charger on a concrete wall at dusk, its charging cable softly glowing cyan along its length, plugged into a generic modern electric car with warm dusk reflections on the body, landscaped driveway with subtle path lights. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people, no visible car badges.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A minimalist matte wallbox EV charger on a concrete garden wall in crisp clear daylight, its charging cable with a soft cyan light accent along its length, plugged into a generic modern electric car with clean bright reflections on the body, landscaped driveway, vivid blue sky. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people, no visible car badges.
 ```
 
 **S4 — Isı Pompası:**
 
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k, dusk scene with deep navy sky tones. A modern matte dark-grey air-source heat pump unit beside a concrete villa wall at dusk, a subtle cyan status light glowing on its front edge and a thin cyan line tracing the pipe run along the wall, warm amber garden lights around low plants, clean premium composition. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A modern matte dark-grey air-source heat pump unit beside a concrete villa wall in crisp clear daylight, a subtle cyan status light on its front edge and a thin cyan line tracing the pipe run along the wall, tidy garden with fresh green plants, clean bright shadows, vivid blue sky. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 ## 4 · UYGULAMA ALANLARI — 3:4 DİKEY, ≥1600px kısa kenar, alt çeyrek sade (`area-*.jpg`)
