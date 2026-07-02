@@ -1,46 +1,68 @@
 @use "../../styles/mixins" as *;
 
 .header {
-  position: sticky;
+  position: fixed;
+  inset-inline: 0;
   top: 0;
   z-index: 100;
   padding-top: 14px;
+  pointer-events: none;
 }
 
 .inner {
   @include container(var(--container-wide));
 }
 
-.bar {
+/* Floating pill: photo-glass over the hero, light surface once scrolled. */
+.pill {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 12px 14px 12px 22px;
-  border-radius: var(--r-lg);
-  @include glass;
+  gap: var(--space-6);
+  padding: 10px 12px 10px 14px;
+  border-radius: var(--r-pill);
+  color: var(--on-dark);
+  background: rgba(10, 26, 48, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(14px) saturate(1.5);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+[data-scrolled] .pill {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--line);
+  box-shadow: var(--shadow-card-light);
 }
 
 .nav {
   display: flex;
-  gap: 30px;
+  gap: clamp(0.75rem, 2vw, 1.7rem);
 }
 
 .link {
   font-size: 15px;
   font-weight: 600;
-  color: var(--on-dark-2);
-  transition: color 0.15s ease;
+  opacity: 0.85;
+  padding: 0.4rem 0.15rem;
+  transition: opacity 0.15s ease;
 
   &:hover {
-    color: var(--paper);
+    opacity: 1;
   }
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-3);
 }
 
 .langDesktop,

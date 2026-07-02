@@ -1,34 +1,38 @@
+/* Inherits the header pill's currentColor so it works over photo and light. */
 .wrap {
   display: inline-flex;
   align-items: center;
   gap: 2px;
   padding: 3px;
   border-radius: var(--r-pill);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-brd);
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
 }
 
 .item {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: var(--on-dark-2);
+  color: inherit;
+  opacity: 0.72;
   padding: 6px 11px;
   border-radius: var(--r-pill);
   transition:
-    color 0.15s ease,
+    opacity 0.15s ease,
     background 0.15s ease;
 
   &:hover {
-    color: var(--paper);
+    opacity: 1;
   }
 }
 
 .active {
   color: var(--on-accent);
   background: var(--gold);
+  opacity: 1;
 
   &:hover {
     color: var(--on-accent);
+    opacity: 1;
   }
 }

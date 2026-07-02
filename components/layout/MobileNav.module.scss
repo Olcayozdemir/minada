@@ -6,9 +6,10 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  border-radius: var(--r-md);
-  color: var(--paper);
-  @include glass;
+  border-radius: var(--r-pill);
+  color: inherit;
+  background: color-mix(in srgb, currentColor 7%, transparent);
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
 
   @include bp-down(980px) {
     display: inline-flex;
