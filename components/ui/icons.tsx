@@ -145,3 +145,18 @@ export const IconStar = (p: IconProps) => (
     <path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.2l5.9-.9z" />
   </Svg>
 );
+
+/* --- Social --- */
+export const IconInstagram = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+    <circle cx="12" cy="12" r="3.6" />
+    <circle cx="17" cy="7" r="0.4" fill="currentColor" stroke="none" />
+  </Svg>
+);
+export const IconLinkedin = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="3.5" y="3.5" width="17" height="17" rx="3.5" />
+    <path d="M8 10.5V17M8 7.6v.1M12 17v-3.8a2.2 2.2 0 0 1 4.4 0V17" />
+  </Svg>
+);

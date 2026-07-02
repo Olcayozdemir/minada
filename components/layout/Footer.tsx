@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/ui/Logo";
 import { Link } from "@/i18n/navigation";
+import { IconInstagram, IconLinkedin } from "@/components/ui/icons";
 import { SITE, SERVICES, whatsappLink } from "@/lib/site";
 import styles from "./Footer.module.scss";
 
@@ -20,6 +21,26 @@ export async function Footer() {
           <div className={styles.brandCol}>
             <Logo />
             <p className={styles.tagline}>{t("tagline")}</p>
+            <div className={styles.social}>
+              <a
+                href={SITE.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className={styles.socialLink}
+              >
+                <IconInstagram size={18} />
+              </a>
+              <a
+                href={SITE.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className={styles.socialLink}
+              >
+                <IconLinkedin size={18} />
+              </a>
+            </div>
           </div>
 
           <nav className={styles.col} aria-label={t("servicesTitle")}>
@@ -47,19 +68,19 @@ export async function Footer() {
             </Link>
           </nav>
 
-          <div className={styles.col}>
+          <div className={styles.contactCard}>
             <h3 className={styles.colTitle}>{t("contactTitle")}</h3>
-            <a href={`mailto:${SITE.email}`} className={styles.colLink}>
+            <a href={`mailto:${SITE.email}`} className={styles.contactLink}>
               {SITE.email}
             </a>
-            <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className={styles.colLink}>
+            <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className={styles.contactLink}>
               {SITE.phone}
             </a>
             <a
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.colLink}
+              className={styles.contactLink}
             >
               WhatsApp
             </a>
