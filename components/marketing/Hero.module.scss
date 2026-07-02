@@ -79,13 +79,14 @@
   margin-top: -0.06em;
 }
 
+/* Inline before the first display word — flows with the text, so it is
+   immune to locale word-length and viewport changes (scales via em). */
 .glyph {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 0.85em;
+  display: inline-block;
+  height: 0.74em;
   width: auto;
-  transform: translate(-50%, -50%);
+  margin-right: 0.02em;
+  vertical-align: -0.02em;
   filter: drop-shadow(0 10px 30px rgba(242, 168, 44, 0.45));
 }
 

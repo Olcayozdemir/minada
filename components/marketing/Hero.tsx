@@ -52,8 +52,10 @@ export async function Hero() {
         </p>
 
         <h1 className={styles.display}>
-          <span className={styles.d1}>{t("display1")}</span>
-          <PanelGlyph className={styles.glyph} />
+          <span className={styles.d1}>
+            <PanelGlyph className={styles.glyph} />
+            {t("display1")}
+          </span>
           <span className={styles.d2}>{t("display2")}</span>
         </h1>
 
