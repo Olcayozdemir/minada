@@ -92,8 +92,13 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical com
 
 ## 5 · HESAPLAYICI — 4:3, ≥1600px, sol-alt sade (`calc.jpg`)
 
+Hesaplayıcı sayfası artık canlı çatı simülasyonu (alan kaydırıcısıyla panel
+ekle/çıkar) — bu görsel ana sayfa teaser'ında o deneyimi ÖNİZLİYOR: çatıda
+dolu paneller + dizinin ucunda birkaç boş montaj yuvası ("buraya panel
+gelecek" hissi). Sol-alt köşeye cam gösterge rozeti biniyor → sade kalsın.
+
 ```
-Ultra-realistic premium architectural 3D render, photorealistic 8k. A cozy modern concrete-and-white home exterior at dusk, warm amber glowing windows, matte black solar panels on the roof catching the last light with a thin cyan light line along the panel rail, quiet tidy garden, deep navy evening sky fading to a golden horizon, calm uncluttered lower-left corner of the frame. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Elevated three-quarter view of a modern concrete-and-white house roof at dusk golden hour, a neat grid of matte black solar panels covering most of the roof with a thin cyan light line along the mounting rails, and a few empty mounting frames at the edge of the array — clean rails and outlines where the next panels will be installed — warm amber light in the windows below, deep navy evening sky fading to a golden horizon, quiet garden, calm uncluttered lower-left corner of the frame. High-end tech brand aesthetic, believable real installation in progress. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
 ## 6 · FİNAL CTA BANDI — 16:9, ≥2000px, merkez sakin ve koyu (`cta.jpg`)

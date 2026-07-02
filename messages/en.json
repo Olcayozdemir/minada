@@ -222,7 +222,12 @@
     "co2Label": "Annual CO₂ saved",
     "years": "yr",
     "warning": "These values are estimates; coefficients will be verified against current market data. Create a free survey for a precise quote.",
-    "cta": "Get a precise quote"
+    "cta": "Get a precise quote",
+    "roofAreaLabel": "Usable roof area",
+    "roofCapacity": "≈ {count} panel capacity",
+    "simInstalled": "{installed} panels · {kwp} kWp installed",
+    "simIdle": "Your roof fits ≈ {count} panels — enter your bill and city to see the numbers",
+    "roofLimited": "You need {needed} panels; the full system requires about {area} m² of roof. Figures below reflect the system that fits."
   },
   "Contact": {
     "eyebrow": "Contact",

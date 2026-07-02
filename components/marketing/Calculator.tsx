@@ -4,8 +4,14 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
-import { CITIES, calculateSolar, type CityId } from "@/lib/solar-config";
+import {
+  CITIES,
+  calculateSolar,
+  panelCapacityForArea,
+  type CityId,
+} from "@/lib/solar-config";
 import { IconArrowRight } from "@/components/ui/icons";
+import { RoofSim } from "./RoofSim";
 import styles from "./Calculator.module.scss";
 
 function Metric({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
@@ -23,10 +29,15 @@ export function Calculator() {
   const [mode, setMode] = useState<"bill" | "consumption">("bill");
   const [value, setValue] = useState("");
   const [cityId, setCityId] = useState("");
+  const [roofArea, setRoofArea] = useState(60);
 
   const num = parseFloat(value.replace(",", "."));
   const result =
-    cityId && num > 0 ? calculateSolar({ mode, value: num, cityId: cityId as CityId }) : null;
+    cityId && num > 0
+      ? calculateSolar({ mode, value: num, cityId: cityId as CityId, roofAreaM2: roofArea })
+      : null;
+
+  const capacity = panelCapacityForArea(roofArea);
 
   const fmt = (n: number, digits = 0) =>
     new Intl.NumberFormat(locale, { maximumFractionDigits: digits }).format(n);
@@ -92,16 +103,50 @@ export function Calculator() {
           </select>
         </label>
 
+        <label className={styles.label}>
+          <span className={styles.rangeHead}>
+            {t("roofAreaLabel")}
+            <span className={styles.rangeValue}>{roofArea} m²</span>
+          </span>
+          <input
+            type="range"
+            className={styles.range}
+            min={10}
+            max={120}
+            step={2}
+            value={roofArea}
+            onChange={(e) => setRoofArea(Number(e.target.value))}
+            aria-label={t("roofAreaLabel")}
+          />
+          <span className={styles.rangeHint}>
+            {t("roofCapacity", { count: capacity })}
+          </span>
+        </label>
+
         <p className={styles.note}>{t("note")}</p>
       </div>
 
       <div className={styles.result}>
+        <RoofSim installed={result ? result.panelsInstalled : 0} max={capacity} />
+        <p className={styles.simCaption}>
+          {result
+            ? t("simInstalled", {
+                installed: result.panelsInstalled,
+                kwp: fmt(result.systemKwp, 1),
+              })
+            : t("simIdle", { count: capacity })}
+        </p>
+
         {result ? (
           <>
-            <div className={styles.resultHead}>
-              <span className={styles.kpiLabel}>{t("systemLabel")}</span>
-              <span className={styles.kpiValue}>{fmt(result.systemKwp, 1)} kWp</span>
-            </div>
+            {result.roofLimited && (
+              <p className={styles.limited}>
+                {t("roofLimited", {
+                  needed: result.panelsNeeded,
+                  area: result.roofAreaNeededM2,
+                })}
+              </p>
+            )}
             <div className={styles.metrics}>
               <Metric
                 label={t("costLabel")}

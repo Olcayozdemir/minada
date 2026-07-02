@@ -101,6 +101,58 @@
   }
 }
 
+/* Roof-area slider */
+.rangeHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rangeValue {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  color: var(--gold-600);
+}
+
+.range {
+  width: 100%;
+  margin-top: 12px;
+  appearance: none;
+  height: 6px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-300) 100%);
+  outline-offset: 6px;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--gold-500);
+    box-shadow: var(--shadow-soft);
+  }
+
+  &::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--gold-500);
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+.rangeHint {
+  display: block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
 .note {
   margin-top: 8px;
   font-size: 12.5px;
@@ -118,10 +170,35 @@
 
 .empty {
   margin: auto 0;
+  padding-top: 16px;
   text-align: center;
   font-size: 15px;
   line-height: 1.6;
   color: var(--on-dark-2);
+}
+
+/* Simulation caption + roof-limited notice */
+.simCaption {
+  margin: 4px 0 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-dark-2);
+
+  strong {
+    color: var(--gold-300);
+  }
+}
+
+.limited {
+  margin-bottom: 16px;
+  padding: 10px 13px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--on-dark);
+  border-radius: var(--r-md);
+  background: rgba(96, 214, 234, 0.1);
+  border: 1px solid rgba(96, 214, 234, 0.3);
 }
 
 .resultHead {
