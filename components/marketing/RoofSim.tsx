@@ -60,10 +60,10 @@ export function RoofSim({ installed, max }: { installed: number; max: number }) 
   const cells = Array.from({ length: slots }, (_, idx) => {
     const i = idx % cols;
     const j = Math.floor(idx / cols);
-    let a = pt(i, j);
-    let b = pt(i + 1, j);
-    let c = pt(i + 1, j + 1);
-    let d = pt(i, j + 1);
+    const a = pt(i, j);
+    const b = pt(i + 1, j);
+    const c = pt(i + 1, j + 1);
+    const d = pt(i, j + 1);
     const ctr: [number, number] = [
       (a[0] + b[0] + c[0] + d[0]) / 4,
       (a[1] + b[1] + c[1] + d[1]) / 4,
