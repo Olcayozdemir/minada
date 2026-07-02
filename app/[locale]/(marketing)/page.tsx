@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/marketing/Hero";
+import { Intro } from "@/components/marketing/Intro";
 import { Services } from "@/components/marketing/Services";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
@@ -43,6 +44,7 @@ export default async function HomePage({
       <JsonLd data={localBusinessLd(locale)} />
       <JsonLd data={faqLd(faqItems)} />
       <Hero />
+      <Intro />
       <Services />
       <HowItWorks />
       <ApplicationAreas />

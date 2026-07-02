@@ -171,6 +171,17 @@
       "title": "Enerji geleceğinize bugün yatırım yapın",
       "desc": "Ücretsiz keşif oluşturun; size özel tasarruf ve sistem önerinizi sunalım.",
       "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
+    },
+    "intro": {
+      "eyebrow": "MİNADA kimdir",
+      "lead": "Konutlardan işletmelere,",
+      "boldPart": "güneşten batarya depolamaya",
+      "rest": "— enerji dönüşümünüzü tek çatı altında tasarlar, kurar ve işletiriz.",
+      "muted": "Keşiften devreye alışa kadar tüm süreç bizde; siz sadece güneşin tadını çıkarın.",
+      "point1": "Anahtar teslim kurulum",
+      "point2": "10 yıl garanti & servis",
+      "chipValue": "4 hizmet",
+      "chipLabel": "tek çatı altında"
     }
   },
   "Calculator": {

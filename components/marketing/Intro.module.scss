@@ -1,0 +1,114 @@
+@use "../../styles/mixins" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  align-items: center;
+
+  @include bp-down(900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.photos {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+}
+
+.ph1,
+.ph2 {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-card-light);
+  object-fit: cover;
+}
+
+.ph2 {
+  margin-top: var(--space-8);
+}
+
+.chip {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  padding: 0.55rem 1.15rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  white-space: nowrap;
+  box-shadow: var(--shadow-card-light);
+
+  strong {
+    font-family: var(--font-display), sans-serif;
+    color: var(--gold-600);
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: var(--ink-2);
+  }
+}
+
+.eyebrow {
+  color: var(--gold-600);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: var(--space-4);
+}
+
+.lead {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 1.32;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+
+  em {
+    font-family: var(--font-serif), serif;
+    font-style: italic;
+    color: var(--gold-600);
+    font-weight: 500;
+  }
+}
+
+.muted {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+.points {
+  @include list-reset;
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 650;
+    color: var(--ink);
+
+    svg {
+      color: var(--gold-600);
+      flex: none;
+    }
+  }
+
+  @include bp-down(560px) {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}

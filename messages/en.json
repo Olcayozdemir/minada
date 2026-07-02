@@ -171,6 +171,17 @@
       "title": "Invest in your energy future today",
       "desc": "Create a free survey and we'll bring you a tailored savings and system proposal.",
       "waMessage": "Hello, I'd like to get a free survey from MİNADA."
+    },
+    "intro": {
+      "eyebrow": "Who is MİNADA",
+      "lead": "From homes to businesses,",
+      "boldPart": "from solar to battery storage",
+      "rest": "— we design, build and operate your energy transition under one roof.",
+      "muted": "From survey to commissioning the whole process is on us; you just enjoy the sun.",
+      "point1": "Turnkey installation",
+      "point2": "10-year warranty & service",
+      "chipValue": "4 services",
+      "chipLabel": "under one roof"
     }
   },
   "Calculator": {
