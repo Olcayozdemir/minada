@@ -22,7 +22,7 @@ Professional architectural photograph, full-frame camera, ultra sharp, photoreal
 Professional architectural photograph, full-frame camera, ultra sharp, photorealistic. Wide elevated shot over the solar-covered roof of a modern house in crisp morning light, rows of matte black panels sparkling subtly in the sun, the neighborhood of modern homes and green gardens stretching softly blurred into the distance, vivid blue sky with a few soft clouds filling the calm upper third of the frame, fresh clean atmosphere. Natural colors, believable light. No text, no letters, no numbers, no logos, no watermarks, no people.
 ```
 
-## 2 · INTRO KESİTİ — 3:2, düz zeminde üret → şeffaf PNG (`public/hero/`)
+## 2 · INTRO KESİTİ — 4:3 üret (obje ortada, bol marjlı), düz zeminde → şeffaf PNG (`public/hero/`)
 
 Mevcut `hero-home-alt.png` stilize ve iş görüyor; alternatif olarak daha
 ürün-gerçekçi bir kesit istersen:
@@ -89,15 +89,16 @@ Professional architectural photograph, full-frame camera, ultra sharp, photoreal
 Professional architectural photograph, full-frame camera, ultra sharp, photorealistic. A cozy modern home exterior at dusk, warm glowing windows, matte black solar panels on the roof catching the last light, quiet tidy garden, deep blue evening sky fading to a warm horizon, calm uncluttered lower-left corner of the frame. Natural colors, believable lighting. No text, no letters, no numbers, no logos, no watermarks, no people.
 ```
 
-## 6 · FİNAL CTA BANDI — 21:9 veya 16:9, ≥2000px, merkez sakin ve koyu (`cta.jpg`)
+## 6 · FİNAL CTA BANDI — 16:9, ≥2000px, merkez sakin ve koyu (`cta.jpg`)
 
 ```
 Professional photograph, full-frame camera, ultra sharp, photorealistic. Very wide minimal night scene of solar panels on a dark rooftop under a deep blue evening sky, the last faint warm glow of sunset at the far edge of the frame, subtle reflections on the panel glass, the center of the image calm and dark. Natural colors, meditative mood. No text, no letters, no numbers, no logos, no watermarks, no people.
 ```
 
-## 7 · OG / SOSYAL KARTI — 1200×630 (`public/og/og-default.png` yenilemesi)
+## 7 · OG / SOSYAL KARTI — 16:9 üret, sonra 1200×630'a kırpılır (`public/og/og-default.png`)
 
 Sol yarı sakin ve koyu (üstüne logo+slogan bindirilecek), sahne sağa yaslı.
+16:9'u ben üst-alttan hafif kırpıp 1200×630'a getiririm — sen sadece üret.
 
 ```
 Professional architectural photograph, ultra sharp, photorealistic. Wide composition: on the right half, a modern villa with a matte black solar roof at dusk with warm windows; the left half is calm deep blue evening sky and soft dark garden, intentionally simple and uncluttered. Natural colors, believable lighting. No text, no letters, no numbers, no logos, no watermarks, no people.
