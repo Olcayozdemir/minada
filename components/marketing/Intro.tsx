@@ -10,22 +10,15 @@ export async function Intro() {
   return (
     <Section tone="light">
       <div className={styles.grid}>
-        <div className={styles.photos}>
+        <div className={styles.visual}>
+          <div className={styles.stage} aria-hidden="true" />
           <Image
-            src="/images/v2/area-konut.jpg"
+            src="/hero/hero-home-alt.png"
             alt=""
-            width={420}
-            height={300}
-            sizes="(max-width: 900px) 46vw, 320px"
-            className={styles.ph1}
-          />
-          <Image
-            src="/images/v2/service-solar.jpg"
-            alt=""
-            width={420}
-            height={300}
-            sizes="(max-width: 900px) 46vw, 320px"
-            className={styles.ph2}
+            width={760}
+            height={424}
+            sizes="(max-width: 900px) 84vw, 460px"
+            className={styles.cutout}
           />
           <div className={styles.chip}>
             <strong>{t("chipValue")}</strong>

@@ -57,18 +57,6 @@ export async function Hero() {
           <span className={styles.d2}>{t("display2")}</span>
         </h1>
 
-        <div className={styles.houseCard} aria-hidden="true" />
-        <div className={styles.house} aria-hidden="true">
-          <Image
-            src="/hero/hero-home-alt.png"
-            alt=""
-            width={760}
-            height={424}
-            sizes="(max-width: 900px) 380px, 640px"
-            className={styles.houseImg}
-          />
-        </div>
-
         <div className={styles.chipSaving}>
           <svg className={styles.ring} width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
             <circle cx="22" cy="22" r="17" fill="none" stroke="rgba(238,242,247,0.18)" strokeWidth="3.2" />

@@ -19,16 +19,17 @@
 .scrim {
   position: absolute;
   inset: 0;
-  /* The extra radial washes bury the render's garbled dashboard text
-     (mid-left wall panel + top-right cards) without flattening the scene. */
+  /* The extra washes bury the render's garbled dashboard text (mid-band
+     wall panels + top-right cards) without flattening the scene. */
   background:
-    radial-gradient(600px 440px at 16% 58%, rgba(8, 26, 48, 0.5), transparent 70%),
-    radial-gradient(520px 340px at 82% 16%, rgba(8, 26, 48, 0.42), transparent 72%),
+    radial-gradient(46% 26% at 24% 55%, rgba(8, 26, 48, 0.55), transparent 78%),
+    radial-gradient(40% 20% at 66% 50%, rgba(8, 26, 48, 0.5), transparent 78%),
+    radial-gradient(34% 22% at 82% 16%, rgba(8, 26, 48, 0.45), transparent 75%),
     linear-gradient(
       180deg,
       rgba(8, 26, 48, 0.52) 0%,
-      rgba(8, 26, 48, 0.2) 30%,
-      rgba(8, 26, 48, 0.3) 56%,
+      rgba(8, 26, 48, 0.22) 30%,
+      rgba(8, 26, 48, 0.34) 56%,
       rgba(8, 26, 48, 0.84) 100%
     );
 }
@@ -88,34 +89,6 @@
   filter: drop-shadow(0 10px 30px rgba(242, 168, 44, 0.45));
 }
 
-/* Soft glass slab backing the house cutout. */
-.houseCard {
-  @include glass;
-  position: absolute;
-  left: 50%;
-  bottom: 9%;
-  transform: translateX(-50%);
-  width: clamp(380px, 52vw, 700px);
-  height: clamp(220px, 30vw, 400px);
-  border-radius: var(--r-xl);
-  z-index: 4;
-}
-
-.house {
-  position: absolute;
-  left: 50%;
-  bottom: 7%;
-  transform: translateX(-50%);
-  width: clamp(320px, 46vw, 640px);
-  z-index: 5;
-  filter: drop-shadow(0 40px 60px rgba(8, 26, 48, 0.55));
-}
-
-.houseImg {
-  width: 100%;
-  height: auto;
-}
-
 %chip {
   @include glass;
   position: absolute;
@@ -142,14 +115,14 @@
 
 .chipSaving {
   @extend %chip;
-  left: 4%;
-  top: 58%;
+  left: 6%;
+  top: 50%;
 }
 
 .chipWarranty {
   @extend %chip;
-  right: 5%;
-  top: 62%;
+  right: 8%;
+  top: 46%;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
@@ -234,27 +207,14 @@
 }
 
 @include bp-down(1080px) {
-  .chipWarranty {
-    display: none;
-  }
-
   .calcCard {
     display: none;
   }
 }
 
-@include bp-down(1080px) {
-  .house {
-    left: 62%;
-    width: clamp(300px, 48vw, 520px);
-    bottom: 14%;
-  }
-
-  .houseCard {
-    left: 62%;
-    bottom: 15%;
-    width: clamp(340px, 54vw, 580px);
-    height: clamp(200px, 32vw, 330px);
+@include bp-down(760px) {
+  .chipWarranty {
+    display: none;
   }
 }
 
@@ -267,18 +227,6 @@
     position: static;
     align-self: flex-start;
     margin-top: var(--space-6);
-  }
-
-  /* In-flow on mobile so it can't collide with the copy below. */
-  .house {
-    position: static;
-    transform: none;
-    width: min(78vw, 380px);
-    margin: var(--space-2) auto 0;
-  }
-
-  .houseCard {
-    display: none;
   }
 
   .bottom {

@@ -11,24 +11,29 @@
   }
 }
 
-.photos {
+.visual {
   position: relative;
   display: grid;
-  gap: var(--space-4);
-  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-block: var(--space-6);
 }
 
-.ph1,
-.ph2 {
-  width: 100%;
+/* Soft navy stage so the cutout's glass slabs read on the light body. */
+.stage {
+  position: absolute;
+  inset: 4% 2%;
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(70% 80% at 50% 42%, rgba(44, 92, 144, 0.16), transparent 75%),
+    linear-gradient(180deg, var(--surface-2), rgba(231, 237, 245, 0.4));
+  border: 1px solid var(--line);
+}
+
+.cutout {
+  position: relative;
+  width: min(100%, 460px);
   height: auto;
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-card-light);
-  object-fit: cover;
-}
-
-.ph2 {
-  margin-top: var(--space-8);
+  filter: drop-shadow(0 30px 44px rgba(18, 36, 63, 0.28));
 }
 
 .chip {
