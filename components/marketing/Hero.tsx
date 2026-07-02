@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import clsx from "clsx";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
@@ -33,28 +33,42 @@ export async function Hero() {
   const accent = t("taglineAccent");
   const [pre, post] = tagline.split(accent);
 
+  // Art direction: portrait renders below 760px, widescreen above — both for
+  // the base photo and its sky-removed twin (the depth-sandwich overlay).
+  const baseCommon = { alt: t("imageAlt"), sizes: "100vw", fill: true } as const;
+  const { props: basePhoto } = getImageProps({ ...baseCommon, src: "/images/v2/hero.jpeg" });
+  const {
+    props: { srcSet: basePhotoMobile },
+  } = getImageProps({ ...baseCommon, src: "/images/v2/mobile-hero.jpeg" });
+  const overlayCommon = { alt: "", sizes: "100vw", fill: true } as const;
+  const { props: overlayPhoto } = getImageProps({
+    ...overlayCommon,
+    src: "/images/v2/hero-without-bg.png",
+  });
+  const {
+    props: { srcSet: overlayPhotoMobile },
+  } = getImageProps({ ...overlayCommon, src: "/images/v2/mobile-hero-without-bg.png" });
+
   return (
     <section className={styles.hero} data-hero="">
-      <Image
-        src="/images/v2/hero.jpeg"
-        alt={t("imageAlt")}
-        fill
-        preload
-        sizes="100vw"
-        className={styles.photo}
-      />
+      <picture>
+        <source media="(max-width: 760px)" srcSet={basePhotoMobile} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
+      </picture>
       <div className={styles.scrim} aria-hidden="true" />
       {/* Same frame with the sky removed — layered above the display type so
           the roofline passes in front of the letters (depth sandwich). */}
-      <Image
-        src="/images/v2/hero-without-bg.png"
-        alt=""
-        fill
-        preload
-        sizes="100vw"
-        className={clsx(styles.photo, styles.overlay)}
-        aria-hidden="true"
-      />
+      <picture>
+        <source media="(max-width: 760px)" srcSet={overlayPhotoMobile} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          {...overlayPhoto}
+          className={clsx(styles.photo, styles.overlay)}
+          loading="eager"
+          aria-hidden="true"
+        />
+      </picture>
 
       <div className={styles.inner}>
         <p className={styles.tagline}>
