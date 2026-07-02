@@ -57,13 +57,14 @@ export async function Hero() {
           <span className={styles.d2}>{t("display2")}</span>
         </h1>
 
+        <div className={styles.houseCard} aria-hidden="true" />
         <div className={styles.house} aria-hidden="true">
           <Image
-            src="/hero/hero-home.png"
+            src="/hero/hero-home-alt.png"
             alt=""
             width={760}
-            height={568}
-            sizes="(max-width: 900px) 320px, 560px"
+            height={424}
+            sizes="(max-width: 900px) 380px, 640px"
             className={styles.houseImg}
           />
         </div>
