@@ -22,6 +22,16 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide es
 Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide elevated shot over the solar-covered roof of a modern concrete-and-white house in crisp clear morning light, rows of matte black panels sparkling subtly in the sun with thin cyan light lines along the panel rails, the neighborhood of modern homes and green gardens stretching softly blurred into the distance, vivid blue sky with a few soft clouds filling the calm upper third of the frame, fresh clean atmosphere. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
+**H7 — MODUS düzeni: ev sağda yakın plan, sol gökyüzü tipografiye (ÖNERİLEN):**
+
+Not: beğenilen karenin bir de **arka planı silinmiş PNG'si** üretilirse
+(sadece ev + ön plan), tipografi evin arkasına katmanlanır; display rengi
+bu görselde laciverte döner.
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide composition with the house placed in the RIGHT half of the frame: a modern single-storey timber-and-dark-metal villa seen from a close three-quarter angle at blue-hour dusk, its full matte black rooftop solar array clearly visible and dominant — individual panel cells and mounting rails readable, a thin cyan light line tracing the rail down to a slim home battery unit with a soft cyan status glow beside the entrance. Warm amber light from the large windows. The LEFT half of the frame stays open: soft hazy blue mountain silhouettes low on the horizon and a vast calm pale-blue misty sky filling the upper-left — smooth and empty, made for large typography. Dark moody meadow foreground along the bottom. High-end tech brand aesthetic, cinematic soft lighting, natural colors. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
+```
+
 ## 2 · INTRO KESİTİ — 4:3 üret (obje ortada, bol marjlı), düz zeminde → şeffaf PNG (`public/hero/`)
 
 Mevcut `hero-home-alt.png` stilize ve iş görüyor; alternatif olarak daha
