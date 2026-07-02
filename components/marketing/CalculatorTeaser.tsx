@@ -10,7 +10,12 @@ export async function CalculatorTeaser() {
   const points = [t("point1"), t("point2"), t("point3")];
 
   return (
-    <Section tone="light">
+    <Section tone="light" className={styles.deco}>
+      <div className={styles.particles} aria-hidden="true">
+        {Array.from({ length: 12 }, (_, i) => (
+          <span key={i} />
+        ))}
+      </div>
       <div className={styles.grid}>
         <div className={styles.copy}>
           <h2 className={styles.title}>{t("title")}</h2>

@@ -8,7 +8,7 @@ export async function Intro() {
   const t = await getTranslations("Home.intro");
 
   return (
-    <Section tone="light">
+    <Section tone="light" className={styles.deco}>
       <div className={styles.grid}>
         <div className={styles.visual}>
           <div className={styles.stage} aria-hidden="true" />

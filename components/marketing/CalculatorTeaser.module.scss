@@ -1,5 +1,67 @@
 @use "../../styles/mixins" as *;
 
+/* Energy moment: faint gold/cyan washes + slowly rising light particles. */
+.deco {
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(640px 420px at 10% 18%, rgba(242, 168, 44, 0.09), transparent 70%),
+      radial-gradient(720px 480px at 94% 86%, rgba(96, 214, 234, 0.08), transparent 72%);
+  }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  span {
+    position: absolute;
+    bottom: -16px;
+    border-radius: 50%;
+    background: rgba(242, 168, 44, 0.4);
+    filter: blur(1px);
+    opacity: 0;
+    animation: rise linear infinite;
+  }
+
+  span:nth-child(3n) {
+    background: rgba(96, 214, 234, 0.35);
+  }
+
+  @for $i from 1 through 12 {
+    span:nth-child(#{$i}) {
+      left: #{4 + ($i - 1) * 8.3}%;
+      width: #{4 + ($i % 3) * 3}px;
+      height: #{4 + ($i % 3) * 3}px;
+      animation-duration: #{15 + ($i % 5) * 4}s;
+      animation-delay: -#{$i * 2.7}s;
+    }
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-820px);
+    opacity: 0;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
