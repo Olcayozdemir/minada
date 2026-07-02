@@ -20,6 +20,30 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide ci
 Ultra-realistic premium architectural 3D render, photorealistic 8k. Breathtaking cinematic aerial shot at golden hour: rows of matte black solar panels sweeping in a bold S-curve across rolling green hills like a river of dark glass, each panel row edge-lit by the setting sun, thin glowing cyan energy pulses racing along the rows toward a striking modern minimalist glass villa on the hilltop with warm amber lit windows. Low golden mist drifting between the tree lines, dramatic sun star flaring on the horizon, deep navy sky with sparse pink-edged clouds, the upper third of the frame calm open sky. High-end tech brand aesthetic, cinematic soft lighting. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
 ```
 
+**H3 — "Güvenilir Liman" (marka hikâyesi — ÖNERİLEN; hiçbir rakipte olmayan sahne):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide cinematic shot of a modern minimalist coastal home with a matte black solar roof standing on a small green peninsula above a calm harbor bay at dusk golden hour, a slender modern lighthouse at the tip of the breakwater with a soft warm gold beam, the still sea mirroring the deep navy sky and golden horizon, thin glowing cyan energy lines tracing from the solar roof down to a small glowing battery unit and along the pier lights, a few soft sailboat silhouettes resting in the bay, vast calm gradient dusk sky occupying the upper third of the frame. High-end tech brand aesthetic, cinematic soft lighting, serene and safe atmosphere. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**H4 — "Ada" (marka hikâyesi, gün ışığı versiyonu):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide aerial cinematic shot of a small lush green island in a calm turquoise-navy sea in crisp clear morning daylight, a single modern minimalist white villa with a full matte black solar roof at the island's heart, thin glowing cyan energy lines radiating from the roof across the island like gentle circuitry, soft waves lapping the shore, a slender pier reaching into the water, vivid blue sky with a few soft white clouds filling the calm upper third of the frame. High-end tech brand aesthetic, fresh serene atmosphere. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**H5 — Makro panel + güneş küresi (soyut-premium, en sade tipografi zemini):**
+
+```
+Ultra-realistic premium product photography style render, photorealistic 8k. Extreme macro close-up of a matte black solar panel surface filling the frame at a low dramatic angle, the setting sun reflected as a single glowing golden orb in the dark glass, ultra-fine cyan micro-circuit lines faintly glowing between the photovoltaic cells, shallow depth of field, deep navy tones across the upper half of the frame, minimal abstract composition, meditative high-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**H6 — Yıldızlı gece santrali (batarya hikâyesi, moody):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide night scene of a solar panel field on gentle hills under a deep navy star-filled sky with a faint milky way band, the panels' seams pulsing with thin glowing cyan energy lines flowing toward a softly glowing battery station at the field's edge, the last trace of dusk on the horizon, calm dark sky occupying the upper half of the frame, meditative minimal composition. High-end tech brand aesthetic, cinematic soft lighting. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
 ## 2 · INTRO KESİTİ — 3:2, düz zeminde üret → şeffaf PNG (`public/hero/`)
 
 **C1 — yüzen ada kesiti:**
