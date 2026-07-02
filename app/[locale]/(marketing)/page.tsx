@@ -50,8 +50,8 @@ export default async function HomePage({
       <ApplicationAreas />
       <CalculatorTeaser />
       <Testimonials />
-      <FaqTeaser />
       <FinalCta />
+      <FaqTeaser />
     </>
   );
 }
