@@ -52,6 +52,12 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide ni
 Ultra-realistic premium product-render style isometric cutaway, photorealistic 8k. A modern minimalist flat-roof concrete-and-white villa standing on a floating landscaped platform slab with lush plants, rooftop matte black solar panels. Large frosted translucent glass cards hover behind and beside the house, thin glowing cyan energy ribbons weave around the building and through the glass cards. Soft studio rim lighting, high-end tech brand aesthetic, centered, full object visible with generous margin on all sides, isolated on a plain solid black background. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
 ```
 
+**C3 — "Liman adası" dioraması (marka hikâyesi — hero H3/H4 ile akraba, ÖNERİLEN):**
+
+```
+Ultra-realistic premium product-render style isometric diorama, photorealistic 8k. A small floating island-harbor diorama: a modern minimalist white villa with a matte black solar roof on a lush green islet, a tiny slender lighthouse at the tip of a small stone breakwater, a slim wooden pier with a moored sailboat, calm glassy water around the island edge, thin glowing cyan energy lines flowing from the solar roof to the lighthouse and along the pier, large frosted translucent glass cards hovering behind the diorama. Soft studio rim lighting, high-end tech brand aesthetic, centered, full object visible with generous margin on all sides, isolated on a plain solid black background. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
 **C2 — batarya/altyapı kesiti (yedek):**
 
 ```
@@ -84,6 +90,37 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. A minimalist
 Ultra-realistic premium architectural 3D render, photorealistic 8k. A modern matte dark-grey air-source heat pump unit beside a minimalist concrete villa wall in crisp clear morning daylight, soft stylized cyan airflow ribbons curling out of the fan grille, tidy garden with fresh green foliage, clean bright shadows, vivid blue sky. High-end tech brand aesthetic, clean premium composition. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
 ```
 
+## 3b · HİZMET KARTLARI — "KESİNTİSİZ HAT" SETİ (4 kart = tek enerji akışı)
+
+Dört kartta da **aynı yükseklikte (alt üçte bir sınırında), soldan girip
+sağdan çıkan** tek bir cyan hat var. Kartlar koyu bantta yan yana dizilince
+hat karttan karta devam ediyormuş gibi okunur — satırın imzası bu olur.
+Sıra: Güneş → Batarya → EV → Isı Pompası (hat üretimden tüketime akar).
+
+**S1b — Güneş (hattın doğduğu kart):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Close-up of matte black rooftop solar panels in crisp clear morning daylight, sun sparkle on the glass, a single thin glowing cyan energy line emerging from the panel seams and exiting the frame at the right edge at the lower-third height, vivid blue sky above the roof line, clean bright shadows. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**S2b — Batarya:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A sleek wall-mounted home energy storage battery with a softly glowing cyan translucent front face on a clean concrete wall in a minimalist covered outdoor utility area at dusk, a single thin glowing cyan energy line entering the frame from the left edge at the lower-third height, passing through the battery, and exiting at the right edge at the same height, small plants at the base, warm amber side light. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**S3b — EV Şarj:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A minimalist matte wallbox EV charger on a concrete garden wall in crisp clear daylight, a generic modern electric car charging, a single thin glowing cyan energy line entering the frame from the left edge at the lower-third height, flowing through the charging cable into the car, and continuing out of the right edge at the same height, landscaped driveway, vivid blue sky. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people, no visible car badges.
+```
+
+**S4b — Isı Pompası (hattın vardığı kart):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. A modern matte dark-grey air-source heat pump unit beside a minimalist concrete villa wall in crisp clear daylight, a single thin glowing cyan energy line entering the frame from the left edge at the lower-third height and flowing into the unit, soft stylized warm-tinted airflow ribbons curling out of the fan grille, tidy garden, vivid blue sky. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
 ## 4 · UYGULAMA ALANLARI — 3:4 DİKEY, ≥1600px kısa kenar, alt çeyrek sade (`area-*.jpg`)
 
 **A1 — Konut & Bireysel (gün ışığı):**
@@ -110,6 +147,35 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical com
 Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: a modern minimalist public building with a matte black solar canopy over its plaza in crisp clear daylight, a single thin glowing cyan energy line running from the canopy into the building, vivid blue sky with soft white clouds, calm shaded empty plaza in the lower quarter of the frame. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people, no flags.
 ```
 
+## 4b · UYGULAMA ALANLARI — "GÜN DÖNGÜSÜ" VARYANTI (4 karo = bir gün)
+
+Karolar yan yana durduğu için ışığı bir yay gibi kurgula: sabah → öğle →
+ikindi → alacakaranlık. Satır "her saat, her ölçekte enerji" hikâyesi anlatır.
+
+**A1b — Konut, sabah:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: a modern minimalist concrete-and-white family villa with a full matte black solar roof in soft early morning light with long gentle shadows and thin ground mist, a thin glowing cyan energy line tracing the roof edge, pale fresh sky in the upper part, dewy garden filling the shaded lower quarter of the frame. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**A2b — Ticari, öğle:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: elevated view of a large modern industrial warehouse roof fully covered in matte black solar arrays under bright high-noon sun, crisp short shadows, faint glowing cyan grid lines across the panels, deep vivid blue sky, shaded loading yard at the bottom of the frame. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people, no trucks with visible branding.
+```
+
+**A3b — Tarımsal, ikindi:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: agrivoltaic solar panel rows standing over fresh green crops in warm late-afternoon light, long soft shadows between the rows, sun grazing the matte black panels, a thin glowing cyan energy pulse along the mounting rail, warm-tinted sky, soft shaded soil in the lower quarter of the frame. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**A4b — Kamu, alacakaranlık:**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Vertical composition: a modern minimalist public building with a matte black solar canopy over its plaza at dusk golden hour, warm facade lighting glowing against a deep navy sky, a single thin glowing cyan energy line running from the canopy into the building, calm shaded empty plaza in the lower quarter of the frame. High-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people, no flags.
+```
+
 ## 5 · HESAPLAYICI — 4:3, ≥1600px, sol-alt sade (`calc.jpg`)
 
 ```
@@ -120,4 +186,24 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. Cozy modern 
 
 ```
 Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide minimal night scene of a matte black rooftop solar array under a deep navy sky, the last ember of golden sunset at the far edge of the frame, faint glowing cyan pulses running along the panel seams toward the dark calm center of the image, meditative mood, cinematic soft lighting, high-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+**CTA-b — "Gece feneri" (hero H3 ile hikâye kapanışı — hero liman olursa bunu kullan):**
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Very wide minimal night scene of a calm dark sea under a deep navy star-scattered sky, a slender modern lighthouse on a distant breakwater sweeping a soft warm gold beam across the water, faint glowing cyan glints of solar panel roofs along the dark coastline, gentle reflections on the still water, the center of the frame calm and dark, meditative safe-harbor mood, cinematic soft lighting, high-end tech brand aesthetic. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+## 7 · OG / SOSYAL PAYLAŞIM KARTI — 1200×630 (`public/og/og-default.png` yenilemesi)
+
+Sol yarı sakin (üstüne koyu logo+slogan bindirilecek), sahne sağa yaslı.
+
+```
+Ultra-realistic premium architectural 3D render, photorealistic 8k. Wide 1200x630 composition: on the right half, a modern minimalist coastal home with a matte black solar roof on a green islet with a tiny lighthouse at dusk golden hour, thin glowing cyan energy lines on the roof; the left half of the frame is a calm smooth gradient of deep navy dusk sky and still water with gentle golden reflections, intentionally empty and uncluttered. High-end tech brand aesthetic, cinematic soft lighting. No text, no letters, no numbers, no UI panels, no dashboards, no screens, no logos, no watermarks, no people.
+```
+
+## 8 · BONUS — 404 sayfası görseli (ileride, 3:2)
+
+```
+Ultra-realistic premium 3D render, photorealistic 8k. A single small buoy with a softly glowing warm gold lamp floating on a calm dark navy sea at night, gentle ripples, a faint lighthouse beam crossing the far horizon, vast empty space above, quiet lost-at-sea but safe mood, minimal composition, high-end tech brand aesthetic. No text, no letters, no numbers, no logos, no watermarks, no people.
 ```
