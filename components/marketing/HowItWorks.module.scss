@@ -167,11 +167,48 @@
   }
 }
 
-/* ---- mobile: pinned stage, horizontal cube-slide ----------------------- */
+/* ---- mobile ------------------------------------------------------------ */
 @include bp-down(760px) {
+  /* Default mobile layout — shown whenever the JS pinned animation is NOT
+     running (reduced-motion or no-JS): a native, finger-swipeable card strip.
+     Scrolling is user-driven, so it honors prefers-reduced-motion; the peeking
+     next card is the (motion-free) swipe affordance. When motion is allowed,
+     .stage[data-fx] below overrides this with the pinned cube-slide. */
+  .track {
+    display: none; /* no scroll-runway without a scroll animation to track */
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-4);
+    padding-inline: 9vw;
+    overflow-x: auto;
+    overscroll-behavior-x: contain; /* don't chain into back-nav gestures */
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 9vw;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none; /* WebKit — hide the bar, keep the swipe */
+  }
+
+  .step {
+    flex: 0 0 78vw;
+    scroll-snap-align: center;
+  }
+
+  /* Motion allowed: JS pins the stage and drives the strip by transform, so
+     the runway returns and native scroll/snap step aside for the JS translate. */
   .stage[data-fx] {
     /* Scroll travel = pin duration. */
     min-height: 300vh;
+
+    .track {
+      display: block;
+    }
 
     .sticky {
       position: sticky;
@@ -185,15 +222,13 @@
     }
 
     .grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: var(--space-4);
-      padding-inline: 9vw;
+      overflow: visible;
+      scroll-snap-type: none;
       will-change: transform;
     }
 
     .step {
-      flex: 0 0 78vw;
+      scroll-snap-align: none;
       transition:
         opacity 0.3s ease,
         filter 0.3s ease;
