@@ -49,9 +49,13 @@ export function HowScrollFx({ heading, children }: { heading: ReactNode; childre
           c.toggleAttribute("data-on", Math.abs(off) < 0.55);
         });
       } else {
-        // Viewport-relative runway (independent of the short section height):
-        // fills as the section top travels from 85%→15% of the viewport.
-        const p = clamp((vh * 0.85 - rect.top) / (vh * 0.7), 0, 1);
+        // On wide desktop all four steps share one row, so there's no
+        // per-step scroll to ride — the fill instead tracks the section's
+        // climb out of the viewport. It stays ~empty while the section is
+        // framed for reading and fills as it scrolls up, completing as the
+        // card row clears the top (anchored to rect.height so the taller
+        // 2-column layout below 1000px still finishes on time).
+        const p = clamp((vh * 0.3 - rect.top) / (vh * 0.1 + rect.height), 0, 1);
         if (fillRef.current) fillRef.current.style.transform = `scaleX(${Math.max(0.02, p).toFixed(3)})`;
         const activeIdx = Math.round(p * (cards.length - 1));
         cards.forEach((c, i) => {
