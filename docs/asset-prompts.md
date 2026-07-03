@@ -71,6 +71,39 @@ Ultra-realistic premium architectural 3D render, photorealistic 8k. A minimalist
 Ultra-realistic premium architectural 3D render, photorealistic 8k. A modern matte dark-grey air-source heat pump unit beside a concrete villa wall in crisp clear daylight, a subtle cyan status light on its front edge and a thin cyan line tracing the pipe run along the wall, tidy garden with fresh green plants, clean bright shadows, vivid blue sky. High-end tech brand aesthetic, believable real installation. No text, no letters, no numbers, no UI panels, no dashboards, no logos, no watermarks, no people.
 ```
 
+## 3c · NASIL ÇALIŞIR ADIMLARI — 16:11 yatay, ≥1400px (`public/images/v2/how/<id>.jpg`)
+
+İnsanlı süreç görselleri — kart üstünde ~16:11 kırpılır, sol-üst köşeye altın
+numara rozeti biner (orası sade kalsın). Dördü aynı oturumda üret; ekip
+kıyafeti/marka tonu tutsun. Cyan yalnızca cihaz/tablet ekranında.
+Dosya adları kodda sabit: `discovery.jpg`, `design.jpg`, `install.jpg`,
+`support.jpg` — bu adlarla `public/images/v2/how/` içine at, kod otomatik
+placeholder'dan fotoğrafa geçer (kod değişikliği gerekmez).
+
+**discovery.jpg — Ücretsiz Keşif:**
+```
+Ultra-realistic premium photograph, photorealistic 8k. A friendly solar technician in a clean branded polo and safety vest standing on a modern house rooftop in crisp daylight, holding a tablet and gesturing toward the roof while a homeowner listens, measuring the roof for solar panels, vivid blue sky, warm approachable mood, high-end brand aesthetic. No text, no letters, no numbers, no logos, no watermarks.
+```
+
+**design.jpg — Projelendirme & Teklif:**
+```
+Ultra-realistic premium photograph, photorealistic 8k. Over-the-shoulder view of an engineer at a bright modern desk showing a 3D solar system design on a large monitor with a subtle cyan glow on the screen, a homeowner couple looking at the proposal, blueprint and tablet on the desk, soft daylight, professional trustworthy mood, high-end brand aesthetic. No readable text on screen, no logos, no watermarks, no numbers.
+```
+
+**install.jpg — Kurulum & Devreye Alma:**
+```
+Ultra-realistic premium photograph, photorealistic 8k. Two installers in branded workwear and helmets mounting matte black solar panels on a mounting rail on a residential roof in crisp daylight, one securing a panel, tools and safety harness visible, vivid blue sky, dynamic real-installation mood, high-end brand aesthetic. No text, no letters, no numbers, no logos, no watermarks.
+```
+
+**support.jpg — İzleme & Servis:**
+```
+Ultra-realistic premium photograph, photorealistic 8k. A technician checking a home battery and inverter on a garage wall with a tablet showing a softly glowing cyan monitoring dashboard, a relaxed homeowner nearby, warm indoor daylight, calm reassuring after-service mood, high-end brand aesthetic. No readable text on screen, no logos, no watermarks, no numbers.
+```
+
+İllüstratif alternatif: her prompt başına `Clean flat vector illustration,
+isometric, minimal, navy + gold + cyan palette` yaz; `photorealistic 8k` ve
+`photograph` kelimelerini çıkar.
+
 ## 4 · UYGULAMA ALANLARI — 3:4 DİKEY, ≥1600px kısa kenar, alt çeyrek sade (`area-*.jpg`)
 
 Hizmet kartlarıyla aynı dil: premium render + gerçek kurulum + yüzeylerde
