@@ -17,6 +17,11 @@
   overflow: hidden;
   box-shadow: var(--shadow-card-light);
 
+  /* Small tiles on phones don't carry 28px corners well. */
+  @include bp-down(640px) {
+    border-radius: var(--r-md);
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -53,7 +58,7 @@
     bottom: 8px;
     max-width: calc(100% - 16px);
     padding: 7px 12px;
-    border-radius: 8px;
+    border-radius: 12px;
 
     /* Let the flex child shrink so text-overflow can actually ellipsize. */
     > div {
