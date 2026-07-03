@@ -17,10 +17,16 @@
     "faq": "FAQ"
   },
   "Services": {
-    "solar": "Solar Energy",
-    "storage": "Battery Storage",
-    "ev": "EV Charging",
-    "heatpump": "Heat Pump"
+    "rooftop": "Rooftop Solar",
+    "ground": "Ground-Mount Solar (Unlicensed)",
+    "agripv": "Agrivoltaics (Agri-PV)",
+    "carport": "Solar Carport",
+    "bess": "Energy Storage (BESS)",
+    "engineering": "Engineering & Feasibility",
+    "licensing": "Permitting & Licensing",
+    "procurement": "Procurement",
+    "construction": "Construction",
+    "om": "Operations & Maintenance"
   },
   "Common": {
     "getQuote": "Get a free survey",
@@ -62,20 +68,37 @@
   "Home": {
     "services": {
       "eyebrow": "Services",
-      "title": "Four solutions under one roof",
-      "intro": "From sun to storage, charging to heating — we design, install and operate the full energy setup for your home or business.",
-      "cta": "Learn more",
-      "solar": {
-        "desc": "Generate your own electricity with panels designed for your roof, and cut your bill."
+      "title": "End-to-end solar, survey to O&M",
+      "intro": "From rooftop and ground-mount solar to energy storage — we run the whole project end to end: engineering, licensing, procurement, construction and O&M.",
+      "rooftop": {
+        "desc": "We turn your industrial and commercial rooftops into turnkey solar plants — from survey to commissioning, all under one roof."
       },
-      "storage": {
-        "desc": "Store the energy you produce; use your own power at night and during outages."
+      "ground": {
+        "desc": "Got land? We build your unlicensed plant end to end, from field to transformer."
       },
-      "ev": {
-        "desc": "Safe, fast electric vehicle charging stations for home or workplace."
+      "agripv": {
+        "desc": "Two harvests from one field — power up top, crops below: Agri-PV for greenhouses and farmland."
       },
-      "heatpump": {
-        "desc": "Cut heating and cooling costs dramatically with high-efficiency heat pumps."
+      "carport": {
+        "desc": "Put the car park to work: shade and power overhead, EV charging below."
+      },
+      "bess": {
+        "desc": "Lithium storage that clocks in when the sun clocks out — carry your energy from noon into the night."
+      },
+      "engineering": {
+        "desc": "We count every kWh before the first shovel: PVsyst simulation, irradiance analysis and site survey."
+      },
+      "licensing": {
+        "desc": "Leave the red tape to us — EPDK filings, DSO applications and the grid-connection letter, start to finish."
+      },
+      "procurement": {
+        "desc": "Only the good stuff reaches site: panels, inverters, cables (DC/AC/MV), mounting structures, distribution boards and switchgear — sourced for you."
+      },
+      "construction": {
+        "desc": "Fully-equipped crews and airtight HSE take your project from paper to the ground."
+      },
+      "om": {
+        "desc": "We stick around after switch-on: 24/7 remote monitoring, scheduled maintenance and a performance guarantee."
       }
     },
     "how": {

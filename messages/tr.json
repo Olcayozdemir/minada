@@ -17,10 +17,16 @@
     "faq": "SSS"
   },
   "Services": {
-    "solar": "Güneş Enerjisi",
-    "storage": "Batarya Depolama",
-    "ev": "EV Şarj İstasyonu",
-    "heatpump": "Isı Pompası"
+    "rooftop": "Çatı Üstü GES",
+    "ground": "Arazi Tipi GES (Lisanssız)",
+    "agripv": "Tarımsal GES (Agri-PV)",
+    "carport": "Carport / Otopark GES",
+    "bess": "Enerji Depolama (BESS)",
+    "engineering": "Mühendislik & Etüt",
+    "licensing": "Proje & Lisanslama",
+    "procurement": "Tedarik Yönetimi",
+    "construction": "Saha Kurulumu",
+    "om": "İşletme & Bakım (O&M)"
   },
   "Common": {
     "getQuote": "Ücretsiz keşif al",
@@ -62,20 +68,37 @@
   "Home": {
     "services": {
       "eyebrow": "Hizmetler",
-      "title": "Tek çatı altında dört çözüm",
-      "intro": "Güneşten depolamaya, şarjdan ısıtmaya — evinizin ve işletmenizin enerji ihtiyacını uçtan uca tasarlar, kurar ve işletiriz.",
-      "cta": "Detaylı bilgi",
-      "solar": {
-        "desc": "Çatınıza özel tasarlanan panellerle kendi elektriğinizi üretin, faturanızı düşürün."
+      "title": "Keşiften işletmeye, uçtan uca güneş",
+      "intro": "Çatı ve arazi GES'ten enerji depolamaya; mühendislik, lisanslama, tedarik, kurulum ve işletmeye kadar tüm süreci tek elden yürütüyoruz.",
+      "rooftop": {
+        "desc": "Sanayi ve ticari çatılarınızı anahtar teslim güneş santraline çeviriyoruz — keşiften devreye almaya kadar tek elden."
       },
-      "storage": {
-        "desc": "Ürettiğiniz enerjiyi depolayın; kesintide ve gece de kendi gücünüzü kullanın."
+      "ground": {
+        "desc": "Araziniz mi var? Lisanssız santralinizi tarladan trafoya, uçtan uca biz kuruyoruz."
       },
-      "ev": {
-        "desc": "Evde veya iş yerinde güvenli, hızlı elektrikli araç şarj istasyonu kurulumu."
+      "agripv": {
+        "desc": "Aynı topraktan iki hasat — üstte elektrik, altta mahsul: sera ve tarım arazilerine Agri-PV."
       },
-      "heatpump": {
-        "desc": "Yüksek verimli ısı pompalarıyla ısıtma ve soğutma maliyetini ciddi biçimde azaltın."
+      "carport": {
+        "desc": "Otoparkınız hem gölge yapsın hem üretsin: üstte panel, altında EV şarjı."
+      },
+      "bess": {
+        "desc": "Güneş mesaiyi bırakınca devreye giren lityum bataryalarla enerjinizi gündüzden geceye taşıyın."
+      },
+      "engineering": {
+        "desc": "Kazma vurmadan önce her kWh'i hesaplıyoruz: PVsyst simülasyonu, ışınım analizi ve saha etüdü."
+      },
+      "licensing": {
+        "desc": "Bürokrasi bizde kalsın — EPDK, dağıtım şirketi başvuruları ve çağrı mektubunu baştan sona biz takip ediyoruz."
+      },
+      "procurement": {
+        "desc": "Sahaya sadece en iyisi girer: panel, inverter, kablolar (DC/AC/OG), konstrüksiyon, pano ve şalt grubunu sizin için tedarik ediyoruz."
+      },
+      "construction": {
+        "desc": "Tam ekipmanlı ekibimiz ve eksiksiz iş güvenliğiyle projeniz kâğıttan sahaya iniyor."
+      },
+      "om": {
+        "desc": "Devreye aldıktan sonra da yanınızdayız: 7/24 uzaktan izleme, periyodik bakım ve performans garantisi."
       }
     },
     "how": {

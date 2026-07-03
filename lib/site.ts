@@ -10,8 +10,19 @@ export const NAV_ITEMS: ReadonlyArray<{ href: StaticPathname; key: string }> = [
   { href: "/about", key: "about" },
 ];
 
-// The four service lines (roadmap): solar, battery storage, EV charging, heat pump.
-export const SERVICES = ["solar", "storage", "ev", "heatpump"] as const;
+// Solar EPC service lines, in the order shown on the site (survey → O&M).
+export const SERVICES = [
+  "rooftop",
+  "ground",
+  "agripv",
+  "carport",
+  "bess",
+  "engineering",
+  "licensing",
+  "procurement",
+  "construction",
+  "om",
+] as const;
 
 // Contact + social. PLACEHOLDERS — real values arrive with the domain/email setup.
 // WhatsApp number is read from env at build/runtime when available.

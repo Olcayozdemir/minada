@@ -1,117 +1,56 @@
 @use "../../styles/mixins" as *;
 
+/* Compact service grid: gold icon chip + title + one-line description.
+   Three columns on desktop, collapsing to two then one. No cards/borders —
+   spacing and the gold chips carry the structure on the navy section. */
 .grid {
+  @include list-reset;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
-  /* Room for the dioramas floating above the card tops. */
-  padding-top: 130px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
 
-  @include bp-down(1080px) {
+  @include bp-down(900px) {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: calc(var(--space-5) + 120px);
   }
 
-  @include bp-down(640px) {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: var(--space-3);
-    /* Side padding sized so the resting card sits dead-centre. */
-    padding-inline: calc((100% - 82vw) / 2);
-    row-gap: 0;
-    -webkit-overflow-scrolling: touch;
-
-    > * {
-      flex: 0 0 82vw;
-      scroll-snap-align: center;
-    }
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 }
 
 .card {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  background:
-    linear-gradient(180deg, rgba(238, 242, 247, 0.07), rgba(238, 242, 247, 0.03) 55%),
-    rgba(238, 242, 247, 0.03);
-  border: 1px solid rgba(238, 242, 247, 0.1);
-  border-radius: var(--r-xl);
-  padding: 0 var(--space-5) var(--space-5);
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(242, 168, 44, 0.45);
-
-    .more svg {
-      transform: translateX(3px);
-    }
-
-    .media img {
-      transform: translateY(-6px) scale(1.02);
-    }
-  }
-}
-
-/* Transparent diorama floating above the card top. */
-.media {
-  display: block;
-  margin: -130px calc(-1 * var(--space-3)) -50px;
-
-  img {
-    width: 100%;
-    height: 240px;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 28px rgba(4, 14, 28, 0.55));
-    transition: transform 0.3s ease;
-  }
-
-  /* Phones: release the pull-up so the diorama doesn't crowd the chip. */
-  @include bp-down(640px) {
-    margin-bottom: -8px;
-
-    img {
-      height: 212px;
-    }
-  }
+  align-items: flex-start;
+  gap: var(--space-4);
 }
 
 .iconChip {
-  @include glass;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
   color: var(--gold-300);
-  margin-bottom: var(--space-4);
+  background: rgba(242, 168, 44, 0.12);
+  border: 1px solid rgba(242, 168, 44, 0.28);
+}
+
+.body {
+  min-width: 0;
+  padding-top: 2px;
 }
 
 .cardTitle {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 5px;
 }
 
 .cardDesc {
-  font-size: 0.92rem;
-  color: var(--on-dark-2);
-  margin-top: var(--space-2);
-  flex: 1;
-}
-
-.more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--gold-300);
-  font-weight: 650;
   font-size: 0.9rem;
-  margin-top: var(--space-4);
-
-  svg {
-    transition: transform 0.2s ease;
-  }
+  line-height: 1.5;
+  color: var(--on-dark-2);
 }

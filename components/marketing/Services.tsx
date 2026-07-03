@@ -1,22 +1,31 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Link } from "@/i18n/navigation";
 import {
   IconSolar,
+  IconGroundMount,
+  IconLeaf,
+  IconCarport,
   IconBattery,
-  IconEvCharge,
-  IconHeatPump,
-  IconArrowRight,
+  IconBlueprint,
+  IconLandmark,
+  IconPackage,
+  IconInstall,
+  IconActivity,
 } from "@/components/ui/icons";
 import styles from "./Services.module.scss";
 
 const CARDS = [
-  { id: "solar", Icon: IconSolar, img: "/images/v2/service-solar.png" },
-  { id: "storage", Icon: IconBattery, img: "/images/v2/service-battery.png" },
-  { id: "ev", Icon: IconEvCharge, img: "/images/v2/service-ev.png" },
-  { id: "heatpump", Icon: IconHeatPump, img: "/images/v2/service-heatpump.png" },
+  { id: "rooftop", Icon: IconSolar },
+  { id: "ground", Icon: IconGroundMount },
+  { id: "agripv", Icon: IconLeaf },
+  { id: "carport", Icon: IconCarport },
+  { id: "bess", Icon: IconBattery },
+  { id: "engineering", Icon: IconBlueprint },
+  { id: "licensing", Icon: IconLandmark },
+  { id: "procurement", Icon: IconPackage },
+  { id: "construction", Icon: IconInstall },
+  { id: "om", Icon: IconActivity },
 ] as const;
 
 export async function Services() {
@@ -26,29 +35,19 @@ export async function Services() {
   return (
     <Section tone="dark" id="hizmetler">
       <SectionHeading tone="dark" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
-      <div className={styles.grid}>
-        {CARDS.map(({ id, Icon, img }) => (
-          <Link key={id} href="/services" className={styles.card}>
-            <span className={styles.media}>
-              <Image
-                src={img}
-                alt=""
-                width={560}
-                height={400}
-                sizes="(max-width: 640px) 78vw, (max-width: 1080px) 46vw, 24vw"
-              />
-            </span>
+      <ul className={styles.grid}>
+        {CARDS.map(({ id, Icon }) => (
+          <li key={id} className={styles.card}>
             <span className={styles.iconChip}>
-              <Icon size={20} />
+              <Icon size={22} />
             </span>
-            <h3 className={styles.cardTitle}>{ts(id)}</h3>
-            <p className={styles.cardDesc}>{t(`${id}.desc`)}</p>
-            <span className={styles.more}>
-              {t("cta")} <IconArrowRight size={15} />
-            </span>
-          </Link>
+            <div className={styles.body}>
+              <h3 className={styles.cardTitle}>{ts(id)}</h3>
+              <p className={styles.cardDesc}>{t(`${id}.desc`)}</p>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }

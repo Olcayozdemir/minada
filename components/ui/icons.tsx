@@ -52,6 +52,35 @@ export const IconHeatPump = (p: IconProps) => (
     <path d="M12 8.6c1.6.5 1.6 2.3 0 3.4M12 15.4c-1.6-.5-1.6-2.3 0-3.4M8.6 12c.5-1.6 2.3-1.6 3.4 0" />
   </Svg>
 );
+export const IconGroundMount = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 12l13-3 1.6 4.6L5.6 16.6z" />
+    <path d="M8.7 10.9l1.3 4.6M12.9 9.9l1.3 4.6" />
+    <path d="M11.2 14V20M7.5 20h7.5" />
+  </Svg>
+);
+export const IconCarport = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="3" y="4.6" width="18" height="2.3" rx="0.6" />
+    <path d="M5.6 6.9v3.1M18.4 6.9v3.1" />
+    <path d="M6.6 18l1.1-3.1c.18-.5.5-.8 1-.8h6.6c.5 0 .82.3 1 .8l1.1 3.1" />
+    <path d="M5.6 18h12.8" />
+    <circle cx="8.4" cy="18.2" r="1" />
+    <circle cx="15.6" cy="18.2" r="1" />
+  </Svg>
+);
+export const IconPackage = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 3l8 4.3v9.4L12 21l-8-4.3V7.3z" />
+    <path d="M4 7.3l8 4.3 8-4.3" />
+    <path d="M12 11.6V21" />
+  </Svg>
+);
+export const IconActivity = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M3 12h4l2-5.5L12 18l2-8 1.6 2H21" />
+  </Svg>
+);
 
 /* --- Process --- */
 export const IconSearch = (p: IconProps) => (
