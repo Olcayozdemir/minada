@@ -2,8 +2,8 @@
   "Meta": {
     "title": "MİNADA Energy",
     "titleTemplate": "%s · MİNADA Energy",
-    "homeTitle": "MİNADA Energy — Rooftop Solar, Battery, EV Charging and Heat Pumps",
-    "description": "We design, install and operate solar, battery storage, EV charging and heat pump systems — end to end. A reliable harbor for your energy transition."
+    "homeTitle": "MİNADA Energy — Rooftop Solar, Energy Storage, EV Charging and Heat Pumps",
+    "description": "We design, install and operate solar, energy storage, EV charging and heat pump systems — end to end. A reliable harbor for your energy transition."
   },
   "Nav": {
     "services": "Services",
@@ -41,10 +41,10 @@
     "pageComingDesc": "This page is being prepared. In the meantime, you can create a free survey."
   },
   "Hero": {
-    "kicker": "Solar · Battery · EV charging · Heat pump",
+    "kicker": "Solar · Energy Storage · EV charging · Heat pump",
     "titleLead": "Your home's own",
     "titleAccent": "energy.",
-    "subtitle": "From solar to battery storage — we design, install and operate the system on your roof. A reliable harbor for your energy transition.",
+    "subtitle": "From solar to energy storage — we design, install and operate the system on your roof. A reliable harbor for your energy transition.",
     "statBillValue": "~0₺",
     "statBillLabel": "electricity bill",
     "statUptimeValue": "24/7",
@@ -63,7 +63,7 @@
     "chipWarrantyLabel": "warranty & service",
     "calcCardTitle": "Calculate your savings",
     "calcCardDesc": "See a rough picture in 2 minutes.",
-    "imageAlt": "Smart home with rooftop solar, battery storage and EV charging at dusk"
+    "imageAlt": "Smart home with rooftop solar, energy storage and EV charging at dusk"
   },
   "Home": {
     "services": {
@@ -168,7 +168,7 @@
         "meta": "Detached home · Antalya"
       },
       "t3": {
-        "quote": "With the battery we use our own energy at night too. We're delighted.",
+        "quote": "With energy storage we use our own energy at night too. We're delighted.",
         "name": "Zeynep A.",
         "meta": "Villa owner · Muğla"
       }
@@ -203,7 +203,7 @@
     "intro": {
       "eyebrow": "Who is MİNADA",
       "lead": "From homes to businesses,",
-      "boldPart": "from solar to battery storage",
+      "boldPart": "from solar to energy storage",
       "rest": "— we design, build and operate your energy transition under one roof.",
       "muted": "From survey to commissioning the whole process is on us; you just enjoy the sun.",
       "point1": "Turnkey installation",

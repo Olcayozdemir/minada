@@ -2,8 +2,8 @@
   "Meta": {
     "title": "MİNADA Enerji",
     "titleTemplate": "%s · MİNADA Enerji",
-    "homeTitle": "MİNADA Enerji — Çatı Güneş Enerjisi, Batarya, EV Şarj ve Isı Pompası",
-    "description": "Güneş enerjisi, batarya depolama, EV şarj ve ısı pompası çözümlerini tek elden tasarlar, kurar ve işletiriz. Enerji dönüşümünüzde güvenilir bir liman."
+    "homeTitle": "MİNADA Enerji — Çatı Güneş Enerjisi, Enerji Depolama, EV Şarj ve Isı Pompası",
+    "description": "Güneş enerjisi, enerji depolama, EV şarj ve ısı pompası çözümlerini tek elden tasarlar, kurar ve işletiriz. Enerji dönüşümünüzde güvenilir bir liman."
   },
   "Nav": {
     "services": "Hizmetler",
@@ -41,10 +41,10 @@
     "pageComingDesc": "Bu sayfanın içeriği hazırlanıyor. O zamana kadar ücretsiz keşif oluşturabilirsiniz."
   },
   "Hero": {
-    "kicker": "Güneş · Batarya · EV şarj · Isı pompası",
+    "kicker": "Güneş · Enerji Depolama · EV şarj · Isı pompası",
     "titleLead": "Evinizin kendi",
     "titleAccent": "enerjisi.",
-    "subtitle": "Güneşten batarya depolamaya — çatınızdaki sistemi tasarlar, kurar ve işletiriz. Enerji dönüşümü yolculuğunuzda güvenilir bir liman.",
+    "subtitle": "Güneşten enerji depolamaya — çatınızdaki sistemi tasarlar, kurar ve işletiriz. Enerji dönüşümü yolculuğunuzda güvenilir bir liman.",
     "statBillValue": "~0₺",
     "statBillLabel": "elektrik faturası",
     "statUptimeValue": "7/24",
@@ -63,7 +63,7 @@
     "chipWarrantyLabel": "garanti & servis",
     "calcCardTitle": "Tasarrufunu hesapla",
     "calcCardDesc": "2 dakikada kaba bir tablo görün.",
-    "imageAlt": "Gün batımında güneş panelli, batarya depolamalı ve EV şarjlı akıllı ev"
+    "imageAlt": "Gün batımında güneş panelli, enerji depolamalı ve EV şarjlı akıllı ev"
   },
   "Home": {
     "services": {
@@ -168,7 +168,7 @@
         "meta": "Müstakil ev · Antalya"
       },
       "t3": {
-        "quote": "Batarya ile birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.",
+        "quote": "Enerji depolamayla birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.",
         "name": "Zeynep A.",
         "meta": "Villa sahibi · Muğla"
       }
@@ -203,7 +203,7 @@
     "intro": {
       "eyebrow": "MİNADA kimdir",
       "lead": "Konutlardan işletmelere,",
-      "boldPart": "güneşten batarya depolamaya",
+      "boldPart": "güneşten enerji depolamaya",
       "rest": "— enerji dönüşümünüzü tek çatı altında tasarlar, kurar ve işletiriz.",
       "muted": "Keşiften devreye alışa kadar tüm süreç bizde; siz sadece güneşin tadını çıkarın.",
       "point1": "Anahtar teslim kurulum",
