@@ -75,7 +75,7 @@
   --lh-tight: 1.03;
   --lh-snug: 1.25;
   --lh-normal: 1.6;
-  --fs-display: clamp(3.4rem, 11.5vw, 11.5rem); /* hero display words */
+  --fs-display: clamp(3.4rem, 11.5vw, 10.2rem); /* hero display words */
   --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
 
   /* Effects */

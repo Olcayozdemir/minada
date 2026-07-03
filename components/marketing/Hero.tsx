@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
+import { SinkOnScroll } from "./SinkOnScroll";
 import styles from "./Hero.module.scss";
 
 // Gold panel-stroke glyph — the tilted segment motif lifted from the logo,
@@ -77,13 +78,15 @@ export async function Hero() {
           {post}
         </p>
 
-        <h1 className={styles.display}>
-          <span className={styles.d1}>
-            <PanelGlyph className={styles.glyph} />
-            {t("display1")}
-          </span>
-          <span className={styles.d2}>{t("display2")}</span>
-        </h1>
+        <SinkOnScroll className={styles.displaySink}>
+          <h1 className={styles.display}>
+            <span className={styles.d1}>
+              <PanelGlyph className={styles.glyph} />
+              {t("display1")}
+            </span>
+            <span className={styles.d2}>{t("display2")}</span>
+          </h1>
+        </SinkOnScroll>
 
         <div className={styles.chipSaving}>
           <svg className={styles.ring} width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">

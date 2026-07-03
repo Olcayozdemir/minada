@@ -45,7 +45,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-top: calc(var(--header-h) + var(--space-8));
+  padding-top: calc(var(--header-h) + var(--space-2));
   padding-bottom: var(--space-10);
 }
 
@@ -62,9 +62,16 @@
   }
 }
 
-.display {
+/* Parallax wrapper: carries the stacking slot below the cutout overlay so
+   the type sinks behind the house as it translates down on scroll. */
+.displaySink {
   position: relative;
   z-index: 3;
+  will-change: transform;
+}
+
+.display {
+  position: relative;
   font-size: var(--fs-display);
   line-height: 0.92;
   letter-spacing: -0.03em;
