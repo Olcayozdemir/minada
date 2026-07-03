@@ -70,4 +70,9 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
+  /* Narrow 2-col tiles: title-only label, let the photo breathe. */
+  @include bp-down(640px) {
+    display: none;
+  }
 }

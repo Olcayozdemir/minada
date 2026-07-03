@@ -271,13 +271,22 @@
     max-width: none;
   }
 
-  .actions > * {
-    width: 100%;
+  /* Hug-width centered pill — a full-width slab was hiding the house. */
+  .actions {
     justify-content: center;
+  }
+
+  .actions > * {
+    width: auto;
   }
 
   .calcLink {
     display: inline-flex;
     align-self: center;
+  }
+
+  /* A touch more air between the stacked display words. */
+  .d2 {
+    margin-top: 0.05em;
   }
 }
