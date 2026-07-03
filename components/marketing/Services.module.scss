@@ -37,6 +37,21 @@
   border: 1px solid rgba(242, 168, 44, 0.28);
 }
 
+/* Dropped-in illustration icons sit directly on the navy (already gold/bright). */
+.iconImg {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
 .body {
   min-width: 0;
   padding-top: 2px;
