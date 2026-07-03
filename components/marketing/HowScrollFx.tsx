@@ -49,9 +49,11 @@ export function HowScrollFx({ heading, children }: { heading: ReactNode; childre
           c.toggleAttribute("data-on", Math.abs(off) < 0.55);
         });
       } else {
-        const p = clamp((vh * 0.85 - rect.top) / (rect.height * 0.9), 0, 1);
-        if (fillRef.current) fillRef.current.style.transform = `scaleX(${p.toFixed(3)})`;
-        const activeIdx = Math.min(cards.length - 1, Math.floor(p * cards.length));
+        // Viewport-relative runway (independent of the short section height):
+        // fills as the section top travels from 85%→15% of the viewport.
+        const p = clamp((vh * 0.85 - rect.top) / (vh * 0.7), 0, 1);
+        if (fillRef.current) fillRef.current.style.transform = `scaleX(${Math.max(0.02, p).toFixed(3)})`;
+        const activeIdx = Math.round(p * (cards.length - 1));
         cards.forEach((c, i) => {
           c.style.transform = "";
           c.toggleAttribute("data-on", i <= activeIdx);
