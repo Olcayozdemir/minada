@@ -46,6 +46,15 @@
   padding: var(--space-3);
   border-radius: var(--r-lg);
   color: var(--on-dark);
+
+  /* Phones: compact hug-width chip, single-line title. */
+  @include bp-down(640px) {
+    inset-inline: 8px auto;
+    bottom: 8px;
+    max-width: calc(100% - 16px);
+    padding: 7px 12px;
+    border-radius: 12px;
+  }
 }
 
 .labelIcon {
@@ -61,6 +70,14 @@
 
 .title {
   font-size: 1rem;
+
+  @include bp-down(640px) {
+    font-size: 0.8rem;
+    font-weight: 650;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .desc {
