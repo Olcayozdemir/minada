@@ -86,9 +86,12 @@
   align-self: flex-start;
 }
 
+/* Staircase offset in em: tracks the type size, so TR/EN word lengths and
+   viewport width can't pull the two words apart. */
 .d2 {
-  align-self: flex-end;
-  margin-top: -0.06em;
+  align-self: flex-start;
+  margin-left: 1.1em;
+  margin-top: -0.08em;
 }
 
 /* Inline before the first display word — flows with the text, so it is
