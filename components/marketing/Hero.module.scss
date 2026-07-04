@@ -1,5 +1,12 @@
 @use "../../styles/mixins" as *;
 
+/* Animatable angle for the calculator card's travelling border light. */
+@property --calc-beam {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .hero {
   position: relative;
   /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
@@ -121,11 +128,9 @@
 
 .display {
   position: relative;
-  /* Nudge the type right so the roof peak pierces the middle of the word
-     (letters read on both sides) instead of the wide roof body swallowing it.
-     Desktop only — the portrait mobile crop clears the sky differently. */
-  margin-left: clamp(2rem, 8vw, 11rem);
-  font-size: var(--fs-display);
+  /* Display box spans the container, so GÜNEŞ can centre and ENERJİSİ sit at
+     the end (see .d1/.d2). Scaled down from the full display size. */
+  font-size: calc(var(--fs-display) * 0.75);
   line-height: 0.92;
   letter-spacing: -0.03em;
   font-weight: 700;
@@ -136,15 +141,24 @@
 }
 
 .d1 {
-  align-self: flex-start;
+  align-self: center;
 }
 
-/* Staircase offset in em: tracks the type size, so TR/EN word lengths and
-   viewport width can't pull the two words apart. */
+/* Pushed to the end (right); no staircase offset needed once it hugs the edge. */
 .d2 {
-  align-self: flex-start;
-  margin-left: 1.1em;
+  align-self: flex-end;
   margin-top: -0.08em;
+}
+
+/* Desktop only: nudge GÜNEŞ a touch right of centre; ENERJİSİ a touch smaller. */
+@include bp-up(761px) {
+  .d1 {
+    transform: translateX(clamp(1rem, 4vw, 6rem));
+  }
+
+  .d2 {
+    font-size: 0.85em;
+  }
 }
 
 /* Trailing accent after the first display word — flows with the text, so it is
@@ -182,12 +196,6 @@
   }
 }
 
-.chipSaving {
-  @extend %chip;
-  left: 6%;
-  top: 50%;
-}
-
 .chipWarranty {
   @extend %chip;
   right: 8%;
@@ -195,10 +203,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-}
-
-.ring {
-  flex: none;
 }
 
 .bottom {
@@ -260,6 +264,48 @@
   &:hover {
     transform: translateY(-2px);
   }
+
+  /* Gold light travelling around the border: a rotating conic-gradient comet,
+     masked down to the ~1.6px ring so only the edge glows. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.6px;
+    background: conic-gradient(
+      from var(--calc-beam),
+      transparent 0deg,
+      transparent 240deg,
+      var(--gold-300) 300deg,
+      #fff6dd 330deg,
+      var(--gold-300) 350deg,
+      transparent 360deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    filter: drop-shadow(0 0 3px rgba(255, 194, 77, 0.7));
+    pointer-events: none;
+    animation: calcBeam 3.2s linear infinite;
+  }
+}
+
+@keyframes calcBeam {
+  to {
+    --calc-beam: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calcCard::after {
+    animation: none;
+  }
 }
 
 .calcThumb img {
@@ -308,7 +354,6 @@
   }
 
   /* Radical declutter: type + one CTA breathe over the photo. */
-  .chipSaving,
   .sub,
   .calcBtn {
     display: none;
@@ -338,9 +383,11 @@
     align-self: center;
   }
 
-  /* Portrait crop clears the sky top-down, so the type sits flush-left. */
+  /* A touch larger on the narrow portrait crop than the desktop 0.75, and
+     nudged left so both lines pull off the centre. */
   .display {
-    margin-left: 0;
+    font-size: calc(var(--fs-display) * 0.95);
+    transform: translateX(-5vw);
   }
 
   /* A touch more air between the stacked display words. */

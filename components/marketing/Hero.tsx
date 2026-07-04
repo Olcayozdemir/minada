@@ -143,28 +143,6 @@ export async function Hero() {
           </h1>
         </SinkOnScroll>
 
-        <div className={styles.chipSaving}>
-          <svg className={styles.ring} width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
-            <circle cx="22" cy="22" r="17" fill="none" stroke="rgba(238,242,247,0.18)" strokeWidth="3.2" />
-            <circle
-              cx="22"
-              cy="22"
-              r="17"
-              fill="none"
-              stroke="var(--gold-300)"
-              strokeWidth="3.2"
-              strokeLinecap="round"
-              strokeDasharray="107"
-              strokeDashoffset="11"
-              transform="rotate(-90 22 22)"
-            />
-          </svg>
-          <div>
-            <strong>{t("chipSavingValue")}</strong>
-            <span>{t("chipSavingLabel")}</span>
-          </div>
-        </div>
-
         {/* TODO(olcay): "10 yıl garanti" chip collides with the display word at
             some widths — disabled for now, will return in a different form. */}
 
