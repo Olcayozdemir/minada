@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { PlaceholderPage } from "@/components/marketing/PlaceholderPage";
+import { Services } from "@/components/marketing/Services";
+import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -9,13 +10,22 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Nav" });
-  return { title: t("services"), alternates: buildAlternates("/services", locale) };
+  const t = await getTranslations({ locale, namespace: "Home.services" });
+  return {
+    title: t("title"),
+    description: t("intro"),
+    alternates: buildAlternates("/services", locale),
+  };
 }
 
+// The five customer-facing solar offers; delivery steps live on /how-it-works.
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("Nav");
-  return <PlaceholderPage title={t("services")} />;
+  return (
+    <>
+      <Services headingAs="h1" />
+      <FinalCta />
+    </>
+  );
 }

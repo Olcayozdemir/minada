@@ -52,7 +52,8 @@
 .grid {
   @include list-reset;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Six steps read best as two rows of three. */
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
 
   @include bp-down(1000px) {
@@ -101,6 +102,14 @@
   background:
     radial-gradient(120% 90% at 20% 0%, rgba(96, 214, 234, 0.16), transparent 60%),
     linear-gradient(160deg, var(--green-700), var(--green-900));
+}
+
+/* Illustrated icon inherited from the old process service cards. */
+.art {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(8, 26, 48, 0.35));
 }
 
 .ghost {

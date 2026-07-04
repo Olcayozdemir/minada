@@ -4,15 +4,26 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { IconSearch, IconBlueprint, IconInstall, IconSupport } from "@/components/ui/icons";
+import {
+  IconSearch,
+  IconBlueprint,
+  IconLandmark,
+  IconPackage,
+  IconInstall,
+  IconActivity,
+} from "@/components/ui/icons";
 import { HowScrollFx } from "./HowScrollFx";
 import styles from "./HowItWorks.module.scss";
 
+// Six delivery steps, survey → O&M. `art` reuses the illustrated icons from
+// the retired process service cards (public/images/services/<art>.png).
 const STEPS = [
-  { id: "discovery", Icon: IconSearch },
-  { id: "design", Icon: IconBlueprint },
-  { id: "install", Icon: IconInstall },
-  { id: "support", Icon: IconSupport },
+  { id: "discovery", Icon: IconSearch, art: null },
+  { id: "engineering", Icon: IconBlueprint, art: "engineering" },
+  { id: "licensing", Icon: IconLandmark, art: "licensing" },
+  { id: "procurement", Icon: IconPackage, art: "procurement" },
+  { id: "install", Icon: IconInstall, art: "construction" },
+  { id: "om", Icon: IconActivity, art: "om" },
 ] as const;
 
 // A step's photo is optional: if the file has been dropped in, show it;
@@ -23,7 +34,14 @@ function stepImage(id: string): string | null {
   return existsSync(join(process.cwd(), "public", rel)) ? `/${rel}` : null;
 }
 
-export async function HowItWorks() {
+// Illustrated icon carried over from the old service cards, if present.
+function stepArt(art: string | null): string | null {
+  if (!art) return null;
+  const rel = `images/services/${art}.png`;
+  return existsSync(join(process.cwd(), "public", rel)) ? `/${rel}` : null;
+}
+
+export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
   const t = await getTranslations("Home.how");
 
   return (
@@ -31,12 +49,18 @@ export async function HowItWorks() {
       <HowScrollFx
         heading={
           <div className={styles.head}>
-            <SectionHeading eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+            <SectionHeading
+              as={headingAs}
+              eyebrow={t("eyebrow")}
+              title={t("title")}
+              intro={t("intro")}
+            />
           </div>
         }
       >
-        {STEPS.map(({ id, Icon }, i) => {
+        {STEPS.map(({ id, Icon, art }, i) => {
           const img = stepImage(id);
+          const artImg = stepArt(art);
           return (
             <li key={id} className={styles.step}>
               <div className={styles.media}>
@@ -51,7 +75,11 @@ export async function HowItWorks() {
                 ) : (
                   <div className={styles.placeholder} aria-hidden="true">
                     <span className={styles.ghost}>{`0${i + 1}`}</span>
-                    <Icon size={30} />
+                    {artImg ? (
+                      <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
+                    ) : (
+                      <Icon size={30} />
+                    )}
                   </div>
                 )}
                 <span className={styles.num}>{`0${i + 1}`}</span>

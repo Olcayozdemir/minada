@@ -10,25 +10,16 @@ import {
   IconLeaf,
   IconCarport,
   IconBattery,
-  IconBlueprint,
-  IconLandmark,
-  IconPackage,
-  IconInstall,
-  IconActivity,
 } from "@/components/ui/icons";
 import styles from "./Services.module.scss";
 
+// Customer-facing solar offers only — process steps live in HowItWorks.
 const CARDS = [
   { id: "rooftop", Icon: IconSolar },
   { id: "ground", Icon: IconGroundMount },
   { id: "agripv", Icon: IconLeaf },
   { id: "carport", Icon: IconCarport },
   { id: "bess", Icon: IconBattery },
-  { id: "engineering", Icon: IconBlueprint },
-  { id: "licensing", Icon: IconLandmark },
-  { id: "procurement", Icon: IconPackage },
-  { id: "construction", Icon: IconInstall },
-  { id: "om", Icon: IconActivity },
 ] as const;
 
 // A service's card icon: use the dropped-in illustration (public/images/services/
@@ -39,13 +30,19 @@ function serviceIcon(id: string): string | null {
   return existsSync(join(process.cwd(), "public", rel)) ? `/${rel}` : null;
 }
 
-export async function Services() {
+export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
   const t = await getTranslations("Home.services");
   const ts = await getTranslations("Services");
 
   return (
     <Section tone="dark" id="hizmetler">
-      <SectionHeading tone="dark" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeading
+        as={headingAs}
+        tone="dark"
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
+      />
       <ul className={styles.grid}>
         {CARDS.map(({ id, Icon }) => {
           const img = serviceIcon(id);
