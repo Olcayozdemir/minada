@@ -44,6 +44,8 @@ const slugify = (s: string): string =>
     .toLowerCase()
     .replaceAll("ç", "c").replaceAll("ğ", "g").replaceAll("ı", "i")
     .replaceAll("ö", "o").replaceAll("ş", "s").replaceAll("ü", "u")
+    // Strip combining marks (e.g. İ → i + U+0307 on lowercase) so slugs stay clean.
+    .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
@@ -198,6 +200,8 @@ const CAT_BY_SLUG = new Map(CATEGORIES.map((c) => [c.slug, c]));
 // the TommaTech/CW Enerji dealer listings and served from our own domain (no
 // hotlinking). Series without an entry fall back to the icon placeholder.
 const IMAGES: Record<string, string> = {
+  // Uno on-grid: reuse the near-identical Uno single-phase unit photo.
+  "tommatech-uno-atom-home-on-grid": "/products/inverters/uno-hybrid.webp",
   "tommatech-trio-inova-atom-k-on-grid": "/products/inverters/trio-inova.jpg",
   "tommatech-trio-castor-plus-k-on-grid": "/products/inverters/trio-castor.jpg",
   "tommatech-trio-evo-zen-on-grid": "/products/inverters/trio-evo.jpg",
@@ -212,7 +216,53 @@ const IMAGES: Record<string, string> = {
   "tommatech-c-pro-off-grid": "/products/inverters/c-pro.webp",
   "tommatech-c-prox-off-grid": "/products/inverters/c-prox.jpg",
   "tommatech-c-plusx-off-grid": "/products/inverters/c-plusx.jpg",
+  // ── Enerji Depolama ──
+  "tommatech-hightech-power-ev-tipi-lv": "/products/storage/hightech-lv.jpg",
+  "tommatech-hightech-power-s-moduler-hv": "/products/storage/hightech-hv.webp",
+  "tommatech-modular-rack-serisi-51-2v": "/products/storage/rack.jpg",
+  "tommatech-orion-hera-konteyner-ess": "/products/storage/container.webp",
+  "tommatech-easy-living-tasinabilir-guc-istasyonu": "/products/storage/easy-living.webp",
+  // ── Şarj Kontrol ──
+  "tommatech-mppt-sarj-kontrol-cihazi": "/products/charge/mppt.webp",
+  "tommatech-pwm-sarj-kontrol-cihazi": "/products/charge/pwm.webp",
+  // ── Solar Paketler (hibrit → on-grid görseli; benzer sistem kiti) ──
+  "cw-enerji-on-grid-paket-tek-uc-faz": "/products/packages/on-grid.jpg",
+  "cw-enerji-hibrit-paket-depolamali": "/products/packages/on-grid.jpg",
+  "cw-enerji-off-grid-paket": "/products/packages/off-grid.jpg",
+  "cw-enerji-solar-otopark-paketi-carport": "/products/packages/carport.webp",
+  "cw-enerji-tarimsal-sulama-paketi": "/products/packages/irrigation.jpg",
+  "tommatech-balkon-mikroinverter-seti": "/products/packages/balcony.jpg",
+  // ── Solar Ekipmanlar ──
+  "cw-enerji-montaj-konstruksiyon-cati-arazi": "/products/equipment/mounting.webp",
+  "cw-enerji-arazi-ucgen-ayak-sistemleri": "/products/equipment/ground.jpg",
+  "cw-enerji-solar-kablo-pv1-f": "/products/equipment/cable.jpg",
+  "cw-enerji-mc4-konnektor-setler": "/products/equipment/connector.jpg",
+  "cw-enerji-kelepce-vida-sizdirmazlik": "/products/equipment/clamps.png",
+  // ── Isı Pompası (aquavera → power görseli; benzer ünite) ──
+  "tommatech-titan-serisi-monoblok-r32": "/products/heatpump/titan.jpg",
+  "tommatech-power-serisi-r290-r32": "/products/heatpump/power.webp",
+  "tommatech-triome-all-in-one-r290": "/products/heatpump/triome.jpg",
+  "tommatech-aquavera-havuz-r290": "/products/heatpump/power.webp",
+  // ── EV Şarj ──
+  "tommatech-ac-sarj-trio-likya": "/products/ev/ac.jpg",
+  "tommatech-dc-hizli-sarj": "/products/ev/dc.jpg",
+  // ── Solar Aydınlatma (yürüyüş yolu → sokak görseli) ──
+  "tommatech-yol-sokak-aydinlatma": "/products/lighting/street.webp",
+  "tommatech-yuruyus-yolu-aydinlatma": "/products/lighting/street.webp",
+  "tommatech-all-in-one-hexagon": "/products/lighting/all-in-one.webp",
+  "tommatech-single-double-line": "/products/lighting/line.webp",
+  "tommatech-bolard-aydinlatma": "/products/lighting/bolard.webp",
 };
+
+// Panels look near-identical across series, so pick a product photo by type
+// (standard / dark / bifacial) rather than per-series. Other categories use the
+// explicit IMAGES map above; a series with neither shows the icon placeholder.
+function categoryFallbackImage(catSlug: string, title: string): string | undefined {
+  if (catSlug !== "gunes-panelleri") return undefined;
+  if (/FB|Dark|Black/i.test(title)) return "/products/panels/dark.jpg";
+  if (/G2G|Diamond|BIPV/i.test(title)) return "/products/panels/g2g.webp";
+  return "/products/panels/standard.jpg";
+}
 
 function build(rows: Row[]): ProductGroupItem[] {
   return rows.map((row, i) => {
@@ -229,7 +279,7 @@ function build(rows: Row[]): ProductGroupItem[] {
       ...(wProd ? { warrantyProductYears: wProd } : {}),
       ...(wPerf ? { warrantyPerformanceYears: wPerf } : {}),
       features,
-      image: IMAGES[slug],
+      image: IMAGES[slug] ?? categoryFallbackImage(catSlug, title),
       featured: false,
       order: i + 1,
       hidden: Boolean(hidden),
