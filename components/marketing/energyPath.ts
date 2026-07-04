@@ -24,7 +24,17 @@ export function buildRoute(sections: Box[], vw: number): Pt[] {
   const [hero, ...rest] = sections;
   const pts: Pt[] = [{ x: (hero.left + hero.right) / 2, y: hero.bottom - START_RISE }];
   rest.forEach((s, i) => {
-    const x = i % 2 === 0 ? s.left + inset : s.right - inset;
+    // Inset "band" sections (rounded dark panels with margin-inline) leave a
+    // narrow gutter between panel and viewport edge — ride its midpoint so the
+    // line hugs the panel silhouette instead of crowding the cards inside.
+    const x =
+      i % 2 === 0
+        ? s.left > 4
+          ? s.left / 2
+          : s.left + inset
+        : s.right < vw - 4
+          ? (s.right + vw) / 2
+          : s.right - inset;
     const jogY = s.top + JOG_DROP;
     pts.push({ x: pts[pts.length - 1].x, y: jogY }, { x, y: jogY });
   });
