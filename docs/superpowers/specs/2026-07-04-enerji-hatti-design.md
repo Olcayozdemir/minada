@@ -52,17 +52,17 @@ palete ekler (kullanıcı onaylı). Cyan başka hiçbir UI öğesinde kullanılm
 Mount + resize'da wrapper'ın doğrudan `<section>` çocukları ölçülür
 (`getBoundingClientRect` + scrollY) ve tek path kurulur:
 
-- **Rota kuralı (Rev.4):** section İÇİNDE hat tek kenarda sabit durur (section
-  başına sol/sağ dönüşümlü, iki aynı-x noktası → düz iniş); merkezden geçiş
-  yalnızca section GEÇİŞLERİNDE olur — seam'de dikey teğetli kübik S-kavisi ile
-  karşı kenara süzülür. Kenar tutuşu section'a ~170px girince başlar/biter
-  (kısa section'larda yüksekliğin %30'u); son section'da alt tutma atlanır,
-  merkeze geniş bir süzülüşle iner.
-- **Genlik:** `min(vw·0.22, 340px)`.
+- **Rota kuralı (Rev.5):** KESİNTİSİZ dalga — düz segment yok (Rev.4'ün kenarda
+  düz inen hali kullanıcı tarafından reddedildi). Her section'a bir tepe (crest)
+  düşer, yanlar dönüşümlü; ~900px'ten uzun section'lara ek tepe eklenir. Geniş
+  genlik sayesinde tepe section ortasında sayfanın iyice sağında/solunda gezer,
+  merkez yalnızca tepeler arasında (section geçişlerine denk gelen bölgede)
+  kesilir. Dikey teğetli kübik Bézier'ler.
+- **Genlik (Rev.5):** `min(vw·0.34, 500px)` — 1440'ta tepeler x≈230/1210.
 - **Uçlar:** hat hero'nun alt kısmından merkezden doğar (panellerin arkasından),
   son section'ın sonunda merkezde, footer'a girmeden biter.
-- **Pinned bölge:** HowItWorks'ün tüm pinned stage'i tek kenarda DÜZ iner
-  (Rev.4'ün doğal sonucu) — pin sırasında yanal kayma görülmez.
+- **Pinned bölge:** hat pinned içeriğin arkasında olduğundan özel durum gerekmez;
+  pin sırasında dalganın yavaşça yukarı süzülmesi kabul edilen bir etkidir.
 
 ## Boyama mekaniği
 

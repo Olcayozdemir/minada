@@ -6,17 +6,17 @@ export type Pt = { x: number; y: number };
 
 const START_RISE = 48; // line is born this far above the hero's bottom edge
 const END_RISE = 40; // …and ends this far above the last section's bottom
-const EDGE_HOLD = 170; // side run starts/ends this far inside a section
+const SEGMENT_MAX = 900; // add extra bends inside very tall sections
 
-/** Wave amplitude around the page center for a given viewport width. */
+/** Wave amplitude around the page center: wide, so the crests ride out by
+ * the page edges and the center is only crossed passing between them. */
 export function waveAmp(vw: number): number {
-  return Math.min(vw * 0.22, 340);
+  return Math.min(vw * 0.34, 500);
 }
 
-/** Route rule: within a section the line holds one side (alternating per
- * section); the sweep across the page center happens in the seam between
- * sections. Two same-x points per section make the in-section run straight,
- * so the pinned HowItWorks stretch shows no lateral drift while pinned. */
+/** Serpentine route: born under the hero's center, then one crest per section
+ * (extra crests inside tall ones), alternating sides of the page center —
+ * a continuous wave, no straight runs. */
 export function buildWaveRoute(sections: Box[], vw: number): Pt[] {
   if (sections.length < 2) return [];
   const amp = waveAmp(vw);
@@ -25,13 +25,13 @@ export function buildWaveRoute(sections: Box[], vw: number): Pt[] {
   const pts: Pt[] = [{ x: cx, y: hero.bottom - START_RISE }];
   let dir = 1;
   for (const s of rest) {
-    const x = cx + dir * amp;
-    const hold = Math.min(EDGE_HOLD, (s.bottom - s.top) * 0.3);
-    pts.push({ x, y: s.top + hold }, { x, y: s.bottom - hold });
-    dir = -dir;
+    const h = s.bottom - s.top;
+    const bends = Math.max(1, Math.round(h / SEGMENT_MAX));
+    for (let k = 0; k < bends; k++) {
+      pts.push({ x: cx + dir * amp, y: s.top + ((k + 0.5) / bends) * h });
+      dir = -dir;
+    }
   }
-  // Swap the last section's bottom hold for a roomier glide to the center.
-  pts.pop();
   const last = rest[rest.length - 1];
   pts.push({ x: cx, y: last.bottom - END_RISE });
   return pts;
