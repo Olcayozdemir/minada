@@ -1,0 +1,102 @@
+@use "../../../../styles/mixins" as *;
+
+/* Shared layout for the two segment landings (evim-icin / isletmem-icin).
+   Reuses the site's card language: gold-chipped cards on the navy section. */
+
+.benefits {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+
+  @include bp-down(760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefit {
+  padding: var(--space-5);
+  border-radius: var(--r-xl);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.benefitIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--space-4);
+  border-radius: 13px;
+  color: var(--gold-300);
+  background: rgba(242, 168, 44, 0.12);
+  border: 1px solid rgba(242, 168, 44, 0.28);
+}
+
+.benefitTitle {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.benefitDesc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--on-dark-2);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.note {
+  margin-top: var(--space-5);
+  font-size: 0.92rem;
+  color: var(--on-dark-2);
+}
+
+/* Compact 6-step summary (full detail lives on /how-it-works). */
+.steps {
+  @include list-reset;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+
+  @include bp-down(900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  font-weight: 600;
+}
+
+.stepNum {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--on-accent);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+}

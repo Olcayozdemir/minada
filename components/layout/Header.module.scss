@@ -59,6 +59,75 @@
   }
 }
 
+/* Dropdown group ("Çözümler"): CSS-only — opens on hover and keeps itself
+   open while any child link holds focus (keyboard reaches the links because
+   they stay in the tab order). */
+.group {
+  position: relative;
+
+  > .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: default;
+  }
+
+  &:hover .dropdown,
+  &:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: -14px;
+  min-width: 190px;
+  padding: 8px;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card-light);
+  backdrop-filter: blur(14px) saturate(1.5);
+  -webkit-backdrop-filter: blur(14px) saturate(1.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0.15s;
+
+  /* Hover bridge so the pointer can travel from trigger to panel. */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+}
+
+.dropLink {
+  padding: 9px 12px;
+  border-radius: calc(var(--r-lg) - 6px);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(242, 168, 44, 0.14);
+  }
+}
+
 .actions {
   display: flex;
   align-items: center;
