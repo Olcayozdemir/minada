@@ -23,11 +23,42 @@
   }
 }
 
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
 .stars {
   display: flex;
   gap: 3px;
   color: var(--gold);
-  margin-bottom: 16px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px 5px 9px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.chipIcon {
+  color: var(--gold-600);
+  flex-shrink: 0;
+}
+
+.chipBiz .chipIcon {
+  color: var(--ink-2);
 }
 
 .quote {
