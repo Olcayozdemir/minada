@@ -19,11 +19,30 @@
   object-position: 52% 62%;
 }
 
-/* Sky-removed duplicate above the display type: the roofline passes in
-   front of the letters. Interactive elements sit above it (z 5+). */
-.overlay {
-  z-index: 4;
+/* Lit twin stacked on the base photo. Both share .photo (same object-fit and
+   object-position) so they stay pixel-aligned; only opacity differs. Hidden
+   until hover, when the house "powers on" with a smooth crossfade. */
+.lit {
+  opacity: 0;
+  transition: opacity 0.7s ease;
   pointer-events: none;
+}
+
+.hero:hover .lit {
+  opacity: 1;
+}
+
+/* Touch devices can't hover — show the lit (stronger) frame by default. */
+@media (hover: none) {
+  .lit {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lit {
+    transition-duration: 0.01ms;
+  }
 }
 
 .scrim {

@@ -34,42 +34,37 @@ export async function Hero() {
   const accent = t("taglineAccent");
   const [pre, post] = tagline.split(accent);
 
-  // Art direction: portrait renders below 760px, widescreen above — both for
-  // the base photo and its sky-removed twin (the depth-sandwich overlay).
-  const baseCommon = { alt: t("imageAlt"), sizes: "100vw", fill: true } as const;
-  const { props: basePhoto } = getImageProps({ ...baseCommon, src: "/images/v2/hero-2.jpeg" });
-  const {
-    props: { srcSet: basePhotoMobile },
-  } = getImageProps({ ...baseCommon, src: "/images/v2/mobile-hero.jpeg" });
-  const overlayCommon = { alt: "", sizes: "100vw", fill: true } as const;
-  const { props: overlayPhoto } = getImageProps({
-    ...overlayCommon,
-    src: "/images/v2/hero-2-without-bg.png",
+  // Two pixel-aligned frames of the same house at dusk: the base sits with a
+  // bare roof and the lights off; the lit twin has the solar system installed
+  // and powered on — warm interiors plus the teal energy path from panel →
+  // battery → charger → car. On hover the lit frame crossfades in (pure CSS,
+  // see .lit). Landscape-only pair — no art-directed mobile crop, so the shared
+  // .photo object-position handles narrow crops.
+  const photoCommon = { sizes: "100vw", fill: true } as const;
+  const { props: basePhoto } = getImageProps({
+    ...photoCommon,
+    alt: t("imageAlt"),
+    src: "/images/v2/Modern_house_in_garden_dusk_202607041801.jpeg",
   });
-  const {
-    props: { srcSet: overlayPhotoMobile },
-  } = getImageProps({ ...overlayCommon, src: "/images/v2/mobile-hero-without-bg.png" });
+  const { props: litPhoto } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/House_with_solar_system_installed_202607041802.jpeg",
+  });
 
   return (
     <section className={styles.hero} data-hero="">
-      <picture>
-        <source media="(max-width: 760px)" srcSet={basePhotoMobile} />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
-      </picture>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
+      {/* Lit twin, eager-loaded so the first hover crossfades without a pop-in. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        {...litPhoto}
+        className={clsx(styles.photo, styles.lit)}
+        loading="eager"
+        aria-hidden="true"
+      />
       <div className={styles.scrim} aria-hidden="true" />
-      {/* Same frame with the sky removed — layered above the display type so
-          the roofline passes in front of the letters (depth sandwich). */}
-      <picture>
-        <source media="(max-width: 760px)" srcSet={overlayPhotoMobile} />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          {...overlayPhoto}
-          className={clsx(styles.photo, styles.overlay)}
-          loading="eager"
-          aria-hidden="true"
-        />
-      </picture>
 
       <div className={styles.inner}>
         <p className={styles.tagline}>
