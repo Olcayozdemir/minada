@@ -5,6 +5,7 @@ import styles from "./EnergyLine.module.scss";
 import { buildWaveRoute, toWavePath } from "./energyPath";
 
 const READ_LINE = 0.55; // paint head tracks this fraction of the viewport
+const MOBILE_MAX = 1023; // no line below this width — desktop-only effect
 
 /**
  * "Energy line" — a single wave that flows down the page center and is
@@ -57,6 +58,13 @@ export function EnergyLine({ children }: { children: ReactNode }) {
       const wrapRect = wrap.getBoundingClientRect();
       const w = Math.round(wrapRect.width);
       const h = Math.round(wrapRect.height);
+      if (window.innerWidth <= MOBILE_MAX) {
+        for (const p of [track, glow, paint]) p.setAttribute("d", "");
+        total = 0;
+        samples = [];
+        spark.toggleAttribute("data-on", false);
+        return;
+      }
       const boxes = Array.from(wrap.querySelectorAll(":scope > section")).map((el) => {
         const r = el.getBoundingClientRect();
         return {
@@ -106,7 +114,7 @@ export function EnergyLine({ children }: { children: ReactNode }) {
       if (reduced) return;
       // Self-heal: if we were built while hidden (zero-size), rebuild once
       // real dimensions exist — cheaper than trusting every resize signal.
-      if (!total && wrap.clientWidth > 0) build();
+      if (!total && window.innerWidth > MOBILE_MAX && wrap.clientWidth > 0) build();
       if (!total) return;
       const wrapTop = wrap.getBoundingClientRect().top + window.scrollY;
       const targetY = window.scrollY + window.innerHeight * READ_LINE - wrapTop;

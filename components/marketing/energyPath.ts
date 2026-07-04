@@ -10,7 +10,7 @@ const SEGMENT_MAX = 900; // add extra bends inside very tall sections
 
 /** Wave amplitude around the page center for a given viewport width. */
 export function waveAmp(vw: number): number {
-  return vw <= 1023 ? vw * 0.16 : Math.min(vw * 0.22, 340);
+  return Math.min(vw * 0.22, 340);
 }
 
 /** Serpentine route: born under the hero's center, then one apex per section

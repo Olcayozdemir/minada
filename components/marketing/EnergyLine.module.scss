@@ -73,3 +73,10 @@
     display: none;
   }
 }
+
+/* Desktop-only effect — the wave crowds narrow screens. */
+@media (max-width: 1023px) {
+  .overlay {
+    display: none;
+  }
+}

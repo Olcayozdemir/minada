@@ -18,7 +18,8 @@ yukarıda doğar, aşağı indikçe elektriğe (cyan) dönüşür.**
    kenarları gezen köşeli devre hattı kullanıcı tarafından beğenilmedi ve elendi
    ("dalga gibi olsun, ortadan geçebilir ama görsellerin önünden geçmesin").
 2. **Renk:** Gold→cyan dikey geçiş — üstte gold, hero altından itibaren cyan.
-3. **Mobil:** Aynı dalga, daha dar genlikle (ayrı düz-hat modu yok).
+3. **Mobil (Rev.3):** Hat mobilde YOK — dar genlikli dalga denendi, kullanıcı
+   beğenmedi; efekt yalnızca desktop (≥1024px).
 4. **Teknik:** Otomatik tek path — DOM ölçümünden üretilen adaptif SVG
    (el çizimi sabit SVG ve section-başına parçalı yaklaşımlar elendi).
 
@@ -55,7 +56,7 @@ Mount + resize'da wrapper'ın doğrudan `<section>` çocukları ölçülür
   bir apex (tepe) düşer, yanlar dönüşümlü; ~900px'ten uzun section'lara yükseklik
   oranında ek apex eklenir (HowItWorks'ün pinned stage'i ~3 büklüm alır).
   Apex'ler arasında dikey teğetli kübik Bézier'ler — akışkan S-kavisleri.
-- **Genlik:** desktop `min(vw·0.22, 340px)`, mobil (≤1023px) `vw·0.16`.
+- **Genlik:** `min(vw·0.22, 340px)`.
 - **Uçlar:** hat hero'nun alt kısmından merkezden doğar (panellerin arkasından),
   son section'ın sonunda merkezde, footer'a girmeden biter.
 - **Pinned bölge:** hat pinned içeriğin arkasında olduğundan özel durum gerekmez;
@@ -83,8 +84,8 @@ Mount + resize'da wrapper'ın doğrudan `<section>` çocukları ölçülür
 
 ## Mobil (≤1023px)
 
-Aynı dalga, daha dar genlikle (`vw·0.16`) merkez etrafında salınır; hat içerik
-arkasında olduğundan dar ekranda da çakışma sorunu yoktur. Boyama + gradient aynı.
+Hat mobilde render edilmez: CSS `display:none` + JS build atlar (Rev.3, kullanıcı
+kararı). Breakpoint geçişlerinde resize/RO rebuild'i modu doğru tarafa çevirir.
 
 ## Erişilebilirlik / fallback
 
@@ -109,7 +110,7 @@ Otomatik test altyapısı yok; görsel efekt için uygun da değil. Preview'da m
 2. Scroll'da boya ucu + spark okuma hizasını takip ediyor; hat görsel/kart/metnin
    arkasında kalıyor, yalnızca zeminlerde görünüyor.
 3. Hero ve FinalCta panellerinde hat panelin arkasına dalıp çıkıyor.
-4. Mobilde dar genlikli, desktop'ta geniş genlikli dalga; yatay taşma yok.
+4. Mobilde hat yok; desktop'ta dalga, yatay taşma yok.
 5. `prefers-reduced-motion` emülasyonunda statik tam boyalı hat.
 6. Resize sonrası hat section'larla hizalı kalıyor.
 7. Konsolda hata yok; scroll FPS'te gözle görülür düşüş yok.
