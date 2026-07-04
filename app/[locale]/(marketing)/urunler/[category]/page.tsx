@@ -99,7 +99,7 @@ export default async function CategoryPage({
 
   return (
     <>
-      <Section tone="dark">
+      <Section tone="dark" className={styles.pageHead}>
         <Link href="/urunler" className={styles.back}>
           {t("backToAll")}
         </Link>
@@ -120,7 +120,11 @@ export default async function CategoryPage({
                     <span className={styles.media}>
                       {g.image ? (
                         <Image
-                          src={urlFor(g.image).width(640).height(440).url()}
+                          src={
+                            typeof g.image === "string"
+                              ? g.image
+                              : urlFor(g.image).width(640).height(440).url()
+                          }
                           alt={productName}
                           width={640}
                           height={440}

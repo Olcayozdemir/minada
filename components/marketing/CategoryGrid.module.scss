@@ -1,0 +1,104 @@
+@use "../../styles/mixins" as *;
+
+/* Shared catalog category tiles — used on /urunler and the homepage teaser.
+   Light cards; each category's 3D render floats out of the top-right corner. */
+
+.catGrid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 236px;
+  padding: var(--space-5);
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(16, 42, 67, 0.1);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  overflow: visible; /* let the 3D render bleed past the card edges */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(16, 42, 67, 0.12);
+    border-color: rgba(197, 154, 74, 0.4);
+  }
+
+  &:hover .catGo {
+    color: var(--gold-600);
+    transform: translateX(3px);
+  }
+
+  &:hover .catHero {
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+/* 3D product render floated out of the top-right corner (bleeds past edges). */
+.catHero {
+  position: absolute;
+  top: -22px;
+  right: -16px;
+  width: 60%;
+  max-width: 250px;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 26px rgba(16, 42, 67, 0.2));
+  transition: transform 0.28s ease;
+}
+
+.catHeroImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Text block pinned to the bottom-left, clear of the floating render. */
+.catText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+.catCount {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: var(--space-1);
+}
+
+.catCardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.catDesc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.catGo {
+  margin-top: var(--space-4);
+  color: var(--ink-2);
+  transition: color 0.2s ease, transform 0.2s ease;
+}

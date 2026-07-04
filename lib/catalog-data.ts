@@ -194,6 +194,26 @@ const ROWS: Row[] = [
 
 const CAT_BY_SLUG = new Map(CATEGORIES.map((c) => [c.slug, c]));
 
+// Self-hosted product photos (keyed by group slug → /public path). Sourced from
+// the TommaTech/CW Enerji dealer listings and served from our own domain (no
+// hotlinking). Series without an entry fall back to the icon placeholder.
+const IMAGES: Record<string, string> = {
+  "tommatech-trio-inova-atom-k-on-grid": "/products/inverters/trio-inova.jpg",
+  "tommatech-trio-castor-plus-k-on-grid": "/products/inverters/trio-castor.jpg",
+  "tommatech-trio-evo-zen-on-grid": "/products/inverters/trio-evo.jpg",
+  "tommatech-trio-force-grand-on-grid": "/products/inverters/trio-force.jpg",
+  "tommatech-micro-s-microinverter": "/products/inverters/micro-s.webp",
+  "tommatech-uno-hybrid": "/products/inverters/uno-hybrid.webp",
+  "tommatech-trio-hybrid-k-pro": "/products/inverters/trio-hybrid.webp",
+  "tommatech-trio-hybrid-l-f": "/products/inverters/trio-hybrid-l.jpg",
+  "tommatech-trio-hybrid-s-hv": "/products/inverters/trio-hybrid-s.webp",
+  "tommatech-trio-hybrid-maxi-hv": "/products/inverters/trio-hybrid-maxi.webp",
+  "tommatech-new-off-grid": "/products/inverters/new.webp",
+  "tommatech-c-pro-off-grid": "/products/inverters/c-pro.webp",
+  "tommatech-c-prox-off-grid": "/products/inverters/c-prox.jpg",
+  "tommatech-c-plusx-off-grid": "/products/inverters/c-plusx.jpg",
+};
+
 function build(rows: Row[]): ProductGroupItem[] {
   return rows.map((row, i) => {
     const [catSlug, brandKey, title, powerRange, variants, wProd, wPerf, features, hidden] = row;
@@ -209,6 +229,7 @@ function build(rows: Row[]): ProductGroupItem[] {
       ...(wProd ? { warrantyProductYears: wProd } : {}),
       ...(wPerf ? { warrantyPerformanceYears: wPerf } : {}),
       features,
+      image: IMAGES[slug],
       featured: false,
       order: i + 1,
       hidden: Boolean(hidden),
