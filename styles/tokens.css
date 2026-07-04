@@ -16,6 +16,10 @@
   --gold: #f2a82c;
   --gold-300: #ffc24d;
 
+  /* Electric accent — used ONLY by the home energy line (2026-07-04 spec) */
+  --volt: #29d6ff;
+  --volt-soft: rgba(41, 214, 255, 0.16);
+
   /* Light body (v2): airy cool neutrals */
   --bg: #f5f7fb; /* page background */
   --surface: #ffffff; /* cards */
