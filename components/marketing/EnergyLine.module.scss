@@ -1,0 +1,83 @@
+.wrap {
+  position: relative;
+}
+
+/* Decorative overlay: above section backgrounds & content, below the header
+   (z:200). Never intercepts input. */
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.track {
+  fill: none;
+  stroke: var(--volt-soft);
+  stroke-width: 2;
+}
+
+/* Wide, faint understroke = the glow. No SVG filters (known renderer gotcha). */
+.glow {
+  fill: none;
+  stroke-width: 7;
+  stroke-linecap: round;
+  opacity: 0.22;
+}
+
+.paint {
+  fill: none;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
+
+/* Gradient stops — sunlight up top, electricity below. */
+.gGold,
+.gGoldEnd {
+  stop-color: var(--gold);
+}
+
+.gVolt {
+  stop-color: var(--volt);
+}
+
+.gHalo0 {
+  stop-color: var(--volt);
+  stop-opacity: 0.5;
+}
+
+.gHalo1 {
+  stop-color: var(--volt);
+  stop-opacity: 0;
+}
+
+.node {
+  fill: var(--volt-soft);
+  transition: fill 0.35s ease;
+
+  &[data-on] {
+    fill: url(#energy-grad);
+  }
+}
+
+.spark {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+
+  &[data-on] {
+    opacity: 1;
+  }
+}
+
+.core {
+  fill: url(#energy-grad);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark {
+    display: none;
+  }
+}
