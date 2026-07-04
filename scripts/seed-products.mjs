@@ -17,20 +17,9 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const token = process.env.SANITY_API_WRITE_TOKEN;
 
-if (!projectId || !token) {
-  console.error(
-    "Missing env: NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_API_WRITE_TOKEN are required.",
-  );
-  process.exit(1);
-}
-
-const client = createClient({
-  projectId,
-  dataset,
-  apiVersion: "2024-01-01",
-  token,
-  useCdn: false,
-});
+// DRY_RUN=1 builds and prints the documents without a token/write — lets you
+// validate the transform offline before hitting the real dataset.
+const dryRun = Boolean(process.env.DRY_RUN);
 
 const slugify = (s) =>
   s
@@ -99,15 +88,14 @@ const GROUPS = [
   ["tommatech", "M10 144TNB G2G TOPCon", "620–590 Wp", ["620","615","610","605","600","595","590"], 15, 30, [...G2G, ...F_STD]],
 ];
 
-async function run() {
-  let tx = client.transaction();
-  tx = tx.createOrReplace(CATEGORY);
-  for (const b of BRANDS) tx = tx.createOrReplace(b);
-
+// Build the full document set. `variants` are coerced to numbers to match the
+// productGroup schema (array of number) — seeding strings would flag in Studio.
+function buildDocs() {
+  const docs = [CATEGORY, ...BRANDS];
   GROUPS.forEach((g, i) => {
     const [brand, title, powerRange, variants, wProd, wPerf, features, hidden] = g;
     const slug = slugify(`${brand}-${title}`);
-    tx = tx.createOrReplace({
+    docs.push({
       _id: `productGroup-${slug}`,
       _type: "productGroup",
       title,
@@ -115,7 +103,7 @@ async function run() {
       category: { _type: "reference", _ref: CATEGORY._id },
       brand: { _type: "reference", _ref: `productBrand-${brand}` },
       powerRange: powerRange || undefined,
-      variants,
+      variants: variants.map(Number),
       ...(wProd ? { warrantyProductYears: wProd } : {}),
       ...(wPerf ? { warrantyPerformanceYears: wPerf } : {}),
       features,
@@ -124,7 +112,34 @@ async function run() {
       order: i + 1,
     });
   });
+  return docs;
+}
 
+async function run() {
+  const docs = buildDocs();
+  const groups = docs.filter((d) => d._type === "productGroup");
+
+  if (dryRun) {
+    const hidden = groups.filter((g) => g.hidden).length;
+    console.log(
+      `DRY RUN — ${docs.length} docs: 1 category, ${BRANDS.length} brands, ` +
+        `${groups.length} groups (${groups.length - hidden} vitrinde, ${hidden} gizli).`,
+    );
+    console.log("Örnek grup:\n" + JSON.stringify(groups[0], null, 2));
+    return;
+  }
+
+  if (!projectId || !token) {
+    console.error(
+      "Missing env: NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_API_WRITE_TOKEN are required. " +
+        "(Tip: DRY_RUN=1 to preview offline.)",
+    );
+    process.exit(1);
+  }
+
+  const client = createClient({ projectId, dataset, apiVersion: "2024-01-01", token, useCdn: false });
+  let tx = client.transaction();
+  for (const d of docs) tx = tx.createOrReplace(d);
   const res = await tx.commit();
   console.log(`Seeded ${res.results.length} documents into ${projectId}/${dataset}.`);
   console.log("Not: görselleri Studio'dan yükleyin (hotlink kullanılmıyor).");
