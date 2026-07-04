@@ -5,6 +5,9 @@ import { author } from "./author";
 import { post } from "./post";
 import { projectReference } from "./projectReference";
 import { service } from "./service";
+import { productCategory } from "./productCategory";
+import { productBrand } from "./productBrand";
+import { productGroup } from "./productGroup";
 import { faq } from "./faq";
 import { testimonial } from "./testimonial";
 import { siteSettings } from "./siteSettings";
@@ -15,6 +18,9 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   category,
   author,
   service,
+  productCategory,
+  productBrand,
+  productGroup,
   faq,
   testimonial,
   siteSettings,

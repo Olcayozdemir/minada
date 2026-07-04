@@ -35,13 +35,20 @@ export default async function Page({
 
   const defaultCity = typeof sp.city === "string" ? sp.city : "";
   const defaultBill = typeof sp.bill === "string" ? sp.bill : "";
+  // Product carried over from a catalog card CTA (?urun=... / ?product=...).
+  const rawProduct = sp.urun ?? sp.product;
+  const defaultProduct = typeof rawProduct === "string" ? rawProduct.slice(0, 200) : "";
 
   return (
     <Section tone="dark">
       <SectionHeading tone="dark" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className={styles.layout}>
         <div className={styles.formCol}>
-          <LeadForm defaultCity={defaultCity} defaultBill={defaultBill} />
+          <LeadForm
+            defaultCity={defaultCity}
+            defaultBill={defaultBill}
+            defaultProduct={defaultProduct}
+          />
         </div>
         <aside className={styles.info}>
           <h2 className={styles.infoTitle}>{t("info.title")}</h2>

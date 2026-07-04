@@ -33,6 +33,7 @@ export async function sendLeadEmail(data: LeadInput) {
     ["Şehir", data.city],
     ["Konut tipi", PROPERTY_LABELS[data.propertyType] ?? data.propertyType],
     ["Aylık fatura", data.bill || "—"],
+    ["İlgilenilen ürün", data.product || "—"],
     ["Mesaj", data.message || "—"],
   ];
   const html = `<h2 style="font-family:sans-serif;color:#0f2a4a">Yeni teklif talebi</h2>

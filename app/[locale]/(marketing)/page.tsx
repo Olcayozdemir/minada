@@ -6,6 +6,7 @@ import { Services } from "@/components/marketing/Services";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
+import { ProductsTeaser } from "@/components/marketing/ProductsTeaser";
 import { Testimonials } from "@/components/marketing/Testimonials";
 import { FaqTeaser } from "@/components/marketing/FaqTeaser";
 import { FinalCta } from "@/components/marketing/FinalCta";
@@ -49,6 +50,7 @@ export default async function HomePage({
       <HowItWorks />
       <ApplicationAreas />
       <CalculatorTeaser />
+      <ProductsTeaser />
       <Testimonials />
       <FinalCta />
       <FaqTeaser />

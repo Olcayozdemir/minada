@@ -17,6 +17,8 @@ export const leadSchema = z.object({
   propertyType: z.enum(PROPERTY_TYPES),
   bill: z.string().trim().optional(),
   message: z.string().trim().max(1200).optional(),
+  product: z.string().trim().max(200).optional(), // catalog group the visitor asked about
+
   consent: z.literal(true),
   company: z.string().optional(), // honeypot — must stay empty
   token: z.string().optional(), // Turnstile token (verified server-side if configured)

@@ -1,0 +1,102 @@
+@use "../../styles/mixins" as *;
+
+/* Homepage catalog teaser (light section): four equipment-class tiles that
+   link into /urunler, plus a brands line and the explore CTA. */
+
+.grid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+
+  @include bp-down(920px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(16, 42, 67, 0.1);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(16, 42, 67, 0.12);
+    border-color: rgba(197, 154, 74, 0.4);
+  }
+
+  &:hover .go {
+    color: var(--gold-600);
+    transform: translateX(3px);
+  }
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--space-4);
+  border-radius: var(--r-md);
+  color: var(--gold-600);
+  background: rgba(197, 154, 74, 0.12);
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.go {
+  margin-top: var(--space-4);
+  color: var(--ink-2);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.brands {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brandsLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.brandsList {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}

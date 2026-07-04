@@ -34,7 +34,16 @@ function Field({
   );
 }
 
-export function LeadForm({ defaultCity, defaultBill }: { defaultCity?: string; defaultBill?: string }) {
+export function LeadForm({
+  defaultCity,
+  defaultBill,
+  defaultProduct,
+}: {
+  defaultCity?: string;
+  defaultBill?: string;
+  /** Catalog group name/slug carried over from a product card CTA. */
+  defaultProduct?: string;
+}) {
   const t = useTranslations("Contact");
   const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
   const [token, setToken] = useState("");
@@ -53,7 +62,8 @@ export function LeadForm({ defaultCity, defaultBill }: { defaultCity?: string; d
       email: "",
       city: defaultCity ?? "",
       bill: defaultBill ?? "",
-      message: "",
+      message: defaultProduct ? t("form.productMessage", { product: defaultProduct }) : "",
+      product: defaultProduct ?? "",
       company: "",
     },
   });
@@ -103,6 +113,7 @@ export function LeadForm({ defaultCity, defaultBill }: { defaultCity?: string; d
         className={styles.hp}
         {...register("company")}
       />
+      <input type="hidden" {...register("product")} />
 
       <div className={styles.row2}>
         <Field label={t("form.name")} error={fieldError("name")}>
