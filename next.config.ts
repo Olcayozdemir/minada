@@ -4,6 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Sandboxed agents can't delete pre-existing files in the mounted repo, so
+  // they build into a throwaway dir via NEXT_DIST_DIR (defaults to .next).
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   turbopack: {
     root: import.meta.dirname,
   },

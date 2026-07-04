@@ -8,17 +8,20 @@ export function SectionHeading({
   intro,
   align = "left",
   tone = "light",
+  as: Heading = "h2",
 }: {
   eyebrow?: string;
   title: ReactNode;
   intro?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
+  /** Heading level — "h1" when the section opens a page. */
+  as?: "h1" | "h2";
 }) {
   return (
     <div className={clsx(styles.wrap, styles[align], styles[tone])}>
       {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
-      <h2 className={styles.title}>{title}</h2>
+      <Heading className={styles.title}>{title}</Heading>
       {intro ? <p className={styles.intro}>{intro}</p> : null}
     </div>
   );
