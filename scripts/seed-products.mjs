@@ -1,5 +1,10 @@
 /**
- * Seeds the product catalog (docs/katalog-seed.md) into Sanity.
+ * Seeds the product catalog into Sanity (OPTIONAL).
+ *
+ * NOTE: The live site renders from lib/catalog-data.ts (static) whenever Sanity
+ * is not configured — no seeding required. This script remains only for a future
+ * Sanity-backed setup and currently covers the panel category only; the fuller
+ * catalog (inverters, …) lives in lib/catalog-data.ts + docs/katalog-seed.md.
  *
  * Usage:
  *   NEXT_PUBLIC_SANITY_PROJECT_ID=xxx NEXT_PUBLIC_SANITY_DATASET=production \

@@ -15,6 +15,98 @@
   color: var(--ink);
 }
 
+/* Category index — clickable tiles that open a single category. */
+.catGrid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(16, 42, 67, 0.1);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(16, 42, 67, 0.12);
+    border-color: rgba(197, 154, 74, 0.4);
+  }
+
+  &:hover .catGo {
+    color: var(--gold-600);
+    transform: translateX(3px);
+  }
+}
+
+.catIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--space-4);
+  border-radius: var(--r-md);
+  color: var(--gold-600);
+  background: rgba(197, 154, 74, 0.12);
+}
+
+.catCount {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: var(--space-1);
+}
+
+.catCardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.catDesc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.catGo {
+  margin-top: var(--space-4);
+  color: var(--ink-2);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Back-to-index link (sits in the dark header section). */
+.back {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
 .brandBlock {
   & + & {
     margin-top: var(--space-6);

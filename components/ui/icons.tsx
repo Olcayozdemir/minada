@@ -163,6 +163,13 @@ export const IconBolt = (p: IconProps) => (
     <path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z" />
   </Svg>
 );
+export const IconBulb = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M9 18h6" />
+    <path d="M10 21h4" />
+    <path d="M12 3a6 6 0 0 1 3.6 10.8c-.6.5-1 1.2-1.1 2H9.5c-.1-.8-.5-1.5-1.1-2A6 6 0 0 1 12 3z" />
+  </Svg>
+);
 export const IconShield = (p: IconProps) => (
   <Svg {...p}>
     <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" />

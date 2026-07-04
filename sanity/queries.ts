@@ -2,6 +2,12 @@
 import { groq } from "next-sanity";
 import { client } from "./client";
 import { hasSanity } from "./env";
+import {
+  CATEGORIES,
+  GROUPS,
+  type ProductCategoryItem,
+  type ProductGroupItem,
+} from "@/lib/catalog-data";
 
 const postFields = groq`
   _id, title, "slug": slug.current, excerpt, coverImage, publishedAt,
@@ -63,35 +69,12 @@ export async function getPost(slug: string, locale: string): Promise<PostDetail 
 
 // --- Catalog (Ürünler) ---------------------------------------------------
 // Product docs are language-neutral: names/watts are shared; the UI localizes
-// warranty labels and known feature keys.
-
-export type ProductCategoryItem = {
-  _id: string;
-  title: string;
-  slug: string;
-  order?: number;
-  icon?: string;
-  image?: any;
-};
-
-export type ProductGroupItem = {
-  _id: string;
-  title: string;
-  slug: string;
-  powerRange?: string;
-  variants?: number[];
-  warrantyProductYears?: number;
-  warrantyPerformanceYears?: number;
-  features?: string[];
-  image?: any;
-  featured?: boolean;
-  order?: number;
-  brand?: { title: string; slug?: string; logo?: any };
-  category?: { _id: string; title: string; slug: string };
-};
+// category titles, warranty labels and known feature keys. The item types and
+// the static fallback dataset both live in lib/catalog-data.ts.
+export type { ProductCategoryItem, ProductGroupItem };
 
 export async function getProductCategories(): Promise<ProductCategoryItem[]> {
-  if (!hasSanity) return [];
+  if (!hasSanity) return CATEGORIES;
   return client.fetch(
     groq`*[_type == "productCategory"] | order(order asc, title asc){
       _id, title, "slug": slug.current, order, icon, image
@@ -102,7 +85,7 @@ export async function getProductCategories(): Promise<ProductCategoryItem[]> {
 }
 
 export async function getProductGroups(): Promise<ProductGroupItem[]> {
-  if (!hasSanity) return [];
+  if (!hasSanity) return GROUPS;
   return client.fetch(
     groq`*[_type == "productGroup" && hidden != true] | order(order asc, title asc){
       _id, title, "slug": slug.current, powerRange, variants,

@@ -14,6 +14,7 @@ export const routing = defineRouting({
     "/cozumler/evim-icin": { tr: "/cozumler/evim-icin", en: "/solutions/for-home" },
     "/cozumler/isletmem-icin": { tr: "/cozumler/isletmem-icin", en: "/solutions/for-business" },
     "/urunler": { tr: "/urunler", en: "/products" },
+    "/urunler/[category]": { tr: "/urunler/[category]", en: "/products/[category]" },
     "/how-it-works": { tr: "/nasil-calisir", en: "/how-it-works" },
     "/calculator": { tr: "/hesaplayici", en: "/calculator" },
     "/projects": { tr: "/referanslar", en: "/projects" },
