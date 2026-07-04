@@ -8,25 +8,24 @@
   "Nav": {
     "services": "Services",
     "solutions": "Solutions",
+    "solutionsGroup": "Solutions",
+    "solutionsHome": "For my home",
+    "solutionsBusiness": "For my business",
     "howItWorks": "How it works",
     "projects": "Projects",
     "about": "About",
     "contact": "Contact",
     "calculator": "Calculator",
     "blog": "Blog",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "products": "Products"
   },
   "Services": {
     "rooftop": "Rooftop Solar",
     "ground": "Ground-Mount Solar (Unlicensed)",
     "agripv": "Agrivoltaics (Agri-PV)",
     "carport": "Solar Carport",
-    "bess": "Energy Storage (BESS)",
-    "engineering": "Engineering & Feasibility",
-    "licensing": "Permitting & Licensing",
-    "procurement": "Procurement",
-    "construction": "Construction",
-    "om": "Operations & Maintenance"
+    "bess": "Energy Storage (BESS)"
   },
   "Common": {
     "getQuote": "Get a free survey",
@@ -61,15 +60,17 @@
     "chipSavingLabel": "bill savings",
     "chipWarrantyValue": "10-year",
     "chipWarrantyLabel": "warranty & service",
+    "segmentHome": "For my home",
+    "segmentBusiness": "For my business",
     "calcCardTitle": "Calculate your savings",
     "calcCardDesc": "See a rough picture in 2 minutes.",
     "imageAlt": "Smart home with rooftop solar, energy storage and EV charging at dusk"
   },
   "Home": {
     "services": {
-      "eyebrow": "Services",
-      "title": "End-to-end solar, survey to O&M",
-      "intro": "From rooftop and ground-mount solar to energy storage — we run the whole project end to end: engineering, licensing, procurement, construction and O&M.",
+      "eyebrow": "Solar Solutions",
+      "title": "The right solar solution for your needs",
+      "intro": "Rooftop, ground-mount, agrivoltaics, carport and energy storage — five solar solutions, sized to your needs and delivered turnkey.",
       "rooftop": {
         "desc": "We turn your industrial and commercial rooftops into turnkey solar plants — from survey to commissioning, all under one roof."
       },
@@ -84,42 +85,35 @@
       },
       "bess": {
         "desc": "Lithium storage that clocks in when the sun clocks out — carry your energy from noon into the night."
-      },
-      "engineering": {
-        "desc": "We count every kWh before the first shovel: PVsyst simulation, irradiance analysis and site survey."
-      },
-      "licensing": {
-        "desc": "Leave the red tape to us — EPDK filings, DSO applications and the grid-connection letter, start to finish."
-      },
-      "procurement": {
-        "desc": "Only the good stuff reaches site: panels, inverters, cables (DC/AC/MV), mounting structures, distribution boards and switchgear — sourced for you."
-      },
-      "construction": {
-        "desc": "Fully-equipped crews and airtight HSE take your project from paper to the ground."
-      },
-      "om": {
-        "desc": "We stick around after switch-on: 24/7 remote monitoring, scheduled maintenance and a performance guarantee."
       }
     },
     "how": {
       "eyebrow": "How it works",
-      "title": "With you from survey to commissioning",
-      "intro": "A transparent, step-by-step process. You always know what comes next.",
+      "title": "From survey to operation, step by step",
+      "intro": "A transparent, six-step process. You always know what comes next.",
       "discovery": {
         "title": "Free Survey",
         "desc": "We assess your roof, consumption and needs on site, and advise you."
       },
-      "design": {
-        "title": "Design & Quote",
-        "desc": "A tailored system design, production/savings estimate and a clear quote."
+      "engineering": {
+        "title": "Engineering & Feasibility",
+        "desc": "We count every kWh before the first shovel: PVsyst simulation, irradiance analysis and site survey."
+      },
+      "licensing": {
+        "title": "Permitting & Licensing",
+        "desc": "Leave the red tape to us — EPDK filings, DSO applications and the grid-connection letter, start to finish."
+      },
+      "procurement": {
+        "title": "Procurement",
+        "desc": "Only the good stuff reaches site: panels, inverters, cables (DC/AC/MV), mounting structures, distribution boards and switchgear — sourced for you."
       },
       "install": {
         "title": "Install & Commission",
-        "desc": "Fast, safe installation by experts; we handle permits and net-metering."
+        "desc": "Fast, safe installation by fully-equipped crews with airtight HSE; testing, permits and net-metering are on us."
       },
-      "support": {
-        "title": "Monitor & Service",
-        "desc": "Post-install performance tracking, maintenance and long-term warranty support."
+      "om": {
+        "title": "Monitoring & Maintenance (O&M)",
+        "desc": "We stick around after switch-on: 24/7 remote monitoring, scheduled maintenance and a performance guarantee."
       }
     },
     "areas": {
@@ -154,20 +148,43 @@
       "badgeValue": "90%",
       "badgeLabel": "up to, in bill savings"
     },
+    "products": {
+      "eyebrow": "Products",
+      "title": "Only the best reaches your site",
+      "intro": "Every component we install comes from tier-1 manufacturers. TOPCon N-Type panels, dependable inverters and up to 30 years of performance warranty — your system is built to run for decades.",
+      "cat": {
+        "panels": "Solar Panels",
+        "panelsDesc": "TOPCon N-Type · 12–30 yr warranty",
+        "inverters": "Inverters",
+        "invertersDesc": "String & hybrid solutions",
+        "storage": "Energy Storage",
+        "storageDesc": "BESS battery systems",
+        "charging": "Charging Stations",
+        "chargingDesc": "EV charging infrastructure"
+      },
+      "brandsLabel": "Brands we work with",
+      "brands": "CW Enerji · TommaTech",
+      "cta": "Explore products"
+    },
     "testimonials": {
       "eyebrow": "Projects",
       "title": "Homeowners who chose MİNADA",
+      "segHome": "Home",
+      "segBusiness": "Business",
       "t1": {
+        "segment": "home",
         "quote": "Everything was transparent from survey to install. Our bill really did drop to almost zero.",
         "name": "Ayşe K.",
         "meta": "Villa owner · İzmir"
       },
       "t2": {
+        "segment": "home",
         "quote": "The team was very professional; installation finished on time, without a hitch.",
         "name": "Mehmet D.",
         "meta": "Detached home · Antalya"
       },
       "t3": {
+        "segment": "home",
         "quote": "With energy storage we use our own energy at night too. We're delighted.",
         "name": "Zeynep A.",
         "meta": "Villa owner · Muğla"
@@ -210,6 +227,52 @@
       "point2": "10-year warranty & service",
       "chipValue": "4 services",
       "chipLabel": "under one roof"
+    }
+  },
+  "Segments": {
+    "home": {
+      "metaTitle": "Solar for my home",
+      "metaDesc": "Turnkey solar for villas and detached homes: up to 90% bill savings, net-metering and 25-year panel life.",
+      "eyebrow": "For my home",
+      "title": "Let your home make its own energy",
+      "intro": "Turnkey solar for your villa or detached home. Your bill drops, your comfort rises — and your home becomes a harbor that powers itself.",
+      "b1": {
+        "title": "Up to 90% savings",
+        "desc": "Your electricity bill falls close to zero with the sun; rising tariffs stop touching you."
+      },
+      "b2": {
+        "title": "Net-metering",
+        "desc": "Energy you don't use is fed to the grid and offset against your bill. We manage the permits."
+      },
+      "b3": {
+        "title": "25-year panel life",
+        "desc": "Panels run under performance warranties of 25 years and beyond; the system pays for itself within a few years."
+      },
+      "stepsEyebrow": "Process",
+      "stepsTitle": "The road to your roof: 6 steps",
+      "stepsIntro": "From survey to switch-on, every step is on us — you just enjoy the sun.",
+      "stepsCta": "See the full process"
+    },
+    "business": {
+      "metaTitle": "Solar for my business",
+      "metaDesc": "Rooftop, ground-mount, Agri-PV, carport and energy storage for businesses: lower OPEX, fast payback, unlicensed generation.",
+      "eyebrow": "For my business",
+      "title": "Turn your energy cost into an investment",
+      "intro": "From factories to farms, car parks to warehouses — we size the right solar solution for your business, build it turnkey and operate it.",
+      "b1": {
+        "title": "Lower OPEX",
+        "desc": "Your electricity spend shrinks line by line; production costs become predictable."
+      },
+      "b2": {
+        "title": "Fast payback",
+        "desc": "Commercial systems pay for themselves quickly on high consumption; after that it's net gain."
+      },
+      "b3": {
+        "title": "Unlicensed generation",
+        "desc": "Generate your own power under the unlicensed scheme and offset the surplus. We handle the applications."
+      },
+      "referencesCta": "See our projects",
+      "solutionsNote": "Not sure which fits? Let's pin it down together in a free survey."
     }
   },
   "Calculator": {
@@ -288,7 +351,8 @@
       "consent": "I have read and accept the privacy notice regarding the processing of my personal data.",
       "submit": "Send request",
       "submitting": "Sending…",
-      "whatsapp": "Message on WhatsApp"
+      "whatsapp": "Message on WhatsApp",
+      "productMessage": "Hi, I would like to get a quote for {product}."
     },
     "errors": {
       "name": "Please enter your name.",
@@ -333,5 +397,30 @@
     "cookies": "Cookie Policy",
     "rights": "All rights reserved.",
     "placeholderNote": "Contact details will be updated soon."
+  },
+  "Products": {
+    "metaTitle": "Products — Solar Panels & Equipment",
+    "metaDesc": "The solar panel series MINADA uses in the field, with power ranges, warranty terms and key features.",
+    "eyebrow": "Products",
+    "title": "Only the best makes it to the field",
+    "intro": "We only build with proven brands. Let's pick the right series for your needs — request a quote for pricing and availability.",
+    "emptyTitle": "Catalog coming soon",
+    "emptyDesc": "We are preparing our product showcase. In the meantime, tell us what you need and we'll recommend the right equipment.",
+    "emptyCtaLabel": "Request a quote",
+    "cardCta": "Get a quote for this product",
+    "warrantyProduct": "{years}-yr product",
+    "warrantyPerformance": "{years}-yr performance warranty",
+    "features": {
+      "topcon": "TOPCon N-Type cells",
+      "g2g": "Dual glass (G2G)",
+      "bifacial": "Bifacial generation",
+      "fullBlack": "Full black design",
+      "lowLight": "High yield in low light",
+      "positiveTolerance": "0~+5W positive power tolerance",
+      "selfClean": "Self-cleaning glass",
+      "bipv": "Building-integrated (BIPV)",
+      "flexible": "Flexible panel",
+      "portable": "Portable"
+    }
   }
 }

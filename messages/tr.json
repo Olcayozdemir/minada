@@ -8,25 +8,24 @@
   "Nav": {
     "services": "Hizmetler",
     "solutions": "Uygulama Alanları",
+    "solutionsGroup": "Çözümler",
+    "solutionsHome": "Evim için",
+    "solutionsBusiness": "İşletmem için",
     "howItWorks": "Nasıl Çalışır",
     "projects": "Referanslar",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "calculator": "Hesaplayıcı",
     "blog": "Blog",
-    "faq": "SSS"
+    "faq": "SSS",
+    "products": "Ürünler"
   },
   "Services": {
     "rooftop": "Çatı Üstü GES",
     "ground": "Arazi Tipi GES (Lisanssız)",
     "agripv": "Tarımsal GES (Agri-PV)",
     "carport": "Carport / Otopark GES",
-    "bess": "Enerji Depolama (BESS)",
-    "engineering": "Mühendislik & Etüt",
-    "licensing": "Proje & Lisanslama",
-    "procurement": "Tedarik Yönetimi",
-    "construction": "Saha Kurulumu",
-    "om": "İşletme & Bakım (O&M)"
+    "bess": "Enerji Depolama (BESS)"
   },
   "Common": {
     "getQuote": "Ücretsiz keşif al",
@@ -61,15 +60,17 @@
     "chipSavingLabel": "fatura tasarrufu",
     "chipWarrantyValue": "10 yıl",
     "chipWarrantyLabel": "garanti & servis",
+    "segmentHome": "Evim için",
+    "segmentBusiness": "İşletmem için",
     "calcCardTitle": "Tasarrufunu hesapla",
     "calcCardDesc": "2 dakikada kaba bir tablo görün.",
     "imageAlt": "Gün batımında güneş panelli, enerji depolamalı ve EV şarjlı akıllı ev"
   },
   "Home": {
     "services": {
-      "eyebrow": "Hizmetler",
-      "title": "Keşiften işletmeye, uçtan uca güneş",
-      "intro": "Çatı ve arazi GES'ten enerji depolamaya; mühendislik, lisanslama, tedarik, kurulum ve işletmeye kadar tüm süreci tek elden yürütüyoruz.",
+      "eyebrow": "GES Çözümleri",
+      "title": "İhtiyacınıza uygun güneş çözümü",
+      "intro": "Çatıdan araziye, tarımdan otoparka ve enerji depolamaya — beş GES çözümünü ihtiyacınıza göre boyutlandırıyor, anahtar teslim kuruyoruz.",
       "rooftop": {
         "desc": "Sanayi ve ticari çatılarınızı anahtar teslim güneş santraline çeviriyoruz — keşiften devreye almaya kadar tek elden."
       },
@@ -84,42 +85,35 @@
       },
       "bess": {
         "desc": "Güneş mesaiyi bırakınca devreye giren lityum bataryalarla enerjinizi gündüzden geceye taşıyın."
-      },
-      "engineering": {
-        "desc": "Kazma vurmadan önce her kWh'i hesaplıyoruz: PVsyst simülasyonu, ışınım analizi ve saha etüdü."
-      },
-      "licensing": {
-        "desc": "Bürokrasi bizde kalsın — EPDK, dağıtım şirketi başvuruları ve çağrı mektubunu baştan sona biz takip ediyoruz."
-      },
-      "procurement": {
-        "desc": "Sahaya sadece en iyisi girer: panel, inverter, kablolar (DC/AC/OG), konstrüksiyon, pano ve şalt grubunu sizin için tedarik ediyoruz."
-      },
-      "construction": {
-        "desc": "Tam ekipmanlı ekibimiz ve eksiksiz iş güvenliğiyle projeniz kâğıttan sahaya iniyor."
-      },
-      "om": {
-        "desc": "Devreye aldıktan sonra da yanınızdayız: 7/24 uzaktan izleme, periyodik bakım ve performans garantisi."
       }
     },
     "how": {
       "eyebrow": "Nasıl Çalışır",
-      "title": "Keşiften devreye alışa, yanınızdayız",
-      "intro": "Şeffaf, adım adım bir süreç. Her aşamada ne olacağını önceden bilirsiniz.",
+      "title": "Keşiften işletmeye, adım adım yanınızdayız",
+      "intro": "Şeffaf, altı adımlık bir süreç. Her aşamada ne olacağını önceden bilirsiniz.",
       "discovery": {
         "title": "Ücretsiz Keşif",
         "desc": "Çatınızı, tüketiminizi ve ihtiyaçlarınızı yerinde değerlendirir, danışmanlık veririz."
       },
-      "design": {
-        "title": "Projelendirme & Teklif",
-        "desc": "Size özel sistem tasarımı, üretim/tasarruf öngörüsü ve net bir teklif sunarız."
+      "engineering": {
+        "title": "Mühendislik & Etüt",
+        "desc": "Kazma vurmadan önce her kWh'i hesaplarız: PVsyst simülasyonu, ışınım analizi ve saha etüdü."
+      },
+      "licensing": {
+        "title": "Proje & Lisanslama",
+        "desc": "Bürokrasi bizde kalır — EPDK ve dağıtım şirketi başvurularını, çağrı mektubunu baştan sona biz takip ederiz."
+      },
+      "procurement": {
+        "title": "Tedarik",
+        "desc": "Sahaya sadece en iyisi girer: panel, inverter, kablolar (DC/AC/OG), konstrüksiyon, pano ve şalt grubunu sizin için tedarik ederiz."
       },
       "install": {
         "title": "Kurulum & Devreye Alma",
-        "desc": "Uzman ekiple hızlı, güvenli kurulum; izin ve mahsuplaşma süreçlerini yönetiriz."
+        "desc": "Tam ekipmanlı ekip ve eksiksiz iş güvenliğiyle hızlı, güvenli kurulum; testler, izinler ve mahsuplaşma süreçleri bizde."
       },
-      "support": {
-        "title": "İzleme & Servis",
-        "desc": "Kurulum sonrası performans takibi, bakım ve uzun süreli garanti desteği."
+      "om": {
+        "title": "İzleme & Bakım (O&M)",
+        "desc": "Devreye aldıktan sonra da yanınızdayız: 7/24 uzaktan izleme, periyodik bakım ve performans garantisi."
       }
     },
     "areas": {
@@ -154,20 +148,43 @@
       "badgeValue": "%90",
       "badgeLabel": "fatura tasarrufuna kadar"
     },
+    "products": {
+      "eyebrow": "Ürünler",
+      "title": "Sahaya sadece en iyisi girer",
+      "intro": "Kullandığımız her bileşen tier-1 üreticilerden. TOPCon N-Type paneller, güvenilir inverterler ve 30 yıla varan performans garantisi — sisteminiz onlarca yıl çalışacak şekilde kurulur.",
+      "cat": {
+        "panels": "Güneş Panelleri",
+        "panelsDesc": "TOPCon N-Type · 12–30 yıl garanti",
+        "inverters": "İnverterler",
+        "invertersDesc": "String & hibrit çözümler",
+        "storage": "Enerji Depolama",
+        "storageDesc": "BESS batarya sistemleri",
+        "charging": "Şarj İstasyonları",
+        "chargingDesc": "EV şarj altyapısı"
+      },
+      "brandsLabel": "Çalıştığımız markalar",
+      "brands": "CW Enerji · TommaTech",
+      "cta": "Ürünleri incele"
+    },
     "testimonials": {
       "eyebrow": "Referanslar",
       "title": "Evini MİNADA'ya emanet edenler",
+      "segHome": "Ev",
+      "segBusiness": "İşletme",
       "t1": {
+        "segment": "home",
         "quote": "Keşiften kuruluma kadar her şey şeffaftı. Faturamız gerçekten neredeyse sıfırlandı.",
         "name": "Ayşe K.",
         "meta": "Villa sahibi · İzmir"
       },
       "t2": {
+        "segment": "home",
         "quote": "Ekip çok profesyoneldi; kurulum söz verilen sürede, sorunsuz tamamlandı.",
         "name": "Mehmet D.",
         "meta": "Müstakil ev · Antalya"
       },
       "t3": {
+        "segment": "home",
         "quote": "Enerji depolamayla birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.",
         "name": "Zeynep A.",
         "meta": "Villa sahibi · Muğla"
@@ -210,6 +227,52 @@
       "point2": "10 yıl garanti & servis",
       "chipValue": "4 hizmet",
       "chipLabel": "tek çatı altında"
+    }
+  },
+  "Segments": {
+    "home": {
+      "metaTitle": "Evim için GES",
+      "metaDesc": "Villa ve müstakil evler için anahtar teslim güneş enerjisi: %90'a varan fatura tasarrufu, mahsuplaşma ve 25 yıl panel ömrü.",
+      "eyebrow": "Evim için",
+      "title": "Eviniz kendi enerjisini üretsin",
+      "intro": "Villanız ya da müstakil eviniz için anahtar teslim güneş enerjisi. Faturanız düşer, konforunuz artar; eviniz enerjisi kendinden, size ait bir liman olur.",
+      "b1": {
+        "title": "%90'a varan tasarruf",
+        "desc": "Elektrik faturanız güneşle birlikte neredeyse sıfıra iner; artan tarifelerden etkilenmezsiniz."
+      },
+      "b2": {
+        "title": "Mahsuplaşma",
+        "desc": "Kullanmadığınız enerji şebekeye verilir, faturanızdan düşülür. İzin süreçlerini biz yönetiriz."
+      },
+      "b3": {
+        "title": "25 yıl panel ömrü",
+        "desc": "Paneller 25 yıl ve üzeri performans garantisiyle çalışır; sistem kendini birkaç yılda amorti eder."
+      },
+      "stepsEyebrow": "Süreç",
+      "stepsTitle": "Çatınıza giden yol: 6 adım",
+      "stepsIntro": "Keşiften devreye almaya kadar her adım bizde — siz sadece güneşin tadını çıkarın.",
+      "stepsCta": "Süreci ayrıntılı gör"
+    },
+    "business": {
+      "metaTitle": "İşletmem için GES",
+      "metaDesc": "İşletmeler için çatı, arazi, Agri-PV, carport ve enerji depolama çözümleri: OPEX düşer, yatırım hızla amorti olur, lisanssız üretimle enerjiniz size kalır.",
+      "eyebrow": "İşletmem için",
+      "title": "Enerji maliyetinizi yatırıma çevirin",
+      "intro": "Fabrikadan tarım işletmesine, otoparktan depoya — işletmenize uygun GES çözümünü boyutlandırıyor, anahtar teslim kuruyor ve işletiyoruz.",
+      "b1": {
+        "title": "OPEX düşer",
+        "desc": "Elektrik gideriniz kalem kalem küçülür; üretim maliyetiniz öngörülebilir hale gelir."
+      },
+      "b2": {
+        "title": "Hızlı amortisman",
+        "desc": "Ticari sistemler yüksek tüketimle kendini hızla geri öder; sonrası net kazançtır."
+      },
+      "b3": {
+        "title": "Lisanssız üretim",
+        "desc": "Lisanssız üretim kapsamında kendi elektriğinizi üretir, fazlasını mahsuplaşırsınız. Başvuruları biz yürütürüz."
+      },
+      "referencesCta": "Referansları gör",
+      "solutionsNote": "Hangisi size uygun? Ücretsiz keşifte birlikte netleştirelim."
     }
   },
   "Calculator": {
@@ -288,7 +351,8 @@
       "consent": "Kişisel verilerimin işlenmesine ilişkin KVKK Aydınlatma Metni'ni okudum ve onaylıyorum.",
       "submit": "Teklif talebi gönder",
       "submitting": "Gönderiliyor…",
-      "whatsapp": "WhatsApp'tan yaz"
+      "whatsapp": "WhatsApp'tan yaz",
+      "productMessage": "Merhaba, {product} hakkında teklif almak istiyorum."
     },
     "errors": {
       "name": "Lütfen ad soyad girin.",
@@ -333,5 +397,30 @@
     "cookies": "Çerez Politikası",
     "rights": "Tüm hakları saklıdır.",
     "placeholderNote": "İletişim bilgileri yakında güncellenecek."
+  },
+  "Products": {
+    "metaTitle": "Ürünler — Güneş Panelleri ve Ekipmanlar",
+    "metaDesc": "MINADA'nın sahada kullandığı güneş paneli serileri; güç aralıkları, garanti süreleri ve öne çıkan özellikleriyle.",
+    "eyebrow": "Ürünler",
+    "title": "Sahaya sadece en iyisi girer",
+    "intro": "Projelerimizde yalnızca kendini kanıtlamış markaların ürünlerini kullanıyoruz. İhtiyacınıza uygun seriyi birlikte seçelim; fiyat ve stok için teklif isteyin.",
+    "emptyTitle": "Katalog yakında",
+    "emptyDesc": "Ürün vitrinimizi hazırlıyoruz. Bu arada ihtiyacınızı bize iletin, size en uygun ekipmanı önerelim.",
+    "emptyCtaLabel": "Teklif isteyin",
+    "cardCta": "Bu ürünle teklif al",
+    "warrantyProduct": "{years} yıl ürün",
+    "warrantyPerformance": "{years} yıl performans garantisi",
+    "features": {
+      "topcon": "TOPCon N-Type hücre",
+      "g2g": "Çift cam (G2G)",
+      "bifacial": "Çift yüzeyli üretim (bifacial)",
+      "fullBlack": "Full black tasarım",
+      "lowLight": "Düşük ışınımda yüksek verim",
+      "positiveTolerance": "0~+5W pozitif güç toleransı",
+      "selfClean": "Kendi kendini temizleyen cam",
+      "bipv": "Bina entegre (BIPV)",
+      "flexible": "Esnek panel",
+      "portable": "Taşınabilir"
+    }
   }
 }
