@@ -8,6 +8,8 @@
 .inner {
   @include container(var(--container-wide));
   position: relative;
+  /* Above the home energy-line overlay (z:1) so the wave flows behind content. */
+  z-index: 2;
 }
 
 .light {

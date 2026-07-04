@@ -2,8 +2,9 @@
   position: relative;
 }
 
-/* Decorative overlay: above section backgrounds & content, below the header
-   (z:200). Never intercepts input. */
+/* Decorative overlay: above section BACKGROUNDS but below section content —
+   Section inners and the hero/cta panels sit at z:2, this at z:1, so the wave
+   flows behind images, cards and text. Never intercepts input. */
 .overlay {
   position: absolute;
   inset: 0;
@@ -11,7 +12,7 @@
   height: 100%;
   display: block;
   pointer-events: none;
-  z-index: 5;
+  z-index: 1;
 }
 
 .track {
@@ -52,15 +53,6 @@
 .gHalo1 {
   stop-color: var(--volt);
   stop-opacity: 0;
-}
-
-.node {
-  fill: var(--volt-soft);
-  transition: fill 0.35s ease;
-
-  &[data-on] {
-    fill: url(#energy-grad);
-  }
 }
 
 .spark {

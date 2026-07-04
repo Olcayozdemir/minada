@@ -2,6 +2,8 @@
 
 .cta {
   position: relative;
+  /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
+  z-index: 2;
   display: grid;
   place-items: center;
   padding-block: clamp(72px, 10vw, 140px);

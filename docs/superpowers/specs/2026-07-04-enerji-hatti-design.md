@@ -1,20 +1,24 @@
-# Enerji Hattı — scroll ile boyanan devre çizgisi (home)
+# Enerji Hattı — scroll ile boyanan dalga (home)
 
-**Tarih:** 2026-07-04 · **Durum:** Onaylandı (Olcay)
-**Kapsam:** Yalnızca ana sayfa. Tek yeni komponent + token ekleme; mevcut section'lara dokunulmaz.
+**Tarih:** 2026-07-04 · **Durum:** Onaylandı (Olcay) · Rev.2 aynı gün
+**Kapsam:** Yalnızca ana sayfa. Tek yeni komponent + token + z-katman düzeni.
 
 ## Fikir
 
-Home page'in tamamı boyunca inen tek bir "elektrik hattı": devre şeması gibi köşeli,
-section'ların yanından/arasından kıvrılan bir SVG çizgisi. Scroll ilerledikçe hat
-boyanır; boyanın ucunda parlayan bir spark okuma hizasını takip eder. Hikâye:
-**güneş ışığı (gold) yukarıda doğar, aşağı indikçe elektriğe (cyan) dönüşür.**
+Home page'in tamamı boyunca sayfanın ortasından akan tek bir "enerji dalgası":
+yumuşak S-kavisleriyle merkez etrafında salınan bir SVG çizgisi. Hat **içeriğin
+arkasında** durur — görsellerin, kartların ve metnin altından geçer, yalnızca
+section zeminlerinin üzerinde görünür. Scroll ilerledikçe hat boyanır; boyanın
+ucunda parlayan bir spark okuma hizasını takip eder. Hikâye: **güneş ışığı (gold)
+yukarıda doğar, aşağı indikçe elektriğe (cyan) dönüşür.**
 
 ## Onaylanan kullanıcı seçimleri
 
-1. **Şekil:** Gezen devre hattı (kenar progress'i ya da orta omurga değil).
+1. **Şekil (Rev.2):** Ortadan akan yumuşak dalga, içerik arkasında. İlk sürümdeki
+   kenarları gezen köşeli devre hattı kullanıcı tarafından beğenilmedi ve elendi
+   ("dalga gibi olsun, ortadan geçebilir ama görsellerin önünden geçmesin").
 2. **Renk:** Gold→cyan dikey geçiş — üstte gold, hero altından itibaren cyan.
-3. **Mobil:** Basitleştirilmiş düz hat (sol kenara yakın), aynı boyama mekaniği.
+3. **Mobil:** Aynı dalga, daha dar genlikle (ayrı düz-hat modu yok).
 4. **Teknik:** Otomatik tek path — DOM ölçümünden üretilen adaptif SVG
    (el çizimi sabit SVG ve section-başına parçalı yaklaşımlar elendi).
 
@@ -36,39 +40,36 @@ palete ekler (kullanıcı onaylı). Cyan başka hiçbir UI öğesinde kullanılm
   section komponentlerinde değişiklik yok.
 - Render yapısı: `position:relative` wrapper → `{children}` → üstte
   `position:absolute; inset:0; pointer-events:none; aria-hidden` tek SVG overlay.
-- Katman: hat section arka planlarının ve içeriğin üzerinde, header'ın (z:200) altında
-  (overlay z-index ~5). İçerikle çakışma path rotasıyla önlenir (aşağıda).
+- **Katman (Rev.2):** overlay `z-index:1`; `Section` içerik konteyneri (`.inner`)
+  ile Hero/FinalCta panelleri `z-index:2`. Böylece hat section ZEMİNLERİNİN
+  üzerinde ama tüm içeriğin (görsel, kart, metin) altında akar; Hero ve FinalCta
+  gibi tam-panel fotoğraf bölümlerinde hattın o aralığı panelin arkasına dalar.
+  Header (z:200) her zaman üstte.
 
 ## Path üretimi
 
 Mount + resize'da wrapper'ın doğrudan `<section>` çocukları ölçülür
 (`getBoundingClientRect` + scrollY) ve tek path kurulur:
 
-- **Rota kuralı:** Hat her section'ın yanında dikey iner; section'dan section'a
-  **sol↔sağ dönüşümlü**. Yatay geçişler (jog) iki section arasındaki seam kuşağında —
-  section'ların `padding-block`'u sayesinde bu bant içeriksizdir, çizgi metinle çakışmaz.
-- **Dikey konum:** her section için x, **o section'ın kendi rect'inden** hesaplanır:
-  section kenarından sabit ~28px içeride. Böylece dark band'lerde (`margin-inline`'lı,
-  yuvarlak köşeli) hat band'in **hemen içinden** geçer ve köşe yuvarlaklığıyla çakışmaz;
-  tam genişlik section'larda viewport kenarına yakın akar.
-- **Köşeler:** ~24px radius quadratic yuvarlatma — devre/PCB hissi.
-- **Node'lar:** her köşe dönüşünde küçük daire (r≈3px). Boya node'u geçince `data-on`
-  ile "yanar" (dolgu track renginden volt/gold'a döner).
-- **Pinned bölge istisnası:** HowItWorks'ün uzun pinned stage'i boyunca hat **tam dikey**
-  tutulur, jog yapılmaz — dikey segment dikey kayarken hareketsiz göründüğünden pin
-  sırasında rahatsız edici kayma olmaz.
-- **Uçlar:** hat hero'nun alt kısmından başlar (panellerin oradan "doğar"),
-  son section'ın sonunda footer'a girmeden küçük bir uç node'uyla biter.
+- **Rota kuralı:** dalga, viewport merkezinin etrafında salınır. Her section'a
+  bir apex (tepe) düşer, yanlar dönüşümlü; ~900px'ten uzun section'lara yükseklik
+  oranında ek apex eklenir (HowItWorks'ün pinned stage'i ~3 büklüm alır).
+  Apex'ler arasında dikey teğetli kübik Bézier'ler — akışkan S-kavisleri.
+- **Genlik:** desktop `min(vw·0.22, 340px)`, mobil (≤1023px) `vw·0.16`.
+- **Uçlar:** hat hero'nun alt kısmından merkezden doğar (panellerin arkasından),
+  son section'ın sonunda merkezde, footer'a girmeden biter.
+- **Pinned bölge:** hat pinned içeriğin arkasında olduğundan özel durum gerekmez;
+  pin sırasında dalganın yavaşça yukarı süzülmesi kabul edilen bir etkidir.
 
 ## Boyama mekaniği
 
 - İki üst üste path: altta **track** (`--volt-soft`; hem açık hem lacivert zeminde
   seçilebilir yarı saydam ton), üstte **painted** path.
 - Boyama: `stroke-dasharray = L`, `stroke-dashoffset = L·(1−p)` (L = `getTotalLength()`).
-- **p, y-eşlemeli:** path ~200 noktada örneklenip kümülatif uzunluk↔y lookup tablosu
-  kurulur; hedef y = `scrollY + 0.55·viewportHeight`. Böylece boya ucu yatay joglarda
-  bile hep okuma hizasını takip eder (sayfa-oranı progress'in yatay segmentlerde
-  ileri/geri kaçması sorunu yaşanmaz).
+- **p, y-eşlemeli:** path ~600 adımda örneklenip kümülatif uzunluk↔y lookup tablosu
+  kurulur; hedef y = `scrollY + 0.55·viewportHeight`. Böylece boya ucu, kavisler
+  yüzünden uzayan segmentlerde bile hep okuma hizasını takip eder (dalganın kübikleri
+  y'de monotonik — lookup buna dayanır).
 - **Spark:** boya ucunda `getPointAtLength` ile konumlanan küçük parlak çekirdek +
   radial-gradient halo dairesi. SVG filter KULLANILMAZ (v2'nin bilinen rendering
   gotcha'sı); glow etkisi, painted path'in altındaki daha kalın düşük-opasiteli
@@ -76,13 +77,14 @@ Mount + resize'da wrapper'ın doğrudan `<section>` çocukları ölçülür
 - **Gradient:** `linearGradient gradientUnits="userSpaceOnUse"` dikey — y=0'da
   `--gold`, hero altı (~%20)'dan itibaren `--volt`, sayfa sonuna kadar cyan.
 - **Scroll:** passive listener + rAF (HowScrollFx/SinkOnScroll ile aynı pattern);
-  scroll'da yalnızca dashoffset + spark transform + node toggle güncellenir.
-- **Resize:** ResizeObserver (wrapper) + window resize → yeniden ölç, path'i yeniden kur.
+  scroll'da yalnızca dashoffset + spark konumu güncellenir.
+- **Resize:** ResizeObserver (wrapper) + window resize → yeniden ölç, path'i yeniden
+  kur. Sıfır boyutta kurulduysa ilk scroll'da kendini onarır.
 
-## Mobil (<1024px)
+## Mobil (≤1023px)
 
-Aynı komponent basit moda düşer: sol kenardan ~16px sabit x'te düz dikey hat.
-Jog ve node yok, spark daha küçük (halo yarıçapı düşük). Boyama + gradient aynı.
+Aynı dalga, daha dar genlikle (`vw·0.16`) merkez etrafında salınır; hat içerik
+arkasında olduğundan dar ekranda da çakışma sorunu yoktur. Boyama + gradient aynı.
 
 ## Erişilebilirlik / fallback
 
@@ -95,18 +97,19 @@ Jog ve node yok, spark daha küçük (halo yarıçapı düşük). Boyama + gradi
 
 ## Performans
 
-- Tek SVG, iki-üç path + az sayıda node; scroll başına yalnızca attribute/transform
-  yazımı (layout tetiklemez). `getPointAtLength` çağrısı frame başına 1 adet.
+- Tek SVG, üç path + spark; scroll başına yalnızca attribute/transform yazımı
+  (layout tetiklemez). `getPointAtLength` çağrısı frame başına 1 adet.
 - Lookup tablosu yalnızca path kurulurken hesaplanır.
 
 ## Doğrulama
 
 Otomatik test altyapısı yok; görsel efekt için uygun da değil. Preview'da manuel:
 
-1. TR + EN home'da hat tüm section'ları geziyor, içerik metinleriyle çakışmıyor.
-2. Scroll'da boya ucu + spark okuma hizasını takip ediyor; node'lar sırayla yanıyor.
-3. HowItWorks pin bölgesinde hat kaymıyor (dikey segment).
-4. Mobil viewport'ta basit hat; desktop'ta devre rotası.
+1. TR + EN home'da dalga tüm sayfa boyunca akıyor, yükseklik farkına uyum sağlıyor.
+2. Scroll'da boya ucu + spark okuma hizasını takip ediyor; hat görsel/kart/metnin
+   arkasında kalıyor, yalnızca zeminlerde görünüyor.
+3. Hero ve FinalCta panellerinde hat panelin arkasına dalıp çıkıyor.
+4. Mobilde dar genlikli, desktop'ta geniş genlikli dalga; yatay taşma yok.
 5. `prefers-reduced-motion` emülasyonunda statik tam boyalı hat.
 6. Resize sonrası hat section'larla hizalı kalıyor.
 7. Konsolda hata yok; scroll FPS'te gözle görülür düşüş yok.

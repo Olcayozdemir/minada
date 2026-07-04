@@ -58,6 +58,34 @@ export async function Hero() {
     props: { srcSet: litMobile },
   } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-home-lit-mobile.jpeg" });
 
+  // Depth-sandwich overlay: the same frames with the sky removed. Layered above
+  // the display type (z 4) so the roofline passes in front of the letters; the
+  // lit twin crossfades in step with the base via .lit.
+  const { props: overlayPhoto } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/hero-without-bg-without-light.png",
+  });
+  const {
+    props: { srcSet: overlayMobile },
+  } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/mobile-hero-without-bg-without-light.png",
+  });
+  const { props: overlayLit } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/hero-without-bg-with-light.png",
+  });
+  const {
+    props: { srcSet: overlayLitMobile },
+  } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/mobile-hero-without-bg-with-light.png",
+  });
+
   return (
     <section className={styles.hero} data-hero="">
       <picture>
@@ -75,6 +103,28 @@ export async function Hero() {
         />
       </picture>
       <div className={styles.scrim} aria-hidden="true" />
+
+      {/* Depth sandwich: the sky-removed house sits above the display type so the
+          roofline passes in front of the letters. Dusk + lit twins, art-directed
+          landscape/portrait, crossfading in step with the base photo. */}
+      <picture>
+        <source media="(max-width: 760px)" srcSet={overlayMobile} />
+        <img
+          {...overlayPhoto}
+          className={clsx(styles.photo, styles.overlay)}
+          loading="eager"
+          aria-hidden="true"
+        />
+      </picture>
+      <picture>
+        <source media="(max-width: 760px)" srcSet={overlayLitMobile} />
+        <img
+          {...overlayLit}
+          className={clsx(styles.photo, styles.overlay, styles.lit)}
+          loading="eager"
+          aria-hidden="true"
+        />
+      </picture>
 
       <div className={styles.inner}>
         <p className={styles.tagline}>

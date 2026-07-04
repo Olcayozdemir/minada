@@ -2,17 +2,17 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import styles from "./EnergyLine.module.scss";
-import { buildMobileRoute, buildRoute, cornerPoints, toRoundedPath } from "./energyPath";
+import { buildWaveRoute, toWavePath } from "./energyPath";
 
 const READ_LINE = 0.55; // paint head tracks this fraction of the viewport
-const MOBILE_MAX = 1023;
-const SVG_NS = "http://www.w3.org/2000/svg";
 
 /**
- * "Energy line" — a single circuit-style line that weaves down the home page
- * and is painted (gold up top, cyan below) as the reader scrolls, a glowing
- * spark riding the paint head. Purely decorative: measured and drawn on the
- * client, absent without JS, static & fully painted under reduced motion.
+ * "Energy line" — a single wave that flows down the page center and is
+ * painted (gold up top, cyan below) as the reader scrolls, a glowing spark
+ * riding the paint head. It renders BEHIND section content (section inners
+ * sit at z:2, the overlay at z:1), so it only shows over section backgrounds.
+ * Purely decorative: measured and drawn on the client, absent without JS,
+ * static & fully painted under reduced motion.
  */
 export function EnergyLine({ children }: { children: ReactNode }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -20,7 +20,6 @@ export function EnergyLine({ children }: { children: ReactNode }) {
   const trackRef = useRef<SVGPathElement>(null);
   const glowRef = useRef<SVGPathElement>(null);
   const paintRef = useRef<SVGPathElement>(null);
-  const nodesRef = useRef<SVGGElement>(null);
   const sparkRef = useRef<SVGGElement>(null);
   const gradRef = useRef<SVGLinearGradientElement>(null);
 
@@ -30,15 +29,13 @@ export function EnergyLine({ children }: { children: ReactNode }) {
     const track = trackRef.current;
     const glow = glowRef.current;
     const paint = paintRef.current;
-    const nodes = nodesRef.current;
     const spark = sparkRef.current;
     const grad = gradRef.current;
-    if (!wrap || !svg || !track || !glow || !paint || !nodes || !spark || !grad) return;
+    if (!wrap || !svg || !track || !glow || !paint || !spark || !grad) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let total = 0;
     let samples: { len: number; y: number }[] = [];
-    let nodeEls: { el: SVGCircleElement; len: number }[] = [];
     let raf = 0;
 
     // Painted length whose endpoint sits at overlay-space y. The route only
@@ -69,9 +66,8 @@ export function EnergyLine({ children }: { children: ReactNode }) {
           right: r.right - wrapRect.left,
         };
       });
-      const mobile = window.innerWidth <= MOBILE_MAX;
-      const pts = mobile ? buildMobileRoute(boxes) : buildRoute(boxes, window.innerWidth);
-      const d = toRoundedPath(pts);
+      const pts = buildWaveRoute(boxes, window.innerWidth);
+      const d = toWavePath(pts);
 
       svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
       track.setAttribute("d", d);
@@ -98,31 +94,20 @@ export function EnergyLine({ children }: { children: ReactNode }) {
         Math.min(1, heroEnd + 0.08).toFixed(3)
       );
 
-      nodes.replaceChildren();
-      nodeEls = [];
-      if (!mobile) {
-        for (const c of cornerPoints(pts)) {
-          const el = document.createElementNS(SVG_NS, "circle");
-          el.setAttribute("cx", c.x.toFixed(1));
-          el.setAttribute("cy", c.y.toFixed(1));
-          el.setAttribute("r", "3");
-          el.setAttribute("class", styles.node);
-          nodes.appendChild(el);
-          nodeEls.push({ el, len: lenAtY(c.y - 0.5) });
-        }
-      }
-
       paint.style.strokeDasharray = `${total}`;
       glow.style.strokeDasharray = `${total}`;
       if (reduced) {
         paint.style.strokeDashoffset = "0";
         glow.style.strokeDashoffset = "0";
-        for (const n of nodeEls) n.el.toggleAttribute("data-on", true);
       }
     };
 
     const update = () => {
-      if (!total || reduced) return;
+      if (reduced) return;
+      // Self-heal: if we were built while hidden (zero-size), rebuild once
+      // real dimensions exist — cheaper than trusting every resize signal.
+      if (!total && wrap.clientWidth > 0) build();
+      if (!total) return;
       const wrapTop = wrap.getBoundingClientRect().top + window.scrollY;
       const targetY = window.scrollY + window.innerHeight * READ_LINE - wrapTop;
       const len = lenAtY(targetY);
@@ -138,7 +123,6 @@ export function EnergyLine({ children }: { children: ReactNode }) {
           c.setAttribute("cy", pt.y.toFixed(1));
         }
       }
-      for (const n of nodeEls) n.el.toggleAttribute("data-on", len >= n.len);
     };
 
     const onScroll = () => {
@@ -190,7 +174,6 @@ export function EnergyLine({ children }: { children: ReactNode }) {
         <path ref={trackRef} className={styles.track} />
         <path ref={glowRef} className={styles.glow} stroke="url(#energy-grad)" />
         <path ref={paintRef} className={styles.paint} stroke="url(#energy-grad)" />
-        <g ref={nodesRef} />
         <g ref={sparkRef} className={styles.spark}>
           <circle r="16" fill="url(#energy-halo)" />
           <circle className={styles.core} r="3.2" />
