@@ -89,8 +89,33 @@
   color: var(--ink-2);
 }
 
+/* Mobile: a swipeable card strip instead of a tall vertical stack — the next
+   card peeks to signal there's more, and the cards shrink a touch. */
 @include bp-down(880px) {
   .grid {
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain; /* don't chain into back-nav gestures */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    padding-block: 8px; /* room so overflow-y (now auto) doesn't clip shadows */
+
+    &::-webkit-scrollbar {
+      display: none; /* WebKit — hide the bar, keep the swipe */
+    }
+  }
+
+  .card {
+    flex: 0 0 min(82%, 320px);
+    scroll-snap-align: center;
+    padding: 22px 20px;
+  }
+
+  .quote {
+    font-size: 16.5px;
+    line-height: 1.5;
   }
 }

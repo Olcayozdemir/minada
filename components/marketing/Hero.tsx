@@ -37,33 +37,43 @@ export async function Hero() {
   // Two pixel-aligned frames of the same house at dusk: the base sits with a
   // bare roof and the lights off; the lit twin has the solar system installed
   // and powered on — warm interiors plus the teal energy path from panel →
-  // battery → charger → car. On hover the lit frame crossfades in (pure CSS,
-  // see .lit). Landscape-only pair — no art-directed mobile crop, so the shared
-  // .photo object-position handles narrow crops.
+  // battery → charger → car. On hover (or, on touch, once on load) the lit
+  // frame crossfades in (see .lit). Art-directed: a wide landscape frame above
+  // 760px, a portrait crop below it — for both the base and the lit twin.
   const photoCommon = { sizes: "100vw", fill: true } as const;
   const { props: basePhoto } = getImageProps({
     ...photoCommon,
     alt: t("imageAlt"),
-    src: "/images/v2/Modern_house_in_garden_dusk_202607041801.jpeg",
+    src: "/images/v2/hero-home-dusk.jpeg",
   });
+  const {
+    props: { srcSet: baseMobile },
+  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-home-dusk-mobile.jpeg" });
   const { props: litPhoto } = getImageProps({
     ...photoCommon,
     alt: "",
-    src: "/images/v2/House_with_solar_system_installed_202607041802.jpeg",
+    src: "/images/v2/hero-home-lit.jpeg",
   });
+  const {
+    props: { srcSet: litMobile },
+  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-home-lit-mobile.jpeg" });
 
   return (
     <section className={styles.hero} data-hero="">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
-      {/* Lit twin, eager-loaded so the first hover crossfades without a pop-in. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        {...litPhoto}
-        className={clsx(styles.photo, styles.lit)}
-        loading="eager"
-        aria-hidden="true"
-      />
+      <picture>
+        <source media="(max-width: 760px)" srcSet={baseMobile} />
+        <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
+      </picture>
+      {/* Lit twin, eager-loaded so the first reveal crossfades without a pop-in. */}
+      <picture>
+        <source media="(max-width: 760px)" srcSet={litMobile} />
+        <img
+          {...litPhoto}
+          className={clsx(styles.photo, styles.lit)}
+          loading="eager"
+          aria-hidden="true"
+        />
+      </picture>
       <div className={styles.scrim} aria-hidden="true" />
 
       <div className={styles.inner}>

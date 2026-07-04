@@ -32,9 +32,20 @@
   opacity: 1;
 }
 
-/* Touch devices can't hover — show the lit (stronger) frame by default. */
+/* Touch devices can't hover, so the house "powers on" once on load instead:
+   it holds dusk for a beat, then crossfades to the lit frame and stays there
+   (fill `both` = dusk during the delay, lit forever after). */
 @media (hover: none) {
   .lit {
+    animation: heroPowerOn 1.6s ease-in-out 0.8s both;
+  }
+}
+
+@keyframes heroPowerOn {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
@@ -42,6 +53,14 @@
 @media (prefers-reduced-motion: reduce) {
   .lit {
     transition-duration: 0.01ms;
+    animation: none; /* no power-on reveal */
+  }
+
+  /* Touch + reduced motion: skip the reveal, just rest on the lit frame. */
+  @media (hover: none) {
+    .lit {
+      opacity: 1;
+    }
   }
 }
 
