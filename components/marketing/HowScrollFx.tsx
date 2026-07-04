@@ -5,12 +5,21 @@ import styles from "./HowItWorks.module.scss";
 
 const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
 
+// Still "hold" scroll — as a fraction of one screen — before the slide starts
+// and after it ends, so the row doesn't lurch into motion the instant it pins,
+// nor hand the page off the instant it finishes.
+const LEAD_IN = 0.4;
+const LEAD_OUT = 0.4;
+
 /**
- * Scroll-driven process steps.
- * Desktop: a gold progress line fills as the section crosses the viewport and
- * the steps light up in order. Mobile: the stage grows tall, the content
- * pins, and vertical scroll slides the cards sideways with a subtle
- * cube-like tilt. Without JS or with reduced motion, the static grid stays.
+ * Scroll-driven process steps as a single pinned row.
+ *
+ * The stage grows tall, the heading + card row pin to the viewport, and
+ * vertical scroll slides the row sideways until every step has been seen —
+ * only then does the page scroll on. The pin runway equals how far the row
+ * overflows, so the horizontal slide follows the wheel ~1:1 at any card count
+ * or viewport, and steps brighten as they enter the frame. Without JS or with
+ * reduced motion, the row falls back to a native, swipeable scroll strip.
  */
 export function HowScrollFx({ heading, children }: { heading: ReactNode; children: ReactNode }) {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -23,45 +32,34 @@ export function HowScrollFx({ heading, children }: { heading: ReactNode; childre
     const list = listRef.current;
     if (!stage || !list) return;
     stage.setAttribute("data-fx", "");
-    const mq = window.matchMedia("(max-width: 760px)");
     let raf = 0;
 
+    // Pin runway = the two hold zones + however far the row overflows its
+    // track. Exposed to CSS so the stage reserves exactly that much extra
+    // scroll height beyond one screen.
+    const measure = () => {
+      const shift = Math.max(list.scrollWidth - list.clientWidth, 0);
+      const runway = window.innerHeight * (LEAD_IN + LEAD_OUT) + shift;
+      stage.style.setProperty("--travel", `${runway}px`);
+    };
+
     const update = () => {
-      const cards = Array.from(list.children) as HTMLElement[];
       const rect = stage.getBoundingClientRect();
       const vh = window.innerHeight;
+      const vw = window.innerWidth;
+      const shift = Math.max(list.scrollWidth - list.clientWidth, 0);
+      // Distance scrolled into the pinned stage. Progress rides only the middle
+      // stretch — flat during the lead-in and lead-out holds at each end — so
+      // the slide itself still tracks the wheel ~1:1.
+      const p = clamp((-rect.top - vh * LEAD_IN) / Math.max(shift, 1), 0, 1);
 
-      if (mq.matches) {
-        // Pinned stage: vertical progress drives the horizontal slide.
-        const travel = Math.max(stage.offsetHeight - vh, 1);
-        const p = clamp(-rect.top / travel, 0, 1);
-        const shift = Math.max(list.scrollWidth - list.clientWidth, 0);
-        list.style.transform = `translate3d(${(-p * shift).toFixed(1)}px, 0, 0)`;
-        if (fillRef.current) fillRef.current.style.transform = `scaleX(${p.toFixed(3)})`;
+      list.style.transform = `translate3d(${(-p * shift).toFixed(1)}px, 0, 0)`;
+      if (fillRef.current) fillRef.current.style.transform = `scaleX(${Math.max(0.02, p).toFixed(3)})`;
 
-        const center = window.innerWidth / 2;
-        cards.forEach((c) => {
-          const r = c.getBoundingClientRect();
-          const off = clamp((r.left + r.width / 2 - center) / r.width, -1.2, 1.2);
-          c.style.transform = `perspective(900px) rotateY(${(off * -12).toFixed(2)}deg) scale(${(
-            1 - Math.abs(off) * 0.05
-          ).toFixed(3)})`;
-          c.toggleAttribute("data-on", Math.abs(off) < 0.55);
-        });
-      } else {
-        // On wide desktop all four steps share one row, so there's no
-        // per-step scroll to ride — the fill instead tracks the section's
-        // climb out of the viewport. It stays ~empty while the section is
-        // framed for reading and fills as it scrolls up, completing as the
-        // card row clears the top (anchored to rect.height so the taller
-        // 2-column layout below 1000px still finishes on time).
-        const p = clamp((vh * 0.3 - rect.top) / (vh * 0.1 + rect.height), 0, 1);
-        if (fillRef.current) fillRef.current.style.transform = `scaleX(${Math.max(0.02, p).toFixed(3)})`;
-        const activeIdx = Math.round(p * (cards.length - 1));
-        cards.forEach((c, i) => {
-          c.style.transform = "";
-          c.toggleAttribute("data-on", i <= activeIdx);
-        });
+      // A step is "on" once it's meaningfully inside the frame.
+      for (const c of Array.from(list.children) as HTMLElement[]) {
+        const r = c.getBoundingClientRect();
+        c.toggleAttribute("data-on", r.left < vw * 0.82 && r.right > vw * 0.18);
       }
     };
 
@@ -69,14 +67,21 @@ export function HowScrollFx({ heading, children }: { heading: ReactNode; childre
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(update);
     };
+    const onResize = () => {
+      measure();
+      onScroll();
+    };
+
+    measure();
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onResize);
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
       cancelAnimationFrame(raf);
       stage.removeAttribute("data-fx");
+      stage.style.removeProperty("--travel");
     };
   }, []);
 
