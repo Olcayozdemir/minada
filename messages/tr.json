@@ -376,7 +376,9 @@
     "emptyTitle": "Yakında yeni yazılar",
     "emptyDesc": "İçerikler hazırlanıyor; çok yakında burada olacak.",
     "back": "Tüm yazılar",
-    "by": "Yazan:"
+    "by": "Yazan:",
+    "latest": "Son yazılar",
+    "minRead": "{min} dk okuma"
   },
   "Projects": {
     "eyebrow": "Referanslar",

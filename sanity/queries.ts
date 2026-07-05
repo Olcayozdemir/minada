@@ -8,10 +8,12 @@ import {
   type ProductCategoryItem,
   type ProductGroupItem,
 } from "@/lib/catalog-data";
+import { fallbackPost, fallbackPosts, fallbackSlugs } from "@/lib/blog-fallback";
 
 const postFields = groq`
   _id, title, "slug": slug.current, excerpt, coverImage, publishedAt,
-  "category": category->{title}
+  "category": category->{title},
+  "bodyChars": length(pt::text(body))
 `;
 
 export type PostListItem = {
@@ -22,6 +24,7 @@ export type PostListItem = {
   coverImage?: any;
   publishedAt: string;
   category?: { title: string };
+  readMinutes?: number;
 };
 
 export type PostDetail = PostListItem & {
@@ -40,31 +43,41 @@ export type ProjectItem = {
   coverImage?: any;
 };
 
+// ~1100 chars/min — matches lib/blog-fallback's reading-speed estimate.
+function withReadMinutes<T extends { bodyChars?: number }>(post: T): T & { readMinutes: number } {
+  const { bodyChars, ...rest } = post;
+  return { ...rest, readMinutes: Math.max(1, Math.round((bodyChars ?? 0) / 1100)) } as T & {
+    readMinutes: number;
+  };
+}
+
 export async function getPosts(locale: string): Promise<PostListItem[]> {
-  if (!hasSanity) return [];
-  return client.fetch(
+  if (!hasSanity) return fallbackPosts(locale);
+  const posts = await client.fetch(
     groq`*[_type == "post" && language == $locale] | order(publishedAt desc){ ${postFields} }`,
     { locale },
     { next: { revalidate: 60 } },
   );
+  return posts.map(withReadMinutes);
 }
 
 export async function getPostSlugs(): Promise<{ slug: string; language: string }[]> {
-  if (!hasSanity) return [];
+  if (!hasSanity) return fallbackSlugs();
   return client.fetch(
     groq`*[_type == "post" && defined(slug.current)]{ "slug": slug.current, language }`,
   );
 }
 
 export async function getPost(slug: string, locale: string): Promise<PostDetail | null> {
-  if (!hasSanity) return null;
-  return client.fetch(
+  if (!hasSanity) return fallbackPost(slug, locale);
+  const post = await client.fetch(
     groq`*[_type == "post" && slug.current == $slug && language == $locale][0]{
       ${postFields}, body, "author": author->{name, image}, seo
     }`,
     { slug, locale },
     { next: { revalidate: 60 } },
   );
+  return post ? withReadMinutes(post) : null;
 }
 
 // --- Catalog (Ürünler) ---------------------------------------------------

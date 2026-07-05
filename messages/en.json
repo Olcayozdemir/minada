@@ -376,7 +376,9 @@
     "emptyTitle": "New posts soon",
     "emptyDesc": "Content is being prepared and will be here shortly.",
     "back": "All posts",
-    "by": "By"
+    "by": "By",
+    "latest": "Latest posts",
+    "minRead": "{min} min read"
   },
   "Projects": {
     "eyebrow": "Projects",
