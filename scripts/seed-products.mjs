@@ -1,156 +1,141 @@
 /**
- * Seeds the product catalog into Sanity (OPTIONAL).
+ * Seeds the FULL product catalog (lib/catalog-data.ts — 9 categories, all
+ * series incl. hidden ones, product photos from public/) into Sanity, so the
+ * catalog keeps its content the moment a real project is connected and
+ * editors take over from /studio.
  *
- * NOTE: The live site renders from lib/catalog-data.ts (static) whenever Sanity
- * is not configured — no seeding required. This script remains only for a future
- * Sanity-backed setup and currently covers the panel category only; the fuller
- * catalog (inverters, …) lives in lib/catalog-data.ts + docs/katalog-seed.md.
+ * Usage (env can come from .env.local):
+ *   npm run seed:products
  *
- * Usage:
- *   NEXT_PUBLIC_SANITY_PROJECT_ID=xxx NEXT_PUBLIC_SANITY_DATASET=production \
- *   SANITY_API_WRITE_TOKEN=sk... npm run seed:products
- *
+ * - Single source of truth: imports CATEGORIES/GROUPS_ALL from
+ *   lib/catalog-data.ts directly (Node ≥23 type stripping).
  * - Idempotent: deterministic _id's (createOrReplace), safe to re-run.
- * - Images are intentionally left empty (no hotlinking from cw-enerji.com);
- *   upload visuals via the Studio afterwards.
- * - Easy Life / portable / accessory groups are seeded with hidden: true
- *   (off-showcase per IA plan v1); flip the flag in the Studio to show them.
+ * - Images are uploaded from public/ (Sanity dedupes by content hash).
+ * - DRY_RUN=1 prints a summary without writing.
  */
+import { createReadStream, existsSync, readFileSync } from "node:fs";
+import { basename, join } from "node:path";
 import { createClient } from "@sanity/client";
+import { CATEGORIES, GROUPS_ALL } from "../lib/catalog-data.ts";
+
+// Minimal .env.local loader so the script works without extra deps.
+try {
+  for (const line of readFileSync(join(process.cwd(), ".env.local"), "utf8").split("\n")) {
+    const m = line.match(/^([A-Z_]+)=(.*)$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+  }
+} catch {
+  /* no .env.local — rely on the environment */
+}
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const token = process.env.SANITY_API_WRITE_TOKEN;
-
-// DRY_RUN=1 builds and prints the documents without a token/write — lets you
-// validate the transform offline before hitting the real dataset.
 const dryRun = Boolean(process.env.DRY_RUN);
 
-const slugify = (s) =>
-  s
-    .toLowerCase()
-    .replaceAll("ç", "c").replaceAll("ğ", "g").replaceAll("ı", "i")
-    .replaceAll("ö", "o").replaceAll("ş", "s").replaceAll("ü", "u")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
-const CATEGORY = {
-  _id: "productCategory-gunes-panelleri",
-  _type: "productCategory",
-  title: "Güneş Panelleri",
-  slug: { _type: "slug", current: "gunes-panelleri" },
-  order: 1,
-};
-
-const BRANDS = [
-  { _id: "productBrand-cw-enerji", _type: "productBrand", title: "CW Enerji" },
-  { _id: "productBrand-tommatech", _type: "productBrand", title: "TommaTech" },
-];
-
-// [brandId, title, powerRange, variants, warrantyProductYears, warrantyPerformanceYears, features, hidden]
-const F_STD = ["topcon", "lowLight", "positiveTolerance", "selfClean"];
-const G2G = ["g2g"];
-
-const GROUPS = [
-  // ── CW Enerji (12) ──
-  ["cw-enerji", "M12 132TNBR G2G TOPCon", "655–620 Wp", ["655","650","645","640","635","630","625","620"], 12, 30, [...G2G, ...F_STD]],
-  ["cw-enerji", "M12 132TNR TOPCon", "655–620 Wp", ["655","650","645","640","635","630","625","620"], null, 30, F_STD],
-  ["cw-enerji", "M12 108TNBR TOPCon", "535–510 Wp", ["535","530","525","520","515","510"], null, 30, F_STD],
-  ["cw-enerji", "M12 132TNB TOPCon", "755–715 Wp", ["755","750","745","740","735","730","725","720","715"], 12, 30, F_STD],
-  ["cw-enerji", "M12 132TNB G2G TOPCon", "755–715 Wp", ["755","750","745","740","735","730","725","720","715"], 12, 30, [...G2G, ...F_STD]],
-  ["cw-enerji", "M10 144TNB G2G TOPCon", "620–590 Wp", ["620","615","610","605","600","595","590"], 12, 30, [...G2G, ...F_STD]],
-  ["cw-enerji", "M10 144TNB TOPCon", "620–590 Wp", ["620","615","610","605","600","590"], 12, 30, F_STD],
-  ["cw-enerji", "M10 144TN TOPCon", "620–590 Wp", ["620","615","610","605","600","595","590"], 12, 30, F_STD],
-  ["cw-enerji", "M10 144TNFB TOPCon Black Series", "620–590 Wp", ["620","615","610","605","600","595","590"], 12, 30, ["fullBlack", ...F_STD]],
-  ["cw-enerji", "M10 108TN TOPCon", "455–420 Wp", ["455","450","445","440","435","430","425","420"], 12, 30, F_STD],
-  ["cw-enerji", "M10 108TNB G2G TOPCon", "450–435 Wp", ["450","445","440","435","430","425","420"], 12, 30, [...G2G, ...F_STD]],
-  ["cw-enerji", "M10 108TNB TOPCon", "450–420 Wp", ["450","445","440","435","430","425","420"], 12, 30, F_STD],
-  // ── TommaTech (25) ──
-  ["tommatech", "M12 132TNBR G2G TOPCon", "655–620 Wp", ["655","650","645","640","635","630","625","620"], 15, 30, [...G2G, ...F_STD]],
-  ["tommatech", "M12 132TNBR TOPCon", "655–620 Wp", ["655","650","645","640","635","630","625","620"], 15, 30, F_STD],
-  ["tommatech", "M12 108TNBR TOPCon", "535–510 Wp", ["535","530","525","520","515","510"], null, 30, F_STD],
-  ["tommatech", "M12 132TNB G2G TOPCon", "755–720 Wp", ["755","750","745","740","735","730","725","720"], 15, 30, [...G2G, ...F_STD]],
-  ["tommatech", "M12 132TNB TOPCon", "755–720 Wp", ["755","750","745","740","735","730","725","720"], 15, 30, F_STD],
-  ["tommatech", "M12 132TNB G2G Diamond Plus", "900–860 Wp (bifacial)", ["900","895","890","885","880","870","865","860"], 15, 30, ["bifacial", ...G2G, ...F_STD]],
-  ["tommatech", "M12 108TNB G2G Diamond Plus", "745–715 Wp (bifacial)", ["745","740","735","730","725","720","715"], 15, 30, ["bifacial", ...G2G, ...F_STD]],
-  ["tommatech", "M10 144TNB Diamond Plus", "745–715 Wp (bifacial)", ["745","740","735","730","725","720","715"], 15, 30, ["bifacial", ...F_STD]],
-  ["tommatech", "M12 108TN Diamond Plus", "625–610 Wp", ["625","620","615","610"], 15, 30, F_STD],
-  ["tommatech", "Easy Life 15Wp Mobil Solar Şarj", "15 Wp", ["15"], null, null, ["portable"], true],
-  ["tommatech", "Easy Life Taşınabilir", "200–150 W", ["200","150"], null, null, ["portable"], true],
-  ["tommatech", "170-110Wp Flexible Dark Series", "170–110 Wp", ["170","110"], 2, null, ["flexible", "fullBlack"], true],
-  ["tommatech", "Easy Life 25Wp Katlanabilir", "25 Wp", ["25"], null, null, ["portable"], true],
-  ["tommatech", "Easy Life 110Wp Katlanabilir", "110 Wp", ["110"], null, null, ["portable"], true],
-  ["tommatech", "Easy Life Omuz Askısı (aksesuar)", "", [], null, null, ["portable"], true],
-  ["tommatech", "170-110Wp Flexible Serisi", "170–110 Wp", ["170","110"], 2, null, ["flexible"], true],
-  ["tommatech", "400-240Wp BIPV", "400–240 Wp", ["400","320","240"], 30, 30, ["bipv", ...F_STD]],
-  ["tommatech", "M10 108TN TOPCon", "455–420 Wp", ["455","450","445","440","435","430","425","420"], 15, 30, F_STD],
-  ["tommatech", "M10 108TNFB TopCon Dark Series", "455–420 Wp", ["455","450","445","440","435","430","425","420"], 15, 30, ["fullBlack", ...F_STD]],
-  ["tommatech", "M10 108TNB TOPCon", "455–420 Wp", ["455","450","445","440","435","430","425","420"], 15, 30, F_STD],
-  ["tommatech", "M10 108TNB TOPCon G2G", "455–420 Wp", ["455","450","445","440","435","430","425","420"], 15, 30, [...G2G, ...F_STD]],
-  ["tommatech", "M10 144TN TOPCon", "620–590 Wp", ["620","615","610","605","600","595","590"], 15, 30, F_STD],
-  ["tommatech", "M10 144TNFB TOPCon Dark Series", "620–590 Wp", ["620","615","610","605","600","595","590"], 15, 30, ["fullBlack", ...F_STD]],
-  ["tommatech", "M10 144TNB TOPCon", "620–600 Wp", ["620","615","610","605","600","595","590"], 15, 30, F_STD],
-  ["tommatech", "M10 144TNB G2G TOPCon", "620–590 Wp", ["620","615","610","605","600","595","590"], 15, 30, [...G2G, ...F_STD]],
-];
-
-// Build the full document set. `variants` are coerced to numbers to match the
-// productGroup schema (array of number) — seeding strings would flag in Studio.
-function buildDocs() {
-  const docs = [CATEGORY, ...BRANDS];
-  GROUPS.forEach((g, i) => {
-    const [brand, title, powerRange, variants, wProd, wPerf, features, hidden] = g;
-    const slug = slugify(`${brand}-${title}`);
-    docs.push({
-      _id: `productGroup-${slug}`,
-      _type: "productGroup",
-      title,
-      slug: { _type: "slug", current: slug },
-      category: { _type: "reference", _ref: CATEGORY._id },
-      brand: { _type: "reference", _ref: `productBrand-${brand}` },
-      powerRange: powerRange || undefined,
-      variants: variants.map(Number),
-      ...(wProd ? { warrantyProductYears: wProd } : {}),
-      ...(wPerf ? { warrantyPerformanceYears: wPerf } : {}),
-      features,
-      featured: false,
-      hidden: Boolean(hidden),
-      order: i + 1,
-    });
-  });
-  return docs;
-}
-
-async function run() {
-  const docs = buildDocs();
-  const groups = docs.filter((d) => d._type === "productGroup");
-
-  if (dryRun) {
-    const hidden = groups.filter((g) => g.hidden).length;
-    console.log(
-      `DRY RUN — ${docs.length} docs: 1 category, ${BRANDS.length} brands, ` +
-        `${groups.length} groups (${groups.length - hidden} vitrinde, ${hidden} gizli).`,
-    );
-    console.log("Örnek grup:\n" + JSON.stringify(groups[0], null, 2));
-    return;
-  }
-
-  if (!projectId || !token) {
-    console.error(
-      "Missing env: NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_API_WRITE_TOKEN are required. " +
-        "(Tip: DRY_RUN=1 to preview offline.)",
-    );
-    process.exit(1);
-  }
-
-  const client = createClient({ projectId, dataset, apiVersion: "2024-01-01", token, useCdn: false });
-  let tx = client.transaction();
-  for (const d of docs) tx = tx.createOrReplace(d);
-  const res = await tx.commit();
-  console.log(`Seeded ${res.results.length} documents into ${projectId}/${dataset}.`);
-  console.log("Not: görselleri Studio'dan yükleyin (hotlink kullanılmıyor).");
-}
-
-run().catch((e) => {
-  console.error(e.message ?? e);
+if (!projectId && !dryRun) {
+  console.error("NEXT_PUBLIC_SANITY_PROJECT_ID is not set.");
   process.exit(1);
-});
+}
+if (!token && !dryRun) {
+  console.error("SANITY_API_WRITE_TOKEN is not set (Editor token from sanity.io/manage).");
+  process.exit(1);
+}
+
+const client = createClient({ projectId, dataset, token, apiVersion: "2024-01-01", useCdn: false });
+
+// Upload each distinct product photo once; series sharing a photo share it.
+const assetCache = new Map();
+let uploadCount = 0;
+async function uploadImage(publicPath) {
+  if (!publicPath || typeof publicPath !== "string") return undefined;
+  if (assetCache.has(publicPath)) return assetCache.get(publicPath);
+  const file = join(process.cwd(), "public", publicPath.replace(/^\//, ""));
+  if (!existsSync(file)) {
+    console.warn(`  ! image missing on disk, skipped: ${publicPath}`);
+    assetCache.set(publicPath, undefined);
+    return undefined;
+  }
+  let ref;
+  if (dryRun) {
+    ref = { _type: "image", asset: { _type: "reference", _ref: `dry-${basename(publicPath)}` } };
+  } else {
+    const asset = await client.assets.upload("image", createReadStream(file), {
+      filename: basename(publicPath),
+    });
+    ref = { _type: "image", asset: { _type: "reference", _ref: asset._id } };
+  }
+  uploadCount++;
+  assetCache.set(publicPath, ref);
+  return ref;
+}
+
+const docs = [];
+
+// Categories — deterministic ids derived from their slugs.
+const catId = (slug) => `productCategory-${slug}`;
+for (const c of CATEGORIES) {
+  docs.push({
+    _id: catId(c.slug),
+    _type: "productCategory",
+    title: c.title,
+    slug: { _type: "slug", current: c.slug },
+    order: c.order ?? 0,
+    ...(c.icon ? { icon: c.icon } : {}),
+  });
+}
+
+// Brands — collected from the groups, ordered by first appearance.
+const brandIds = new Map();
+for (const g of GROUPS_ALL) {
+  const b = g.brand;
+  if (!b?.slug || brandIds.has(b.slug)) continue;
+  brandIds.set(b.slug, `productBrand-${b.slug}`);
+  docs.push({
+    _id: `productBrand-${b.slug}`,
+    _type: "productBrand",
+    title: b.title,
+    slug: { _type: "slug", current: b.slug },
+    order: brandIds.size,
+  });
+}
+
+// Groups — includes hidden series (they stay off-showcase via the flag).
+for (const g of GROUPS_ALL) {
+  docs.push({
+    _id: `productGroup-${g.slug}`,
+    _type: "productGroup",
+    title: g.title,
+    slug: { _type: "slug", current: g.slug },
+    category: { _type: "reference", _ref: catId(g.category.slug) },
+    brand: { _type: "reference", _ref: brandIds.get(g.brand.slug) },
+    ...(g.powerRange ? { powerRange: g.powerRange } : {}),
+    variants: (g.variants ?? []).map(Number),
+    ...(g.warrantyProductYears ? { warrantyProductYears: g.warrantyProductYears } : {}),
+    ...(g.warrantyPerformanceYears
+      ? { warrantyPerformanceYears: g.warrantyPerformanceYears }
+      : {}),
+    features: g.features ?? [],
+    image: await uploadImage(g.image),
+    featured: Boolean(g.featured),
+    hidden: Boolean(g.hidden),
+    order: g.order ?? 0,
+  });
+}
+
+const groups = docs.filter((d) => d._type === "productGroup");
+const hidden = groups.filter((d) => d.hidden).length;
+const summary =
+  `${CATEGORIES.length} categories, ${brandIds.size} brands, ` +
+  `${groups.length} groups (${groups.length - hidden} showcased, ${hidden} hidden), ` +
+  `${uploadCount} images`;
+
+if (dryRun) {
+  console.log(`DRY RUN — ${docs.length} docs: ${summary}. Nothing written.`);
+  console.log("Sample group:\n" + JSON.stringify(groups[0], null, 2));
+  process.exit(0);
+}
+
+const tx = docs.reduce((t, d) => t.createOrReplace(d), client.transaction());
+await tx.commit();
+console.log(`Seeded ${docs.length} documents into ${projectId}/${dataset}: ${summary}.`);
