@@ -57,7 +57,7 @@
      swipeable horizontal strip; the JS upgrades it to a scroll-driven slide. */
   display: flex;
   flex-wrap: nowrap;
-  gap: var(--space-5);
+  gap: var(--space-8);
   overflow-x: auto;
   overscroll-behavior-x: contain; /* don't chain into back-nav gestures */
   scroll-snap-type: x mandatory;
@@ -69,33 +69,47 @@
   }
 }
 
+/* Editorial figure, not a boxed card: bare photo block + magazine-index
+   caption (oversized outlined numeral, hairline rule, title, standfirst). */
 .step {
   position: relative;
   flex: 0 0 clamp(260px, 30vw, 350px);
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--r-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
   transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
     opacity 0.35s ease,
     filter 0.35s ease;
 }
 
 .media {
   position: relative;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  overflow: hidden;
   background: linear-gradient(160deg, var(--green-700), var(--green-850));
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.35s ease;
 }
 
 .mediaImg {
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Quiet navy grade so six stock photos read as one set. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 26, 48, 0.14),
+    transparent 36%,
+    transparent 60%,
+    rgba(8, 26, 48, 0.3)
+  );
 }
 
 /* Branded stand-in until a real step photo is dropped in. */
@@ -118,36 +132,49 @@
   filter: drop-shadow(0 6px 18px rgba(8, 26, 48, 0.35));
 }
 
-.ghost {
-  position: absolute;
-  right: 10px;
-  bottom: -14px;
-  font-family: var(--font-display), sans-serif;
-  font-weight: 700;
-  font-size: 5.5rem;
-  line-height: 1;
-  color: rgba(238, 242, 247, 0.06);
+/* ---- editorial index caption ------------------------------------------- */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
 }
 
+/* Oversized outlined numeral — fills gold as the step enters the frame. */
 .num {
-  position: absolute;
-  top: 12px;
-  left: 12px;
   font-family: var(--font-display), sans-serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--on-accent);
-  display: inline-grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: var(--shadow-soft);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1.3px rgba(18, 36, 63, 0.38);
+  transition:
+    color 0.35s ease,
+    -webkit-text-stroke-color 0.35s ease;
+}
+
+/* Hairline that fills with gold, left to right, on the active step. */
+.rule {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s ease 0.1s;
+  }
 }
 
 .body {
-  padding: var(--space-5);
+  padding-top: var(--space-3);
 }
 
 .stepTitle {
@@ -158,6 +185,22 @@
 .stepDesc {
   font-size: 0.92rem;
   color: var(--ink-2);
+}
+
+/* Pointer fallback (no JS / reduced motion): hover mirrors the active state. */
+.step:hover {
+  .mediaImg {
+    transform: scale(1.045);
+  }
+
+  .num {
+    color: var(--gold-500);
+    -webkit-text-stroke-color: var(--gold-500);
+  }
+
+  .rule::after {
+    transform: scaleX(1);
+  }
 }
 
 /* ---- scroll-driven pinned slide (only when JS is active) --------------- */
@@ -189,16 +232,31 @@
 
   /* Steps rest dimmed and light up as they slide into the frame. */
   .step {
-    opacity: 0.5;
-    filter: saturate(0.55);
+    opacity: 0.45;
+    filter: saturate(0.5);
   }
 
   .step[data-on] {
     opacity: 1;
     filter: none;
-    border-color: rgba(242, 168, 44, 0.5);
-    box-shadow: var(--shadow-card-light);
     transform: translateY(-6px);
+
+    .media {
+      box-shadow: var(--shadow-card-light);
+    }
+
+    .mediaImg {
+      transform: scale(1.045);
+    }
+
+    .num {
+      color: var(--gold-500);
+      -webkit-text-stroke-color: var(--gold-500);
+    }
+
+    .rule::after {
+      transform: scaleX(1);
+    }
   }
 }
 
