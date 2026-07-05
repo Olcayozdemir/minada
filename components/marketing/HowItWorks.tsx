@@ -74,7 +74,6 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
                   />
                 ) : (
                   <div className={styles.placeholder} aria-hidden="true">
-                    <span className={styles.ghost}>{`0${i + 1}`}</span>
                     {artImg ? (
                       <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
                     ) : (
@@ -82,7 +81,12 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
                     )}
                   </div>
                 )}
+                <span className={styles.scrim} aria-hidden="true" />
+              </div>
+              {/* Editorial index line — the <ol> already carries order semantically. */}
+              <div className={styles.meta} aria-hidden="true">
                 <span className={styles.num}>{`0${i + 1}`}</span>
+                <span className={styles.rule} />
               </div>
               <div className={styles.body}>
                 <h3 className={styles.stepTitle}>{t(`${id}.title`)}</h3>
