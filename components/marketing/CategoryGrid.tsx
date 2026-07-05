@@ -3,10 +3,13 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
 import type { ProductCategoryItem } from "@/sanity/queries";
+import { coverSrc } from "@/sanity/image";
 import styles from "./CategoryGrid.module.scss";
 
-// Category-level 3D hero renders (client brand assets, transparent PNG), floated
-// top-right of each tile. Categories without an entry show text only.
+// Built-in 3D hero renders (client brand assets, transparent PNG) for the
+// original categories. An image uploaded on the Sanity category doc wins over
+// this map, so new categories added in the Studio get their visual from there
+// (transparent PNGs sit best on the lit stage). No image at all = text only.
 const CAT_HERO: Record<string, string> = {
   "gunes-panelleri": "/images/products/panels.png",
   inverterler: "/images/products/inverters.png",
@@ -30,7 +33,7 @@ export async function CategoryGrid({
   return (
     <ul className={styles.catGrid}>
       {items.map(({ cat, count }) => {
-        const hero = CAT_HERO[cat.slug];
+        const hero = cat.image ? coverSrc(cat.image, 520) : CAT_HERO[cat.slug];
         const title = t.has(`categories.${cat.slug}`) ? t(`categories.${cat.slug}`) : cat.title;
         const desc = t.has(`catDesc.${cat.slug}`) ? t(`catDesc.${cat.slug}`) : "";
         return (
@@ -40,7 +43,7 @@ export async function CategoryGrid({
               className={styles.catCard}
             >
               {hero ? (
-                <span className={styles.catHero}>
+                <span className={styles.catStage} aria-hidden="true">
                   <Image
                     src={hero}
                     alt=""
@@ -55,9 +58,12 @@ export async function CategoryGrid({
                 <span className={styles.catCount}>{t("countLabel", { count })}</span>
                 <span className={styles.catCardTitle}>{title}</span>
                 {desc ? <span className={styles.catDesc}>{desc}</span> : null}
-              </span>
-              <span className={styles.catGo} aria-hidden="true">
-                <IconArrowRight size={16} />
+                <span className={styles.catFoot} aria-hidden="true">
+                  <span className={styles.catRule} />
+                  <span className={styles.catGo}>
+                    <IconArrowRight size={16} />
+                  </span>
+                </span>
               </span>
             </Link>
           </li>
