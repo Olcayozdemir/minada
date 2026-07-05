@@ -9,28 +9,6 @@
 
 .footer {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
+  justify-content: center;
   margin-top: var(--space-8);
-}
-
-.brands {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.brandsLabel {
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-}
-
-.brandsList {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
 }

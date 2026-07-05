@@ -26,10 +26,6 @@ export async function ProductsTeaser() {
       </div>
 
       <div className={styles.footer}>
-        <p className={styles.brands}>
-          <span className={styles.brandsLabel}>{t("brandsLabel")}</span>
-          <span className={styles.brandsList}>{t("brands")}</span>
-        </p>
         <Button href="/urunler" size="lg" withArrow>
           {t("cta")}
         </Button>
