@@ -57,9 +57,6 @@ export async function Footer() {
             <Link href="/about" className={styles.colLink}>
               {tn("about")}
             </Link>
-            <Link href="/projects" className={styles.colLink}>
-              {tn("projects")}
-            </Link>
             <Link href="/how-it-works" className={styles.colLink}>
               {tn("howItWorks")}
             </Link>

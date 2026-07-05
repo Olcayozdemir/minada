@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           <Button href="/contact" size="lg" withArrow>
             {tc("getQuote")}
           </Button>
-          <Button href="/projects" size="lg" variant="glass">
+          <Button href="/about" size="lg" variant="glass">
             {t("referencesCta")}
           </Button>
         </div>

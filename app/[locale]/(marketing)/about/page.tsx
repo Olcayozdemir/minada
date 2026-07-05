@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { PlaceholderPage } from "@/components/marketing/PlaceholderPage";
+import { ReferencesSection } from "@/components/marketing/ReferencesSection";
 import { buildAlternates } from "@/lib/seo";
+
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -13,9 +15,9 @@ export async function generateMetadata({
   return { title: t("about"), alternates: buildAlternates("/about", locale) };
 }
 
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("Nav");
-  return <PlaceholderPage title={t("about")} />;
+  // Reference projects now live under About (no separate "Referanslar" nav tab).
+  return <ReferencesSection locale={locale} />;
 }

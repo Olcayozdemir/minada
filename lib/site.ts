@@ -16,7 +16,6 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   },
   { href: "/urunler", key: "products" },
   { href: "/how-it-works", key: "howItWorks" },
-  { href: "/projects", key: "projects" },
   { href: "/calculator", key: "calculator" },
   { href: "/about", key: "about" },
 ];

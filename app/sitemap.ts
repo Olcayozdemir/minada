@@ -13,7 +13,6 @@ const HREFS = [
   "/urunler",
   "/how-it-works",
   "/calculator",
-  "/projects",
   "/blog",
   "/about",
   "/faq",
