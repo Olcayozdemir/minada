@@ -13,6 +13,9 @@
 | area-kamu.jpg        | photo-1677938438353-3df2b797568a (-05jeCg_EZU) | public campus building, PV roof (aerial)                                                                                                              |
 | calc.jpg             | photo-1781344334963-264f725d668b (uOFTFYJkKVo) | suburban home at dusk, warm windows                                                                                                                   |
 | cta.jpg              | photo-1674168481499-983f0968a68f (1lsoCjbLm3I) | navy dusk PV close-up                                                                                                                                 |
-| camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — kamp-outdoor landing hero                                                                                          |
+| camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — SPARE (replaced by camp-hero.jpeg)                                                                                 |
+
+camp-hero.jpeg is NOT Unsplash: client-provided render (Google Flow, 2026-07-11) — lakeside camp with
+portable power station + teal energy cable; kamp-outdoor landing hero.
 
 Rejected during visual verification: SunSynk-branded battery wall (logos), battery-swap locker (wrong subject), fence-foreground houses, brutalist museum (panels illegible), pink-dusk solar rows + construction aerial (mood mismatch for hero).
