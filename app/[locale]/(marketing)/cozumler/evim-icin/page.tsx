@@ -5,14 +5,13 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
+import { StepsShowcase } from "@/components/marketing/StepsShowcase";
+import { CrossSell } from "@/components/marketing/CrossSell";
 // import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — gerçek referanslar gelince
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
 
 const GAINS = ["g1", "g2", "g3"] as const;
-
-// Summary of the six delivery steps — full detail lives on /how-it-works.
-const STEP_IDS = ["discovery", "engineering", "licensing", "procurement", "install", "om"] as const;
 
 export async function generateMetadata({
   params,
@@ -32,7 +31,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Segments.home");
-  const th = await getTranslations("Home.how");
   const tc = await getTranslations("Common");
 
   return (
@@ -81,42 +79,16 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </ul>
       </Section>
 
-      <Section tone="sand">
-        <SectionHeading
-          eyebrow={t("stepsEyebrow")}
-          title={t("stepsTitle")}
-          intro={t("stepsIntro")}
-        />
-        <ol className={styles.steps}>
-          {STEP_IDS.map((id, i) => (
-            <li key={id} className={styles.stepItem}>
-              <span className={styles.stepNum}>{`0${i + 1}`}</span>
-              {th(`${id}.title`)}
-            </li>
-          ))}
-        </ol>
-        <div className={styles.actions}>
-          <Button href="/how-it-works" variant="secondary" withArrow>
-            {t("stepsCta")}
-          </Button>
-        </div>
-      </Section>
+      {/* Fotoğraflı 6 adım — tam anlatım /how-it-works. */}
+      <StepsShowcase
+        eyebrow={t("stepsEyebrow")}
+        title={t("stepsTitle")}
+        intro={t("stepsIntro")}
+        cta={t("stepsCta")}
+      />
 
       {/* Çapraz satış: GES'in yanına eklenebilecek iş kolları (Okan, 7.07). */}
-      <Section tone="light">
-        <SectionHeading title={t("cross.title")} intro={t("cross.intro")} />
-        <div className={styles.crossRow}>
-          <Button href="/hizmetler/isi-pompasi" variant="secondary" withArrow>
-            {t("cross.heatpump")}
-          </Button>
-          <Button href="/hizmetler/ev-sarj" variant="secondary" withArrow>
-            {t("cross.evcharge")}
-          </Button>
-          <Button href="/hizmetler/enerji-depolama" variant="secondary" withArrow>
-            {t("cross.bess")}
-          </Button>
-        </div>
-      </Section>
+      <CrossSell />
 
       <CalculatorTeaser />
       {/* <Testimonials /> — askıda, gerçek referanslarla geri gelecek. */}

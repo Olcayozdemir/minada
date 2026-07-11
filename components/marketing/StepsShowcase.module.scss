@@ -1,0 +1,94 @@
+@use "../../styles/mixins" as *;
+
+.grid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    @include card-hover-gold;
+
+    .img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.media {
+  position: relative;
+  display: block;
+  height: 150px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+/* Altın numara rozeti — fotoğrafın üstünde, gövdeye taşar. */
+.num {
+  position: absolute;
+  left: var(--space-4);
+  bottom: calc(var(--space-3) * -1);
+  display: inline-grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding-inline: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-300), var(--gold));
+  color: var(--on-accent);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 18px -8px rgba(242, 168, 44, 0.7);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--space-4) + 6px) var(--space-5) var(--space-5);
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
+}

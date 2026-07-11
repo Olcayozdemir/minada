@@ -249,10 +249,21 @@
       "stepsCta": "Süreci ayrıntılı gör",
       "cross": {
         "title": "Güneşten fazlası",
-        "intro": "GES'in yanına ekleyebilecekleriniz:",
-        "heatpump": "Isı Pompası — ısınma da güneşten",
-        "evcharge": "EV Şarj — aracınız evde dolsun",
-        "bess": "Depolama — kesintiye karşı"
+        "intro": "GES'in yanına ekleyebilecekleriniz — hepsi aynı keşifte planlanır:",
+        "items": {
+          "heatpump": {
+            "title": "Isı Pompası",
+            "desc": "Isınma da güneşten: doğalgazsız, sessiz, yerden ısıtmayla uyumlu konfor."
+          },
+          "evcharge": {
+            "title": "EV Şarj",
+            "desc": "Aracınız gece evde, çatınızın gündüz ürettiğiyle dolsun."
+          },
+          "bess": {
+            "title": "Enerji Depolama",
+            "desc": "Gündüz üretileni akşama taşıyın; kesintide ev çalışmaya devam etsin."
+          }
+        }
       },
       "gains": {
         "eyebrow": "Kazancınız",
@@ -306,7 +317,11 @@
         }
       },
       "ctaTitle": "Tesisinize özel fizibilite",
-      "ctaDesc": "Faturanız ve çatı/arazi bilginizle başlayalım; boyutlandırma, maliyet ve geri dönüş tablosunu ücretsiz hazırlayalım."
+      "ctaDesc": "Faturanız ve çatı/arazi bilginizle başlayalım; boyutlandırma, maliyet ve geri dönüş tablosunu ücretsiz hazırlayalım.",
+      "stepsEyebrow": "Süreç",
+      "stepsTitle": "Yatırımdan işletmeye: 6 adım",
+      "stepsIntro": "Fizibiliteden devreye almaya tüm süreç tek yüklenicide — raporlu, garantili, izlenebilir.",
+      "stepsCta": "Süreci ayrıntılı gör"
     },
     "camp": {
       "metaTitle": "Kamp & Outdoor — Taşınabilir Güç",

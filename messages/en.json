@@ -249,10 +249,21 @@
       "stepsCta": "See the full process",
       "cross": {
         "title": "More than solar",
-        "intro": "What you can add next to PV:",
-        "heatpump": "Heat pump — heating from the sun",
-        "evcharge": "EV charging — top up at home",
-        "bess": "Storage — outage-proof"
+        "intro": "What you can add next to PV — planned in the same survey:",
+        "items": {
+          "heatpump": {
+            "title": "Heat Pump",
+            "desc": "Heating from the sun too: gas-free, quiet comfort that pairs with underfloor heating."
+          },
+          "evcharge": {
+            "title": "EV Charging",
+            "desc": "Your car charges overnight on what your roof produced by day."
+          },
+          "bess": {
+            "title": "Energy Storage",
+            "desc": "Carry daytime production into the evening; the house keeps running through outages."
+          }
+        }
       },
       "gains": {
         "eyebrow": "Your gains",
@@ -306,7 +317,11 @@
         }
       },
       "ctaTitle": "A feasibility study for your facility",
-      "ctaDesc": "Start with your bill and roof/land details; we prepare the sizing, cost and payback table free of charge."
+      "ctaDesc": "Start with your bill and roof/land details; we prepare the sizing, cost and payback table free of charge.",
+      "stepsEyebrow": "Process",
+      "stepsTitle": "From investment to operation: 6 steps",
+      "stepsIntro": "One contractor from feasibility to commissioning — documented, warranted, monitored.",
+      "stepsCta": "See the full process"
     },
     "camp": {
       "metaTitle": "Camping & Outdoor — Portable Power",

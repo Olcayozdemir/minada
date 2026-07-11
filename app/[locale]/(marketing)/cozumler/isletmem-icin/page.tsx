@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Services } from "@/components/marketing/Services";
+import { StepsShowcase } from "@/components/marketing/StepsShowcase";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
 
@@ -76,6 +77,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
           ))}
         </ul>
       </Section>
+
+      {/* Fotoğraflı 6 adım — tek yüklenici süreci (tam anlatım /how-it-works). */}
+      <StepsShowcase
+        eyebrow={t("stepsEyebrow")}
+        title={t("stepsTitle")}
+        intro={t("stepsIntro")}
+        cta={t("stepsCta")}
+      />
 
       {/* İş kolu kapıları — kamp bu bağlamda gizli (B2B odak; nav'dan erişilir). */}
       <Services exclude={["camp"]} />
