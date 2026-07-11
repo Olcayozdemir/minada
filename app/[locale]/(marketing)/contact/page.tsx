@@ -38,6 +38,8 @@ export default async function Page({
   // Product carried over from a catalog card CTA (?urun=... / ?product=...).
   const rawProduct = sp.urun ?? sp.product;
   const defaultProduct = typeof rawProduct === "string" ? rawProduct.slice(0, 200) : "";
+  // Routing topic carried over from section CTAs (?konu=...).
+  const defaultTopic = typeof sp.konu === "string" ? sp.konu : "";
 
   return (
     <Section tone="dark">
@@ -48,6 +50,7 @@ export default async function Page({
             defaultCity={defaultCity}
             defaultBill={defaultBill}
             defaultProduct={defaultProduct}
+            defaultTopic={defaultTopic}
           />
         </div>
         <aside className={styles.info}>

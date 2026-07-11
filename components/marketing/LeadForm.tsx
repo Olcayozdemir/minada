@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useTranslations } from "next-intl";
 import clsx from "clsx";
-import { leadSchema, type LeadInput, PROPERTY_TYPES } from "@/lib/lead-schema";
+import { leadSchema, type LeadInput, PROPERTY_TYPES, LEAD_TOPICS } from "@/lib/lead-schema";
 import { whatsappLink } from "@/lib/site";
 import { IconCheck } from "@/components/ui/icons";
 import styles from "./LeadForm.module.scss";
@@ -38,11 +38,14 @@ export function LeadForm({
   defaultCity,
   defaultBill,
   defaultProduct,
+  defaultTopic,
 }: {
   defaultCity?: string;
   defaultBill?: string;
   /** Catalog group name/slug carried over from a product card CTA. */
   defaultProduct?: string;
+  /** Routing topic carried over from a section CTA (?konu=...). */
+  defaultTopic?: string;
 }) {
   const t = useTranslations("Contact");
   const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
@@ -64,6 +67,9 @@ export function LeadForm({
       bill: defaultBill ?? "",
       message: defaultProduct ? t("form.productMessage", { product: defaultProduct }) : "",
       product: defaultProduct ?? "",
+      topic: (LEAD_TOPICS as readonly string[]).includes(defaultTopic ?? "")
+        ? (defaultTopic as LeadInput["topic"])
+        : undefined,
       company: "",
     },
   });
@@ -155,8 +161,23 @@ export function LeadForm({
         </Field>
       </div>
 
+      <Field label={t("form.topic")}>
+        <select {...register("topic")} className={styles.input}>
+          <option value="">{t("form.topicPlaceholder")}</option>
+          {LEAD_TOPICS.map((v) => (
+            <option key={v} value={v}>
+              {t(`form.topics.${v}`)}
+            </option>
+          ))}
+        </select>
+      </Field>
+
       <div className={styles.row2}>
-        <Field label={t("form.propertyType")} error={fieldError("propertyType")}>
+        <Field
+          label={t("form.propertyType")}
+          optional={t("form.optional")}
+          error={fieldError("propertyType")}
+        >
           <select
             {...register("propertyType")}
             className={clsx(styles.input, errors.propertyType && styles.invalid)}

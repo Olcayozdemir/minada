@@ -388,7 +388,7 @@
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Working hours",
       "hours": "Weekdays 09:00 – 18:00",
-      "note": "Contact details will be updated soon."
+      "note": "Email goes live together with the domain setup."
     },
     "form": {
       "name": "Full name",
@@ -412,7 +412,17 @@
       "submit": "Send request",
       "submitting": "Sending…",
       "whatsapp": "Message on WhatsApp",
-      "productMessage": "Hi, I would like to get a quote for {product}."
+      "productMessage": "Hi, I would like to get a quote for {product}.",
+      "topic": "Topic",
+      "topicPlaceholder": "What would you like a quote for?",
+      "topics": {
+        "ges": "Solar Energy (PV)",
+        "depolama": "Energy Storage",
+        "isi-pompasi": "Heat Pump",
+        "ev-sarj": "EV Charging",
+        "kamp": "Camping & Portable Power",
+        "diger": "Other"
+      }
     },
     "errors": {
       "name": "Please enter your name.",

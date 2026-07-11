@@ -7,6 +7,15 @@ const PROPERTY_LABELS: Record<string, string> = {
   apartment: "Apartman",
 };
 
+const TOPIC_LABELS: Record<string, string> = {
+  ges: "Güneş Enerjisi (GES)",
+  depolama: "Enerji Depolama",
+  "isi-pompasi": "Isı Pompası",
+  "ev-sarj": "EV Şarj",
+  kamp: "Kamp & Taşınabilir Güç",
+  diger: "Diğer",
+};
+
 function escapeHtml(s: string) {
   return s.replace(
     /[&<>"]/g,
@@ -31,7 +40,8 @@ export async function sendLeadEmail(data: LeadInput) {
     ["Telefon", data.phone],
     ["E-posta", data.email],
     ["Şehir", data.city],
-    ["Konut tipi", PROPERTY_LABELS[data.propertyType] ?? data.propertyType],
+    ["Konu", data.topic ? (TOPIC_LABELS[data.topic] ?? data.topic) : "—"],
+    ["Konut tipi", data.propertyType ? (PROPERTY_LABELS[data.propertyType] ?? data.propertyType) : "—"],
     ["Aylık fatura", data.bill || "—"],
     ["İlgilenilen ürün", data.product || "—"],
     ["Mesaj", data.message || "—"],
@@ -51,7 +61,7 @@ export async function sendLeadEmail(data: LeadInput) {
     from,
     to,
     replyTo: data.email,
-    subject: `Yeni teklif talebi — ${data.name}`,
+    subject: `Yeni teklif talebi${data.topic ? ` [${TOPIC_LABELS[data.topic] ?? data.topic}]` : ""} — ${data.name}`,
     html,
   });
   if (error) {

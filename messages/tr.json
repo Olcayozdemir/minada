@@ -388,7 +388,7 @@
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Çalışma saatleri",
       "hours": "Hafta içi 09:00 – 18:00",
-      "note": "İletişim bilgileri yakında güncellenecek."
+      "note": "E-posta adresi domain kurulumuyla birlikte aktifleşecek."
     },
     "form": {
       "name": "Ad Soyad",
@@ -412,7 +412,17 @@
       "submit": "Teklif talebi gönder",
       "submitting": "Gönderiliyor…",
       "whatsapp": "WhatsApp'tan yaz",
-      "productMessage": "Merhaba, {product} hakkında teklif almak istiyorum."
+      "productMessage": "Merhaba, {product} hakkında teklif almak istiyorum.",
+      "topic": "Konu",
+      "topicPlaceholder": "Ne için teklif istiyorsunuz?",
+      "topics": {
+        "ges": "Güneş Enerjisi (GES)",
+        "depolama": "Enerji Depolama",
+        "isi-pompasi": "Isı Pompası",
+        "ev-sarj": "EV Şarj",
+        "kamp": "Kamp & Taşınabilir Güç",
+        "diger": "Diğer"
+      }
     },
     "errors": {
       "name": "Lütfen ad soyad girin.",
