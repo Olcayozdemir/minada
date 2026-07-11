@@ -15,6 +15,10 @@
 | cta.jpg              | photo-1674168481499-983f0968a68f (1lsoCjbLm3I) | navy dusk PV close-up                                                                                                                                 |
 | camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — SPARE (replaced by camp-hero.jpeg)                                                                                 |
 
+camp/kit-hero.jpeg is NOT Unsplash: client-provided glass-stage render (Google Flow, 2026-07-11) —
+power station + foldable panel + teal energy line; the "Taşınabilir Güç" category TILE image on /urunler
+(white bg → mix-blend-mode: multiply so it blends onto the lit-stage like the other category renders).
+
 camp/kit-weekend.jpeg, camp/kit-kitchen.jpeg, camp/kit-longstay.jpeg are NOT Unsplash: client-provided
 glass-stage product renders (Google Flow, 2026-07-11) with teal energy lines — the kit for each "boy
 rehberi" scenario on the kamp-outdoor landing (weekend / kitchen-comfort / long-stay-induction). A boat

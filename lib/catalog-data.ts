@@ -51,16 +51,18 @@ const slugify = (s: string): string =>
     .replace(/^-+|-+$/g, "");
 
 // ── Categories (display order = `order`; icon = key in the page's icon map) ──
+// Display order (Olcay, 2026-07-11): önce 5-kapı iş kolları — Güneş Panelleri,
+// Isı Pompası, EV Şarj, Taşınabilir Güç — sonra kalan kategoriler.
 export const CATEGORIES: ProductCategoryItem[] = [
   { _id: "cat-gunes-panelleri", title: "Güneş Panelleri", slug: "gunes-panelleri", order: 1, icon: "panel" },
-  { _id: "cat-inverterler", title: "İnverterler", slug: "inverterler", order: 2, icon: "inverter" },
-  { _id: "cat-enerji-depolama", title: "Enerji Depolama", slug: "enerji-depolama", order: 3, icon: "battery" },
+  { _id: "cat-isi-pompasi", title: "Isı Pompası", slug: "isi-pompasi", order: 2, icon: "heatpump" },
+  { _id: "cat-ev-sarj", title: "EV Şarj İstasyonları", slug: "ev-sarj", order: 3, icon: "evcharge" },
   { _id: "cat-tasinabilir-guc", title: "Taşınabilir Güç", slug: "tasinabilir-guc", order: 4, icon: "portable" },
-  { _id: "cat-sarj-kontrol", title: "Şarj Kontrol Cihazları", slug: "sarj-kontrol", order: 5, icon: "controller" },
-  { _id: "cat-solar-paket", title: "Solar Paketler", slug: "solar-paket", order: 6, icon: "package" },
-  { _id: "cat-solar-ekipman", title: "Solar Ekipmanlar", slug: "solar-ekipman", order: 7, icon: "mounting" },
-  { _id: "cat-isi-pompasi", title: "Isı Pompası", slug: "isi-pompasi", order: 8, icon: "heatpump" },
-  { _id: "cat-ev-sarj", title: "EV Şarj İstasyonları", slug: "ev-sarj", order: 9, icon: "evcharge" },
+  { _id: "cat-inverterler", title: "İnverterler", slug: "inverterler", order: 5, icon: "inverter" },
+  { _id: "cat-enerji-depolama", title: "Enerji Depolama", slug: "enerji-depolama", order: 6, icon: "battery" },
+  { _id: "cat-sarj-kontrol", title: "Şarj Kontrol Cihazları", slug: "sarj-kontrol", order: 7, icon: "controller" },
+  { _id: "cat-solar-paket", title: "Solar Paketler", slug: "solar-paket", order: 8, icon: "package" },
+  { _id: "cat-solar-ekipman", title: "Solar Ekipmanlar", slug: "solar-ekipman", order: 9, icon: "mounting" },
   { _id: "cat-solar-aydinlatma", title: "Solar Aydınlatma", slug: "solar-aydinlatma", order: 10, icon: "lighting" },
 ];
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
@@ -14,7 +15,9 @@ const CAT_HERO: Record<string, string> = {
   "gunes-panelleri": "/images/products/panels.png",
   inverterler: "/images/products/inverters.png",
   "enerji-depolama": "/images/products/storage.png",
-  "tasinabilir-guc": "/images/products/portable-power.png",
+  // Cam sahne + teal enerji hattı kit render'ı — diğer tile'larla aynı dil
+  // (beyaz zeminli JPEG, sahneye multiply ile erir).
+  "tasinabilir-guc": "/images/v2/camp/kit-hero.jpeg",
   "sarj-kontrol": "/images/products/charge-controllers.png",
   "solar-paket": "/images/products/packages.png",
   "solar-ekipman": "/images/products/equipment.png",
@@ -35,6 +38,9 @@ export async function CategoryGrid({
     <ul className={styles.catGrid}>
       {items.map(({ cat, count }) => {
         const hero = cat.image ? coverSrc(cat.image, 520) : CAT_HERO[cat.slug];
+        // Beyaz zeminli fotoğraf render'ları (.jpg/.jpeg) sahneye erisin diye
+        // multiply; şeffaf PNG'ler olduğu gibi float eder.
+        const blendHero = /\.jpe?g$/i.test(hero ?? "");
         const title = t.has(`categories.${cat.slug}`) ? t(`categories.${cat.slug}`) : cat.title;
         const desc = t.has(`catDesc.${cat.slug}`) ? t(`catDesc.${cat.slug}`) : "";
         return (
@@ -51,7 +57,7 @@ export async function CategoryGrid({
                     width={520}
                     height={290}
                     sizes="(max-width: 560px) 62vw, 260px"
-                    className={styles.catHeroImg}
+                    className={clsx(styles.catHeroImg, blendHero && styles.catHeroBlend)}
                   />
                 </span>
               ) : null}

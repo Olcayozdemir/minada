@@ -73,6 +73,14 @@
   transition: transform 0.35s ease;
 }
 
+/* Beyaz zeminli fotoğraf render'ı: sahneye erisin (beyaz + iç marj kaybolsun),
+   ürün daha büyük dursun. Diğer PNG'ler bu sınıfı almaz. */
+.catHeroBlend {
+  width: min(102%, 300px);
+  mix-blend-mode: multiply;
+  filter: none;
+}
+
 .catText {
   display: flex;
   flex-direction: column;
