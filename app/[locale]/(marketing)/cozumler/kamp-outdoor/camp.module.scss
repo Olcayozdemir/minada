@@ -159,6 +159,17 @@
   &:hover {
     transform: translateY(-3px);
     border-color: rgba(242, 168, 44, 0.4);
+
+    .shelfRule::after {
+      transform: scaleX(1);
+    }
+
+    .shelfGo {
+      background: var(--gold);
+      border-color: transparent;
+      color: var(--on-accent);
+      transform: rotate(-45deg);
+    }
   }
 }
 
@@ -183,6 +194,8 @@
   max-width: 88%;
   height: 124px;
   object-fit: contain;
+  /* Beyaz zeminli ürün fotoğrafları sahneye erisin (beyaz kutu görünmesin). */
+  mix-blend-mode: multiply;
   filter: drop-shadow(0 10px 16px rgba(16, 42, 67, 0.18));
 }
 
@@ -195,7 +208,24 @@
 .shelfPower {
   font-size: 0.8rem;
   color: var(--ink-2);
-  padding: 2px var(--space-4) var(--space-4);
+  padding: 2px var(--space-4) 0;
+}
+
+/* Kart altı: dolan çizgi + dönen ok — katalog kartlarındaki imza. */
+.shelfFootRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+
+.shelfRule {
+  @include foot-rule;
+}
+
+.shelfGo {
+  @include go-chip(30px);
 }
 
 .shelfFoot {

@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
-import { IconCheck } from "@/components/ui/icons";
+import { IconArrowRight, IconCheck } from "@/components/ui/icons";
 import { getProductCategories, getProductGroups } from "@/sanity/queries";
 import { coverSrc } from "@/sanity/image";
 import { buildAlternates } from "@/lib/seo";
@@ -115,6 +115,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                   ) : null}
                   <span className={styles.shelfTitle}>{g.title}</span>
                   {g.powerRange ? <span className={styles.shelfPower}>{g.powerRange}</span> : null}
+                  <span className={styles.shelfFootRow} aria-hidden="true">
+                    <span className={styles.shelfRule} />
+                    <span className={styles.shelfGo}>
+                      <IconArrowRight size={15} />
+                    </span>
+                  </span>
                 </Link>
               </li>
             ))}
