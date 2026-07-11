@@ -38,6 +38,12 @@
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-soft);
+  transition: border-color 0.2s ease;
+
+  &:hover,
+  &[open] {
+    border-color: rgba(242, 168, 44, 0.4);
+  }
 }
 
 .summary {

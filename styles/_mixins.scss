@@ -52,3 +52,70 @@
   padding: 0;
   list-style: none;
 }
+
+/* — Lit-stage editorial signature (bkz. CategoryGrid / Services) — */
+
+/* Gold-hour wash + dot grid. $tone: light (sand fade) | dark (navy band). */
+@mixin lit-stage($tone: light) {
+  display: grid;
+  place-items: center;
+
+  @if $tone == dark {
+    background:
+      radial-gradient(120% 120% at 80% 0%, rgba(242, 168, 44, 0.16), transparent 60%),
+      radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
+    background-size:
+      auto,
+      18px 18px;
+  } @else {
+    background:
+      radial-gradient(120% 110% at 82% 0%, rgba(242, 168, 44, 0.12), transparent 62%),
+      radial-gradient(rgba(18, 36, 63, 0.05) 1px, transparent 1.3px),
+      linear-gradient(180deg, var(--sand-50), #fff);
+    background-size:
+      auto,
+      18px 18px,
+      auto;
+  }
+}
+
+/* Hairline that fills gold left-to-right when the parent hover scales it. */
+@mixin foot-rule($line: var(--line)) {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: $line;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.45s ease 0.05s;
+  }
+}
+
+/* Circular arrow chip; pair with a hover that fills gold + rotates -45deg. */
+@mixin go-chip($size: 34px, $line: var(--line), $ink: var(--ink-2)) {
+  display: inline-grid;
+  place-items: center;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  border: 1px solid $line;
+  color: $ink;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.3s ease;
+}
+
+/* Card lift + gold rim — the shared interactive card hover. */
+@mixin card-hover-gold {
+  transform: translateY(-3px);
+  border-color: rgba(242, 168, 44, 0.4);
+}
