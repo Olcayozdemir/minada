@@ -37,6 +37,13 @@ export const IconBattery = (p: IconProps) => (
     <path d="M10.6 9.6L8.6 12.4h2.8l-2 2.8" />
   </Svg>
 );
+export const IconPortable = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="4" y="9" width="16" height="11" rx="2" />
+    <path d="M9 9V7a3 3 0 0 1 6 0v2" />
+    <path d="M12.6 12l-2 2.8h2.8l-2 2.8" />
+  </Svg>
+);
 export const IconEvCharge = (p: IconProps) => (
   <Svg {...p}>
     <path d="M5 21V6a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v15" />

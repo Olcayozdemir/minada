@@ -472,7 +472,8 @@
       "solar-ekipman": "Solar Equipment",
       "isi-pompasi": "Heat Pumps",
       "ev-sarj": "EV Charging",
-      "solar-aydinlatma": "Solar Lighting"
+      "solar-aydinlatma": "Solar Lighting",
+      "tasinabilir-guc": "Portable Power"
     },
     "catDesc": {
       "gunes-panelleri": "TOPCon N-Type panels — CW Enerji & TommaTech",
@@ -483,7 +484,8 @@
       "solar-ekipman": "Mounting structures, cables, connectors",
       "isi-pompasi": "Heating, cooling and hot water",
       "ev-sarj": "AC and DC EV charging stations",
-      "solar-aydinlatma": "Solar street, road and garden luminaires"
+      "solar-aydinlatma": "Solar street, road and garden luminaires",
+      "tasinabilir-guc": "Power stations and foldable panels for camping, RV and outdoor — Anker SOLIX"
     },
     "countLabel": "{count} series",
     "categoryCta": "Explore",
@@ -577,7 +579,17 @@
       "glassGlass": "Glass-glass solar panel",
       "highEfficiency": "High efficiency (lm/W)",
       "linearLight": "Linear luminaire",
-      "bollardLight": "Bollard luminaire"
+      "bollardLight": "Bollard luminaire",
+      "appControl": "App control",
+      "expandable": "Expandable capacity",
+      "foldable": "Foldable",
+      "lightweight": "Light & compact",
+      "compressor": "Compressor cooling",
+      "homeBackup": "Home backup ready",
+      "rvReady": "RV & boat ready",
+      "usbC": "USB-C fast output",
+      "acOutlet": "AC outlet",
+      "kickstand": "Adjustable kickstand"
     }
   },
   "Lines": {

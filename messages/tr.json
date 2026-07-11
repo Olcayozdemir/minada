@@ -472,7 +472,8 @@
       "solar-ekipman": "Solar Ekipmanlar",
       "isi-pompasi": "Isı Pompası",
       "ev-sarj": "EV Şarj İstasyonları",
-      "solar-aydinlatma": "Solar Aydınlatma"
+      "solar-aydinlatma": "Solar Aydınlatma",
+      "tasinabilir-guc": "Taşınabilir Güç"
     },
     "catDesc": {
       "gunes-panelleri": "TOPCon N-Type paneller — CW Enerji & TommaTech",
@@ -483,7 +484,8 @@
       "solar-ekipman": "Montaj konstrüksiyonu, kablo, konnektör",
       "isi-pompasi": "Isıtma, soğutma ve sıcak su",
       "ev-sarj": "AC ve DC elektrikli araç şarj istasyonları",
-      "solar-aydinlatma": "Solar sokak, yol ve bahçe armatürleri"
+      "solar-aydinlatma": "Solar sokak, yol ve bahçe armatürleri",
+      "tasinabilir-guc": "Kamp, karavan ve outdoor için güç istasyonları ve katlanabilir paneller — Anker SOLIX"
     },
     "countLabel": "{count} seri",
     "categoryCta": "İncele",
@@ -577,7 +579,17 @@
       "glassGlass": "Cam-cam güneş paneli",
       "highEfficiency": "Yüksek verim (lm/W)",
       "linearLight": "Lineer armatür",
-      "bollardLight": "Bolard armatür"
+      "bollardLight": "Bolard armatür",
+      "appControl": "Uygulamadan kontrol",
+      "expandable": "Kapasite genişletilebilir",
+      "foldable": "Katlanabilir",
+      "lightweight": "Hafif ve kompakt",
+      "compressor": "Kompresörlü soğutma",
+      "homeBackup": "Ev yedek gücü",
+      "rvReady": "Karavan & tekne uyumlu",
+      "usbC": "USB-C hızlı çıkış",
+      "acOutlet": "AC priz çıkışı",
+      "kickstand": "Ayarlanabilir stant"
     }
   },
   "Lines": {

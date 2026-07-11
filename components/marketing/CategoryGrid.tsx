@@ -14,6 +14,7 @@ const CAT_HERO: Record<string, string> = {
   "gunes-panelleri": "/images/products/panels.png",
   inverterler: "/images/products/inverters.png",
   "enerji-depolama": "/images/products/storage.png",
+  "tasinabilir-guc": "/images/products/portable-power.png",
   "sarj-kontrol": "/images/products/charge-controllers.png",
   "solar-paket": "/images/products/packages.png",
   "solar-ekipman": "/images/products/equipment.png",
