@@ -1,5 +1,9 @@
 # MINADA — Site Akışı & Bilgi Mimarisi Planı
 
+> ⚠ 2026-07-11: Birincil İA "5 kapı"ya evrildi (iş kolu bazlı nav; Evim/İşletmem "Sizin için"
+> sütununa indi; Kamp & Outdoor eklendi) — güncel karar: `docs/superpowers/specs/2026-07-11-bes-kapi-ia-kamp-design.md`.
+> Bu dokümandaki katalog kuralları ve süreç bölümü kararları geçerliliğini koruyor.
+
 > Tarih: 2026-07-04 · Durum: Faz 1–3 uygulandı · Faz 4 blocker'da · Faz 5 kısmi
 > Bu doküman diğer agent'ların doğrudan uygulayabileceği şekilde fazlara bölünmüştür.
 > Kod tabanı: Next.js 16 + next-intl (`messages/tr.json`, `messages/en.json`) + Sanity CMS.
