@@ -19,7 +19,7 @@ calc-home.jpeg/png is NOT Unsplash: client-provided transparent render (Google F
 isometric smart eco-home with PV roof + battery + floating monitoring dashboards + teal energy lines;
 the CalculatorTeaser (Home.calc) media, floats frameless (drop-shadow) on the light section.
 
-camp/kit-hero.jpeg is NOT Unsplash: client-provided glass-stage render (Google Flow, 2026-07-11) —
+camp/portable-tile.jpeg is NOT Unsplash: client-provided glass-stage render (Google Flow, 2026-07-11) —
 power station + foldable panel + teal energy line; the "Taşınabilir Güç" category TILE image on /urunler
 (white bg → mix-blend-mode: multiply so it blends onto the lit-stage like the other category renders).
 
