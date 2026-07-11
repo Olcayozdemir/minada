@@ -2,8 +2,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 0.92fr 1.18fr;
-  gap: clamp(var(--space-6), 4vw, var(--space-12));
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
   align-items: center;
 
   @include bp-down(900px) {
@@ -58,20 +58,11 @@
   position: relative;
 }
 
-/* Şeffaf render — çerçeve/kutu yok. Media alanından biraz taşarak büyür;
-   katmanlı drop-shadow (alpha'yı takip eder) ile derinlik/gölge kazanır. */
+/* Şeffaf render — çerçeve/kutu yok, yumuşak drop-shadow ile float eder.
+   Kartların yayıldığı geniş kompozisyon için media alanından biraz taşabilir. */
 .img {
-  width: 114%;
-  max-width: none;
+  width: 100%;
   height: auto;
-  margin-inline-start: -7%;
-  filter:
-    drop-shadow(0 12px 22px rgba(16, 42, 67, 0.16))
-    drop-shadow(0 46px 60px rgba(16, 42, 67, 0.32));
-
-  @include bp-down(900px) {
-    width: 100%;
-    margin-inline-start: 0;
-  }
+  filter: drop-shadow(0 26px 40px rgba(16, 42, 67, 0.22));
 }
 
