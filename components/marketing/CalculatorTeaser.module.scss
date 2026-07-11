@@ -58,11 +58,11 @@
   position: relative;
 }
 
+/* Şeffaf render — çerçeve/kutu yok, yumuşak drop-shadow ile float eder.
+   Kartların yayıldığı geniş kompozisyon için media alanından biraz taşabilir. */
 .img {
   width: 100%;
   height: auto;
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-card-light);
-  object-fit: cover;
+  filter: drop-shadow(0 26px 40px rgba(16, 42, 67, 0.22));
 }
 

@@ -31,12 +31,14 @@ export async function CalculatorTeaser() {
         </div>
 
         <div className={styles.media}>
+          {/* Akıllı ev + izleme panoları render'ı (şeffaf PNG, teal enerji
+              hattı) — çerçevesiz float eder. */}
           <Image
-            src="/images/v2/calc-2.jpg"
+            src="/images/v2/calc-home.png"
             alt=""
-            width={720}
-            height={560}
-            sizes="(max-width: 900px) 92vw, 46vw"
+            width={880}
+            height={491}
+            sizes="(max-width: 900px) 94vw, 48vw"
             className={styles.img}
           />
         </div>

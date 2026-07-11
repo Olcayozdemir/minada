@@ -15,6 +15,10 @@
 | cta.jpg              | photo-1674168481499-983f0968a68f (1lsoCjbLm3I) | navy dusk PV close-up                                                                                                                                 |
 | camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — SPARE (replaced by camp-hero.jpeg)                                                                                 |
 
+calc-home.jpeg/png is NOT Unsplash: client-provided transparent render (Google Flow, 2026-07-11) —
+isometric smart eco-home with PV roof + battery + floating monitoring dashboards + teal energy lines;
+the CalculatorTeaser (Home.calc) media, floats frameless (drop-shadow) on the light section.
+
 camp/kit-hero.jpeg is NOT Unsplash: client-provided glass-stage render (Google Flow, 2026-07-11) —
 power station + foldable panel + teal energy line; the "Taşınabilir Güç" category TILE image on /urunler
 (white bg → mix-blend-mode: multiply so it blends onto the lit-stage like the other category renders).
