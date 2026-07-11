@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,14 +7,16 @@ import type { StaticPathname } from "@/i18n/routing";
 import styles from "./Services.module.scss";
 
 // The five doors: four business lines + camping. Renders as the homepage
-// gateway (dark band) and as the /services hub. Tiles reuse the catalog's
-// 3D renders so the gold-glow imagery language carries through.
+// gateway (dark band) and as the /services hub. Cards carry the flat gold
+// illustration icons the client picked (public/images/services/ — rooftop &
+// bess are the original set; heatpump/evcharge/camp drawn to match). Plain
+// <img>: decorative fixed-size assets, SVGs skip the optimizer.
 const DOORS: ReadonlyArray<{ id: string; href: StaticPathname; img: string }> = [
-  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/products/panels.png" },
-  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/products/storage.png" },
-  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/products/heat-pumps.png" },
-  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/products/ev-charging.png" },
-  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/products/portable-power.png" },
+  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/services/rooftop.png" },
+  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/services/bess.png" },
+  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/services/heatpump.svg" },
+  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/services/evcharge.svg" },
+  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/services/camp.svg" },
 ];
 
 export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
@@ -35,12 +36,13 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
           <li key={id}>
             <Link href={href} className={styles.card}>
               <span className={styles.stage} aria-hidden="true">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={img}
                   alt=""
-                  width={420}
-                  height={240}
-                  sizes="(max-width: 700px) 72vw, 300px"
+                  width={256}
+                  height={256}
+                  loading="lazy"
                   className={styles.stageImg}
                 />
               </span>

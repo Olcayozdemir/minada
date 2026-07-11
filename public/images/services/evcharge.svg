@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <!-- EV şarj ünitesi — rooftop/bess illüstrasyon stilinde -->
+  <g stroke="#8F6110" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <!-- taban -->
+    <rect x="74" y="216" width="108" height="14" rx="7" fill="#DDA53B"/>
+    <!-- direk -->
+    <rect x="118" y="176" width="20" height="42" fill="#EFBC4F"/>
+    <!-- gövde -->
+    <rect x="70" y="28" width="116" height="152" rx="18" fill="#EFBC4F"/>
+    <!-- gövde sağ gölge -->
+    <path d="M156 32 h12 a14 14 0 0 1 14 14 v116 a14 14 0 0 1 -14 14 h-12 z" fill="#DDA53B" stroke="none"/>
+    <!-- ekran -->
+    <rect x="86" y="44" width="84" height="44" rx="8" fill="#FFF6E2"/>
+    <line x1="96" y1="58" x2="140" y2="58" stroke-width="5"/>
+    <line x1="96" y1="72" x2="126" y2="72" stroke-width="5"/>
+    <!-- şimşek rozeti -->
+    <circle cx="128" cy="128" r="26" fill="#FFFFFF"/>
+    <path d="M132 108 L114 132 h12 L122 150 L142 124 h-12 Z" fill="#33C3D4" stroke-width="5"/>
+    <!-- kablo -->
+    <path d="M186 96 C 218 100, 222 140, 204 160 C 196 169, 188 172, 182 172" fill="none"/>
+    <!-- konektör -->
+    <rect x="164" y="162" width="22" height="30" rx="8" fill="#DDA53B" transform="rotate(18 175 177)"/>
+  </g>
+</svg>
