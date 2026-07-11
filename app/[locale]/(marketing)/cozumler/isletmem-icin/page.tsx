@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       {/* Foto hero — kamp sayfası kalıbı; geniş çatılı ticari tesis. */}
       <section className={styles.pHero} data-hero="">
         <Image
-          src="/images/v2/area-ticari.jpg"
+          src="/images/v2/business-hero.jpeg"
           alt=""
           fill
           sizes="100vw"

@@ -15,7 +15,10 @@
 | cta.jpg              | photo-1674168481499-983f0968a68f (1lsoCjbLm3I) | navy dusk PV close-up                                                                                                                                 |
 | camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — SPARE (replaced by camp-hero.jpeg)                                                                                 |
 
-camp-hero.jpeg is NOT Unsplash: client-provided render (Google Flow, 2026-07-11) — lakeside camp with
-portable power station + teal energy cable; kamp-outdoor landing hero.
+camp-hero.jpeg, home-hero.jpeg and business-hero.jpeg are NOT Unsplash: client-provided renders
+(Google Flow, 2026-07-11) — lakeside camp / Mediterranean villa with panel→battery→wallbox→EV teal
+energy line / logistics facility with PV roof + fleet charging. Heroes of kamp-outdoor, evim-icin
+and isletmem-icin. (A second camp render with visible Jackery/Marmot branding was REJECTED —
+competitor marks.)
 
 Rejected during visual verification: SunSynk-branded battery wall (logos), battery-swap locker (wrong subject), fence-foreground houses, brutalist museum (panels illegible), pink-dusk solar rows + construction aerial (mood mismatch for hero).
