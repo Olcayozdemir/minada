@@ -258,7 +258,14 @@
       "stepsEyebrow": "Süreç",
       "stepsTitle": "Çatınıza giden yol: 6 adım",
       "stepsIntro": "Keşiften devreye almaya kadar her adım bizde — siz sadece güneşin tadını çıkarın.",
-      "stepsCta": "Süreci ayrıntılı gör"
+      "stepsCta": "Süreci ayrıntılı gör",
+      "cross": {
+        "title": "Güneşten fazlası",
+        "intro": "GES'in yanına ekleyebilecekleriniz:",
+        "heatpump": "Isı Pompası — ısınma da güneşten",
+        "evcharge": "EV Şarj — aracınız evde dolsun",
+        "bess": "Depolama — kesintiye karşı"
+      }
     },
     "business": {
       "metaTitle": "İşletmem için GES",

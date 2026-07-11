@@ -100,3 +100,10 @@
   font-weight: 700;
   font-size: 0.9rem;
 }
+
+/* Çapraz satış şeridi — Evim için sayfası. */
+.crossRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

@@ -258,7 +258,14 @@
       "stepsEyebrow": "Process",
       "stepsTitle": "The road to your roof: 6 steps",
       "stepsIntro": "From survey to switch-on, every step is on us — you just enjoy the sun.",
-      "stepsCta": "See the full process"
+      "stepsCta": "See the full process",
+      "cross": {
+        "title": "More than solar",
+        "intro": "What you can add next to PV:",
+        "heatpump": "Heat pump — heating from the sun",
+        "evcharge": "EV charging — top up at home",
+        "bess": "Storage — outage-proof"
+      }
     },
     "business": {
       "metaTitle": "Solar for my business",

@@ -92,6 +92,22 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </div>
       </Section>
 
+      {/* Çapraz satış: GES'in yanına eklenebilecek iş kolları (Okan, 7.07). */}
+      <Section tone="sand">
+        <SectionHeading title={t("cross.title")} intro={t("cross.intro")} />
+        <div className={styles.crossRow}>
+          <Button href="/hizmetler/isi-pompasi" variant="secondary" withArrow>
+            {t("cross.heatpump")}
+          </Button>
+          <Button href="/hizmetler/ev-sarj" variant="secondary" withArrow>
+            {t("cross.evcharge")}
+          </Button>
+          <Button href="/hizmetler/enerji-depolama" variant="secondary" withArrow>
+            {t("cross.bess")}
+          </Button>
+        </div>
+      </Section>
+
       <CalculatorTeaser />
       <Testimonials />
       <FinalCta />

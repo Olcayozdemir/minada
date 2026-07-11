@@ -67,7 +67,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <p className={styles.note}>{t("solutionsNote")}</p>
       </Section>
 
-      {/* The five customer-facing solar offers — same section as the homepage. */}
+      {/* The five-door gateway — surfaces BESS, heat pump and EV charging too. */}
       <Services />
 
       <FinalCta />

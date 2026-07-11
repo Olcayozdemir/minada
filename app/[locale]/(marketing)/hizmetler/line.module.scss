@@ -1,0 +1,119 @@
+@use "../../../../styles/mixins" as *;
+
+/* Ortak iş kolu sayfası stili — GES / BESS / Isı Pompası / EV Şarj. */
+
+.grid2 {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid4 {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-5);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(242, 168, 44, 0.4);
+  }
+}
+
+.cardTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.12rem;
+  margin-bottom: var(--space-2);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* Havuz bandı (ısı pompası sayfası) — navy üstü gold-hour yıkama. */
+.pool {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-5);
+  border-radius: var(--r-xl);
+  padding: var(--space-6) var(--space-8);
+  color: #fff;
+  background:
+    radial-gradient(120% 140% at 85% 10%, rgba(242, 168, 44, 0.25), transparent 55%),
+    linear-gradient(135deg, #0e2743, #123454);
+
+  @include bp-down(700px) {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+  }
+}
+
+.poolTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: var(--space-2);
+}
+
+.poolDesc {
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.faq {
+  @include list-reset;
+  display: grid;
+  gap: var(--space-4);
+  max-width: 760px;
+  margin-top: var(--space-6);
+}
+
+.faqItem {
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-4);
+}
+
+.faqQ {
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.faqA {
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.productRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
