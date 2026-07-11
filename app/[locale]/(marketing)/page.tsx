@@ -8,7 +8,7 @@ import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
 import { ProductsTeaser } from "@/components/marketing/ProductsTeaser";
-import { Testimonials } from "@/components/marketing/Testimonials";
+// import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — aşağıdaki nota bak
 import { FaqTeaser } from "@/components/marketing/FaqTeaser";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -53,7 +53,10 @@ export default async function HomePage({
         <ApplicationAreas />
         <CalculatorTeaser />
         <ProductsTeaser />
-        <Testimonials />
+        {/* Referanslar ("Evini MİNADA'ya emanet edenler") — gerçek müşteri
+            referansları toplanana kadar askıda (Olcay, 2026-07-11). Geri açmak
+            için: yorumdan çıkar + üstteki Testimonials importunu geri al. */}
+        {/* <Testimonials /> */}
         <FinalCta />
         <FaqTeaser />
       </EnergyLine>

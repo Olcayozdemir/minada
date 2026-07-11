@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { IconSolar, IconBolt, IconShield } from "@/components/ui/icons";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
-import { Testimonials } from "@/components/marketing/Testimonials";
+// import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — gerçek referanslar gelince
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
@@ -109,7 +109,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       </Section>
 
       <CalculatorTeaser />
-      <Testimonials />
+      {/* Referanslar — gerçek içerik gelene kadar askıda (bkz. ana sayfa notu). */}
+      {/* <Testimonials /> */}
       <FinalCta />
     </>
   );
