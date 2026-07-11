@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
@@ -62,6 +62,37 @@ export function Calculator() {
   const [cityId, setCityId] = useState("");
   const [roofArea, setRoofArea] = useState(60);
 
+  // Pointer-driven 3D tilt. We write CSS custom properties straight to the
+  // node (throttled to a frame) instead of using React state, so the heavy
+  // glass/backdrop-filter layers don't repaint through the reconciler on
+  // every mouse move. CSS derives the rotation + sheen position from --px/--py
+  // and gates the whole effect behind hover + no-reduced-motion.
+  const cardRef = useRef<HTMLDivElement>(null);
+  const raf = useRef(0);
+
+  const handleTilt = (e: React.PointerEvent<HTMLDivElement>) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width;
+    const py = (e.clientY - r.top) / r.height;
+    cancelAnimationFrame(raf.current);
+    raf.current = requestAnimationFrame(() => {
+      el.style.setProperty("--px", px.toFixed(3));
+      el.style.setProperty("--py", py.toFixed(3));
+      el.style.setProperty("--active", "1");
+    });
+  };
+
+  const resetTilt = () => {
+    const el = cardRef.current;
+    if (!el) return;
+    cancelAnimationFrame(raf.current);
+    el.style.setProperty("--px", "0.5");
+    el.style.setProperty("--py", "0.5");
+    el.style.setProperty("--active", "0");
+  };
+
   const num = parseFloat(value.replace(",", "."));
   const result =
     cityId && num > 0
@@ -80,7 +111,16 @@ export function Calculator() {
     }).format(n);
 
   return (
-    <div className={styles.wrap}>
+    <div className={styles.stage}>
+      <div
+        ref={cardRef}
+        className={styles.card}
+        data-calc-card
+        onPointerMove={handleTilt}
+        onPointerLeave={resetTilt}
+      >
+        <div className={styles.edge} aria-hidden="true" />
+        <div className={styles.face}>
       <div className={styles.form}>
         <div className={styles.toggle} role="tablist" aria-label={t("modeLabel")}>
           <button
@@ -218,6 +258,9 @@ export function Calculator() {
         ) : (
           <div className={styles.empty}>{t("emptyState")}</div>
         )}
+      </div>
+        </div>
+        <div className={styles.sheen} aria-hidden="true" />
       </div>
     </div>
   );
