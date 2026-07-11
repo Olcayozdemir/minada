@@ -10,8 +10,17 @@
   grid-template-columns: repeat(5, 1fr);
   gap: var(--space-4);
 
+  /* 4 kapılı bağlam (ör. İşletmem sayfası — kamp hariç). */
+  &.gridFour {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   @include bp-down(1100px) {
     grid-template-columns: repeat(3, 1fr);
+
+    &.gridFour {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @include bp-down(700px) {

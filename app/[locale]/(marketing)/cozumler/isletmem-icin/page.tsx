@@ -77,8 +77,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </ul>
       </Section>
 
-      {/* The five-door gateway — surfaces BESS, heat pump and EV charging too. */}
-      <Services />
+      {/* İş kolu kapıları — kamp bu bağlamda gizli (B2B odak; nav'dan erişilir). */}
+      <Services exclude={["camp"]} />
 
       <Section tone="sand">
         <div className={styles.ctaRow}>
