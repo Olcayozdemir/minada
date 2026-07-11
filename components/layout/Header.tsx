@@ -12,12 +12,22 @@ export async function Header() {
   const t = await getTranslations("Nav");
   const tc = await getTranslations("Common");
 
-  // Mobile drawer gets a flat list (dropdown children inline).
-  const flatItems = NAV_ITEMS.flatMap((i) =>
-    "children" in i
-      ? i.children.map((c) => ({ href: c.href, label: t(c.key) }))
-      : [{ href: i.href, label: t(i.key) }],
-  );
+  // Mobile drawer: dropdown columns become titled groups, the rest one flat group.
+  const mobileGroups = [
+    ...NAV_ITEMS.flatMap((i) =>
+      "columns" in i
+        ? i.columns.map((col) => ({
+            title: t(col.key),
+            items: col.children.map((c) => ({ href: c.href, label: t(c.key) })),
+          }))
+        : [],
+    ),
+    {
+      items: NAV_ITEMS.flatMap((i) =>
+        "columns" in i ? [] : [{ href: i.href, label: t(i.key) }],
+      ),
+    },
+  ];
 
   return (
     <header className={styles.header}>
@@ -28,7 +38,7 @@ export async function Header() {
 
             <nav className={styles.nav} aria-label="Primary">
               {NAV_ITEMS.map((i) =>
-                "children" in i ? (
+                "columns" in i ? (
                   <div key={i.key} className={styles.group}>
                     <span className={styles.link} aria-hidden="true">
                       {t(i.key)}
@@ -43,10 +53,15 @@ export async function Header() {
                       </svg>
                     </span>
                     <div className={styles.dropdown}>
-                      {i.children.map((c) => (
-                        <Link key={c.href} href={c.href} className={styles.dropLink}>
-                          {t(c.key)}
-                        </Link>
+                      {i.columns.map((col) => (
+                        <div key={col.key} className={styles.dropCol}>
+                          <span className={styles.dropColTitle}>{t(col.key)}</span>
+                          {col.children.map((c) => (
+                            <Link key={c.href} href={c.href} className={styles.dropLink}>
+                              {t(c.key)}
+                            </Link>
+                          ))}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -66,7 +81,7 @@ export async function Header() {
                 <Button href="/contact">{tc("getQuoteShort")}</Button>
               </span>
               <MobileNav
-                items={flatItems}
+                groups={mobileGroups}
                 cta={tc("getQuoteShort")}
                 menuLabel={tc("openMenu")}
                 closeLabel={tc("closeMenu")}

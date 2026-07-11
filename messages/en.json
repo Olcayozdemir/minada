@@ -18,7 +18,14 @@
     "calculator": "Calculator",
     "blog": "Blog",
     "faq": "FAQ",
-    "products": "Products"
+    "products": "Products",
+    "navColLines": "What we do",
+    "navColFor": "For you",
+    "line_ges": "Solar Energy (PV)",
+    "line_bess": "Energy Storage",
+    "line_heatpump": "Heat Pumps",
+    "line_evcharge": "EV Charging",
+    "solutionsCamp": "Camping & Outdoor"
   },
   "Services": {
     "rooftop": "Rooftop Solar",
@@ -60,11 +67,10 @@
     "chipSavingLabel": "bill savings",
     "chipWarrantyValue": "10-year",
     "chipWarrantyLabel": "warranty & service",
-    "segmentHome": "For my home",
-    "segmentBusiness": "For my business",
     "calcCardTitle": "Calculate your savings",
     "calcCardDesc": "See a rough picture in 2 minutes.",
-    "imageAlt": "Smart home with rooftop solar, energy storage and EV charging at dusk"
+    "imageAlt": "Smart home with rooftop solar, energy storage and EV charging at dusk",
+    "ctaSolutions": "Our solutions"
   },
   "Home": {
     "services": {
@@ -271,6 +277,52 @@
       },
       "referencesCta": "See our projects",
       "solutionsNote": "Not sure which fits? Let's pin it down together in a free survey."
+    },
+    "camp": {
+      "metaTitle": "Camping & Outdoor — Portable Power",
+      "metaDesc": "Anker SOLIX portable power stations, foldable panels and a battery-powered fridge for camping, RVs and boats. Let's size it together.",
+      "eyebrow": "Camping & Outdoor",
+      "title": "Where the grid ends, we begin",
+      "intro": "From phone charging to the RV fridge — with Anker SOLIX portable power stations and foldable panels, your own energy travels with you.",
+      "sizeEyebrow": "Size guide",
+      "sizeTitle": "How much power do I need?",
+      "sizeIntro": "Capacity (Wh) is set by how many devices, for how many days. Three typical scenarios:",
+      "s1": {
+        "title": "Weekend camping",
+        "gear": "Phone, lights, drone, camera",
+        "pick": "C300 series + PS200 panel",
+        "desc": "288 Wh in your pocket: lighting and charging all day, indefinitely with a panel."
+      },
+      "s2": {
+        "title": "Camp + kitchen comfort",
+        "gear": "Fridge, kettle, laptop",
+        "pick": "C1000 family + PS400 + EverFrost",
+        "desc": "A 1 kWh class station runs the EverFrost for days; the 400 W panel refills it by noon."
+      },
+      "s3": {
+        "title": "RV · boat · long stays",
+        "gear": "Short AC bursts, induction, everything",
+        "pick": "767 / F1500 / C2000 + twin panels",
+        "desc": "2 kWh and 2000 W+ output: support for the RV house battery, a silent generator afloat."
+      },
+      "productsEyebrow": "Showcase",
+      "productsTitle": "The camper's shelf",
+      "productsCta": "All portable power products",
+      "whyTitle": "Why buy from MİNADA?",
+      "w1": {
+        "title": "Right-sizing",
+        "desc": "We run the Wh/W math from your device list so you never over- or under-buy."
+      },
+      "w2": {
+        "title": "Authorised supply",
+        "desc": "Anker SOLIX products with Turkish warranty, invoiced, from stock."
+      },
+      "w3": {
+        "title": "Systems thinking",
+        "desc": "Fixed panel on the RV roof or foldable? We talk installation and wiring too."
+      },
+      "ctaTitle": "Get a camp-sized quote",
+      "ctaDesc": "List your gear; we reply within 24 hours with a sized offer."
     }
   },
   "Calculator": {
@@ -389,14 +441,15 @@
   },
   "Footer": {
     "tagline": "A reliable harbor for your energy transition.",
-    "servicesTitle": "Services",
     "companyTitle": "Company",
     "legalTitle": "Legal",
     "contactTitle": "Contact",
     "privacy": "Privacy & GDPR",
     "cookies": "Cookie Policy",
     "rights": "All rights reserved.",
-    "placeholderNote": "Contact details will be updated soon."
+    "placeholderNote": "Email goes live together with the domain setup.",
+    "linesTitle": "What we do",
+    "forYouTitle": "For you"
   },
   "Products": {
     "metaTitle": "Products — Solar Panels & Equipment",
@@ -525,6 +578,131 @@
       "highEfficiency": "High efficiency (lm/W)",
       "linearLight": "Linear luminaire",
       "bollardLight": "Bollard luminaire"
+    }
+  },
+  "Lines": {
+    "ges": {
+      "metaTitle": "Solar Energy (PV) — Rooftop, Ground, Agri-PV, Carport",
+      "metaDesc": "Turnkey solar from survey to commissioning: zoning and permits, project development, EPC and operations under one roof.",
+      "eyebrow": "What we do",
+      "title": "Solar Power Plants",
+      "intro": "From rooftops to open fields, farmland to car parks — we design your plant, run its permits, build and operate it. Zoning, EIA and licensing included, end to end.",
+      "typesTitle": "Four ways to build",
+      "types": {
+        "rooftop": {
+          "title": "Rooftop PV",
+          "desc": "Self-consumption on home and business roofs: cuts the bill at its source."
+        },
+        "ground": {
+          "title": "Ground-Mount PV (Unlicensed)",
+          "desc": "1–5 MW unlicensed generation: turns idle land into income."
+        },
+        "agripv": {
+          "title": "Agri-PV",
+          "desc": "Generation and farming on the same parcel: the sun covers irrigation loads."
+        },
+        "carport": {
+          "title": "Carport PV",
+          "desc": "Parking shade becomes a power plant; a natural pair with EV charging."
+        }
+      },
+      "aud1": {
+        "title": "Homes",
+        "desc": "Turnkey rooftop PV for villas and detached homes — net metering and up to 90% bill savings. Full flow: the For Home page."
+      },
+      "aud2": {
+        "title": "Commercial & Industrial",
+        "desc": "Factories, warehouses, malls and agri businesses: lower OPEX, accelerated depreciation, corporate PPA options."
+      },
+      "f1": {
+        "q": "Who runs the permits and licensing?",
+        "a": "We do. Zoning status, EIA exemption or application, call letter and connection agreement — every project-development step is in scope."
+      },
+      "f2": {
+        "q": "How long does installation take?",
+        "a": "Rooftop systems typically run 4–8 weeks from survey to commissioning; unlicensed ground projects take 3–6 months depending on the permit calendar."
+      },
+      "productsTitle": "The equipment we field",
+      "productsCta": "Panel & inverter catalog"
+    },
+    "bess": {
+      "metaTitle": "Energy Storage (BESS) — Home and Commercial",
+      "metaDesc": "Energy storage from LFP home batteries to container ESS: uninterrupted power, higher self-consumption, peak shaving.",
+      "eyebrow": "What we do",
+      "title": "Energy Storage Systems",
+      "intro": "Carry the sun's production into the evening: LFP battery systems that step in during outages and grow self-consumption — from homes to industrial scale.",
+      "aud1": {
+        "title": "Home",
+        "desc": "Hybrid inverter + wall-mounted LFP battery: the house keeps running through outages, daytime production gets spent at night."
+      },
+      "aud2": {
+        "title": "Commercial & Industrial",
+        "desc": "Rack and container ESS: scalable capacity for peak shaving, demand management and grid services."
+      },
+      "f1": {
+        "q": "Can storage be added to my existing PV system?",
+        "a": "Usually yes — by moving to a hybrid inverter or with an AC-coupled add-on unit. We measure the existing system during the survey and give a firm answer."
+      },
+      "f2": {
+        "q": "How long do the batteries last?",
+        "a": "The LFP cells we use are 6,000+ cycle class — roughly 15 years at one charge-discharge a day. Capacity warranties are on the product cards."
+      },
+      "productsTitle": "Storage products",
+      "productsCta": "Energy storage catalog"
+    },
+    "heatpump": {
+      "metaTitle": "Heat Pumps — Heating, Cooling, Hot Water and Pools",
+      "metaDesc": "Air-to-water heat pumps: one efficient system for underfloor heating, hot water and pool heating. Paired with PV, your heating runs on sunshine.",
+      "eyebrow": "What we do",
+      "title": "Heat Pumps",
+      "intro": "Heating, cooling, hot water and underfloor circuits in one system: heat pumps turn each unit of electricity into 3–4 units of heat. With PV on your roof, your heating comes from the sun.",
+      "aud1": {
+        "title": "Homes",
+        "desc": "Gas-free comfort in villas and detached homes: quiet monoblock units that pair with underfloor heating and radiators."
+      },
+      "aud2": {
+        "title": "Business",
+        "desc": "Central hot water and climate control for hotels, dorms and sports facilities; cascade setups for high capacity."
+      },
+      "pool": {
+        "title": "Pool Heat Pumps",
+        "desc": "Stretch the season from April to November at villa and hotel pools: R290, soft-start pool heat pumps hold the water at the temperature you choose."
+      },
+      "f1": {
+        "q": "Does a heat pump work in an older building?",
+        "a": "It does — what matters is the heat-load calculation. We measure insulation and the existing plumbing during the survey and size accordingly, raising flow temperatures where needed."
+      },
+      "f2": {
+        "q": "Why install it together with PV?",
+        "a": "The heat pump's consumption is covered by the sun: heating costs come off your roof, not your bill. We size both systems in a single project."
+      },
+      "productsTitle": "Heat pump series",
+      "productsCta": "Heat pump catalog"
+    },
+    "evcharge": {
+      "metaTitle": "EV Charging — Home and Business",
+      "metaDesc": "7.4–22 kW AC at home, 30–400 kW DC fast charging at work: design, installation and carport PV integration.",
+      "eyebrow": "What we do",
+      "title": "EV Charging Stations",
+      "intro": "Charge overnight at home and during the day at work: from AC wallboxes to DC fast-charging parks, we design, install and commission.",
+      "aud1": {
+        "title": "Home",
+        "desc": "7.4–22 kW AC wall charging: with meter capacity checks, load management and PV integration."
+      },
+      "aud2": {
+        "title": "Business & Fleet",
+        "desc": "OCPP-compliant DC fast charging for car parks and fleets; carport PV puts generation and charging in one structure."
+      },
+      "f1": {
+        "q": "Is my home's electrical infrastructure enough?",
+        "a": "We measure meter power and panel capacity during the survey and file the capacity upgrade if one is needed. With load management, most homes install without extra power."
+      },
+      "f2": {
+        "q": "Can I bill users for charging at my business?",
+        "a": "Yes — OCPP-compliant units connect to operator platforms for kWh-based billing; we guide you through the licensing requirements."
+      },
+      "productsTitle": "Charging units",
+      "productsCta": "EV charging catalog"
     }
   }
 }

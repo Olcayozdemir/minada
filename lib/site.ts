@@ -1,17 +1,39 @@
 import type { StaticPathname } from "@/i18n/routing";
 
 // Primary navigation. `key` maps to the `Nav` message namespace; `href` is the
-// canonical (localized) route from i18n/routing. An item with `children`
-// renders as a dropdown group (no href of its own).
+// canonical (localized) route from i18n/routing. An item with `columns`
+// renders as a two-column mega dropdown (no href of its own).
 export type NavLink = { href: StaticPathname; key: string };
-export type NavItem = NavLink | { key: string; children: readonly NavLink[] };
+export type NavColumn = { key: string; children: readonly NavLink[] };
+export type NavItem = NavLink | { key: string; columns: readonly NavColumn[] };
+
+// The four business lines (order = display order). `href` reused by nav+footer.
+export const BUSINESS_LINES = [
+  { id: "ges", href: "/hizmetler/gunes-enerjisi" },
+  { id: "bess", href: "/hizmetler/enerji-depolama" },
+  { id: "heatpump", href: "/hizmetler/isi-pompasi" },
+  { id: "evcharge", href: "/hizmetler/ev-sarj" },
+] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname }>;
+
+// Audience/use-case entries ("Sizin için").
+export const AUDIENCES = [
+  { id: "solutionsHome", href: "/cozumler/evim-icin" },
+  { id: "solutionsBusiness", href: "/cozumler/isletmem-icin" },
+  { id: "solutionsCamp", href: "/cozumler/kamp-outdoor" },
+] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname }>;
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   {
     key: "solutionsGroup",
-    children: [
-      { href: "/cozumler/evim-icin", key: "solutionsHome" },
-      { href: "/cozumler/isletmem-icin", key: "solutionsBusiness" },
+    columns: [
+      {
+        key: "navColLines",
+        children: BUSINESS_LINES.map((l) => ({ href: l.href, key: `line_${l.id}` })),
+      },
+      {
+        key: "navColFor",
+        children: AUDIENCES.map((a) => ({ href: a.href, key: a.id })),
+      },
     ],
   },
   { href: "/urunler", key: "products" },
@@ -20,19 +42,19 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
   { href: "/about", key: "about" },
 ];
 
-// Customer-facing solar offers (process steps live on /how-it-works).
-export const SERVICES = ["rooftop", "ground", "agripv", "carport", "bess"] as const;
+// GES offer types — live on /hizmetler/gunes-enerjisi (BESS is its own line now).
+export const GES_TYPES = ["rooftop", "ground", "agripv", "carport"] as const;
 
-// Contact + social. PLACEHOLDERS — real values arrive with the domain/email setup.
-// WhatsApp number is read from env at build/runtime when available.
+// Contact + social. Phone + Instagram are real (Okan, 2026-07-11); email waits
+// for the domain. WhatsApp number is read from env when available.
 export const SITE = {
   name: "MİNADA",
   domain: "minada.com",
   email: "info@minada.com",
-  phone: "+90 000 000 00 00",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "900000000000",
+  phone: "+90 536 041 76 44",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905360417644",
   social: {
-    instagram: "https://instagram.com/",
+    instagram: "https://instagram.com/minadaenerji",
     linkedin: "https://linkedin.com/",
   },
 } as const;

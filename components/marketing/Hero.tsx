@@ -150,15 +150,12 @@ export async function Hero() {
           <div className={styles.bottomLeft}>
             <p className={styles.sub}>{t("subtitle")}</p>
             <div className={styles.actions}>
-              {/* Primary segment entries; the free-survey CTA steps back to secondary. */}
-              <Button href="/cozumler/evim-icin" size="lg" withArrow>
-                {t("segmentHome")}
-              </Button>
-              <Button href="/cozumler/isletmem-icin" size="lg" variant="glass">
-                {t("segmentBusiness")}
-              </Button>
-              <Button href="/contact" size="lg" variant="glass" className={styles.calcBtn}>
+              {/* Survey first; the five-door gateway right below carries segmentation. */}
+              <Button href="/contact" size="lg" withArrow>
                 {tc("getQuote")}
+              </Button>
+              <Button externalHref="#cozumler" newTab={false} size="lg" variant="glass">
+                {t("ctaSolutions")}
               </Button>
             </div>
             <Link href="/calculator" className={styles.calcLink}>

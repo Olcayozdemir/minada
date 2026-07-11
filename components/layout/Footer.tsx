@@ -2,13 +2,12 @@ import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/ui/Logo";
 import { Link } from "@/i18n/navigation";
 import { IconInstagram, IconLinkedin } from "@/components/ui/icons";
-import { SITE, SERVICES, whatsappLink } from "@/lib/site";
+import { SITE, BUSINESS_LINES, AUDIENCES, whatsappLink } from "@/lib/site";
 import styles from "./Footer.module.scss";
 
 export async function Footer() {
   const t = await getTranslations("Footer");
   const tn = await getTranslations("Nav");
-  const ts = await getTranslations("Services");
   const year = new Date().getFullYear();
 
   return (
@@ -43,11 +42,20 @@ export async function Footer() {
             </div>
           </div>
 
-          <nav className={styles.col} aria-label={t("servicesTitle")}>
-            <h3 className={styles.colTitle}>{t("servicesTitle")}</h3>
-            {SERVICES.map((s) => (
-              <Link key={s} href="/services" className={styles.colLink}>
-                {ts(s)}
+          <nav className={styles.col} aria-label={t("linesTitle")}>
+            <h3 className={styles.colTitle}>{t("linesTitle")}</h3>
+            {BUSINESS_LINES.map((l) => (
+              <Link key={l.id} href={l.href} className={styles.colLink}>
+                {tn(`line_${l.id}`)}
+              </Link>
+            ))}
+          </nav>
+
+          <nav className={styles.col} aria-label={t("forYouTitle")}>
+            <h3 className={styles.colTitle}>{t("forYouTitle")}</h3>
+            {AUDIENCES.map((a) => (
+              <Link key={a.id} href={a.href} className={styles.colLink}>
+                {tn(a.id)}
               </Link>
             ))}
           </nav>

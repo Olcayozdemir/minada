@@ -11,14 +11,15 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import styles from "./MobileNav.module.scss";
 
 type Item = { href: StaticPathname; label: string };
+type Group = { title?: string; items: Item[] };
 
 export function MobileNav({
-  items,
+  groups,
   cta,
   menuLabel,
   closeLabel,
 }: {
-  items: Item[];
+  groups: Group[];
   cta: string;
   menuLabel: string;
   closeLabel: string;
@@ -52,13 +53,29 @@ export function MobileNav({
           </div>
 
           <nav className={styles.nav} aria-label="Primary">
-            {items.map((i, idx) => (
-              <Link key={i.href} href={i.href} className={styles.link} onClick={() => setOpen(false)}>
-                <span className={styles.linkNum}>{`0${idx + 1}`}</span>
-                {i.label}
-                <IconArrowRight size={17} className={styles.linkArrow} />
-              </Link>
-            ))}
+            {groups.map((g, gi) => {
+              // Numbering continues across groups.
+              const offset = groups.slice(0, gi).reduce((acc, x) => acc + x.items.length, 0);
+              return (
+                <div key={gi} className={styles.group}>
+                  {g.title ? <span className={styles.groupTitle}>{g.title}</span> : null}
+                  {g.items.map((i, ii) => (
+                    <Link
+                      key={i.href}
+                      href={i.href}
+                      className={styles.link}
+                      onClick={() => setOpen(false)}
+                    >
+                      <span className={styles.linkNum}>
+                        {String(offset + ii + 1).padStart(2, "0")}
+                      </span>
+                      {i.label}
+                      <IconArrowRight size={17} className={styles.linkArrow} />
+                    </Link>
+                  ))}
+                </div>
+              );
+            })}
           </nav>
 
           <div className={styles.footer}>

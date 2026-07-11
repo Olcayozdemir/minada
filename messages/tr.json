@@ -18,7 +18,14 @@
     "calculator": "Hesaplayıcı",
     "blog": "Blog",
     "faq": "SSS",
-    "products": "Ürünler"
+    "products": "Ürünler",
+    "navColLines": "İş kollarımız",
+    "navColFor": "Sizin için",
+    "line_ges": "Güneş Enerjisi (GES)",
+    "line_bess": "Enerji Depolama",
+    "line_heatpump": "Isı Pompası",
+    "line_evcharge": "EV Şarj İstasyonları",
+    "solutionsCamp": "Kamp & Outdoor"
   },
   "Services": {
     "rooftop": "Çatı Üstü GES",
@@ -60,11 +67,10 @@
     "chipSavingLabel": "fatura tasarrufu",
     "chipWarrantyValue": "10 yıl",
     "chipWarrantyLabel": "garanti & servis",
-    "segmentHome": "Evim için",
-    "segmentBusiness": "İşletmem için",
     "calcCardTitle": "Tasarrufunu hesapla",
     "calcCardDesc": "2 dakikada kaba bir tablo görün.",
-    "imageAlt": "Gün batımında güneş panelli, enerji depolamalı ve EV şarjlı akıllı ev"
+    "imageAlt": "Gün batımında güneş panelli, enerji depolamalı ve EV şarjlı akıllı ev",
+    "ctaSolutions": "Çözümlerimiz"
   },
   "Home": {
     "services": {
@@ -271,6 +277,52 @@
       },
       "referencesCta": "Referansları gör",
       "solutionsNote": "Hangisi size uygun? Ücretsiz keşifte birlikte netleştirelim."
+    },
+    "camp": {
+      "metaTitle": "Kamp & Outdoor — Taşınabilir Güç",
+      "metaDesc": "Kamp, karavan ve tekne için Anker SOLIX taşınabilir güç istasyonları, katlanabilir paneller ve akülü buzdolabı. Doğru boyu birlikte seçelim.",
+      "eyebrow": "Kamp & Outdoor",
+      "title": "Şebeke nerede biterse, oradan başlıyoruz",
+      "intro": "Telefon şarjından karavan buzdolabına — Anker SOLIX taşınabilir güç istasyonları ve katlanabilir panellerle doğada da kendi enerjiniz yanınızda.",
+      "sizeEyebrow": "Boy rehberi",
+      "sizeTitle": "Hangi boy bana yeter?",
+      "sizeIntro": "Kapasiteyi (Wh) ne kadar cihaz, kaç gün sorusu belirler. Üç tipik senaryo:",
+      "s1": {
+        "title": "Hafta sonu kampı",
+        "gear": "Telefon, ışık, drone, kamera",
+        "pick": "C300 serisi + PS200 panel",
+        "desc": "288 Wh cebinizde: aydınlatma ve şarj işleri gün boyu, panelle süresiz."
+      },
+      "s2": {
+        "title": "Kamp + mutfak konforu",
+        "gear": "Buzdolabı, kettle, laptop",
+        "pick": "C1000 ailesi + PS400 + EverFrost",
+        "desc": "1 kWh sınıfı istasyon EverFrost'u günlerce döndürür; 400 W panelle öğlen dolar."
+      },
+      "s3": {
+        "title": "Karavan · tekne · uzun mola",
+        "gear": "Klima kısa süre, indüksiyon, tüm cihazlar",
+        "pick": "767 / F1500 / C2000 + çift panel",
+        "desc": "2 kWh ve 2000 W üstü çıkış: karavanın ana bataryasına güç desteği, teknede sessiz jeneratör."
+      },
+      "productsEyebrow": "Vitrin",
+      "productsTitle": "Kampçının rafı",
+      "productsCta": "Tüm taşınabilir güç ürünleri",
+      "whyTitle": "Neden MİNADA'dan?",
+      "w1": {
+        "title": "Doğru boylandırma",
+        "desc": "Cihaz listenize göre Wh/W hesabını biz yapar, fazla ya da eksik almanızı engelleriz."
+      },
+      "w2": {
+        "title": "Yetkili tedarik",
+        "desc": "Anker SOLIX ürünleri Türkiye garantili, faturalı ve stoktan teslim."
+      },
+      "w3": {
+        "title": "Sistem düşünürüz",
+        "desc": "Karavan çatısına sabit panel mi, katlanabilir mi? Kurulum ve kablolama dahil konuşuruz."
+      },
+      "ctaTitle": "Kampınıza göre teklif alın",
+      "ctaDesc": "Cihazlarınızı yazın, 24 saat içinde boylandırılmış teklifle dönelim."
     }
   },
   "Calculator": {
@@ -389,14 +441,15 @@
   },
   "Footer": {
     "tagline": "Enerji dönüşümünüzde güvenilir bir liman.",
-    "servicesTitle": "Hizmetler",
     "companyTitle": "Kurumsal",
     "legalTitle": "Yasal",
     "contactTitle": "İletişim",
     "privacy": "Gizlilik & KVKK",
     "cookies": "Çerez Politikası",
     "rights": "Tüm hakları saklıdır.",
-    "placeholderNote": "İletişim bilgileri yakında güncellenecek."
+    "placeholderNote": "E-posta adresi domain kurulumuyla birlikte aktifleşecek.",
+    "linesTitle": "İş kollarımız",
+    "forYouTitle": "Sizin için"
   },
   "Products": {
     "metaTitle": "Ürünler — Güneş Panelleri ve Ekipmanlar",
@@ -525,6 +578,131 @@
       "highEfficiency": "Yüksek verim (lm/W)",
       "linearLight": "Lineer armatür",
       "bollardLight": "Bolard armatür"
+    }
+  },
+  "Lines": {
+    "ges": {
+      "metaTitle": "Güneş Enerjisi (GES) — Çatı, Arazi, Agri-PV, Carport",
+      "metaDesc": "Keşiften devreye almaya anahtar teslim GES: imar ve ruhsat süreçleri, proje geliştirme, EPC ve işletme tek çatı altında.",
+      "eyebrow": "İş kolumuz",
+      "title": "Güneş Enerjisi Santralleri",
+      "intro": "Çatıdan araziye, tarımsal alandan otoparka — santralinizi projelendirir, izinlerini yürütür, kurar ve işletiriz. İmar, ÇED ve ruhsat dahil tüm proje geliştirme süreci tek elden.",
+      "typesTitle": "Dört kurulum tipi",
+      "types": {
+        "rooftop": {
+          "title": "Çatı Üstü GES",
+          "desc": "Konut ve işletme çatılarında öz tüketim: faturayı kaynağında düşürür."
+        },
+        "ground": {
+          "title": "Arazi Tipi GES (Lisanssız)",
+          "desc": "1–5 MW lisanssız üretim: atıl araziyi gelire dönüştürür."
+        },
+        "agripv": {
+          "title": "Tarımsal GES (Agri-PV)",
+          "desc": "Üretim + tarım aynı parselde: sulama yükünü güneş karşılar."
+        },
+        "carport": {
+          "title": "Carport / Otopark GES",
+          "desc": "Otopark gölgelendirmesi santrale dönüşür; EV şarjla doğal ikili."
+        }
+      },
+      "aud1": {
+        "title": "Konut",
+        "desc": "Villa ve müstakil evler için anahtar teslim çatı GES — mahsuplaşma ve %90'a varan fatura tasarrufu. Detaylı akış: Evim için sayfası."
+      },
+      "aud2": {
+        "title": "Ticari & Endüstriyel",
+        "desc": "Fabrika, depo, AVM ve tarım işletmeleri: OPEX düşüşü, hızlandırılmış amortisman, kurumsal PPA seçenekleri."
+      },
+      "f1": {
+        "q": "İzin ve ruhsat sürecini kim yürütüyor?",
+        "a": "Biz. İmar durumu, ÇED muafiyeti/başvurusu, çağrı mektubu ve bağlantı anlaşması dahil proje geliştirme adımlarının tamamı kapsamımızda."
+      },
+      "f2": {
+        "q": "Kurulum ne kadar sürer?",
+        "a": "Çatı sistemlerinde keşiften devreye almaya tipik süre 4–8 hafta; lisanssız arazi projelerinde izin takvimine bağlı olarak 3–6 ay."
+      },
+      "productsTitle": "Sahada kullandığımız ekipman",
+      "productsCta": "Panel ve inverter kataloğu"
+    },
+    "bess": {
+      "metaTitle": "Enerji Depolama (BESS) — Ev Tipi ve Ticari",
+      "metaDesc": "LFP ev bataryalarından konteyner ESS'e enerji depolama: kesintisiz güç, öz tüketim artışı, puant tıraşlama.",
+      "eyebrow": "İş kolumuz",
+      "title": "Enerji Depolama Sistemleri",
+      "intro": "Güneşin ürettiğini akşama taşıyın: LFP bataryalarla kesinti anında devreye giren, öz tüketimi büyüten depolama çözümleri — evden endüstriyel ölçeğe.",
+      "aud1": {
+        "title": "Ev tipi",
+        "desc": "Hibrit inverter + duvar tipi LFP batarya: kesintide ev çalışmaya devam eder, gündüz üretim akşam harcanır."
+      },
+      "aud2": {
+        "title": "Ticari & Endüstriyel",
+        "desc": "Rack ve konteyner ESS: puant tıraşlama, talep yönetimi ve şebeke hizmetleri için ölçeklenebilir kapasite."
+      },
+      "f1": {
+        "q": "Mevcut GES'ime depolama eklenebilir mi?",
+        "a": "Çoğu durumda evet — hibrit invertere geçişle ya da AC-coupled ek üniteyle. Keşifte mevcut sistemi ölçüp net cevap veriyoruz."
+      },
+      "f2": {
+        "q": "Batarya ömrü ne kadar?",
+        "a": "Kullandığımız LFP hücreler 6.000+ çevrim sınıfında — günlük bir dolum-boşalımla 15 yıl mertebesi. Kapasite garantileri ürün kartlarında."
+      },
+      "productsTitle": "Depolama ürünleri",
+      "productsCta": "Enerji depolama kataloğu"
+    },
+    "heatpump": {
+      "metaTitle": "Isı Pompası — Isıtma, Soğutma, Sıcak Su ve Havuz",
+      "metaDesc": "Havadan suya ısı pompası ile yerden ısıtmaya, sıcak suya ve havuz ısıtmaya tek cihazla verimli çözüm. GES ile birleşince ısınma güneşten.",
+      "eyebrow": "İş kolumuz",
+      "title": "Isı Pompası",
+      "intro": "Isıtma-soğutma, sıcak su ve yerden ısıtma tek sistemde: elektriğin her birimini 3-4 birim ısıya çeviren ısı pompaları. Çatınızda GES varsa, ısınmanız da güneşten.",
+      "aud1": {
+        "title": "Konut",
+        "desc": "Villa ve müstakil evlerde doğalgazsız konfor: yerden ısıtma ve radyatörle uyumlu, sessiz monoblok üniteler."
+      },
+      "aud2": {
+        "title": "İşletme",
+        "desc": "Otel, yurt ve spor tesislerinde merkezi sıcak su + iklimlendirme; kaskad kurulumla yüksek kapasite."
+      },
+      "pool": {
+        "title": "Havuz Isı Pompası",
+        "desc": "Villa ve otel havuzlarında sezonu Nisan'dan Kasım'a uzatın: R290'lı, soft-start havuz ısı pompalarıyla suyu istediğiniz derecede tutuyoruz."
+      },
+      "f1": {
+        "q": "Isı pompası eski binada çalışır mı?",
+        "a": "Çalışır — kritik olan ısı yükü hesabı. Keşifte yalıtım ve mevcut tesisatı ölçüp doğru kapasiteyi belirliyoruz; gerekirse radyatör başına çıkış sıcaklığını yükseltiyoruz."
+      },
+      "f2": {
+        "q": "GES ile birlikte kurmanın avantajı ne?",
+        "a": "Isı pompasının tüketimi güneşten karşılanır: ısınma maliyeti fatura yerine çatınızdan gelir. İki sistemi tek projede boyutlandırıyoruz."
+      },
+      "productsTitle": "Isı pompası serileri",
+      "productsCta": "Isı pompası kataloğu"
+    },
+    "evcharge": {
+      "metaTitle": "EV Şarj İstasyonları — Ev ve İşletme",
+      "metaDesc": "Evde 7,4-22 kW AC, işletmede 30-400 kW DC hızlı şarj: projelendirme, kurulum ve carport GES entegrasyonu.",
+      "eyebrow": "İş kolumuz",
+      "title": "EV Şarj İstasyonları",
+      "intro": "Aracınız evde gece, işletmenizde gündüz dolsun: AC duvar ünitelerinden DC hızlı şarj parklarına projelendirme, kurulum ve devreye alma bizde.",
+      "aud1": {
+        "title": "Ev",
+        "desc": "7,4–22 kW AC duvar şarjı: sayaç kapasite kontrolü, yük yönetimi ve GES entegrasyonuyla."
+      },
+      "aud2": {
+        "title": "İşletme & Filo",
+        "desc": "Otopark ve filolar için OCPP uyumlu DC hızlı şarj; carport GES ile üretim + şarj aynı yapıda."
+      },
+      "f1": {
+        "q": "Evimin elektrik altyapısı yeterli mi?",
+        "a": "Keşifte sayaç gücü ve pano kapasitesini ölçüyoruz; gerekiyorsa güç artırımı başvurusunu biz yürütüyoruz. Yük yönetimiyle çoğu evde ek güç gerekmeden kurulum mümkün."
+      },
+      "f2": {
+        "q": "İşletmemde şarjı ücretlendirebilir miyim?",
+        "a": "Evet — OCPP uyumlu ünitelerle işletici platformlarına bağlanıp kWh bazlı ücretlendirme yapılabilir; lisans gerekliliklerinde yol gösteriyoruz."
+      },
+      "productsTitle": "Şarj üniteleri",
+      "productsCta": "EV şarj kataloğu"
     }
   }
 }
