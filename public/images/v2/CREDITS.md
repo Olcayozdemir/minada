@@ -15,6 +15,12 @@
 | cta.jpg              | photo-1674168481499-983f0968a68f (1lsoCjbLm3I) | navy dusk PV close-up                                                                                                                                 |
 | camp.jpg             | photo-1533873984035-25970ab07461               | tents in misty golden-hour field — SPARE (replaced by camp-hero.jpeg)                                                                                 |
 
+camp/kit-weekend.jpeg, camp/kit-kitchen.jpeg, camp/kit-longstay.jpeg are NOT Unsplash: client-provided
+glass-stage product renders (Google Flow, 2026-07-11) with teal energy lines — the kit for each "boy
+rehberi" scenario on the kamp-outdoor landing (weekend / kitchen-comfort / long-stay-induction). A boat
+render is planned to replace kit-longstay for the s3 "karavan · tekne" scenario. campsite-2026-14:31
+render (markasız, refined) is a SPARE hero alternative to camp-hero.jpeg.
+
 camp-hero.jpeg, home-hero.jpeg and business-hero.jpeg are NOT Unsplash: client-provided renders
 (Google Flow, 2026-07-11) — lakeside camp / Mediterranean villa with panel→battery→wallbox→EV teal
 energy line / logistics facility with PV roof + fleet charging. Heroes of kamp-outdoor, evim-icin

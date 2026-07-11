@@ -13,7 +13,13 @@ import styles from "./camp.module.scss";
 
 export const revalidate = 60;
 
-const SCENARIOS = ["s1", "s2", "s3"] as const;
+// Boy rehberi senaryoları + kit render'ları (cam sahne + teal enerji hattı).
+// s3 şimdilik indüksiyonlu "uzun mola" kiti; tekne render'ı inince o gelir.
+const SCENARIOS = [
+  { id: "s1", img: "/images/v2/camp/kit-weekend.jpeg" },
+  { id: "s2", img: "/images/v2/camp/kit-kitchen.jpeg" },
+  { id: "s3", img: "/images/v2/camp/kit-longstay.jpeg" },
+] as const;
 const WHY = ["w1", "w2", "w3"] as const;
 
 export async function generateMetadata({
@@ -75,14 +81,26 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <Section tone="light">
         <SectionHeading eyebrow={t("sizeEyebrow")} title={t("sizeTitle")} intro={t("sizeIntro")} />
         <ul className={styles.sizes}>
-          {SCENARIOS.map((id) => (
+          {SCENARIOS.map(({ id, img }) => (
             <li key={id} className={styles.sizeCard}>
-              <h3 className={styles.sizeTitle}>{t(`${id}.title`)}</h3>
-              <p className={styles.sizeGear}>{t(`${id}.gear`)}</p>
-              <p className={styles.sizePick}>
-                <IconCheck size={15} /> {t(`${id}.pick`)}
-              </p>
-              <p className={styles.sizeDesc}>{t(`${id}.desc`)}</p>
+              <span className={styles.sizeMedia} aria-hidden="true">
+                <Image
+                  src={img}
+                  alt=""
+                  width={640}
+                  height={358}
+                  sizes="(max-width: 860px) 92vw, 380px"
+                  className={styles.sizeImg}
+                />
+              </span>
+              <div className={styles.sizeBody}>
+                <h3 className={styles.sizeTitle}>{t(`${id}.title`)}</h3>
+                <p className={styles.sizeGear}>{t(`${id}.gear`)}</p>
+                <p className={styles.sizePick}>
+                  <IconCheck size={15} /> {t(`${id}.pick`)}
+                </p>
+                <p className={styles.sizeDesc}>{t(`${id}.desc`)}</p>
+              </div>
             </li>
           ))}
         </ul>
