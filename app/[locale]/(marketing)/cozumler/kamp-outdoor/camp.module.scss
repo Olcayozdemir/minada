@@ -1,0 +1,255 @@
+@use "../../../../../styles/mixins" as *;
+
+/* Kamp & Outdoor landing — photo hero + boy rehberi + vitrin. */
+
+.hero {
+  position: relative;
+  min-height: 540px;
+  display: grid;
+  align-items: end;
+  margin-top: calc(var(--header-h) * -1);
+  overflow: hidden;
+}
+
+.heroPhoto {
+  object-fit: cover;
+}
+
+/* Bright golden-hour photo: keep the top airy, ground the text on a soft
+   navy wash rising from the bottom. */
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 25, 47, 0.34),
+      rgba(10, 25, 47, 0.06) 38%,
+      rgba(10, 25, 47, 0.66) 88%
+    );
+}
+
+.heroInner {
+  @include container;
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--header-h) + var(--space-10));
+  padding-bottom: var(--space-10);
+  color: #fff;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-3);
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.intro {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 56ch;
+  margin-bottom: var(--space-5);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* — Boy rehberi — */
+.sizes {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sizeCard {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-5);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(242, 168, 44, 0.4);
+  }
+}
+
+.sizeTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: var(--space-1);
+}
+
+.sizeGear {
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  margin-bottom: var(--space-3);
+}
+
+.sizePick {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gold-600);
+  margin-bottom: var(--space-2);
+}
+
+.sizeDesc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* — Vitrin — */
+.shelf {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shelfCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  overflow: hidden;
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba(242, 168, 44, 0.4);
+  }
+}
+
+/* Lit stage (light) — same grammar as the catalog tiles. */
+.shelfStage {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  padding: var(--space-3);
+  background:
+    radial-gradient(120% 110% at 82% 0%, rgba(242, 168, 44, 0.12), transparent 62%),
+    radial-gradient(rgba(18, 36, 63, 0.05) 1px, transparent 1.3px),
+    linear-gradient(180deg, var(--sand-50), #fff);
+  background-size:
+    auto,
+    18px 18px,
+    auto;
+}
+
+.shelfImg {
+  width: auto;
+  max-width: 88%;
+  height: 124px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 16px rgba(16, 42, 67, 0.18));
+}
+
+.shelfTitle {
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: var(--space-3) var(--space-4) 0;
+}
+
+.shelfPower {
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  padding: 2px var(--space-4) var(--space-4);
+}
+
+.shelfFoot {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+/* — Neden — */
+.why {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whyItem {
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-4);
+}
+
+.whyTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.whyDesc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* — CTA — */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+.ctaDesc {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 48ch;
+}
