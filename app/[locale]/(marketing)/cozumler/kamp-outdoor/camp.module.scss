@@ -4,37 +4,60 @@
 
 .hero {
   position: relative;
-  min-height: 540px;
+  min-height: clamp(540px, 64vh, 700px);
   display: grid;
-  align-items: end;
+  align-items: center;
   margin-top: calc(var(--header-h) * -1);
   overflow: hidden;
 }
 
+/* Asıl kompozisyonu (sağdaki çadır + istasyon + panel + teal kablo) kadraja
+   al; sola doğru sahne kırpılır, oraya zaten metin maskesi biner. */
 .heroPhoto {
   object-fit: cover;
+  object-position: 72% center;
+
+  @include bp-down(760px) {
+    object-position: 64% center;
+  }
 }
 
-/* Bright golden-hour photo: keep the top airy, ground the text on a soft
-   navy wash rising from the bottom. */
+/* Sol tarafı navy maskeyle karart (metin okunsun), sağdaki ürün sahnesini
+   açık bırak; üst/alt hafif degrade header ve CTA okunurluğu için. */
 .heroScrim {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(
+      90deg,
+      rgba(10, 25, 47, 0.9) 0%,
+      rgba(10, 25, 47, 0.7) 24%,
+      rgba(10, 25, 47, 0.32) 48%,
+      rgba(10, 25, 47, 0) 70%
+    ),
+    linear-gradient(
       180deg,
-      rgba(10, 25, 47, 0.34),
-      rgba(10, 25, 47, 0.06) 38%,
-      rgba(10, 25, 47, 0.66) 88%
+      rgba(10, 25, 47, 0.3) 0%,
+      rgba(10, 25, 47, 0) 32%,
+      rgba(10, 25, 47, 0.32) 100%
     );
+
+  @include bp-down(760px) {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 25, 47, 0.44) 0%,
+      rgba(10, 25, 47, 0.14) 34%,
+      rgba(10, 25, 47, 0.74) 92%
+    );
+  }
 }
 
 .heroInner {
   @include container;
   position: relative;
   z-index: 1;
-  padding-top: calc(var(--header-h) + var(--space-10));
-  padding-bottom: var(--space-10);
+  padding-top: var(--header-h);
+  padding-bottom: var(--space-6);
   color: #fff;
 }
 
