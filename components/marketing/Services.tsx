@@ -1,41 +1,28 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import {
-  IconSolar,
-  IconGroundMount,
-  IconLeaf,
-  IconCarport,
-  IconBattery,
-} from "@/components/ui/icons";
+import { Link } from "@/i18n/navigation";
+import { IconArrowRight } from "@/components/ui/icons";
+import type { StaticPathname } from "@/i18n/routing";
 import styles from "./Services.module.scss";
 
-// Customer-facing solar offers only — process steps live in HowItWorks.
-const CARDS = [
-  { id: "rooftop", Icon: IconSolar },
-  { id: "ground", Icon: IconGroundMount },
-  { id: "agripv", Icon: IconLeaf },
-  { id: "carport", Icon: IconCarport },
-  { id: "bess", Icon: IconBattery },
-] as const;
-
-// A service's card icon: use the dropped-in illustration (public/images/services/
-// <id>.png) if present, otherwise fall back to the inline SVG. Checked at build
-// time — this is a server component, so no runtime cost or 404s.
-function serviceIcon(id: string): string | null {
-  const rel = `images/services/${id}.png`;
-  return existsSync(join(process.cwd(), "public", rel)) ? `/${rel}` : null;
-}
+// The five doors: four business lines + camping. Renders as the homepage
+// gateway (dark band) and as the /services hub. Tiles reuse the catalog's
+// 3D renders so the gold-glow imagery language carries through.
+const DOORS: ReadonlyArray<{ id: string; href: StaticPathname; img: string }> = [
+  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/products/panels.png" },
+  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/products/storage.png" },
+  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/products/heat-pumps.png" },
+  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/products/ev-charging.png" },
+  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/products/portable-power.png" },
+];
 
 export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
-  const t = await getTranslations("Home.services");
-  const ts = await getTranslations("Services");
+  const t = await getTranslations("Home.gateway");
 
   return (
-    <Section tone="dark" id="hizmetler">
+    <Section tone="dark" id="cozumler">
       <SectionHeading
         as={headingAs}
         tone="dark"
@@ -44,26 +31,33 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
         intro={t("intro")}
       />
       <ul className={styles.grid}>
-        {CARDS.map(({ id, Icon }) => {
-          const img = serviceIcon(id);
-          return (
-            <li key={id} className={styles.card}>
-              {img ? (
-                <span className={styles.iconImg}>
-                  <Image src={img} alt="" width={72} height={72} />
+        {DOORS.map(({ id, href, img }) => (
+          <li key={id}>
+            <Link href={href} className={styles.card}>
+              <span className={styles.stage} aria-hidden="true">
+                <Image
+                  src={img}
+                  alt=""
+                  width={420}
+                  height={240}
+                  sizes="(max-width: 700px) 72vw, 300px"
+                  className={styles.stageImg}
+                />
+              </span>
+              <span className={styles.body}>
+                <span className={styles.chips}>{t(`${id}.chips`)}</span>
+                <span className={styles.cardTitle}>{t(`${id}.title`)}</span>
+                <span className={styles.cardDesc}>{t(`${id}.desc`)}</span>
+                <span className={styles.foot} aria-hidden="true">
+                  <span className={styles.rule} />
+                  <span className={styles.go}>
+                    <IconArrowRight size={16} />
+                  </span>
                 </span>
-              ) : (
-                <span className={styles.iconChip}>
-                  <Icon size={22} />
-                </span>
-              )}
-              <div className={styles.body}>
-                <h3 className={styles.cardTitle}>{ts(id)}</h3>
-                <p className={styles.cardDesc}>{t(`${id}.desc`)}</p>
-              </div>
-            </li>
-          );
-        })}
+              </span>
+            </Link>
+          </li>
+        ))}
       </ul>
     </Section>
   );

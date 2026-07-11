@@ -1,71 +1,164 @@
 @use "../../styles/mixins" as *;
 
-/* Compact service grid: gold icon chip + title + one-line description.
-   Three columns on desktop, collapsing to two then one. No cards/borders —
-   spacing and the gold chips carry the structure on the navy section. */
+/* Homepage gateway — five doors on the dark band. Lit product stage (gold
+   wash + dot grid over deep navy) + editorial caption; the foot rule fills
+   gold and the arrow chip lights on hover. */
+
 .grid {
   @include list-reset;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
 
-  @include bp-down(900px) {
-    grid-template-columns: repeat(2, 1fr);
+  @include bp-down(1100px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @include bp-down(560px) {
-    grid-template-columns: 1fr;
-    gap: var(--space-5);
+  @include bp-down(700px) {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-3);
+    margin-inline: calc(var(--space-4) * -1);
+    padding-inline: var(--space-4);
+
+    > li {
+      flex: 0 0 72vw;
+      max-width: 300px;
+      scroll-snap-align: start;
+    }
   }
 }
 
 .card {
+  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-4);
-}
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 
-.iconChip {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 13px;
-  color: var(--gold-300);
-  background: rgba(242, 168, 44, 0.12);
-  border: 1px solid rgba(242, 168, 44, 0.28);
-}
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(242, 168, 44, 0.5);
+    background: rgba(255, 255, 255, 0.07);
 
-/* Dropped-in illustration icons sit directly on the navy (already gold/bright). */
-.iconImg {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
+    .stageImg {
+      transform: translateY(-5px) scale(1.05);
+    }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    .rule::after {
+      transform: scaleX(1);
+    }
+
+    .go {
+      background: var(--gold);
+      border-color: transparent;
+      color: var(--on-accent);
+      transform: rotate(-45deg);
+    }
   }
 }
 
+/* Lit stage, dark variant: the render's own gold glow does the work. */
+.stage {
+  display: grid;
+  place-items: center;
+  height: 128px;
+  padding: var(--space-2) var(--space-3);
+  background:
+    radial-gradient(120% 120% at 80% 0%, rgba(242, 168, 44, 0.16), transparent 60%),
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
+  background-size:
+    auto,
+    18px 18px;
+}
+
+.stageImg {
+  display: block;
+  width: min(84%, 210px);
+  height: auto;
+  max-height: 116px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.45));
+  transition: transform 0.35s ease;
+}
+
 .body {
-  min-width: 0;
-  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+
+.chips {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin-bottom: var(--space-2);
 }
 
 .cardTitle {
-  font-size: 1.05rem;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 5px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-2);
 }
 
 .cardDesc {
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   line-height: 1.5;
-  color: var(--on-dark-2);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.rule {
+  position: relative;
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.45s ease 0.05s;
+  }
+}
+
+.go {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.3s ease;
 }

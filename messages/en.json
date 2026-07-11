@@ -27,13 +27,6 @@
     "line_evcharge": "EV Charging",
     "solutionsCamp": "Camping & Outdoor"
   },
-  "Services": {
-    "rooftop": "Rooftop Solar",
-    "ground": "Ground-Mount Solar (Unlicensed)",
-    "agripv": "Agrivoltaics (Agri-PV)",
-    "carport": "Solar Carport",
-    "bess": "Energy Storage (BESS)"
-  },
   "Common": {
     "getQuote": "Get a free survey",
     "getQuoteShort": "Free survey",
@@ -73,26 +66,6 @@
     "ctaSolutions": "Our solutions"
   },
   "Home": {
-    "services": {
-      "eyebrow": "Solar Solutions",
-      "title": "The right solar solution for your needs",
-      "intro": "Rooftop, ground-mount, agrivoltaics, carport and energy storage — five solar solutions, sized to your needs and delivered turnkey.",
-      "rooftop": {
-        "desc": "We turn your industrial and commercial rooftops into turnkey solar plants — from survey to commissioning, all under one roof."
-      },
-      "ground": {
-        "desc": "Got land? We build your unlicensed plant end to end, from field to transformer."
-      },
-      "agripv": {
-        "desc": "Two harvests from one field — power up top, crops below: Agri-PV for greenhouses and farmland."
-      },
-      "carport": {
-        "desc": "Put the car park to work: shade and power overhead, EV charging below."
-      },
-      "bess": {
-        "desc": "Lithium storage that clocks in when the sun clocks out — carry your energy from noon into the night."
-      }
-    },
     "how": {
       "eyebrow": "How it works",
       "title": "From survey to operation, step by step",
@@ -231,6 +204,36 @@
       "point2": "10-year warranty & service",
       "chipValue": "4 services",
       "chipLabel": "under one roof"
+    },
+    "gateway": {
+      "eyebrow": "Solutions",
+      "title": "How can we help?",
+      "intro": "Five lines of work, one team. Pick what you need — we carry it from survey to commissioning.",
+      "ges": {
+        "title": "Solar Energy (PV)",
+        "desc": "Rooftop, ground-mount, agri-PV and carport plants — from design to production.",
+        "chips": "Homes · Commercial · Agri"
+      },
+      "bess": {
+        "title": "Energy Storage",
+        "desc": "From home batteries to container ESS; store what you produce, ride through outages.",
+        "chips": "Home · Business"
+      },
+      "heatpump": {
+        "title": "Heat Pumps",
+        "desc": "Heating, cooling, hot water and pools — the comfort side of electrification.",
+        "chips": "Homes · Villas · Hotels"
+      },
+      "evcharge": {
+        "title": "EV Charging",
+        "desc": "AC at home, DC fast charging at work; a natural pair with carport PV.",
+        "chips": "Home · Workplace · Fleet"
+      },
+      "camp": {
+        "title": "Camping & Outdoor",
+        "desc": "Portable power stations, foldable panels, a battery-powered fridge — how far does the grid go?",
+        "chips": "Camping · RV · Boat"
+      }
     }
   },
   "Segments": {

@@ -27,13 +27,6 @@
     "line_evcharge": "EV Şarj İstasyonları",
     "solutionsCamp": "Kamp & Outdoor"
   },
-  "Services": {
-    "rooftop": "Çatı Üstü GES",
-    "ground": "Arazi Tipi GES (Lisanssız)",
-    "agripv": "Tarımsal GES (Agri-PV)",
-    "carport": "Carport / Otopark GES",
-    "bess": "Enerji Depolama (BESS)"
-  },
   "Common": {
     "getQuote": "Ücretsiz keşif al",
     "getQuoteShort": "Ücretsiz keşif",
@@ -73,26 +66,6 @@
     "ctaSolutions": "Çözümlerimiz"
   },
   "Home": {
-    "services": {
-      "eyebrow": "GES Çözümleri",
-      "title": "İhtiyacınıza uygun güneş çözümü",
-      "intro": "Çatıdan araziye, tarımdan otoparka ve enerji depolamaya — beş GES çözümünü ihtiyacınıza göre boyutlandırıyor, anahtar teslim kuruyoruz.",
-      "rooftop": {
-        "desc": "Sanayi ve ticari çatılarınızı anahtar teslim güneş santraline çeviriyoruz — keşiften devreye almaya kadar tek elden."
-      },
-      "ground": {
-        "desc": "Araziniz mi var? Lisanssız santralinizi tarladan trafoya, uçtan uca biz kuruyoruz."
-      },
-      "agripv": {
-        "desc": "Aynı topraktan iki hasat — üstte elektrik, altta mahsul: sera ve tarım arazilerine Agri-PV."
-      },
-      "carport": {
-        "desc": "Otoparkınız hem gölge yapsın hem üretsin: üstte panel, altında EV şarjı."
-      },
-      "bess": {
-        "desc": "Güneş mesaiyi bırakınca devreye giren lityum bataryalarla enerjinizi gündüzden geceye taşıyın."
-      }
-    },
     "how": {
       "eyebrow": "Nasıl Çalışır",
       "title": "Keşiften işletmeye, adım adım yanınızdayız",
@@ -231,6 +204,36 @@
       "point2": "10 yıl garanti & servis",
       "chipValue": "4 hizmet",
       "chipLabel": "tek çatı altında"
+    },
+    "gateway": {
+      "eyebrow": "Çözümler",
+      "title": "Size nasıl yardımcı olalım?",
+      "intro": "Beş iş kolu, tek ekip. Neye ihtiyacınız olduğunu seçin — gerisini keşiften devreye almaya biz üstlenelim.",
+      "ges": {
+        "title": "Güneş Enerjisi (GES)",
+        "desc": "Çatı, arazi, tarımsal ve carport santralleri — projelendirmeden üretime.",
+        "chips": "Konut · Ticari · Tarım"
+      },
+      "bess": {
+        "title": "Enerji Depolama",
+        "desc": "Ev tipi bataryadan konteyner ESS'e; ürettiğinizi saklayın, kesintide devam edin.",
+        "chips": "Ev · İşletme"
+      },
+      "heatpump": {
+        "title": "Isı Pompası",
+        "desc": "Isıtma, soğutma, sıcak su ve havuz — elektrifikasyonun konfor ayağı.",
+        "chips": "Konut · Villa · Otel"
+      },
+      "evcharge": {
+        "title": "EV Şarj",
+        "desc": "Evde AC, işletmede DC hızlı şarj; carport GES ile doğal ikili.",
+        "chips": "Ev · İşyeri · Filo"
+      },
+      "camp": {
+        "title": "Kamp & Outdoor",
+        "desc": "Taşınabilir güç istasyonları, katlanabilir paneller, akülü buzdolabı — şebeke nereye kadar?",
+        "chips": "Kamp · Karavan · Tekne"
+      }
     }
   },
   "Segments": {

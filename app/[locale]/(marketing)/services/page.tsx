@@ -10,7 +10,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Home.services" });
+  const t = await getTranslations({ locale, namespace: "Home.gateway" });
   return {
     title: t("title"),
     description: t("intro"),
@@ -18,7 +18,7 @@ export async function generateMetadata({
   };
 }
 
-// The five customer-facing solar offers; delivery steps live on /how-it-works.
+// The five-door gateway as a standalone hub page (nav column titles link here).
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
