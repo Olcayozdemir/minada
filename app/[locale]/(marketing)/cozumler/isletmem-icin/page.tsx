@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { IconActivity, IconCalculator, IconBuilding } from "@/components/ui/icons";
 import { Services } from "@/components/marketing/Services";
-import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
 
-const BENEFITS = [
-  { id: "b1", Icon: IconActivity },
-  { id: "b2", Icon: IconCalculator },
-  { id: "b3", Icon: IconBuilding },
-] as const;
+const GAINS = ["g1", "g2", "g3"] as const;
 
 export async function generateMetadata({
   params,
@@ -37,40 +32,65 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <Section tone="dark">
-        <SectionHeading
-          as="h1"
-          tone="dark"
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
+      {/* Foto hero — kamp sayfası kalıbı; geniş çatılı ticari tesis. */}
+      <section className={styles.pHero} data-hero="">
+        <Image
+          src="/images/v2/area-ticari.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          className={styles.pHeroPhoto}
         />
-        <ul className={styles.benefits}>
-          {BENEFITS.map(({ id, Icon }) => (
-            <li key={id} className={styles.benefit}>
-              <span className={styles.benefitIcon}>
-                <Icon size={22} />
-              </span>
-              <h2 className={styles.benefitTitle}>{t(`${id}.title`)}</h2>
-              <p className={styles.benefitDesc}>{t(`${id}.desc`)}</p>
+        <div className={styles.pHeroScrim} aria-hidden="true" />
+        <div className={styles.pHeroInner}>
+          <p className={styles.pEyebrow}>{t("eyebrow")}</p>
+          <h1 className={styles.pTitle}>{t("title")}</h1>
+          <p className={styles.pIntro}>{t("intro")}</p>
+          <div className={styles.actions}>
+            <Button href={{ pathname: "/contact", query: { konu: "ges" } }} size="lg" withArrow>
+              {tc("getQuote")}
+            </Button>
+            <Button href="/about" size="lg" variant="glass">
+              {t("referencesCta")}
+            </Button>
+          </div>
+          <p className={styles.pNote}>{t("solutionsNote")}</p>
+        </div>
+      </section>
+
+      {/* Kazanç — büyük altın istatistikler. */}
+      <Section tone="light">
+        <SectionHeading
+          eyebrow={t("gains.eyebrow")}
+          title={t("gains.title")}
+          intro={t("gains.intro")}
+        />
+        <ul className={styles.gains}>
+          {GAINS.map((id) => (
+            <li key={id} className={styles.gainCard}>
+              <span className={styles.gainStat}>{t(`gains.${id}.stat`)}</span>
+              <h3 className={styles.gainTitle}>{t(`gains.${id}.title`)}</h3>
+              <p className={styles.gainDesc}>{t(`gains.${id}.desc`)}</p>
             </li>
           ))}
         </ul>
-        <div className={styles.actions}>
-          <Button href="/contact" size="lg" withArrow>
-            {tc("getQuote")}
-          </Button>
-          <Button href="/about" size="lg" variant="glass">
-            {t("referencesCta")}
-          </Button>
-        </div>
-        <p className={styles.note}>{t("solutionsNote")}</p>
       </Section>
 
       {/* The five-door gateway — surfaces BESS, heat pump and EV charging too. */}
       <Services />
 
-      <FinalCta />
+      <Section tone="sand">
+        <div className={styles.ctaRow}>
+          <div>
+            <h2 className={styles.ctaTitle}>{t("ctaTitle")}</h2>
+            <p className={styles.ctaDesc}>{t("ctaDesc")}</p>
+          </div>
+          <Button href={{ pathname: "/contact", query: { konu: "ges" } }} size="lg" withArrow>
+            {tc("getQuote")}
+          </Button>
+        </div>
+      </Section>
     </>
   );
 }

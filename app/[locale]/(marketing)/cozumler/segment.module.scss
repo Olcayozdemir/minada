@@ -115,3 +115,150 @@
   flex-wrap: wrap;
   gap: var(--space-3);
 }
+
+/* — Foto hero (kamp sayfası kalıbı) — */
+.pHero {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  align-items: end;
+  margin-top: calc(var(--header-h) * -1);
+  overflow: hidden;
+}
+
+.pHeroPhoto {
+  object-fit: cover;
+}
+
+.pHeroScrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 25, 47, 0.34),
+      rgba(10, 25, 47, 0.08) 38%,
+      rgba(10, 25, 47, 0.68) 88%
+    );
+}
+
+.pHeroInner {
+  @include container;
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--header-h) + var(--space-10));
+  padding-bottom: var(--space-10);
+  color: #fff;
+}
+
+.pEyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  margin-bottom: var(--space-3);
+}
+
+.pTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-3);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.pIntro {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 56ch;
+  margin-bottom: var(--space-5);
+}
+
+.pNote {
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 60ch;
+}
+
+/* — Kazanç kartları: büyük altın istatistik + başlık + açıklama — */
+.gains {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gainCard {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-5);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    @include card-hover-gold;
+  }
+}
+
+.gainStat {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--gold-600);
+  margin-bottom: var(--space-3);
+}
+
+.gainTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.08rem;
+  margin-bottom: var(--space-2);
+}
+
+.gainDesc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* — Kapanış CTA şeridi — */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: var(--space-2);
+}
+
+.ctaDesc {
+  color: var(--ink-2);
+  max-width: 52ch;
+}
+
+.ctaRowDark {
+  .ctaTitle {
+    color: #fff;
+  }
+
+  .ctaDesc {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}

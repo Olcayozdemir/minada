@@ -243,18 +243,6 @@
       "eyebrow": "Evim için",
       "title": "Eviniz kendi enerjisini üretsin",
       "intro": "Villanız ya da müstakil eviniz için anahtar teslim güneş enerjisi. Faturanız düşer, konforunuz artar; eviniz enerjisi kendinden, size ait bir liman olur.",
-      "b1": {
-        "title": "%90'a varan tasarruf",
-        "desc": "Elektrik faturanız güneşle birlikte neredeyse sıfıra iner; artan tarifelerden etkilenmezsiniz."
-      },
-      "b2": {
-        "title": "Mahsuplaşma",
-        "desc": "Kullanmadığınız enerji şebekeye verilir, faturanızdan düşülür. İzin süreçlerini biz yönetiriz."
-      },
-      "b3": {
-        "title": "25 yıl panel ömrü",
-        "desc": "Paneller 25 yıl ve üzeri performans garantisiyle çalışır; sistem kendini birkaç yılda amorti eder."
-      },
       "stepsEyebrow": "Süreç",
       "stepsTitle": "Çatınıza giden yol: 6 adım",
       "stepsIntro": "Keşiften devreye almaya kadar her adım bizde — siz sadece güneşin tadını çıkarın.",
@@ -265,7 +253,29 @@
         "heatpump": "Isı Pompası — ısınma da güneşten",
         "evcharge": "EV Şarj — aracınız evde dolsun",
         "bess": "Depolama — kesintiye karşı"
-      }
+      },
+      "gains": {
+        "eyebrow": "Kazancınız",
+        "title": "Çatınızdaki sistem size ne kazandırır?",
+        "intro": "Rakamlar çatınıza ve tüketiminize göre değişir — keşifte size özel tabloyu çıkarıyoruz. Tipik bir konut sisteminde:",
+        "g1": {
+          "stat": "%90'a varan",
+          "title": "Fatura düşüşü",
+          "desc": "Elektriği şebekeden değil çatınızdan kullanırsınız; fazla üretim mahsuplaşmayla faturanızdan düşer, artan tarifeler sizi teğet geçer."
+        },
+        "g2": {
+          "stat": "Birkaç yıl",
+          "title": "Kendini amorti eder",
+          "desc": "Yükselen tarifeler geri ödemeyi hızlandırır; amortisman sonrası her kWh, panel ömrü boyunca net kazanç yazar."
+        },
+        "g3": {
+          "stat": "25+ yıl",
+          "title": "Performans garantisi",
+          "desc": "Paneller 25 yıl ve üzeri performans garantisiyle üretir; eviniz hem konforunu hem değerini artırır."
+        }
+      },
+      "ctaTitle": "Evinize özel kazanç tablosu",
+      "ctaDesc": "Ücretsiz keşifte çatınızı ve tüketiminizi birlikte değerlendirelim; 24 saat içinde size özel sistem ve tasarruf önerisiyle dönelim."
     },
     "business": {
       "metaTitle": "İşletmem için GES",
@@ -273,20 +283,30 @@
       "eyebrow": "İşletmem için",
       "title": "Enerji maliyetinizi yatırıma çevirin",
       "intro": "Fabrikadan tarım işletmesine, otoparktan depoya — işletmenize uygun GES çözümünü boyutlandırıyor, anahtar teslim kuruyor ve işletiyoruz.",
-      "b1": {
-        "title": "OPEX düşer",
-        "desc": "Elektrik gideriniz kalem kalem küçülür; üretim maliyetiniz öngörülebilir hale gelir."
-      },
-      "b2": {
-        "title": "Hızlı amortisman",
-        "desc": "Ticari sistemler yüksek tüketimle kendini hızla geri öder; sonrası net kazançtır."
-      },
-      "b3": {
-        "title": "Lisanssız üretim",
-        "desc": "Lisanssız üretim kapsamında kendi elektriğinizi üretir, fazlasını mahsuplaşırsınız. Başvuruları biz yürütürüz."
-      },
       "referencesCta": "Referansları gör",
-      "solutionsNote": "Hangisi size uygun? Ücretsiz keşifte birlikte netleştirelim."
+      "solutionsNote": "Hangisi size uygun? Ücretsiz keşifte birlikte netleştirelim.",
+      "gains": {
+        "eyebrow": "Kazancınız",
+        "title": "GES işletmenize ne kazandırır?",
+        "intro": "Ölçek büyüdükçe kazanç da büyür — fizibiliteyi tesisinize özel, ücretsiz çıkarıyoruz. Tipik bir ticari sistemde:",
+        "g1": {
+          "stat": "OPEX ↓",
+          "title": "Enerji gideri küçülür",
+          "desc": "Elektrik maliyetiniz kalem kalem düşer, üretim maliyetiniz öngörülebilir olur; tarife artışları bütçenizi sarsmaz."
+        },
+        "g2": {
+          "stat": "Hızlı geri dönüş",
+          "title": "Yatırım kendini öder",
+          "desc": "Ticari tüketim yüksek olduğu için sistem kendini hızla geri öder; sonrası doğrudan kâr hanenize yazar."
+        },
+        "g3": {
+          "stat": "1–5 MW",
+          "title": "Lisanssız üretim hakkı",
+          "desc": "Kendi elektriğinizi lisanssız üretir, fazlasını mahsuplaşırsınız; başvuru ve izin süreçlerini biz yürütürüz."
+        }
+      },
+      "ctaTitle": "Tesisinize özel fizibilite",
+      "ctaDesc": "Faturanız ve çatı/arazi bilginizle başlayalım; boyutlandırma, maliyet ve geri dönüş tablosunu ücretsiz hazırlayalım."
     },
     "camp": {
       "metaTitle": "Kamp & Outdoor — Taşınabilir Güç",

@@ -243,18 +243,6 @@
       "eyebrow": "For my home",
       "title": "Let your home make its own energy",
       "intro": "Turnkey solar for your villa or detached home. Your bill drops, your comfort rises — and your home becomes a harbor that powers itself.",
-      "b1": {
-        "title": "Up to 90% savings",
-        "desc": "Your electricity bill falls close to zero with the sun; rising tariffs stop touching you."
-      },
-      "b2": {
-        "title": "Net-metering",
-        "desc": "Energy you don't use is fed to the grid and offset against your bill. We manage the permits."
-      },
-      "b3": {
-        "title": "25-year panel life",
-        "desc": "Panels run under performance warranties of 25 years and beyond; the system pays for itself within a few years."
-      },
       "stepsEyebrow": "Process",
       "stepsTitle": "The road to your roof: 6 steps",
       "stepsIntro": "From survey to switch-on, every step is on us — you just enjoy the sun.",
@@ -265,7 +253,29 @@
         "heatpump": "Heat pump — heating from the sun",
         "evcharge": "EV charging — top up at home",
         "bess": "Storage — outage-proof"
-      }
+      },
+      "gains": {
+        "eyebrow": "Your gains",
+        "title": "What does a rooftop system earn you?",
+        "intro": "Numbers depend on your roof and consumption — we build your personal table during the survey. In a typical home system:",
+        "g1": {
+          "stat": "Up to 90%",
+          "title": "Bill reduction",
+          "desc": "You use electricity from your roof, not the grid; net metering credits surplus production, and rising tariffs pass you by."
+        },
+        "g2": {
+          "stat": "A few years",
+          "title": "Pays for itself",
+          "desc": "Rising tariffs shorten the payback; after that, every kWh is net profit for the panels' lifetime."
+        },
+        "g3": {
+          "stat": "25+ yrs",
+          "title": "Performance warranty",
+          "desc": "Panels produce under 25+ year performance warranties; your home gains comfort and value alike."
+        }
+      },
+      "ctaTitle": "A gains table for your home",
+      "ctaDesc": "Let's assess your roof and consumption in a free survey; within 24 hours you get a tailored system and savings proposal."
     },
     "business": {
       "metaTitle": "Solar for my business",
@@ -273,20 +283,30 @@
       "eyebrow": "For my business",
       "title": "Turn your energy cost into an investment",
       "intro": "From factories to farms, car parks to warehouses — we size the right solar solution for your business, build it turnkey and operate it.",
-      "b1": {
-        "title": "Lower OPEX",
-        "desc": "Your electricity spend shrinks line by line; production costs become predictable."
-      },
-      "b2": {
-        "title": "Fast payback",
-        "desc": "Commercial systems pay for themselves quickly on high consumption; after that it's net gain."
-      },
-      "b3": {
-        "title": "Unlicensed generation",
-        "desc": "Generate your own power under the unlicensed scheme and offset the surplus. We handle the applications."
-      },
       "referencesCta": "See our projects",
-      "solutionsNote": "Not sure which fits? Let's pin it down together in a free survey."
+      "solutionsNote": "Not sure which fits? Let's pin it down together in a free survey.",
+      "gains": {
+        "eyebrow": "Your gains",
+        "title": "What does solar earn your business?",
+        "intro": "The bigger the scale, the bigger the gain — we prepare a free feasibility study for your facility. In a typical commercial system:",
+        "g1": {
+          "stat": "OPEX ↓",
+          "title": "Energy costs shrink",
+          "desc": "Your electricity cost drops line by line and production costs become predictable; tariff hikes stop shaking the budget."
+        },
+        "g2": {
+          "stat": "Fast payback",
+          "title": "The investment pays itself",
+          "desc": "High commercial consumption means the system pays back quickly; everything after that lands on your bottom line."
+        },
+        "g3": {
+          "stat": "1–5 MW",
+          "title": "Unlicensed generation",
+          "desc": "Generate your own power unlicensed and net-meter the surplus; we run the applications and permits."
+        }
+      },
+      "ctaTitle": "A feasibility study for your facility",
+      "ctaDesc": "Start with your bill and roof/land details; we prepare the sizing, cost and payback table free of charge."
     },
     "camp": {
       "metaTitle": "Camping & Outdoor — Portable Power",
