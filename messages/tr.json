@@ -314,7 +314,36 @@
           "stat": "1–5 MW",
           "title": "Lisanssız üretim hakkı",
           "desc": "Kendi elektriğinizi lisanssız üretir, fazlasını mahsuplaşırsınız; başvuru ve izin süreçlerini biz yürütürüz."
-        }
+        },
+        "charts": {
+          "opex": {
+            "header": "Aylık elektrik gideri · 12 ay",
+            "aria": "Şebeke tarifesi yükselirken MİNADA ile faturanız düşük ve sabit kalır; aradaki alan tasarrufunuz.",
+            "legendGrid": "Şebeke tarifesi",
+            "legendMinada": "MİNADA ile",
+            "savings": "tasarruf",
+            "axis": "Aylık →",
+            "tipMinada": "MİNADA ile: düşük ve öngörülebilir fatura",
+            "tipGrid": "Şebeke tarifesi: zamlarla yükselir"
+          },
+          "payback": {
+            "header": "Kümülatif nakit akışı · yıllar",
+            "aria": "Kümülatif nakit akışı yatırımdan başlar, başabaş noktasında sıfırı geçer ve sonrası kâra döner.",
+            "breakeven": "başabaş",
+            "investment": "yatırım",
+            "profit": "kâr",
+            "tipBreakeven": "Başabaş: yatırım kendini bu noktada geri öder",
+            "tipProfit": "Sonrası: doğrudan kâr"
+          },
+          "capacity": {
+            "header": "Lisanssız kapasite · MW",
+            "aria": "Sıfırdan 5 MW'a kadar lisanssız üretim bölgesi; 5 MW'da lisans sınırı.",
+            "band": "1–5 MW",
+            "limit": "5 MW · sınır",
+            "foot": "5 MW'a kadar lisans gerekmez"
+          }
+        },
+        "chartsNote": "Grafikler tipik bir ticari senaryoyu illüstratif olarak gösterir; gerçek değerler tesisinize özel fizibilitede çıkar."
       },
       "ctaTitle": "Tesisinize özel fizibilite",
       "ctaDesc": "Faturanız ve çatı/arazi bilginizle başlayalım; boyutlandırma, maliyet ve geri dönüş tablosunu ücretsiz hazırlayalım.",

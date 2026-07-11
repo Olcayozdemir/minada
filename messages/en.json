@@ -314,7 +314,36 @@
           "stat": "1–5 MW",
           "title": "Unlicensed generation",
           "desc": "Generate your own power unlicensed and net-meter the surplus; we run the applications and permits."
-        }
+        },
+        "charts": {
+          "opex": {
+            "header": "Monthly electricity cost · 12 months",
+            "aria": "As the grid tariff rises, your bill stays low and steady with MİNADA; the gap between is your saving.",
+            "legendGrid": "Grid tariff",
+            "legendMinada": "With MİNADA",
+            "savings": "savings",
+            "axis": "Monthly →",
+            "tipMinada": "With MİNADA: a low, predictable bill",
+            "tipGrid": "Grid tariff: climbs with every hike"
+          },
+          "payback": {
+            "header": "Cumulative cash flow · years",
+            "aria": "Cumulative cash flow starts from the investment, crosses zero at break-even, then turns to profit.",
+            "breakeven": "break-even",
+            "investment": "investment",
+            "profit": "profit",
+            "tipBreakeven": "Break-even: the investment pays for itself here",
+            "tipProfit": "After that: direct profit"
+          },
+          "capacity": {
+            "header": "Unlicensed capacity · MW",
+            "aria": "Unlicensed generation zone from zero to 5 MW; license limit at 5 MW.",
+            "band": "1–5 MW",
+            "limit": "5 MW · limit",
+            "foot": "No license needed up to 5 MW"
+          }
+        },
+        "chartsNote": "The charts illustrate a typical commercial scenario; real figures come from your facility-specific feasibility study."
       },
       "ctaTitle": "A feasibility study for your facility",
       "ctaDesc": "Start with your bill and roof/land details; we prepare the sizing, cost and payback table free of charge.",

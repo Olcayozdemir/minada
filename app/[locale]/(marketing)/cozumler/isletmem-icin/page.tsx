@@ -6,10 +6,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Services } from "@/components/marketing/Services";
 import { StepsShowcase } from "@/components/marketing/StepsShowcase";
+import { BusinessGains } from "@/components/marketing/BusinessGains";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
-
-const GAINS = ["g1", "g2", "g3"] as const;
 
 export async function generateMetadata({
   params,
@@ -60,22 +59,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      {/* Kazanç — büyük altın istatistikler. */}
+      {/* Kazanç — kanıt grafikleri (OPEX düşüşü, geri dönüş, lisanssız kapasite). */}
       <Section tone="light">
         <SectionHeading
           eyebrow={t("gains.eyebrow")}
           title={t("gains.title")}
           intro={t("gains.intro")}
         />
-        <ul className={styles.gains}>
-          {GAINS.map((id) => (
-            <li key={id} className={styles.gainCard}>
-              <span className={styles.gainStat}>{t(`gains.${id}.stat`)}</span>
-              <h3 className={styles.gainTitle}>{t(`gains.${id}.title`)}</h3>
-              <p className={styles.gainDesc}>{t(`gains.${id}.desc`)}</p>
-            </li>
-          ))}
-        </ul>
+        <BusinessGains />
       </Section>
 
       {/* Fotoğraflı 6 adım — tek yüklenici süreci (tam anlatım /how-it-works). */}

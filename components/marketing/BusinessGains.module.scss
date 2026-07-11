@@ -1,0 +1,159 @@
+@use "../../styles/mixins" as *;
+
+/* İşletmem "Kazancınız" kanıt grafikleri. Grafik paleti (kullanıcı tasarımı)
+   yalnız bu ağaca scope'lu CSS custom property'leri olarak tanımlanır; SVG'ler
+   var(--cyan-line) vb. ile bunları okur. */
+.charts {
+  --card: var(--surface);
+  --navy: #1b2b45;
+  --slate: #64707a;
+  --mist: #e7ebed;
+  --cyan-line: #1793c4; /* veri çizgisi — beyaz üstünde okunur */
+  --cyan-bright: #28c7fa; /* marka cyan — nokta/parlama */
+  --sage: #6e9e77; /* pozitif/tasarruf dolgu */
+  --amber: #ff9d2e; /* SADECE ince eşik işaretleri */
+
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+
+  @include bp-down(900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 26px 26px 30px;
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(242, 168, 44, 0.4);
+
+    .dot {
+      r: 6;
+    }
+  }
+}
+
+.chartH {
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0 0 6px;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  margin: 2px 0 4px;
+  font-size: 12px;
+  color: var(--slate);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+/* Kart 2/3'te grafiği kart 1 ile aynı hizada başlatan görünmez satır. */
+.spacer {
+  visibility: hidden;
+}
+
+.k {
+  width: 16px;
+  height: 0;
+  border-top: 2.5px solid;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.chart {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 20px 0 18px;
+}
+
+.heading {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--gold-600);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.sub {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.body {
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* SVG metin rolleri */
+.tMut {
+  fill: var(--slate);
+  font-size: 10.5px;
+}
+
+.tTick {
+  fill: var(--slate);
+  font-size: 9.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.tAmber {
+  fill: var(--amber);
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.tSage {
+  fill: var(--sage);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.tWhite {
+  fill: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-display), sans-serif;
+}
+
+.dot {
+  transition: r 0.12s ease;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--ink-2);
+  margin: 18px 0 0;
+  line-height: 1.5;
+}
