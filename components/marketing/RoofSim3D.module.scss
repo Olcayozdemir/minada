@@ -1,0 +1,9 @@
+.scene {
+  height: clamp(230px, 24vw, 300px);
+  margin-bottom: 4px;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}

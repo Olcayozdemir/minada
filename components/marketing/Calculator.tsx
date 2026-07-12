@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useTranslations, useLocale } from "next-intl";
 import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
@@ -11,8 +12,14 @@ import {
   type CityId,
 } from "@/lib/solar-config";
 import { IconArrowRight } from "@/components/ui/icons";
-import { RoofSim } from "./RoofSim";
 import styles from "./Calculator.module.scss";
+
+// WebGL sim is heavy (three.js), so it loads lazily on the client only; the
+// placeholder holds its height to avoid layout shift.
+const RoofSim3D = dynamic(() => import("./RoofSim3D"), {
+  ssr: false,
+  loading: () => <div className={styles.simLoading} aria-hidden="true" />,
+});
 
 function Metric({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
@@ -158,7 +165,7 @@ export function Calculator() {
       </div>
 
       <div className={styles.result}>
-        <RoofSim installed={result ? result.panelsInstalled : 0} max={capacity} />
+        <RoofSim3D installed={result ? result.panelsInstalled : 0} max={capacity} />
         <p className={styles.simCaption}>
           {result
             ? t("simInstalled", {

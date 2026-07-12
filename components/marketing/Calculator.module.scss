@@ -222,6 +222,12 @@
   }
 }
 
+/* Holds the 3D sim's height while the three.js chunk streams in. */
+.simLoading {
+  height: clamp(230px, 24vw, 300px);
+  margin-bottom: 4px;
+}
+
 /* Simulation caption + roof-limited notice */
 .simCaption {
   margin: 4px 0 18px;
