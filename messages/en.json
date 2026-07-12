@@ -439,7 +439,21 @@
     "simIdle": "Your roof fits ≈ {count} panels — enter your bill and city to see the numbers",
     "roofLimited": "You need {needed} panels; the full system requires about {area} m² of roof. Figures below reflect the system that fits.",
     "coverageLabel": "consumption covered",
-    "paybackShort": "payback"
+    "paybackShort": "payback",
+    "orientationLabel": "Roof orientation",
+    "orientationSouth": "South",
+    "orientationSouthMix": "SE / SW",
+    "orientationEastWest": "East–West",
+    "pitchLabel": "Roof pitch",
+    "pitchFlat": "Flat",
+    "pitchModerate": "Standard",
+    "pitchSteep": "Steep",
+    "dayUseLabel": "Daytime usage share",
+    "dayUseHint": "Share of your power used while the sun is up; a battery shifts the rest into the evening.",
+    "batteryLabel": "Battery storage",
+    "batteryNone": "None",
+    "simCardSystem": "System size",
+    "simCardProduction": "Annual output"
   },
   "Contact": {
     "eyebrow": "Contact",

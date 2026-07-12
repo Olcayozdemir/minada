@@ -7,9 +7,13 @@ import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
 import {
   CITIES,
+  ORIENTATIONS,
+  ROOF_PITCHES,
   calculateSolar,
   panelCapacityForArea,
   type CityId,
+  type Orientation,
+  type RoofPitch,
 } from "@/lib/solar-config";
 import { IconArrowRight } from "@/components/ui/icons";
 import styles from "./Calculator.module.scss";
@@ -20,6 +24,52 @@ const RoofSim3D = dynamic(() => import("./RoofSim3D"), {
   ssr: false,
   loading: () => <div className={styles.simLoading} aria-hidden="true" />,
 });
+
+const ORIENTATION_KEY: Record<Orientation, string> = {
+  south: "orientationSouth",
+  southMix: "orientationSouthMix",
+  eastWest: "orientationEastWest",
+};
+
+const PITCH_KEY: Record<RoofPitch, string> = {
+  flat: "pitchFlat",
+  moderate: "pitchModerate",
+  steep: "pitchSteep",
+};
+
+const BATTERY_OPTIONS = [0, 5, 10, 15]; // kWh
+
+/* Pill segmented control — same visual language as the bill/consumption toggle. */
+function Segmented<T extends string | number>({
+  value,
+  options,
+  onChange,
+  format,
+  label,
+}: {
+  value: T;
+  options: readonly T[];
+  onChange: (v: T) => void;
+  format: (v: T) => string;
+  label: string;
+}) {
+  return (
+    <div className={styles.seg} role="radiogroup" aria-label={label}>
+      {options.map((opt) => (
+        <button
+          key={String(opt)}
+          type="button"
+          role="radio"
+          aria-checked={value === opt}
+          className={clsx(styles.segBtn, value === opt && styles.segActive)}
+          onClick={() => onChange(opt)}
+        >
+          {format(opt)}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 function Metric({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
@@ -68,11 +118,24 @@ export function Calculator() {
   const [value, setValue] = useState("");
   const [cityId, setCityId] = useState("");
   const [roofArea, setRoofArea] = useState(60);
+  const [orientation, setOrientation] = useState<Orientation>("south");
+  const [pitch, setPitch] = useState<RoofPitch>("moderate");
+  const [dayUse, setDayUse] = useState(50); // %
+  const [batteryKwh, setBatteryKwh] = useState(0);
 
   const num = parseFloat(value.replace(",", "."));
   const result =
     cityId && num > 0
-      ? calculateSolar({ mode, value: num, cityId: cityId as CityId, roofAreaM2: roofArea })
+      ? calculateSolar({
+          mode,
+          value: num,
+          cityId: cityId as CityId,
+          roofAreaM2: roofArea,
+          orientation,
+          pitch,
+          dayUseRatio: dayUse / 100,
+          batteryKwh,
+        })
       : null;
 
   const capacity = panelCapacityForArea(roofArea);
@@ -85,6 +148,15 @@ export function Calculator() {
       currency: "TRY",
       maximumFractionDigits: 0,
     }).format(n);
+  const fmtPct = (n: number) =>
+    new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 0 }).format(n / 100);
+
+  const simCards = result
+    ? [
+        { label: t("simCardSystem"), value: `${fmt(result.systemKwp, 1)} kWp` },
+        { label: t("simCardProduction"), value: `${fmt(result.annualProduction)} kWh` },
+      ]
+    : undefined;
 
   return (
     <div className={styles.wrap}>
@@ -161,11 +233,69 @@ export function Calculator() {
           </span>
         </label>
 
+        <div className={styles.fieldGrid}>
+          <label className={styles.label}>
+            {t("orientationLabel")}
+            <Segmented
+              value={orientation}
+              options={ORIENTATIONS}
+              onChange={setOrientation}
+              format={(o) => t(ORIENTATION_KEY[o])}
+              label={t("orientationLabel")}
+            />
+          </label>
+          <label className={styles.label}>
+            {t("pitchLabel")}
+            <Segmented
+              value={pitch}
+              options={ROOF_PITCHES}
+              onChange={setPitch}
+              format={(p) => t(PITCH_KEY[p])}
+              label={t("pitchLabel")}
+            />
+          </label>
+        </div>
+
+        <label className={styles.label}>
+          <span className={styles.rangeHead}>
+            {t("dayUseLabel")}
+            <span className={styles.rangeValue}>{fmtPct(dayUse)}</span>
+          </span>
+          <input
+            type="range"
+            className={styles.range}
+            min={20}
+            max={80}
+            step={5}
+            value={dayUse}
+            onChange={(e) => setDayUse(Number(e.target.value))}
+            aria-label={t("dayUseLabel")}
+          />
+          <span className={styles.rangeHint}>{t("dayUseHint")}</span>
+        </label>
+
+        <label className={styles.label}>
+          {t("batteryLabel")}
+          <Segmented
+            value={batteryKwh}
+            options={BATTERY_OPTIONS}
+            onChange={setBatteryKwh}
+            format={(v) => (v === 0 ? t("batteryNone") : `${v} kWh`)}
+            label={t("batteryLabel")}
+          />
+        </label>
+
         <p className={styles.note}>{t("note")}</p>
       </div>
 
       <div className={styles.result}>
-        <RoofSim3D installed={result ? result.panelsInstalled : 0} max={capacity} />
+        <RoofSim3D
+          installed={result ? result.panelsInstalled : 0}
+          max={capacity}
+          pitch={pitch}
+          batteryKwh={batteryKwh}
+          cards={simCards}
+        />
         <p className={styles.simCaption}>
           {result
             ? t("simInstalled", {
@@ -187,10 +317,8 @@ export function Calculator() {
             )}
             <div className={styles.gauges}>
               <Gauge
-                pct={Math.min(1, result.annualProduction / result.annualConsumption)}
-                value={`%${fmt(
-                  Math.min(100, (result.annualProduction / result.annualConsumption) * 100),
-                )}`}
+                pct={Math.min(1, result.coverageRatio)}
+                value={fmtPct(Math.min(100, result.coverageRatio * 100))}
                 label={t("coverageLabel")}
               />
               <Gauge

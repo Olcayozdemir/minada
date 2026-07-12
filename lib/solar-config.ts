@@ -10,6 +10,26 @@ export const SOLAR_CONFIG = {
   lifespanYears: 25,
   panelKwp: 0.455, // kWp per module, ~455W panel (PLACEHOLDER)
   panelAreaM2: 2.4, // usable roof area per module incl. spacing (PLACEHOLDER)
+  batteryCostPerKwh: 18000, // ₺/kWh installed storage (PLACEHOLDER)
+  batteryCyclesPerYear: 300, // effective full day→night shift cycles (PLACEHOLDER)
+};
+
+/** Yield multiplier by roof orientation — PLACEHOLDER. */
+export const ORIENTATIONS = ["south", "southMix", "eastWest"] as const;
+export type Orientation = (typeof ORIENTATIONS)[number];
+export const ORIENTATION_FACTOR: Record<Orientation, number> = {
+  south: 1,
+  southMix: 0.96,
+  eastWest: 0.85,
+};
+
+/** Yield multiplier by roof pitch — PLACEHOLDER. */
+export const ROOF_PITCHES = ["flat", "moderate", "steep"] as const;
+export type RoofPitch = (typeof ROOF_PITCHES)[number];
+export const PITCH_FACTOR: Record<RoofPitch, number> = {
+  flat: 0.92,
+  moderate: 1,
+  steep: 0.96,
 };
 
 // Regional specific yield (kWh/kWp/year) — PLACEHOLDER, roughly by region.
@@ -32,6 +52,14 @@ export type CalcInput = {
   cityId: CityId;
   /** Usable roof area in m². When set, the system is clamped to what fits. */
   roofAreaM2?: number;
+  /** Roof orientation — scales yield. Defaults to south. */
+  orientation?: Orientation;
+  /** Roof pitch — scales yield. Defaults to moderate. */
+  pitch?: RoofPitch;
+  /** Share of consumption that happens while the sun is up (0–1). Default 0.5. */
+  dayUseRatio?: number;
+  /** Battery capacity in kWh; 0 or undefined = no storage. */
+  batteryKwh?: number;
 };
 
 export type CalcResult = {
@@ -52,6 +80,12 @@ export type CalcResult = {
   /** Installed (possibly clamped) system size — all economics use this. */
   systemKwp: number;
   annualProduction: number;
+  /** kWh/year the household actually offsets (direct use + battery shift). */
+  selfConsumed: number;
+  /** selfConsumed / annualConsumption — what the coverage gauge shows. */
+  coverageRatio: number;
+  batteryKwh: number;
+  batteryCost: number;
   systemCost: number;
   costLow: number;
   costHigh: number;
@@ -65,12 +99,27 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
   const city = CITIES.find((c) => c.id === input.cityId);
   if (!city || !Number.isFinite(input.value) || input.value <= 0) return null;
 
-  const { avgTariff, costPerKwp, costRange, co2Factor, lifespanYears, panelKwp, panelAreaM2 } =
-    SOLAR_CONFIG;
+  const {
+    avgTariff,
+    costPerKwp,
+    costRange,
+    co2Factor,
+    lifespanYears,
+    panelKwp,
+    panelAreaM2,
+    batteryCostPerKwh,
+    batteryCyclesPerYear,
+  } = SOLAR_CONFIG;
+
+  const orientationFactor = ORIENTATION_FACTOR[input.orientation ?? "south"];
+  const pitchFactor = PITCH_FACTOR[input.pitch ?? "moderate"];
+  const dayUseRatio = Math.min(1, Math.max(0, input.dayUseRatio ?? 0.5));
+  const batteryKwh = Math.max(0, input.batteryKwh ?? 0);
+  const specificYield = city.specificYield * orientationFactor * pitchFactor;
 
   const monthlyKwh = input.mode === "bill" ? input.value / avgTariff : input.value;
   const annualConsumption = monthlyKwh * 12;
-  const idealKwp = annualConsumption / city.specificYield;
+  const idealKwp = annualConsumption / specificYield;
 
   const panelsNeeded = Math.max(1, Math.round(idealKwp / panelKwp));
   const panelsMax =
@@ -81,9 +130,19 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
   const roofLimited = panelsInstalled < panelsNeeded;
 
   const systemKwp = panelsInstalled * panelKwp;
-  const annualProduction = systemKwp * city.specificYield;
-  const systemCost = systemKwp * costPerKwp;
-  const annualSavings = Math.min(annualProduction, annualConsumption) * avgTariff;
+  const annualProduction = systemKwp * specificYield;
+
+  // Self-consumption: what's produced while people are home is used directly;
+  // a battery shifts (part of) the rest into the evening, capped by how many
+  // full cycles a year it can realistically run.
+  const usableProduction = Math.min(annualProduction, annualConsumption);
+  const directUse = usableProduction * dayUseRatio;
+  const batteryShifted = Math.min(usableProduction - directUse, batteryKwh * batteryCyclesPerYear);
+  const selfConsumed = directUse + batteryShifted;
+
+  const batteryCost = batteryKwh * batteryCostPerKwh;
+  const systemCost = systemKwp * costPerKwp + batteryCost;
+  const annualSavings = selfConsumed * avgTariff;
   const paybackYears = annualSavings > 0 ? systemCost / annualSavings : 0;
   const savings25yr = annualSavings * lifespanYears;
   const co2Savings = annualProduction * co2Factor;
@@ -99,6 +158,10 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
     roofAreaNeededM2: Math.ceil(panelsNeeded * panelAreaM2),
     systemKwp,
     annualProduction,
+    selfConsumed,
+    coverageRatio: annualConsumption > 0 ? selfConsumed / annualConsumption : 0,
+    batteryKwh,
+    batteryCost,
     systemCost,
     costLow: systemCost * (1 - costRange),
     costHigh: systemCost * (1 + costRange),

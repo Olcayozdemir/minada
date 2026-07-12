@@ -439,7 +439,21 @@
     "simIdle": "Çatınıza ≈ {count} panel sığıyor — tabloyu görmek için fatura ve şehir girin",
     "roofLimited": "İhtiyacınız {needed} panel; tam sistem için yaklaşık {area} m² çatı alanı gerekir. Tablo, sığan sisteme göre hesaplandı.",
     "coverageLabel": "tüketim karşılama",
-    "paybackShort": "geri ödeme"
+    "paybackShort": "geri ödeme",
+    "orientationLabel": "Çatı yönü",
+    "orientationSouth": "Güney",
+    "orientationSouthMix": "GD / GB",
+    "orientationEastWest": "Doğu-Batı",
+    "pitchLabel": "Çatı eğimi",
+    "pitchFlat": "Düz",
+    "pitchModerate": "Orta",
+    "pitchSteep": "Dik",
+    "dayUseLabel": "Gündüz tüketim payı",
+    "dayUseHint": "Elektriğinizin güneş varken kullanılan payı; kalan üretimi batarya akşama taşır.",
+    "batteryLabel": "Batarya depolama",
+    "batteryNone": "Yok",
+    "simCardSystem": "Kurulu güç",
+    "simCardProduction": "Yıllık üretim"
   },
   "Contact": {
     "eyebrow": "İletişim",
