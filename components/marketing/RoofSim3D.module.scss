@@ -1,0 +1,62 @@
+.scene {
+  position: relative;
+  height: clamp(250px, 26vw, 340px);
+  /* Bleed out of the result panel's padding — full-width stage, no cropped edges. */
+  margin: calc(-1 * var(--sim-pad, 0px)) calc(-1 * var(--sim-pad, 0px)) 4px;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  /* Ambient stage glows behind the transparent canvas — teal low-left,
+     warm right, like the reference render. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 52% at 10% 80%, rgba(96, 214, 234, 0.16), transparent 70%),
+      radial-gradient(48% 44% at 90% 28%, rgba(242, 168, 44, 0.13), transparent 70%);
+  }
+}
+
+/* Floating glass stat cards, pinned over the scene's left edge */
+.cards {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.card {
+  min-width: 128px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(16, 42, 74, 0.38);
+  border: 1px solid rgba(214, 234, 255, 0.35);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  box-shadow: 0 8px 24px rgba(2, 10, 24, 0.35);
+
+  span {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(217, 236, 255, 0.75);
+  }
+
+  strong {
+    display: block;
+    margin-top: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+}

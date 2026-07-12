@@ -86,19 +86,63 @@
 .select {
   margin-top: 8px;
   width: 100%;
-  padding: 13px 14px;
+  padding: 13px 42px 13px 14px;
   font-size: 16px;
   font-family: var(--font-body), sans-serif;
   color: var(--ink);
   border: 1px solid rgba(16, 38, 43, 0.16);
   border-radius: var(--r-md);
-  background: #fff;
+  cursor: pointer;
+  /* Custom chevron: the native arrow hugs the edge and clashes with the design. */
+  appearance: none;
+  background:
+    #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5 7 7.5 13 1.5' fill='none' stroke='%2343555a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat right 16px center;
 
   &:focus-visible {
     border-color: var(--gold);
     box-shadow: 0 0 0 3px rgba(242, 168, 44, 0.18);
     outline: none;
   }
+}
+
+/* Yön + eğim side by side */
+.fieldGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Segmented pill control (yön / eğim / batarya) */
+.seg {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 4px;
+  border-radius: var(--r-pill);
+  background: var(--sand-50);
+  border: 1px solid rgba(16, 38, 43, 0.1);
+}
+
+.segBtn {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 6px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: var(--r-pill);
+  color: var(--ink-2);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.segActive {
+  background: var(--green-800);
+  color: #fff;
 }
 
 /* Roof-area slider */
@@ -161,7 +205,9 @@
 }
 
 .result {
-  padding: clamp(24px, 4vw, 40px);
+  /* Shared with the 3D sim, which bleeds out of this padding (full width). */
+  --sim-pad: clamp(24px, 4vw, 40px);
+  padding: var(--sim-pad);
   background: linear-gradient(160deg, var(--green-700), var(--green-850));
   color: var(--on-dark);
   display: flex;
@@ -220,6 +266,12 @@
   .gauges {
     grid-template-columns: 1fr;
   }
+}
+
+/* Holds the 3D sim's height while the three.js chunk streams in. */
+.simLoading {
+  height: clamp(250px, 26vw, 340px);
+  margin: calc(-1 * var(--sim-pad)) calc(-1 * var(--sim-pad)) 4px;
 }
 
 /* Simulation caption + roof-limited notice */
@@ -333,5 +385,12 @@
 @include bp-down(760px) {
   .wrap {
     grid-template-columns: 1fr;
+  }
+}
+
+@include bp-down(420px) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
