@@ -195,10 +195,9 @@
     },
     "intro": {
       "eyebrow": "MİNADA kimdir",
-      "lead": "Elektrik, artık faturayla gelen bir gider değil —",
-      "boldPart": "kendi çatınızın ürettiği bir güç.",
-      "rest": "MİNADA; konuttan işletmeye güneş, depolama, ısı pompası ve şarj sistemlerini tek elden tasarlar, kurar ve işletir.",
-      "muted": "Keşiften devreye almaya kadar tüm süreç bizde; siz sadece tasarrufun ve konforun tadını çıkarın.",
+      "lead": "Elektrik artık bir gider değil,",
+      "boldPart": "kendi çatınızın ürettiği bağımsız bir güç.",
+      "rest": "MİNADA Enerji ile konuttan işletmeye; güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj istasyonlarını tek elden tasarlıyor, kuruyor ve işletiyoruz.",
       "chipValue": "5 çözüm",
       "chipLabel": "tek çatı altında"
     },

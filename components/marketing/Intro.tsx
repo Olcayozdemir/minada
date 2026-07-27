@@ -29,7 +29,6 @@ export async function Intro() {
           <p className={styles.eyebrow}>{t("eyebrow")}</p>
           <p className={styles.lead}>
             {t("lead")} <em>{t("boldPart")}</em> {t("rest")}
-            <span className={styles.muted}> {t("muted")}</span>
           </p>
         </div>
       </div>
