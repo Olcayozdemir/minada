@@ -1,5 +1,11 @@
 @use "../../styles/mixins" as *;
 
+/* Six-card grid runs tall, so the section gives back some of the default
+   .section chrome — double class beats .section's padding (FaqTeaser pattern). */
+.deco.deco {
+  padding-block: clamp(56px, 6.5vw, 88px);
+}
+
 /* Subtle dot grid + gold wash — quiet texture behind the step cards. */
 .deco::before {
   content: "";
@@ -27,7 +33,7 @@
      from the reader, so all six steps are on screen at once now. */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-10) var(--space-8);
+  gap: var(--space-8);
 
   @include bp-down(900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -50,7 +56,9 @@
 
 .media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  /* Wider crop than the 4/3 sources: shaves ~80px per row off the section
+     without touching the grid. The scenic shots survive the trim fine. */
+  aspect-ratio: 16 / 9;
   border-radius: var(--r-lg);
   overflow: hidden;
   background: linear-gradient(160deg, var(--green-700), var(--green-850));
@@ -102,7 +110,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  margin-top: var(--space-5);
+  margin-top: var(--space-3);
 }
 
 /* Oversized outlined numeral — fills gold as the step enters the frame. */
