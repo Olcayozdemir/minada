@@ -149,10 +149,10 @@
      the end (see .d1/.d2). Scaled down from the full display size.
      The height term is the second half of the roofline fix above: the words have
      to fit in the sky, and the sky is bounded by viewport height, not width.
-     11svh is the largest value that keeps the second line clear of the ridge in
-     both locales; above ~1110px tall the width term wins again and the type is
-     exactly what it is today. */
-  font-size: min(calc(var(--fs-display) * 0.75), 11svh);
+     11svh is the largest value that clears the ridge in both locales, but only
+     just (+20px on a 14" MacBook); 10.5 doubles that margin for 5% of type, and
+     above ~1165px tall the width term wins again and nothing changes at all. */
+  font-size: min(calc(var(--fs-display) * 0.75), 10.5svh);
   line-height: 0.92;
   letter-spacing: -0.03em;
   font-weight: 700;
@@ -364,10 +364,9 @@
 }
 
 @include bp-down(760px) {
-  .hero {
-    min-height: 86svh;
-  }
-
+  /* Phones kept 86svh, which left the same bare strip of page surface under the
+     photo that 95svh left on desktop — 118px of it on a 844px screen. Same fix:
+     the photo owns the fold, the next section starts below it. */
   .bottom {
     flex-direction: column;
     align-items: stretch;
