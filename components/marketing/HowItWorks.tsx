@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import clsx from "clsx";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
@@ -40,7 +41,16 @@ function stepArt(art: string | null): string | null {
   return existsSync(join(process.cwd(), "public", rel)) ? `/${rel}` : null;
 }
 
-export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+// `compact` drops the photos and leaves the index caption (numeral, rule,
+// title, standfirst) — the homepage summary. The full photo version lives on
+// /nasil-calisir, which the nav already links to.
+export async function HowItWorks({
+  headingAs = "h2",
+  compact = false,
+}: {
+  headingAs?: "h1" | "h2";
+  compact?: boolean;
+}) {
   const t = await getTranslations("Home.how");
 
   return (
@@ -53,32 +63,34 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
           intro={t("intro")}
         />
       </div>
-      <ol className={styles.grid}>
+      <ol className={clsx(styles.grid, compact && styles.compact)}>
         {STEPS.map(({ id, Icon, art }, i) => {
-          const img = stepImage(id);
-          const artImg = stepArt(art);
+          const img = compact ? null : stepImage(id);
+          const artImg = compact ? null : stepArt(art);
           return (
             <li key={id} className={styles.step}>
-              <div className={styles.media}>
-                {img ? (
-                  <Image
-                    src={img}
-                    alt=""
-                    fill
-                    sizes="(max-width: 560px) 88vw, (max-width: 900px) 44vw, 30vw"
-                    className={styles.mediaImg}
-                  />
-                ) : (
-                  <div className={styles.placeholder} aria-hidden="true">
-                    {artImg ? (
-                      <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
-                    ) : (
-                      <Icon size={30} />
-                    )}
-                  </div>
-                )}
-                <span className={styles.scrim} aria-hidden="true" />
-              </div>
+              {compact ? null : (
+                <div className={styles.media}>
+                  {img ? (
+                    <Image
+                      src={img}
+                      alt=""
+                      fill
+                      sizes="(max-width: 560px) 88vw, (max-width: 900px) 44vw, 30vw"
+                      className={styles.mediaImg}
+                    />
+                  ) : (
+                    <div className={styles.placeholder} aria-hidden="true">
+                      {artImg ? (
+                        <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
+                      ) : (
+                        <Icon size={30} />
+                      )}
+                    </div>
+                  )}
+                  <span className={styles.scrim} aria-hidden="true" />
+                </div>
+              )}
               {/* Editorial index line — the <ol> already carries order semantically. */}
               <div className={styles.meta} aria-hidden="true">
                 <span className={styles.num}>{`0${i + 1}`}</span>

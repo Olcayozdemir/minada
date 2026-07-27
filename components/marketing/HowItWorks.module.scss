@@ -45,6 +45,18 @@
   }
 }
 
+/* Compact (homepage): no photo, so the numeral row is the card's top edge and
+   carries the visual weight alone — slightly larger to hold the line. */
+.compact {
+  .meta {
+    margin-top: 0;
+  }
+
+  .num {
+    font-size: 3rem;
+  }
+}
+
 /* Editorial figure, not a boxed card: bare photo block + magazine-index
    caption (oversized outlined numeral, hairline rule, title, standfirst). */
 .step {

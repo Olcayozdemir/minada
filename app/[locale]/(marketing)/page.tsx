@@ -49,7 +49,8 @@ export default async function HomePage({
         <Hero />
         <Intro />
         <Services />
-        <HowItWorks />
+        {/* Özet — fotoğraflı tam anlatım /nasil-calisir'da. */}
+        <HowItWorks compact />
         <ApplicationAreas />
         <CalculatorTeaser />
         <ProductsTeaser />
