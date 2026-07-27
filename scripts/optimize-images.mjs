@@ -61,7 +61,12 @@ for (const file of files) {
 
   const input = await readFile(file);
   const meta = await sharp(input).metadata();
-  const png = extname(file).toLowerCase() === ".png";
+
+  // Kodlayıcıyı uzantıya göre DEĞİL, dosyanın gerçek içeriğine göre seç.
+  // Bu repoda .jpeg uzantılı ama içi alfa kanallı PNG olan bir dosya vardı
+  // (camp/portable-tile.jpeg); uzantıya bakan ilk sürüm onu JPEG'e çevirdi ve
+  // şeffaf zemin siyaha düzleşti. Alfa varsa asla JPEG'e gitmiyoruz.
+  const keepPng = meta.format === "png" || meta.hasAlpha;
 
   let pipe = sharp(input).resize({
     width: MAX_EDGE,
@@ -69,7 +74,7 @@ for (const file of files) {
     fit: "inside",
     withoutEnlargement: true,
   });
-  pipe = png
+  pipe = keepPng
     ? pipe.png({ compressionLevel: 9, effort: 10 })
     : pipe.jpeg({ quality: 88, mozjpeg: true });
 
