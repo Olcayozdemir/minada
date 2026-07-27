@@ -8,17 +8,16 @@ export async function FinalCta() {
   const t = await getTranslations("Home.finalCta");
   const tc = await getTranslations("Common");
 
-  // Art direction: portrait night-field render on phones, widescreen above.
+  // Tek kaynak: gündüz sahnesi her genişlikte. Eski dikey gece render'ı
+  // (cta-mobile.jpeg) masaüstü gündüze dönünce sahne olarak eşleşmez kaldı —
+  // 760px altında bambaşka bir görsel açılıyordu. Eşleşen dikey gündüz render'ı
+  // gelince <source media="(max-width: 760px)"> satırı geri gelir.
   const common = { alt: "", sizes: "100vw", fill: true } as const;
   const { props: photo } = getImageProps({ ...common, src: "/images/v2/cta-2.jpg" });
-  const {
-    props: { srcSet: photoMobile },
-  } = getImageProps({ ...common, src: "/images/v2/cta-mobile.jpeg" });
 
   return (
     <section className={styles.cta}>
       <picture>
-        <source media="(max-width: 760px)" srcSet={photoMobile} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img {...photo} className={styles.photo} />
       </picture>
