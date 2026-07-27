@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "seed:products": "node scripts/seed-products.mjs",
-    "seed:posts": "node scripts/seed-posts.mjs"
+    "seed:posts": "node scripts/seed-posts.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
