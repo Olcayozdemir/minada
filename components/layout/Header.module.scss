@@ -38,13 +38,25 @@
 /* Off the photo the pill goes solid white. It used to be white at 85%, which
    let whatever ran underneath through: white over the white sections, grey over
    the page surface and the alt bands — one bar reading three colours. */
-[data-scrolled] .pill {
+%pill-light {
   color: var(--ink);
   background: var(--surface);
   border-color: var(--line);
   box-shadow: var(--shadow-card-light);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+}
+
+[data-scrolled] .pill {
+  @extend %pill-light;
+}
+
+/* Pages with no hero photo have nothing dark to sit on, so the light state is
+   correct from the very first paint. It used to wait for the scroll listener to
+   mount, which meant a beat of navy glass over a near-white page — i.e. grey.
+   Matched in CSS instead so it never renders wrong, even before hydration. */
+:global(body):not(:has([data-hero])) .pill {
+  @extend %pill-light;
 }
 
 .nav {

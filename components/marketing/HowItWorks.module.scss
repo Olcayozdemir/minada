@@ -15,57 +15,27 @@
   mask-image: linear-gradient(180deg, black 60%, transparent);
 }
 
-/* ---- scroll stage ------------------------------------------------------ */
-.stage {
-  position: relative;
-}
-
 .head {
-  margin-bottom: var(--space-6);
-}
-
-.sticky {
-  position: relative;
-}
-
-/* Progress line under the heading — only meaningful while the pinned slide
-   is running, so it stays hidden until JS marks the stage. */
-.track {
-  display: none;
-  position: relative;
-  height: 3px;
-  border-radius: var(--r-pill);
-  background: var(--line);
   margin-bottom: var(--space-8);
-  overflow: hidden;
 }
 
-.fill {
-  position: absolute;
-  inset: 0;
-  transform-origin: left center;
-  transform: scaleX(0.02);
-  background: linear-gradient(90deg, var(--gold), var(--gold-300));
-  border-radius: inherit;
-  transition: transform 0.12s linear;
-}
-
-/* ---- step row ---------------------------------------------------------- */
+/* ---- step grid --------------------------------------------------------- */
 .grid {
   @include list-reset;
-  /* One row for every step. Without the pinned JS below this is a native,
-     swipeable horizontal strip; the JS upgrades it to a scroll-driven slide. */
-  display: flex;
-  flex-wrap: nowrap;
-  gap: var(--space-8);
-  overflow-x: auto;
-  overscroll-behavior-x: contain; /* don't chain into back-nav gestures */
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
+  /* Two rows of three. This used to be a single row pinned to the viewport,
+     sliding sideways on scroll — the slide read as the page being taken away
+     from the reader, so all six steps are on screen at once now. */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-10) var(--space-8);
 
-  &::-webkit-scrollbar {
-    display: none; /* WebKit — hide the bar, keep the swipe */
+  @include bp-down(900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
   }
 }
 
@@ -73,14 +43,9 @@
    caption (oversized outlined numeral, hairline rule, title, standfirst). */
 .step {
   position: relative;
-  flex: 0 0 clamp(260px, 30vw, 350px);
-  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease,
-    filter 0.35s ease;
+  transition: transform 0.35s ease;
 }
 
 .media {
@@ -203,71 +168,3 @@
   }
 }
 
-/* ---- scroll-driven pinned slide (only when JS is active) --------------- */
-.stage[data-fx] {
-  /* One screen to read + a runway (set in JS) long enough to slide the whole
-     row past before the page scrolls on. */
-  min-height: calc(100svh + var(--travel, 120vh));
-
-  .track {
-    display: block;
-  }
-
-  .sticky {
-    position: sticky;
-    top: 0;
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-block: var(--space-8);
-    overflow: hidden; /* clip the overflowing row to the container edge */
-  }
-
-  .grid {
-    overflow: visible; /* JS drives the slide by transform, not native scroll */
-    scroll-snap-type: none;
-    will-change: transform;
-  }
-
-  /* Steps rest dimmed and light up as they slide into the frame. */
-  .step {
-    opacity: 0.45;
-    filter: saturate(0.5);
-  }
-
-  .step[data-on] {
-    opacity: 1;
-    filter: none;
-    transform: translateY(-6px);
-
-    .media {
-      box-shadow: var(--shadow-card-light);
-    }
-
-    .mediaImg {
-      transform: scale(1.045);
-    }
-
-    .num {
-      color: var(--gold-500);
-      -webkit-text-stroke-color: var(--gold-500);
-    }
-
-    .rule::after {
-      transform: scaleX(1);
-    }
-  }
-}
-
-/* ---- mobile sizing ----------------------------------------------------- */
-@include bp-down(760px) {
-  .grid {
-    padding-inline: 8vw;
-    scroll-padding-inline: 8vw;
-  }
-
-  .step {
-    flex-basis: 80vw;
-  }
-}

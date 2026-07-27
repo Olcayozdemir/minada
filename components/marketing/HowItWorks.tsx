@@ -12,7 +12,6 @@ import {
   IconInstall,
   IconActivity,
 } from "@/components/ui/icons";
-import { HowScrollFx } from "./HowScrollFx";
 import styles from "./HowItWorks.module.scss";
 
 // Six delivery steps, survey → O&M. `art` reuses the illustrated icons from
@@ -46,18 +45,15 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
 
   return (
     <Section tone="light" id="nasil-calisir" className={styles.deco}>
-      <HowScrollFx
-        heading={
-          <div className={styles.head}>
-            <SectionHeading
-              as={headingAs}
-              eyebrow={t("eyebrow")}
-              title={t("title")}
-              intro={t("intro")}
-            />
-          </div>
-        }
-      >
+      <div className={styles.head}>
+        <SectionHeading
+          as={headingAs}
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          intro={t("intro")}
+        />
+      </div>
+      <ol className={styles.grid}>
         {STEPS.map(({ id, Icon, art }, i) => {
           const img = stepImage(id);
           const artImg = stepArt(art);
@@ -69,7 +65,7 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
                     src={img}
                     alt=""
                     fill
-                    sizes="(max-width: 760px) 82vw, 24vw"
+                    sizes="(max-width: 560px) 88vw, (max-width: 900px) 44vw, 30vw"
                     className={styles.mediaImg}
                   />
                 ) : (
@@ -95,7 +91,7 @@ export async function HowItWorks({ headingAs = "h2" }: { headingAs?: "h1" | "h2"
             </li>
           );
         })}
-      </HowScrollFx>
+      </ol>
     </Section>
   );
 }
