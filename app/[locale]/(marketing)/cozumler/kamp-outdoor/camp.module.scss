@@ -215,12 +215,12 @@
   }
 }
 
-/* Lit stage (light) — same grammar as the catalog tiles. */
+/* Lit stage (light) — same grammar as the catalog tiles, and now the same
+   proportions: a fixed 150px height left the product at less than half the size
+   it has on the catalog page in an equally wide card. */
 .shelfStage {
-  display: grid;
-  place-items: center;
-  height: 150px;
-  padding: var(--space-3);
+  position: relative;
+  aspect-ratio: 16 / 11;
   background:
     radial-gradient(120% 110% at 82% 0%, rgba(242, 168, 44, 0.12), transparent 62%),
     radial-gradient(rgba(18, 36, 63, 0.05) 1px, transparent 1.3px),
@@ -231,10 +231,14 @@
     auto;
 }
 
+/* Absolute so the square product photo can't grow the stage past its ratio;
+   padding insets the content box, which is what object-fit fits into. */
 .shelfImg {
-  width: auto;
-  max-width: 88%;
-  height: 124px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-4);
   object-fit: contain;
   /* Beyaz zeminli ürün fotoğrafları sahneye erisin (beyaz kutu görünmesin). */
   mix-blend-mode: multiply;

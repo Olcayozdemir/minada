@@ -122,11 +122,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                   {g.image ? (
                     <span className={styles.shelfStage}>
                       <Image
-                        src={typeof g.image === "string" ? g.image : coverSrc(g.image, 360)}
+                        src={typeof g.image === "string" ? g.image : coverSrc(g.image, 800)}
                         alt=""
-                        width={360}
-                        height={240}
-                        sizes="(max-width: 700px) 60vw, 220px"
+                        width={800}
+                        height={550}
+                        sizes="(max-width: 520px) 88vw, (max-width: 860px) 44vw, 30vw"
                         className={styles.shelfImg}
                       />
                     </span>
