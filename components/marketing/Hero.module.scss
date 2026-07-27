@@ -19,7 +19,6 @@
   align-items: stretch;
   overflow: hidden;
   color: var(--on-dark);
-  border-radius: 0 0 var(--r-xl) var(--r-xl);
 }
 
 .photo {
@@ -253,6 +252,7 @@
 /* Mobile-only quiet link to the calculator (replaces the second pill). */
 .calcLink {
   display: none;
+  position: relative;
   align-items: center;
   gap: 6px;
   margin-top: var(--space-4);
@@ -262,6 +262,13 @@
 
   svg {
     color: var(--gold-300);
+  }
+
+  /* A 24px line of text is not a finger target; grow the hit area, not the type. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -11px -12px;
   }
 }
 

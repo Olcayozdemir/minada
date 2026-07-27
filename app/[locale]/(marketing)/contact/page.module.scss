@@ -41,8 +41,24 @@
     color: var(--on-dark);
   }
 
+  a {
+    position: relative;
+  }
+
   a:hover {
     color: var(--gold-300);
+  }
+
+  /* Phone / e-mail / WhatsApp are the whole point of this column, and they were
+     26px rows. Grow the hit area on touch; the label above stays put. */
+  @include touch {
+    gap: 24px;
+
+    a::before {
+      content: "";
+      position: absolute;
+      inset: -10px -8px;
+    }
   }
 }
 

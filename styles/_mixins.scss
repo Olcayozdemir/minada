@@ -46,6 +46,15 @@
   }
 }
 
+// Finger input, at any width — the right signal for hit areas, since a tablet
+// at 900px needs the same 44px target a phone does while a mouse does not.
+// Use it to grow targets with padding, never to change type or spacing.
+@mixin touch {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+
 // Reset a list/nav to unstyled.
 @mixin list-reset {
   margin: 0;

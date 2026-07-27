@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as *;
+
 .form {
   background: #fff;
   border: 1px solid rgba(16, 38, 43, 0.1);
@@ -103,6 +105,19 @@
     height: 18px;
     flex: 0 0 18px;
     accent-color: var(--gold);
+  }
+
+  /* The label already toggles the box, so the target is this whole paragraph —
+     but 18px is still a mean thing to aim a thumb at. */
+  @include touch {
+    gap: 12px;
+
+    input {
+      margin-top: 1px;
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+    }
   }
 }
 

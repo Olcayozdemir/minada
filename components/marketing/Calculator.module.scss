@@ -33,6 +33,10 @@
   transition:
     background 0.15s ease,
     color 0.15s ease;
+
+  @include touch {
+    min-height: 44px;
+  }
 }
 
 .toggleActive {
@@ -138,6 +142,10 @@
   transition:
     background 0.15s ease,
     color 0.15s ease;
+
+  @include touch {
+    min-height: 44px;
+  }
 }
 
 .segActive {
@@ -186,6 +194,32 @@
     background: #fff;
     border: 2px solid var(--gold-500);
     box-shadow: var(--shadow-soft);
+  }
+
+  /* A 6px-tall input gives a 6px-tall drag zone — you had to land on the bar
+     itself to move the slider. On touch the control becomes 44px and the visible
+     bar moves into the track pseudo-element, so it still reads as 6px. */
+  @include touch {
+    height: 44px;
+    margin-top: 0;
+    background: none;
+
+    &::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: var(--r-pill);
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-300) 100%);
+    }
+
+    /* Centre the 22px thumb on the 6px track: (22 - 6) / 2. */
+    &::-webkit-slider-thumb {
+      margin-top: -8px;
+    }
+
+    &::-moz-range-track {
+      height: 6px;
+      border-radius: var(--r-pill);
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-300) 100%);
+    }
   }
 }
 

@@ -1,7 +1,20 @@
+@use "../../styles/mixins" as *;
+
 .logo {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 11px;
+}
+
+/* The mark is 30px tall, so the link was a 32px target. Grow the hit area on
+   touch without moving the mark or the wordmark. */
+@include touch {
+  .logo::before {
+    content: "";
+    position: absolute;
+    inset: -7px -4px;
+  }
 }
 
 .chip {

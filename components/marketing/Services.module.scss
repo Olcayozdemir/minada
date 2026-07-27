@@ -27,6 +27,11 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    /* A scroll container clips both axes, so the card's -4px hover lift and its
+       gold border were being cut off along the top edge. Keep headroom and take
+       it back with the margin so nothing moves. */
+    padding-top: 8px;
+    margin-top: -8px;
     padding-bottom: var(--space-3);
     margin-inline: calc(var(--space-4) * -1);
     padding-inline: var(--space-4);

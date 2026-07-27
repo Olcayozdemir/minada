@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  /* The md size landed at 43px, one pixel short of a comfortable finger target. */
+  min-height: 44px;
   font-family: var(--font-body), sans-serif;
   font-weight: 700;
   line-height: 1;

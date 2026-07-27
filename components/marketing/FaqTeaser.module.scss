@@ -85,6 +85,7 @@
 }
 
 .more {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -96,5 +97,12 @@
 
   &:hover {
     gap: 11px;
+  }
+
+  /* A 24px line of text is not a finger target; grow the hit area, not the type. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -11px -12px;
   }
 }

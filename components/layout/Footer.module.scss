@@ -139,6 +139,7 @@
 }
 
 .contactLink {
+  position: relative;
   font-size: 15px;
   font-weight: 600;
   color: var(--on-dark);
@@ -173,10 +174,54 @@
 }
 
 .legalLink {
+  position: relative;
   color: var(--on-dark-3);
 
   &:hover {
     color: var(--on-dark-2);
+  }
+}
+
+/* Finger targets. These link rows are 22-24px of text — right at the WCAG floor
+   and nowhere near comfortable. On touch the padding does the growing and the
+   gap goes to zero, so every row is exactly 44px and no two hit areas overlap
+   (an overlap lets one row steal its neighbour's tap). Short words like "SSS"
+   get horizontal padding too, pulled back by a negative margin so the column
+   keeps its left edge. */
+@include touch {
+  .col {
+    gap: 0;
+  }
+
+  .colLink,
+  .contactLink {
+    padding-block: 10px;
+    padding-inline: 8px;
+    margin-inline: -8px;
+    min-width: 44px;
+  }
+
+  /* The underline was 3px under the text; keep it there, not under the padding. */
+  .colLink::after {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    bottom: 7px;
+  }
+
+  .contactCard {
+    gap: 0;
+  }
+
+  .legalLink {
+    padding-block: 12px;
+    padding-inline: 8px;
+    margin-inline: -8px;
+  }
+
+  .socialLink {
+    width: 44px;
+    height: 44px;
   }
 }
 
