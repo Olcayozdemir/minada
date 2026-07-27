@@ -55,6 +55,26 @@
   .num {
     font-size: 3rem;
   }
+
+  /* Phones keep two columns. These are index lines, not photo cards — six
+     full-width rows read as an endless list; a 2x3 index scans in one screen.
+     Type steps down to sit in the ~170px column. */
+  @include bp-down(560px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6) var(--space-5);
+
+    .num {
+      font-size: 2rem;
+    }
+
+    .stepTitle {
+      font-size: 1rem;
+    }
+
+    .stepDesc {
+      font-size: 0.85rem;
+    }
+  }
 }
 
 /* Editorial figure, not a boxed card: bare photo block + magazine-index
