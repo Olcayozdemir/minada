@@ -17,7 +17,7 @@ const DOORS: ReadonlyArray<{
   w: number;
   h: number;
 }> = [
-  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/v2/service-solar.png", w: 1920, h: 1072 },
+  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/v2/service-solar.png", w: 1826, h: 1478 },
   { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/v2/service-battery.png", w: 1920, h: 1434 },
   { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/v2/service-heatpump.png", w: 1920, h: 1434 },
   { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/v2/service-ev.png", w: 1920, h: 1434 },
