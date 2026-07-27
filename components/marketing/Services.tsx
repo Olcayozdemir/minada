@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,16 +8,20 @@ import type { StaticPathname } from "@/i18n/routing";
 import styles from "./Services.module.scss";
 
 // The five doors: four business lines + camping. Renders as the homepage
-// gateway (dark band) and as the /services hub. Cards carry the flat gold
-// illustration icons the client picked (public/images/services/ — rooftop &
-// bess are the original set; heatpump/evcharge/camp drawn to match). Plain
-// <img>: decorative fixed-size assets, SVGs skip the optimizer.
-const DOORS: ReadonlyArray<{ id: string; href: StaticPathname; img: string }> = [
-  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/services/rooftop.png" },
-  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/services/bess.png" },
-  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/services/heatpump.svg" },
-  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/services/evcharge.svg" },
-  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/services/camp.svg" },
+// gateway (dark band) and as the /services hub. Every door carries one of the
+// isometric diorama renders (alpha PNG, client assets, images/v2/service-*).
+const DOORS: ReadonlyArray<{
+  id: string;
+  href: StaticPathname;
+  img: string;
+  w: number;
+  h: number;
+}> = [
+  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/v2/service-solar.png", w: 1920, h: 1072 },
+  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/v2/service-battery.png", w: 1920, h: 1434 },
+  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/v2/service-heatpump.png", w: 1920, h: 1434 },
+  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/v2/service-ev.png", w: 1920, h: 1434 },
+  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/v2/service-camp.png", w: 1920, h: 1434 },
 ];
 
 export async function Services({
@@ -40,17 +45,16 @@ export async function Services({
         intro={t("intro")}
       />
       <ul className={doors.length === 4 ? `${styles.grid} ${styles.gridFour}` : styles.grid}>
-        {doors.map(({ id, href, img }) => (
+        {doors.map(({ id, href, img, w, h }) => (
           <li key={id}>
             <Link href={href} className={styles.card}>
               <span className={styles.stage} aria-hidden="true">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={img}
                   alt=""
-                  width={256}
-                  height={256}
-                  loading="lazy"
+                  width={w}
+                  height={h}
+                  sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
                   className={styles.stageImg}
                 />
               </span>

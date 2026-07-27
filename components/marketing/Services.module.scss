@@ -82,19 +82,25 @@
   }
 }
 
-/* Lit stage, dark variant — carries the flat gold illustration icons. */
+/* Lit stage, dark variant — carries the isometric diorama renders (alpha PNG). */
 .stage {
   @include lit-stage(dark);
+  position: relative;
   height: 156px;
-  padding: var(--space-3);
 }
 
+/* Absolute + contain, the catalog-tile pattern: the stage's centering grid has
+   an auto row, so a percentage height on the image collapses to auto and the
+   tall 4:3 renders overflowed the box. Padding insets the content box, which
+   is what object-fit fits into. The dioramas bring their own baked shadows,
+   so no synthetic drop-shadow on top. */
 .stageImg {
-  display: block;
-  width: auto;
-  height: 128px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-3);
   object-fit: contain;
-  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.4));
   transition: transform 0.35s ease;
 }
 
