@@ -5,8 +5,7 @@
   /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
   z-index: 2;
   display: grid;
-  /* Card sits on the left so the render's own subject stays uncovered. */
-  place-items: center start;
+  place-items: center;
   padding-block: clamp(72px, 10vw, 140px);
   padding-inline: clamp(var(--space-4), 4vw, var(--space-10));
   overflow: hidden;
@@ -23,7 +22,7 @@
   position: relative;
   z-index: 2;
   max-width: 640px;
-  text-align: left;
+  text-align: center;
   padding: clamp(var(--space-8), 5vw, var(--space-12));
   border-radius: var(--r-xl);
   color: var(--on-dark);
@@ -47,11 +46,13 @@
 .desc {
   color: var(--on-dark-2);
   max-width: 46ch;
+  margin-inline: auto;
 }
 
 .actions {
   margin-top: var(--space-8);
   display: flex;
   gap: var(--space-3);
+  justify-content: center;
   flex-wrap: wrap;
 }
