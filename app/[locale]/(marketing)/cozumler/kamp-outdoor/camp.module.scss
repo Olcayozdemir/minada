@@ -105,6 +105,9 @@
   }
 }
 
+/* Reading card, not a link. It used to lift, take a gold border and zoom its
+   photo on hover — the full vocabulary of a clickable card, with nothing behind
+   it. The scenarios are here to be read, so they now hold still. */
 .sizeCard {
   display: flex;
   flex-direction: column;
@@ -113,18 +116,6 @@
   background: var(--surface);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(242, 168, 44, 0.4);
-
-    .sizeImg {
-      transform: scale(1.04);
-    }
-  }
 }
 
 /* Kit render'ı — cam sahne + teal enerji hattı; kendi ışık zeminiyle gelir,
@@ -140,7 +131,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.35s ease;
 }
 
 .sizeBody {
@@ -248,7 +238,6 @@
   object-fit: contain;
   /* Beyaz zeminli ürün fotoğrafları sahneye erisin (beyaz kutu görünmesin). */
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 10px 16px rgba(16, 42, 67, 0.18));
 }
 
 .shelfTitle {
