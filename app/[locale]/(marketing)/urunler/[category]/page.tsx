@@ -123,11 +123,12 @@ export default async function CategoryPage({
                           src={
                             typeof g.image === "string"
                               ? g.image
-                              : urlFor(g.image).width(640).height(440).url()
+                              : urlFor(g.image).width(800).url()
                           }
                           alt={productName}
-                          width={640}
-                          height={440}
+                          width={800}
+                          height={550}
+                          sizes="(max-width: 680px) 88vw, (max-width: 1020px) 44vw, 30vw"
                           className={styles.img}
                         />
                       ) : (
