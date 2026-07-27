@@ -26,7 +26,6 @@
   background: rgba(10, 26, 48, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(14px) saturate(1.5);
-  -webkit-backdrop-filter: blur(14px) saturate(1.5);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
   transition:
     background 0.25s ease,
@@ -44,7 +43,6 @@
   border-color: var(--line);
   box-shadow: var(--shadow-card-light);
   backdrop-filter: none;
-  -webkit-backdrop-filter: none;
 }
 
 [data-scrolled] .pill {
@@ -112,7 +110,6 @@
   border: 1px solid var(--line);
   box-shadow: var(--shadow-card-light);
   backdrop-filter: blur(14px) saturate(1.5);
-  -webkit-backdrop-filter: blur(14px) saturate(1.5);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
