@@ -104,27 +104,3 @@
   font-weight: 500;
 }
 
-.points {
-  @include list-reset;
-  display: flex;
-  gap: var(--space-6);
-  margin-top: var(--space-6);
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 650;
-    color: var(--ink);
-
-    svg {
-      color: var(--gold-600);
-      flex: none;
-    }
-  }
-
-  @include bp-down(560px) {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-}

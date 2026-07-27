@@ -7,26 +7,6 @@ import { IconArrowRight } from "@/components/ui/icons";
 import { SinkOnScroll } from "./SinkOnScroll";
 import styles from "./Hero.module.scss";
 
-// Gold panel-stroke glyph — the tilted segment motif lifted from the logo,
-// standing in for the "bolt" between the two display words.
-function PanelGlyph({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 44 92" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="heroGold" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="var(--gold-300)" />
-          <stop offset="1" stopColor="var(--gold)" />
-        </linearGradient>
-      </defs>
-      <g transform="skewX(-13)">
-        <rect x="24" y="2" width="15" height="26" rx="4" fill="url(#heroGold)" />
-        <rect x="24" y="33" width="15" height="26" rx="4" fill="url(#heroGold)" />
-        <rect x="24" y="64" width="15" height="26" rx="4" fill="url(#heroGold)" />
-      </g>
-    </svg>
-  );
-}
-
 export async function Hero() {
   const t = await getTranslations("Hero");
   const tc = await getTranslations("Common");
@@ -135,10 +115,7 @@ export async function Hero() {
 
         <SinkOnScroll className={styles.displaySink}>
           <h1 className={styles.display}>
-            <span className={styles.d1}>
-              {t("display1")}
-              <PanelGlyph className={styles.glyph} />
-            </span>
+            <span className={styles.d1}>{t("display1")}</span>
             <span className={styles.d2}>{t("display2")}</span>
           </h1>
         </SinkOnScroll>
@@ -148,7 +125,6 @@ export async function Hero() {
 
         <div className={styles.bottom}>
           <div className={styles.bottomLeft}>
-            <p className={styles.sub}>{t("subtitle")}</p>
             <div className={styles.actions}>
               {/* Survey first; the five-door gateway right below carries segmentation. */}
               <Button href="/contact" size="lg" withArrow>

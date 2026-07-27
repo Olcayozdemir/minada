@@ -5,9 +5,10 @@
   /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
   z-index: 2;
   display: grid;
-  place-items: center;
+  /* Card sits on the left so the render's own subject stays uncovered. */
+  place-items: center start;
   padding-block: clamp(72px, 10vw, 140px);
-  padding-inline: var(--space-4);
+  padding-inline: clamp(var(--space-4), 4vw, var(--space-10));
   overflow: hidden;
   border-radius: var(--r-xl);
   margin: clamp(8px, 1.5vw, 24px);
@@ -17,20 +18,12 @@
   object-fit: cover;
 }
 
-.scrim {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(720px 420px at 50% 55%, rgba(8, 26, 48, 0.55), transparent 75%),
-    linear-gradient(180deg, rgba(8, 26, 48, 0.35), rgba(8, 26, 48, 0.55));
-}
-
 .card {
   @include glass;
   position: relative;
   z-index: 2;
   max-width: 640px;
-  text-align: center;
+  text-align: left;
   padding: clamp(var(--space-8), 5vw, var(--space-12));
   border-radius: var(--r-xl);
   color: var(--on-dark);
@@ -54,13 +47,11 @@
 .desc {
   color: var(--on-dark-2);
   max-width: 46ch;
-  margin-inline: auto;
 }
 
 .actions {
   margin-top: var(--space-8);
   display: flex;
   gap: var(--space-3);
-  justify-content: center;
   flex-wrap: wrap;
 }

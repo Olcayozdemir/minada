@@ -12,7 +12,9 @@
   /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
   z-index: 2;
   margin-top: calc(-1 * var(--header-h));
-  min-height: 95svh;
+  /* Full fold. At 95svh the light page surface showed as a bare strip along the
+     bottom edge — read as a stray white bar, not as "there is more below". */
+  min-height: 100svh;
   display: flex;
   align-items: stretch;
   overflow: hidden;
@@ -26,6 +28,21 @@
      NOTE: base photo and the sky-less overlay share this class so the two
      layers stay pixel-aligned at every viewport. */
   object-position: 52% 62%;
+}
+
+/* Laptop-class viewports (MacBook and down): the frame gets wider than the photo
+   is tall, so `cover` stops zooming and a 62% vertical anchor starts trimming the
+   sky — which drags the roofline up into the display type and swallows whole
+   letters. Anchor to the top of the frame instead. Above the crossover (~804px
+   tall at this width) there is no vertical slack for the anchor to act on, so
+   this is a no-op there and nothing jumps; below it the crop comes off the gravel
+   foreground, which already sits under the scrim. */
+@include bp-up(761px) {
+  @media (max-height: 846px) {
+    .photo {
+      object-position: 52% 0;
+    }
+  }
 }
 
 /* Lit twin stacked on the base photo. Both share .photo (same object-fit and
@@ -128,9 +145,14 @@
 
 .display {
   position: relative;
-  /* Display box spans the container, so GÜNEŞ can centre and ENERJİSİ sit at
-     the end (see .d1/.d2). Scaled down from the full display size. */
-  font-size: calc(var(--fs-display) * 0.75);
+  /* Display box spans the container, so KENDİ can centre and ENERJİNİZ sit at
+     the end (see .d1/.d2). Scaled down from the full display size.
+     The height term is the second half of the roofline fix above: the words have
+     to fit in the sky, and the sky is bounded by viewport height, not width.
+     11svh is the largest value that keeps the second line clear of the ridge in
+     both locales; above ~1110px tall the width term wins again and the type is
+     exactly what it is today. */
+  font-size: min(calc(var(--fs-display) * 0.75), 11svh);
   line-height: 0.92;
   letter-spacing: -0.03em;
   font-weight: 700;
@@ -150,7 +172,7 @@
   margin-top: -0.08em;
 }
 
-/* Desktop only: nudge GÜNEŞ a touch right of centre; ENERJİSİ a touch smaller. */
+/* Desktop only: nudge KENDİ a touch right of centre; ENERJİNİZ a touch smaller. */
 @include bp-up(761px) {
   .d1 {
     transform: translateX(clamp(1rem, 4vw, 6rem));
@@ -159,17 +181,17 @@
   .d2 {
     font-size: 0.85em;
   }
-}
 
-/* Trailing accent after the first display word — flows with the text, so it is
-   immune to locale word-length and viewport changes (scales via em). */
-.glyph {
-  display: inline-block;
-  height: 0.74em;
-  width: auto;
-  margin-left: 0.14em;
-  vertical-align: -0.02em;
-  filter: drop-shadow(0 10px 30px rgba(242, 168, 44, 0.45));
+  /* Laptop-class heights: the sky left over above the roofline is a wedge that
+     opens to the right, and a centred first line runs straight into the ridge —
+     into the tree line, for the longer English word. Slide it over to the right
+     edge, inset from the second line so the staircase survives. */
+  @media (max-height: 1060px) {
+    .d1 {
+      align-self: flex-end;
+      transform: translateX(-7vw);
+    }
+  }
 }
 
 %chip {
@@ -220,13 +242,6 @@
   flex-direction: column;
   gap: var(--space-5);
   max-width: 52ch;
-}
-
-.sub {
-  max-width: 44ch;
-  font-size: 1.05rem;
-  color: var(--on-dark-2);
-  text-shadow: 0 2px 14px rgba(8, 26, 48, 0.6);
 }
 
 .actions {
@@ -351,12 +366,6 @@
 @include bp-down(760px) {
   .hero {
     min-height: 86svh;
-  }
-
-  /* Radical declutter: type + one CTA breathe over the photo. */
-  .sub,
-  .calcBtn {
-    display: none;
   }
 
   .bottom {

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
-import { IconCheck } from "@/components/ui/icons";
 import styles from "./Intro.module.scss";
 
 export async function Intro() {
@@ -32,14 +31,6 @@ export async function Intro() {
             {t("lead")} <em>{t("boldPart")}</em> {t("rest")}
             <span className={styles.muted}> {t("muted")}</span>
           </p>
-          <ul className={styles.points}>
-            <li>
-              <IconCheck size={16} /> {t("point1")}
-            </li>
-            <li>
-              <IconCheck size={16} /> {t("point2")}
-            </li>
-          </ul>
         </div>
       </div>
     </Section>
