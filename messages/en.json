@@ -68,30 +68,30 @@
     "how": {
       "eyebrow": "How it works",
       "title": "From survey to operation, step by step",
-      "intro": "A transparent, six-step process. You always know what comes next.",
+      "intro": "One goal: an existing home that powers itself. Six transparent steps, and you always know what comes next.",
       "discovery": {
         "title": "Free Survey",
-        "desc": "We assess your roof, consumption and needs on site, and advise you."
+        "desc": "We assess your home and consumption on site and map its self-sufficiency potential."
       },
       "engineering": {
         "title": "Engineering & Feasibility",
-        "desc": "We count every kWh before the first shovel: PVsyst simulation, irradiance analysis and site survey."
+        "desc": "We size production, storage and consumption as one balance, and simulate the outcome first."
       },
       "licensing": {
         "title": "Permitting & Licensing",
-        "desc": "Leave the red tape to us — EPDK filings, DSO applications and the grid-connection letter, start to finish."
+        "desc": "We handle every EPDK and grid-operator filing for you, grid-connection letter included."
       },
       "procurement": {
         "title": "Procurement",
-        "desc": "Only the good stuff reaches site: panels, inverters, cables (DC/AC/MV), mounting structures, distribution boards and switchgear — sourced for you."
+        "desc": "We source every component, panels to batteries, from tier-1 manufacturers."
       },
       "install": {
         "title": "Install & Commission",
-        "desc": "Fast, safe installation by fully-equipped crews with airtight HSE; testing, permits and net-metering are on us."
+        "desc": "We install without turning your home into a construction site, test and switch on."
       },
       "om": {
-        "title": "Monitoring & Maintenance (O&M)",
-        "desc": "We stick around after switch-on: 24/7 remote monitoring, scheduled maintenance and a performance guarantee."
+        "title": "Monitoring & Maintenance",
+        "desc": "Your home powers itself; we keep watch with 24/7 monitoring and scheduled maintenance."
       }
     },
     "areas": {
