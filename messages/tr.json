@@ -755,5 +755,72 @@
       "productsTitle": "Şarj üniteleri",
       "productsCta": "EV şarj kataloğu"
     }
+  },
+  "About": {
+    "metaTitle": "Hakkımızda",
+    "metaDesc": "MİNADA Enerji: 15 yılı aşkın saha deneyimiyle güneş enerjisi, enerji depolama, ısı pompası ve EV şarj çözümlerini tek elden tasarlayan, kuran ve işleten bütünleşik enerji ortağınız.",
+    "eyebrow": "Hakkımızda",
+    "title": "Enerji dönüşümünüzde güvenilir bir <em>liman</em>",
+    "intro": "MİNADA Enerji, elektriği bir gider kalemi olmaktan çıkarıp kendi çatınızın ürettiği bağımsız bir güce dönüştürmek için kuruldu. 15 yılı aşkın sektör deneyimine sahip, enerji mühendisliği üzerine yoğunlaşmış bir kadroyla; konuttan işletmeye güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini tek elden tasarlıyor, kuruyor ve işletiyoruz. Amacımız net: yaşadığınız yeri kendine yeten, enerjisi kendinden bir limana çevirmek.",
+    "storyTitle": "Hikayemiz",
+    "storyP1": "MİNADA, sahada büyümüş bir mühendislik anlayışının ürünü. Kurucu ekibimiz 15 yılı aşkın süredir yenilenebilir enerji projelerinde tasarımdan devreye almaya kadar her aşamada görev aldı. Bu birikimi tek bir çatı altında topladık: bugün MİNADA Enerji olarak, güneş enerjisinin yanında enerji depolama, ısı pompası ve EV şarj çözümlerini de aynı ekiple sunan bütünleşik bir enerji ortağıyız.",
+    "storyP2": "Bizim için her proje bir satış kalemi değil, bir mühendislik taahhüdüdür. Bu yüzden keşiften işletmeye kadar altı şeffaf adımda ilerler, her aşamada ne olacağını önceden bilmenizi sağlarız. Teklifimiz açık, sürelerimiz gerçekçi, önerilerimiz sizin tüketiminize özeldir.",
+    "storyImageAlt": "Ticari bir çatıda güneş paneli dizileri",
+    "statsTitle": "Rakamlarla MİNADA",
+    "stats": {
+      "years": {
+        "value": "15",
+        "suffix": "+",
+        "label": "Yıl sektör deneyimi"
+      },
+      "projects": {
+        "value": "300",
+        "suffix": "+",
+        "label": "Tamamlanan proje"
+      },
+      "capacity": {
+        "value": "250",
+        "suffix": "MWp+",
+        "label": "Devreye alınan kurulu güç"
+      },
+      "solutions": {
+        "value": "4",
+        "suffix": "",
+        "label": "Çözüm, tek çatı altında",
+        "sub": "GES · Depolama · Isı pompası · EV şarj"
+      }
+    },
+    "whereTitle": "Nerede hizmet veriyoruz?",
+    "whereText": "Merkezimiz Malatya'da; bunun yanında Sivas, Elazığ, Erzincan ve Antalya bölgelerinde aktif olarak faaliyet gösteriyoruz. Gelen taleplere istinaden ise ülkemizin dört bir yanında uygulamalarımızı sürdürüyor, projenizin bulunduğu yere ekibimizle ulaşıyoruz.",
+    "cities": "Malatya (merkez) · Sivas · Elazığ · Erzincan · Antalya",
+    "missionTitle": "Misyonumuz",
+    "missionText": "Konuttan işletmeye her müşterimizin enerji bağımsızlığına ulaşmasını; mühendislik bütünlüğü, şeffaflık ve tek elden hizmetle mümkün kılmak. Enerji yolculuğunuzun her adımında güvenle demir atabileceğiniz bir liman olmak.",
+    "visionTitle": "Vizyonumuz",
+    "visionText": "Türkiye'nin enerji dönüşümünde konut ve işletme ölçeğinin en güvenilir çözüm ortağı olmak; güneş, depolama, ısınma ve elektrikli mobiliteyi tek bir bütünleşik ekosistemde buluşturarak enerjide kendine yeten yaşam alanlarını yaygınlaştırmak.",
+    "valuesTitle": "Değerlerimiz",
+    "values": {
+      "discipline": {
+        "term": "Mühendislik disiplini",
+        "desc": "Her proje ölçülür, simüle edilir, kanıta dayanır."
+      },
+      "transparency": {
+        "term": "Şeffaflık",
+        "desc": "Net teklif, gerçekçi süre, sürpriz olmayan süreç."
+      },
+      "oneHand": {
+        "term": "Tek elden çözüm",
+        "desc": "Keşiften bakıma kadar tüm adımlar aynı ekipte."
+      },
+      "promise": {
+        "term": "Sözünü tutmak",
+        "desc": "Verdiğimiz taahhüdün arkasında dururuz."
+      },
+      "longTerm": {
+        "term": "Uzun vadeli ortaklık",
+        "desc": "Kurulumla değil, 25+ yıllık üretim yolculuğunuzla ilgileniyoruz."
+      }
+    },
+    "ctaTitle": "Enerji geleceğinize bugün demir atın",
+    "ctaDesc": "Ücretsiz keşif oluşturun; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım."
   }
 }

@@ -1,0 +1,289 @@
+@use "../../../../styles/mixins" as *;
+
+/* ── Page header ─────────────────────────────────────────────────────────── */
+
+.header {
+  max-width: 860px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(38px, 5.2vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+
+  em {
+    font-family: var(--font-serif), serif;
+    font-style: italic;
+    color: var(--gold-600);
+  }
+}
+
+.lead {
+  margin-top: 22px;
+  max-width: 68ch;
+  font-size: clamp(17px, 1.5vw, 19px);
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+/* Shared section heading scale for the prose blocks on this page. */
+.h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+/* ── Story ───────────────────────────────────────────────────────────────── */
+
+/* The header section above already carries generous bottom padding; pull the
+   story up so the two light sections read as one continuous surface. */
+.storySection {
+  padding-top: 0 !important;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.storyText {
+  p {
+    margin-top: 18px;
+    max-width: 58ch;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  p:first-of-type {
+    margin-top: 26px;
+  }
+}
+
+.storyPhoto {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include bp-down(900px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  /* Portrait photo would swallow the phone screen; trim it to a wide crop. */
+  .storyPhoto img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+/* ── Stats band ──────────────────────────────────────────────────────────── */
+
+.stats {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding-inline: clamp(18px, 2.5vw, 36px);
+
+  /* Hairline dividers between columns (structure, not accent). */
+  &:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.statValue {
+  order: 1;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  color: #fff;
+
+  span {
+    color: var(--gold-300);
+    font-size: 0.52em;
+    margin-left: 3px;
+  }
+}
+
+.statLabel {
+  order: 2;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--on-dark-2);
+}
+
+.statSub {
+  order: 3;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--on-dark-2);
+  opacity: 0.75;
+}
+
+@include bp-down(900px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .stat {
+    border-left: none !important;
+    padding-inline: 0;
+
+    &:nth-child(2n) {
+      border-left: 1px solid rgba(255, 255, 255, 0.14) !important;
+      padding-left: clamp(18px, 5vw, 36px);
+    }
+  }
+}
+
+/* ── Where we operate ────────────────────────────────────────────────────── */
+
+.where {
+  max-width: 660px;
+
+  p {
+    margin-top: 18px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+}
+
+.cities {
+  font-weight: 650;
+  color: var(--ink) !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.01em;
+}
+
+/* ── Mission / Vision ────────────────────────────────────────────────────── */
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 6vw, 88px);
+}
+
+.pairItem {
+  /* Short gold top rule anchors each column without boxing it in. */
+  &::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-top: 14px;
+    max-width: 52ch;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+}
+
+@include bp-down(800px) {
+  .pair {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ── Values ──────────────────────────────────────────────────────────────── */
+
+.values {
+  @include list-reset;
+  max-width: 880px;
+}
+
+.value {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: clamp(16px, 3vw, 32px);
+  padding-block: 22px;
+  border-top: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  dd {
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+}
+
+@include bp-down(640px) {
+  .value {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding-block: 18px;
+  }
+}
+
+/* ── Closing CTA ─────────────────────────────────────────────────────────── */
+
+.cta {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: clamp(30px, 4.5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ctaDesc {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--on-dark-2);
+}
+
+.ctaActions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
