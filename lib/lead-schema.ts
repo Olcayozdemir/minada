@@ -3,8 +3,8 @@ import { z } from "zod";
 export const PROPERTY_TYPES = ["villa", "detached", "apartment"] as const;
 export type PropertyType = (typeof PROPERTY_TYPES)[number];
 
-// Lead routing topic — mirrors the five doors (CTA'lar ?konu= ile taşır).
-export const LEAD_TOPICS = ["ges", "depolama", "isi-pompasi", "ev-sarj", "kamp", "diger"] as const;
+// Lead routing topic — mirrors the four doors (CTA'lar ?konu= ile taşır).
+export const LEAD_TOPICS = ["ges", "depolama", "isi-pompasi", "ev-sarj", "diger"] as const;
 export type LeadTopic = (typeof LEAD_TOPICS)[number];
 
 // Turkish mobile: strip non-digits, drop 90/0 prefix, expect 5XXXXXXXXX.
@@ -18,7 +18,7 @@ export const leadSchema = z.object({
   phone: z.string().trim().refine(isTrMobile),
   email: z.email(),
   city: z.string().trim().min(2),
-  // Optional since the camp/portable topic has no meaningful property type.
+  // Optional — not every topic implies a property type (e.g. "diger").
   // Selects submit "" when untouched — accepted and treated as "not provided".
   propertyType: z.union([z.enum(PROPERTY_TYPES), z.literal("")]).optional(),
   topic: z.union([z.enum(LEAD_TOPICS), z.literal("")]).optional(),

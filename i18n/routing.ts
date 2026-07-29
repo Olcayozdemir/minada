@@ -13,7 +13,6 @@ export const routing = defineRouting({
     "/solutions": { tr: "/uygulama-alanlari", en: "/solutions" },
     "/cozumler/evim-icin": { tr: "/cozumler/evim-icin", en: "/solutions/for-home" },
     "/cozumler/isletmem-icin": { tr: "/cozumler/isletmem-icin", en: "/solutions/for-business" },
-    "/cozumler/kamp-outdoor": { tr: "/cozumler/kamp-outdoor", en: "/solutions/camping-outdoor" },
     "/hizmetler/gunes-enerjisi": { tr: "/hizmetler/gunes-enerjisi", en: "/services/solar-energy" },
     "/hizmetler/enerji-depolama": { tr: "/hizmetler/enerji-depolama", en: "/services/energy-storage" },
     "/hizmetler/isi-pompasi": { tr: "/hizmetler/isi-pompasi", en: "/services/heat-pump" },

@@ -7,8 +7,8 @@ import { IconArrowRight } from "@/components/ui/icons";
 import type { StaticPathname } from "@/i18n/routing";
 import styles from "./Services.module.scss";
 
-// The five doors: four business lines + camping. Renders as the homepage
-// gateway (dark band) and as the /services hub. Every door carries one of the
+// The four business-line doors. Renders as the homepage gateway (dark band)
+// and as the /services hub. Every door carries one of the
 // isometric diorama renders (alpha PNG, client assets, images/v2/service-*).
 const DOORS: ReadonlyArray<{
   id: string;
@@ -21,19 +21,10 @@ const DOORS: ReadonlyArray<{
   { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/v2/service-battery.png", w: 1920, h: 1434 },
   { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/v2/service-heatpump.png", w: 1920, h: 1434 },
   { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/v2/service-ev.png", w: 1920, h: 1434 },
-  { id: "camp", href: "/cozumler/kamp-outdoor", img: "/images/v2/service-camp.png", w: 1920, h: 1434 },
 ];
 
-export async function Services({
-  headingAs = "h2",
-  exclude,
-}: {
-  headingAs?: "h1" | "h2";
-  /** Door ids to hide in this context (e.g. "camp" on the business page). */
-  exclude?: ReadonlyArray<string>;
-}) {
+export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
   const t = await getTranslations("Home.gateway");
-  const doors = exclude ? DOORS.filter((d) => !exclude.includes(d.id)) : DOORS;
 
   return (
     <Section tone="dark" id="cozumler">
@@ -44,8 +35,8 @@ export async function Services({
         title={t("title")}
         intro={t("intro")}
       />
-      <ul className={doors.length === 4 ? `${styles.grid} ${styles.gridFour}` : styles.grid}>
-        {doors.map(({ id, href, img, w, h }) => (
+      <ul className={styles.grid}>
+        {DOORS.map(({ id, href, img, w, h }) => (
           <li key={id}>
             <Link href={href} className={styles.card}>
               <span className={styles.stage} aria-hidden="true">

@@ -10,7 +10,6 @@ const HREFS = [
   "/solutions",
   "/cozumler/evim-icin",
   "/cozumler/isletmem-icin",
-  "/cozumler/kamp-outdoor",
   "/hizmetler/gunes-enerjisi",
   "/hizmetler/enerji-depolama",
   "/hizmetler/isi-pompasi",

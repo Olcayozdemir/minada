@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      {/* Foto hero — kamp sayfası kalıbı; geniş çatılı ticari tesis. */}
+      {/* Foto hero — geniş çatılı ticari tesis. */}
       <section className={styles.pHero} data-hero="">
         <Image
           src="/images/v2/business-hero.jpeg"
@@ -77,8 +77,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         cta={t("stepsCta")}
       />
 
-      {/* İş kolu kapıları — kamp bu bağlamda gizli (B2B odak; nav'dan erişilir). */}
-      <Services exclude={["camp"]} />
+      {/* İş kolu kapıları. */}
+      <Services />
 
       <Section tone="sand">
         <div className={styles.ctaRow}>

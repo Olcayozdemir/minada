@@ -12,7 +12,6 @@ const TOPIC_LABELS: Record<string, string> = {
   depolama: "Enerji Depolama",
   "isi-pompasi": "Isı Pompası",
   "ev-sarj": "EV Şarj",
-  kamp: "Kamp & Taşınabilir Güç",
   diger: "Diğer",
 };
 

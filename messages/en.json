@@ -24,8 +24,7 @@
     "line_ges": "Solar Energy (PV)",
     "line_bess": "Energy Storage",
     "line_heatpump": "Heat Pumps",
-    "line_evcharge": "EV Charging",
-    "solutionsCamp": "Camping & Outdoor"
+    "line_evcharge": "EV Charging"
   },
   "Common": {
     "getQuote": "Get a free survey",
@@ -204,7 +203,7 @@
     "gateway": {
       "eyebrow": "Solutions",
       "title": "How can we help?",
-      "intro": "Five lines of work, one team. Pick what you need — we carry it from survey to commissioning.",
+      "intro": "Four lines of work, one team. Pick what you need — we carry it from survey to commissioning.",
       "ges": {
         "title": "Solar Energy (PV)",
         "desc": "Rooftop, ground-mount, agri-PV and carport plants — from design to production.",
@@ -224,11 +223,6 @@
         "title": "EV Charging",
         "desc": "AC at home, DC fast charging at work; a natural pair with carport PV.",
         "chips": "Home · Workplace · Fleet"
-      },
-      "camp": {
-        "title": "Camping & Outdoor",
-        "desc": "Portable power stations, foldable panels, a battery-powered fridge — how far does the grid go?",
-        "chips": "Camping · RV · Boat"
       }
     }
   },
@@ -347,52 +341,6 @@
       "stepsTitle": "From investment to operation: 6 steps",
       "stepsIntro": "One contractor from feasibility to commissioning — documented, warranted, monitored.",
       "stepsCta": "See the full process"
-    },
-    "camp": {
-      "metaTitle": "Camping & Outdoor — Portable Power",
-      "metaDesc": "Anker SOLIX portable power stations, foldable panels and a battery-powered fridge for camping, RVs and boats. Let's size it together.",
-      "eyebrow": "Camping & Outdoor",
-      "title": "Where the grid ends, we begin",
-      "intro": "From phone charging to the RV fridge — with Anker SOLIX portable power stations and foldable panels, your own energy travels with you.",
-      "sizeEyebrow": "Size guide",
-      "sizeTitle": "How much power do I need?",
-      "sizeIntro": "Capacity (Wh) is set by how many devices, for how many days. Three typical scenarios:",
-      "s1": {
-        "title": "Weekend camping",
-        "gear": "Phone, lights, drone, camera",
-        "pick": "C300 series + PS200 panel",
-        "desc": "288 Wh in your pocket: lighting and charging all day, indefinitely with a panel."
-      },
-      "s2": {
-        "title": "Camp + kitchen comfort",
-        "gear": "Fridge, kettle, laptop",
-        "pick": "C1000 family + PS400 + EverFrost",
-        "desc": "A 1 kWh class station runs the EverFrost for days; the 400 W panel refills it by noon."
-      },
-      "s3": {
-        "title": "RV · boat · long stays",
-        "gear": "Short AC bursts, induction, everything",
-        "pick": "767 / F1500 / C2000 + twin panels",
-        "desc": "2 kWh and 2000 W+ output: support for the RV house battery, a silent generator afloat."
-      },
-      "productsEyebrow": "Showcase",
-      "productsTitle": "The camper's shelf",
-      "productsCta": "All portable power products",
-      "whyTitle": "Why buy from MİNADA?",
-      "w1": {
-        "title": "Right-sizing",
-        "desc": "We run the Wh/W math from your device list so you never over- or under-buy."
-      },
-      "w2": {
-        "title": "Authorised supply",
-        "desc": "Anker SOLIX products with Turkish warranty, invoiced, from stock."
-      },
-      "w3": {
-        "title": "Systems thinking",
-        "desc": "Fixed panel on the RV roof or foldable? We talk installation and wiring too."
-      },
-      "ctaTitle": "Get a camp-sized quote",
-      "ctaDesc": "List your gear; we reply within 24 hours with a sized offer."
     }
   },
   "Calculator": {
@@ -494,7 +442,6 @@
         "depolama": "Energy Storage",
         "isi-pompasi": "Heat Pump",
         "ev-sarj": "EV Charging",
-        "kamp": "Camping & Portable Power",
         "diger": "Other"
       }
     },
@@ -566,8 +513,7 @@
       "solar-ekipman": "Solar Equipment",
       "isi-pompasi": "Heat Pumps",
       "ev-sarj": "EV Charging",
-      "solar-aydinlatma": "Solar Lighting",
-      "tasinabilir-guc": "Portable Power"
+      "solar-aydinlatma": "Solar Lighting"
     },
     "catDesc": {
       "gunes-panelleri": "TOPCon N-Type panels — CW Enerji & TommaTech",
@@ -578,8 +524,7 @@
       "solar-ekipman": "Mounting structures, cables, connectors",
       "isi-pompasi": "Heating, cooling and hot water",
       "ev-sarj": "AC and DC EV charging stations",
-      "solar-aydinlatma": "Solar street, road and garden luminaires",
-      "tasinabilir-guc": "Power stations and foldable panels for camping, RV and outdoor — Anker SOLIX"
+      "solar-aydinlatma": "Solar street, road and garden luminaires"
     },
     "countLabel": "{count} series",
     "categoryCta": "Explore",

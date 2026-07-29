@@ -17,7 +17,6 @@ const CAT_HERO: Record<string, string> = {
   "enerji-depolama": "/images/products/storage.png",
   // Cam sahne + teal enerji hattı kit render'ı — diğer tile'larla aynı dil
   // (beyaz zeminli JPEG, sahneye multiply ile erir).
-  "tasinabilir-guc": "/images/v2/camp/portable-tile.jpeg",
   "sarj-kontrol": "/images/products/charge-controllers.png",
   "solar-paket": "/images/products/packages.png",
   "solar-ekipman": "/images/products/equipment.png",

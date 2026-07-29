@@ -19,7 +19,6 @@ export const BUSINESS_LINES = [
 export const AUDIENCES = [
   { id: "solutionsHome", href: "/cozumler/evim-icin" },
   { id: "solutionsBusiness", href: "/cozumler/isletmem-icin" },
-  { id: "solutionsCamp", href: "/cozumler/kamp-outdoor" },
 ] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname }>;
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [

@@ -11,8 +11,7 @@
 //   • Product names/specs are language-neutral; the UI localizes category
 //     titles, warranty labels and feature keys via the `Products` messages.
 //
-// Source: CW Enerji / TommaTech dealer listings (cw-enerji.com) + Anker SOLIX
-// Türkiye listings (ankersolixtr.com) for the portable-power category.
+// Source: CW Enerji / TommaTech dealer listings (cw-enerji.com).
 
 export type ProductCategoryItem = {
   _id: string;
@@ -51,13 +50,12 @@ const slugify = (s: string): string =>
     .replace(/^-+|-+$/g, "");
 
 // ── Categories (display order = `order`; icon = key in the page's icon map) ──
-// Display order (Olcay, 2026-07-11): önce 5-kapı iş kolları — Güneş Panelleri,
-// Isı Pompası, EV Şarj, Taşınabilir Güç — sonra kalan kategoriler.
+// Display order (Olcay, 2026-07-11): önce iş kolu kategorileri — Güneş
+// Panelleri, Isı Pompası, EV Şarj — sonra kalan kategoriler.
 export const CATEGORIES: ProductCategoryItem[] = [
   { _id: "cat-gunes-panelleri", title: "Güneş Panelleri", slug: "gunes-panelleri", order: 1, icon: "panel" },
   { _id: "cat-isi-pompasi", title: "Isı Pompası", slug: "isi-pompasi", order: 2, icon: "heatpump" },
   { _id: "cat-ev-sarj", title: "EV Şarj İstasyonları", slug: "ev-sarj", order: 3, icon: "evcharge" },
-  { _id: "cat-tasinabilir-guc", title: "Taşınabilir Güç", slug: "tasinabilir-guc", order: 4, icon: "portable" },
   { _id: "cat-inverterler", title: "İnverterler", slug: "inverterler", order: 5, icon: "inverter" },
   { _id: "cat-enerji-depolama", title: "Enerji Depolama", slug: "enerji-depolama", order: 6, icon: "battery" },
   { _id: "cat-sarj-kontrol", title: "Şarj Kontrol Cihazları", slug: "sarj-kontrol", order: 7, icon: "controller" },
@@ -69,7 +67,6 @@ export const CATEGORIES: ProductCategoryItem[] = [
 const BRAND = {
   cw: { title: "CW Enerji", slug: "cw-enerji" },
   tommatech: { title: "TommaTech", slug: "tommatech" },
-  anker: { title: "Anker SOLIX", slug: "anker-solix" },
 } as const;
 
 // Shared panel feature bundles (all panels are TOPCon N-Type).
@@ -153,31 +150,6 @@ const ROWS: Row[] = [
   ["enerji-depolama", "tommatech", "Hightech Power S — Modüler (HV)", "4–24 kWh", [4, 8, 12, 16, 20, 24], null, null, ["lfp", "hvBattery", "modular", "plugPlay"]],
   ["enerji-depolama", "tommatech", "Modular / Rack Serisi (51.2V)", "5–14 kWh", [5, 10, 14], 5, null, ["lfp", "modular", "bmsComm", "ip65"]],
   ["enerji-depolama", "tommatech", "Orion / Hera — Konteyner ESS", "215 kWh+", [], null, null, ["lfp", "liquidCooling", "utilityScale"]],
-  // ══ Taşınabilir Güç — Anker SOLIX + TommaTech (kamp / karavan / outdoor) ══
-  // Kaynak: ankersolixtr.com canlı listeleme (2026-07-11). Fiyat yok; ev yedek
-  // devleri (F3000/F3800/BP3800) bilinçli olarak kapsam dışı — Olcay kararı.
-  ["tasinabilir-guc", "anker", "522 PowerHouse", "320 Wh · 300 W", [300], null, null, ["lfp", "usbC", "lightweight"]],
-  ["tasinabilir-guc", "anker", "C300X", "288 Wh · 600 W", [600], null, null, ["lfp", "acOutlet", "fastCharge"]],
-  ["tasinabilir-guc", "anker", "C300X DC", "288 Wh · 300 W", [300], null, null, ["lfp", "usbC", "lightweight"]],
-  ["tasinabilir-guc", "anker", "C800X", "768 Wh · 1200 W", [1200], null, null, ["lfp", "fastCharge", "acOutlet"]],
-  ["tasinabilir-guc", "anker", "C1000X PowerHouse", "1056 Wh · 1800 W", [1800], null, null, ["lfp", "fastCharge", "appControl"]],
-  ["tasinabilir-guc", "anker", "C1000 Gen 2", "1024 Wh · 2000 W", [2000], null, null, ["lfp", "fastCharge", "expandable"]],
-  ["tasinabilir-guc", "anker", "C2000 Gen 2", "2048 Wh · 2400 W", [2400], null, null, ["lfp", "expandable", "appControl"]],
-  ["tasinabilir-guc", "anker", "F1500 PowerHouse", "1536 Wh · 1800 W", [1800], null, null, ["lfp", "homeBackup", "appControl"]],
-  ["tasinabilir-guc", "anker", "767 PowerHouse", "2048 Wh · 2400 W", [2400], null, null, ["lfp", "rvReady", "expandable"]],
-  ["tasinabilir-guc", "anker", "PS200 Solar Panel", "200 W", [200], null, null, ["foldable", "ip67", "kickstand"]],
-  ["tasinabilir-guc", "anker", "PS400 Solar Panel", "400 W", [400], null, null, ["foldable", "ip67", "highEfficiency"]],
-  ["tasinabilir-guc", "anker", "EverFrost Powered Cooler 43L", "40/43 L · 299 Wh", [], null, null, ["battery", "compressor", "acdc"]],
-  ["tasinabilir-guc", "tommatech", "Easy Living — Taşınabilir Güç İstasyonu", "448–2240 Wh", [], null, null, ["portable", "acdc", "lfp"]],
-  // TommaTech katlanabilir/esnek paneller — kendi ürün fotoğrafları bulunana
-  // kadar gizli (katalogda placeholder kart yayınlamama kuralı).
-  ["tasinabilir-guc", "tommatech", "Easy Life 15Wp Mobil Solar Şarj", "15 Wp", [15], null, null, ["portable"], true],
-  ["tasinabilir-guc", "tommatech", "Easy Life Taşınabilir", "200–150 W", [200, 150], null, null, ["portable"], true],
-  ["tasinabilir-guc", "tommatech", "170-110Wp Flexible Dark Series", "170–110 Wp", [170, 110], 2, null, ["flexible", "fullBlack"], true],
-  ["tasinabilir-guc", "tommatech", "Easy Life 25Wp Katlanabilir", "25 Wp", [25], null, null, ["portable"], true],
-  ["tasinabilir-guc", "tommatech", "Easy Life 110Wp Katlanabilir", "110 Wp", [110], null, null, ["portable"], true],
-  ["tasinabilir-guc", "tommatech", "Easy Life Omuz Askısı (aksesuar)", "", [], null, null, ["portable"], true],
-  ["tasinabilir-guc", "tommatech", "170-110Wp Flexible Serisi", "170–110 Wp", [170, 110], 2, null, ["flexible"], true],
 
   // ══ Şarj Kontrol Cihazları — TommaTech ════════════════════════════════════
   ["sarj-kontrol", "tommatech", "MPPT Şarj Kontrol Cihazı", "30–100 A", [30, 40, 50, 60, 80, 100], null, null, ["mppt", "wideVoltage", "lcd"]],
@@ -243,20 +215,6 @@ const IMAGES: Record<string, string> = {
   "tommatech-hightech-power-s-moduler-hv": "/products/storage/hightech-hv.webp",
   "tommatech-modular-rack-serisi-51-2v": "/products/storage/rack.jpg",
   "tommatech-orion-hera-konteyner-ess": "/products/storage/container.webp",
-  "tommatech-easy-living-tasinabilir-guc-istasyonu": "/products/storage/easy-living.webp",
-  // ── Taşınabilir Güç (Anker SOLIX — ankersolixtr.com'dan self-host) ──
-  "anker-solix-522-powerhouse": "/products/portable/522.jpg",
-  "anker-solix-c300x": "/products/portable/c300x.jpg",
-  "anker-solix-c300x-dc": "/products/portable/c300x-dc.jpg",
-  "anker-solix-c800x": "/products/portable/c800x.jpg",
-  "anker-solix-c1000x-powerhouse": "/products/portable/c1000x.jpg",
-  "anker-solix-c1000-gen-2": "/products/portable/c1000-gen2.jpg",
-  "anker-solix-c2000-gen-2": "/products/portable/c2000-gen2.jpg",
-  "anker-solix-f1500-powerhouse": "/products/portable/f1500.jpg",
-  "anker-solix-767-powerhouse": "/products/portable/767-powerhouse.jpg",
-  "anker-solix-ps200-solar-panel": "/products/portable/ps200.jpg",
-  "anker-solix-ps400-solar-panel": "/products/portable/ps400.jpg",
-  "anker-solix-everfrost-powered-cooler-43l": "/products/portable/everfrost.jpg",
   // ── Şarj Kontrol ──
   "tommatech-mppt-sarj-kontrol-cihazi": "/products/charge/mppt.webp",
   "tommatech-pwm-sarj-kontrol-cihazi": "/products/charge/pwm.webp",

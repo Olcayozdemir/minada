@@ -24,8 +24,7 @@
     "line_ges": "Güneş Enerjisi (GES)",
     "line_bess": "Enerji Depolama",
     "line_heatpump": "Isı Pompası",
-    "line_evcharge": "EV Şarj İstasyonları",
-    "solutionsCamp": "Kamp & Outdoor"
+    "line_evcharge": "EV Şarj İstasyonları"
   },
   "Common": {
     "getQuote": "Ücretsiz keşif al",
@@ -204,7 +203,7 @@
     "gateway": {
       "eyebrow": "Çözümler",
       "title": "Size nasıl yardımcı olalım?",
-      "intro": "Beş iş kolu, tek ekip. Neye ihtiyacınız olduğunu seçin — gerisini keşiften devreye almaya biz üstlenelim.",
+      "intro": "Dört iş kolu, tek ekip. Neye ihtiyacınız olduğunu seçin — gerisini keşiften devreye almaya biz üstlenelim.",
       "ges": {
         "title": "Güneş Enerjisi (GES)",
         "desc": "Çatı, arazi, tarımsal ve carport santralleri — projelendirmeden üretime.",
@@ -224,11 +223,6 @@
         "title": "EV Şarj",
         "desc": "Evde AC, işletmede DC hızlı şarj; carport GES ile doğal ikili.",
         "chips": "Ev · İşyeri · Filo"
-      },
-      "camp": {
-        "title": "Kamp & Outdoor",
-        "desc": "Taşınabilir güç istasyonları, katlanabilir paneller, akülü buzdolabı — şebeke nereye kadar?",
-        "chips": "Kamp · Karavan · Tekne"
       }
     }
   },
@@ -347,52 +341,6 @@
       "stepsTitle": "Yatırımdan işletmeye: 6 adım",
       "stepsIntro": "Fizibiliteden devreye almaya tüm süreç tek yüklenicide — raporlu, garantili, izlenebilir.",
       "stepsCta": "Süreci ayrıntılı gör"
-    },
-    "camp": {
-      "metaTitle": "Kamp & Outdoor — Taşınabilir Güç",
-      "metaDesc": "Kamp, karavan ve tekne için Anker SOLIX taşınabilir güç istasyonları, katlanabilir paneller ve akülü buzdolabı. Doğru boyu birlikte seçelim.",
-      "eyebrow": "Kamp & Outdoor",
-      "title": "Şebeke nerede biterse, oradan başlıyoruz",
-      "intro": "Telefon şarjından karavan buzdolabına — Anker SOLIX taşınabilir güç istasyonları ve katlanabilir panellerle doğada da kendi enerjiniz yanınızda.",
-      "sizeEyebrow": "Boy rehberi",
-      "sizeTitle": "Hangi boy bana yeter?",
-      "sizeIntro": "Kapasiteyi (Wh) ne kadar cihaz, kaç gün sorusu belirler. Üç tipik senaryo:",
-      "s1": {
-        "title": "Hafta sonu kampı",
-        "gear": "Telefon, ışık, drone, kamera",
-        "pick": "C300 serisi + PS200 panel",
-        "desc": "288 Wh cebinizde: aydınlatma ve şarj işleri gün boyu, panelle süresiz."
-      },
-      "s2": {
-        "title": "Kamp + mutfak konforu",
-        "gear": "Buzdolabı, kettle, laptop",
-        "pick": "C1000 ailesi + PS400 + EverFrost",
-        "desc": "1 kWh sınıfı istasyon EverFrost'u günlerce döndürür; 400 W panelle öğlen dolar."
-      },
-      "s3": {
-        "title": "Karavan · tekne · uzun mola",
-        "gear": "Klima kısa süre, indüksiyon, tüm cihazlar",
-        "pick": "767 / F1500 / C2000 + çift panel",
-        "desc": "2 kWh ve 2000 W üstü çıkış: karavanın ana bataryasına güç desteği, teknede sessiz jeneratör."
-      },
-      "productsEyebrow": "Vitrin",
-      "productsTitle": "Kampçının rafı",
-      "productsCta": "Tüm taşınabilir güç ürünleri",
-      "whyTitle": "Neden MİNADA'dan?",
-      "w1": {
-        "title": "Doğru boylandırma",
-        "desc": "Cihaz listenize göre Wh/W hesabını biz yapar, fazla ya da eksik almanızı engelleriz."
-      },
-      "w2": {
-        "title": "Yetkili tedarik",
-        "desc": "Anker SOLIX ürünleri Türkiye garantili, faturalı ve stoktan teslim."
-      },
-      "w3": {
-        "title": "Sistem düşünürüz",
-        "desc": "Karavan çatısına sabit panel mi, katlanabilir mi? Kurulum ve kablolama dahil konuşuruz."
-      },
-      "ctaTitle": "Kampınıza göre teklif alın",
-      "ctaDesc": "Cihazlarınızı yazın, 24 saat içinde boylandırılmış teklifle dönelim."
     }
   },
   "Calculator": {
@@ -494,7 +442,6 @@
         "depolama": "Enerji Depolama",
         "isi-pompasi": "Isı Pompası",
         "ev-sarj": "EV Şarj",
-        "kamp": "Kamp & Taşınabilir Güç",
         "diger": "Diğer"
       }
     },
@@ -566,8 +513,7 @@
       "solar-ekipman": "Solar Ekipmanlar",
       "isi-pompasi": "Isı Pompası",
       "ev-sarj": "EV Şarj İstasyonları",
-      "solar-aydinlatma": "Solar Aydınlatma",
-      "tasinabilir-guc": "Taşınabilir Güç"
+      "solar-aydinlatma": "Solar Aydınlatma"
     },
     "catDesc": {
       "gunes-panelleri": "TOPCon N-Type paneller — CW Enerji & TommaTech",
@@ -578,8 +524,7 @@
       "solar-ekipman": "Montaj konstrüksiyonu, kablo, konnektör",
       "isi-pompasi": "Isıtma, soğutma ve sıcak su",
       "ev-sarj": "AC ve DC elektrikli araç şarj istasyonları",
-      "solar-aydinlatma": "Solar sokak, yol ve bahçe armatürleri",
-      "tasinabilir-guc": "Kamp, karavan ve outdoor için güç istasyonları ve katlanabilir paneller — Anker SOLIX"
+      "solar-aydinlatma": "Solar sokak, yol ve bahçe armatürleri"
     },
     "countLabel": "{count} seri",
     "categoryCta": "İncele",
