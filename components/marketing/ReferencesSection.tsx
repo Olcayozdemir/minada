@@ -6,6 +6,11 @@ import { getProjects } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
 import styles from "./ReferencesSection.module.scss";
 
+// MW-scale systems read as "12 MW" / "4,6 MW", smaller ones stay in kWp.
+function capacityLabel(kw: number, locale: string): string {
+  return kw >= 1000 ? `${(kw / 1000).toLocaleString(locale)} MW` : `${kw.toLocaleString(locale)} kWp`;
+}
+
 // Reference projects gallery (shown on the About page). Data comes from Sanity;
 // shows an empty state until reference projects are published.
 export async function ReferencesSection({ locale }: { locale: string }) {
@@ -39,7 +44,9 @@ export async function ReferencesSection({ locale }: { locale: string }) {
                 <h3 className={styles.cardTitle}>{p.title}</h3>
                 <div className={styles.tags}>
                   {p.location ? <span className={styles.tag}>{p.location}</span> : null}
-                  {p.systemKw ? <span className={styles.tag}>{p.systemKw} kWp</span> : null}
+                  {p.systemKw ? (
+                    <span className={styles.tag}>{capacityLabel(p.systemKw, locale)}</span>
+                  ) : null}
                 </div>
                 {p.excerpt ? <p className={styles.excerpt}>{p.excerpt}</p> : null}
               </div>
