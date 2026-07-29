@@ -77,8 +77,9 @@
   }
 }
 
-/* Editorial figure, not a boxed card: bare photo block + magazine-index
-   caption (oversized outlined numeral, hairline rule, title, standfirst). */
+/* Arch figure: dome-topped photo + gold step badge on the photo/caption
+   seam + centered caption. Even steps flip (caption above, dome below) and
+   sink slightly, so the row reads as an alternating rhythm, not a grid. */
 .step {
   position: relative;
   display: flex;
@@ -86,16 +87,96 @@
   transition: transform 0.35s ease;
 }
 
+.mediaWrap {
+  position: relative;
+}
+
 .media {
   position: relative;
-  /* Wider crop than the 4/3 sources: shaves ~80px per row off the section
-     without touching the grid. The scenic shots survive the trim fine. */
-  aspect-ratio: 16 / 9;
-  border-radius: var(--r-lg);
+  aspect-ratio: 0.88;
+  border-radius: 999px 999px var(--r-lg) var(--r-lg);
   overflow: hidden;
   background: linear-gradient(160deg, var(--green-700), var(--green-850));
   box-shadow: var(--shadow-soft);
   transition: box-shadow 0.35s ease;
+}
+
+/* Gold seam badge; the bg-colored ring lifts it off the photo edge. */
+.badge {
+  position: absolute;
+  left: 50%;
+  bottom: -23px;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--on-accent);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  box-shadow: 0 0 0 6px var(--bg);
+}
+
+.flip {
+  .mediaWrap {
+    order: 2;
+  }
+
+  .body {
+    order: 1;
+  }
+
+  .media {
+    border-radius: var(--r-lg) var(--r-lg) 999px 999px;
+  }
+
+  .badge {
+    bottom: auto;
+    top: -23px;
+  }
+}
+
+/* Checkerboard sink for the flipped columns; wide screens only. */
+@include bp-up(901px) {
+  .flip {
+    margin-top: 52px;
+  }
+}
+
+/* Olcay: "tek satır" — on wide screens all six steps sit in one row of
+   smaller arches, so the section reads as a band instead of a wall. */
+@include bp-up(1200px) {
+  .grid:not(.compact) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+
+    .stepTitle {
+      font-size: 0.95rem;
+    }
+
+    .stepDesc {
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      width: 40px;
+      height: 40px;
+      bottom: -20px;
+      font-size: 0.85rem;
+    }
+
+    .flip {
+      margin-top: 40px;
+
+      .badge {
+        bottom: auto;
+        top: -20px;
+      }
+    }
+  }
 }
 
 .mediaImg {
@@ -179,7 +260,20 @@
 }
 
 .body {
+  padding-top: var(--space-6);
+  text-align: center;
+}
+
+/* Flipped cards carry the caption above the dome. */
+.flip .body {
+  padding-top: 0;
+  padding-bottom: var(--space-6);
+}
+
+/* Compact keeps the left-aligned magazine caption. */
+.compact .body {
   padding-top: var(--space-3);
+  text-align: left;
 }
 
 .stepTitle {
@@ -190,6 +284,12 @@
 .stepDesc {
   font-size: 0.92rem;
   color: var(--ink-2);
+  max-width: 30ch;
+  margin-inline: auto;
+}
+
+.compact .stepDesc {
+  max-width: none;
 }
 
 /* Pointer fallback (no JS / reduced motion): hover mirrors the active state. */

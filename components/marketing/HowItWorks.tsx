@@ -68,34 +68,45 @@ export async function HowItWorks({
           const img = compact ? null : stepImage(id);
           const artImg = compact ? null : stepArt(art);
           return (
-            <li key={id} className={styles.step}>
+            <li
+              key={id}
+              className={clsx(styles.step, !compact && i % 2 === 1 && styles.flip)}
+            >
               {compact ? null : (
-                <div className={styles.media}>
-                  {img ? (
-                    <Image
-                      src={img}
-                      alt=""
-                      fill
-                      sizes="(max-width: 560px) 88vw, (max-width: 900px) 44vw, 30vw"
-                      className={styles.mediaImg}
-                    />
-                  ) : (
-                    <div className={styles.placeholder} aria-hidden="true">
-                      {artImg ? (
-                        <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
-                      ) : (
-                        <Icon size={30} />
-                      )}
-                    </div>
-                  )}
-                  <span className={styles.scrim} aria-hidden="true" />
+                /* Arch-cropped photo; the gold step badge sits on the seam
+                   between photo and caption (checkerboard rhythm via .flip). */
+                <div className={styles.mediaWrap}>
+                  <div className={styles.media}>
+                    {img ? (
+                      <Image
+                        src={img}
+                        alt=""
+                        fill
+                        sizes="(max-width: 560px) 88vw, (max-width: 900px) 44vw, 30vw"
+                        className={styles.mediaImg}
+                      />
+                    ) : (
+                      <div className={styles.placeholder} aria-hidden="true">
+                        {artImg ? (
+                          <Image src={artImg} alt="" width={84} height={84} className={styles.art} />
+                        ) : (
+                          <Icon size={30} />
+                        )}
+                      </div>
+                    )}
+                    <span className={styles.scrim} aria-hidden="true" />
+                  </div>
+                  <span className={styles.badge} aria-hidden="true">{`0${i + 1}`}</span>
                 </div>
               )}
-              {/* Editorial index line — the <ol> already carries order semantically. */}
-              <div className={styles.meta} aria-hidden="true">
-                <span className={styles.num}>{`0${i + 1}`}</span>
-                <span className={styles.rule} />
-              </div>
+              {/* Editorial index line — compact (photo-less) contexts only;
+                  the <ol> already carries order semantically. */}
+              {compact ? (
+                <div className={styles.meta} aria-hidden="true">
+                  <span className={styles.num}>{`0${i + 1}`}</span>
+                  <span className={styles.rule} />
+                </div>
+              ) : null}
               <div className={styles.body}>
                 <h3 className={styles.stepTitle}>{t(`${id}.title`)}</h3>
                 <p className={styles.stepDesc}>{t(`${id}.desc`)}</p>

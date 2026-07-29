@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { ReferencesSection } from "@/components/marketing/ReferencesSection";
 import { RotatingSeal } from "@/components/marketing/RotatingSeal";
+import { IconArrowRight } from "@/components/ui/icons";
 import { buildAlternates } from "@/lib/seo";
 import styles from "./about.module.scss";
 
@@ -75,10 +76,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className={styles.lead}>{t("intro")}</p>
           </div>
         </div>
+        {/* Scroll affordance: the page continues below the fold. */}
+        <div className={styles.scrollCue} aria-hidden="true">
+          <IconArrowRight size={15} />
+        </div>
       </section>
 
       {/* Story — editorial split; the portrait photo balances two paragraphs. */}
-      <Section tone="light" className={styles.storySection}>
+      <Section tone="light" className={`${styles.storySection} ${styles.tight}`}>
         <div className={styles.story}>
           <div className={styles.storyText}>
             <h2 className={styles.h2}>{t("storyTitle")}</h2>
@@ -117,7 +122,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </dl>
       </Section>
 
-      <Section tone="light">
+      <Section tone="light" className={styles.tight}>
         <div className={styles.where}>
           <h2 className={styles.h2}>{t("whereTitle")}</h2>
           <p>{t("whereText")}</p>
@@ -125,7 +130,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </Section>
 
-      <Section tone="sand">
+      <Section tone="sand" className={styles.tight}>
         <div className={styles.pair}>
           <div className={styles.pairItem}>
             <h2 className={styles.h2}>{t("missionTitle")}</h2>
@@ -139,7 +144,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </Section>
 
       {/* Values — a manifesto list, not a card grid: term column + rule rows. */}
-      <Section tone="light">
+      <Section tone="light" className={styles.tight}>
         <SectionHeading title={t("valuesTitle")} />
         <dl className={styles.values}>
           {VALUES.map((k) => (
