@@ -1,0 +1,46 @@
+@use "../../styles/mixins" as *;
+
+.seal {
+  position: absolute;
+  top: -28px;
+  right: -28px;
+  width: 116px;
+  height: 116px;
+  pointer-events: none;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 50%;
+  /* Continuous loop, so linear by design: a spring would settle or pulse. */
+  animation: sealSpin 24s linear infinite;
+}
+
+.text {
+  font-family: var(--font-display), sans-serif;
+  font-size: 9.4px;
+  font-weight: 700;
+  fill: var(--gold-300);
+}
+
+@keyframes sealSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    animation: none;
+  }
+}
+
+@include bp-down(760px) {
+  .seal {
+    top: -20px;
+    right: -14px;
+    width: 92px;
+    height: 92px;
+  }
+}

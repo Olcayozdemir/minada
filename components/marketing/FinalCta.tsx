@@ -1,6 +1,7 @@
 import { getImageProps } from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
+import { RotatingSeal } from "./RotatingSeal";
 import { whatsappLink } from "@/lib/site";
 import styles from "./FinalCta.module.scss";
 
@@ -22,6 +23,7 @@ export async function FinalCta() {
         <img {...photo} className={styles.photo} />
       </picture>
       <div className={styles.card}>
+        <RotatingSeal text={t("sealText")} />
         <p className={styles.eyebrow}>{t("eyebrow")}</p>
         <h2 className={styles.title}>{t("title")}</h2>
         <p className={styles.desc}>{t("desc")}</p>
