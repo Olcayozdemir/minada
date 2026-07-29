@@ -1,9 +1,114 @@
 @use "../../../../styles/mixins" as *;
 
-/* ── Page header ─────────────────────────────────────────────────────────── */
+/* ── Page header (kinetic-type register) ─────────────────────────────────── */
+
+.headerSection {
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+  /* The masked panel needs hero-scale presence even with short copy. */
+  min-height: clamp(480px, 64vh, 660px);
+  display: flex;
+  align-items: center;
+}
+
+/* Zero-size holder for the clipPath defs; must stay rendered (not display:none)
+   or the url() references die. */
+.clips {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Night solar-farm render, curve-masked. Desktop: full-height left panel
+   bleeding to the viewport edge. Above the ring, below the text. */
+.curveWrap {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: min(44vw, 680px);
+  z-index: 2;
+}
+
+.curveImg {
+  object-fit: cover;
+  object-position: 50% 68%;
+  clip-path: url(#about-curve-r);
+}
+
+/* Reference-scale kinetic ring: display-size letters on a circle straddling
+   the curve, partially swallowed by the photo's bulges. Scoped under the
+   section so these rules beat RotatingSeal's own single-class defaults. */
+.headerSection .headerSeal {
+  --seal-fill: var(--ink);
+  z-index: 1;
+  width: min(46vw, 560px);
+  height: min(46vw, 560px);
+  /* Anchored to the panel's edge, shifted right by a fraction of the ring's
+     own width, so the visible arc stays proportional at every viewport. */
+  left: min(44vw, 680px);
+  right: auto;
+  top: 54%;
+  /* Tuned by Olcay in the browser: ring mostly behind the panel, right arc
+     surfacing past the curve. */
+  transform: translate(-88%, -50%);
+}
+
+.headerInner {
+  @include container(var(--container-wide));
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 0.56fr);
+  align-items: center;
+}
 
 .header {
-  max-width: 860px;
+  grid-column: 2;
+  max-width: 640px;
+  padding-block: clamp(56px, 8vw, 96px);
+  padding-left: clamp(8px, 4vw, 56px);
+}
+
+@include bp-down(900px) {
+  /* The desktop flex row (panel | text) becomes a stacked flow: band, then
+     copy. Without this the in-flow band collapses inside the flex row. */
+  .headerSection {
+    display: block;
+    min-height: 0;
+  }
+
+  .curveWrap {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: min(46vh, 430px);
+  }
+
+  .curveImg {
+    clip-path: url(#about-curve-b);
+  }
+
+  .headerSection .headerSeal {
+    width: min(62vw, 320px);
+    height: min(62vw, 320px);
+    left: auto;
+    right: -14vw;
+    /* Anchored to the band's bottom curve; pulled up so the lower arc
+       clears the title below. */
+    top: min(46vh, 430px);
+    transform: translateY(-56%);
+  }
+
+  .headerInner {
+    display: block;
+  }
+
+  .header {
+    padding-block: clamp(28px, 5vw, 48px) clamp(48px, 8vw, 72px);
+    padding-left: 0;
+    max-width: none;
+  }
 }
 
 .eyebrow {
@@ -258,32 +363,4 @@
     gap: 6px;
     padding-block: 18px;
   }
-}
-
-/* ── Closing CTA ─────────────────────────────────────────────────────────── */
-
-.cta {
-  max-width: 680px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.ctaTitle {
-  font-size: clamp(30px, 4.5vw, 48px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.ctaDesc {
-  margin-top: 16px;
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--on-dark-2);
-}
-
-.ctaActions {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
 }

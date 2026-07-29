@@ -190,8 +190,7 @@
       "eyebrow": "Ready?",
       "title": "Invest in your energy future today",
       "desc": "Create a free survey and we'll bring you a tailored savings and system proposal.",
-      "waMessage": "Hello, I'd like to get a free survey from MİNADA.",
-      "sealText": "DROP ANCHOR · SOLAR · STORAGE · HEAT PUMP · EV CHARGING · "
+      "waMessage": "Hello, I'd like to get a free survey from MİNADA."
     },
     "intro": {
       "eyebrow": "Who is MİNADA",
@@ -793,7 +792,7 @@
     },
     "whereTitle": "Where do we operate?",
     "whereText": "Our headquarters is in Malatya, and we are also active across the Sivas, Elazığ, Erzincan and Antalya regions. Beyond these, we take on projects all over Türkiye and bring our team to wherever your project is.",
-    "cities": "Malatya (HQ) · Sivas · Elazığ · Erzincan · Antalya",
+    "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
     "missionTitle": "Our mission",
     "missionText": "To make energy independence achievable for every customer, from homes to businesses, through engineering integrity, transparency and single-point service. To be the harbor you can drop anchor in with confidence at every step of your energy journey.",
     "visionTitle": "Our vision",
@@ -821,7 +820,12 @@
         "desc": "We care about your 25+ years of production, not just the installation."
       }
     },
-    "ctaTitle": "Drop anchor on your energy future today",
-    "ctaDesc": "Book a free survey and together we will map out the system and savings tailored to your roof and your consumption."
+    "sealText": "SOLAR · STORAGE · HEAT PUMP · EV CHARGING · MİNADA · ",
+    "finalCta": {
+      "eyebrow": "Ready?",
+      "title": "Drop anchor on your energy future today",
+      "desc": "Book a free survey and together we will map out the system and savings tailored to your roof and your consumption.",
+      "waMessage": "Hello, I'd like to get a free survey from MİNADA."
+    }
   }
 }

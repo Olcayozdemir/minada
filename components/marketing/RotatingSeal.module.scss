@@ -13,15 +13,17 @@
   width: 100%;
   height: 100%;
   transform-origin: 50% 50%;
-  /* Continuous loop, so linear by design: a spring would settle or pulse. */
-  animation: sealSpin 24s linear infinite;
+  /* Continuous loop, so linear by design: a spring would settle or pulse.
+     Slow enough that display-scale letters drift rather than spin. */
+  animation: sealSpin 36s linear infinite;
 }
 
 .text {
   font-family: var(--font-display), sans-serif;
   font-size: 9.4px;
   font-weight: 700;
-  fill: var(--gold-300);
+  /* Callers override per surface: gold-300 on dark, gold-600 on light. */
+  fill: var(--seal-fill, var(--gold-300));
 }
 
 @keyframes sealSpin {

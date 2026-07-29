@@ -190,8 +190,7 @@
       "eyebrow": "Hazır mısınız?",
       "title": "Enerji geleceğinize bugün yatırım yapın",
       "desc": "Ücretsiz keşif oluşturun; size özel tasarruf ve sistem önerinizi sunalım.",
-      "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum.",
-      "sealText": "DEMİR ATIN · GÜNEŞ · DEPOLAMA · ISI POMPASI · EV ŞARJ · "
+      "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
     },
     "intro": {
       "eyebrow": "MİNADA kimdir",
@@ -793,7 +792,7 @@
     },
     "whereTitle": "Nerede hizmet veriyoruz?",
     "whereText": "Merkezimiz Malatya'da; bunun yanında Sivas, Elazığ, Erzincan ve Antalya bölgelerinde aktif olarak faaliyet gösteriyoruz. Gelen taleplere istinaden ise ülkemizin dört bir yanında uygulamalarımızı sürdürüyor, projenizin bulunduğu yere ekibimizle ulaşıyoruz.",
-    "cities": "Malatya (merkez) · Sivas · Elazığ · Erzincan · Antalya",
+    "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
     "missionTitle": "Misyonumuz",
     "missionText": "Konuttan işletmeye her müşterimizin enerji bağımsızlığına ulaşmasını; mühendislik bütünlüğü, şeffaflık ve tek elden hizmetle mümkün kılmak. Enerji yolculuğunuzun her adımında güvenle demir atabileceğiniz bir liman olmak.",
     "visionTitle": "Vizyonumuz",
@@ -821,7 +820,12 @@
         "desc": "Kurulumla değil, 25+ yıllık üretim yolculuğunuzla ilgileniyoruz."
       }
     },
-    "ctaTitle": "Enerji geleceğinize bugün demir atın",
-    "ctaDesc": "Ücretsiz keşif oluşturun; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım."
+    "sealText": "GÜNEŞ · DEPOLAMA · ISI POMPASI · EV ŞARJ · MİNADA · ",
+    "finalCta": {
+      "eyebrow": "Hazır mısınız?",
+      "title": "Enerji geleceğinize bugün demir atın",
+      "desc": "Ücretsiz keşif oluşturun; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım.",
+      "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
+    }
   }
 }

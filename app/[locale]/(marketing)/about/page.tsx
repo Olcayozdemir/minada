@@ -3,8 +3,9 @@ import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
+import { FinalCta } from "@/components/marketing/FinalCta";
 import { ReferencesSection } from "@/components/marketing/ReferencesSection";
+import { RotatingSeal } from "@/components/marketing/RotatingSeal";
 import { buildAlternates } from "@/lib/seo";
 import styles from "./about.module.scss";
 
@@ -31,21 +32,50 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("About");
-  const tc = await getTranslations("Common");
 
   return (
     <>
-      {/* Page header — the harbor line carries the brand metaphor, so the
-          accent word gets the serif-italic gold treatment from the hero. */}
-      <Section tone="light">
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>{t("eyebrow")}</p>
-          <h1 className={styles.title}>
-            {t.rich("title", { em: (chunks) => <em>{chunks}</em> })}
-          </h1>
-          <p className={styles.lead}>{t("intro")}</p>
+      {/* Page header, kinetic-type register: the night solar-farm render is
+          masked by an organic curve sweeping into the light canvas, with the
+          brand line spinning on a seal that rides the curve. The harbor word
+          keeps the serif-italic gold treatment from the hero. */}
+      <section className={styles.headerSection}>
+        <svg className={styles.clips} aria-hidden="true" focusable="false">
+          <defs>
+            {/* Desktop: wavy right edge on the photo panel. */}
+            <clipPath id="about-curve-r" clipPathUnits="objectBoundingBox">
+              <path d="M0,0 H0.84 C0.62,0.16 1.04,0.36 0.8,0.56 C0.6,0.73 0.84,0.86 0.6,1 H0 Z" />
+            </clipPath>
+            {/* Mobile: wavy bottom edge on the full-width band. */}
+            <clipPath id="about-curve-b" clipPathUnits="objectBoundingBox">
+              <path d="M0,0 H1 V0.8 C0.74,0.98 0.52,0.72 0.3,0.88 C0.14,0.99 0.06,0.9 0,0.95 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+        {/* The ring sits UNDER the masked photo (z 1 vs 2), so the curve's
+            bulges occlude parts of the spinning line — the reference's depth
+            trick. It surfaces in the white pockets and right of the panel. */}
+        <RotatingSeal text={t("sealText")} className={styles.headerSeal} />
+        <div className={styles.curveWrap}>
+          <Image
+            src="/images/v2/cta-mobile.jpeg"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 44vw"
+            className={styles.curveImg}
+          />
         </div>
-      </Section>
+        <div className={styles.headerInner}>
+          <div className={styles.header}>
+            <p className={styles.eyebrow}>{t("eyebrow")}</p>
+            <h1 className={styles.title}>
+              {t.rich("title", { em: (chunks) => <em>{chunks}</em> })}
+            </h1>
+            <p className={styles.lead}>{t("intro")}</p>
+          </div>
+        </div>
+      </section>
 
       {/* Story — editorial split; the portrait photo balances two paragraphs. */}
       <Section tone="light" className={styles.storySection}>
@@ -124,17 +154,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       {/* Reference projects keep living on this page (no separate nav tab). */}
       <ReferencesSection locale={locale} />
 
-      <Section tone="band">
-        <div className={styles.cta}>
-          <h2 className={styles.ctaTitle}>{t("ctaTitle")}</h2>
-          <p className={styles.ctaDesc}>{t("ctaDesc")}</p>
-          <div className={styles.ctaActions}>
-            <Button href="/contact" size="lg" withArrow>
-              {tc("getQuote")}
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <FinalCta namespace="About.finalCta" />
     </>
   );
 }
