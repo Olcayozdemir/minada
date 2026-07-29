@@ -6,9 +6,12 @@ import { getProjects } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
 import styles from "./ReferencesSection.module.scss";
 
-// MW-scale systems read as "12 MW" / "4,6 MW", smaller ones stay in kWp.
+// MW-scale systems read as "1,18 MW", smaller ones stay in kWp ("941,76 kWp").
 function capacityLabel(kw: number, locale: string): string {
-  return kw >= 1000 ? `${(kw / 1000).toLocaleString(locale)} MW` : `${kw.toLocaleString(locale)} kWp`;
+  const opts = { maximumFractionDigits: 2 };
+  return kw >= 1000
+    ? `${(kw / 1000).toLocaleString(locale, opts)} MW`
+    : `${kw.toLocaleString(locale, opts)} kWp`;
 }
 
 // Reference projects gallery (shown on the About page). Data comes from Sanity;
