@@ -87,10 +87,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
           <figure className={styles.storyPhoto}>
             <Image
-              src="/images/v2/area-ticari.jpg"
+              src="/images/v2/about-story.jpg"
               alt={t("storyImageAlt")}
-              width={1434}
-              height={1920}
+              width={1440}
+              height={1929}
               sizes="(max-width: 900px) 92vw, 42vw"
             />
           </figure>
