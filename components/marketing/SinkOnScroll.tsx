@@ -3,8 +3,8 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 /**
- * Translates its children downward as the page scrolls, so the hero display
- * type sinks behind the sky-less house cutout layered above it.
+ * Translates its children downward at a fraction of the scroll speed, so the
+ * hero display type sinks toward the house before the hero leaves the fold.
  */
 export function SinkOnScroll({
   children,

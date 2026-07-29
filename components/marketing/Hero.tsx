@@ -14,57 +14,31 @@ export async function Hero() {
   const accent = t("taglineAccent");
   const [pre, post] = tagline.split(accent);
 
-  // Two pixel-aligned frames of the same house at dusk: the base sits with a
-  // bare roof and the lights off; the lit twin has the solar system installed
-  // and powered on — warm interiors plus the teal energy path from panel →
-  // battery → charger → car. On hover (or, on touch, once on load) the lit
-  // frame crossfades in (see .lit). Art-directed: a wide landscape frame above
-  // 760px, a portrait crop below it — for both the base and the lit twin.
+  // Before/after pair of the same house: the base frame sits in the dark with
+  // a bare roof and no equipment; the energized twin has the full MİNADA
+  // install powered on — panels, battery, wallbox, heat pump, warm interiors
+  // and the teal energy path down to the car. On hover (or, on touch, once on
+  // load) the energized frame crossfades in (see .lit). The two renders share
+  // one composition to within ~2%, close enough that the blend reads as the
+  // house powering on. Art-directed: a wide landscape frame above 760px, a
+  // portrait crop centered on the equipment wall below it.
   const photoCommon = { sizes: "100vw", fill: true } as const;
   const { props: basePhoto } = getImageProps({
     ...photoCommon,
     alt: t("imageAlt"),
-    src: "/images/v2/hero-home-dusk.jpeg",
+    src: "/images/v2/hero-night.jpeg",
   });
   const {
     props: { srcSet: baseMobile },
-  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-home-dusk-mobile.jpeg" });
+  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-night-mobile.jpeg" });
   const { props: litPhoto } = getImageProps({
     ...photoCommon,
     alt: "",
-    src: "/images/v2/hero-home-lit.jpeg",
+    src: "/images/v2/hero-solar.jpeg",
   });
   const {
     props: { srcSet: litMobile },
-  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-home-lit-mobile.jpeg" });
-
-  // Depth-sandwich overlay: the same frames with the sky removed. Layered above
-  // the display type (z 4) so the roofline passes in front of the letters; the
-  // lit twin crossfades in step with the base via .lit.
-  const { props: overlayPhoto } = getImageProps({
-    ...photoCommon,
-    alt: "",
-    src: "/images/v2/hero-without-bg-without-light.png",
-  });
-  const {
-    props: { srcSet: overlayMobile },
-  } = getImageProps({
-    ...photoCommon,
-    alt: "",
-    src: "/images/v2/mobile-hero-without-bg-without-light.png",
-  });
-  const { props: overlayLit } = getImageProps({
-    ...photoCommon,
-    alt: "",
-    src: "/images/v2/hero-without-bg-with-light.png",
-  });
-  const {
-    props: { srcSet: overlayLitMobile },
-  } = getImageProps({
-    ...photoCommon,
-    alt: "",
-    src: "/images/v2/mobile-hero-without-bg-with-light.png",
-  });
+  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-solar-mobile.jpeg" });
 
   return (
     <section className={styles.hero} data-hero="">
@@ -83,28 +57,6 @@ export async function Hero() {
         />
       </picture>
       <div className={styles.scrim} aria-hidden="true" />
-
-      {/* Depth sandwich: the sky-removed house sits above the display type so the
-          roofline passes in front of the letters. Dusk + lit twins, art-directed
-          landscape/portrait, crossfading in step with the base photo. */}
-      <picture>
-        <source media="(max-width: 760px)" srcSet={overlayMobile} />
-        <img
-          {...overlayPhoto}
-          className={clsx(styles.photo, styles.overlay)}
-          loading="eager"
-          aria-hidden="true"
-        />
-      </picture>
-      <picture>
-        <source media="(max-width: 760px)" srcSet={overlayLitMobile} />
-        <img
-          {...overlayLit}
-          className={clsx(styles.photo, styles.overlay, styles.lit)}
-          loading="eager"
-          aria-hidden="true"
-        />
-      </picture>
 
       <div className={styles.inner}>
         <p className={styles.tagline}>

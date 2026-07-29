@@ -23,9 +23,9 @@
 
 .photo {
   object-fit: cover;
-  /* Keep the door/battery/car slice centered on narrow crops.
-     NOTE: base photo and the sky-less overlay share this class so the two
-     layers stay pixel-aligned at every viewport. */
+  /* Keep the equipment-wall/car slice centered on narrow crops.
+     NOTE: base photo and the energized twin share this class so the two
+     frames stay aligned at every viewport. */
   object-position: 52% 62%;
 }
 
@@ -44,21 +44,12 @@
   }
 }
 
-/* Lit twin stacked on the base photo. Both share .photo (same object-fit and
-   object-position) so they stay pixel-aligned; only opacity differs. Hidden
+/* Energized twin stacked on the base photo. Both share .photo (same object-fit
+   and object-position) so they stay aligned; only opacity differs. Hidden
    until hover, when the house "powers on" with a smooth crossfade. */
 .lit {
   opacity: 0;
   transition: opacity 0.7s ease;
-  pointer-events: none;
-}
-
-/* Depth sandwich: the same frame with its sky removed, layered above the
-   display type (z 4, below the interactive chips/CTAs at z 6) so the roofline
-   passes in front of the letters. Shares .photo so it stays pixel-aligned with
-   the base; its lit twin crossfades in step via .lit. */
-.overlay {
-  z-index: 4;
   pointer-events: none;
 }
 
@@ -134,8 +125,8 @@
   }
 }
 
-/* Parallax wrapper: carries the stacking slot below the cutout overlay so
-   the type sinks behind the house as it translates down on scroll. */
+/* Parallax wrapper: the display type translates down slower than the page
+   scrolls, so it sinks toward the house before the hero leaves the fold. */
 .displaySink {
   position: relative;
   z-index: 3;
