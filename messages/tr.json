@@ -66,31 +66,31 @@
   "Home": {
     "how": {
       "eyebrow": "Nasıl Çalışır",
-      "title": "Keşiften işletmeye, adım adım yanınızdayız",
+      "title": "Keşiften işletmeye 6 adım",
       "intro": "Hedefimiz mevcut evinizi kendine yeten bir eve çevirmek: altı şeffaf adım, her aşamada ne olacağını önceden bilirsiniz.",
       "discovery": {
-        "title": "Ücretsiz Keşif",
-        "desc": "Evinizi ve tüketiminizi yerinde inceler, kendine yeterlik potansiyelinizi çıkarırız."
+        "title": "Ücretsiz Keşif & Tüketim Analizi",
+        "desc": "Sahayı yerinde inceler, faturalarınızı ve yük profilinizi analiz ederiz. Keşif ücretsizdir."
       },
       "engineering": {
-        "title": "Mühendislik & Etüt",
-        "desc": "Üretim, depolama ve tüketimi tek denge içinde boyutlandırır, sonucu önceden simüle ederiz."
+        "title": "Mühendislik & Sistem Tasarımı",
+        "desc": "PVsyst veya PV*SOL ile aylık ve yıllık üretim modelini çıkarır, tüketim profilinize göre batarya kapasitesini boyutlandırırız."
       },
       "licensing": {
-        "title": "Proje & Lisanslama",
-        "desc": "EPDK ve dağıtım şirketi başvurularını, çağrı mektubu dahil, baştan sona biz yürütürüz."
+        "title": "İzin & Proje Onayı",
+        "desc": "Dağıtım şirketi başvurusu, çağrı mektubu ve bağlantı anlaşması dahil tüm resmî süreci biz yürütürüz."
       },
       "procurement": {
         "title": "Tedarik",
-        "desc": "Panelden bataryaya her bileşeni tier-1 üreticilerden sizin için tedarik ederiz."
+        "desc": "Panelden bataryaya kadar her bileşeni tier-1 üreticilerden tedarik ederiz. Ekipman listesi teklifte marka ve model bazında yazılıdır."
       },
       "install": {
         "title": "Kurulum & Devreye Alma",
-        "desc": "Yaşadığınız evi şantiyeye çevirmeden kurar, testleri tamamlar, sistemi devreye alırız."
+        "desc": "Montajı tamamlar, testleri yapar ve sistemi devreye alırız. Çalışma alanı sınırlandırılır, her gün sonunda saha toparlanır."
       },
       "om": {
         "title": "İzleme & Bakım",
-        "desc": "Eviniz kendine yeterken biz izlemedeyiz: 7/24 uzaktan takip ve periyodik bakım."
+        "desc": "Sistemi 7/24 uzaktan izler, periyodik bakımını yapar ve performans raporlarını size iletiriz."
       }
     },
     "areas": {

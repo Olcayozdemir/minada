@@ -66,31 +66,31 @@
   "Home": {
     "how": {
       "eyebrow": "How it works",
-      "title": "From survey to operation, step by step",
-      "intro": "One goal: an existing home that powers itself. Six transparent steps, and you always know what comes next.",
+      "title": "Six steps from survey to operation",
+      "intro": "Our goal is to turn your existing home into a self-sufficient one: six transparent steps, and you know in advance what happens at each stage.",
       "discovery": {
-        "title": "Free Survey",
-        "desc": "We assess your home and consumption on site and map its self-sufficiency potential."
+        "title": "Free Survey & Consumption Analysis",
+        "desc": "We inspect the site in person and analyze your bills and load profile. The survey is free."
       },
       "engineering": {
-        "title": "Engineering & Feasibility",
-        "desc": "We size production, storage and consumption as one balance, and simulate the outcome first."
+        "title": "Engineering & System Design",
+        "desc": "We model monthly and annual production with PVsyst or PV*SOL and size the battery capacity to your consumption profile."
       },
       "licensing": {
-        "title": "Permitting & Licensing",
-        "desc": "We handle every EPDK and grid-operator filing for you, grid-connection letter included."
+        "title": "Permits & Project Approval",
+        "desc": "We run the entire official process, including the utility application, the connection invitation letter and the connection agreement."
       },
       "procurement": {
         "title": "Procurement",
-        "desc": "We source every component, panels to batteries, from tier-1 manufacturers."
+        "desc": "We source every component, from panels to batteries, from tier-1 manufacturers. The equipment list is written into the offer by brand and model."
       },
       "install": {
-        "title": "Install & Commission",
-        "desc": "We install without turning your home into a construction site, test and switch on."
+        "title": "Installation & Commissioning",
+        "desc": "We complete the installation, run the tests and bring the system online. The work area is contained and the site is tidied at the end of every day."
       },
       "om": {
         "title": "Monitoring & Maintenance",
-        "desc": "Your home powers itself; we keep watch with 24/7 monitoring and scheduled maintenance."
+        "desc": "We monitor the system remotely around the clock, carry out periodic maintenance and send you performance reports."
       }
     },
     "areas": {
