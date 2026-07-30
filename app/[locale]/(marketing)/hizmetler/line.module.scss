@@ -13,21 +13,6 @@
   }
 }
 
-.grid4 {
-  @include list-reset;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-4);
-
-  @include bp-down(1000px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include bp-down(560px) {
-    grid-template-columns: 1fr;
-  }
-}
-
 .card {
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
@@ -56,35 +41,244 @@
   color: var(--ink-2);
 }
 
-/* Havuz bandı (ısı pompası sayfası) — navy üstü gold-hour yıkama. */
-.pool {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: var(--space-5);
-  border-radius: var(--r-xl);
-  padding: var(--space-6) var(--space-8);
-  color: #fff;
-  background:
-    radial-gradient(120% 140% at 85% 10%, rgba(242, 168, 44, 0.25), transparent 55%),
-    linear-gradient(135deg, #0e2743, #123454);
+/* Fotoğraflı kurulum tipi kartı (GES sayfası) — foto üstte, metin altta. */
+.mediaCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
 
-  @include bp-down(700px) {
-    grid-template-columns: 1fr;
-    padding: var(--space-6);
+.mediaFig {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+
+  img {
+    object-fit: cover;
   }
 }
 
-.poolTitle {
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.35rem;
-  margin-bottom: var(--space-2);
+.mediaBody {
+  padding: var(--space-5);
 }
 
-.poolDesc {
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 60ch;
-  line-height: 1.6;
+/* Kart içi madde listesi — altın nokta imli. */
+.cardList {
+  @include list-reset;
+  margin-top: var(--space-3);
+  font-size: 0.88rem;
+  color: var(--ink-2);
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+  }
+}
+
+.cardTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  background: rgba(242, 168, 44, 0.12);
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: var(--space-3);
+}
+
+.cardFoot {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.grid3 {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(1000px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark hero altındaki mini istatistik şeridi (EV şarj). */
+.heroStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5) var(--space-8);
+  margin-top: var(--space-6);
+}
+
+.heroStat {
+  .n {
+    display: block;
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1.2;
+  }
+
+  .l {
+    font-size: 0.85rem;
+    color: rgba(238, 242, 247, 0.65);
+  }
+}
+
+/* Numaralı süreç adımları (EV şarj — 4 adım). */
+.steps {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+
+  @include bp-down(1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stepNum {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: var(--space-3);
+}
+
+/* Karşılaştırma paneli (AC/DC) — üst şeritli, satır satır künye. */
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-5) var(--space-6);
+  border-top: 4px solid var(--gold);
+
+  &.volt {
+    border-top-color: #29d6ff;
+  }
+}
+
+.panelLead {
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.kv {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.93rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span:first-child {
+    color: var(--ink-2);
+  }
+
+  span:last-child {
+    font-weight: 600;
+    text-align: right;
+  }
+}
+
+/* İki kolonlu düz metin bloğu (ısı pompası "nedir / nasıl çalışır"). */
+.proseCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+  }
+
+  h3 {
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+
+  p {
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+}
+
+.miniChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+
+  span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+}
+
+/* Avantaj listesi — iki kolonlu, altın nokta imli. */
+.checkGrid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-6);
+  max-width: 900px;
+
+  @include bp-down(700px) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--ink-2);
+    line-height: 1.55;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+  }
 }
 
 .faq {
@@ -93,6 +287,17 @@
   gap: var(--space-4);
   max-width: 760px;
   margin-top: var(--space-6);
+}
+
+/* Uzun SSS listeleri iki kolona yayılır (ısı pompası). */
+.faqWide {
+  max-width: none;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5) var(--space-8);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .faqItem {

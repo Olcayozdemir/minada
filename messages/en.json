@@ -61,7 +61,13 @@
     "calcCardTitle": "Calculate your solar savings",
     "calcCardDesc": "See a ballpark picture in 1 minute.",
     "imageAlt": "A dark modern home lighting up as its solar panels, battery and EV charger come online",
-    "ctaSolutions": "Our solutions"
+    "ctaSolutions": "Our solutions",
+    "proof1v": "15+ yrs",
+    "proof1l": "industry experience",
+    "proof2v": "300+",
+    "proof2l": "completed projects",
+    "proof3v": "250 MWp+",
+    "proof3l": "commissioned capacity"
   },
   "Home": {
     "how": {
@@ -642,28 +648,24 @@
       "types": {
         "rooftop": {
           "title": "Rooftop PV",
-          "desc": "Self-consumption on home and business roofs: cuts the bill at its source."
+          "desc": "A solar plant built on a building's roof; homes, businesses, factories and warehouses all qualify. The electricity feeds the building's own consumption first, and any surplus is exported to the grid. We run every step, from permits through installation, commissioning and the operations period.",
+          "alt": "Aerial view of a factory roof covered in solar panels"
         },
         "ground": {
-          "title": "Ground-Mount PV (Unlicensed)",
-          "desc": "1–5 MW unlicensed generation: turns idle land into income."
+          "title": "Ground-Mount PV",
+          "desc": "A solar plant built on open land; the panel layout follows the terrain's slope and orientation. The electricity reaches the grid over a transmission line and is net-metered or sold. We manage EIA and zoning permits plus the grid-connection process end to end; installation and operations included.",
+          "alt": "Aerial view of ground-mounted solar array rows on open land"
         },
         "agripv": {
           "title": "Agri-PV",
-          "desc": "Generation and farming on the same parcel: the sun covers irrigation loads."
+          "desc": "A solar plant built primarily for agricultural irrigation. Planting and farm machinery still pass beneath the panels; the same parcel yields both crops and electricity.",
+          "alt": "A cow grazing in front of a solar array on farmland"
         },
         "carport": {
           "title": "Carport PV",
-          "desc": "Parking shade becomes a power plant; a natural pair with EV charging."
+          "desc": "A plant whose panels sit on a steel canopy sheltering the cars beneath. It provides shade and generates electricity at once, and pairs naturally with EV charging units.",
+          "alt": "Steel solar carport structure shading cars in a parking lot"
         }
-      },
-      "aud1": {
-        "title": "Homes",
-        "desc": "Turnkey rooftop PV for villas and detached homes — net metering and up to 90% bill savings. Full flow: the For Home page."
-      },
-      "aud2": {
-        "title": "Commercial & Industrial",
-        "desc": "Factories, warehouses, malls and agri businesses: lower OPEX, accelerated depreciation, corporate PPA options."
       },
       "f1": {
         "q": "Who runs the permits and licensing?",
@@ -673,15 +675,14 @@
         "q": "How long does installation take?",
         "a": "Rooftop systems typically run 4–8 weeks from survey to commissioning; unlicensed ground projects take 3–6 months depending on the permit calendar."
       },
-      "productsTitle": "The equipment we field",
-      "productsCta": "Panel & inverter catalog"
+      "faqTitle": "Common questions"
     },
     "bess": {
       "metaTitle": "Energy Storage (BESS) — Home and Commercial",
       "metaDesc": "Energy storage from LFP home batteries to container ESS: uninterrupted power, higher self-consumption, peak shaving.",
       "eyebrow": "What we do",
       "title": "Energy Storage Systems",
-      "intro": "Carry the sun's production into the evening: LFP battery systems that step in during outages and grow self-consumption — from homes to industrial scale.",
+      "intro": "BESS stores electricity, generated or drawn from the grid, in batteries and gives it back the moment it's needed: it carries daytime solar into the evening, steps in during outages and puts you in charge of the bill.",
       "aud1": {
         "title": "Home",
         "desc": "Hybrid inverter + wall-mounted LFP battery: the house keeps running through outages, daytime production gets spent at night."
@@ -699,7 +700,55 @@
         "a": "The LFP cells we use are 6,000+ cycle class — roughly 15 years at one charge-discharge a day. Capacity warranties are on the product cards."
       },
       "productsTitle": "Storage products",
-      "productsCta": "Energy storage catalog"
+      "productsCta": "Energy storage catalog",
+      "flow": {
+        "aria": "Diagram showing energy flowing from solar panels through the inverter to the battery, the building and the grid",
+        "solar": "Solar Array",
+        "solarSub": "PV generation",
+        "inverter": "Hybrid Inverter",
+        "inverterSub": "DC-AC conversion",
+        "home": "Home / Business",
+        "homeSub": "Consumption",
+        "battery": "LFP Battery",
+        "batterySub": "Storage",
+        "grid": "Grid",
+        "gridSub": "Net metering"
+      },
+      "scalesTitle": "Three scales of use",
+      "scalesIntro": "From a wall-mounted home battery to container-sized grid systems; your consumption profile sets the capacity.",
+      "scales": {
+        "home": {
+          "title": "Home",
+          "desc": "A compact solution designed for a single household: wall-mounted LFP battery plus hybrid inverter.",
+          "b1": "Stores surplus daytime production for the evening, raising self-consumption.",
+          "b2": "During an outage the house switches to battery power automatically.",
+          "b3": "On time-of-use tariffs it charges in cheap hours and spends in expensive ones.",
+          "scale": "Typical scale: 5-100 kWh"
+        },
+        "ci": {
+          "title": "Commercial & Industrial",
+          "desc": "Scalable rack or cabinet systems for businesses, factories and commercial sites: the goal is lower cost and continuity.",
+          "b1": "Peak shaving: the battery steps in at peak consumption, cutting demand charges.",
+          "b2": "Demand management: spreading load over time for flat, lower costs.",
+          "b3": "Uninterrupted production: keeps critical lines from stopping.",
+          "scale": "Typical scale: 100 kWh to a few MWh"
+        },
+        "utility": {
+          "title": "Utility Scale",
+          "desc": "Container systems in the MW/MWh class connected directly to the grid, keeping the distribution network in balance.",
+          "b1": "Holds the grid steady with frequency and voltage regulation.",
+          "b2": "Smooths fluctuations in solar and wind output, storing and releasing on demand.",
+          "b3": "Energy arbitrage: stores cheap energy and feeds it back at peak demand.",
+          "scale": "Typical scale: a few MWh to hundreds of MWh"
+        }
+      },
+      "techTitle": "The heart of the system",
+      "tech": {
+        "t1": "LFP cell chemistry",
+        "p1": "Most modern BESS units run on LFP (lithium iron phosphate) cells: high safety, a 6,000+ cycle life (about 15 years of daily use) and thermal stability.",
+        "t2": "Inverter + BMS/EMS",
+        "p2": "The inverter handles DC-AC conversion; a smart battery and energy management system (BMS/EMS) governs charge-discharge balance, safety and grid compliance."
+      }
     },
     "heatpump": {
       "metaTitle": "Heat Pumps — Heating, Cooling, Hot Water and Pools",
@@ -707,28 +756,84 @@
       "eyebrow": "What we do",
       "title": "Heat Pumps",
       "intro": "Heating, cooling, hot water and underfloor circuits in one system: heat pumps turn each unit of electricity into 3–4 units of heat. With PV on your roof, your heating comes from the sun.",
-      "aud1": {
-        "title": "Homes",
-        "desc": "Gas-free comfort in villas and detached homes: quiet monoblock units that pair with underfloor heating and radiators."
-      },
-      "aud2": {
-        "title": "Business",
-        "desc": "Central hot water and climate control for hotels, dorms and sports facilities; cascade setups for high capacity."
-      },
-      "pool": {
-        "title": "Pool Heat Pumps",
-        "desc": "Stretch the season from April to November at villa and hotel pools: R290, soft-start pool heat pumps hold the water at the temperature you choose."
-      },
-      "f1": {
-        "q": "Does a heat pump work in an older building?",
-        "a": "It does — what matters is the heat-load calculation. We measure insulation and the existing plumbing during the survey and size accordingly, raising flow temperatures where needed."
-      },
-      "f2": {
-        "q": "Why install it together with PV?",
-        "a": "The heat pump's consumption is covered by the sun: heating costs come off your roof, not your bill. We size both systems in a single project."
-      },
       "productsTitle": "Heat pump series",
-      "productsCta": "Heat pump catalog"
+      "productsCta": "Heat pump catalog",
+      "what": {
+        "title": "What is a heat pump?",
+        "p1": "A heat pump is a high-efficiency climate system that heats, cools and produces hot water using the natural energy held in air, water or the ground. Instead of generating energy it transfers existing heat: high performance from low consumption, with lower carbon emissions."
+      },
+      "how": {
+        "title": "How does it work?",
+        "p1": "It moves heat energy from outdoors into the building; in summer it reverses direction and cools. Most of the energy it needs comes from nature, the rest from electricity. The result: high efficiency and low running costs. One system covers all three:",
+        "i1": "Heating",
+        "i2": "Cooling",
+        "i3": "Domestic hot water"
+      },
+      "typesTitle": "Heat pump types",
+      "types": {
+        "air": {
+          "title": "Air-Source Heat Pump",
+          "desc": "Uses the energy in outdoor air for heating, cooling and hot water. The most popular choice for homes and commercial buildings."
+        },
+        "water": {
+          "title": "Water-Source Heat Pump",
+          "desc": "Draws its energy from groundwater, lakes or similar sources. Offers stable, high-efficiency operation."
+        },
+        "geo": {
+          "title": "Ground-Source Heat Pump",
+          "desc": "Taps the steady natural temperature the ground holds year round. High efficiency and a long service life."
+        },
+        "pool": {
+          "title": "Pool Heat Pump",
+          "desc": "Built to heat swimming-pool water economically and efficiently. Holds the water at the ideal temperature and stretches the season."
+        }
+      },
+      "advTitle": "Why a heat pump",
+      "adv": {
+        "a1": "Delivers high energy efficiency.",
+        "a2": "Covers heating, cooling and hot water in one system.",
+        "a3": "Cuts fossil-fuel consumption.",
+        "a4": "Offers low running costs.",
+        "a5": "An environmentally friendly solution.",
+        "a6": "Long-lived and dependable in daily use.",
+        "a7": "Helps reduce carbon emissions.",
+        "a8": "Supports the use of renewable energy."
+      },
+      "faqTitle": "Common questions",
+      "faq": {
+        "f1": {
+          "q": "Does a heat pump work efficiently in winter?",
+          "a": "Yes. Modern heat pumps are designed to run efficiently even at low outdoor temperatures. With the right capacity and engineering they heat effectively through winter."
+        },
+        "f2": {
+          "q": "Do I still need natural gas?",
+          "a": "No. A heat pump can cover heating, cooling and hot water on its own, reducing or completely removing the dependence on gas."
+        },
+        "f3": {
+          "q": "Is the electricity use high?",
+          "a": "No. Because most of its energy comes from natural sources it uses electricity efficiently, with significant savings over conventional systems."
+        },
+        "f4": {
+          "q": "Where can it be used?",
+          "a": "Homes, villas, apartment buildings, hotels, offices, commercial and industrial facilities, and pool applications."
+        },
+        "f5": {
+          "q": "Can it produce hot water?",
+          "a": "Yes. Alongside heating and cooling it also covers domestic hot water."
+        },
+        "f6": {
+          "q": "What does a pool heat pump do?",
+          "a": "It heats pool water economically using the energy in outdoor air; the swimming season stretches and energy costs drop."
+        },
+        "f7": {
+          "q": "Is it environmentally friendly?",
+          "a": "Yes. It cuts fossil-fuel use, lowers carbon emissions and draws most of its energy from renewable sources."
+        },
+        "f8": {
+          "q": "Why pair it with PV?",
+          "a": "The heat pump's consumption is covered by the sun: your heating cost comes from your roof, not your bill. We size both systems in a single project."
+        }
+      }
     },
     "evcharge": {
       "metaTitle": "EV Charging — Home and Business",
@@ -748,12 +853,110 @@
         "q": "Is my home's electrical infrastructure enough?",
         "a": "We measure meter power and panel capacity during the survey and file the capacity upgrade if one is needed. With load management, most homes install without extra power."
       },
+      "productsTitle": "Charging units",
+      "productsCta": "EV charging catalog",
+      "stats": {
+        "s1": {
+          "v": "7.4-22 kW",
+          "l": "AC home charging"
+        },
+        "s2": {
+          "v": "30 kW+",
+          "l": "DC fast charging"
+        },
+        "s3": {
+          "v": "OCPP",
+          "l": "compliant infrastructure"
+        },
+        "s4": {
+          "v": "One day",
+          "l": "typical install"
+        }
+      },
+      "solTitle": "Charging at every scale",
+      "solIntro": "From your garage to a fleet car park; charging infrastructure sized to the need.",
+      "sol": {
+        "home": {
+          "tag": "Home",
+          "title": "Residential Charging",
+          "desc": "Quiet, safe overnight charging with a 7.4-22 kW AC wallbox.",
+          "b1": "Meter capacity check",
+          "b2": "Smart load management",
+          "b3": "PV integration"
+        },
+        "business": {
+          "tag": "Business & Fleet",
+          "title": "Commercial Charge Park",
+          "desc": "OCPP-compliant DC fast charging; with a carport PV, generation and charging share one structure.",
+          "b1": "Per-kWh billing",
+          "b2": "Remote monitoring",
+          "b3": "Fleet load planning"
+        },
+        "shared": {
+          "tag": "Residences & Malls",
+          "title": "Shared Car Park",
+          "desc": "Multi-socket shared infrastructure with per-user billing.",
+          "b1": "User authorization",
+          "b2": "Management panel",
+          "b3": "Scalable socket count"
+        }
+      },
+      "stepsTitle": "Four steps from survey to handover",
+      "stepsIntro": "We run the whole process; you just plug in and charge.",
+      "steps": {
+        "s1": {
+          "title": "Survey & Measurement",
+          "desc": "We measure meter power and panel capacity, and define the need."
+        },
+        "s2": {
+          "title": "Engineering",
+          "desc": "Device and location are planned; if needed we handle the power-upgrade application."
+        },
+        "s3": {
+          "title": "Installation",
+          "desc": "Electrical connection and mounting are done to standard."
+        },
+        "s4": {
+          "title": "Commissioning",
+          "desc": "The unit is tested, connected to the app and handed over."
+        }
+      },
+      "techTitle": "AC or DC?",
+      "techIntro": "We pick the right charging type together, based on how you drive.",
+      "kvLabels": {
+        "power": "Power",
+        "conn": "Connector",
+        "time": "Charge time",
+        "best": "Best for"
+      },
+      "ac": {
+        "title": "AC Charging",
+        "lead": "Ideal for daily, planned charging at home and work.",
+        "power": "7.4 - 22 kW",
+        "conn": "Type 2",
+        "time": "6-8 hours (full)",
+        "best": "Overnight / working hours"
+      },
+      "dc": {
+        "title": "DC Fast Charging",
+        "lead": "Minutes-scale charging on the road and in heavy use.",
+        "power": "30 kW and up",
+        "conn": "CCS2",
+        "time": "20-80% in 20-40 min",
+        "best": "Business / fleet / car parks"
+      },
       "f2": {
+        "q": "How long does charging take?",
+        "a": "On a 7.4 kW home unit a typical car fills overnight (6-8 hours). On DC fast charging the 20-80% window takes 20-40 minutes depending on the car."
+      },
+      "f3": {
+        "q": "Does it work with my PV system?",
+        "a": "Yes. We set the car to charge on solar first; surplus production goes into the car instead of being sold to the grid."
+      },
+      "f4": {
         "q": "Can I bill users for charging at my business?",
         "a": "Yes — OCPP-compliant units connect to operator platforms for kWh-based billing; we guide you through the licensing requirements."
-      },
-      "productsTitle": "Charging units",
-      "productsCta": "EV charging catalog"
+      }
     }
   },
   "About": {

@@ -1,0 +1,75 @@
+/* BESS akış diyagramı — koyu bölüm içinde durur, kendi zemini yok. */
+
+.scroller {
+  margin-top: var(--space-6);
+
+  /* Dar ekranda diyagram küçülüp okunmaz olacağına kendi kabında kayar. */
+  @media (max-width: 760px) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .flow {
+      min-width: 680px;
+    }
+  }
+}
+
+.flow {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.box {
+  fill: rgba(233, 240, 250, 0.06);
+  stroke: rgba(233, 240, 250, 0.18);
+}
+
+.icon {
+  fill: none;
+  stroke: #f2a82c;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.title {
+  fill: #eef2f7;
+  font-family: var(--font-display), sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.sub {
+  fill: #a7b6cc;
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+}
+
+.gold,
+.volt {
+  stroke-width: 2.5;
+}
+
+/* Üretim hattı akışı: sabit hızlı döngü — linear (süregelen animasyon kuralı). */
+.gold {
+  stroke: #f2a82c;
+  stroke-dasharray: 7 7;
+  animation: bess-flow 1.6s linear infinite;
+}
+
+.volt {
+  stroke: #29d6ff;
+}
+
+@keyframes bess-flow {
+  to {
+    stroke-dashoffset: -14;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold {
+    animation: none;
+  }
+}

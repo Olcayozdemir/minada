@@ -91,6 +91,15 @@ export async function Hero() {
                 {t("ctaSolutions")}
               </Button>
             </div>
+            {/* Sayısal vaat (revize 29.07): kanıt üçlüsü — About "Rakamlarla" bandıyla aynı. */}
+            <dl className={styles.proof}>
+              {(["proof1", "proof2", "proof3"] as const).map((id) => (
+                <div key={id} className={styles.proofItem}>
+                  <dt>{t(`${id}l`)}</dt>
+                  <dd>{t(`${id}v`)}</dd>
+                </div>
+              ))}
+            </dl>
             <Link href="/calculator" className={styles.calcLink}>
               {tc("calculate")} <IconArrowRight size={15} />
             </Link>

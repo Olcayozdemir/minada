@@ -61,7 +61,13 @@
     "calcCardTitle": "Güneşle tasarrufunu hesapla",
     "calcCardDesc": "1 dakikada ortalama bir tablo görün.",
     "imageAlt": "Karanlık modern bir ev; güneş panelleri, bataryası ve araç şarjı devreye girince aydınlanıyor",
-    "ctaSolutions": "Çözümlerimiz"
+    "ctaSolutions": "Çözümlerimiz",
+    "proof1v": "15+ yıl",
+    "proof1l": "sektör deneyimi",
+    "proof2v": "300+",
+    "proof2l": "tamamlanan proje",
+    "proof3v": "250 MWp+",
+    "proof3l": "devreye alınan güç"
   },
   "Home": {
     "how": {
@@ -642,28 +648,24 @@
       "types": {
         "rooftop": {
           "title": "Çatı Üstü GES",
-          "desc": "Konut ve işletme çatılarında öz tüketim: faturayı kaynağında düşürür."
+          "desc": "Binanın çatısına kurulan güneş enerji santrali türüdür; konut, işletme, fabrika veya depo çatıları kullanılır. Üretilen elektrik öncelikle binanın kendi tüketiminde kullanılır, fazlası şebekeye verilir. İzin süreçlerinden kurulum ve devreye almaya, işletme dönemine kadar tüm adımları biz yürütürüz.",
+          "alt": "Fabrika çatısını kaplayan güneş panelleri, havadan görünüm"
         },
         "ground": {
-          "title": "Arazi Tipi GES (Lisanssız)",
-          "desc": "1–5 MW lisanssız üretim: atıl araziyi gelire dönüştürür."
+          "title": "Arazi Tipi GES",
+          "desc": "Arazi üzerine kurulan güneş enerji santrali türüdür; panel yerleşimi arazinin eğimine ve yönüne göre planlanır. Üretilen elektrik, enerji nakil hattıyla şebekeye bağlanarak mahsuplaşmada kullanılır veya satılır. ÇED ve imar izinleri ile şebeke bağlantı süreçlerini baştan sona biz yönetiriz; kurulum ve işletme dönemi de bizde.",
+          "alt": "Arazi üzerine kurulu güneş enerji santrali sıraları, havadan görünüm"
         },
         "agripv": {
           "title": "Tarımsal GES (Agri-PV)",
-          "desc": "Üretim + tarım aynı parselde: sulama yükünü güneş karşılar."
+          "desc": "Ağırlıklı olarak tarımsal sulama için kurulan güneş enerji santrali türüdür. Panellerin altında ekim, dikim ve tarım makinesi geçişi yapılabilir; aynı parselden hem ürün hem elektrik alınır.",
+          "alt": "Güneş paneli dizisinin önünde otlayan inek, tarım arazisi"
         },
         "carport": {
           "title": "Carport / Otopark GES",
-          "desc": "Otopark gölgelendirmesi santrale dönüşür; EV şarjla doğal ikili."
+          "desc": "Otopark alanına kurulan, araçların üzerini örten çelik taşıyıcı yapı üzerine panellerin yerleştirildiği santral türüdür. Hem gölgelendirme sağlar hem elektrik üretir; elektrikli araç şarj ünitesiyle birlikte kurulabilir.",
+          "alt": "Otoparkta araçların üzerini örten güneş panelli çelik carport yapısı"
         }
-      },
-      "aud1": {
-        "title": "Konut",
-        "desc": "Villa ve müstakil evler için anahtar teslim çatı GES — mahsuplaşma ve %90'a varan fatura tasarrufu. Detaylı akış: Evim için sayfası."
-      },
-      "aud2": {
-        "title": "Ticari & Endüstriyel",
-        "desc": "Fabrika, depo, AVM ve tarım işletmeleri: OPEX düşüşü, hızlandırılmış amortisman, kurumsal PPA seçenekleri."
       },
       "f1": {
         "q": "İzin ve ruhsat sürecini kim yürütüyor?",
@@ -673,15 +675,14 @@
         "q": "Kurulum ne kadar sürer?",
         "a": "Çatı sistemlerinde keşiften devreye almaya tipik süre 4–8 hafta; lisanssız arazi projelerinde izin takvimine bağlı olarak 3–6 ay."
       },
-      "productsTitle": "Sahada kullandığımız ekipman",
-      "productsCta": "Panel ve inverter kataloğu"
+      "faqTitle": "Sık sorulanlar"
     },
     "bess": {
       "metaTitle": "Enerji Depolama (BESS) — Ev Tipi ve Ticari",
       "metaDesc": "LFP ev bataryalarından konteyner ESS'e enerji depolama: kesintisiz güç, öz tüketim artışı, puant tıraşlama.",
       "eyebrow": "İş kolumuz",
       "title": "Enerji Depolama Sistemleri",
-      "intro": "Güneşin ürettiğini akşama taşıyın: LFP bataryalarla kesinti anında devreye giren, öz tüketimi büyüten depolama çözümleri — evden endüstriyel ölçeğe.",
+      "intro": "BESS, üretilen ya da şebekeden alınan elektriği bataryalarda depolayıp ihtiyaç anında geri veren sistemdir: güneşin gündüz ürettiğini akşama taşır, kesintide devreye girer, faturanızı yönetmenizi sağlar.",
       "aud1": {
         "title": "Ev tipi",
         "desc": "Hibrit inverter + duvar tipi LFP batarya: kesintide ev çalışmaya devam eder, gündüz üretim akşam harcanır."
@@ -699,7 +700,55 @@
         "a": "Kullandığımız LFP hücreler 6.000+ çevrim sınıfında — günlük bir dolum-boşalımla 15 yıl mertebesi. Kapasite garantileri ürün kartlarında."
       },
       "productsTitle": "Depolama ürünleri",
-      "productsCta": "Enerji depolama kataloğu"
+      "productsCta": "Enerji depolama kataloğu",
+      "flow": {
+        "aria": "Güneş panelinden invertere, bataryaya, eve ve şebekeye enerji akışını gösteren diyagram",
+        "solar": "Güneş Paneli",
+        "solarSub": "GES üretimi",
+        "inverter": "Hibrit İnverter",
+        "inverterSub": "DC-AC dönüşüm",
+        "home": "Ev / İşletme",
+        "homeSub": "Tüketim",
+        "battery": "LFP Batarya",
+        "batterySub": "Depolama",
+        "grid": "Şebeke",
+        "gridSub": "Mahsuplaşma"
+      },
+      "scalesTitle": "Ölçeğe göre üç kullanım alanı",
+      "scalesIntro": "Duvara monte ev bataryasından konteyner tipi şebeke sistemlerine; kapasiteyi tüketim profiliniz belirler.",
+      "scales": {
+        "home": {
+          "title": "Konut",
+          "desc": "Tek hane için tasarlanmış kompakt çözüm: duvara monte LFP batarya ve hibrit inverter.",
+          "b1": "Gündüz üretilen fazla enerjiyi depolar, akşam kullandırır; öz tüketimi artırır.",
+          "b2": "Kesintide ev otomatik olarak bataryadan çalışmaya devam eder.",
+          "b3": "Kademeli tarifede ucuz saatte dolar, pahalı saatte harcarsınız.",
+          "scale": "Tipik ölçek: 5-100 kWh"
+        },
+        "ci": {
+          "title": "Ticari & Endüstriyel",
+          "desc": "İşletme, fabrika ve ticari tesisler için rack veya kabin tipi ölçeklenebilir sistemler: hedef, maliyeti düşürmek ve sürekliliği korumak.",
+          "b1": "Puant tıraşlama: en yüksek tüketim anında devreye girer, güç talebini ve puant cezalarını düşürür.",
+          "b2": "Talep yönetimi: yükü zamana yayarak sabit ve düşük maliyet sağlar.",
+          "b3": "Kesintisiz üretim: kritik hatların durmasını önler.",
+          "scale": "Tipik ölçek: 100 kWh - birkaç MWh"
+        },
+        "utility": {
+          "title": "Şebeke Ölçeği (Utility)",
+          "desc": "Şebekeye doğrudan bağlanan konteyner tipi, MW/MWh mertebesinde sistemler: elektrik dağıtımının dengesini korur.",
+          "b1": "Frekans ve gerilim regülasyonuyla şebekeyi dengede tutar.",
+          "b2": "GES/RES üretimindeki dalgalanmayı düzeltir; üretimi depolayıp talebe göre salar.",
+          "b3": "Enerji arbitrajı: ucuza depolanan enerjiyi yüksek talepte şebekeye verir.",
+          "scale": "Tipik ölçek: birkaç MWh - yüzlerce MWh"
+        }
+      },
+      "techTitle": "Sistemin kalbi",
+      "tech": {
+        "t1": "LFP hücre kimyası",
+        "p1": "Modern BESS'lerin çoğu LFP (lityum demir fosfat) hücre kullanır: yüksek güvenlik, 6.000+ çevrim ömrü (günlük kullanımda 15 yıl mertebesi) ve termal kararlılık.",
+        "t2": "İnverter + BMS/EMS",
+        "p2": "DC-AC dönüşümünü inverter yapar; şarj-deşarj dengesini, güvenliği ve şebekeyle uyumu akıllı batarya ve enerji yönetim sistemi (BMS/EMS) kontrol eder."
+      }
     },
     "heatpump": {
       "metaTitle": "Isı Pompası — Isıtma, Soğutma, Sıcak Su ve Havuz",
@@ -707,28 +756,84 @@
       "eyebrow": "İş kolumuz",
       "title": "Isı Pompası",
       "intro": "Isıtma-soğutma, sıcak su ve yerden ısıtma tek sistemde: elektriğin her birimini 3-4 birim ısıya çeviren ısı pompaları. Çatınızda GES varsa, ısınmanız da güneşten.",
-      "aud1": {
-        "title": "Konut",
-        "desc": "Villa ve müstakil evlerde doğalgazsız konfor: yerden ısıtma ve radyatörle uyumlu, sessiz monoblok üniteler."
-      },
-      "aud2": {
-        "title": "İşletme",
-        "desc": "Otel, yurt ve spor tesislerinde merkezi sıcak su + iklimlendirme; kaskad kurulumla yüksek kapasite."
-      },
-      "pool": {
-        "title": "Havuz Isı Pompası",
-        "desc": "Villa ve otel havuzlarında sezonu Nisan'dan Kasım'a uzatın: R290'lı, soft-start havuz ısı pompalarıyla suyu istediğiniz derecede tutuyoruz."
-      },
-      "f1": {
-        "q": "Isı pompası eski binada çalışır mı?",
-        "a": "Çalışır — kritik olan ısı yükü hesabı. Keşifte yalıtım ve mevcut tesisatı ölçüp doğru kapasiteyi belirliyoruz; gerekirse radyatör başına çıkış sıcaklığını yükseltiyoruz."
-      },
-      "f2": {
-        "q": "GES ile birlikte kurmanın avantajı ne?",
-        "a": "Isı pompasının tüketimi güneşten karşılanır: ısınma maliyeti fatura yerine çatınızdan gelir. İki sistemi tek projede boyutlandırıyoruz."
-      },
       "productsTitle": "Isı pompası serileri",
-      "productsCta": "Isı pompası kataloğu"
+      "productsCta": "Isı pompası kataloğu",
+      "what": {
+        "title": "Isı pompası nedir?",
+        "p1": "Isı pompası; havada, suda veya toprakta bulunan doğal enerjiyi kullanarak mekanların ısıtma, soğutma ve sıcak su ihtiyacını karşılayan yüksek verimli bir iklimlendirme sistemidir. Enerji üretmek yerine mevcut ısıyı transfer eder: daha düşük tüketimle yüksek performans sunar, karbon salımının azalmasına katkı sağlar."
+      },
+      "how": {
+        "title": "Nasıl çalışır?",
+        "p1": "Dış ortamdan aldığı ısı enerjisini iç mekana aktararak ısıtır; yazın çalışma yönünü tersine çevirip serinletir. İhtiyaç duyduğu enerjinin büyük bölümünü doğadan, kalanını elektrikten alır. Sonuç: yüksek verim, düşük işletme maliyeti. Tek sistemle üçü birden:",
+        "i1": "Isıtma",
+        "i2": "Soğutma",
+        "i3": "Kullanım sıcak suyu"
+      },
+      "typesTitle": "Isı pompası çeşitleri",
+      "types": {
+        "air": {
+          "title": "Hava Kaynaklı Isı Pompası",
+          "desc": "Dış havadaki enerjiyi kullanarak ısıtma, soğutma ve sıcak su üretimi sağlar. Konutlar ve ticari yapılar için en çok tercih edilen sistemdir."
+        },
+        "water": {
+          "title": "Su Kaynaklı Isı Pompası",
+          "desc": "Enerjisini yer altı suyu, göl veya benzeri su kaynaklarından alır. Kararlı ve yüksek verimli çalışma avantajı sunar."
+        },
+        "geo": {
+          "title": "Toprak Kaynaklı Isı Pompası",
+          "desc": "Toprağın yıl boyunca koruduğu doğal sıcaklıktan faydalanır. Yüksek verimlilik ve uzun ömürlü kullanım sağlar."
+        },
+        "pool": {
+          "title": "Havuz Isı Pompası",
+          "desc": "Yüzme havuzu suyunu ekonomik ve verimli şekilde ısıtmak için tasarlanmıştır. Suyu ideal sıcaklıkta tutar, yüzme sezonunu uzatır."
+        }
+      },
+      "advTitle": "Isı pompasının avantajları",
+      "adv": {
+        "a1": "Yüksek enerji verimliliği sağlar.",
+        "a2": "Isıtma, soğutma ve sıcak su ihtiyacını tek sistemde karşılar.",
+        "a3": "Fosil yakıt tüketimini azaltır.",
+        "a4": "Düşük işletme maliyeti sunar.",
+        "a5": "Çevre dostu bir çözümdür.",
+        "a6": "Uzun ömürlü ve güvenilir kullanım sağlar.",
+        "a7": "Karbon emisyonlarının azalmasına katkıda bulunur.",
+        "a8": "Yenilenebilir enerji kullanımını destekler."
+      },
+      "faqTitle": "Sık sorulanlar",
+      "faq": {
+        "f1": {
+          "q": "Isı pompası kışın verimli çalışır mı?",
+          "a": "Evet. Modern ısı pompaları düşük dış ortam sıcaklıklarında da yüksek verimle çalışacak şekilde tasarlanır. Doğru kapasite seçimi ve projelendirmeyle kış aylarında etkili ısıtma sağlar."
+        },
+        "f2": {
+          "q": "Doğalgaza gerek kalır mı?",
+          "a": "Hayır. Isı pompası tek başına ısıtma, soğutma ve sıcak su ihtiyacını karşılayabilir; doğalgaza bağımlılığı azaltır veya tamamen ortadan kaldırır."
+        },
+        "f3": {
+          "q": "Elektrik tüketimi yüksek midir?",
+          "a": "Hayır. Enerjinin büyük kısmını doğal kaynaklardan aldığı için elektriği verimli kullanır; geleneksel sistemlere göre önemli tasarruf sağlar."
+        },
+        "f4": {
+          "q": "Hangi alanlarda kullanılabilir?",
+          "a": "Konut, villa, apartman, otel, ofis, ticari işletme, endüstriyel tesis ve havuz uygulamalarında kullanılabilir."
+        },
+        "f5": {
+          "q": "Sıcak su üretebilir mi?",
+          "a": "Evet. Isıtma ve soğutmanın yanı sıra kullanım sıcak suyu ihtiyacını da karşılar."
+        },
+        "f6": {
+          "q": "Havuz ısı pompası ne işe yarar?",
+          "a": "Dış havadaki enerjiyle havuz suyunu ekonomik şekilde ısıtır; yüzme sezonu uzar, enerji maliyeti düşer."
+        },
+        "f7": {
+          "q": "Çevre dostu mudur?",
+          "a": "Evet. Fosil yakıt kullanımını azaltır, karbon salımını düşürür ve enerjisinin büyük bölümünü yenilenebilir kaynaklardan alır."
+        },
+        "f8": {
+          "q": "GES ile birlikte kurmanın avantajı ne?",
+          "a": "Isı pompasının tüketimi güneşten karşılanır: ısınma maliyeti fatura yerine çatınızdan gelir. İki sistemi tek projede boyutlandırıyoruz."
+        }
+      }
     },
     "evcharge": {
       "metaTitle": "EV Şarj İstasyonları — Ev ve İşletme",
@@ -748,12 +853,110 @@
         "q": "Evimin elektrik altyapısı yeterli mi?",
         "a": "Keşifte sayaç gücü ve pano kapasitesini ölçüyoruz; gerekiyorsa güç artırımı başvurusunu biz yürütüyoruz. Yük yönetimiyle çoğu evde ek güç gerekmeden kurulum mümkün."
       },
+      "productsTitle": "Şarj üniteleri",
+      "productsCta": "EV şarj kataloğu",
+      "stats": {
+        "s1": {
+          "v": "7,4-22 kW",
+          "l": "AC ev şarjı"
+        },
+        "s2": {
+          "v": "30 kW+",
+          "l": "DC hızlı şarj"
+        },
+        "s3": {
+          "v": "OCPP",
+          "l": "uyumlu altyapı"
+        },
+        "s4": {
+          "v": "Tek gün",
+          "l": "tipik kurulum"
+        }
+      },
+      "solTitle": "Her ölçeğe uygun şarj",
+      "solIntro": "Evinizin garajından filo otoparkına; ihtiyacınıza göre tasarlanan şarj altyapısı.",
+      "sol": {
+        "home": {
+          "tag": "Ev",
+          "title": "Konut Şarjı",
+          "desc": "7,4-22 kW AC duvar ünitesiyle gece boyunca sessiz ve güvenli dolum.",
+          "b1": "Sayaç kapasite kontrolü",
+          "b2": "Akıllı yük yönetimi",
+          "b3": "GES entegrasyonu"
+        },
+        "business": {
+          "tag": "İşletme & Filo",
+          "title": "Ticari Şarj Parkı",
+          "desc": "OCPP uyumlu DC hızlı şarj; carport GES ile üretim ve şarj aynı yapıda.",
+          "b1": "kWh bazlı ücretlendirme",
+          "b2": "Uzaktan izleme",
+          "b3": "Filo yük planlaması"
+        },
+        "shared": {
+          "tag": "Site & AVM",
+          "title": "Ortak Otopark",
+          "desc": "Çok soketli, kullanıcı bazlı faturalandırılabilen paylaşımlı altyapı.",
+          "b1": "Kullanıcı yetkilendirme",
+          "b2": "Yönetim paneli",
+          "b3": "Ölçeklenebilir soket sayısı"
+        }
+      },
+      "stepsTitle": "Keşiften teslime 4 adım",
+      "stepsIntro": "Süreci baştan sona biz yönetiyoruz; siz sadece aracınızı takıp şarj ediyorsunuz.",
+      "steps": {
+        "s1": {
+          "title": "Keşif & Ölçüm",
+          "desc": "Sayaç gücü ve pano kapasitesi ölçülür, ihtiyaç belirlenir."
+        },
+        "s2": {
+          "title": "Projelendirme",
+          "desc": "Cihaz ve konum planlanır; gerekiyorsa güç artırımını biz yürütürüz."
+        },
+        "s3": {
+          "title": "Kurulum",
+          "desc": "Elektriksel bağlantı ve montaj standartlara uygun yapılır."
+        },
+        "s4": {
+          "title": "Devreye Alma",
+          "desc": "Ünite test edilir, uygulamaya bağlanır ve size teslim edilir."
+        }
+      },
+      "techTitle": "AC mi, DC mi?",
+      "techIntro": "Kullanım alışkanlığınıza göre doğru şarj tipini birlikte seçiyoruz.",
+      "kvLabels": {
+        "power": "Güç",
+        "conn": "Konnektör",
+        "time": "Dolum süresi",
+        "best": "En uygun"
+      },
+      "ac": {
+        "title": "AC Şarj",
+        "lead": "Ev ve iş yerinde günlük, planlı dolum için ideal.",
+        "power": "7,4 - 22 kW",
+        "conn": "Tip 2",
+        "time": "6-8 saat (tam dolum)",
+        "best": "Gece / mesai boyu"
+      },
+      "dc": {
+        "title": "DC Hızlı Şarj",
+        "lead": "Yol üstü ve yoğun kullanımda dakikalar içinde dolum.",
+        "power": "30 kW ve üzeri",
+        "conn": "CCS2",
+        "time": "%20-80 arası 20-40 dk",
+        "best": "İşletme / filo / otopark"
+      },
       "f2": {
+        "q": "Şarj süresi ne kadar?",
+        "a": "7,4 kW ev ünitesinde tipik bir araç gece boyunca (6-8 saat) tam dolar. DC hızlı şarjda %20-80 aralığı araca göre 20-40 dakikadır."
+      },
+      "f3": {
+        "q": "GES'imle birlikte çalışır mı?",
+        "a": "Evet. Aracınızı öncelikli olarak güneş enerjisiyle şarj edecek şekilde ayarlarız; fazla üretim şebekeye satılmak yerine araca aktarılır."
+      },
+      "f4": {
         "q": "İşletmemde şarjı ücretlendirebilir miyim?",
         "a": "Evet — OCPP uyumlu ünitelerle işletici platformlarına bağlanıp kWh bazlı ücretlendirme yapılabilir; lisans gerekliliklerinde yol gösteriyoruz."
-      },
-      "productsTitle": "Şarj üniteleri",
-      "productsCta": "EV şarj kataloğu"
+      }
     }
   },
   "About": {

@@ -249,6 +249,35 @@
   flex-wrap: wrap;
 }
 
+/* Kanıt üçlüsü: 15+ yıl · 300+ proje · 250 MWp+ — CTA'ların altında sessiz satır. */
+.proof {
+  display: flex;
+  gap: var(--space-6);
+  margin: 0;
+}
+
+.proofItem {
+  /* dt/dd sözdizimi etiketi önce ister; görselde değer üstte durur. */
+  display: flex;
+  flex-direction: column-reverse;
+
+  dd {
+    margin: 0;
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gold-300);
+    text-shadow: 0 2px 14px rgba(8, 26, 48, 0.55);
+  }
+
+  dt {
+    font-size: 0.8rem;
+    color: var(--on-dark-2);
+    text-shadow: 0 1px 10px rgba(8, 26, 48, 0.6);
+  }
+}
+
 /* Mobile-only quiet link to the calculator (replaces the second pill). */
 .calcLink {
   display: none;
@@ -415,6 +444,11 @@
   .calcLink {
     display: inline-flex;
     align-self: center;
+  }
+
+  /* Portre karede ekipman duvarını örtmesin — kanıt satırı masaüstüne özel. */
+  .proof {
+    display: none;
   }
 
   /* A touch larger on the narrow portrait crop than the desktop 0.75, and
