@@ -148,43 +148,6 @@
   letter-spacing: -0.015em;
 }
 
-/* Scroll cue: hairline dropping into an arrow chip at the header's foot. */
-.scrollCue {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  display: grid;
-  place-items: center;
-  color: var(--gold-600);
-
-  svg {
-    transform: rotate(90deg);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    width: 1px;
-    height: 34px;
-    background: linear-gradient(180deg, transparent, var(--gold-600));
-  }
-}
-
-@include bp-down(900px) {
-  .scrollCue {
-    display: none;
-  }
-}
-
 /* Tighter vertical rhythm than the global section chrome; the page was
    reading as floating islands (double class beats .section's padding). */
 .tight.tight {

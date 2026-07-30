@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { ReferencesSection } from "@/components/marketing/ReferencesSection";
 import { RotatingSeal } from "@/components/marketing/RotatingSeal";
-import { IconArrowRight } from "@/components/ui/icons";
 import { buildAlternates } from "@/lib/seo";
 import styles from "./about.module.scss";
 
@@ -75,10 +74,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </h1>
             <p className={styles.lead}>{t("intro")}</p>
           </div>
-        </div>
-        {/* Scroll affordance: the page continues below the fold. */}
-        <div className={styles.scrollCue} aria-hidden="true">
-          <IconArrowRight size={15} />
         </div>
       </section>
 
