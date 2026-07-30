@@ -14,14 +14,13 @@ export async function Hero() {
   const accent = t("taglineAccent");
   const [pre, post] = tagline.split(accent);
 
-  // Before/after pair of the same house: the base frame sits in the dark with
-  // a bare roof and no equipment; the energized twin has the full MİNADA
-  // install powered on — panels, battery, wallbox, heat pump, warm interiors
-  // and the teal energy path down to the car. On hover (or, on touch, once on
-  // load) the energized frame crossfades in (see .lit). The two renders share
-  // one composition to within ~2%, close enough that the blend reads as the
-  // house powering on. Art-directed: a wide landscape frame above 760px, a
-  // portrait crop centered on the equipment wall below it.
+  // Desktop tells the before/after story: the base frame sits dark with a
+  // bare roof; the energized twin (panels, battery, wallbox, heat pump, teal
+  // energy path) crossfades in on hover (see .lit). The two landscape renders
+  // share one composition to within ~2%. Below 760px there is no crossfade:
+  // phones get the dedicated portrait render of the energized house as the
+  // one and only frame (the .lit layer is display:none there, and its mobile
+  // source points at the same file so nothing extra downloads).
   const photoCommon = { sizes: "100vw", fill: true } as const;
   const { props: basePhoto } = getImageProps({
     ...photoCommon,
@@ -30,7 +29,7 @@ export async function Hero() {
   });
   const {
     props: { srcSet: baseMobile },
-  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-night-mobile.jpeg" });
+  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-solar-mobile.jpeg" });
   const { props: litPhoto } = getImageProps({
     ...photoCommon,
     alt: "",

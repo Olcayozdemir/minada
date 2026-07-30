@@ -66,6 +66,15 @@
   }
 }
 
+/* Phones skip the crossfade entirely: the portrait render of the energized
+   house IS the base frame there, so the lit layer would only double it. */
+@include bp-down(760px) {
+  .lit {
+    display: none;
+    animation: none;
+  }
+}
+
 @keyframes heroPowerOn {
   from {
     opacity: 0;
