@@ -56,6 +56,11 @@
       max-width: 300px;
       scroll-snap-align: start;
     }
+
+    /* First card starts a step in from the rail's edge (Olcay). */
+    > li:first-child {
+      margin-left: var(--space-4);
+    }
   }
 }
 
