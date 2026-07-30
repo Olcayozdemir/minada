@@ -8,12 +8,19 @@
    heading's own bottom margin left a near-empty screen above the cards.
    Double class beats .section's padding (FaqTeaser pattern). */
 @include bp-down(700px) {
+  /* Asymmetric: the cards' own scroll padding already pads the foot, so the
+     band only needs a hairline of air under the rail. */
   .band.band {
-    padding-block: var(--space-8);
+    padding-block: var(--space-8) var(--space-4);
   }
 
   .head {
     margin-bottom: calc(var(--space-6) * -1);
+  }
+
+  /* Just enough room for the scroll rail, not a second gutter. */
+  .grid {
+    padding-bottom: var(--space-2);
   }
 }
 
