@@ -5,13 +5,13 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { ReferencesSection } from "@/components/marketing/ReferencesSection";
+import { StatsBand } from "@/components/marketing/StatsBand";
 import { RotatingSeal } from "@/components/marketing/RotatingSeal";
 import { buildAlternates } from "@/lib/seo";
 import styles from "./about.module.scss";
 
 export const revalidate = 60;
 
-const STATS = ["years", "projects", "capacity", "solutions"] as const;
 const VALUES = ["discipline", "transparency", "oneHand", "promise", "longTerm"] as const;
 
 export async function generateMetadata({
@@ -97,25 +97,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </Section>
 
-      {/* Numbers — the page's dark beat. Labels live in <dt>, values in <dd>;
-          the visual order (value first) is flipped in CSS. */}
-      <Section tone="dark">
-        <SectionHeading tone="dark" title={t("statsTitle")} />
-        <dl className={styles.stats}>
-          {STATS.map((k) => (
-            <div key={k} className={styles.stat}>
-              <dt className={styles.statLabel}>{t(`stats.${k}.label`)}</dt>
-              <dd className={styles.statValue}>
-                {t(`stats.${k}.value`)}
-                {t(`stats.${k}.suffix`) ? <span>{t(`stats.${k}.suffix`)}</span> : null}
-              </dd>
-              {t.has(`stats.${k}.sub`) ? (
-                <dd className={styles.statSub}>{t(`stats.${k}.sub`)}</dd>
-              ) : null}
-            </div>
-          ))}
-        </dl>
-      </Section>
+      {/* Numbers — the page's dark beat (shared band, counts up on entry). */}
+      <StatsBand />
 
       <Section tone="light" className={styles.tight}>
         <div className={styles.where}>

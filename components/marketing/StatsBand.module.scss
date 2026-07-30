@@ -1,0 +1,71 @@
+@use "../../styles/mixins" as *;
+
+.stats {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding-inline: clamp(18px, 2.5vw, 40px);
+
+  /* Hairline dividers between columns (structure, not accent). */
+  &:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.statValue {
+  order: 1;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(44px, 5.5vw, 76px);
+  line-height: 1;
+  color: #fff;
+}
+
+/* Unit/plus tag in gold; CountUp's own span stays white. */
+.suffix {
+  color: var(--gold-300);
+  font-size: 0.52em;
+  margin-left: 3px;
+}
+
+.statLabel {
+  order: 2;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--on-dark-2);
+}
+
+.statSub {
+  order: 3;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--on-dark-2);
+  opacity: 0.75;
+}
+
+@include bp-down(900px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .stat {
+    border-left: none !important;
+    padding-inline: 0;
+
+    &:nth-child(2n) {
+      border-left: 1px solid rgba(255, 255, 255, 0.14) !important;
+      padding-left: clamp(18px, 5vw, 36px);
+    }
+  }
+}

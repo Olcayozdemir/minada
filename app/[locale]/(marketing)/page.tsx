@@ -4,6 +4,7 @@ import { EnergyLine } from "@/components/marketing/EnergyLine";
 import { Hero } from "@/components/marketing/Hero";
 import { Intro } from "@/components/marketing/Intro";
 import { Services } from "@/components/marketing/Services";
+import { StatsBand } from "@/components/marketing/StatsBand";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
@@ -51,6 +52,8 @@ export default async function HomePage({
         <Services />
         {/* Özet — fotoğraflı tam anlatım /nasil-calisir'da. */}
         <HowItWorks />
+        {/* Rakamlarla MİNADA — same band as the About page. */}
+        <StatsBand />
         <ApplicationAreas />
         <CalculatorTeaser />
         <ProductsTeaser />
