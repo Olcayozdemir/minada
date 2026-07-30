@@ -78,10 +78,16 @@ export async function Hero() {
           <div className={styles.bottomLeft}>
             <div className={styles.actions}>
               {/* Survey first; the five-door gateway right below carries segmentation. */}
-              <Button href="/contact" size="lg" withArrow>
+              <Button href="/contact" size="lg" withArrow className={styles.heroBtn}>
                 {tc("getQuote")}
               </Button>
-              <Button externalHref="#cozumler" newTab={false} size="lg" variant="glass">
+              <Button
+                externalHref="#cozumler"
+                newTab={false}
+                size="lg"
+                variant="glass"
+                className={styles.heroBtn}
+              >
                 {t("ctaSolutions")}
               </Button>
             </div>
