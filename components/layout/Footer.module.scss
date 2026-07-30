@@ -241,8 +241,24 @@
 }
 
 @include bp-down(520px) {
+  /* Two columns stay: a single column made the link list run for screens.
+     Only the brand block and the contact card span the full width. */
   .top {
-    grid-template-columns: 1fr;
+    gap: 28px 20px;
+  }
+
+  /* Three nav columns in a two-column grid leave the third one alone with an
+     empty half beside it. Let it span the row and flow its links in two. */
+  .col:last-of-type {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 12px;
+
+    .colTitle {
+      grid-column: 1 / -1;
+    }
   }
 
   .bottom {

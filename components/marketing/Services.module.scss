@@ -4,6 +4,19 @@
    wash + dot grid over deep navy) + editorial caption; the foot rule fills
    gold and the arrow chip lights on hover. */
 
+/* Phones: the band was mostly air — the global section chrome plus the
+   heading's own bottom margin left a near-empty screen above the cards.
+   Double class beats .section's padding (FaqTeaser pattern). */
+@include bp-down(700px) {
+  .band.band {
+    padding-block: var(--space-8);
+  }
+
+  .head {
+    margin-bottom: calc(var(--space-6) * -1);
+  }
+}
+
 .grid {
   @include list-reset;
   display: grid;

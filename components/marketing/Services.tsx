@@ -27,14 +27,16 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
   const t = await getTranslations("Home.gateway");
 
   return (
-    <Section tone="dark" id="cozumler">
-      <SectionHeading
-        as={headingAs}
-        tone="dark"
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-        intro={t("intro")}
-      />
+    <Section tone="dark" id="cozumler" className={styles.band}>
+      <div className={styles.head}>
+        <SectionHeading
+          as={headingAs}
+          tone="dark"
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          intro={t("intro")}
+        />
+      </div>
       <ul className={styles.grid}>
         {DOORS.map(({ id, href, img, w, h }) => (
           <li key={id}>
