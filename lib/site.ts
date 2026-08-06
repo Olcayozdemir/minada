@@ -22,8 +22,9 @@ export const AUDIENCES = [
 ] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname }>;
 
 export const NAV_ITEMS: ReadonlyArray<NavItem> = [
+  { href: "/", key: "home" },
   {
-    key: "solutionsGroup",
+    key: "servicesGroup",
     columns: [
       {
         key: "navColLines",
@@ -35,10 +36,10 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
       },
     ],
   },
-  { href: "/urunler", key: "products" },
-  { href: "/how-it-works", key: "howItWorks" },
-  { href: "/calculator", key: "calculator" },
   { href: "/about", key: "about" },
+  { href: "/projects", key: "projects" },
+  { href: "/blog", key: "blog" },
+  { href: "/contact", key: "contact" },
 ];
 
 // GES offer types — live on /hizmetler/gunes-enerjisi (BESS is its own line now).

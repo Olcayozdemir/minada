@@ -3,8 +3,9 @@
 import { useMemo, useRef, useSyncExternalStore } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { ContactShadows, Edges, OrbitControls, RoundedBox, Sparkles } from "@react-three/drei";
-import type { RoofPitch } from "@/lib/solar-config";
+import { ContactShadows, Edges, Line, OrbitControls, RoundedBox, Sparkles } from "@react-three/drei";
+import type { Line2, LineSegments2 } from "three-stdlib";
+import type { Orientation, RoofPitch } from "@/lib/solar-config";
 import styles from "./RoofSim3D.module.scss";
 
 // Visual cap so the roof stays readable on huge areas (slider max keeps us
@@ -21,8 +22,17 @@ const ROOF_OVER = 0.3; // eave overhang beyond the wall (horizontal)
 const ROOF_THICK = 0.07;
 const BATTERY_POS: [number, number, number] = [1.72, 0.32, 1.15];
 
-/* Gable angle per calculator pitch setting. */
-const PITCH_ANGLE: Record<RoofPitch, number> = { flat: 0.16, moderate: 0.38, steep: 0.56 };
+/* Gable angle per calculator pitch setting. "Düz" gerçekten düz: 0. */
+const PITCH_ANGLE: Record<RoofPitch, number> = { flat: 0, moderate: 0.38, steep: 0.56 };
+
+/* Seçilen yöne göre güneşin sahnedeki yeri. Panelli yamaç +z'ye (güneye)
+   bakar: Güney'de güneş tam karşıda ve yüksekte, GD/GB'de köşede,
+   Doğu-Batı'da yandan (mahya doğrultusunda) vurur. */
+const SUN_POS: Record<Orientation, [number, number, number]> = {
+  south: [0.5, 2.7, 2.1],
+  southNorth: [2.3, 2.5, 1.5], // köşeden — çatının iki yamacı da pay alır
+  eastWest: [3.2, 2.2, -0.5],
+};
 
 /* — Shared canvas textures (client-only module, lazy singletons) — */
 let cellTex: THREE.CanvasTexture | null = null;
@@ -49,6 +59,23 @@ function getCellTexture() {
   cellTex = new THREE.CanvasTexture(c);
   cellTex.anisotropy = 4;
   return cellTex;
+}
+
+/* Radial-gradient glow sprite for the sun's halo. */
+let glowTex: THREE.CanvasTexture | null = null;
+function getGlowTexture() {
+  if (glowTex) return glowTex;
+  const c = document.createElement("canvas");
+  c.width = c.height = 128;
+  const g = c.getContext("2d")!;
+  const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  grad.addColorStop(0, "rgba(255, 214, 120, 0.9)");
+  grad.addColorStop(0.4, "rgba(255, 194, 77, 0.35)");
+  grad.addColorStop(1, "rgba(255, 194, 77, 0)");
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 128, 128);
+  glowTex = new THREE.CanvasTexture(c);
+  return glowTex;
 }
 
 const iconTexCache: Partial<Record<"bolt" | "cloud", THREE.CanvasTexture>> = {};
@@ -284,14 +311,15 @@ function EnergyFlow({
     ]);
   }, [tilt]);
 
-  const pulses = useRef<THREE.Mesh[]>([]);
-  useFrame(({ clock }) => {
-    pulses.current.forEach((m, i) => {
-      if (!m) return;
-      const t = reduceMotion ? i / 3 : (clock.elapsedTime * 0.22 + i / 3) % 1;
-      m.position.copy(curve.getPointAt(t));
-      m.visible = active;
-    });
+  // Işık, kablo boyunca kayan parlak çizgi parçaları: dash'li Line2, offset'i
+  // her karede ilerletilince şeritler akıyormuş gibi süzülür.
+  const dashLine = useRef<Line2>(null!);
+  const points = useMemo(() => curve.getPoints(80), [curve]);
+  useFrame((_, dt) => {
+    const mat = dashLine.current?.material;
+    if (mat && !reduceMotion) {
+      mat.dashOffset -= dt * 0.55;
+    }
   });
 
   if (!active) return null;
@@ -312,17 +340,18 @@ function EnergyFlow({
           blending={THREE.AdditiveBlending}
         />
       </mesh>
-      {[0, 1, 2].map((i) => (
-        <mesh
-          key={i}
-          ref={(m) => {
-            if (m) pulses.current[i] = m;
-          }}
-        >
-          <sphereGeometry args={[0.034, 12, 12]} />
-          <meshBasicMaterial color="#eafcff" depthWrite={false} />
-        </mesh>
-      ))}
+      <Line
+        ref={dashLine}
+        points={points}
+        color="#eafcff"
+        lineWidth={3}
+        dashed
+        dashSize={0.22}
+        gapSize={0.3}
+        transparent
+        opacity={0.95}
+        depthWrite={false}
+      />
     </group>
   );
 }
@@ -346,6 +375,11 @@ function House({
 }) {
   const slots = clamp(max, 1, MAX_SLOTS);
   const lit = clamp(installed, 0, slots);
+
+  // Düz seçiminde beşik çatı yerine teras: tek yatay döşeme + alçak parapet,
+  // mahya ve ikinci yamaç hiç kurulmaz.
+  const isFlat = tilt === 0;
+  const flatDepth = WALL_D + ROOF_OVER * 2;
 
   const ridgeY = WALL_H + Math.tan(tilt) * (WALL_D / 2);
   const run = WALL_D / 2 + ROOF_OVER; // ridge → eave edge, horizontal
@@ -378,28 +412,31 @@ function House({
   // portrait (taller down the slope than wide) and fill column-major, so new
   // panels stack below each other instead of forming a long sideways band.
   const cells = useMemo(() => {
-    const rows = clamp(Math.round(Math.sqrt(slots / 2.6)), 2, 5);
+    // Teras bütün tabanı kullanır; beşik çatıda alan ön yamaçla sınırlı.
+    const fieldDepth = isFlat ? flatDepth * 0.82 : slope * 0.78;
+    const rows = clamp(Math.round(Math.sqrt(slots / (isFlat ? 2 : 2.6))), 2, isFlat ? 6 : 5);
     const cols = Math.ceil(slots / rows);
     const cw = Math.min((WALL_W * 0.92) / cols, 0.5);
-    const cd = Math.min((slope * 0.78) / rows, 0.62);
+    const cd = Math.min(fieldDepth / rows, 0.62);
     const ridgeMargin = 0.14;
     return Array.from({ length: slots }, (_, idx) => {
       const col = Math.floor(idx / rows);
       const row = idx % rows;
-      const along = ridgeMargin + (row + 0.5) * cd;
       return {
         idx,
         x: (col + 0.5) * cw - (cw * cols) / 2,
-        z: -slope / 2 + along, // ridge sits at -slope/2 on the front slab
+        z: isFlat
+          ? (row + 0.5) * cd - (cd * rows) / 2 // terasta ortalanmış grid
+          : -slope / 2 + ridgeMargin + (row + 0.5) * cd, // mahya -slope/2'de
         w: cw,
         d: cd,
         delay: row * 0.07 + col * 0.05,
       };
     });
-  }, [slots, slope]);
+  }, [slots, slope, isFlat, flatDepth]);
 
   // Whole diorama grows a little with the roof area, like the SVG sim did.
-  const scale = 0.8 + 0.28 * clamp(slots / MAX_SLOTS, 0, 1);
+  const scale = 0.94 + 0.3 * clamp(slots / MAX_SLOTS, 0, 1);
 
   return (
     <group scale={scale}>
@@ -423,41 +460,79 @@ function House({
       <Badge kind="bolt" position={[1.05, 0.58, WALL_D / 2 + 0.03]} />
       <Badge kind="cloud" position={[1.05, 0.24, WALL_D / 2 + 0.03]} />
 
-      {/* gable roof: two slabs resting on the slopes, meeting at the ridge */}
-      {[1, -1].map((side) => (
-        <group
-          key={side}
-          position={[0, slabY, side * slabZ]}
-          rotation={[side * tilt, 0, 0]}
-        >
+      {isFlat ? (
+        /* teras çatı: tek yatay döşeme + alçak parapet, mahya yok */
+        <group position={[0, WALL_H + ROOF_THICK / 2 + 0.012, 0]}>
           <mesh material={deckGlass}>
-            <boxGeometry args={[roofW, ROOF_THICK, slope]} />
+            <boxGeometry args={[roofW, ROOF_THICK, flatDepth]} />
             <Edges color="#ffffff" threshold={30} />
           </mesh>
-          {side === 1 && (
-            <group position={[0, ROOF_THICK / 2 + 0.01, 0]}>
-              {cells.map((c) => (
-                <PanelCell
-                  key={c.idx}
-                  x={c.x}
-                  z={c.z}
-                  w={c.w}
-                  d={c.d}
-                  on={c.idx < lit}
-                  delay={c.delay}
-                  showSlot={lit > 0}
-                />
-              ))}
-            </group>
-          )}
+          {[1, -1].map((s) => (
+            <mesh key={`p${s}`} position={[0, ROOF_THICK / 2 + 0.05, s * (flatDepth / 2 - 0.025)]} material={deckGlass}>
+              <boxGeometry args={[roofW, 0.1, 0.05]} />
+              <Edges color="#ffffff" threshold={30} />
+            </mesh>
+          ))}
+          {[1, -1].map((s) => (
+            <mesh key={`s${s}`} position={[s * (roofW / 2 - 0.025), ROOF_THICK / 2 + 0.05, 0]} material={deckGlass}>
+              <boxGeometry args={[0.05, 0.1, flatDepth - 0.1]} />
+              <Edges color="#ffffff" threshold={30} />
+            </mesh>
+          ))}
+          <group position={[0, ROOF_THICK / 2 + 0.01, 0]}>
+            {cells.map((c) => (
+              <PanelCell
+                key={c.idx}
+                x={c.x}
+                z={c.z}
+                w={c.w}
+                d={c.d}
+                on={c.idx < lit}
+                delay={c.delay}
+                showSlot={lit > 0}
+              />
+            ))}
+          </group>
         </group>
-      ))}
+      ) : (
+        <>
+          {/* gable roof: two slabs resting on the slopes, meeting at the ridge */}
+          {[1, -1].map((side) => (
+            <group
+              key={side}
+              position={[0, slabY, side * slabZ]}
+              rotation={[side * tilt, 0, 0]}
+            >
+              <mesh material={deckGlass}>
+                <boxGeometry args={[roofW, ROOF_THICK, slope]} />
+                <Edges color="#ffffff" threshold={30} />
+              </mesh>
+              {side === 1 && (
+                <group position={[0, ROOF_THICK / 2 + 0.01, 0]}>
+                  {cells.map((c) => (
+                    <PanelCell
+                      key={c.idx}
+                      x={c.x}
+                      z={c.z}
+                      w={c.w}
+                      d={c.d}
+                      on={c.idx < lit}
+                      delay={c.delay}
+                      showSlot={lit > 0}
+                    />
+                  ))}
+                </group>
+              )}
+            </group>
+          ))}
 
-      {/* ridge cap hides the slab seam */}
-      <mesh position={[0, ridgeY + lift + 0.015, 0]} material={deckGlass}>
-        <boxGeometry args={[roofW + 0.05, 0.07, 0.16]} />
-        <Edges color="#ffffff" threshold={30} />
-      </mesh>
+          {/* ridge cap hides the slab seam */}
+          <mesh position={[0, ridgeY + lift + 0.015, 0]} material={deckGlass}>
+            <boxGeometry args={[roofW + 0.05, 0.07, 0.16]} />
+            <Edges color="#ffffff" threshold={30} />
+          </mesh>
+        </>
+      )}
 
       {/* storage: battery + flowing energy, only when a pack is selected */}
       {batteryKwh > 0 && (
@@ -466,6 +541,89 @@ function House({
           <EnergyFlow tilt={tilt} active={lit > 0} reduceMotion={reduceMotion} />
         </>
       )}
+    </group>
+  );
+}
+
+/* Işınların çatı üstünde nişan aldığı noktalar (dünya uzayı) — panel alanına
+   yayılmış dört hedef. */
+const RAY_TARGETS: ReadonlyArray<[number, number, number]> = [
+  [-1.0, 1.3, 0.55],
+  [-0.25, 1.35, 0.15],
+  [0.55, 1.3, 0.6],
+  [1.1, 1.25, -0.1],
+];
+
+/**
+ * Görünür güneş: altın küre + halo + panellere doğru çizgi halinde akan
+ * ışınlar; sıcak key ışığı da içinde taşır. Yön değişince yeni konuma
+ * yumuşakça süzülür (ilk konum prop olarak sabit kalır, hareketi tamamen
+ * useFrame sürer — böylece re-render pozisyonu zıplatmaz).
+ */
+function Sun({ orientation, reduceMotion }: { orientation: Orientation; reduceMotion: boolean }) {
+  const group = useRef<THREE.Group>(null!);
+  const rayRefs = useRef<(Line2 | LineSegments2)[]>([]);
+  const target = useMemo(() => new THREE.Vector3(...SUN_POS[orientation]), [orientation]);
+
+  // Işınlar grup içinde (yerel uzay): güneş merkezinden çatı hedefine, halo
+  // dışından başlayıp çatının hemen üstünde biter. Yön değişince hedefler
+  // yeni güneş konumuna göre yeniden kurulur.
+  const rays = useMemo(() => {
+    const sun = new THREE.Vector3(...SUN_POS[orientation]);
+    return RAY_TARGETS.map((t) => {
+      const local = new THREE.Vector3(...t).sub(sun);
+      return [local.clone().multiplyScalar(0.24), local.clone().multiplyScalar(0.95)] as [
+        THREE.Vector3,
+        THREE.Vector3,
+      ];
+    });
+  }, [orientation]);
+
+  useFrame((_, dt) => {
+    if (!group.current) return;
+    if (reduceMotion) group.current.position.copy(target);
+    else {
+      group.current.position.lerp(target, Math.min(1, dt * 3.5));
+      // ışık, çizgiler halinde güneşten panele doğru aksın
+      rayRefs.current.forEach((l) => {
+        if (l?.material) l.material.dashOffset -= dt * 0.7;
+      });
+    }
+  });
+
+  return (
+    <group ref={group} position={SUN_POS.south}>
+      <mesh>
+        <sphereGeometry args={[0.26, 24, 24]} />
+        <meshBasicMaterial color="#ffd66e" />
+      </mesh>
+      <sprite scale={[1.7, 1.7, 1]}>
+        <spriteMaterial
+          map={getGlowTexture()}
+          transparent
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </sprite>
+      {rays.map((pts, i) => (
+        <Line
+          key={i}
+          ref={(l) => {
+            if (l) rayRefs.current[i] = l;
+          }}
+          points={pts}
+          color="#ffd98a"
+          lineWidth={2}
+          dashed
+          dashSize={0.16}
+          gapSize={0.24}
+          transparent
+          opacity={0.55}
+          depthWrite={false}
+        />
+      ))}
+      {/* sıcak key ışık güneşle birlikte gezer; hedefi sahne merkezi */}
+      <directionalLight intensity={1.35} color="#ffd98a" />
     </group>
   );
 }
@@ -496,12 +654,14 @@ export default function RoofSim3D({
   installed,
   max,
   pitch = "moderate",
+  orientation = "south",
   batteryKwh = 0,
   cards,
 }: {
   installed: number;
   max: number;
   pitch?: RoofPitch;
+  orientation?: Orientation;
   batteryKwh?: number;
   cards?: SimCard[];
 }) {
@@ -526,10 +686,10 @@ export default function RoofSim3D({
         // pan-y keeps vertical page scroll alive over the canvas on touch.
         style={{ touchAction: "pan-y" }}
       >
-        {/* key/fill/ambient lighting — warm key, cool navy fill */}
+        {/* ambient + cool navy fill; sıcak key ışık Sun'ın içinde, yönle gezer */}
         <ambientLight intensity={0.5} color="#a9c2e8" />
-        <directionalLight position={[3.5, 4.5, 2.5]} intensity={1.35} color="#ffd98a" />
         <directionalLight position={[-4, 2.5, -2]} intensity={0.55} color="#7db2ff" />
+        <Sun orientation={orientation} reduceMotion={reduceMotion} />
 
         {/* cool dust drifting above the roof, reference-style */}
         <Sparkles

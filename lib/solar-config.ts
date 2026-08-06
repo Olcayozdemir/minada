@@ -1,26 +1,40 @@
-// ⚠️ PLACEHOLDER coefficients — all estimated. Verify against current market
-// data (tariffs, install cost, regional yield) BEFORE launch. Shown to users
-// with a visible "estimate" disclaimer.
+// Katsayılar Olcay'ın fizibilite modelinden (2026-08-06, revize): GES 700
+// USD/kWp × 47 USD/TL, 5 TL/kWh tarife, Güney 1600 / G-K ve D-B 1350
+// kWh/kWp·yıl. Batarya kademeli USD fiyatla maliyete DAHİL. Bütün fiyatlar
+// KDV HARİÇ; geri dönüş süresi de KDV hariç hesaplanır.
+// Örnek doğrulama: 30 kWp → 987.000 TL, güneyde 48.000 kWh/yıl → 240.000
+// TL/yıl tasarruf → ~4,1 yıl geri dönüş (fizibilitedeki ~4,4 bandı).
+
+const USD_PER_KWP = 700;
+const USD_TRY = 47;
+
+/** Batarya paket fiyatları, USD (KDV hariç) — kademeli, kWh başına değil. */
+export const BATTERY_COST_USD: Record<number, number> = {
+  0: 0,
+  5: 1750,
+  10: 2750,
+  15: 3500,
+};
 
 export const SOLAR_CONFIG = {
-  avgTariff: 2.6, // ₺/kWh, residential tariff (PLACEHOLDER)
-  costPerKwp: 32000, // ₺/kWp installed (PLACEHOLDER)
+  avgTariff: 5, // ₺/kWh elektrik birim fiyatı
+  costPerKwp: USD_PER_KWP * USD_TRY, // 32.900 ₺/kWp kurulu maliyet (KDV hariç)
+  usdTry: USD_TRY,
   costRange: 0.15, // ± fraction for the estimated cost range
   co2Factor: 0.44, // kg CO₂ / kWh grid (PLACEHOLDER)
   lifespanYears: 25,
   panelKwp: 0.455, // kWp per module, ~455W panel (PLACEHOLDER)
   panelAreaM2: 2.4, // usable roof area per module incl. spacing (PLACEHOLDER)
-  batteryCostPerKwh: 18000, // ₺/kWh installed storage (PLACEHOLDER)
   batteryCyclesPerYear: 300, // effective full day→night shift cycles (PLACEHOLDER)
 };
 
-/** Yield multiplier by roof orientation — PLACEHOLDER. */
-export const ORIENTATIONS = ["south", "southMix", "eastWest"] as const;
+/** Yön çarpanı — fizibilite: Güney 1600, G-K ve D-B 1350 kWh/kWp·yıl. */
+export const ORIENTATIONS = ["south", "southNorth", "eastWest"] as const;
 export type Orientation = (typeof ORIENTATIONS)[number];
 export const ORIENTATION_FACTOR: Record<Orientation, number> = {
   south: 1,
-  southMix: 0.96,
-  eastWest: 0.85,
+  southNorth: 1350 / 1600,
+  eastWest: 1350 / 1600,
 };
 
 /** Yield multiplier by roof pitch — PLACEHOLDER. */
@@ -32,7 +46,8 @@ export const PITCH_FACTOR: Record<RoofPitch, number> = {
   steep: 0.96,
 };
 
-// Regional specific yield (kWh/kWp/year) — PLACEHOLDER, roughly by region.
+// Regional specific yield (kWh/kWp/year), GÜNEY yönü için. Fizibilitenin baz
+// değeri 1600; şehirler onun etrafında bölgesel nüans verir (İç Anadolu ≈ baz).
 export const CITIES = [
   { id: "istanbul", specificYield: 1400 },
   { id: "ankara", specificYield: 1600 },
@@ -102,12 +117,12 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
   const {
     avgTariff,
     costPerKwp,
+    usdTry,
     costRange,
     co2Factor,
     lifespanYears,
     panelKwp,
     panelAreaM2,
-    batteryCostPerKwh,
     batteryCyclesPerYear,
   } = SOLAR_CONFIG;
 
@@ -132,17 +147,21 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
   const systemKwp = panelsInstalled * panelKwp;
   const annualProduction = systemKwp * specificYield;
 
-  // Self-consumption: what's produced while people are home is used directly;
-  // a battery shifts (part of) the rest into the evening, capped by how many
-  // full cycles a year it can realistically run.
+  // Kapsama göstergesi için öz-tüketim ayrımı: gündüz kullanılan pay doğrudan,
+  // batarya kalanın bir kısmını akşama taşır.
   const usableProduction = Math.min(annualProduction, annualConsumption);
   const directUse = usableProduction * dayUseRatio;
   const batteryShifted = Math.min(usableProduction - directUse, batteryKwh * batteryCyclesPerYear);
   const selfConsumed = directUse + batteryShifted;
 
-  const batteryCost = batteryKwh * batteryCostPerKwh;
+  // Batarya kademeli USD paket fiyatıyla maliyete dahil (revize fizibilite).
+  // Ara değer gelirse 5 kWh paket oranıyla yaklaşıklanır.
+  const batteryUsd = BATTERY_COST_USD[batteryKwh] ?? (batteryKwh / 5) * BATTERY_COST_USD[5];
+  const batteryCost = batteryUsd * usdTry;
   const systemCost = systemKwp * costPerKwp + batteryCost;
-  const annualSavings = selfConsumed * avgTariff;
+  // Fizibilite modeli (mahsuplaşma): üretimin tamamı tarife üzerinden tasarruf
+  // sayılır — tasarruf = yıllık üretim × birim fiyat.
+  const annualSavings = annualProduction * avgTariff;
   const paybackYears = annualSavings > 0 ? systemCost / annualSavings : 0;
   const savings25yr = annualSavings * lifespanYears;
   const co2Savings = annualProduction * co2Factor;

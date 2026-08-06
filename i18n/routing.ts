@@ -17,8 +17,6 @@ export const routing = defineRouting({
     "/hizmetler/enerji-depolama": { tr: "/hizmetler/enerji-depolama", en: "/services/energy-storage" },
     "/hizmetler/isi-pompasi": { tr: "/hizmetler/isi-pompasi", en: "/services/heat-pump" },
     "/hizmetler/ev-sarj": { tr: "/hizmetler/ev-sarj", en: "/services/ev-charging" },
-    "/urunler": { tr: "/urunler", en: "/products" },
-    "/urunler/[category]": { tr: "/urunler/[category]", en: "/products/[category]" },
     "/how-it-works": { tr: "/nasil-calisir", en: "/how-it-works" },
     "/calculator": { tr: "/hesaplayici", en: "/calculator" },
     "/projects": { tr: "/referanslar", en: "/projects" },

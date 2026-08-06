@@ -8,7 +8,6 @@ import { StatsBand } from "@/components/marketing/StatsBand";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
-import { ProductsTeaser } from "@/components/marketing/ProductsTeaser";
 // import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — aşağıdaki nota bak
 import { FaqTeaser } from "@/components/marketing/FaqTeaser";
 import { FinalCta } from "@/components/marketing/FinalCta";
@@ -50,13 +49,16 @@ export default async function HomePage({
         <Hero />
         <Intro />
         <Services />
-        {/* Özet — fotoğraflı tam anlatım /nasil-calisir'da. */}
+        {/* Özet ("Keşiften işletmeye 6 adım") — fotoğraflı tam anlatım /nasil-calisir'da.
+            Notion'daki "Nasıl çalışır kaldırılacak" maddesi bu bölümü değil,
+            menüdeki Nasıl Çalışır linkini kastediyor (Olcay, 2026-08-06). */}
         <HowItWorks />
         {/* Rakamlarla MİNADA — same band as the About page. */}
         <StatsBand />
         <ApplicationAreas />
         <CalculatorTeaser />
-        <ProductsTeaser />
+        {/* Ürünler teaser'ı ana sayfadan kaldırıldı (Olcay, 2026-08-06);
+            /urunler sayfası yaşıyor. */}
         {/* Referanslar ("Evini MİNADA'ya emanet edenler") — gerçek müşteri
             referansları toplanana kadar askıda (Olcay, 2026-07-11). Geri açmak
             için: yorumdan çıkar + üstteki Testimonials importunu geri al. */}

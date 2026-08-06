@@ -27,7 +27,7 @@ const RoofSim3D = dynamic(() => import("./RoofSim3D"), {
 
 const ORIENTATION_KEY: Record<Orientation, string> = {
   south: "orientationSouth",
-  southMix: "orientationSouthMix",
+  southNorth: "orientationSouthNorth",
   eastWest: "orientationEastWest",
 };
 
@@ -293,6 +293,7 @@ export function Calculator() {
           installed={result ? result.panelsInstalled : 0}
           max={capacity}
           pitch={pitch}
+          orientation={orientation}
           batteryKwh={batteryKwh}
           cards={simCards}
         />

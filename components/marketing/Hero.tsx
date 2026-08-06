@@ -4,80 +4,57 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
-import { SinkOnScroll } from "./SinkOnScroll";
 import styles from "./Hero.module.scss";
 
 export async function Hero() {
   const t = await getTranslations("Hero");
   const tc = await getTranslations("Common");
-  const tagline = t("tagline");
-  const accent = t("taglineAccent");
-  const [pre, post] = tagline.split(accent);
 
-  // Desktop tells the before/after story: the base frame sits dark with a
-  // bare roof; the energized twin (panels, battery, wallbox, heat pump, teal
-  // energy path) crossfades in on hover (see .lit). The two landscape renders
-  // share one composition to within ~2%. Below 760px there is no crossfade:
-  // phones get the dedicated portrait render of the energized house as the
-  // one and only frame (the .lit layer is display:none there, and its mobile
-  // source points at the same file so nothing extra downloads).
+  // "Sinematik Panorama" (Hero Keşif 1d): tek aydınlık kare, soldan navy geçişli
+  // scrim, sol blokta başlık + alt metin + CTA'lar, sağ altta hesaplayıcı kartı.
+  // Eski alacakaranlık/ışıklı crossfade ikilisi kalktı. Buradaki görsel, Prompt A
+  // ile üretilecek nihai aydınlık render gelene kadarki yer tutucu.
   const photoCommon = { sizes: "100vw", fill: true } as const;
-  const { props: basePhoto } = getImageProps({
+  const { props: photo } = getImageProps({
     ...photoCommon,
     alt: t("imageAlt"),
-    src: "/images/v2/hero-night.jpeg",
+    src: "/images/v2/hero-settled.webp",
   });
   const {
-    props: { srcSet: baseMobile },
-  } = getImageProps({ ...photoCommon, alt: t("imageAlt"), src: "/images/v2/hero-solar-mobile.jpeg" });
-  const { props: litPhoto } = getImageProps({
-    ...photoCommon,
-    alt: "",
-    src: "/images/v2/hero-solar.jpeg",
-  });
-  const {
-    props: { srcSet: litMobile },
-  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-solar-mobile.jpeg" });
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-mobile.webp" });
 
   return (
     <section className={styles.hero} data-hero="">
       <picture>
-        <source media="(max-width: 760px)" srcSet={baseMobile} />
-        <img {...basePhoto} className={styles.photo} loading="eager" fetchPriority="high" />
-      </picture>
-      {/* Lit twin, eager-loaded so the first reveal crossfades without a pop-in. */}
-      <picture>
-        <source media="(max-width: 760px)" srcSet={litMobile} />
-        <img
-          {...litPhoto}
-          className={clsx(styles.photo, styles.lit)}
-          loading="eager"
-          aria-hidden="true"
-        />
+        <source media="(max-width: 760px)" srcSet={mobileSrcSet} />
+        <img {...photo} className={styles.photo} loading="eager" fetchPriority="high" />
       </picture>
       <div className={styles.scrim} aria-hidden="true" />
 
-      <div className={styles.inner}>
-        <p className={styles.tagline}>
-          {pre}
-          <em>{accent}</em>
-          {post}
-        </p>
+      {/* Ürün işaretleri (1d): 1 GES · 2 depolama · 3 EV şarj · 4 ısı pompası.
+          Düzlem, fotoğrafın cover kırpımını kopyalar; koordinatlar görsel-uzayı
+          yüzdesi olduğundan kadraj değişse de nokta ürünün üstünde kalır. */}
+      <div className={styles.dots} aria-hidden="true">
+        {[1, 2, 3, 4].map((n) => (
+          <span key={n} className={clsx(styles.dot, styles[`dot${n}`])}>
+            {n}
+          </span>
+        ))}
+      </div>
 
-        <SinkOnScroll className={styles.displaySink}>
+      <div className={styles.inner}>
+        <div className={styles.content}>
           <h1 className={styles.display}>
             <span className={styles.d1}>{t("display1")}</span>
-            <span className={styles.d2}>{t("display2")}</span>
+            <em className={styles.d2}>{t("display2")}</em>
           </h1>
-        </SinkOnScroll>
 
-        {/* TODO(olcay): "10 yıl garanti" chip collides with the display word at
-            some widths — disabled for now, will return in a different form. */}
-
-        <div className={styles.bottom}>
-          <div className={styles.bottomLeft}>
+          <div className={styles.lower}>
+            {/* Mobil, ürün işaretlerine yer açmak için kısa versiyonu gösterir (3d). */}
+            <p className={clsx(styles.sub, styles.subDesktop)}>{t("sub")}</p>
+            <p className={clsx(styles.sub, styles.subMobile)}>{t("subMobile")}</p>
             <div className={styles.actions}>
-              {/* Survey first; the five-door gateway right below carries segmentation. */}
               <Button href="/contact" size="lg" withArrow className={styles.heroBtn}>
                 {tc("getQuote")}
               </Button>
@@ -91,20 +68,10 @@ export async function Hero() {
                 {t("ctaSolutions")}
               </Button>
             </div>
-            {/* Sayısal vaat (revize 29.07): kanıt üçlüsü — About "Rakamlarla" bandıyla aynı. */}
-            <dl className={styles.proof}>
-              {(["proof1", "proof2", "proof3"] as const).map((id) => (
-                <div key={id} className={styles.proofItem}>
-                  <dt>{t(`${id}l`)}</dt>
-                  <dd>{t(`${id}v`)}</dd>
-                </div>
-              ))}
-            </dl>
-            <Link href="/calculator" className={styles.calcLink}>
-              {tc("calculate")} <IconArrowRight size={15} />
-            </Link>
           </div>
+        </div>
 
+        <div className={styles.bottom}>
           <Link href="/calculator" className={styles.calcCard}>
             <span className={styles.calcThumb}>
               <Image src="/images/v2/calc-2.jpg" alt="" width={96} height={72} />

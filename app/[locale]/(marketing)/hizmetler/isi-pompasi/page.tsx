@@ -92,13 +92,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <Section tone="light">
         <div className={styles.productRow}>
           <SectionHeading title={t("productsTitle")} />
-          <Button
-            href={{ pathname: "/urunler/[category]", params: { category: "isi-pompasi" } }}
-            variant="secondary"
-            withArrow
-          >
-            {t("productsCta")}
-          </Button>
         </div>
       </Section>
 

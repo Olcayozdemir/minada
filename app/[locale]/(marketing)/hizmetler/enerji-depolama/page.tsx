@@ -81,13 +81,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <Section tone="light">
         <div className={styles.productRow}>
           <SectionHeading title={t("productsTitle")} />
-          <Button
-            href={{ pathname: "/urunler/[category]", params: { category: "enerji-depolama" } }}
-            variant="secondary"
-            withArrow
-          >
-            {t("productsCta")}
-          </Button>
         </div>
         <ul className={styles.faq}>
           {(["f1", "f2"] as const).map((id) => (

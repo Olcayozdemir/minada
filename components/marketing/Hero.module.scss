@@ -23,224 +23,142 @@
 
 .photo {
   object-fit: cover;
-  /* Keep the equipment-wall/car slice centered on narrow crops.
-     NOTE: base photo and the energized twin share this class so the two
-     frames stay aligned at every viewport. */
-  object-position: 52% 62%;
-}
-
-/* Laptop-class viewports (MacBook and down): the frame gets wider than the photo
-   is tall, so `cover` stops zooming and a 62% vertical anchor starts trimming the
-   sky — which drags the roofline up into the display type and swallows whole
-   letters. Anchor to the top of the frame instead. Above the crossover (~804px
-   tall at this width) there is no vertical slack for the anchor to act on, so
-   this is a no-op there and nothing jumps; below it the crop comes off the gravel
-   foreground, which already sits under the scrim. */
-@include bp-up(761px) {
-  @media (max-height: 846px) {
-    .photo {
-      object-position: 52% 0;
-    }
-  }
-}
-
-/* Energized twin stacked on the base photo. Both share .photo (same object-fit
-   and object-position) so they stay aligned; only opacity differs. Hidden
-   until hover, when the house "powers on" with a smooth crossfade. */
-.lit {
-  opacity: 0;
-  transition: opacity 0.7s ease;
-  pointer-events: none;
-}
-
-.hero:hover .lit {
-  opacity: 1;
-}
-
-/* Touch devices can't hover, so the house "powers on" once on load instead:
-   it holds dusk for a beat, then crossfades to the lit frame and stays there
-   (fill `both` = dusk during the delay, lit forever after). */
-@media (hover: none) {
-  .lit {
-    animation: heroPowerOn 1.6s ease-in-out 0.8s both;
-  }
-}
-
-/* Phones skip the crossfade entirely: the portrait render of the energized
-   house IS the base frame there, so the lit layer would only double it. */
-@include bp-down(760px) {
-  .lit {
-    display: none;
-    animation: none;
-  }
-}
-
-@keyframes heroPowerOn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lit {
-    transition-duration: 0.01ms;
-    animation: none; /* no power-on reveal */
-  }
-
-  /* Touch + reduced motion: skip the reveal, just rest on the lit frame. */
-  @media (hover: none) {
-    .lit {
-      opacity: 1;
-    }
-  }
+  /* Panoramada ev sağ üçte-ikide; kadraj sağa yaslanır ki metin bloğunun
+     arkasında gökyüzü/yumuşak alan kalsın. */
+  object-position: 62% 54%;
 }
 
 .scrim {
   position: absolute;
   inset: 0;
-  /* The flat navy sky needs almost nothing — a touch at the top for the
-     header, a ramp at the bottom for the CTA row. */
-  background: linear-gradient(
-    180deg,
-    rgba(8, 26, 48, 0.3) 0%,
-    rgba(8, 26, 48, 0) 30%,
-    rgba(8, 26, 48, 0.06) 58%,
-    rgba(8, 26, 48, 0.68) 100%
-  );
+  /* 1d: soldan navy geçiş — metin bloğu fotoğrafa değil geçişe oturur —
+     artı üstte header, altta kart için hafif dikey rampa. */
+  background:
+    linear-gradient(
+      100deg,
+      rgba(8, 26, 48, 0.85) 0%,
+      rgba(8, 26, 48, 0.5) 34%,
+      rgba(8, 26, 48, 0.05) 62%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 26, 48, 0.18) 0%,
+      transparent 30%,
+      transparent 68%,
+      rgba(8, 26, 48, 0.5) 100%
+    );
 }
+
+/* Fotoğrafın object-fit:cover + object-position geometrisinin kopyası: kutu
+   görselle aynı oranda, iki eksende de kabı kaplayacak kadar büyük ve aynı
+   yüzdeyle hizalı. İçindeki noktalar görsel-uzayı yüzdesi kullanır, kırpım
+   hangi ekranda nasıl değişirse değişsin ürünün üstünde kalırlar. */
+.dots {
+  position: absolute;
+  aspect-ratio: 1200 / 670;
+  min-width: 100%;
+  min-height: 100%;
+  left: 62%;
+  top: 54%;
+  transform: translate(-62%, -54%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  background: var(--gold);
+  color: var(--on-accent);
+  box-shadow:
+    0 0 0 4px rgba(242, 168, 44, 0.3),
+    0 4px 14px rgba(8, 26, 48, 0.45);
+  transform: translate(-50%, -50%);
+}
+
+/* hero-settled.webp (1200x670) üzerindeki ürün konumları. */
+.dot1 { left: 56.7%; top: 27.6%; } /* çatıdaki panel dizisi */
+.dot2 { left: 69%; top: 74.2%; } /* batarya kulesi */
+.dot3 { left: 59.3%; top: 69.9%; } /* duvardaki wallbox */
+.dot4 { left: 56%; top: 81.3%; } /* ısı pompası */
 
 .inner {
   @include container(var(--container-wide));
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-top: calc(var(--header-h) + var(--space-2));
+  padding-top: calc(var(--header-h) + var(--space-8));
   padding-bottom: var(--space-10);
 }
 
-.tagline {
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  opacity: 0.94;
-  margin-bottom: var(--space-4);
-  text-shadow: 0 2px 18px rgba(8, 26, 48, 0.5);
-
-  em {
-    font-family: var(--font-serif), serif;
-    font-style: italic;
-    color: var(--gold-300);
-  }
-}
-
-/* Parallax wrapper: the display type translates down slower than the page
-   scrolls, so it sinks toward the house before the hero leaves the fold. */
-.displaySink {
-  position: relative;
-  z-index: 3;
-  will-change: transform;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 640px;
+  /* Blok dikeyde ortada dursun: üstteki ve alttaki boşluk auto marginlerle
+     paylaşılır (alt payı .bottom'ın kendi auto'suyla bölüşür). */
+  margin-top: auto;
 }
 
 .display {
   position: relative;
-  /* Display box spans the container, so KENDİ can centre and ENERJİNİZ sit at
-     the end (see .d1/.d2). Scaled down from the full display size.
-     The height term is the second half of the roofline fix above: the words have
-     to fit in the sky, and the sky is bounded by viewport height, not width.
-     11svh is the largest value that clears the ridge in both locales, but only
-     just (+20px on a 14" MacBook); 10.5 doubles that margin for 5% of type, and
-     above ~1165px tall the width term wins again and nothing changes at all. */
-  font-size: min(calc(var(--fs-display) * 0.75), 10.5svh);
-  line-height: 0.92;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  /* 1d ölçüsü 104px'ti; display tavanı 96px (global kural), oranlar korunarak
+     ölçeklendi. */
+  font-size: clamp(3.4rem, 6.6vw, 6rem);
+  line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 700;
   color: #fff;
   text-shadow: 0 4px 44px rgba(8, 26, 48, 0.45);
-  display: flex;
-  flex-direction: column;
 }
 
 .d1 {
-  align-self: center;
+  display: block;
 }
 
-/* Pushed to the end (right); no staircase offset needed once it hugs the edge. */
+/* İkinci satır: Fraunces italik, altın — sloganın imge yarısı. */
 .d2 {
-  align-self: flex-end;
-  margin-top: -0.08em;
+  display: block;
+  margin-top: 0.06em;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.77em;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--gold-300);
 }
 
-/* Desktop only: nudge KENDİ a touch right of centre; ENERJİNİZ a touch smaller. */
-@include bp-up(761px) {
-  .d1 {
-    transform: translateX(clamp(1rem, 4vw, 6rem));
-  }
-
-  .d2 {
-    font-size: 0.85em;
-  }
-
-  /* Laptop-class heights: the sky left over above the roofline is a wedge that
-     opens to the right, and a centred first line runs straight into the ridge —
-     into the tree line, for the longer English word. Slide it over to the right
-     edge, inset from the second line so the staircase survives. */
-  @media (max-height: 1060px) {
-    .d1 {
-      align-self: flex-end;
-      transform: translateX(-7vw);
-    }
-  }
-}
-
-%chip {
-  @include glass;
-  position: absolute;
-  z-index: 6;
+.lower {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--r-lg);
-
-  strong {
-    display: block;
-    font-family: var(--font-display), sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.15;
-  }
-
-  span {
-    display: block;
-    font-size: 0.82rem;
-    color: var(--on-dark-2);
-  }
-}
-
-.chipWarranty {
-  @extend %chip;
-  right: 8%;
-  top: 46%;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-}
-
-.bottom {
-  margin-top: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-8);
+  gap: var(--space-5);
   position: relative;
   z-index: 6;
 }
 
-.bottomLeft {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-  max-width: 52ch;
+.sub {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  /* on-dark-2 fotoğrafın üstünde eriyor; 1d'nin kendi tonu bir kademe açık. */
+  color: #c9d5e6;
+  text-shadow: 0 2px 18px rgba(8, 26, 48, 0.5);
+}
+
+.subMobile {
+  display: none;
 }
 
 .actions {
@@ -249,56 +167,12 @@
   flex-wrap: wrap;
 }
 
-/* Kanıt üçlüsü: 15+ yıl · 300+ proje · 250 MWp+ — CTA'ların altında sessiz satır. */
-.proof {
+.bottom {
+  margin-top: auto;
   display: flex;
-  gap: var(--space-6);
-  margin: 0;
-}
-
-.proofItem {
-  /* dt/dd sözdizimi etiketi önce ister; görselde değer üstte durur. */
-  display: flex;
-  flex-direction: column-reverse;
-
-  dd {
-    margin: 0;
-    font-family: var(--font-display), sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--gold-300);
-    text-shadow: 0 2px 14px rgba(8, 26, 48, 0.55);
-  }
-
-  dt {
-    font-size: 0.8rem;
-    color: var(--on-dark-2);
-    text-shadow: 0 1px 10px rgba(8, 26, 48, 0.6);
-  }
-}
-
-/* Mobile-only quiet link to the calculator (replaces the second pill). */
-.calcLink {
-  display: none;
+  justify-content: flex-end;
   position: relative;
-  align-items: center;
-  gap: 6px;
-  margin-top: var(--space-4);
-  font-weight: 650;
-  font-size: 0.95rem;
-  color: var(--on-dark-2);
-
-  svg {
-    color: var(--gold-300);
-  }
-
-  /* A 24px line of text is not a finger target; grow the hit area, not the type. */
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -11px -12px;
-  }
+  z-index: 6;
 }
 
 .calcCard {
@@ -385,45 +259,95 @@
   border-radius: 50%;
   background: var(--gold);
   color: var(--on-accent);
+  flex: none;
 }
 
-@include bp-down(1080px) {
+/* Ara bant (tablet/dar masaüstü): karta yer yok, tamamen gizle. Telefonda
+   kompakt hâliyle geri gelir (1d mobil kurgusu). */
+@media (min-width: 761px) and (max-width: 1080px) {
   .calcCard {
     display: none;
   }
 }
 
 @include bp-down(760px) {
-  .chipWarranty {
+  /* 1d mobil: başlık üstte, alt metin + CTA'lar + hesaplayıcı kartı alta
+     sabitlenir; dikey kadraj (hero-mobile.webp) evi orta bantta taşır. */
+  .photo {
+    object-position: 50% 45%;
+  }
+
+  /* Dikey kadraj (hero-mobile.webp, 768x1376) — düzlem ve konumlar ona göre. */
+  .dots {
+    aspect-ratio: 768 / 1376;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -45%);
+  }
+
+  .dot {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+    box-shadow:
+      0 0 0 3px rgba(242, 168, 44, 0.3),
+      0 4px 14px rgba(8, 26, 48, 0.45);
+  }
+
+  .dot1 { left: 65%; top: 46.5%; }
+  .dot2 { left: 63.8%; top: 73.8%; }
+  /* Şarj ünitesinin sol üst omzu — cihazın yüzünü ve EV'yi kapatmasın. */
+  .dot3 { left: 70.3%; top: 70%; }
+  /* Ünitenin üst yarısı: alttaki metin satırıyla çakışmasın. */
+  .dot4 { left: 44.9%; top: 73.2%; }
+
+  .scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 26, 48, 0.55) 0%,
+      rgba(8, 26, 48, 0.08) 20%,
+      rgba(8, 26, 48, 0) 32%,
+      rgba(8, 26, 48, 0.4) 56%,
+      rgba(8, 26, 48, 0.9) 80%,
+      #081a30 100%
+    );
+  }
+
+  .inner {
+    padding-top: calc(var(--header-h) + var(--space-4));
+    padding-bottom: var(--space-5);
+  }
+
+  .content {
+    flex: 1;
+    max-width: none;
+  }
+
+  .display {
+    font-size: clamp(2.5rem, 11.5vw, 3.1rem);
+  }
+
+  .lower {
+    margin-top: auto;
+    gap: var(--space-3);
+  }
+
+  .sub {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    max-width: none;
+  }
+
+  .subDesktop {
     display: none;
   }
-}
 
-@include bp-down(760px) {
-  /* Phones kept 86svh, which left the same bare strip of page surface under the
-     photo that 95svh left on desktop — 118px of it on a 844px screen. Same fix:
-     the photo owns the fold, the next section starts below it. */
-  .bottom {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-3);
+  .subMobile {
+    display: block;
   }
 
-  .bottomLeft {
-    max-width: none;
-    gap: var(--space-3);
-  }
-
-  /* The portrait render carries the equipment wall (inverter, wallbox,
-     battery) mid-frame, so the CTAs shrink into one centered row pinned to
-     the grass strip at the foot instead of stacking over the products. */
   .actions {
-    justify-content: center;
     gap: var(--space-2);
-  }
-
-  .actions > * {
-    width: auto;
   }
 
   /* Triple class outranks Button's own .btn.lg pair regardless of emit order. */
@@ -432,34 +356,36 @@
     font-size: 0.95rem;
   }
 
-  /* Photo hugs the fold tighter so the whole CTA row sits on the lawn. */
-  .inner {
-    padding-bottom: var(--space-5);
+  .bottom {
+    margin-top: var(--space-3);
+    justify-content: stretch;
   }
 
-  .calcLink {
-    margin-top: var(--space-2);
+  .calcCard {
+    flex: 1;
+    padding-right: var(--space-3);
   }
 
-  .calcLink {
-    display: inline-flex;
-    align-self: center;
+  .calcThumb img {
+    width: 62px;
+    height: 48px;
   }
 
-  /* Portre karede ekipman duvarını örtmesin — kanıt satırı masaüstüne özel. */
-  .proof {
-    display: none;
+  .calcText {
+    flex: 1;
+    min-width: 0;
+
+    strong {
+      font-size: 0.85rem;
+    }
+
+    span {
+      font-size: 0.72rem;
+    }
   }
 
-  /* A touch larger on the narrow portrait crop than the desktop 0.75, and
-     nudged left so both lines pull off the centre. */
-  .display {
-    font-size: calc(var(--fs-display) * 0.95);
-    transform: translateX(-5vw);
-  }
-
-  /* A touch more air between the stacked display words. */
-  .d2 {
-    margin-top: 0.05em;
+  .calcGo {
+    width: 30px;
+    height: 30px;
   }
 }
