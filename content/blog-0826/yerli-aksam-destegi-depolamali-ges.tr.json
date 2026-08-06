@@ -1,0 +1,204 @@
+{
+  "language": "tr",
+  "slug": "yerli-aksam-destegi-depolamali-ges",
+  "altSlug": "local-content-incentive-solar-storage",
+  "title": "Yerli aksam desteği depolamalı GES yatırımını nasıl etkiler?",
+  "metaTitle": "Yerli aksam desteği ve depolamalı GES fizibilitesi",
+  "metaDescription": "Yerli aksam desteği nedir, hangi bileşenleri kapsar, depolamalı GES fizibilitesini nasıl değiştirir? Mekanizma, fiyat farkı karşılaştırması ve süreç yönetimi.",
+  "excerpt": "Yerli aksam teşviki ne sağlar, hangi bileşenleri kapsar ve depolamalı bir GES projesinin fizibilitesini gerçekte ne kadar değiştirir? Mekanizmayı ve hesap yöntemini anlatıyoruz.",
+  "keywords": [
+    "yerli aksam desteği",
+    "yerli aksam teşviki",
+    "depolamalı ges",
+    "ges teşvikleri",
+    "yenilenebilir enerji teşvikleri",
+    "batarya enerji depolama yatırımı",
+    "ges fizibilitesi",
+    "yerli panel desteği"
+  ],
+  "category": "Teşvikler",
+  "coverImage": "/images/v2/hero-night.jpeg",
+  "publishedAt": "2026-07-19",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Yerli aksam desteği, santralde kullanılan bileşenlerin yurt içinde üretilmesi halinde üretilen enerji için sağlanan ek bir katkıdır. Katkı bileşen bazında tanımlanır, belgeye bağlıdır ve gelir tarafına yıllara yayılarak girer. Depolamalı GES yatırımlarında etkisi tek başına değil, yerli bileşenin fiyat farkıyla birlikte okunur."
+    },
+    {
+      "style": "h2",
+      "text": "Yerli aksam desteği nedir ve nasıl çalışır?"
+    },
+    {
+      "style": "normal",
+      "text": "Mekanizmanın mantığı basittir. Yenilenebilir üretim tesisinde kullanılan bileşenler yurt içinde üretilmişse, üretilen enerji birimi başına ek bir katkı sağlanır. Katkı tek seferlik bir hibe değildir; tesis işletmeye girdikten sonra, mevzuatta tanımlı bir süre boyunca üretimle birlikte tahakkuk eder."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yapının iki sonucu var. Birincisi, desteğin büyüklüğü doğrudan üretim miktarına bağlıdır; az üreten bir santral az katkı alır. İkincisi, destek yatırım anında değil işletme yıllarında geldiği için, fizibilitede bugünkü değere indirgenmesi gerekir. Nakit akışını yıl yıl kurmadan yapılan hesap, teşvikin katkısını olduğundan büyük gösterir."
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü ve en çok atlanan nokta ise şudur: kapsam, katkı payları ve süre mevzuatla belirlenir ve dönemsel olarak güncellenir. Bu yüzden yatırım kararına esas alınacak tablo, başvuru öncesinde yürürlükteki metinden alınmalıdır. Bir yıl önceki sunumdan kalan tabloyla ilerlemek, uygulamada gördüğümüz en pahalı alışkanlıklardan biridir."
+    },
+    {
+      "style": "h2",
+      "text": "Destek hangi bileşenler üzerinden hesaplanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapsam tek bir kalem değil, bileşen grupları halinde tanımlanır. Panel, hücre, taşıyıcı konstrüksiyon, inverter ve kontrol tarafındaki kalemler birbirinden ayrı ele alınır; her grubun kendi yerlilik şartı ve kendi katkı payı vardır. Bir tesis birden fazla gruptan aynı anda yararlanabilir, hiçbirinden yararlanamayabilir de."
+    },
+    {
+      "style": "normal",
+      "text": "Bu ayrım, ekipman seçimini teknik bir tercih olmaktan çıkarıp finansal bir karara dönüştürür. Aynı güçteki iki proje, sadece bileşen tedarik tercihleri farklı olduğu için farklı gelir profiline sahip olabilir."
+    },
+    {
+      "style": "h3",
+      "text": "Yerlilik nasıl belgelenir?"
+    },
+    {
+      "style": "normal",
+      "text": "Yerli üretim beyanla değil belgeyle kanıtlanır. Bileşenin hangi üretim adımlarının yurt içinde yapıldığı ilgili teknik kriterlere göre incelenir ve belgeye bağlanır. Belgenin geçerlilik dönemi ile tesisin kabul tarihi arasındaki uyum, sahada en çok sorun çıkaran ayrıntıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Ticari anlamda yerli olmak ile mevzuatın tanımladığı kriterleri karşılamak aynı şey değildir. Yerli üretim etiketi taşıyan her ürün otomatik olarak destek kapsamına girmez. Tedarik sözleşmesini imzalamadan önce bu ayrımı yazılı olarak netleştirmek gerekir; sonradan yapılan itirazın karşılığı yoktur."
+    },
+    {
+      "style": "h2",
+      "text": "Depolamalı GES'te tablo neden farklı?"
+    },
+    {
+      "style": "normal",
+      "text": "Depolamalı bir projede ekipman listesi uzar. Panel ve invertere batarya hücresi, güç dönüştürme ünitesi, batarya ve enerji yönetim sistemleri, ek pano ve soğutma eklenir. Yatırım tutarı büyür, fizibilitenin varsayımlara duyarlılığı artar ve tek bir kalemdeki hata toplam tabloyu daha sert biçimde bozar."
+    },
+    {
+      "style": "normal",
+      "text": "Burada mühendislik açısından kritik bir nokta var. Batarya enerji üretmez, üretimi zaman içinde kaydırır. Destek üretilen enerji üzerinden hesaplanan bir mekanizma olduğu için, bataryanın kendisi bu gelir kalemini doğrudan büyütmez. Bataryanın karşılığı başka yerde aranır: fiyatın yüksek olduğu saatlere kayma, dengesizlik maliyetlerinin azalması ve şebeke tarafındaki esneklik."
+    },
+    {
+      "style": "normal",
+      "text": "Dolayısıyla depolamalı fizibilitede iki ayrı soru vardır. Birincisi, hangi bileşenler yerli aksam kapsamına giriyor. İkincisi, batarya yatırımının kendisi hangi gelir kalemleriyle kendini savunuyor. Bu iki soruyu tek bir kalemde toplamak, yatırımcıyı yanlış yönlendiren en yaygın sunum hatasıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Fizibiliteye etkisi: gelir kalemi mi, maliyet kalemi mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Destek gelir tarafında görünür, ama kararı maliyet tarafıyla birlikte verilir. Yerli bileşen tercihi çoğu zaman bir fiyat farkı doğurur. Desteğin sağladığı ek gelir bu farkı karşılamıyorsa, kağıt üstünde teşvikli ama gerçekte daha pahalı bir proje ortaya çıkar."
+    },
+    {
+      "style": "normal",
+      "text": "Karşılaştırmayı iki satırda yapıyoruz. Bir tarafta yerli bileşenin getirdiği ek yatırım bedeli, diğer tarafta desteğin geçerli olduğu süre boyunca beklenen ek gelirin bugünkü değeri. İki satır aynı para biriminde, aynı zaman ekseninde ve aynı iskonto oranıyla kurulmalıdır. Farklı varsayımlarla yazılmış iki sayıyı yan yana koymak karşılaştırma değil, temennidir."
+    },
+    {
+      "style": "normal",
+      "text": "Kur burada belirleyicidir. Ekipman maliyeti ile katkı farklı para birimlerine bağlıysa, kurdaki hareket desteğin net faydasını hem büyütür hem küçültür. Bu yüzden fizibiliteyi tek senaryo olarak değil, kur ve üretim varsayımlarını oynatan bir duyarlılık tablosu olarak sunuyoruz."
+    },
+    {
+      "style": "blockquote",
+      "text": "Teşvik, kötü bir projeyi iyi yapmaz; iyi bir projeyi daha iyi yapar. Karar, teşviksiz senaryoda da ayakta duran bir fizibilite üzerine kurulmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Teşviksiz senaryo neden önce hesaplanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Fizibiliteyi iki kere kuruyoruz. Önce desteksiz: yatırım bedeli, yıllık üretim, tarife ve geri dönüş süresi. Sonra destekli: aynı model üzerine ek katkı eklenir. Aradaki fark, teşvikin o proje için gerçek değeridir. Sıralamayı tersine çevirirseniz, teşvik zayıf bir projeyi makul gösteren bir örtüye dönüşür."
+    },
+    {
+      "style": "normal",
+      "text": "Desteksiz iskeletin nasıl kurulduğunu çatı tarafındaki katsayılarımızla göstermek mümkün. Fizibilite modelimizde kurulu maliyet kWp başına 700 USD ve kur 47 TL, yani 32.900 TL/kWp, KDV hariç. Özgül üretim güney yönlü çatıda 1.600 kWh/kWp, doğu-batı ya da güney-kuzey bölünmüş çatılarda 1.350 kWh/kWp kabul edilir."
+    },
+    {
+      "style": "normal",
+      "text": "30 kWp'lik bir sistemin yatırımı bu katsayılarla 987.000 TL olur. Güney yönlü bir çatıda yıllık üretim 48.000 kWh, 5 TL/kWh birim fiyatla yıllık karşılığı 240.000 TL'dir. Geri dönüş yaklaşık 4,1 yıl çıkar. Aynı tesise 10 kWh'lik depolama eklendiğinde paket bedeli 2.750 USD, yani 129.250 TL'dir; yatırım 1.116.250 TL'ye, geri dönüş yaklaşık 4,7 yıla taşınır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu örnek desteğin kendisini değil, desteksiz iskeleti gösteriyor. Kararın dayanması gereken zemin budur. Hangi destek mekanizmasının uygulanacağı ise projenin tabi olduğu rejime göre değişir ve fizibiliteye ancak o netleştikten sonra yazılır."
+    },
+    {
+      "style": "h2",
+      "text": "Süreç: neyi ne zaman kilitlemeniz gerekir?"
+    },
+    {
+      "style": "normal",
+      "text": "Teşvikte zamanlama, teknik seçim kadar belirleyicidir. Bileşen tercihi, tedarik sözleşmesi, belgelendirme ve tesisin kabulü birbirini takip eden adımlardır. Birindeki gecikme diğerinin geçerliliğini etkileyebilir; bu yüzden takvimi baştan geriye doğru kuruyoruz."
+    },
+    {
+      "style": "normal",
+      "text": "Pratikte üç noktayı erken netleştiriyoruz: hangi bileşen gruplarından yararlanılacağı, tedarikçinin belgelerinin hangi dönemde geçerli olduğu ve proje takviminin bu dönemle uyumlu olup olmadığı. Üçü de sözleşme imzalanmadan önce cevaplanmalıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Tedarik süresi de hesaba girer. Yerli bileşende teslim süresi uzunsa, sahadaki gecikmenin maliyeti desteğin sağladığı ek gelirden büyük olabilir. Bu bir mühendislik kararı değil, program yönetimi kararıdır ve fizibilite tablosunda ayrı bir satır olarak görünmelidir."
+    },
+    {
+      "style": "h2",
+      "text": "Uygulamada en sık gördüğümüz hatalar"
+    },
+    {
+      "style": "normal",
+      "text": "İlki, güncelliğini yitirmiş bir tabloyla hesap yapmaktır. Kapsam ve oranlar dönemsel olarak güncellendiği için, eski bir dokümandan alınan sayı fizibiliteyi sessizce yanlışlar. Kaynağı ve tarihi yazılmamış hiçbir teşvik satırını modele almıyoruz."
+    },
+    {
+      "style": "normal",
+      "text": "İkincisi, kapsam dışında kalan bir kalemin getirisini modele yazmaktır. Doğru yöntem, projenin ekipman listesini kalem kalem çıkarıp her satırı güncel kapsamla tek tek karşılaştırmaktır. Varsayımla dolan tek bir satır, yirmi beş yıllık nakit akışını baştan sona kaydırır."
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncüsü, desteği geri dönüş süresini kurtaracak bir kaldıraç sanmaktır. Teşvik marjı iyileştirir, projeyi kurmaz. Üretim tahmini zayıf, bağlantı kapasitesi belirsiz ya da işletme planı eksik bir yatırım, en iyi teşvik tablosuyla bile riskli kalır."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Yerli aksam desteği çatı GES'lerde de geçerli mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapsam, üretim tesisinin tabi olduğu rejime göre değişir; destek mekanizmaları ile lisanssız üretim aynı kurallara tabi değildir. Bu yüzden projenin hangi rejimde ilerleyeceği netleşmeden destek hesabı yapılmaz."
+    },
+    {
+      "style": "normal",
+      "text": "Konut ve küçük işletme çatılarında karar genellikle tasarruf üzerinden kurulur: ürettiğiniz enerjinin faturanızdan düştüğü tutar. Teşvik tarafındaki güncel durumu, başvuru öncesinde birlikte kontrol ediyoruz."
+    },
+    {
+      "style": "h3",
+      "text": "Destek oranları ne kadar?"
+    },
+    {
+      "style": "normal",
+      "text": "Oranlar bileşen bazında belirlenir ve dönemsel olarak güncellenir. Bu yüzden sabit bir sayı vermek yanıltıcı olur. Yatırım kararında kullanılacak tablo, başvuru anında yürürlükte olan metinden alınmalı ve fizibiliteye kaynağıyla birlikte yazılmalıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Batarya yerli aksam desteğine giriyor mu?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapsam listesini mevzuat belirler ve zaman içinde değişir. Batarya tarafında yurt içi üretim kapasitesi geliştikçe bu soru daha sık geliyor, ama cevabı genel değil güncel metinde aranır."
+    },
+    {
+      "style": "normal",
+      "text": "Doğru yaklaşım, ekipman listesini çıkarıp her kalemi başvuru anındaki kapsamla karşılaştırmak ve kapsam dışında kalan kalemlerin getirisini modele hiç yazmamaktır."
+    },
+    {
+      "style": "h3",
+      "text": "Teşvik geri dönüş süresini ne kadar kısaltır?"
+    },
+    {
+      "style": "normal",
+      "text": "Cevap projeye özeldir. Üretim miktarına, hangi bileşen gruplarının kapsandığına ve yerli bileşenin fiyat farkına bağlıdır. Yöntem ise sabittir: iki senaryoyu yan yana kurun, farkı okuyun. Tek bir yüzde vermek, farklı çatıları ve farklı ekipman listelerini aynı kabul etmek olur."
+    },
+    {
+      "style": "normal",
+      "text": "Depolamalı bir GES yatırımını değerlendiriyorsanız ücretsiz keşif yapıyoruz. Sahayı görüyor, üretim ve tüketim profilinizi çıkarıyor, ekipman listesini güncel destek kapsamıyla karşılaştırıyor ve teşviksiz senaryoyu teşvikli senaryonun yanına yazıyoruz. Hesap bizden, karar sizin."
+    }
+  ]
+}

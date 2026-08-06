@@ -1,0 +1,192 @@
+{
+  "language": "en",
+  "slug": "local-content-incentive-solar-storage",
+  "altSlug": "yerli-aksam-destegi-depolamali-ges",
+  "title": "Local content incentive: what it changes for solar plus storage",
+  "metaTitle": "Local content incentive for solar and storage projects",
+  "metaDescription": "How the local content incentive works in Türkiye, which components it covers, and how to weigh it against the price premium in a solar plus storage case.",
+  "excerpt": "A local content incentive rewards domestically manufactured equipment with an extra payment per unit generated. Here is how the mechanism works and how to price it into a solar plus storage feasibility study.",
+  "keywords": [
+    "local content incentive",
+    "domestic content solar Turkey",
+    "solar plus storage feasibility",
+    "battery energy storage investment",
+    "renewable energy incentives Turkey",
+    "BESS project economics",
+    "solar payback Turkey",
+    "hybrid solar storage plant"
+  ],
+  "category": "Incentives",
+  "coverImage": "/images/v2/hero-night.jpeg",
+  "publishedAt": "2026-07-19",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "A local content incentive pays a generation plant extra for every unit of energy produced when its components were manufactured domestically. In Türkiye the contribution is defined per component group, tied to certification and earned across operating years. For solar plus storage projects it has to be weighed against the price premium local equipment carries."
+    },
+    {
+      "style": "h2",
+      "text": "How the local content incentive works"
+    },
+    {
+      "style": "normal",
+      "text": "The logic is straightforward. If the equipment in a renewable plant was manufactured inside the country, an additional contribution is paid on top of the energy that plant generates. It is not a grant paid at construction; it accrues with output, for a period defined in the regulation."
+    },
+    {
+      "style": "normal",
+      "text": "Two consequences follow. The benefit tracks generation directly, so a plant that underperforms also under-earns its incentive. And because the money arrives during operating years, it belongs in a discounted cash flow: a model without a year-by-year profile flatters it."
+    },
+    {
+      "style": "normal",
+      "text": "The third point is the one most often skipped. Scope, rates and duration are set by regulation and revised periodically, so the table you build a case on has to come from the text in force at the time of application."
+    },
+    {
+      "style": "h2",
+      "text": "Which components does the incentive cover?"
+    },
+    {
+      "style": "normal",
+      "text": "Coverage is defined by component group, with modules, cells, mounting structures, inverters and control equipment treated separately. Each group carries its own local manufacture condition and its own contribution rate, and a plant may qualify under several, or under none."
+    },
+    {
+      "style": "normal",
+      "text": "That structure turns procurement into a financial decision rather than a technical one. Two plants of identical capacity can end up with different revenue profiles purely because their supply choices differed."
+    },
+    {
+      "style": "h3",
+      "text": "How local manufacture is documented"
+    },
+    {
+      "style": "normal",
+      "text": "Local manufacture is proven with certification, not a supplier statement. Which production steps happened domestically is assessed against the criteria for that component group and recorded in a certificate. Aligning its validity with the commissioning date is where projects usually run into trouble."
+    },
+    {
+      "style": "normal",
+      "text": "Being locally made in a commercial sense and meeting the regulatory definition are different things. A product marketed as domestic does not automatically fall inside scope, so settle that in writing before the supply contract is signed."
+    },
+    {
+      "style": "h2",
+      "text": "Why storage changes the picture"
+    },
+    {
+      "style": "normal",
+      "text": "A storage project carries a longer equipment list: battery cells, the power conversion system, battery and energy management systems, switchgear and thermal management, all on top of the modules and inverters. Capital cost rises, the model grows more sensitive, and one wrong line distorts it further."
+    },
+    {
+      "style": "normal",
+      "text": "There is an engineering point underneath this. A battery does not generate energy, it moves energy in time. Where an incentive is paid per unit generated, the battery does not enlarge that line. Its return sits elsewhere: higher-priced hours, lower imbalance costs, flexibility."
+    },
+    {
+      "style": "normal",
+      "text": "So a storage feasibility study answers two questions: which components fall inside the local content scope, and what the battery earns on its own terms. Collapsing both into one number is how a presentation misleads an investor."
+    },
+    {
+      "style": "h2",
+      "text": "Revenue line or cost line?"
+    },
+    {
+      "style": "normal",
+      "text": "The incentive shows up on the revenue side, but the decision is made on the cost side. Local components usually carry a price premium, and if the additional income does not cover it, the project looks supported on paper while being more expensive in practice."
+    },
+    {
+      "style": "normal",
+      "text": "We compare the two on one page. On one side, the extra capital cost of the local component. On the other, the present value of the additional income over the period the incentive applies. Both lines need the same currency, timeline and discount rate."
+    },
+    {
+      "style": "normal",
+      "text": "Currency exposure decides more of this than people expect. When equipment cost and incentive income are denominated differently, exchange rate movement both amplifies and erodes the net benefit, which is why we present a sensitivity table rather than one scenario."
+    },
+    {
+      "style": "blockquote",
+      "text": "An incentive does not make a bad project good. It makes a good project better, which is why the decision has to rest on a case that stands up without it."
+    },
+    {
+      "style": "h2",
+      "text": "Build the case without the incentive first"
+    },
+    {
+      "style": "normal",
+      "text": "We run the feasibility twice. First without support: capital cost, annual yield, tariff and payback. Then with the contribution added to the same model. The gap is what the incentive is worth. Reverse the order and it becomes a cover for a weak case."
+    },
+    {
+      "style": "normal",
+      "text": "Our rooftop coefficients show what that skeleton looks like. The model uses 700 USD per kWp at 47 TL, so 32,900 TL per kWp excluding VAT. Specific yield is 1,600 kWh per kWp facing south and 1,350 on a roof split east-west or south-north."
+    },
+    {
+      "style": "normal",
+      "text": "A 30 kWp system therefore costs 987,000 TL. Facing south it generates 48,000 kWh a year, worth 240,000 TL at 5 TL per kWh, which returns the investment in roughly 4.1 years. Add a 10 kWh storage package at 2,750 USD, or 129,250 TL, and the investment becomes 1,116,250 TL with payback moving to about 4.7 years."
+    },
+    {
+      "style": "normal",
+      "text": "Those figures describe the case with no incentive applied, and that is the ground a decision should rest on. Which mechanism a plant can access depends on the regime it is developed under."
+    },
+    {
+      "style": "h2",
+      "text": "Timing: what to lock, and when"
+    },
+    {
+      "style": "normal",
+      "text": "With incentives, sequencing matters as much as specification. Component selection, supply contract, certification and commissioning follow one another, and a delay in one can affect the validity of another, so we build the schedule backwards from the acceptance date."
+    },
+    {
+      "style": "normal",
+      "text": "Three things get settled before signature: which component groups the project will claim, when the supplier's certification is valid, and whether the programme fits inside it. Lead time belongs here too, because the cost of a long delivery window on site can exceed what the incentive brings."
+    },
+    {
+      "style": "h2",
+      "text": "The mistakes we see most often"
+    },
+    {
+      "style": "normal",
+      "text": "The first is a stale table. Because scope and rates are revised periodically, a figure lifted from an older document quietly falsifies the model, so we accept no incentive line without a source and a date. The second is booking income from a component that turns out to be outside scope; one assumed line reshapes a twenty-five year cash flow. The third is expecting support to rescue payback. It improves the margin, it does not build the project."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Does the local content incentive apply to rooftop solar?"
+    },
+    {
+      "style": "normal",
+      "text": "Scope depends on the regime a plant is developed under, and support mechanisms for licensed generation do not follow the same rules as unlicensed generation. The question cannot be answered before the development route is fixed."
+    },
+    {
+      "style": "normal",
+      "text": "On homes and small commercial roofs in Türkiye the case is built on savings instead: your distribution company nets exports against imports, and the system is worth the part of the bill it removes."
+    },
+    {
+      "style": "h3",
+      "text": "What are the contribution rates?"
+    },
+    {
+      "style": "normal",
+      "text": "Rates are set per component group and revised periodically, so quoting a fixed number would be misleading. Take the table from the text in force when you apply, and write it into the model with its source and date."
+    },
+    {
+      "style": "h3",
+      "text": "Are batteries covered?"
+    },
+    {
+      "style": "normal",
+      "text": "The covered list is defined by regulation and changes over time. As domestic manufacturing capacity on the storage side develops the question comes up more often, but the answer lives in the current text, not in a general rule."
+    },
+    {
+      "style": "normal",
+      "text": "The reliable approach is to compare every item on your equipment list against the scope in force at the time of application, and leave anything outside it out of the model."
+    },
+    {
+      "style": "h3",
+      "text": "How much does an incentive shorten payback?"
+    },
+    {
+      "style": "normal",
+      "text": "That is project specific: it depends on annual generation, on which component groups qualify and on the premium the local equipment carries. The method is fixed, though. Build both scenarios side by side and read the difference."
+    },
+    {
+      "style": "normal",
+      "text": "If you are assessing a solar plus storage investment, our site survey is free of charge. We build your generation and consumption profile, check the equipment list against the scope currently in force, and set the supported case next to the unsupported one."
+    }
+  ]
+}

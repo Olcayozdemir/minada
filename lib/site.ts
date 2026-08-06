@@ -45,18 +45,19 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
 // GES offer types — live on /hizmetler/gunes-enerjisi (BESS is its own line now).
 export const GES_TYPES = ["rooftop", "ground", "agripv", "carport"] as const;
 
-// Contact + social. Phone + Instagram are real (Okan, 2026-07-11); email waits
-// for the domain. WhatsApp number is read from env when available.
+// Contact + social. Telefon 2026-08-06'da güncellendi (Olcay); Instagram gerçek
+// (Okan, 2026-07-11); e-posta domain kurulumunu bekliyor. WhatsApp numarası env
+// ile override edilebilir, varsayılan aynı hattır.
 export const SITE = {
   name: "MİNADA",
   domain: "minada.com",
   email: "info@minada.com",
-  phone: "+90 536 041 76 44",
+  phone: "+90 505 146 30 11",
   // Adres Notion 06.08 notundan (Okan/Olcay).
   address: "Görgü Mah. 2. Sk., Ankara Asfaltı 15. Km, 44900 Yeşilyurt / Malatya",
   addressMapUrl:
     "https://www.google.com/maps/place//data=!4m2!3m1!1s0x40762d71b98a0df1:0xb9974f2de8840182",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905360417644",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905051463011",
   social: {
     instagram: "https://instagram.com/minadaenerji",
     linkedin: "https://linkedin.com/",

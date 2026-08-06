@@ -1,0 +1,224 @@
+{
+  "language": "tr",
+  "slug": "lisansli-depolamali-ges-fizibilite",
+  "altSlug": "solar-plus-storage-feasibility-turkey",
+  "title": "Depolamalı GES fizibilitesi: lisanslı santralde hesap nasıl kurulur?",
+  "metaTitle": "Depolamalı GES fizibilitesi: lisanslı santralde hesap",
+  "metaDescription": "Depolamalı GES fizibilitesi nasıl yapılır? Gelir kalemleri, saatlik üretim modeli, batarya degradasyonu, maliyet tablosu ve duyarlılık analizi adım adım.",
+  "excerpt": "Depolamalı lisanslı santralde fizibilite, üretim gelirinin yanına zamanlama değerini koyar. Gelir kalemleri, maliyet tablosu, degradasyon ve duyarlılık analizi.",
+  "keywords": [
+    "depolamalı ges fizibilite",
+    "lisanslı ges yatırımı",
+    "bess fizibilite",
+    "batarya enerji depolama",
+    "ges finansal model",
+    "batarya degradasyonu",
+    "bağlantı kapasitesi kısıntı",
+    "duyarlılık analizi enerji yatırımı"
+  ],
+  "category": "Rehber",
+  "coverImage": "/images/v2/how/engineering.jpg",
+  "publishedAt": "2026-07-16",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Depolamalı GES fizibilitesi, üretim gelirinin yanına bataryanın sağladığı zamanlama değerini koyan ve karşısına ek yatırım ile kapasite kaybını yazan çok katmanlı bir hesaptır. Sağlıklı bir analiz saatlik üretim modelini, batarya işletme stratejisini, tam maliyet tablosunu ve duyarlılık analizini birlikte içerir. Tek senaryolu bir sunum karar için yeterli değildir."
+    },
+    {
+      "style": "normal",
+      "text": "Lisanslı bir santralde karar, çatı GES'teki gibi \"fatura ne kadar düşer\" sorusuyla verilmez. Enerji satılır, bir fiyata satılır ve o fiyat gün içinde değişir. Batarya tam olarak bu değişimi değere çeviren bileşendir; fizibilitenin işi de o değerin büyüklüğünü ve güvenilirliğini ölçmektir."
+    },
+    {
+      "style": "h2",
+      "text": "Depolamalı GES fizibilitesi klasik santralden nasıl ayrılır?"
+    },
+    {
+      "style": "normal",
+      "text": "Klasik bir santralde tek bir zincir vardır: ışınım, üretim, satış. Modelin belirsizliği ağırlıkla üretim tarafındadır ve uzun dönemli ışınım verisi yıllar içinde şaşırtıcı ölçüde istikrarlıdır. Depolama girdiğinde ikinci bir zincir açılır: enerjinin ne zaman satıldığı."
+    },
+    {
+      "style": "normal",
+      "text": "Bu ikinci zincir birincisinden daha oynaktır. Üretim fiziğe bağlıdır; zamanlama değeri ise fiyat hareketine, işletme stratejisine ve bataryanın o gün elde kalan kapasitesine bağlıdır. Bu yüzden depolamalı fizibilitede tek bir yıllık ortalama sayı yerine saat bazlı bir tablo kurulur."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik sonuç şudur: aynı kurulu güçteki iki proje, aynı sahada bile farklı fizibilite verir. Fark panellerden değil, bataryanın nasıl çalıştırılacağı varsayımından gelir."
+    },
+    {
+      "style": "h2",
+      "text": "Batarya geliri nereden üretir?"
+    },
+    {
+      "style": "normal",
+      "text": "Gelirin omurgası her zaman üretilen enerjinin satışıdır. Batarya bunun üstüne birbirinden ayrı üç mekanizmayla katkı koyar. Fizibilitede bu üçünü ayrı satırlarda tutmak gerekir, çünkü öngörülebilirlikleri ve riskleri aynı değildir."
+    },
+    {
+      "style": "h3",
+      "text": "Enerjiyi zaman içinde kaydırmak"
+    },
+    {
+      "style": "normal",
+      "text": "En anlaşılır kalem budur. Öğle saatlerinde fiyatın düşük olduğu dönemde depolanan enerji, akşam talebin ve fiyatın yükseldiği saatlerde verilir. Kazanç, iki saat arasındaki fiyat farkından çevrim verimi düşüldükten sonra kalan tutardır. Kritik soru şu: bu fark yıl boyunca kaç gün ve ne büyüklükte oluşuyor? Tek bir ortalama fiyat farkı varsayımı bu kalemi kolayca şişirir."
+    },
+    {
+      "style": "h3",
+      "text": "Kısıntıya giden enerjiyi geri kazanmak"
+    },
+    {
+      "style": "normal",
+      "text": "Santralin şebekeye verebileceği güç, bağlantı anlaşmasıyla sınırlıdır. Öğle tepesinde üretim bu sınırı aşıyorsa fazla enerji ya kısılır ya da bataryaya alınır. Kısılan enerjinin geri kazanımı çoğu projede en sağlam gelir kalemidir, çünkü fiyat tahminine değil kendi üretim eğrinize dayanır."
+    },
+    {
+      "style": "normal",
+      "text": "Aynı mantık ters yönde de çalışır: batarya sayesinde daha büyük bir DC gücü aynı bağlantı kapasitesiyle değerlendirilebilir. Bağlantının ve arazinin kıt olduğu sahalarda bu, tek başına yatırım gerekçesi olabilir."
+    },
+    {
+      "style": "h3",
+      "text": "Dengeleme ve esneklik"
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü kalem, üretim tahmini ile gerçekleşme arasındaki sapmanın maliyetini azaltmak ve sistem işletmecisine esneklik sunmaktır. Bu alanın ürün tanımları ve katılım şartları mevzuata bağlıdır, dönem dönem güncellenir. Bu yüzden fizibiliteye temel gelir olarak değil, güncel duruma bakılıp doğrulandığı ölçüde ek kalem olarak yazılmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Saatlik üretim modeli olmadan fizibilite olmaz"
+    },
+    {
+      "style": "normal",
+      "text": "Her şeyin altında saatlik bir üretim serisi vardır. Uzun dönemli ışınım verisi, panel yerleşimi, eğim ve yön, sıcaklık kaybı, kablo ve inverter kayıpları ile kirlenme payı bir araya getirilir; yılın 8.760 saatinin her biri için bir üretim tahmini çıkarılır."
+    },
+    {
+      "style": "normal",
+      "text": "Ölçek ne olursa olsun mertebeyi veren gösterge özgül üretimdir. Kullandığımız fizibilite katsayısında güneye bakan bir sistem yılda kWp başına 1.600 kWh, doğu-batı ya da güney-kuzey yerleşimde 1.350 kWh üretir. Yön tercihi burada yalnızca toplamı değil, eğrinin şeklini de değiştirir: doğu-batı yerleşim daha düşük ama daha yayvan bir tepe verir ve bağlantı kısıntısını azaltır."
+    },
+    {
+      "style": "normal",
+      "text": "Modelin çıktısı tek bir yıllık rakam değil, bir eğridir. Batarya senaryoları bu eğrinin üzerine oturtulur; doldurma ve boşaltma saatleri de buradan çıkar. Yıllık toplamla çalışan bir tablo, depolamanın değerini ya çok yüksek ya çok düşük gösterir."
+    },
+    {
+      "style": "h2",
+      "text": "Maliyet tarafında hangi kalemler unutuluyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Yatırım maliyeti panel, inverter, konstrüksiyon ve batarya ile bitmez. Depolamalı bir sahada güç dönüşüm sistemi, batarya yönetim ve enerji yönetim yazılımı, iklimlendirme, yangın algılama ve söndürme, orta gerilim hücreleri, trafo ve şalt sahası, bağlantı hattı, arazi hazırlığı ve güvenlik altyapısı ayrı kalemlerdir."
+    },
+    {
+      "style": "normal",
+      "text": "İşletme tarafında da benzer bir liste vardır: bakım sözleşmesi, sigorta, arazi kirası, izleme altyapısı, yedek parça ve batarya iklimlendirmesinin kendi elektrik tüketimi. Yardımcı tüketim ilk bakışta küçük görünür, ama yirmi yıllık bir modelde görünür bir kalemdir."
+    },
+    {
+      "style": "normal",
+      "text": "Bir de yenileme kalemi vardır. Panel ve konstrüksiyon santralin ömrünü büyük ölçüde taşırken, batarya ve güç elektroniği taşımayabilir. Model, ömür ortasında bir yenileme ya da kapasite takviyesi varsayımı içermiyorsa eksiktir."
+    },
+    {
+      "style": "normal",
+      "text": "Birim maliyette dürüst olmak gerekir. Çatı ölçeğinde kullandığımız 700 USD/kWp referansı, 47 TL kur ve KDV hariç varsayımıyla anlamlıdır; lisanslı saha ölçeğine doğrudan taşınmaz. Saha koşulu, bağlantı mesafesi, arazi işleri ve tedarik hacmi her projede farklı bir birim maliyet üretir. Bu rakam ancak projeye özel tekliflerle netleşir."
+    },
+    {
+      "style": "h2",
+      "text": "Batarya ömrü fizibiliteyi nasıl değiştirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Depolamalı fizibilitede en çok hata yapılan yer burasıdır. Batarya, ilk gün etiketinde yazan kapasiteyi yıllar boyunca korumaz. Kapasite iki yoldan azalır: takvim yaşlanması, yani yalnızca zaman geçmesiyle; ve çevrim yaşlanması, yani her dolup boşalmayla."
+    },
+    {
+      "style": "normal",
+      "text": "Bu iki mekanizma işletme stratejisiyle doğrudan bağlantılıdır. Günde iki çevrim, günde bir çevrimden daha çok gelir getirir ama kapasiteyi de daha hızlı tüketir. Derin boşaltma sığ boşaltmadan çok yıpratır. Sıcaklık kontrolü zayıfsa yaşlanma hızlanır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden gelir varsayımı ile ömür varsayımı aynı sayfada durmalıdır. Yıllık çevrim sayısı gelir tarafında yükseltilip ömür tarafında düşük tutulduğunda model kendi kendisiyle çelişir ve çıkan geri ödeme süresi anlamını kaybeder."
+    },
+    {
+      "style": "blockquote",
+      "text": "Depolamalı bir santralin fizibilitesi bataryanın kaç kWh olduğunu değil, o kapasitenin yıl boyunca kaç kez ve hangi fiyat farkıyla dolup boşalacağını sorar."
+    },
+    {
+      "style": "normal",
+      "text": "Garanti metni bu noktada teknik veri sayfası kadar önemlidir. Üretici hangi çevrim sayısına ve hangi işletme koşullarına kadar, ömür sonunda yüzde kaç kullanılabilir kapasite taahhüt ediyor? Fizibilite, bu taahhüdün içinde kalan bir işletme stratejisi üzerine kurulmalıdır. Sınırın dışına çıkan strateji geliri artırır ama garantiyi tartışmalı hale getirir."
+    },
+    {
+      "style": "h2",
+      "text": "Bağlantı, izin ve arazi: sessiz belirleyiciler"
+    },
+    {
+      "style": "normal",
+      "text": "Lisanslı bir projede sonucu çoğu zaman ekipman değil süreç belirler. Bağlantı kapasitesinin bulunabilirliği, bağlantı noktasının uzaklığı, arazinin imar ve mülkiyet durumu, izin süreçlerinin takvimi ve kurulum sezonu; hepsi ya maliyete ya da ilk gelirin ne zaman başlayacağına yazılır."
+    },
+    {
+      "style": "normal",
+      "text": "Zaman burada doğrudan paradır. Devreye alma bir yıl gecikirse o yılın geliri modelden silinmekle kalmaz, yatırımın finansman maliyeti de gelirsiz bir yıl boyunca işlemeye devam eder. Takvim varsayımı, fizibilitenin en az fiyat varsayımı kadar kırılgan parçasıdır ve genelde en az sorgulananıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Finansal model ve duyarlılık analizi nasıl kurulur?"
+    },
+    {
+      "style": "normal",
+      "text": "Teknik model ile maliyet tablosu birleştiğinde yıllara yayılmış bir nakit akışı çıkar. Bu akış üzerinden net bugünkü değer, iç verim oranı ve seviyelendirilmiş enerji maliyeti hesaplanır. Basit geri ödeme süresi iletişimi kolaylaştırır ama tek başına karar için yetersizdir; paranın zaman değerini ve ömür ortasındaki yenilemeyi göremez."
+    },
+    {
+      "style": "normal",
+      "text": "Asıl iş duyarlılık analizindedir. En az beş değişken tek tek oynatılmalıdır: enerji fiyatı ve gün içi fiyat farkı, kur, yatırım maliyeti, batarya kapasite kaybı ve devreye alma tarihi. Her biri için kötümser, temel ve iyimser üç senaryo koşturulur; sonuçlar yan yana konur."
+    },
+    {
+      "style": "normal",
+      "text": "Karar kuralı sadedir: proje yalnızca iyimser senaryoda ayakta duruyorsa proje ayakta durmuyor demektir. Teşvik ve destek mekanizmaları da bu gözle okunmalıdır. Bileşen bazında tanımlandıkları ve dönemsel olarak güncellendikleri için güncel duruma başvuru öncesinde bakılmalı, fizibilite desteksiz senaryoda da sınanmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Depolamalı GES fizibilitesi ne kadar sürede hazırlanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Saha ve bağlantı verileri elde olduğunda teknik model ile ilk finansal tablo birkaç hafta içinde çıkarılabilir. Süreyi uzatan şey hesap değil girdilerdir: bağlantı kapasitesi bilgisi, arazi durumu ve satış tarafındaki varsayımların netleşmesi."
+    },
+    {
+      "style": "normal",
+      "text": "Eksik girdiyle hızlı çıkarılan bir fizibilite genellikle sonradan baştan yazılır. Girdiyi beklemek, yanlış bir tabloyla karar vermekten her zaman ucuzdur."
+    },
+    {
+      "style": "h3",
+      "text": "Batarya kapasitesi nasıl seçilir?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapasite kurulu güce oranla değil, üretim eğrisine bakılarak seçilir. Bağlantı sınırını aşan enerji miktarı, hedeflenen boşaltma süresi ve gün içi fiyat farkının büyüklüğü birlikte değerlendirilir. Genellikle birkaç kapasite seçeneği aynı modelde koşturulur ve marjinal getirinin düşmeye başladığı nokta aranır."
+    },
+    {
+      "style": "normal",
+      "text": "Ölçek küçüldükçe paket fiyatlar netleşir. Konut ve küçük ticari tarafta kullandığımız referanslar 5 kWh için 1.750 USD, 10 kWh için 2.750 USD ve 15 kWh için 3.500 USD'dir; hepsi KDV hariçtir. Lisanslı saha ölçeğinde fiyatlama tamamen farklı bir tedarik zincirinden gelir ve bu rakamlarla ölçeklenmez."
+    },
+    {
+      "style": "h3",
+      "text": "Fizibilitede en sık yapılan hata nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "Bataryayı tam kapasiteyle ve sınırsız çevrimle sonsuza kadar çalışıyor saymak. Kapasite kaybı, çevrim sınırı, çevrim verimi ve yardımcı tüketim modele girmeden çıkan geri ödeme süresi gerçekçi değildir."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci sık hata, tek bir fiyat senaryosuyla karar vermektir. Fiyat, depolamalı bir projede en oynak girdidir; tek değerle modellendiğinde belirsizlik ortadan kalkmaz, yalnızca görünmez olur."
+    },
+    {
+      "style": "h3",
+      "text": "Elimdeki fizibilite raporunu nasıl sınarım?"
+    },
+    {
+      "style": "normal",
+      "text": "Üç soru çoğu zaman yeter. Üretim tahmini hangi ışınım verisine ve hangi kayıp varsayımlarına dayanıyor? Batarya yılda kaç çevrim yapıyor ve ömür sonunda kaç kWh kullanılabilir kapasite kalıyor? Fiyat varsayımı hangi kaynaktan geliyor ve hangi aralıkta sınanmış? Bu üçünün net cevabı yoksa elinizdeki belge fizibilite değil tanıtımdır."
+    },
+    {
+      "style": "normal",
+      "text": "MİNADA olarak depolamalı projelerde saatlik üretim modelini, batarya işletme senaryolarını ve duyarlılık analizini tek bir tabloda topluyoruz; hangi varsayımın nereden geldiği raporda yazılı olur. Sahanızın bağlantı ve arazi durumunu birlikte değerlendirmek isterseniz ücretsiz keşif için bize yazabilirsiniz."
+    }
+  ]
+}

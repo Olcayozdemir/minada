@@ -1,0 +1,199 @@
+{
+  "language": "en",
+  "slug": "solar-plant-operation-checklist",
+  "altSlug": "ges-isletme-doneminde-dikkat-edilecekler",
+  "title": "Solar Plant Operation and Maintenance: What Actually Matters",
+  "metaTitle": "Solar Plant Operation and Maintenance: PR and Checks",
+  "metaDescription": "Solar plant operation and maintenance guide: performance ratio tracking, thermal imaging, insulation and torque tests, roof sealing, warranty records.",
+  "excerpt": "The economics of a solar plant are won or lost after commissioning. Performance ratio tracking, thermal imaging, torque and insulation tests, and clean records.",
+  "keywords": [
+    "solar plant operation maintenance",
+    "performance ratio",
+    "solar pv maintenance checklist",
+    "thermal imaging solar panels",
+    "insulation resistance test pv",
+    "rooftop solar inspection",
+    "solar warranty records"
+  ],
+  "category": "Maintenance",
+  "coverImage": "/images/ges/ges-rooftop.jpg",
+  "publishedAt": "2026-08-05",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Solar plant operation and maintenance protects a system's output for 25 years: tracking the performance ratio, running scheduled inspections, thermal imaging, insulation and torque testing, roof sealing checks, and keeping warranty records in order. Done properly, a loss surfaces in days rather than on a bill months later."
+    },
+    {
+      "style": "normal",
+      "text": "Commissioning day is where a plant's economics start, not where they are decided. A well built system looks like it runs itself, which is exactly why an undetected fault can quietly drain output for months."
+    },
+    {
+      "style": "h2",
+      "text": "What does solar plant operation and maintenance cover?"
+    },
+    {
+      "style": "normal",
+      "text": "We split the work into three layers. Remote monitoring reads production data daily and turns deviations into alarms. Field inspection covers visual checks, electrical measurement, thermal scanning and mechanical verification. Record keeping files every task and every fault with a date against it."
+    },
+    {
+      "style": "normal",
+      "text": "The three depend on each other. Without monitoring you do not know when to send a crew, and without records your warranty claim has no evidence behind it."
+    },
+    {
+      "style": "h2",
+      "text": "What is performance ratio and how do you track it?"
+    },
+    {
+      "style": "normal",
+      "text": "Performance ratio is actual production divided by the production theoretically expected under the same irradiance. It gives you one health indicator, independent of system size and of how sunny the month happened to be. Of the sunlight the array received, how much became electricity?"
+    },
+    {
+      "style": "normal",
+      "text": "You need metered production and irradiance in the plane of the array. Systems without an on site pyranometer use satellite derived irradiance; accuracy drops slightly, but the trend still holds and the trend is what you are watching."
+    },
+    {
+      "style": "h3",
+      "text": "What is a normal performance ratio?"
+    },
+    {
+      "style": "normal",
+      "text": "A well designed, shade free rooftop system typically settles into an annual performance ratio in the 75 to 85 percent band. It falls in hot summer months and climbs in cool spring weather, so compare against the same month last year. We treat the value from your plant's first full year as its reference."
+    },
+    {
+      "style": "h3",
+      "text": "What to check first when it drops"
+    },
+    {
+      "style": "normal",
+      "text": "The usual order is soiling and shading, then string level production differences, then inverter event logs, and only then cabling. With string level monitoring that elimination takes hours. Without it, a site visit is unavoidable."
+    },
+    {
+      "style": "normal",
+      "text": "The numbers make the case. A south facing 100 kWp rooftop plant produces roughly 160,000 kWh a year on the yield figure we use for feasibility, worth around 800,000 TL at a 5 TL per kWh tariff. A kilowatt hour you fail to generate is one you buy back at the retail tariff, so an unnoticed 2 percent loss costs about 16,000 TL a year."
+    },
+    {
+      "style": "h2",
+      "text": "How often should inspections happen?"
+    },
+    {
+      "style": "normal",
+      "text": "Frequency depends on plant size, roof type and the pollutant load of the site. The schedule below is our rooftop baseline; in an industrial zone, on farmland or near the coast, the intervals tighten."
+    },
+    {
+      "style": "h3",
+      "text": "Daily: remote monitoring"
+    },
+    {
+      "style": "normal",
+      "text": "Production data is read daily, with curve deviations and inverter alarms wired to automatic notifications. The point is not to stare at graphs, but to set the rules well enough that the exception finds you."
+    },
+    {
+      "style": "h3",
+      "text": "Every six months: visual inspection"
+    },
+    {
+      "style": "normal",
+      "text": "Modules are checked for cracks, delamination and staining, connectors for heat marks and trapped water, cable trays for UV fatigue. Enclosures are opened to check for dust, moisture and insect ingress."
+    },
+    {
+      "style": "h3",
+      "text": "Annually: full electrical and mechanical check"
+    },
+    {
+      "style": "normal",
+      "text": "Thermal scanning, insulation resistance, string current and voltage, earth continuity and torque verification happen in one visit, together with the roof waterproofing details. We schedule it for the lowest production period of the year."
+    },
+    {
+      "style": "h2",
+      "text": "What does thermal imaging find?"
+    },
+    {
+      "style": "normal",
+      "text": "A thermal camera catches an electrical problem in its first visible form, which is heat. Microcracks inside a cell, reverse bias on a shaded cell, a failed bypass diode, a loose connector: each runs measurably hotter than the surface around it."
+    },
+    {
+      "style": "normal",
+      "text": "The scan must be done on a clear day with the system under load, or hot spots do not appear. What you find today is usually the early stage of a fault that becomes lost production, or a fire risk, a year from now. Inside the enclosure, heat at a terminal block flags a joint working loose."
+    },
+    {
+      "style": "h2",
+      "text": "Why insulation and torque checks matter"
+    },
+    {
+      "style": "normal",
+      "text": "An insulation resistance test measures how intact the insulation is on the DC side. Rodent damage, jackets hardened by UV, a run chafing on a sharp sheet metal edge, a connector that has taken on water: all pull the value down. When it starts falling the system may still run, but the fault is on its way."
+    },
+    {
+      "style": "normal",
+      "text": "String current and voltage measurement lets you compare like with like. If two strings facing the same direction differ without explanation, either a module has failed, a joint has gone resistive, or the shading has changed. We record every visit in the same format, because the trend across years is what talks."
+    },
+    {
+      "style": "normal",
+      "text": "Torque is the cheapest line item here. Bolts, clamps and terminal blocks loosen as daily temperature swings work the metal and wind adds vibration. A loose mechanical joint lets a module shift; a loose electrical joint heats up and arcs. Verification means a calibrated wrench and the manufacturer's value, not a glance."
+    },
+    {
+      "style": "blockquote",
+      "text": "The most expensive fault on any plant is the one that grew because nobody was looking."
+    },
+    {
+      "style": "h2",
+      "text": "Roof sealing and module cleaning"
+    },
+    {
+      "style": "normal",
+      "text": "On rooftop systems, leaks come from the mounting detail rather than the modules. Fixing points, cable entries and penetrations should be inspected once a year. By the time a leak shows from inside, repairing the ceiling costs many times what the detail would have."
+    },
+    {
+      "style": "normal",
+      "text": "Cleaning frequency is a local question. Where rainfall is regular, rain does most of the work; on a dusty plain or next to farmland, deposits build fast. Abrasive brushes, detergents and high pressure water are out, and early morning is preferred because hot glass risks thermal shock."
+    },
+    {
+      "style": "h2",
+      "text": "Warranties and record keeping"
+    },
+    {
+      "style": "normal",
+      "text": "Four warranties run with different terms: the module product warranty for physical defects, the module performance warranty for the degradation curve, the inverter product warranty, and the installer's workmanship warranty. Duration, scope and responsible party belong in your contract."
+    },
+    {
+      "style": "normal",
+      "text": "Two pieces of evidence carry a claim: production data shows when the loss began, and maintenance records show the system was not neglected. Alleged lack of maintenance is one of the most common reasons claims are rejected."
+    },
+    {
+      "style": "normal",
+      "text": "Keep acceptance paperwork, serial numbers, warranty certificates, a report from every visit, measurement values and a fault log in one file. That file also sets the value of the plant if you later sell or transfer the asset."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "How often does a solar plant need maintenance?"
+    },
+    {
+      "style": "normal",
+      "text": "For rooftop systems the baseline is one comprehensive annual check and a visual inspection every six months, with monitoring running daily. Dusty, salty or polluted sites need more frequent visits. We set the final schedule from the soiling rate seen in the plant's first year."
+    },
+    {
+      "style": "h3",
+      "text": "My performance ratio dropped. What now?"
+    },
+    {
+      "style": "normal",
+      "text": "First confirm the deviation is real: compare against the same month last year and check irradiance, since a cloudy month explains a lot on its own. If it is real, a loss concentrated in one string needs a site visit, while a slow even loss is usually soiling or normal degradation."
+    },
+    {
+      "style": "h3",
+      "text": "Can our own team handle maintenance?"
+    },
+    {
+      "style": "normal",
+      "text": "Cleaning and visual inspection can be done in house with the right safety measures. Thermal scanning, insulation testing, string measurement and torque verification need calibrated instruments and DC side competence, so they belong with a qualified crew. Roof work requires fall protection regardless."
+    },
+    {
+      "style": "normal",
+      "text": "At MİNADA we monitor every system we install and handle periodic maintenance and reporting under an operation and maintenance agreement. We also take over plants we did not build: for existing sites we run an operational audit and issue a condition report with a measured performance ratio. To find out where your system stands, get in touch for a free site survey."
+    }
+  ]
+}

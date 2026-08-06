@@ -480,7 +480,8 @@
     "back": "Tüm yazılar",
     "by": "Yazan:",
     "latest": "Son yazılar",
-    "minRead": "{min} dk okuma"
+    "minRead": "{min} dk okuma",
+    "metaDesc": "Güneş enerjisi, enerji depolama, ısı pompası ve EV şarj üzerine mühendis gözüyle rehberler: mevzuat, fizibilite, ürün seçimi ve işletme."
   },
   "Projects": {
     "eyebrow": "Referanslar",

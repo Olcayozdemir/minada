@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
+import { getPosts } from "@/sanity/queries";
 import { SITE_URL } from "@/lib/seo";
 
 const HREFS = [
@@ -37,6 +38,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "weekly",
         priority: href === "/" ? 1 : 0.7,
         alternates: { languages },
+      });
+    }
+  }
+
+  // Blog articles, per locale. Slugs differ between languages, so each post is
+  // its own entry; hreflang pairing lives in the page's metadata (altSlug).
+  for (const loc of routing.locales) {
+    const posts = await getPosts(loc);
+    for (const p of posts) {
+      entries.push({
+        url: `${SITE_URL}/${loc}/blog/${p.slug}`,
+        lastModified: new Date(p.publishedAt),
+        changeFrequency: "monthly",
+        priority: 0.6,
       });
     }
   }

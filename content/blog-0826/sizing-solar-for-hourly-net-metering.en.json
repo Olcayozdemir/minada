@@ -1,0 +1,223 @@
+{
+  "language": "en",
+  "slug": "sizing-solar-for-hourly-net-metering",
+  "altSlug": "saatlik-mahsuplasma-ges-uretim-tuketim-profili",
+  "title": "Load profile solar sizing under hourly net metering",
+  "metaTitle": "Load Profile Solar Sizing for Hourly Netting | MİNADA",
+  "metaDescription": "Load profile solar sizing decides the return under hourly net metering. How we build the profile, raise self-consumption, shift loads and size storage.",
+  "excerpt": "Under hourly net metering the best system is not the largest one your roof can hold. It is the one whose output lands in the hours you actually consume.",
+  "keywords": [
+    "load profile solar sizing",
+    "self-consumption solar",
+    "hourly net metering",
+    "solar system sizing",
+    "load shifting",
+    "battery storage payback",
+    "commercial rooftop solar Turkey"
+  ],
+  "category": "Guide",
+  "coverImage": "/images/v2/business-hero.jpeg",
+  "publishedAt": "2026-07-13",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Load profile solar sizing means matching capacity to the hour by hour shape of your consumption rather than to the area of your roof. Under hourly net metering that becomes the whole project: capacity, load shifting and storage all follow from one overlay of two curves."
+    },
+    {
+      "style": "h2",
+      "text": "Why hourly netting rewrote the sizing question"
+    },
+    {
+      "style": "normal",
+      "text": "Net metering, mahsuplaşma in Turkish regulation, settles the energy you export against the energy you import. The only variable that matters is the settlement window."
+    },
+    {
+      "style": "normal",
+      "text": "Under monthly netting that window was the calendar month. A kilowatt-hour exported at noon offset one imported in the evening, so the grid worked as a free seasonal battery and the answer was to fill the roof."
+    },
+    {
+      "style": "normal",
+      "text": "Under hourly netting each hour settles on its own. Surplus at 13.00 no longer cancels consumption at 21.00. What you do not consume in the hour it is produced is exported and compensated below the retail tariff you pay."
+    },
+    {
+      "style": "normal",
+      "text": "That gap is where the economics now live. A good system is no longer the one that generates the most, but the one that generates when you are consuming."
+    },
+    {
+      "style": "h2",
+      "text": "How to build a load profile"
+    },
+    {
+      "style": "normal",
+      "text": "Three steps: resolve consumption to the hour, resolve generation to the hour, lay both on the same calendar. All three rest on measurement."
+    },
+    {
+      "style": "h3",
+      "text": "The consumption curve"
+    },
+    {
+      "style": "normal",
+      "text": "Commercial customers usually already have hourly interval data. Records can be requested from the distribution company, the regional utility that owns your connection, or from your supplier. Ask for a full year, because summer and winter diverge sharply."
+    },
+    {
+      "style": "normal",
+      "text": "Without interval data the profile is reconstructed from connected load. Rated power and running hours of compressors, chillers, pumps and ovens are mapped against the shift calendar, then calibrated against billed totals."
+    },
+    {
+      "style": "normal",
+      "text": "Weekdays and weekends are always separated. In a workshop that closes on Saturday almost all weekend generation is surplus, and that vanishes inside an annual average."
+    },
+    {
+      "style": "h3",
+      "text": "The generation curve"
+    },
+    {
+      "style": "normal",
+      "text": "On the supply side we model roof geometry, azimuth, tilt, layout and shading in PVsyst, and take the result as an hourly series rather than an annual figure."
+    },
+    {
+      "style": "normal",
+      "text": "Annual assumptions still check the total. Our model uses roughly 1600 kWh per kWp per year for a south facing roof and roughly 1350 kWh for south-north and east-west layouts. Only simulation gives the shape."
+    },
+    {
+      "style": "h3",
+      "text": "Overlaying the two"
+    },
+    {
+      "style": "normal",
+      "text": "Each of the 8,760 hours in the year then carries a generation figure and a consumption figure. Where consumption is higher you import the difference, where generation is higher you export it."
+    },
+    {
+      "style": "normal",
+      "text": "Two numbers come out of that table: how much of your generation is used in the hour it is produced, and how much of your consumption solar covers. The first is self-consumption, the second coverage. They are not the same."
+    },
+    {
+      "style": "h2",
+      "text": "Self-consumption solar: the number that decides the return"
+    },
+    {
+      "style": "normal",
+      "text": "Self-consumption is the share of generated energy used on site at the moment of generation. Under hourly netting it drives payback, and it moves independently of array size."
+    },
+    {
+      "style": "normal",
+      "text": "Take a 30 kWp south facing system. At 1600 kWh per kWp it produces around 48,000 kWh a year, and at 700 USD per kWp and 47 TL it costs around 987,000 TL excluding VAT."
+    },
+    {
+      "style": "normal",
+      "text": "If 60 percent of that output is consumed as it is produced, 28,800 kWh comes straight off the bill. At a retail rate of 5 TL per kWh that is 144,000 TL a year. Lift self-consumption to 80 percent and the same array delivers 38,400 kWh directly, worth 192,000 TL. That is 48,000 TL a year of extra return without adding a single kWp."
+    },
+    {
+      "style": "normal",
+      "text": "The remaining surplus still has value, compensated under the applicable rules. But that rate is revised periodically and sits below retail, so we build the case on self-consumption and treat export revenue as upside."
+    },
+    {
+      "style": "h2",
+      "text": "Load profile solar sizing in practice"
+    },
+    {
+      "style": "normal",
+      "text": "The first kilowatts of any array are the most valuable: they sit under your daytime base load, so everything they produce is consumed on site. Past that point each added kWp exports a growing share."
+    },
+    {
+      "style": "normal",
+      "text": "So we identify the daytime base load, size the array to that band, then price each further increment on its own. Where the return falls below your threshold, we stop adding modules."
+    },
+    {
+      "style": "blockquote",
+      "text": "Under hourly net metering, the largest system your roof can hold is rarely the system that earns you the most."
+    },
+    {
+      "style": "normal",
+      "text": "This is not an argument for building small. A high consumption plant that runs through the day still deserves a large array. What changed is that the profile decides, not the roof area."
+    },
+    {
+      "style": "h2",
+      "text": "Load shifting comes before storage"
+    },
+    {
+      "style": "normal",
+      "text": "When the curves do not line up, look at the load before the battery. Schedulable consumption can usually be pulled into daylight, and every kilowatt-hour moved raises self-consumption at zero cost."
+    },
+    {
+      "style": "normal",
+      "text": "In homes that means water heating, dishwashers, pool pumps, vehicle charging and running a heat pump against a buffer tank. In industry it means compressed air, pre-cooling cold stores and daytime depot charging."
+    },
+    {
+      "style": "normal",
+      "text": "Most are a few hours on a timer. We never reverse the order: load shifting first, storage second."
+    },
+    {
+      "style": "h2",
+      "text": "When does a battery earn its place?"
+    },
+    {
+      "style": "normal",
+      "text": "A battery exists for consumption you cannot move: a home that peaks after dark, or a plant with load continuing past the last shift."
+    },
+    {
+      "style": "normal",
+      "text": "Here is the arithmetic in the open. Our model prices storage at 1,750 USD for 5 kWh, 2,750 USD for 10 kWh and 3,500 USD for 15 kWh, excluding VAT. At 47 TL the 10 kWh pack costs roughly 129,250 TL. Assume one full cycle on 300 days a year and it shifts 3,000 kWh into the evening, worth 15,000 TL at 5 TL."
+    },
+    {
+      "style": "normal",
+      "text": "Treat that as a ceiling, not a result. The same energy would have earned something on the grid, so the net benefit is only the difference. We find the ceiling reachable through scheduling, then size storage for the gap above it."
+    },
+    {
+      "style": "normal",
+      "text": "Storage carries a second benefit unrelated to tariffs: keeping critical loads alive through an outage. In cold chain that alone can justify it, and the case rests on avoided loss instead."
+    },
+    {
+      "style": "h2",
+      "text": "Does roof orientation change the profile?"
+    },
+    {
+      "style": "normal",
+      "text": "A south facing array gives the highest annual yield but concentrates it into a narrow midday peak. An east-west layout spreads output across morning and afternoon and produces about 16 percent less per kWp, 1350 against 1600 kWh."
+    },
+    {
+      "style": "normal",
+      "text": "In exchange its curve looks far more like a working day. That trade is priced project by project, and on some roofs the layout producing less earns more."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Can a profile be built without hourly meter data?"
+    },
+    {
+      "style": "normal",
+      "text": "Yes. The profile is reconstructed from connected load and operating hours, then calibrated against billed totals. Less precise than measurement, but enough to decide on. On larger investments we add a month of temporary metering."
+    },
+    {
+      "style": "h3",
+      "text": "What self-consumption ratio should I aim for?"
+    },
+    {
+      "style": "normal",
+      "text": "There is no single target. The test is where the marginal return of the next increment drops below the threshold you accept. Daytime operations reach a high ratio with no intervention; homes stay low without scheduling or storage."
+    },
+    {
+      "style": "h3",
+      "text": "Does a battery shorten payback?"
+    },
+    {
+      "style": "normal",
+      "text": "In most projects it lengthens it. Storage raises capital cost while its return is capped by the spread between the retail and export value of the shifted energy. We install batteries to raise self-consumption and secure continuity, not to shorten payback."
+    },
+    {
+      "style": "h3",
+      "text": "Can an existing array be reassessed against hourly netting?"
+    },
+    {
+      "style": "normal",
+      "text": "Yes, and we recommend it. Overlaying your inverter logs on your consumption records exposes your current self-consumption ratio and the hours you are giving away. In most facilities the first gain costs nothing."
+    },
+    {
+      "style": "normal",
+      "text": "If you want to see your own profile, our site survey and feasibility study is free. We start from twelve months of bills and any interval data you have, simulate hourly generation for your roof, overlay it on your consumption, and compare the scenarios in one table."
+    }
+  ]
+}

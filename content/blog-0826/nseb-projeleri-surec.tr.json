@@ -1,0 +1,240 @@
+{
+  "language": "tr",
+  "slug": "nseb-projeleri-surec",
+  "altSlug": "nearly-zero-energy-buildings-turkey",
+  "title": "NSEB nedir, neredeyse sıfır enerjili bina süreci nasıl işler?",
+  "metaTitle": "NSEB: Neredeyse Sıfır Enerjili Bina Süreci",
+  "metaDescription": "NSEB şartı hangi binaları kapsar, yenilenebilir enerji payı çatı GES ile nasıl karşılanır, enerji kimlik belgesi ve ruhsat süreci nasıl ilerler, anlatıyoruz.",
+  "excerpt": "Neredeyse sıfır enerjili bina şartı ruhsat aşamasında devreye girer. Yenilenebilir payın çatı GES ile nasıl karşılandığını ve enerji kimlik belgesi sürecini anlatıyoruz.",
+  "keywords": [
+    "nseb",
+    "neredeyse sıfır enerjili bina",
+    "enerji kimlik belgesi",
+    "çatı GES",
+    "yapı ruhsatı",
+    "yapı kullanma izni",
+    "bina enerji performansı",
+    "müteahhit için GES"
+  ],
+  "category": "Mevzuat",
+  "coverImage": "/images/v2/area-konut.jpg",
+  "publishedAt": "2026-08-04",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "NSEB, neredeyse sıfır enerjili bina ifadesinin kısaltmasıdır: enerji ihtiyacı tasarımla asgariye indirilmiş, kalan ihtiyacının kayda değer bölümü yenilenebilir kaynaklardan karşılanan bina. Türkiye'de kapsamdaki yeni yapılarda bu şart ruhsat aşamasında devreye girer ve pratikte en sık çatı GES ile karşılanır. Yani santral, inşaatın sonunda akla gelen bir ek değil, ruhsat dosyasının parçasıdır."
+    },
+    {
+      "style": "h2",
+      "text": "NSEB nedir, hangi mantığa dayanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Tanımın iki ayağı var ve sırası önemlidir. Önce bina az enerji tüketecek şekilde tasarlanır, sonra kalan ihtiyacın bir bölümü yenilenebilir kaynaktan karşılanır. Sıralamayı tersine çevirmek, yani zayıf bir kabuğu daha büyük bir santralle telafi etmeye çalışmak, hem pahalı hem de belge açısından risklidir."
+    },
+    {
+      "style": "normal",
+      "text": "Mantık şudur: bir kilovatsaati üretmenin maliyeti, o kilovatsaati hiç tüketmemenin maliyetinden yüksektir. Yalıtım, cam seçimi, ısı köprülerinin çözülmesi ve verimli mekanik sistemler binanın ihtiyacını düşürür. Yenilenebilir üretim ise bu düşürülmüş ihtiyacın üzerine oturur."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yaklaşım Avrupa'daki nZEB çerçevesiyle aynı ailedendir. Türkiye'de de binalarda enerji performansına ilişkin mevzuat üzerinden, yeni yapılar için kademeli biçimde zorunluluğa dönüşmüştür."
+    },
+    {
+      "style": "h2",
+      "text": "Şart pratikte neyi zorunlu kılıyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapsamdaki binalarda iki başlık birlikte aranır. Birincisi binanın enerji performans sınıfının belirli bir seviyenin üstünde olmasıdır. İkincisi, yıllık enerji ihtiyacının belirli bir oranının yenilenebilir kaynaklardan karşılanmasıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Kapsamı belirleyen ölçüt bina büyüklüğü ve kullanım türüdür. Eşik değerler, oranlar ve yürürlük takvimi dönemsel olarak güncellenir. Bu yüzden proje başlangıcında ezberden hareket etmek yerine, ruhsat başvurusunun yapılacağı tarihte yürürlükte olan metne bakmak gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Yerel uygulamada da farklar görülür. Aynı şart, farklı belediyelerin ruhsat birimlerinde farklı evrak beklentisiyle karşınıza çıkabilir. Tasarımın başında ilgili birimle temas kurmak, bu farkı en ucuza kapatma yoludur."
+    },
+    {
+      "style": "h2",
+      "text": "Yenilenebilir enerji şartı çatı GES ile nasıl karşılanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Yenilenebilir üretim şartını karşılamanın birden fazla yolu vardır, ancak çoğu projede en pratik cevap çatı GES olur. Sebebi basit: alan zaten mevcuttur, teknoloji öngörülebilirdir ve yıllık üretim hesabı doğrudan belgeye girer."
+    },
+    {
+      "style": "normal",
+      "text": "Boyutlandırma burada mimari bir karara dönüşür. Panellerin oturacağı net alan, asansör makine dairesi, havalandırma üniteleri, baca ve parapet gölgeleri düşüldükten sonra kalan alandır. Bu ayıklamayı ruhsat öncesinde yapmazsanız, projede yazan güç ile çatıya gerçekten sığan güç birbirini tutmaz."
+    },
+    {
+      "style": "normal",
+      "text": "Yönelim de hesabın parçasıdır. Çalıştığımız kabul, güney yönlü bir düzlemde kilovat başına yılda 1600 kWh, güney-kuzey ya da doğu-batı yerleşimde 1350 kWh üretimdir. Aynı kurulu güç, çatı geometrisine göre farklı yıllık üretim verir; belgedeki yenilenebilir pay da bu üretimle hesaplanır."
+    },
+    {
+      "style": "h3",
+      "text": "Çatı, statik ve elektrik koordinasyonu"
+    },
+    {
+      "style": "normal",
+      "text": "GES, çatıya sonradan eklenen bir yük değil, tasarımda hesaba katılan bir yüktür. Konstrüksiyonun ek ölü yükü, rüzgar ve kar yükleriyle birlikte statik hesapta yer alır. Bu hesap sonradan yapıldığında çözüm çoğu zaman güçlendirme kalemine dönüşür."
+    },
+    {
+      "style": "normal",
+      "text": "Elektrik tarafında da tablo benzerdir. İnverter mahalli, DC güzergahı, ana pano bağlantı noktası ve sayaç yeri projeye baştan işlenirse kablo mesafeleri kısalır. Sonradan çözülen her güzergah hem bakır hem işçilik demektir."
+    },
+    {
+      "style": "h2",
+      "text": "Enerji kimlik belgesi süreçte nerede duruyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Enerji kimlik belgesi, binanın enerji performansını A'dan G'ye uzanan bir ölçekte sınıflandıran belgedir. NSEB kapsamındaki projelerde bu belge, sürecin sonunda alınan bir formalite değil, tasarımı yönlendiren hedeftir."
+    },
+    {
+      "style": "normal",
+      "text": "İşleyiş şöyledir: mimari ve mekanik projeler üzerinden hesap yapılır, bina bu hesapla sınıflandırılır. Yenilenebilir üretim de aynı hesabın içine girer. Yani çatıdaki santralin gücü, belgede çıkan sınıfı doğrudan etkiler."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik sonucu şudur: hedef sınıf belliyse GES gücü tahminle değil hesapla belirlenir. Projede yer alan güç ile sahada kurulan güç arasında fark oluşursa, hesap ve belge yenilenmek zorunda kalır."
+    },
+    {
+      "style": "blockquote",
+      "text": "Sona bırakılan uyum, en pahalı uyumdur. Ruhsat aşamasında bir çizim değişikliği olan şey, kaba inşaat bittikten sonra bir çatı sökümüne dönüşür."
+    },
+    {
+      "style": "h2",
+      "text": "Ruhsattan yapı kullanma iznine süreç nasıl ilerliyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Süreci dört durakta okumak mümkün. Birinci durak tasarımdır: enerji performansı hesabı yapılır, hedef sınıf ve yenilenebilir pay belirlenir, GES mimari ve elektrik projesine işlenir."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci durak ruhsattır. Proje dosyası bu haliyle onaya gider; enerji performansı hesabı ve yenilenebilir üretim projesi dosyanın parçasıdır. Üçüncü durak inşaat ve kurulumdur. Burada kritik olan, sahada kurulanın projedekiyle örtüşmesidir."
+    },
+    {
+      "style": "normal",
+      "text": "Panel adedi, kurulu güç, dizilim ve inverter yerleşimi projeden saparsa belge hesabı da sapar. Sapmayı imalat öncesinde yakalamak, kabul aşamasında düzeltmekten her zaman ucuzdur."
+    },
+    {
+      "style": "normal",
+      "text": "Dördüncü durak yapı kullanma iznidir. Bu aşamada sistemin kurulmuş, devreye alınmış ve belgelenmiş olması beklenir. Enerji kimlik belgesi de bu aşamada dosyada aranır."
+    },
+    {
+      "style": "normal",
+      "text": "Buna paralel yürüyen ikinci bir hat daha vardır: şebeke bağlantısı. Lisanssız üretim başvurusu, bağlantı görüşü ve geçici kabul kendi takvimiyle ilerler. İki hattı aynı takvimde planlamak, yapı kullanma izninin şebeke evrakını beklemesini önler."
+    },
+    {
+      "style": "h2",
+      "text": "Müteahhit için erken planlama neden ucuz?"
+    },
+    {
+      "style": "normal",
+      "text": "Bir GES'i tasarım aşamasında projeye koymanın maliyeti, aynı sistemi kaba inşaat bittikten sonra eklemenin maliyetinden düşüktür. Fark ekipmanda değil, koordinasyonda ortaya çıkar."
+    },
+    {
+      "style": "normal",
+      "text": "Erken planlanan projede çatı yükü baştan hesaplanır, kablo güzergahı şaft içinde yer bulur, inverter mahalli mimariye girer ve pano kapasitesi tek seferde doğru seçilir. Geç kalınan projede bunların her biri ayrı bir tadilat kalemidir."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci kazanç satış tarafındadır. Enerji performans sınıfı yüksek bir bina, aidat ve ısıtma gideri üzerinden anlatılabilir bir avantaj sunar. Bu avantajın satış anlatısına girmesi için hesabın ruhsat aşamasında yapılmış olması gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü kazanç takvimdir. Yapı kullanma izni aşamasında eksik çıkan bir yenilenebilir üretim şartı teslimi geciktirir. Gecikmenin maliyeti çoğu projede sistemin kendisinden yüksektir."
+    },
+    {
+      "style": "h2",
+      "text": "Isı pompası ve depolama denkleme nasıl giriyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası, ısıtma ve soğutma ihtiyacını elektrik üzerinden yüksek verimle karşıladığı için bina performansı hesabında güçlü bir kalemdir. Çatıdaki üretimle birlikte kurgulandığında binanın toplam enerji ihtiyacı hem düşer hem de yenilenebilir kaynakla karşılanabilir hale gelir."
+    },
+    {
+      "style": "normal",
+      "text": "Batarya tarafı farklı bir soruya cevap verir. Şart açısından belirleyici olan üretimin kendisidir; batarya üretimi artırmaz, üretimin ne zaman kullanılacağını değiştirir. Konut projelerinde akşam tüketimi baskın olduğu için bu ayrım pratik bir fark yaratır."
+    },
+    {
+      "style": "normal",
+      "text": "Çalıştığımız batarya fiyatları 5 kWh için 1.750 USD, 10 kWh için 2.750 USD, 15 kWh için 3.500 USD'dir; hepsi KDV hariç. Karar duygusal değil aritmetiktir. Bataryanın akşama taşıdığı enerjinin yıllık değeri ek yatırımı makul sürede karşılıyorsa anlamlıdır, karşılamıyorsa değildir."
+    },
+    {
+      "style": "h2",
+      "text": "Çatı GES maliyeti projede nasıl bütçelenir?"
+    },
+    {
+      "style": "normal",
+      "text": "Bütçe kalemini erken koymak için kaba bir çerçeve yeter. Kurulu maliyeti kilovat başına 700 USD, kuru 47 TL, elektrik birim fiyatını 5 TL/kWh alıyoruz. Bütün rakamlar KDV hariçtir."
+    },
+    {
+      "style": "normal",
+      "text": "Bu katsayılarla 30 kWp'lik bir ortak alan sistemi yaklaşık 987.000 TL yatırım demektir. Güney yönlü bir çatıda yıllık üretim 48.000 kWh, karşılığı yaklaşık 240.000 TL tasarruftur. Geri dönüş dört yıl bandına oturur."
+    },
+    {
+      "style": "normal",
+      "text": "Bu tablo, NSEB şartını salt bir maliyet kalemi olmaktan çıkarır. Zorunluluk nedeniyle kurulan sistem, aynı zamanda ortak alan giderini kalıcı olarak düşüren bir yatırımdır. Yönetim planında bu tasarrufun kime yazılacağını baştan tanımlamak da işin bir parçasıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "NSEB şartı her yeni binayı kapsıyor mu?"
+    },
+    {
+      "style": "normal",
+      "text": "Hayır. Kapsam, bina büyüklüğü ve kullanım türüne göre belirlenir; eşikler ve yürürlük takvimi dönemsel olarak güncellenir. Küçük ölçekli tek bir konut ile belirli büyüklüğün üzerindeki toplu projeler aynı çerçevede değerlendirilmez."
+    },
+    {
+      "style": "normal",
+      "text": "Projenizin kapsamda olup olmadığını, ruhsat başvurusunun yapılacağı tarihte yürürlükte olan metin belirler. Bu kontrolü tasarımın başında yapmak, sonradan proje revizyonu yapmaktan ucuzdur."
+    },
+    {
+      "style": "h3",
+      "text": "Enerji kimlik belgesi ne zaman alınır?"
+    },
+    {
+      "style": "normal",
+      "text": "Belge, yapı kullanma izni aşamasında dosyada aranır. Ancak belgeye esas hesap tasarım aşamasında yapılır ve bina o hesaba göre projelendirilir. Yani belge sonda alınır, kararı baştan verilir."
+    },
+    {
+      "style": "normal",
+      "text": "Sahada projeden sapma olursa hesap yenilenir. Bu yüzden panel adedi ve kurulu güç gibi kalemlerde son halini imalat öncesinde netleştirmek gerekir."
+    },
+    {
+      "style": "h3",
+      "text": "Yenilenebilir şart yalnızca GES ile mi karşılanabilir?"
+    },
+    {
+      "style": "normal",
+      "text": "Hayır, tek yol değildir. Isı pompası gibi yüksek verimli sistemler ve diğer yenilenebilir kaynaklar da hesaba girer. Ancak çatı GES, alan uygunluğu ve öngörülebilir üretimi sayesinde çoğu projede en doğrudan çözümdür."
+    },
+    {
+      "style": "normal",
+      "text": "Doğru kurgu genellikle karma olur. Kabuk iyileştirmesi ihtiyacı düşürür, ısı pompası verimi yükseltir, çatı GES kalan ihtiyacın yenilenebilir payını üretir. Üçünü ayrı ayrı değil, tek hesapta değerlendirmek gerekir."
+    },
+    {
+      "style": "h3",
+      "text": "Sistemi yapı kullanma izninden sonra kursak olmaz mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Şart, izin aşamasında sistemin kurulmuş ve belgelenmiş olmasını beklediği için bu erteleme çoğu projede mümkün olmaz. Kurulum takvimini kaba inşaat bitmeden planlamak gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Ayrıca şebeke bağlantı süreci kendi takvimiyle ilerler. Başvuru, bağlantı görüşü ve geçici kabul adımları hesaba katılmazsa teslim tarihi kayar."
+    },
+    {
+      "style": "normal",
+      "text": "NSEB kapsamındaki bir projede ilk adım, kapsamda olup olmadığınızı ve hedef enerji sınıfını netleştirmektir. Mimari projeniz üzerinden çatının net kullanılabilir alanını, gereken kurulu gücü ve bütçe aralığını ücretsiz keşif görüşmesinde birlikte çıkarıyoruz. Tasarımdan yapı kullanma iznine kadar GES tarafını MİNADA olarak tek elden yürütüyoruz."
+    }
+  ]
+}

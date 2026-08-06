@@ -1,0 +1,232 @@
+{
+  "language": "tr",
+  "slug": "ges-isletme-doneminde-dikkat-edilecekler",
+  "altSlug": "solar-plant-operation-checklist",
+  "title": "GES işletme bakım rehberi: performans oranı (PR) nasıl korunur?",
+  "metaTitle": "GES işletme bakım: PR takibi ve periyodik kontroller",
+  "metaDescription": "GES işletme bakım rehberi: performans oranı (PR) takibi, termal kamera, izolasyon ve tork kontrolü, çatıda sızdırmazlık, garanti ve kayıt düzeni.",
+  "excerpt": "Bir GES'in ekonomisi işletme döneminde kazanılır. PR takibi, periyodik kontroller, termal kamera, izolasyon ve tork ölçümü, çatı sızdırmazlığı ve garanti düzeni.",
+  "keywords": [
+    "ges işletme bakım",
+    "performans oranı pr",
+    "ges bakım",
+    "ges periyodik kontrol",
+    "termal kamera panel taraması",
+    "izolasyon direnci testi",
+    "çatı ges sızdırmazlık",
+    "ges garanti ve kayıt"
+  ],
+  "category": "Bakım",
+  "coverImage": "/images/ges/ges-rooftop.jpg",
+  "publishedAt": "2026-08-05",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "GES işletme bakım, bir güneş santralinin kurulumdan sonraki 25 yılını yöneten iştir: performans oranı (PR) takibi, periyodik saha kontrolleri, termal kamera taraması, izolasyon ve tork ölçümleri, çatıda sızdırmazlık denetimi ile garanti ve kayıt düzeni. Doğru kurulduğunda üretim kaybı aylar sonra değil, günler içinde yakalanır."
+    },
+    {
+      "style": "normal",
+      "text": "Kurulum günü bir santralin ekonomisinin sadece başlangıç noktasıdır. Asıl sonuç, sonraki yıllarda üretimin beklenen eğriye ne kadar yakın kaldığıyla belirlenir. İyi kurulmuş bir sistem kendi halinde çalışıyor gibi görünür; fark edilmeyen küçük bir arıza ise aylarca sessizce üretim çalar."
+    },
+    {
+      "style": "h2",
+      "text": "GES işletme bakım tam olarak neyi kapsar?"
+    },
+    {
+      "style": "normal",
+      "text": "İşi üç katmana ayırıyoruz. Birincisi uzaktan izleme: üretim verisinin her gün okunması ve sapmaların alarma bağlanması. İkincisi periyodik saha kontrolü: gözle muayene, elektriksel ölçüm, termal tarama ve mekanik kontrol. Üçüncüsü kayıt düzeni: yapılan her işin ve her arızanın tarihli olarak dosyalanması."
+    },
+    {
+      "style": "normal",
+      "text": "Bu üçü birbirini besler. İzleme olmadan sahaya ne zaman gidileceği bilinmez. Saha kontrolü olmadan izlemenin gösterdiği sapmanın sebebi bulunamaz. Kayıt olmadan da garanti talebiniz kanıtsız kalır. Üçünden biri eksik olduğunda diğer ikisinin değeri de düşer."
+    },
+    {
+      "style": "h2",
+      "text": "Performans oranı (PR) nedir, nasıl takip edilir?"
+    },
+    {
+      "style": "normal",
+      "text": "Performans oranı, gerçekleşen üretimin aynı ışınım altında teorik olarak beklenen üretime oranıdır. Kurulu güçten, panel sayısından ve o ayın hava durumundan bağımsız tek bir sağlık göstergesi verir: sistem, eline geçen güneşin ne kadarını elektriğe çevirebiliyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Hesap için iki veri gerekir: sayaçtan okunan üretim ve panel düzlemine düşen ışınım. Işınım ölçer bulunmayan küçük sistemlerde uydu tabanlı ışınım verisi kullanılır; hassasiyet biraz düşer ama eğilimi görmeye yeter. Önemli olan mutlak değerden çok, aynı yöntemle ay ay takip edilen trendin bozulmasıdır."
+    },
+    {
+      "style": "h3",
+      "text": "PR kaç olmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "İyi tasarlanmış, gölgesiz bir çatı sisteminde yıllık PR tipik olarak yüzde 75-85 bandında oturur. Sıcak yaz aylarında bu değer düşer, serin ve güneşli bahar aylarında yükselir. Bu yüzden PR'ı geçen ayla değil, geçen yılın aynı ayıyla karşılaştırmak gerekir. Sabit bir hedef sayı yerine, santralinizin ilk tam yılında ölçülen değeri referans alıyoruz."
+    },
+    {
+      "style": "h3",
+      "text": "PR düştüğünde ilk nereye bakılır?"
+    },
+    {
+      "style": "normal",
+      "text": "Sıralama genelde şudur: önce kirlilik ve gölgelenme, sonra string bazlı üretim farkları, sonra inverter uyarı kayıtları, en sonda kablolama ve bağlantılar. String bazlı izleme varsa bu eleme saatler içinde tamamlanır. Yoksa saha ölçümü kaçınılmazdır."
+    },
+    {
+      "style": "normal",
+      "text": "Sayısal karşılığını görmek meseleyi somutlaştırır. Güneye bakan 100 kWp'lik bir çatı santrali, kullandığımız fizibilite katsayısıyla yılda yaklaşık 160.000 kWh üretir; 5 TL/kWh tarifede bu, yılda 800.000 TL'lik bir tasarruf demektir. Fark edilmeyen yüzde 2'lik bir üretim kaybı ise yılda 3.200 kWh, yani 16.000 TL eder. Bir bakım ziyaretinin bedeli bunun çok altındadır."
+    },
+    {
+      "style": "h2",
+      "text": "Periyodik kontroller hangi sıklıkta yapılmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "Sıklığı santralin büyüklüğü, çatı tipi ve bölgenin kirletici yükü belirler. Aşağıdaki takvim, çatı üstü sistemler için kullandığımız temel çerçevedir. Sanayi bölgesi, tarım alanı, kuş yoğun bir çevre ya da deniz kıyısı gibi zorlayıcı ortamlarda aralıklar kısalır."
+    },
+    {
+      "style": "h3",
+      "text": "Her gün: uzaktan izleme"
+    },
+    {
+      "style": "normal",
+      "text": "Üretim verisi günlük okunur; beklenen eğriden sapma ve inverter alarmları otomatik bildirime bağlanır. Amaç her gün insan gözüyle grafik incelemek değil, alarm kurallarını doğru kurup istisnayı yakalamaktır."
+    },
+    {
+      "style": "h3",
+      "text": "Altı ayda bir: gözle muayene ve temel ölçüm"
+    },
+    {
+      "style": "normal",
+      "text": "Panel yüzeyinde çatlak, delaminasyon ve kalıcı leke aranır. Konnektörlerde ısınma izi ve su birikmesi, kablo taşıyıcılarında UV yorgunluğu kontrol edilir. Pano içinde toz, nem ve böcek girişine bakılır; sigorta ve şalt elemanları gözden geçirilir."
+    },
+    {
+      "style": "h3",
+      "text": "Yılda bir: kapsamlı elektriksel ve mekanik kontrol"
+    },
+    {
+      "style": "normal",
+      "text": "Termal tarama, izolasyon direnci ölçümü, string akım ve gerilim ölçümü, topraklama süreklilik kontrolü ve tork kontrolü bu ziyarette birlikte yapılır. Çatı sistemlerinde sızdırmazlık detayları da aynı ziyarette denetlenir. Bu kontroller yılın üretimi en düşük dönemine planlanır ki duruşun bedeli en aza insin."
+    },
+    {
+      "style": "h2",
+      "text": "Termal kamera taraması neyi yakalar?"
+    },
+    {
+      "style": "normal",
+      "text": "Termal kamera, elektriksel bir sorunun ısı olarak görünen ilk halini yakalar. Hücre içindeki mikro çatlak, gölgede kalan bir hücrenin ters kutuplanması, arızalı bir bypass diyot ya da gevşek bir konnektör; hepsi çevresindeki yüzeye göre belirgin biçimde ısınır."
+    },
+    {
+      "style": "normal",
+      "text": "Tarama açık ve güneşli bir günde, sistem yük altındayken yapılır; aksi halde sıcak nokta belirmez. Panel arkasına erişilebilen sistemlerde teşhis daha nettir. Bulunan sıcak nokta çoğu zaman bir yıl sonra üretim kaybına ya da yangın riskine dönüşecek bir arızanın erken halidir."
+    },
+    {
+      "style": "normal",
+      "text": "Aynı yöntem pano ve inverter tarafında da geçerlidir. Klemens ve bara bağlantılarındaki ısınma, gevşemenin en erken ve en ucuz kanıtıdır."
+    },
+    {
+      "style": "h2",
+      "text": "İzolasyon testi ve string ölçümleri neden önemli?"
+    },
+    {
+      "style": "normal",
+      "text": "İzolasyon direnci testi, DC tarafındaki yalıtımın sağlamlığını ölçer. Kemirgen zararı, UV altında sertleşmiş kablo kılıfı, keskin sac kenarında sürtünen bir hat ya da su almış bir konnektör; hepsi izolasyon direncini düşürür. Değer düşmeye başladığında sistem hâlâ çalışıyor olabilir, ama arıza kapıdadır."
+    },
+    {
+      "style": "normal",
+      "text": "String akım ve gerilim ölçümü ise dizi bazında karşılaştırma imkanı verir. Aynı yöne bakan iki string arasında açıklanamayan bir fark varsa; ya bir panel arızalıdır, ya bir bağlantı dirençlidir, ya da gölgelenme değişmiştir. Ölçüm sonuçlarını her ziyarette aynı formatta kaydediyoruz, çünkü tek bir ölçüm değil, ölçümlerin yıllar içindeki eğilimi konuşur."
+    },
+    {
+      "style": "h2",
+      "text": "Tork kontrolü: en ucuz bakım kalemi"
+    },
+    {
+      "style": "normal",
+      "text": "Konstrüksiyon cıvataları, panel kelepçeleri ve pano içi klemensler zamanla gevşer. Sebebi basittir: gündüz ve gece arasındaki sıcaklık farkı her gün genleşme ile büzülme yaratır, rüzgar yükü buna titreşim ekler. Gevşeyen bir mekanik bağlantı panelin kaymasına, gevşeyen bir elektriksel bağlantı ise ısınmaya ve ark riskine yol açar."
+    },
+    {
+      "style": "normal",
+      "text": "Kontrol, üreticinin verdiği tork değeriyle ve kalibreli tork anahtarıyla yapılır; gözle bakmak ya da elle sıkmak yeterli değildir. Bir günlük iş, en pahalı arıza kalemlerinden birini baştan siler."
+    },
+    {
+      "style": "blockquote",
+      "text": "Bir santralin en pahalı arızası, kimsenin bakmadığı için büyümüş olanıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Çatıda sızdırmazlık ve panel temizliği"
+    },
+    {
+      "style": "normal",
+      "text": "Çatı üstü sistemlerde sızıntı panelden değil, montaj detayından gelir. Sabitleme noktaları, kablo geçişleri ve çatı penetrasyonları yılda bir kez gözle kontrol edilmeli; mastik ve conta yaşlanması takip edilmelidir. Sızıntı içeriden fark edildiğinde iş çoktan büyümüş olur; erken görülen bir detay onarımının maliyeti, tavan ve yalıtım onarımının yanında yok denecek kadar azdır."
+    },
+    {
+      "style": "normal",
+      "text": "Temizlik sıklığı bölgeye bağlıdır. Düzenli yağış alan yerlerde yağmur işin çoğunu yapar; tozlu ovada, sanayi bölgesinde ya da tarım alanına komşu bir tesiste birikinti hızlıdır ve elle temizlik gerekir. Panelin eğimi de belirleyicidir: eğim azaldıkça kir tutunur ve alt kenarda çamur şeridi oluşur."
+    },
+    {
+      "style": "normal",
+      "text": "Temizlikte aşındırıcı fırça, deterjan ve yüksek basınçlı su kullanılmaz; yumuşak fırça ve saf su standarttır. Panel sıcakken yapılan temizlik termal şok riski taşıdığı için sabahın erken saatleri tercih edilir."
+    },
+    {
+      "style": "h2",
+      "text": "Garanti ve kayıt düzeni nasıl kurulur?"
+    },
+    {
+      "style": "normal",
+      "text": "Birbirinden ayrı ve süreleri farklı dört garanti vardır: panelin ürün garantisi (fiziksel kusur), panelin performans garantisi (yıllık degradasyon eğrisi), inverterin ürün garantisi ve kurulumu yapan firmanın işçilik garantisi. Dördünün de süresi, kapsamı ve muhatabı sözleşmenizde yazılı olmalıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Garanti talebinde iki kanıt işe yarar: üretim verisi ve bakım kaydı. Üretim verisi kaybın ne zaman başladığını, bakım kaydı ise sistemin ihmal edilmediğini gösterir. Bakım yapılmadığı iddiası, reddedilen garanti taleplerinde en sık karşılaşılan gerekçelerden biridir."
+    },
+    {
+      "style": "normal",
+      "text": "Dosyanızda proje ve kabul evrakı, ekipman seri numaraları, garanti belgeleri, her bakım ziyaretinin raporu, ölçüm değerleri ve arıza ile müdahale kayıtları bulunmalıdır. Aynı dosya, santralinizi satmak ya da bir yatırımcıya devretmek istediğinizde değerini belirleyen şeydir."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "GES bakımı yılda kaç kez yapılmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "Çatı üstü sistemlerde temel çerçeve, yılda bir kapsamlı kontrol ve altı ayda bir gözle muayenedir; uzaktan izleme ise günlüktür. Tozlu, tuzlu ya da kirletici yükü yüksek ortamlarda saha ziyareti sıklığı artar."
+    },
+    {
+      "style": "normal",
+      "text": "Bakım takvimini santralin ilk yılında gözlediğimiz kirlenme hızına ve arıza kayıtlarına göre netleştiriyoruz. Sabit bir takvimi baştan dayatmak yerine, sahanın davranışına göre ayarlamak daha doğru sonuç veriyor."
+    },
+    {
+      "style": "h3",
+      "text": "Performans oranı düşerse ne yapmalıyım?"
+    },
+    {
+      "style": "normal",
+      "text": "Önce sapmanın gerçek olduğunu doğrulayın: aynı ayın geçen yılki değeriyle karşılaştırın ve o dönemin ışınım verisine bakın. Bulutlu bir ay, düşük üretimi tek başına açıklayabilir."
+    },
+    {
+      "style": "normal",
+      "text": "Sapma gerçekse eleme sırası kirlilik, gölgelenme, string farkı ve inverter kaydı şeklinde ilerler. Tek bir stringde toplanan kayıp saha müdahalesi ister; tüm sisteme yayılan yavaş kayıp genellikle kirlenme ya da normal yaşlanmadır."
+    },
+    {
+      "style": "h3",
+      "text": "İzleme sistemi olmadan santral işletilebilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Teknik olarak çalışır, ama kaybı göremezsiniz. İzlemesiz bir sistemde arıza ancak faturada, yani haftalar veya aylar sonra fark edilir. O aylarda üretilmeyen enerji geri gelmez. İzleme donanımı, önlediği tek bir uzun duruşla kendini öder."
+    },
+    {
+      "style": "h3",
+      "text": "Bakımı kendi ekibimiz yapabilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Panel temizliği ve gözle muayene, güvenlik önlemleri alındığında tesis ekibince yapılabilir. Termal tarama, izolasyon ölçümü, string ölçümü ve tork kontrolü ise kalibreli ekipman ve DC tarafında yetkinlik ister; bu işler yetkili bir ekiple yürütülmelidir. Çatıda çalışma her durumda düşme koruması gerektirir."
+    },
+    {
+      "style": "normal",
+      "text": "MİNADA olarak kurduğumuz her sistemi uzaktan izliyor, periyodik bakımı ve performans raporlamasını işletme sözleşmesi kapsamında yürütüyoruz. Santrali biz kurmadıysak da devralabiliyoruz: mevcut tesisler için işletme denetimi yapıyor, PR ölçümü ve kontrol takvimiyle birlikte durum raporu çıkarıyoruz. Çatınızdaki sistemin bugün nerede durduğunu görmek isterseniz ücretsiz keşif için bize yazabilirsiniz."
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "language": "en",
+  "slug": "distribution-vs-transmission-grid-connection",
+  "altSlug": "dagitim-iletim-baglanti-farklari",
+  "title": "Distribution vs transmission grid connection: what changes",
+  "metaTitle": "Distribution vs transmission grid connection in Turkey",
+  "metaDescription": "How a plant reaches Turkey's distribution grid or the transmission backbone: counterparty, voltage level, connection opinion, cost, capacity and operation.",
+  "excerpt": "Which door should your plant use to reach the grid? The two routes compared across counterparty, voltage level, connection opinion, cost, capacity and operating duties.",
+  "keywords": [
+    "distribution vs transmission grid connection",
+    "grid connection opinion",
+    "TEİAŞ connection",
+    "distribution company application",
+    "call letter",
+    "grid connection capacity",
+    "solar grid connection Turkey",
+    "transmission system operator"
+  ],
+  "category": "Regulation",
+  "coverImage": "/images/v2/area-kamu.jpg",
+  "publishedAt": "2026-07-25",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Distribution vs transmission grid connection comes down to which network you plug into. Distribution means the regional distribution company's low or medium voltage network. Transmission means the high voltage backbone run by TEİAŞ, Turkey's transmission system operator. Counterparty, cost, capacity and operating duties follow from that."
+    },
+    {
+      "style": "normal",
+      "text": "In most projects this is not really a choice. Your connection capacity and where the site sits on the network decide which door is open. Knowing the difference still tells you what belongs in the feasibility study."
+    },
+    {
+      "style": "h2",
+      "text": "What is a distribution grid connection?"
+    },
+    {
+      "style": "normal",
+      "text": "A distribution grid connection ties the plant to the network run by the distribution company in your region. Each region has one such operator, and everyone in its licence area deals with it. Rooftop solar, small and mid-scale ground-mounted plants and almost every self-consumption project take this route."
+    },
+    {
+      "style": "normal",
+      "text": "The connection point depends on capacity. At small sizes the existing consumer panel is enough. As capacity grows you install your own transformer, a medium voltage cubicle and protection equipment, and the meter becomes bidirectional."
+    },
+    {
+      "style": "normal",
+      "text": "The appeal is proximity: the connection point is often a few hundred metres away, so cable, pole and land costs stay contained and commissioning is quick."
+    },
+    {
+      "style": "h2",
+      "text": "What is a transmission grid connection?"
+    },
+    {
+      "style": "normal",
+      "text": "A transmission grid connection ties the plant to the high voltage network operated by TEİAŞ, the state-owned transmission system operator that runs the national backbone. The transmission network commonly operates at 154 kV and 400 kV, while distribution sits at low and medium voltage."
+    },
+    {
+      "style": "normal",
+      "text": "This route is for large plants. You build a step-up substation and switchyard on site, then run your own line to the nearest transmission substation. Some projects add a bay to an existing substation, others need a new one."
+    },
+    {
+      "style": "normal",
+      "text": "Because the line route passes through land permits and expropriation, it is usually the least predictable item in the schedule. High voltage equipment also carries long lead times, ordered against a design still subject to approval."
+    },
+    {
+      "style": "h2",
+      "text": "Distribution vs transmission grid connection: who decides the level?"
+    },
+    {
+      "style": "normal",
+      "text": "Whoever owns the network you connect to is your counterparty. On a distribution connection the application, connection opinion, project approval and acceptance run with your regional distribution company. On a transmission connection it is TEİAŞ, assessing from a system operator's point of view."
+    },
+    {
+      "style": "normal",
+      "text": "The voltage level is not a preference you express. Connection capacity, the short circuit level at the connection point, how heavily local lines are already loaded and nearby allocations are weighed together. Two identical projects in two regions can be sent to different levels."
+    },
+    {
+      "style": "normal",
+      "text": "Thresholds are set in regulation and updated periodically, so check the current rules and the operator's written opinion before committing capital. A limit remembered from an earlier project may no longer hold."
+    },
+    {
+      "style": "h2",
+      "text": "How does the connection opinion process differ?"
+    },
+    {
+      "style": "h3",
+      "text": "The distribution route"
+    },
+    {
+      "style": "normal",
+      "text": "The application file goes to the distribution company, which assesses capacity at the connection point and returns a connection opinion. A positive opinion is followed by a call letter, a connection agreement, project approval and construction. Provisional acceptance puts the plant into service."
+    },
+    {
+      "style": "normal",
+      "text": "How long this takes depends on how complete the file is and how busy the region is. The most common delay we see is not regulation but missing paperwork and an incorrect single-line diagram."
+    },
+    {
+      "style": "h3",
+      "text": "The transmission route"
+    },
+    {
+      "style": "normal",
+      "text": "On the transmission side the assessment is more technical and longer: grid impact studies, connection point selection and the line route study proceed in parallel. Even with a positive opinion, the schedule does not firm up until the route permits are complete."
+    },
+    {
+      "style": "normal",
+      "text": "Development can therefore run longer than construction, and that time must be carried as financing cost, not treated as a formality."
+    },
+    {
+      "style": "h2",
+      "text": "Where does the cost difference come from?"
+    },
+    {
+      "style": "normal",
+      "text": "Our feasibility unit cost, 700 USD per kWp, or roughly TRY 32,900 per kWp at 47 TRY to the dollar and excluding VAT, covers the plant itself: modules, inverters, mounting structure, cabling and site works. Connection items sit on top, and the two routes reach very different totals."
+    },
+    {
+      "style": "normal",
+      "text": "On a distribution connection those items are typically a transformer, a medium voltage cubicle, protection and metering equipment and a short line. Visible in the total, but rarely decisive."
+    },
+    {
+      "style": "normal",
+      "text": "On a transmission connection you add a step-up transformer, a switchyard, protection and communication systems, a line measured in kilometres and the land costs along it. Together these can reach the scale of a mid-sized plant."
+    },
+    {
+      "style": "blockquote",
+      "text": "On a distribution connection the plant sets the size of the investment. On a transmission connection the connection usually sets it."
+    },
+    {
+      "style": "h2",
+      "text": "Which route has spare capacity?"
+    },
+    {
+      "style": "normal",
+      "text": "Capacity is the invisible constraint on site selection. On the distribution network it is local and fills quickly. If several projects in your district already hold allocations at the same substation, your application can come back capped or refused."
+    },
+    {
+      "style": "normal",
+      "text": "The transmission backbone carries far more power, so there is more room for large capacities. Regional saturation exists there too: where generation has concentrated, transmission can be constrained in the same way."
+    },
+    {
+      "style": "normal",
+      "text": "Look at the network before you look at land. A cheap site with no capacity never becomes an investment, while an expensive site with capacity can save months."
+    },
+    {
+      "style": "h2",
+      "text": "What changes once the plant is running?"
+    },
+    {
+      "style": "normal",
+      "text": "At distribution level, metering and reporting stay simple. Meter readings, periodic maintenance and a line to the distribution company when a fault occurs cover most plants."
+    },
+    {
+      "style": "normal",
+      "text": "At transmission level your plant is a power station in the eyes of the system operator. Real-time telemetry, generation forecasts, reactive power and voltage support become obligations. Switchyard maintenance, protection relay testing and authorised high voltage personnel are your responsibility."
+    },
+    {
+      "style": "normal",
+      "text": "Curtailment differs too. Distribution level interruptions are mostly local and short. At transmission level, system conditions can curtail output, and that lands on the revenue line, not the maintenance budget."
+    },
+    {
+      "style": "h2",
+      "text": "Which grid connection is right for your project?"
+    },
+    {
+      "style": "normal",
+      "text": "Three questions settle it: how much connection capacity you need, where your site sits on the network, and how flexible your schedule is. They usually point to one route on their own."
+    },
+    {
+      "style": "normal",
+      "text": "For self-consumption rooftops and mid-scale ground-mounted projects the answer is almost always a distribution connection. The work there is choosing the right connection point and submitting a complete file the first time."
+    },
+    {
+      "style": "normal",
+      "text": "For large-scale investments the transmission connection items belong in the feasibility study from day one. A switchyard and a line priced in later can make a sound-looking payback unrecognisable. In neither case is there a settled project until the connection opinion is in hand."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Can a project move between a distribution and a transmission connection?"
+    },
+    {
+      "style": "normal",
+      "text": "Changing level without changing capacity is generally not possible, because the level follows the network's technical assessment rather than your preference. Splitting a project or revising the connection capacity downward can sometimes keep it at distribution level."
+    },
+    {
+      "style": "normal",
+      "text": "Whether that is worth doing comes out of the arithmetic: put the generation you give up against the transmission connection cost you avoid."
+    },
+    {
+      "style": "h3",
+      "text": "What happens if the connection opinion is negative?"
+    },
+    {
+      "style": "normal",
+      "text": "A negative opinion usually reflects a lack of capacity, and the reasoning is given in writing. Three routes normally open: reduce the connection capacity, try a different connection point or site, or wait for the planned network investment."
+    },
+    {
+      "style": "normal",
+      "text": "Waiting carries the most uncertainty, because its timing is outside your control. We run an alternative site study in parallel instead."
+    },
+    {
+      "style": "h3",
+      "text": "Is a transmission connection always more expensive?"
+    },
+    {
+      "style": "normal",
+      "text": "As a total connection investment, yes. Per kWp, not always: at large capacities the switchyard and line costs spread across a much larger installed base, so the unit cost can approach a distribution level project."
+    },
+    {
+      "style": "normal",
+      "text": "The deciding variables are line length and terrain: distance to the nearest transmission substation moves the feasibility more than any other input."
+    },
+    {
+      "style": "h3",
+      "text": "How long does a connection opinion take?"
+    },
+    {
+      "style": "normal",
+      "text": "Application and assessment periods are defined in regulation and revised over time, so check the current period before you apply rather than relying on an earlier project. In practice the distribution side is markedly faster."
+    },
+    {
+      "style": "normal",
+      "text": "What stretches the timeline is the file itself. An application with missing documents can easily double the total time of a properly prepared one."
+    },
+    {
+      "style": "normal",
+      "text": "If you want to see which level your project would connect at and what that does to the feasibility, MİNADA runs a free site survey. We check the nearest connection point and the capacity situation, produce a cost and payback table that includes the connection items, and run the application and permitting process end to end."
+    }
+  ]
+}

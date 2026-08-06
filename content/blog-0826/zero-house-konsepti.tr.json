@@ -1,0 +1,244 @@
+{
+  "language": "tr",
+  "slug": "zero-house-konsepti",
+  "altSlug": "zero-house-concept",
+  "title": "Zero House konsepti: kendi enerjisini üreten ev nasıl kurulur",
+  "metaTitle": "Zero House: kendi enerjisini üreten ev nasıl kurulur?",
+  "metaDescription": "Zero House nedir, kendi enerjisini üreten ev hangi sırayla kurulur? Güneş, depolama, ısı pompası ve EV şarjın doğru kurgusu ve gerçekçi fatura beklentisi.",
+  "excerpt": "Zero House bir ürün değil, bir sıralama meselesi: önce verimlilik, sonra üretim, sonra depolama. Kendi enerjisini üreten evin bileşenleri ve gerçekçi hedefi.",
+  "keywords": [
+    "zero house",
+    "kendi enerjisini üreten ev",
+    "enerji bağımsız ev",
+    "zero house konsepti",
+    "ısı pompası ve güneş enerjisi",
+    "ev enerji yönetim sistemi",
+    "ev tipi batarya depolama",
+    "konut ges"
+  ],
+  "category": "Teknoloji",
+  "coverImage": "/images/v2/home-hero.jpeg",
+  "publishedAt": "2026-08-02",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Zero House, yıl toplamında tükettiği enerjiyi kendi üreten evdir. Güneş, depolama, ısı pompası, elektrikli araç şarjı ve enerji yönetimi tek kurguda birleşir. Kritik olan bileşen listesi değil sıralamadır: önce verimlilik, sonra üretim, sonra depolama. Doğru sırayla kurulan bir evde fatura, sabit bedeller seviyesine kadar geriler."
+    },
+    {
+      "style": "h2",
+      "text": "Zero House nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "Zero House, yıllık enerji bilançosunu kendi üretimiyle kapatan konut için kullanılan bir kavramdır. Ölçü aylık değil yıllıktır: yaz aylarındaki fazla üretim, kışın eksik kalan üretimi dengeler. Bu yüzden hedef, şebekeden hiç enerji çekmemek değil, yıl toplamında çektiğiniz kadarını üretmektir."
+    },
+    {
+      "style": "normal",
+      "text": "Kavramın ikinci ayağı kapsamdır. Klasik bir evde elektrik faturası, toplam enerji giderinin yalnızca bir parçasıdır; ısınma doğalgaza, ulaşım benzine bağlıdır. Kendi enerjisini üreten ev bu üç kalemi tek taşıyıcıda, yani elektrikte birleştirir. Böylece üçü de aynı çatıdan beslenebilir hale gelir."
+    },
+    {
+      "style": "normal",
+      "text": "Zero House bir ürün değildir. Satın alıp taktıracağınız tek bir kutu yoktur. Birbirini tamamlayan beş kararın doğru sırayla verilmesidir."
+    },
+    {
+      "style": "h2",
+      "text": "Kendi enerjisini üreten ev hangi sırayla kurulur?"
+    },
+    {
+      "style": "normal",
+      "text": "Sıralama, bu işin en pahalı ve en çok atlanan kısmıdır. Yanlış sırayla ilerleyen bir projede sistem gereğinden büyük çıkar, yatırım şişer ve geri dönüş süresi uzar."
+    },
+    {
+      "style": "h3",
+      "text": "Adım 1: Tüketimi ölçün ve düşürün"
+    },
+    {
+      "style": "normal",
+      "text": "Önce son on iki ayın elektrik faturalarını, varsa doğalgaz tüketimini masaya koyuyoruz. Ardından yalıtım, doğrama, aydınlatma ve eski beyaz eşya gibi kalemlere bakıyoruz. Yalıtımı zayıf bir evi ısı pompasıyla ısıtmak mümkündür, ama hem gereken cihaz hem onu besleyecek panel gücü büyür."
+    },
+    {
+      "style": "normal",
+      "text": "Tüketimde sağlanan her kilovatsaatlik azalma, üretim tarafında birkaç kilovatsaatlik yatırımdan tasarruf demektir. Verimlilik, sistemin en ucuz bileşenidir ve tek seferlik bir iştir."
+    },
+    {
+      "style": "h3",
+      "text": "Adım 2: Üretimi kurun"
+    },
+    {
+      "style": "normal",
+      "text": "Tüketim netleştikten sonra çatı GES boyutlandırılır. Burada belirleyici olan bütçe değil çatının kendisidir: yön, eğim, gölgelenme ve kullanılabilir alan sistemin tavanını çizer."
+    },
+    {
+      "style": "h3",
+      "text": "Adım 3: Depolamayı ekleyin"
+    },
+    {
+      "style": "normal",
+      "text": "Batarya enerji üretmez, üretimi zaman içinde kaydırır: gündüzün fazlasını akşamın tüketimine taşır. Yaptığı iş, kendi ürettiğinizi kendinizin kullanma oranını yükseltmektir. Bu yüzden üretimden önce değil, sonra gelir."
+    },
+    {
+      "style": "h3",
+      "text": "Adım 4: Isıtmayı ve ulaşımı elektriğe bağlayın"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası ve elektrikli araç şarjı, evin en büyük iki elektrik yüküdür. Aynı zamanda en esnek iki yüktür: ikisi de saatini kaydırabilir. Bu esneklik, Zero House kurgusunun asıl kaldıracıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Adım 5: Yönetimi devreye alın"
+    },
+    {
+      "style": "normal",
+      "text": "Enerji yönetim sistemi üretimi ve yükleri aynı anda görür, kararı otomatikleştirir. Bu katman olmadan dört bileşen aynı evde durur ama birlikte çalışmaz."
+    },
+    {
+      "style": "blockquote",
+      "text": "Zero House bir cihaz listesi değil, bir sıralama disiplinidir. Yanlış sırayla kurulan sistem her zaman gereğinden büyük ve gereğinden pahalı çıkar."
+    },
+    {
+      "style": "h2",
+      "text": "Enerji bağımsız ev için kaç kWp güneş gerekir?"
+    },
+    {
+      "style": "normal",
+      "text": "Hesap tek satırdır: yıllık tüketiminizi çatınızın yıllık özgül üretimine bölersiniz. Fizibilite modelimizde güney yönlü bir çatı için 1.600 kWh/kWp, doğu-batı ya da güney-kuzey bölünmüş çatılar için 1.350 kWh/kWp kabul ediyoruz."
+    },
+    {
+      "style": "normal",
+      "text": "Örnek bir ev üzerinden gidelim. Bugün 5.000 kWh elektrik tüketen bir konut, ısıtmayı ısı pompasına aldığında ve bir elektrikli aracı eve bağladığında yıllık tüketimi yaklaşık 12.000 kWh seviyesine çıkar. Bu iki ek yükün büyüklüğü evin ısı kaybına ve yıllık kilometrenize göre değişir; o yüzden keşifte tek tek hesaplanır."
+    },
+    {
+      "style": "normal",
+      "text": "Güney yönlü bir çatıda 12.000 kWh için yaklaşık 7,5 kWp gerekir. Aynı ev doğu-batı bölünmüş bir çatıdaysa aynı üretim için yaklaşık 8,9 kWp kurmak gerekir. Aradaki farkı yaratan ekipman değil, çatının yönüdür."
+    },
+    {
+      "style": "normal",
+      "text": "Maliyet tarafında modelimiz kWp başına 700 USD ve 47 TL kur kullanır; yani kWp başına 32.900 TL, KDV hariç. 7,5 kWp için bu yaklaşık 246.750 TL demektir. 12.000 kWh üretimin 5 TL/kWh tarifeyle yıllık karşılığı 60.000 TL olduğuna göre, yalnızca güneş tarafı yaklaşık 4,1 yılda kendini geri öder."
+    },
+    {
+      "style": "h2",
+      "text": "Batarya kaç kWh olmalı, ne kadar tutar?"
+    },
+    {
+      "style": "normal",
+      "text": "Batarya boyutu toplam tüketiminizle değil, akşam ve gece tüketiminizle ilgilidir. Güneş battıktan sonra kullandığınız enerji ne kadarsa, bataryanın taşıması gereken yük odur."
+    },
+    {
+      "style": "normal",
+      "text": "Tipik bir konutta bu miktar 5 ile 15 kWh arasında değişir. Paket fiyatlarımız KDV hariç olarak 5 kWh için 1.750 USD, 10 kWh için 2.750 USD, 15 kWh için 3.500 USD'dir. Kapasite büyüdükçe kWh başına maliyet düşer, ama hiç çevrilmeyen kapasite de boşta duran paradır."
+    },
+    {
+      "style": "normal",
+      "text": "Yukarıdaki örnekte 10 kWh'lik bir paket seçilirse yatırım 129.250 TL artar ve toplam geri dönüş süresi yaklaşık 6,3 yıla uzar. Bataryanın karşılığı burada doğrudan para değildir: gece de kendi enerjinizi kullanmak ve kesinti anında evin ayakta kalmasıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Isı pompası ve EV şarj neden aynı kurguya giriyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası elektriği ısıya çeviren bir cihaz değildir; dışarıda hâlihazırda bulunan ısıyı içeri taşır. Harcadığı her birim elektriğe karşılık birkaç birim ısı verir. Isınmayı güneşe bağlamanın verimli yolu bu yüzden ısı pompasıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Elektrikli araç ise evin gezici bataryasıdır. Aracı gece yerine öğle saatlerinde şarj etmek, hiçbir donanım eklemeden öz tüketim oranını yükseltir. Evde geçirilen günlerde bu tek alışkanlık, yıllık bilançoda hatırı sayılır bir kalem oluşturur."
+    },
+    {
+      "style": "normal",
+      "text": "Sıcak su da aynı kategoridedir. Boyleri güneşin en güçlü olduğu saatlerde ısıtmak, enerjiyi elektrik olarak değil sıcaklık olarak saklamak demektir. Bu, bataryaya göre çok daha ucuz bir depolama biçimidir."
+    },
+    {
+      "style": "h2",
+      "text": "Ev enerji yönetim sistemi ne yapar?"
+    },
+    {
+      "style": "normal",
+      "text": "Yönetim sistemi üretimi, tüketimi, batarya doluluğunu ve araç şarjını tek noktadan görür. Basit bir öncelik sırası kurar: önce anlık ev tüketimi, sonra sıcak su ve araç gibi kaydırılabilir yükler, sonra batarya, en son şebeke."
+    },
+    {
+      "style": "normal",
+      "text": "İyi kurulmuş bir sistemde bu sıra sabit değildir. Hava tahminini ve tarife saatlerini hesaba katar; ertesi gün bulutluysa bataryayı bu gece daha dolu bırakır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu katmanın ikinci işlevi görünürlüktür. Hiç ölçmediğiniz bir yük hakkında verimlilik kararı veremezsiniz. Sayı olmadan tartışma tahmine döner."
+    },
+    {
+      "style": "h2",
+      "text": "Sıfır fatura gerçekçi mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Yıllık bilançoyu sıfıra yaklaştırmak gerçekçidir. Her ay sıfır fatura almak değildir. Aralık ve ocak aylarında üretim düşer, ısıtma yükü artar; o aylarda şebekeden çekersiniz. Yaz aylarındaki fazla üretim, yıllık enerji bilançosunda bu açığı kapatır."
+    },
+    {
+      "style": "normal",
+      "text": "Ayrıca faturanın enerji dışı kalemleri vardır: dağıtım bedeli, sayaç okuma, vergiler ve fonlar. Üretiminiz tüketiminizi tamamen karşılasa bile bu kalemler kalır. Dürüst hedef şudur: enerji bedelini sıfıra yaklaştırmak ve şebekeyi ana kaynak olmaktan çıkarıp yedek konumuna indirmek."
+    },
+    {
+      "style": "normal",
+      "text": "Bunun faturaya nasıl yansıdığını netleştirme belirler: şebekeye verdiğiniz enerji ile çektiğiniz enerji, lisanssız üretim çerçevesinde birbirine karşı netleştirilir. Netleştirmenin hangi pencerede yapıldığı, yani aylık mı saatlik mi olduğu, bağlantı tipinize ve başvuru anında yürürlükte olan düzenlemeye göre belirlenir; bu yüzden başvurudan önce güncel duruma bakmak gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Şebekeden tamamen kopmak teknik olarak mümkündür, ama şehir içinde neredeyse hiçbir zaman ekonomik değildir. Kışın en kötü haftasını tek başına geçirebilecek büyüklükte bir sistem, yılın kalanında büyük ölçüde atıl kalır."
+    },
+    {
+      "style": "h2",
+      "text": "Zero House'a kademeli geçiş nasıl planlanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Bütün bileşenleri aynı anda kurmak zorunda değilsiniz. Önemli olan, ilk adımı sonrakilerin kapısını kapatmayacak şekilde atmaktır."
+    },
+    {
+      "style": "normal",
+      "text": "Pratikte planı ikiye ayırıyoruz: bugün kurulacaklar ve bugün yalnızca altyapısı hazırlanacaklar. Çatıya GES kurulurken hibrit invertere geçmek ve batarya kablolamasını çekmek, depolamayı sonradan eklemenin maliyetini belirgin biçimde düşürür. Aynı mantık garaja çekilecek boş boru ve panoda ayrılacak yer için de geçerlidir."
+    },
+    {
+      "style": "normal",
+      "text": "Abone gücü, proje onayı ve dağıtım şirketi başvurusu gibi konular bileşen bazında farklı ilerler ve mevzuat dönemsel olarak güncellenir. Bu yüzden planı, başvuru öncesinde teyit edilen güncel duruma göre kurmak gerekir."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Zero House için evi baştan mı yapmak gerekiyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Hayır. Mevcut evlerin büyük bölümü kademeli olarak dönüştürülebilir. Belirleyici olan yapının yaşı değil, ısı kaybı ve çatının uygunluğudur. Yalıtımı iyileştirilmiş eski bir ev, yalıtımsız yeni bir evden çoğu zaman daha kolay hedefe ulaşır."
+    },
+    {
+      "style": "h3",
+      "text": "Batarya olmadan enerji bağımsız ev kurulabilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Yıllık enerji bilançosu açısından evet: çatınız, yıl toplamında evin tükettiği kadarını üretebilir. Fatura tarafı ise ayrı bir sorudur ve tabi olduğunuz netleştirme modeline bağlıdır. Saatlik netleştirmede şebeke ücretsiz bir depo gibi çalışmaz; verdiğiniz ve çektiğiniz enerji saat saat eşleştirilir, yani ürettiğinizi mümkün olduğunca ürettiğiniz saatte tüketmeniz gerekir. Her iki durumda da kesinti anında eviniz beslenmez ve gece tüketiminiz şebekeye bağlı kalır. Batarya, bağımsızlığın maliyetli ama gerçek olan kısmıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Isı pompası kışın yetersiz kalır mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Bölgenin tasarım sıcaklığına göre seçilmiş bir cihaz kışın da çalışır. Dış sıcaklık düştükçe verim azalır ve elektrik tüketimi artar; bu beklenen bir davranıştır. Kritik olan, cihaz kapasitesinin evin ısı kaybına göre hesaplanmış olmasıdır. Tahminle seçilen cihaz ya yetmez ya da sürekli durup kalkarak yıpranır."
+    },
+    {
+      "style": "h3",
+      "text": "Zero House yatırımı kaç yılda geri döner?"
+    },
+    {
+      "style": "normal",
+      "text": "Yalnızca güneş tarafı için tipik bant 4-6 yıldır. Batarya eklendiğinde bu süre uzar; ısı pompası doğalgazın yerine geçtiğinde ise kısalır, çünkü tasarruf elektrik faturasının ötesine taşar. Kesin rakam için son on iki aylık tüketiminize ve çatınızın simülasyonuna bakmak gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Evinizin Zero House yol haritasını çıkarmak için ücretsiz keşif yapıyoruz. Çatınızı ölçüyor, son on iki aylık tüketiminizi inceliyor ve hangi adımın bugün, hangisinin sonraki yıl mantıklı olduğunu kalem kalem yazıyoruz. Hesap bizden, karar sizin."
+    }
+  ]
+}

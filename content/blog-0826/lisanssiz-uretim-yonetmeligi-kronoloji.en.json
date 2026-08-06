@@ -1,0 +1,215 @@
+{
+  "language": "en",
+  "slug": "unlicensed-generation-regulation-turkey",
+  "altSlug": "lisanssiz-uretim-yonetmeligi-kronoloji",
+  "title": "Unlicensed electricity generation in Turkey: rules and process",
+  "metaTitle": "Unlicensed electricity generation Turkey: regulation guide",
+  "metaDescription": "How Turkey's unlicensed electricity generation regulation evolved, how the call letter process works, and what hourly netting does to your payback.",
+  "excerpt": "How unlicensed generation in Turkey evolved: the shift to self-consumption, the route from connection opinion to call letter, and what hourly netting does to your payback.",
+  "keywords": [
+    "unlicensed electricity generation Turkey regulation",
+    "call letter",
+    "hourly netting",
+    "self-consumption solar",
+    "grid connection opinion",
+    "rooftop solar Turkey",
+    "distribution company"
+  ],
+  "category": "Regulation",
+  "coverImage": "/images/ges/ges-ground.jpg",
+  "publishedAt": "2026-07-22",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Turkey's unlicensed electricity generation regulation lets a consumer build a power plant without holding a generation licence, provided it is tied to a metered consumption point. Over the years the rules moved in one direction: toward self-consumption. Applications run through a connection opinion and a call letter, and newer projects settle hourly."
+    },
+    {
+      "style": "h2",
+      "text": "What does Turkey's unlicensed electricity generation regulation cover?"
+    },
+    {
+      "style": "normal",
+      "text": "The regulation defines which plants may be built without a generation licence, how they connect to the grid, and how their output appears on the owner's bill. Scope runs from a house roof to a factory's own supply plant."
+    },
+    {
+      "style": "normal",
+      "text": "In practice it settles three things: how much capacity you may install, which institution you deal with, and how surplus output is valued. Those are the three main variables of any feasibility study. One clarification: unlicensed does not mean unregistered, only that you skip the licence required of utility-scale plants."
+    },
+    {
+      "style": "h2",
+      "text": "How the rules evolved: four phases"
+    },
+    {
+      "style": "normal",
+      "text": "Read the history as four phases rather than a list of amendments. Each phase answers a problem the previous one created in the field."
+    },
+    {
+      "style": "h3",
+      "text": "Phase one: small capacities, a narrow door"
+    },
+    {
+      "style": "normal",
+      "text": "Early rules allowed modest capacities and a narrow technology set, so small-scale generation could proceed without stressing the distribution grid. Investor interest stayed limited: permitting was unpredictable and unit costs high without scale."
+    },
+    {
+      "style": "h3",
+      "text": "Phase two: capacity ceilings rise"
+    },
+    {
+      "style": "normal",
+      "text": "As module prices fell and operators gained experience, ceilings were raised and the application route was standardised. Rooftop solar moved from household to commercial scale. A new bottleneck appeared: transformer and line capacity inside each distribution region."
+    },
+    {
+      "style": "h3",
+      "text": "Phase three: the self-consumption axis hardens"
+    },
+    {
+      "style": "normal",
+      "text": "Here the plant had to be matched to a consumption facility, with installed capacity tied to that account's connection capacity. It was no longer built to sell into the grid but to shrink a specific bill. The investor's question changed with it: not how large a roof, but how much of my own load."
+    },
+    {
+      "style": "h3",
+      "text": "Phase four: the move to hourly netting"
+    },
+    {
+      "style": "normal",
+      "text": "The most consequential recent change is the move, for new applications, from netting monthly totals to netting hour by hour. On paper a technical detail; in the cash flow it moves the payback period directly."
+    },
+    {
+      "style": "h2",
+      "text": "Why the self-consumption axis decides system size"
+    },
+    {
+      "style": "normal",
+      "text": "Once self-consumption is the organising principle, your load profile sets the right system size, not your roof area. A roof that fits 100 kWp is not an argument for installing 100 kWp."
+    },
+    {
+      "style": "normal",
+      "text": "This is why the first document we ask for is your last twelve bills, and where available your hourly consumption data. A three-shift plant and an office that empties at six do not deserve the same system."
+    },
+    {
+      "style": "h2",
+      "text": "The application process, step by step"
+    },
+    {
+      "style": "normal",
+      "text": "The process starts with a connection application to your regional distribution company and ends with provisional acceptance and a meter change. Four stops sit in between, each with its own file and clock."
+    },
+    {
+      "style": "h3",
+      "text": "1. Connection application and connection opinion"
+    },
+    {
+      "style": "normal",
+      "text": "You apply with the consumption account details, the site and the capacity you want. The distribution company assesses transformer and line capacity in that area, and can refuse the application or cap it below your request. Ask about local capacity before committing to a site."
+    },
+    {
+      "style": "h3",
+      "text": "2. The call letter"
+    },
+    {
+      "style": "normal",
+      "text": "If the application is accepted, a call letter is issued. It shows that capacity has been allocated to you at that point, and it is a time-limited right: miss the window for project approval and the connection agreement, and the allocation lapses."
+    },
+    {
+      "style": "normal",
+      "text": "Which rule set governs your project is generally determined by the dates of your application and this letter. Deadlines are set in the regulation and updated periodically, so build the schedule backwards from the day it arrives."
+    },
+    {
+      "style": "h3",
+      "text": "3. Project approval and connection agreement"
+    },
+    {
+      "style": "normal",
+      "text": "The electrical design, single-line diagram and structural calculation of the mounting system go to the competent authority, and the connection agreement follows. Errors caught here are corrected on paper; the same errors corrected on the roof cost several times more."
+    },
+    {
+      "style": "h3",
+      "text": "4. Installation, provisional acceptance, bidirectional meter"
+    },
+    {
+      "style": "normal",
+      "text": "When construction is complete you apply for provisional acceptance. A bidirectional meter is then installed and netting begins. Energy produced before acceptance does not count, so we keep that gap short."
+    },
+    {
+      "style": "blockquote",
+      "text": "In unlicensed generation the expensive mistake is rarely a wrong calculation. It is a wrong calendar: three months lost while a call letter runs down can change which rules your project is judged by."
+    },
+    {
+      "style": "h2",
+      "text": "What hourly netting does to the numbers"
+    },
+    {
+      "style": "normal",
+      "text": "Under monthly netting, exports and imports across the month are summed and the difference settled, so midday output covers evening consumption. Under hourly netting each hour stands alone: a surplus at one in the afternoon does not cancel a draw at nine."
+    },
+    {
+      "style": "normal",
+      "text": "Every kilowatt-hour consumed in the hour it is produced is worth the full retail tariff you avoided. Every kilowatt-hour that is not is valued through a different mechanism and usually returns less. That gap separates the payback of two technically identical plants."
+    },
+    {
+      "style": "normal",
+      "text": "A worked example with our own coefficients. A 30 kWp rooftop system costs roughly TRY 987,000 at 700 USD/kWp and 47 TRY per USD, excluding VAT. On a south-facing roof at 1,600 kWh per kWp per year, output is about 48,000 kWh."
+    },
+    {
+      "style": "normal",
+      "text": "Consumed entirely on the hour, at TRY 5 per kWh that is TRY 240,000 saved a year and a payback near 4.1 years. Whatever is not consumed on the hour contributes less and stretches the payback. Two remedies: move load into sunlit hours, or store the surplus."
+    },
+    {
+      "style": "h3",
+      "text": "When does storage pay?"
+    },
+    {
+      "style": "normal",
+      "text": "A battery answers hourly netting directly by carrying the midday surplus into the evening. Our current prices, excluding VAT, are USD 1,750 for 5 kWh, USD 2,750 for 10 kWh and USD 3,500 for 15 kWh. At 47 TRY per USD, a 10 kWh pack is about TRY 129,250."
+    },
+    {
+      "style": "normal",
+      "text": "Whether it pays depends on filling that capacity. If you do not shift 10 kWh into the evening most days, the pack sits idle. We size storage only after overlaying production and consumption curves."
+    },
+    {
+      "style": "h2",
+      "text": "How to assess a project today"
+    },
+    {
+      "style": "normal",
+      "text": "Start by establishing which rule set applies to you: your application and call letter dates decide whether you settle monthly or hourly. Then check local grid capacity, because a fully subscribed transformer will park the best roof in a queue. Build your load profile and size the system to it; roof area gives you a ceiling, never the right answer."
+    },
+    {
+      "style": "normal",
+      "text": "And do not build the case on one scenario. Tariffs, exchange rates and the netting model can change. If the investment stands up under a reasonable worst case, the decision is sound rather than a hope."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "How long is a call letter valid?"
+    },
+    {
+      "style": "normal",
+      "text": "Deadlines are set in the regulation and updated periodically, so we do not quote a fixed number of days. Take the period stated in your own letter and plan approval, procurement and installation backwards from it. If it passes, the allocation lapses."
+    },
+    {
+      "style": "h3",
+      "text": "Will my existing system be switched to hourly netting?"
+    },
+    {
+      "style": "normal",
+      "text": "As a rule, projects are governed by the provisions in force when they applied, and amendments carry transitional clauses. Your own position follows from the dates on your call letter and connection agreement. Checking your file beats any general answer."
+    },
+    {
+      "style": "h3",
+      "text": "Can I build an unlicensed plant without a consumption facility?"
+    },
+    {
+      "style": "normal",
+      "text": "The current axis of the regulation is self-consumption: the plant is established in relation to a consumption facility, and installed capacity is defined through that relationship. Pure merchant models without an associated load sit in a different legal framework."
+    },
+    {
+      "style": "normal",
+      "text": "Let us work out which rule set your project falls under, the capacity situation in your region, and the right system size for your load. At MİNADA the site survey and preliminary feasibility are free, and we run the application, approval and acceptance process end to end."
+    }
+  ]
+}

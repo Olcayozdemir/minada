@@ -1,0 +1,236 @@
+{
+  "language": "tr",
+  "slug": "dagitim-iletim-baglanti-farklari",
+  "altSlug": "distribution-vs-transmission-grid-connection",
+  "title": "Dağıtımdan bağlantı ile iletimden bağlantı farkı nedir?",
+  "metaTitle": "Dağıtımdan bağlantı ile iletimden bağlantı farkı",
+  "metaDescription": "Dağıtımdan bağlantı ile iletimden bağlantı arasındaki farkı muhatap kurum, gerilim seviyesi, bağlantı görüşü, maliyet ve işletme başlıklarıyla açıklıyoruz.",
+  "excerpt": "Santraliniz şebekeye hangi kapıdan bağlanmalı? Muhatap kurum, gerilim seviyesi, bağlantı görüşü süreci, maliyet, kapasite ve işletme farklarıyla iki yolun karşılaştırması.",
+  "keywords": [
+    "dağıtımdan bağlantı",
+    "iletimden bağlantı",
+    "bağlantı görüşü",
+    "çağrı mektubu",
+    "şebeke bağlantı kapasitesi",
+    "GES şebeke bağlantısı",
+    "TEİAŞ bağlantı",
+    "dağıtım şirketi başvurusu"
+  ],
+  "category": "Mevzuat",
+  "coverImage": "/images/v2/area-kamu.jpg",
+  "publishedAt": "2026-07-25",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Dağıtımdan bağlantı, santralinizi bölgedeki dağıtım şirketinin alçak ya da orta gerilim şebekesine bağlar; iletimden bağlantı ise TEİAŞ'ın işlettiği yüksek gerilim omurgasına. Fark yalnızca gerilim seviyesinde değildir: muhatap kurum, bağlantı görüşü süreci, maliyet kalemleri, kapasite bulma şansı ve işletme yükümlülükleri de değişir."
+    },
+    {
+      "style": "normal",
+      "text": "Bu iki yol arasındaki tercih, çoğu projede bir tercih bile değildir. Gücünüz ve sahanızın konumu hangi kapının açık olduğunu büyük ölçüde belirler. Yine de farkı bilmek, fizibiliteyi doğru kurmanızı ve boşa geçecek ayları baştan görmenizi sağlar."
+    },
+    {
+      "style": "h2",
+      "text": "Dağıtımdan bağlantı nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "Dağıtımdan bağlantı, üretim tesisinin bölgesindeki dağıtım şirketinin işlettiği şebekeye bağlanmasıdır. Çatı GES'ler, küçük ve orta ölçekli arazi santralleri ile öz tüketime dayalı projelerin neredeyse tamamı bu yoldan ilerler."
+    },
+    {
+      "style": "normal",
+      "text": "Bağlantı noktası sistemin gücüne göre değişir. Küçük güçlerde mevcut abone panosuna bağlanmak yeterli olurken, güç büyüdükçe kendi trafonuzu, orta gerilim hücrenizi ve koruma ekipmanınızı kurmanız istenir. Sayaç çift yönlüye dönüşür, tesis dağıtım şirketinin izleme sistemine tanımlanır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yolun en cazip yanı yakınlıktır. Bağlantı noktası çoğu zaman sahanın birkaç yüz metre yakınındadır; kablo, direk ve arazi maliyeti sınırlı kalır. Kurulum sonrası devreye alma da görece hızlıdır."
+    },
+    {
+      "style": "h2",
+      "text": "İletimden bağlantı nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "İletimden bağlantı, tesisin TEİAŞ'ın işlettiği yüksek gerilim iletim şebekesine bağlanmasıdır. Türkiye'de iletim şebekesi yaygın olarak 154 kV ve 400 kV seviyelerinde çalışır; dağıtım şebekesi ise alçak gerilim ve orta gerilim seviyelerinde."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yol büyük güçlü santraller içindir. Sahada bir yükseltici trafo merkezi ve şalt tesisi kurmanız, oradan en yakın iletim trafo merkezine kendi bağlantı hattınızı çekmeniz gerekir. Bazı projelerde mevcut bir trafo merkezine ilave fider tesis edilir, bazılarında yeni bir merkez gündeme gelir."
+    },
+    {
+      "style": "normal",
+      "text": "Hat güzergâhı arazi izinlerinden ve kamulaştırmadan geçtiği için proje takviminin en belirsiz kalemi genelde burasıdır. Ekipman tedarik süreleri de dağıtım seviyesindekinden uzundur."
+    },
+    {
+      "style": "h2",
+      "text": "Muhatap kurum ve gerilim seviyesi neye göre belirlenir?"
+    },
+    {
+      "style": "normal",
+      "text": "Farkın kaynağı basittir: kimin şebekesine bağlanıyorsanız muhatabınız odur. Dağıtımdan bağlantıda başvuru, bağlantı görüşü, proje onayı ve kabul süreçlerinin tamamı bölgenizin dağıtım şirketiyle yürür. İletimden bağlantıda ana muhatap TEİAŞ'tır ve teknik değerlendirme sistem işletmecisi perspektifinden yapılır."
+    },
+    {
+      "style": "normal",
+      "text": "Gerilim seviyesi keyfi bir tercih değildir. Tesisin bağlantı gücü, bağlantı noktasındaki mevcut kısa devre gücü, hattın yüklenme durumu ve bölgedeki tahsis edilmiş kapasite birlikte değerlendirilir. Aynı güçteki iki proje, iki farklı bölgede iki farklı seviyeye yönlendirilebilir."
+    },
+    {
+      "style": "normal",
+      "text": "Seviye sınırları mevzuatla belirlenir ve dönemsel olarak güncellenir. Bu yüzden yatırım kararından önce güncel düzenlemeye ve şebeke işletmecisinin yazılı görüşüne bakmak gerekir; eski bir projeden hatırlanan sınır bugün geçerli olmayabilir."
+    },
+    {
+      "style": "h2",
+      "text": "Bağlantı görüşü süreci iki yolda nasıl işler?"
+    },
+    {
+      "style": "h3",
+      "text": "Dağıtım başvurusunda akış"
+    },
+    {
+      "style": "normal",
+      "text": "Başvuru dosyası dağıtım şirketine sunulur. Şirket, bağlantı noktasındaki kapasiteyi değerlendirir ve bağlantı görüşünü olumlu ya da olumsuz olarak bildirir. Olumlu görüşün ardından çağrı mektubu düzenlenir, bağlantı anlaşması imzalanır, proje onayı alınır ve tesis kurulur. Geçici kabulle birlikte tesis işletmeye alınır."
+    },
+    {
+      "style": "normal",
+      "text": "Süre, dosyanın eksiksizliğine ve bölgedeki başvuru yoğunluğuna göre değişir. Uygulamada en sık karşılaştığımız gecikme sebebi mevzuat değil, eksik evrak ve hatalı tek hat şemasıdır."
+    },
+    {
+      "style": "h3",
+      "text": "İletim başvurusunda akış"
+    },
+    {
+      "style": "normal",
+      "text": "İletim tarafında değerlendirme daha teknik ve daha uzundur. Şebeke etki analizleri, bağlantı noktası seçimi ve hat güzergâhı çalışması eş zamanlı yürür. Bağlantı görüşü olumlu gelse bile, güzergâh üzerindeki izinler tamamlanmadan takvim netleşmez."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden iletim bağlantılı projelerde geliştirme dönemi, inşaat döneminden uzun olabilir. Fizibiliteyi kurarken bu süreyi finansman maliyetine yansıtmak gerekir."
+    },
+    {
+      "style": "h2",
+      "text": "Maliyet farkı nereden doğar?"
+    },
+    {
+      "style": "normal",
+      "text": "Fizibilitelerimizde kullandığımız 700 USD/kWp birim maliyet, 47 TL/USD kuruyla yaklaşık 32.900 TL/kWp (KDV hariç), santralin kendisini kapsar: panel, inverter, konstrüksiyon, DC ve AC kablolama, saha işleri. Bağlantıya ait kalemler bunun üzerine eklenir ve iki yolda çok farklı büyüklüklere ulaşır."
+    },
+    {
+      "style": "normal",
+      "text": "Dağıtımdan bağlantıda ek kalem tipik olarak trafo, orta gerilim hücresi, koruma ve ölçü ekipmanı ile kısa bir bağlantı hattıdır. Toplam yatırım içinde görünür ama belirleyici olmayan bir paydır."
+    },
+    {
+      "style": "normal",
+      "text": "İletimden bağlantıda ise yükseltici trafo, şalt tesisi, koruma ve haberleşme sistemleri, kilometrelerle ölçülen iletim hattı ve arazi bedelleri devreye girer. Bu kalemler tek başına bir orta ölçekli santral yatırımı büyüklüğüne çıkabilir."
+    },
+    {
+      "style": "blockquote",
+      "text": "Dağıtımdan bağlantıda yatırımın büyüklüğünü santral belirler; iletimden bağlantıda çoğu zaman bağlantının kendisi belirler."
+    },
+    {
+      "style": "h2",
+      "text": "Kapasite bulmak hangisinde daha kolay?"
+    },
+    {
+      "style": "normal",
+      "text": "Kapasite, saha seçiminin görünmeyen kısıtıdır. Dağıtım şebekesinde kapasite bölgeseldir ve hızla dolabilir. Bir ilçede aynı trafo merkezine bağlı birkaç proje tahsis aldıysa, sizin başvurunuz güç sınırlamasıyla ya da olumsuz görüşle dönebilir."
+    },
+    {
+      "style": "normal",
+      "text": "İletim şebekesinde büyük güçler için yer bulmak görece daha olasıdır, çünkü omurga daha yüksek transfer kapasitesine sahiptir. Ancak burada da bölgesel doygunluk vardır; üretimin yoğunlaştığı bölgelerde iletim tarafı da sınırlanabilir."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik önerimiz şu: arazi bakmadan önce şebekeye bakın. Kapasitesi olmayan bir arazi ucuz olsa da yatırıma dönüşmez, kapasitesi olan bir arazi ise pahalı görünse bile takvimi aylarca kısaltır."
+    },
+    {
+      "style": "h2",
+      "text": "İşletme döneminde ne değişir?"
+    },
+    {
+      "style": "normal",
+      "text": "Dağıtım seviyesinde ölçüm ve raporlama görece sadedir. Sayaç okumaları, periyodik bakım ve arıza durumunda dağıtım şirketiyle iletişim çoğu tesis için yeterlidir. İzleme sistemi üzerinden üretimi takip eder, yıllık bakımı planlarsınız."
+    },
+    {
+      "style": "normal",
+      "text": "İletim seviyesinde tesisiniz sistem işletmecisinin gözünde bir santraldir. Anlık telemetri, üretim tahmini bildirimi, reaktif güç ve gerilim desteği gibi yükümlülükler ağırlaşır. Şalt tesisinin periyodik bakımı, koruma röle testleri ve yüksek gerilim yetkili personel bulundurma sorumluluğu sizdedir."
+    },
+    {
+      "style": "normal",
+      "text": "Kesinti ve kısıt yönetimi de farklı işler. Dağıtım seviyesinde kesintiler çoğunlukla yerel ve kısa sürelidir; iletim seviyesinde ise sistem koşullarına bağlı üretim kısıtları gündeme gelebilir ve bunlar gelir tarafını doğrudan etkiler."
+    },
+    {
+      "style": "h2",
+      "text": "Hangi bağlantı sizin projeniz için doğru?"
+    },
+    {
+      "style": "normal",
+      "text": "Karar üç soruyla netleşir: bağlantı gücünüz ne kadar, sahanız şebekenin neresinde ve takviminiz ne kadar esnek. Bu üç cevap çoğu zaman yolu kendiliğinden gösterir."
+    },
+    {
+      "style": "normal",
+      "text": "Öz tüketim odaklı çatı ve orta ölçekli arazi projelerinde cevap neredeyse her zaman dağıtımdan bağlantıdır. Burada asıl iş, doğru bağlantı noktasını seçmek ve dosyayı ilk seferde eksiksiz vermektir."
+    },
+    {
+      "style": "normal",
+      "text": "Büyük ölçekli yatırımlarda ise iletim bağlantısının kalemlerini fizibiliteye baştan koymak gerekir. Sonradan eklenen bir şalt tesisi ve hat bedeli, kâğıt üzerinde iyi görünen bir projenin geri dönüş süresini tanınmaz hale getirebilir."
+    },
+    {
+      "style": "normal",
+      "text": "İki senaryoda da bağlantı görüşü alınmadan kesinleşmiş bir proje yoktur. Kapasite durumunu saha seçiminin ilk adımında sorgulamak, hem parayı hem takvimi korur."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Dağıtımdan bağlantı ile iletimden bağlantı arasında geçiş yapılabilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Proje gücünü değiştirmeden seviye değiştirmek genelde mümkün değildir, çünkü seviyeyi belirleyen şey tercihiniz değil şebekenin teknik değerlendirmesidir. Buna karşılık projeyi bölerek ya da bağlantı gücünü revize ederek dağıtım seviyesinde kalmak bazen mümkündür."
+    },
+    {
+      "style": "normal",
+      "text": "Bu revizyonun anlamlı olup olmadığı hesapla belli olur. Güç düşürmenin getirdiği üretim kaybı ile iletim bağlantısının maliyetini yan yana koymak gerekir."
+    },
+    {
+      "style": "h3",
+      "text": "Bağlantı görüşü olumsuz gelirse ne yapılır?"
+    },
+    {
+      "style": "normal",
+      "text": "Olumsuz görüş çoğu zaman kapasite yokluğundan kaynaklanır ve gerekçesi yazılıdır. Gerekçe okunduğunda genellikle üç yol açılır: bağlantı gücünü düşürmek, farklı bir bağlantı noktası ya da farklı bir saha denemek, veya şebeke yatırımının tamamlanmasını beklemek."
+    },
+    {
+      "style": "normal",
+      "text": "Bekleme seçeneğinde belirsizlik yüksektir. Bu yüzden alternatif saha çalışmasını paralel yürütmeyi öneriyoruz."
+    },
+    {
+      "style": "h3",
+      "text": "İletimden bağlantı her zaman daha mı pahalıdır?"
+    },
+    {
+      "style": "normal",
+      "text": "Toplam bağlantı yatırımı olarak evet, kWp başına ise her zaman değil. Büyük güçlerde şalt ve hat maliyeti çok daha büyük bir kurulu güce dağıldığı için birim maliyet dağıtım seviyesindeki bir projeye yaklaşabilir."
+    },
+    {
+      "style": "normal",
+      "text": "Belirleyici olan hat uzunluğu ve arazi koşullarıdır. En yakın trafo merkezine mesafe, iletim bağlantılı projelerde fizibiliteyi en çok oynatan tek değişkendir."
+    },
+    {
+      "style": "h3",
+      "text": "Bağlantı görüşü ne kadar sürede sonuçlanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Başvuru ve değerlendirme süreleri mevzuatta tanımlıdır ve zaman içinde güncellenir; bu nedenle güncel süreye başvuru öncesinde bakmak gerekir. Uygulamada dağıtım tarafı iletim tarafına göre belirgin şekilde hızlıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Süreyi asıl uzatan şey ise dosyanın kendisidir. Eksik belge ile yapılan bir başvuru, doğru hazırlanmış bir dosyanın toplam süresini rahatlıkla ikiye katlar."
+    },
+    {
+      "style": "normal",
+      "text": "Projenizin hangi seviyeden bağlanacağını ve bunun fizibiliteye etkisini birlikte görmek isterseniz MİNADA olarak ücretsiz keşif yapıyoruz. Sahayı geziyor, en yakın bağlantı noktasını ve kapasite durumunu inceliyor, bağlantı kalemlerini de içeren gerçekçi bir maliyet ve geri dönüş tablosu çıkarıyoruz. Başvuru dosyasını ve izin sürecini baştan sona biz yürütüyoruz."
+    }
+  ]
+}

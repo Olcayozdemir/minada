@@ -1,0 +1,219 @@
+{
+  "language": "en",
+  "slug": "hourly-vs-monthly-net-metering",
+  "altSlug": "saatlik-aylik-mahsuplasma-farki",
+  "title": "Hourly vs monthly net metering: what actually changes",
+  "metaTitle": "Hourly vs Monthly Net Metering Explained | MİNADA",
+  "metaDescription": "Hourly vs monthly net metering differ in one thing, the settlement window. We explain both models and what the switch does to system size and payback.",
+  "excerpt": "Monthly netting settles the totals of a calendar month. Hourly netting closes out each hour on its own. We walk through both models and what the difference does to sizing, payback and storage.",
+  "keywords": [
+    "hourly vs monthly net metering",
+    "net metering Turkey",
+    "mahsuplasma",
+    "unlicensed generation",
+    "solar payback period",
+    "self-consumption solar",
+    "battery storage investment"
+  ],
+  "category": "Regulation",
+  "coverImage": "/images/v2/area-ticari.jpg",
+  "publishedAt": "2026-07-10",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "The difference between hourly vs monthly net metering is the settlement window. Monthly netting compares your export and import totals across the calendar month. Hourly netting closes each hour on its own, so midday surplus no longer cancels evening use. That one change decides system size and payback."
+    },
+    {
+      "style": "h2",
+      "text": "What does net metering actually settle?"
+    },
+    {
+      "style": "normal",
+      "text": "Net metering, mahsuplaşma in Turkish regulation, closes out a two way flow. Your roof exports whatever you do not consume as it is generated, and after sunset you import again. A bidirectional meter records both directions; the bill offsets them."
+    },
+    {
+      "style": "normal",
+      "text": "The whole argument sits in one question: over what period? It reads like an accounting detail, but it is what sets the return."
+    },
+    {
+      "style": "h2",
+      "text": "How monthly net metering works"
+    },
+    {
+      "style": "normal",
+      "text": "Under monthly netting, what you export in the calendar month is deducted from what you import. A kilowatt-hour sent out at midday and one drawn back at nine at night are worth the same."
+    },
+    {
+      "style": "normal",
+      "text": "The grid therefore behaves like a free storage account with a one month term. Whether generation and consumption coincide barely touches the bill; if the monthly totals match, the energy charge falls close to zero."
+    },
+    {
+      "style": "normal",
+      "text": "That flexibility made monthly netting attractive, and it is also what the model costs the network. As national capacity grows, the midday surplus and the evening ramp have to be absorbed somewhere. Hence the move to hourly settlement."
+    },
+    {
+      "style": "h2",
+      "text": "What changes under hourly net metering"
+    },
+    {
+      "style": "normal",
+      "text": "Under hourly netting each hour is closed on its own. Generate 6 kWh between noon and one while consuming 2 kWh, and the 4 kWh surplus counts as export. Draw 4 kWh at eight and that import is billed separately."
+    },
+    {
+      "style": "normal",
+      "text": "Midday surplus no longer cancels the evening shortfall. The energy still flows to the grid, but export is valued differently from the retail price you pay. Those rates are set component by component and revised periodically, so check what is in force."
+    },
+    {
+      "style": "normal",
+      "text": "In engineering terms the model collapses to one variable: coincidence. The more of your consumption falls inside your generating hours, the better the project performs."
+    },
+    {
+      "style": "blockquote",
+      "text": "Under monthly netting the right answer was usually the largest system the roof could hold. Under hourly netting it is the system that best fits the consumption curve."
+    },
+    {
+      "style": "h2",
+      "text": "The same system under two models"
+    },
+    {
+      "style": "normal",
+      "text": "A small business puts a 10 kWp south facing array on its roof. At 700 USD per kWp and 47 TL to the dollar that is 329,000 TL excluding VAT, and at 1,600 kWh per kWp a year it generates 16,000 kWh. Assume consumption is 16,000 kWh too: the two match exactly on paper."
+    },
+    {
+      "style": "h3",
+      "text": "The monthly picture"
+    },
+    {
+      "style": "normal",
+      "text": "Because the totals are equal, the energy charge is largely cancelled. At 5 TL per kWh the annual saving is 80,000 TL and simple payback is roughly 4.1 years. Note what the calculation never asked: when in the day it happened."
+    },
+    {
+      "style": "h3",
+      "text": "The hourly picture"
+    },
+    {
+      "style": "normal",
+      "text": "Now assume 45 percent of the output is consumed in the hour it is generated, the low end of a realistic band for a business that works by day but has an evening load."
+    },
+    {
+      "style": "normal",
+      "text": "Directly consumed energy is 7,200 kWh. That part avoids the retail tariff and is worth 36,000 TL a year."
+    },
+    {
+      "style": "normal",
+      "text": "The remaining 8,800 kWh is exported and compensated below retail under the applicable rules. We do not quote a rate, because it is revised periodically and the value in force on your application date counts."
+    },
+    {
+      "style": "normal",
+      "text": "Of the 80,000 TL the monthly model produced, 36,000 TL comes purely from coincidence and the rest hangs on the export rate. Same roof, same generation, same cost, different decision."
+    },
+    {
+      "style": "h2",
+      "text": "Hourly vs monthly net metering: what it does to system size"
+    },
+    {
+      "style": "normal",
+      "text": "Under monthly netting, roof area and connection capacity set the upper bound; generating up to annual consumption was almost always profitable. Under hourly netting the consumption curve sets it, and every kWp above your midday use has a weak marginal return."
+    },
+    {
+      "style": "normal",
+      "text": "That does not mean building smaller, but reshaping the system around the load."
+    },
+    {
+      "style": "h3",
+      "text": "Choosing orientation for the profile"
+    },
+    {
+      "style": "normal",
+      "text": "A south facing array peaks sharply around noon. An east-west layout spreads the same day across morning and late afternoon. Our model uses 1,600 kWh per kWp for south and 1,350 for east-west, so it generates less overall."
+    },
+    {
+      "style": "normal",
+      "text": "That loss is sometimes worth taking. If giving up some yield lifts the share consumed on site by a clear margin, the net result can come out ahead. Hourly simulation settles that, not intuition."
+    },
+    {
+      "style": "h3",
+      "text": "Moving load into daylight"
+    },
+    {
+      "style": "normal",
+      "text": "Some loads do not care what hour they run in. Cooling, compressors, pumps, drying and vehicle charging can often be pulled into daylight, raising coincidence at no capital cost. It is the cheapest improvement available."
+    },
+    {
+      "style": "h2",
+      "text": "When does a battery earn its place?"
+    },
+    {
+      "style": "normal",
+      "text": "A battery carries daytime generation into the evening. Under hourly settlement that transfer has a direct value: instead of exporting surplus and buying it back at full retail, you use your own energy."
+    },
+    {
+      "style": "normal",
+      "text": "A 10 kWh pack costs 2,750 USD, roughly 129,250 TL excluding VAT. Cycling day to evening on most days of the year, it shifts roughly 2,500 to 3,000 kWh between hours."
+    },
+    {
+      "style": "normal",
+      "text": "As a ceiling: if all 2,700 kWh escaped the 5 TL tariff, the gain would be 13,500 TL a year and the pack would need 9 to 10 years to pay for itself. The real gain is lower, because that energy earns the export rate anyway; the benefit is the spread."
+    },
+    {
+      "style": "normal",
+      "text": "We never tie storage to the settlement model alone. Outage frequency, critical loads and evening consumption belong in the same table. Where those are strong a battery makes sense early; otherwise free ways of raising coincidence come first."
+    },
+    {
+      "style": "h2",
+      "text": "How do you find out which model applies?"
+    },
+    {
+      "style": "normal",
+      "text": "This is not something to guess at. Which model your project falls under depends on your application date, your connection and subscriber group, and the regulation in force when you apply."
+    },
+    {
+      "style": "normal",
+      "text": "Confirm the framework with the distribution company, the regional utility that owns your connection, before you apply, and build the feasibility on it. Copying an older project's payback table onto a new one is the mistake we see most often."
+    },
+    {
+      "style": "normal",
+      "text": "Be careful with proposals too. If you are handed a single line payback figure, ask which settlement model and coincidence ratio it assumes. Without those two inputs there is no calculation behind it."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Does hourly net metering make solar pointless?"
+    },
+    {
+      "style": "normal",
+      "text": "No. Every kilowatt-hour you consume yourself is one you do not buy at the full retail tariff. What changed is where the return comes from: selling surplus gives way to using your own energy. Projects sized to the load still reach reasonable payback; oversized ones do not."
+    },
+    {
+      "style": "h3",
+      "text": "Will my existing system move to hourly netting?"
+    },
+    {
+      "style": "normal",
+      "text": "There is no single answer. The scope of the regulation and the terms your project was accepted under decide it. Confirm your position from your connection and acceptance documents, then have both scenarios priced side by side."
+    },
+    {
+      "style": "h3",
+      "text": "Is a battery mandatory under hourly netting?"
+    },
+    {
+      "style": "normal",
+      "text": "No. A battery is a solution, not a condition. In a plant running through the day coincidence is already high, and storage earns its place only beyond a point. In a home whose load sits after dark, the picture reverses."
+    },
+    {
+      "style": "h3",
+      "text": "How do I measure my coincidence ratio?"
+    },
+    {
+      "style": "normal",
+      "text": "By overlaying your hourly consumption profile, from meter data or a load analysis, on an hourly generation model built for your roof. Weekdays and weekends, summer and winter are read separately. A single annual total cannot answer it."
+    },
+    {
+      "style": "normal",
+      "text": "During the site survey we establish which settlement model applies to your project and what it does to the numbers. From twelve months of bills and your roof details we overlay hourly generation on your consumption profile, then put both scenarios, with and without storage, in one table. The survey is free; contact MİNADA to arrange one."
+    }
+  ]
+}

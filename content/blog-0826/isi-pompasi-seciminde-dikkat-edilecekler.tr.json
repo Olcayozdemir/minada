@@ -1,0 +1,216 @@
+{
+  "language": "tr",
+  "slug": "isi-pompasi-seciminde-dikkat-edilecekler",
+  "altSlug": "how-to-choose-a-heat-pump",
+  "title": "Isı pompası seçimi: kapasite, COP/SCOP ve tesisat uyumu",
+  "metaTitle": "Isı pompası seçimi: kapasite ve COP/SCOP rehberi",
+  "metaDescription": "Isı pompası seçimi ısı kaybı hesabıyla başlar: doğru kapasite, COP/SCOP okuma, düşük dış sıcaklık performansı, soğutucu akışkan, ses ve radyatör uyumu.",
+  "excerpt": "Isı pompası seçiminde kataloğa değil hesaba bakılır. Kapasite, COP ve SCOP okuma, düşük dış sıcaklık tabloları, akışkan, ses ve mevcut tesisat uyumu üzerine mühendislik rehberi.",
+  "keywords": [
+    "ısı pompası seçimi",
+    "cop scop",
+    "hava kaynaklı ısı pompası",
+    "ısı kaybı hesabı",
+    "ısı pompası kaç kW",
+    "R290 ısı pompası",
+    "ısı pompası radyatör uyumu",
+    "ısı pompası GES"
+  ],
+  "category": "Rehber",
+  "coverImage": "/images/v2/service-heatpump.jpg",
+  "publishedAt": "2026-07-28",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Isı pompası seçimi, marka listesiyle değil ısı kaybı hesabıyla başlar. Önce binanın kış tasarım sıcaklığındaki güç ihtiyacı bulunur; cihaz bu güce, düşük dış sıcaklıktaki gerçek kapasitesine ve mevcut tesisatın ihtiyaç duyduğu gidiş suyu sıcaklığına göre seçilir. COP ve SCOP değerleri ise ancak aynı test koşulunda karşılaştırıldığında anlam taşır."
+    },
+    {
+      "style": "h2",
+      "text": "Isı pompası seçimi neden ısı kaybı hesabıyla başlar?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası elektriği ısıya çevirmez; dışarıdaki ısıyı içeri taşır. Bu yüzden cihazın büyüklüğü yakacak miktarıyla değil, binanın kaybettiği ısıyla ilgilidir. Doğru soru şudur: bu bina, dışarısı en soğukken içeriyi istenen sıcaklıkta tutmak için kaç kilovat ısıya ihtiyaç duyuyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Hesap; duvar, çatı ve döşeme yalıtımı, cam alanı ve tipi, hava sızdırmazlığı, havalandırma debisi ve bulunduğunuz bölgenin kış tasarım sıcaklığı üzerinden yapılır. Malatya gibi kışı sert geçen bir kuşakta aynı metrekare, sahil bandındaki bir daireden belirgin biçimde daha yüksek güç ister."
+    },
+    {
+      "style": "normal",
+      "text": "Metrekare başına watt gibi kaba katsayılar hızlı bir fikir verir ama seçim kararı için yeterli değildir. Yan yana iki daire, sadece pencere ve yalıtım farkıyla çok farklı cihaz isteyebilir. Yalıtım iyileştirmesi düşünüyorsanız hesabı iyileştirme sonrası duruma göre yapın; aksi halde birkaç yıl içinde büyük kalacak bir cihaza bugünden para ödersiniz."
+    },
+    {
+      "style": "h2",
+      "text": "Isı pompası kaç kW olmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı kaybı hesabı size tasarım gücünü verir. Cihaz seçimi bu gücün üstüne iki katman daha ekler: kullanım sıcak suyu ihtiyacı ve cihazın düşük dış sıcaklıktaki gerçek kapasitesi. Katalogdaki nominal güç ılık bir test noktasında ölçülür; kışın elinizde kalan güç o değildir."
+    },
+    {
+      "style": "h3",
+      "text": "Aşırı büyük cihazın bedeli"
+    },
+    {
+      "style": "normal",
+      "text": "En sık yapılan hata, emniyetli olsun diye bir üst modeli seçmektir. Isı pompaları kapasitesini modüle ederek çalışır ve her cihazın bir alt modülasyon sınırı vardır. Bina yükü bu sınırın altına düştüğünde cihaz sık dur-kalk yapmaya başlar."
+    },
+    {
+      "style": "normal",
+      "text": "Sonuç üç yerde görünür: mevsimsel verim düşer, kompresör ömrü kısalır, oda sıcaklığındaki dalgalanma artar. Üstelik büyük cihaz daha pahalıdır ve daha büyük bir dış ünite demektir. Doğru boyut, yılın büyük bölümünde cihazın kısmi yükte sessizce çalışabildiği boyuttur."
+    },
+    {
+      "style": "h3",
+      "text": "Bivalan nokta ve yedek ısıtıcı"
+    },
+    {
+      "style": "normal",
+      "text": "Hava kaynaklı ısı pompasında kapasite dış hava soğudukça düşer, bina ihtiyacı ise aynı anda artar. İki eğrinin kesiştiği sıcaklığa bivalan nokta denir. Bu noktanın altında kalan az sayıdaki saat için elektrikli destek ısıtıcı ya da mevcut kazan devreye girer."
+    },
+    {
+      "style": "normal",
+      "text": "Cihazı yılın en soğuk üç gününe göre seçmek yerine bivalan noktayı bilinçli belirlemek daha ekonomiktir. Önemli olan, destek ısıtıcının yılda kaç saat çalışacağının hesapta görünmesidir; çünkü o saatler faturanın en pahalı saatleridir."
+    },
+    {
+      "style": "h2",
+      "text": "COP ve SCOP nasıl okunur?"
+    },
+    {
+      "style": "normal",
+      "text": "COP, cihazın belirli bir anda verdiği ısının harcadığı elektriğe oranıdır. SCOP ise ısıtma sezonunun tamamı için, değişen dış sıcaklıklar ve kısmi yükler dikkate alınarak hesaplanan mevsimsel verimdir. Fatura ile ilgilenen bir kullanıcı için asıl gösterge SCOP'tur."
+    },
+    {
+      "style": "normal",
+      "text": "COP tek başına anlamsızdır; hangi koşulda ölçüldüğü yazılmadıkça karşılaştırma yapılamaz. Koşullar sektörde A ve W harfleriyle gösterilir: A dış havanın, W üretilen suyun sıcaklığıdır. A7/W35 gösterimi, dışarısı 7 derece iken 35 derece su üretimi demektir. A-7/W55 ise çok daha zor bir noktadır ve aynı cihazın COP değeri burada belirgin biçimde düşer."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden iki cihazı karşılaştırırken aynı harf çiftindeki değerlere bakın. SCOP tarafında da hangi iklim bölgesi ve hangi su sıcaklığı rejimi için verildiğini sorun. Düşük su sıcaklığı için verilmiş parlak bir SCOP, yüksek sıcaklık isteyen radyatörlü bir binada karşılığını bulmaz."
+    },
+    {
+      "style": "blockquote",
+      "text": "Bir ısı pompasını broşür kapağındaki tek rakam değil, en soğuk gündeki kapasite tablosu anlatır."
+    },
+    {
+      "style": "h2",
+      "text": "Düşük dış sıcaklıkta performans neden belirleyici?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompasının sınavı ılık bir sonbahar günü değil, kışın en soğuk haftasıdır. Üreticiden kapasite ve güç çekişi tablosunu isteyin: dış sıcaklık düştükçe cihazın kaç kW ısı verebildiği ve bunun için kaç kW elektrik çektiği orada satır satır yazar. Seçimi bu tablodan yapmak, katalog başlığından yapmaktan çok daha güvenlidir."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci konu defrost. Dış hava sıfır çevresindeyken ve nem yüksekken dış ünite bataryasında karlanma olur; cihaz belirli aralıklarla çevrimi ters çevirip bu buzu eritir. Defrost normaldir ve iyi kurgulanmış bir sistemde fark edilmez."
+    },
+    {
+      "style": "normal",
+      "text": "Sorun, tesisatta yeterli su hacmi yoksa başlar. Cihaz defrost için gereken ısıyı tesisattan çeker; hacim küçükse konfor bozulur. Denge deposu ya da yeterli tesisat hacmi bu yüzden projelendirmenin sessiz ama kritik kalemidir."
+    },
+    {
+      "style": "h2",
+      "text": "Soğutucu akışkan seçimi neyi değiştirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Akışkan iki şeyi belirler: çevresel yük ve cihazın verimini fazla kaybetmeden çıkabildiği su sıcaklığı. Doğal akışkanlardan propan (R290) küresel ısınma potansiyeli bakımından tek haneli seviyede kalır; yaygın sentetik akışkanlarda bu değer yüzlerle ifade edilir. Sentetik akışkanlarda kademeli kısıtlama yönündeki genel eğilim, yirmi yıl kullanılacak bir cihazda dikkate alınmalıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Teknik tarafta R290, yüksek gidiş suyu sıcaklıklarına verimi çok bozulmadan çıkabildiği için mevcut radyatörlü binalarda avantaj sağlar. Karşılığında yanıcı sınıfta olduğundan dış ünite yerleşiminde emniyet mesafeleri ve havalandırma şartları aranır. Bu bir engel değil, projelendirme konusudur; ama sonradan değil baştan konuşulmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Dış ünitenin ses seviyesi ne kadar önemli?"
+    },
+    {
+      "style": "normal",
+      "text": "Ses, ısı pompası projelerinde en sık şikayet edilen ve en kolay önlenen konudur. Katalogda iki farklı büyüklük geçer: ses gücü seviyesi cihazın ürettiği toplam akustik güçtür, ses basıncı seviyesi ise belirli bir mesafede ölçülen değerdir. Karşılaştırma yaparken ikisini birbirine karıştırmayın ve basınç değerinin kaç metrede verildiğine bakın."
+    },
+    {
+      "style": "normal",
+      "text": "Fizik burada yardımcınız: serbest alanda mesafe iki katına çıktığında ses basıncı belirgin biçimde azalır. Dış üniteyi yatak odası penceresinden ve komşu duvarından uzaklaştırmak çoğu zaman en etkili çözümdür. Bitişik nizam konutlarda gece modu, titreşim yalıtımlı kaide ve doğru üfleme yönü baştan planlanmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Mevcut radyatörler ısı pompasıyla çalışır mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Çoğu zaman çalışır, ama şartı vardır. Kazanla ısıtılan bir binada radyatörler yüksek gidiş suyu sıcaklığına göre boyutlandırılmıştır. Isı pompası ise su sıcaklığı düştükçe verimlenir; pratik kural basittir, gidiş suyu sıcaklığını düşürebildiğiniz her derece doğrudan verim hanesine yazılır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden keşifte radyatör yüzeylerini oda oda kontrol ediyoruz. Bazı odalarda mevcut radyatör düşük su sıcaklığında da yeterli kalır; bazılarında paneli büyütmek ya da fan konvektöre geçmek gerekir. Yalıtım iyileştirmesi de aynı kapıya çıkar: kayıp azaldıkça gereken su sıcaklığı da düşer."
+    },
+    {
+      "style": "normal",
+      "text": "Yerden ısıtma, düşük su sıcaklığıyla çalıştığı için ısı pompasının en verimli eşidir. Karma çözümler de mümkündür: alt katta yerden ısıtma, üst katta düşük sıcaklık radyatörü. Önemli olan tek bir devrede iki farklı sıcaklık rejimini zorlamamak, gerekiyorsa devreleri ayırmaktır."
+    },
+    {
+      "style": "h2",
+      "text": "Isı pompası ve GES birlikte nasıl çalışır?"
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası ısınmayı elektriğe bağlar; GES ise o elektriği çatınızdan üretir. İkisi birlikte kurulduğunda ısınma gideri, dalgalanan bir yakıt faturası olmaktan çıkıp kendi ürettiğiniz enerjinin bir parçasına dönüşür."
+    },
+    {
+      "style": "normal",
+      "text": "Ölçek fikri vermek için kendi fizibilite katsayılarımızı kullanalım. Güneye bakan bir çatıda 10 kWp'lik GES, kilovat başına yıllık 1600 kWh üretimle yılda yaklaşık 16.000 kWh verir. 5 TL/kWh birim fiyatla bu, yılda 80.000 TL mertebesinde bir karşılık demektir. Aynı sistemin kurulum bedeli kWp başına 700 USD ve 47 TL kur ile yaklaşık 329.000 TL'dir; kaba geri dönüş 4 yıl civarına oturur. Doğu-batı ya da güney-kuzey yerleşimde üretim katsayısı 1350 kWh/kWp'ye iner ve hesap buna göre değişir. Bütün rakamlar KDV hariçtir."
+    },
+    {
+      "style": "normal",
+      "text": "Zamanlama da önemli. Isı pompasının en çok çalıştığı saatler kış sabahı ve akşamıdır; güneşin en bol olduğu saatler ise öğle çevresidir. Bu farkı kapatmanın iki yolu var: sıcak su deposunu ve binanın kütlesini gündüz ısıtıp ısıyı akşama taşımak, ya da batarya eklemek. Fizibilite modelimizde 5 kWh batarya 1.750 USD, 10 kWh 2.750 USD, 15 kWh 3.500 USD seviyesindedir (KDV hariç); hangisinin anlamlı olduğu tüketim profilinize bakılarak belirlenir."
+    },
+    {
+      "style": "normal",
+      "text": "Mahsuplaşma da tabloya girer: gündüz şebekeye verdiğiniz enerji, akşam çektiğinizle netleştirilir. Isı pompasını ve GES'i aynı fizibilitede değerlendirmek, ikisini ayrı hesaplamaktan daha gerçekçi bir sonuç verir."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Isı pompası çok soğukta çalışır mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Çalışır. Modern hava kaynaklı cihazlar sıfırın belirgin altındaki sıcaklıklarda da ısı üretir; ancak kapasiteleri ve verimleri düşer. Kritik olan cihazın çalışıp çalışmadığı değil, o sıcaklıkta binanızın ihtiyacını karşılayacak kapasiteyi verip veremediğidir."
+    },
+    {
+      "style": "normal",
+      "text": "Bunu üreticinin düşük sıcaklık kapasite tablosundan görürsünüz; soğuk iklimde seçim o tablodan yapılır."
+    },
+    {
+      "style": "h3",
+      "text": "COP ile SCOP arasındaki fark nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "COP anlık verimdir; belirli bir dış hava ve su sıcaklığı çiftinde ölçülür. SCOP ise ısıtma sezonunun tamamının ortalamasıdır ve kısmi yükleri, dış sıcaklık dağılımını, defrost kayıplarını içerir. Yıllık işletme maliyeti tahmini yapacaksanız SCOP daha gerçekçi bir zemindir."
+    },
+    {
+      "style": "h3",
+      "text": "Mevcut kombi ile birlikte kullanılabilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Evet, buna hibrit çalışma denir. Isı pompası sezonun büyük bölümünü tek başına karşılar; dış hava belirlenen bivalan noktanın altına indiğinde ya da kısa süreli tepe ihtiyaçlarda mevcut kazan devreye girer. Kazanı görece yeni olan binalarda ilk yatırımı küçültmenin makul bir yoludur."
+    },
+    {
+      "style": "h3",
+      "text": "Teklif alırken hangi belgeleri istemeliyim?"
+    },
+    {
+      "style": "normal",
+      "text": "Üç şey isteyin: binanın ısı kaybı hesabı, seçilen cihazın düşük dış sıcaklıklardaki kapasite ve güç çekiş tablosu, tesisatın hangi gidiş suyu sıcaklığına göre çalışacağını gösteren hesap. Bu üçü birbiriyle tutarlıysa geri kalan büyük ölçüde tercih meselesidir."
+    },
+    {
+      "style": "normal",
+      "text": "Isı pompası seçimini kataloğun üzerinde değil, binanın üzerinde yapıyoruz. Keşifte ısı kaybı hesabını çıkarıyor, mevcut radyatör ya da yerden ısıtma tesisatınızın hangi su sıcaklığında yeteceğini kontrol ediyor ve çatınızda GES ile birlikte çalışma senaryosunu aynı tabloda gösteriyoruz. Keşif ve ön fizibilite çalışması ücretsizdir; MİNADA ekibine ulaşmanız yeterli."
+    }
+  ]
+}

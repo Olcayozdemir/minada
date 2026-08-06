@@ -1,0 +1,236 @@
+{
+  "language": "tr",
+  "slug": "ges-urun-secimi",
+  "altSlug": "solar-equipment-selection",
+  "title": "GES ürün seçimi: panel, inverter ve konstrüksiyon kararları",
+  "metaTitle": "GES ürün seçimi: panel, inverter ve konstrüksiyon",
+  "metaDescription": "GES ürün seçimi veri sayfasıyla yapılır: panelde sıcaklık katsayısı ve degradasyon, inverterde DC/AC oranı ve MPPT, konstrüksiyonda statik hesap ve kablo kesiti.",
+  "excerpt": "Etiket gücü bir GES'in ne üreteceğini anlatmaz. Panel, inverter, konstrüksiyon ve kablolamada veri sayfasının hangi satırlarına bakıldığını ve ucuz teklifin nerede pahalıya patladığını anlatıyoruz.",
+  "keywords": [
+    "GES ürün seçimi",
+    "güneş paneli seçimi",
+    "inverter seçimi",
+    "panel veri sayfası",
+    "DC AC oranı",
+    "MPPT sayısı",
+    "GES konstrüksiyon statik hesabı",
+    "ucuz GES teklifi"
+  ],
+  "category": "Rehber",
+  "coverImage": "/images/v2/how/procurement.jpg",
+  "publishedAt": "2026-07-04",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "GES ürün seçimi dört kalemde toplanır: panel, inverter, taşıyıcı konstrüksiyon ve kablo-pano grubu. Doğru karar etiket gücüne değil veri sayfasına bakılarak verilir. Sıcaklık katsayısı, yıllık degradasyon, MPPT yapısı, statik hesap ve kablo kesiti; santralin 25 yıl boyunca ne üreteceğini belirleyen asıl satırlardır. Ucuz teklifin farkı ilk gün değil, beşinci yıl görünür."
+    },
+    {
+      "style": "h2",
+      "text": "GES ürün seçimi neden etiket gücünden ibaret değil?"
+    },
+    {
+      "style": "normal",
+      "text": "Bir teklifte en görünür sayı kurulu güçtür. Oysa aynı çatıya kurulan iki adet 30 kWp'lik sistem, aynı yıl içinde belirgin biçimde farklı üretebilir. Fark; panelin sıcakta ne yaptığında, inverterin gölgeyi nasıl yönettiğinde ve kablolamada kaybolan enerjide saklıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Ekipman listesi aslında bir performans taahhüdüdür. Panelin veri sayfası üretim eğrisini, inverterin topolojisi kayıp yapısını, konstrüksiyonun statik hesabı ise güvenliği ve çatının ömrünü tanımlar. Bu dört kalemin hiçbiri diğerinin eksiğini kapatmaz; zayıf halka hangisiyse sistemin sınırı orasıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Panel veri sayfasında hangi satırlar okunur?"
+    },
+    {
+      "style": "normal",
+      "text": "Katalog kapağında watt değeri ve verim yüzdesi yazar. Karar bu iki sayıyla verilmez; panelin sahadaki davranışını veri sayfasının tabloları anlatır."
+    },
+    {
+      "style": "h3",
+      "text": "Sıcaklık katsayısı"
+    },
+    {
+      "style": "normal",
+      "text": "Panel gücü standart test koşullarında, 25 derece hücre sıcaklığında ölçülür. Yaz öğleninde çatıdaki hücre sıcaklığı bunun çok üstüne çıkar. Güç sıcaklık katsayısı, hücre sıcaklığındaki her derece artış için gücün yüzde kaç düştüğünü söyler."
+    },
+    {
+      "style": "normal",
+      "text": "Mutlak değeri daha küçük bir katsayı, sıcak günlerde daha az kayıp demektir. Önemi şurada: ışınımın ve üretimin en yüksek olduğu saatler, panelin en sıcak olduğu saatlerdir. Aynı watt değerindeki iki panel yıl sonunda bu satır yüzünden farklı üretir."
+    },
+    {
+      "style": "h3",
+      "text": "Degradasyon ve iki ayrı garanti"
+    },
+    {
+      "style": "normal",
+      "text": "Panelde birbirine karıştırılan iki garanti vardır. Ürün garantisi malzeme ve işçilik hatasını kapsar; performans garantisi ise panelin yıllar içinde ne kadar güç koruyacağını taahhüt eder. İkisinin süresi genellikle farklıdır ve teklifte ayrı ayrı yazılı olmalıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Performans garantisi üç sayıyla okunur: ilk yıl kaybı, sonraki yıllardaki yıllık degradasyon oranı ve garanti süresi sonunda kalan güç yüzdesi. Bu üçü birlikte anlam taşır. Bir de garantinin muhatabını sorun: talep halinde kime, hangi ülkedeki hangi tüzel kişiye başvuracaksınız?"
+    },
+    {
+      "style": "h3",
+      "text": "Hücre teknolojisi ve panel yapısı"
+    },
+    {
+      "style": "normal",
+      "text": "Bugün pazarda ağırlıklı olarak N-type TOPCon hücreli paneller var; daha eski P-type PERC ürünler de kullanımda. Teknoloji adı tek başına karar vermez, ancak sıcaklık katsayısı ve degradasyon değerlerinin nereden geldiğini açıklar. Çift camlı ürünlerde panel ağırlığı ile konstrüksiyon yükü birlikte kontrol edilir."
+    },
+    {
+      "style": "h2",
+      "text": "İnverter seçiminde belirleyici parametreler neler?"
+    },
+    {
+      "style": "h3",
+      "text": "DC/AC oranı"
+    },
+    {
+      "style": "normal",
+      "text": "DC/AC oranı, panel tarafındaki toplam gücün inverterin anma gücüne bölümüdür. Bu oranı birin üzerinde tutmak yaygın ve doğru bir tercihtir, çünkü paneller yılın çok az saatinde etiket gücüne ulaşır; oranı yükseltmek yılın geri kalanında inverteri verimli çalışma bandında tutar."
+    },
+    {
+      "style": "normal",
+      "text": "Sınırı zorlarsanız tepe saatlerde kırpma başlar: inverter, panelin verebileceği gücün üstünü alamaz. Az miktarda kırpma ekonomik olabilir, fazlası doğrudan kayıptır. Doğru oran çatının yönüne, eğimine ve bölgenin ışınımına göre belirlenir; standart bir sayı yoktur."
+    },
+    {
+      "style": "h3",
+      "text": "MPPT sayısı ve string tasarımı"
+    },
+    {
+      "style": "normal",
+      "text": "Aynı MPPT girişine bağlı stringler birbirine bağımlı çalışır; biri gölgelenirse diğeri de o çalışma noktasına çekilir. Farklı yönlere bakan yüzeyler, farklı eğimler ve kısmi gölgeli alanlar bu yüzden ayrı MPPT girişlerine dağıtılır."
+    },
+    {
+      "style": "normal",
+      "text": "Kırık çatılarda MPPT sayısı, broşürdeki verim ondalığından fazla üretim kazandırır. Gölge kalıcı ve dar bir alandaysa modül seviyesinde çözümler değerlendirilir. Karar, gölge analizi yapılmadan verilemez."
+    },
+    {
+      "style": "h3",
+      "text": "Hibrit hazırlık ve servis ağı"
+    },
+    {
+      "style": "normal",
+      "text": "İleride batarya ihtimali varsa hibrit girişli bir cihazı baştan seçmek, sonradan ikinci bir dönüştürücü eklemekten ucuzdur. Ölçek için kendi fizibilite katsayılarımız: 5 kWh batarya 1.750 USD, 10 kWh 2.750 USD, 15 kWh 3.500 USD seviyesindedir ve bütün rakamlar KDV hariçtir."
+    },
+    {
+      "style": "normal",
+      "text": "İnverter, sistemin ömrü boyunca en çok müdahale gerektiren ve en erken yenilenen kalemidir. Garanti süresi, uzatma imkanı, yedek parça bulunabilirliği ve saha servisi bu yüzden seçimin parçasıdır. İzleme portalının veri derinliği de aynı başlığa girer: string bazında veri veren bir cihaz, arızayı saatler içinde görünür kılar."
+    },
+    {
+      "style": "h2",
+      "text": "Konstrüksiyonda en ucuz kalem, en pahalı hata"
+    },
+    {
+      "style": "normal",
+      "text": "Konstrüksiyon toplam bütçenin küçük bir dilimidir ve tekliflerde en çok kısılan yer burasıdır. Oysa panelleri 25 yıl boyunca çatıda tutan, rüzgar ve kar yükünü taşıyan, çatının su yalıtımıyla temas eden kalem odur."
+    },
+    {
+      "style": "normal",
+      "text": "İlk soru statik hesaptır: bölgenin kar ve rüzgar yüküne göre profil kesitleri, açıklıklar ve bağlantı noktaları hesaplanmış mı? Hesap yoksa konstrüksiyon değil, tahmin satın alıyorsunuz demektir. Malzeme tarafında alüminyum profil ve paslanmaz bağlantı elemanı standarttır; farklı metallerin doğrudan teması galvanik korozyon riski doğurur."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci soru çatı bağlantı detayıdır ve çatı tipine göre değişir. Sandviç panelde vida sınıfı ve conta, kiremitte kanca tipi ve mertek bağlantısı, betonarme terasta balastlı mı ankrajlı mı gidileceği ayrı karara bağlanır. Su yalıtımını delen her nokta kendi sızdırmazlık detayını gerektirir."
+    },
+    {
+      "style": "normal",
+      "text": "Son olarak montaj detayları: panel klemp konumları üreticinin izin verdiği bölgede olmalı, termal genleşme boşlukları bırakılmalıdır. Yanlış klemp konumu hem cam ve hücre çatlağı riski hem de performans garantisinin geçersiz sayılması anlamına gelir."
+    },
+    {
+      "style": "blockquote",
+      "text": "Ucuz teklifin farkı görünmeyen kalemlerde saklıdır: statik hesabı yapılmamış konstrüksiyon, sınıfı düşük DC kablo, belgesiz pano ekipmanı. Fark ilk gün değil, beşinci yıl ortaya çıkar."
+    },
+    {
+      "style": "h2",
+      "text": "Kablo, pano ve koruma ekipmanı neden ayrı bir başlık?"
+    },
+    {
+      "style": "normal",
+      "text": "DC kablo, güneş uygulaması için üretilmiş, çift izolasyonlu, UV ve yüksek sıcaklığa dayanıklı tipte olmalıdır. Kesit ise moda göre değil, gerilim düşümü hesabıyla belirlenir. Bir kesit küçültmek teklifi görünür biçimde ucuzlatır; karşılığında her gün, 25 yıl boyunca üretimden kayıp yazar."
+    },
+    {
+      "style": "normal",
+      "text": "Konnektörlerde tek kural vardır: aynı tip ve aynı üreticinin çifti kullanılır. Farklı marka konnektörlerin birbirine takılması, sahada en sık karşılaşılan ısınma ve ark sebeplerinden biridir. Görsel olarak uyduğu için doğru olduğunu varsaymak pahalı bir alışkanlıktır."
+    },
+    {
+      "style": "normal",
+      "text": "Pano tarafında DC yük ayırıcı, string koruma, aşırı gerilim koruma cihazı, AC şalter ve kaçak akım koruması ile topraklama tasarımı bir bütündür. Bu kalemlerin belgeli ve doğru sınıfta seçilmesi, teklifte kolayca gizlenebilen ama denetimde ve arıza anında hemen ortaya çıkan bir farktır."
+    },
+    {
+      "style": "h2",
+      "text": "Ekipman seçimi fizibiliteyi nasıl değiştirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Tartışmayı sayıya bağlayalım. Kendi fizibilite katsayılarımızla 30 kWp'lik bir çatı sisteminin kurulum bedeli, kWp başına 700 USD ve 47 TL kurla yaklaşık 987.000 TL'dir. Güneye bakan çatıda kWp başına yıllık 1600 kWh üretimle sistem yılda 48.000 kWh verir; 5 TL/kWh ile yıllık karşılığı 240.000 TL, kaba geri dönüş yaklaşık 4 yıldır. Rakamlar KDV hariçtir."
+    },
+    {
+      "style": "normal",
+      "text": "Şimdi ekipman farkını bu tablonun içine koyalım. Yıllık üretimdeki her yüzde 1'lik fark, bu sistemde 480 kWh, yani yılda 2.400 TL demektir. Sıcaklık katsayısı, gölge yönetimi ve kablo kaybındaki farklar tek tek küçük görünür; toplandığında birkaç yüzdeyi bulur ve 25 yıl boyunca her yıl tekrarlanır."
+    },
+    {
+      "style": "normal",
+      "text": "Aynı sistemi yüzde 5 daha pahalı bir ekipman listesiyle kurmak yaklaşık 49.000 TL ek yatırım demektir. Bu fark yıllık üretimi yüzde 2 artırıyorsa karşılığı yılda 4.800 TL olur ve on yıl içinde kendini öder; üstüne arıza riskini düşürür. Karar bu karşılaştırmadan çıkar. Doğu-batı ya da güney-kuzey yerleşimde üretim 1350 kWh/kWp'ye iner ve aynı hesap o katsayıyla tekrarlanır."
+    },
+    {
+      "style": "h2",
+      "text": "Teklifleri karşılaştırırken ne istenmeli?"
+    },
+    {
+      "style": "normal",
+      "text": "İki teklifi karşılaştırabilmenin ön şartı, ikisinin de aynı ayrıntıda yazılmış olmasıdır. Ekipman listesi marka ve model bazında olmalı; \"muadili\" ibaresi, imza attıktan sonra listeyi değiştirme hakkı anlamına gelir."
+    },
+    {
+      "style": "normal",
+      "text": "Şu altı belgeyi isteyin: panel ve inverter veri sayfaları, konstrüksiyonun statik hesabı, çatıya özel bağlantı ve sızdırmazlık detayı, tek hat şeması, kablo kesiti ve gerilim düşümü hesabı, garanti süreleri tablosu. Üretim taahhüdü varsa hangi simülasyonla ve hangi kayıp varsayımlarıyla hesaplandığı da yazılmalıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Pahalı panel her zaman daha çok mu üretir?"
+    },
+    {
+      "style": "normal",
+      "text": "Hayır. Fiyat; teknoloji, garanti süresi, marka konumlandırması ve tedarik koşullarının toplamıdır. Aynı çatıda anlamlı olan karşılaştırma, veri sayfasındaki sıcaklık katsayısı, degradasyon eğrisi ve garanti şartlarının birlikte okunmasıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik yöntem şudur: fiyat farkını yukarıdaki gibi yıllık üretim farkına çevirin. Fark kendini makul bir sürede ödüyorsa gerekçelidir, ödemiyorsa sadece pahalıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Üretici listelerinde yer almak kalite garantisi midir?"
+    },
+    {
+      "style": "normal",
+      "text": "Değildir. Bu tür sıralamalar üreticinin ölçeğine ve finanse edilebilirliğine bakar, ürünün sahadaki performansını ölçmez. Yine de tedarik sürekliliği açısından bir ön filtre işlevi görür. Asıl soru değişmez: garanti şartları ne diyor ve Türkiye'de kime başvuruluyor?"
+    },
+    {
+      "style": "h3",
+      "text": "İnverteri sonradan büyütebilir miyim?"
+    },
+    {
+      "style": "normal",
+      "text": "Panel eklemek çoğu zaman inverterin DC giriş sınırlarına takılır; string gerilimi ve akımı cihazın penceresine sığmalıdır. Ayrıca bağlantı gücünüz ve izin süreciniz de kurulu gücü sınırlar."
+    },
+    {
+      "style": "normal",
+      "text": "Genişleme ihtimali varsa bunu baştan söyleyin: string tasarımı, pano yerleşimi ve kablo güzergahı ileride eklenecek güce yer bırakacak şekilde kurgulanır. Sonradan yapılan genişletme, baştan planlanmış olandan belirgin biçimde pahalıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Bifacial panel çatıda işe yarar mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Arka yüzey kazancı iki şeye bağlıdır: altındaki yüzeyin yansıtıcılığı ve panelin o yüzeyden yüksekliği. Açık renkli membran kaplı düz bir çatıda ve yerden yükseltilmiş montajda ölçülebilir bir katkı verir; kiremit çatıya yatık montajda katkı ihmal edilebilir düzeye iner. Ek maliyetin karşılığı, montaj geometrisine bakılarak hesaplanır."
+    },
+    {
+      "style": "normal",
+      "text": "Ekipman seçimini kataloğun üzerinde değil, çatının üzerinde yapıyoruz. Keşifte çatının yönünü, eğimini, gölge durumunu ve taşıma kapasitesini ölçüyor; tüketim profilinizle birlikte sistem tasarımını ve ekipman listesini sunuyoruz. Tekliflerimizde her kalem marka ve model bazında yazılıdır ve neden seçildiğini veri sayfasıyla anlatıyoruz. Keşif ve ön fizibilite çalışması ücretsizdir; MİNADA ekibine ulaşmanız yeterli."
+    }
+  ]
+}

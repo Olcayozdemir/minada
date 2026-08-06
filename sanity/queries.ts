@@ -30,7 +30,9 @@ export type PostListItem = {
 export type PostDetail = PostListItem & {
   body?: any;
   author?: { name: string; image?: any };
-  seo?: { metaTitle?: string; metaDescription?: string; ogImage?: any };
+  /** Slug of the same article in the other locale — drives hreflang. */
+  altSlug?: string;
+  seo?: { metaTitle?: string; metaDescription?: string; keywords?: string[]; ogImage?: any };
 };
 
 export type ProjectItem = {
@@ -71,9 +73,12 @@ export async function getPostSlugs(): Promise<{ slug: string; language: string }
 export async function getPost(slug: string, locale: string): Promise<PostDetail | null> {
   if (!hasSanity) return fallbackPost(slug, locale);
   const post = await client.fetch(
-    groq`*[_type == "post" && slug.current == $slug && language == $locale][0]{
-      ${postFields}, body, "author": author->{name, image}, seo
-    }`,
+    // Slug + language should be unique, but order before taking [0] so a stray
+    // duplicate serves the newest revision instead of an arbitrary one.
+    groq`*[_type == "post" && slug.current == $slug && language == $locale]
+      | order(_updatedAt desc)[0]{
+        ${postFields}, body, altSlug, "author": author->{name, image}, seo
+      }`,
     { slug, locale },
     { next: { revalidate: 60 } },
   );

@@ -1,0 +1,235 @@
+{
+  "language": "tr",
+  "slug": "saatlik-aylik-mahsuplasma-farki",
+  "altSlug": "hourly-vs-monthly-net-metering",
+  "title": "Saatlik mahsuplaşma ile aylık mahsuplaşma farkı nedir?",
+  "metaTitle": "Saatlik Mahsuplaşma ile Aylık Mahsuplaşma Farkı | MİNADA",
+  "metaDescription": "Saatlik mahsuplaşma ile aylık mahsuplaşma arasındaki fark netleştirme aralığıdır. İki modeli, sayısal örnekle yatırım kararına etkisini anlatıyoruz.",
+  "excerpt": "Aylık modelde ay toplamları, saatlik modelde her saat kendi içinde netleşir. İki modelin farkını, sistem boyutuna ve geri ödeme süresine etkisini sayısal örnekle anlatıyoruz.",
+  "keywords": [
+    "saatlik mahsuplaşma",
+    "aylık mahsuplaşma farkı",
+    "mahsuplaşma nedir",
+    "lisanssız üretim",
+    "GES geri ödeme süresi",
+    "eşzamanlı tüketim",
+    "batarya yatırımı"
+  ],
+  "category": "Mevzuat",
+  "coverImage": "/images/v2/area-ticari.jpg",
+  "publishedAt": "2026-07-10",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Saatlik mahsuplaşma ile aylık mahsuplaşma arasındaki fark tek bir şeydir: netleştirme aralığı. Aylık modelde ay boyunca şebekeye verdiğiniz ve şebekeden çektiğiniz enerjinin toplamları karşılaştırılır. Saatlik modelde ise her saat kendi içinde değerlendirilir. Bu tek fark, sistemin doğru boyutunu ve geri ödeme süresini baştan değiştirir."
+    },
+    {
+      "style": "h2",
+      "text": "Mahsuplaşma tam olarak neyi netleştirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Çatınızdaki sistem gün içinde üretir. Ürettiğinizin bir kısmını üretildiği anda tüketirsiniz, kalanı şebekeye gider. Güneş yokken de şebekeden çekersiniz. Mahsuplaşma, bu iki yönlü akışın faturada nasıl kapatılacağını tanımlar."
+    },
+    {
+      "style": "normal",
+      "text": "Çift yönlü sayaç, verdiğiniz ve çektiğiniz enerjiyi ayrı ayrı kaydeder. Fatura ise bu iki kaydın birbirinden düşülmesiyle oluşur. Tartışma tam burada başlar: düşme işlemi hangi zaman diliminde yapılacak?"
+    },
+    {
+      "style": "normal",
+      "text": "Bu soru teknik bir ayrıntı gibi görünür, ama yatırımın getirisini belirleyen asıl değişkendir. Aynı çatı, aynı panel, aynı üretim; farklı netleştirme aralığı altında farklı bir yatırım demektir."
+    },
+    {
+      "style": "h2",
+      "text": "Aylık mahsuplaşma nasıl çalışır?"
+    },
+    {
+      "style": "normal",
+      "text": "Aylık modelde ay boyunca şebekeye verdiğiniz toplam enerji, aynı ay içinde çektiğiniz toplam enerjiden düşülür. Öğlen saat 12'de verdiğiniz 1 kWh ile akşam saat 20'de çektiğiniz 1 kWh aynı değere sahiptir."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik sonucu şudur: şebeke sizin için bir ay vadeli, bedelsiz bir depo gibi çalışır. Üretimin tüketimle gün içinde çakışıp çakışmaması faturayı doğrudan etkilemez. Ay sonunda toplamlar tutuyorsa enerji bedeli sıfıra yaklaşır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu esneklik, aylık modelin en cazip tarafıdır ve aynı zamanda şebekeye yüklediği maliyettir. Kurulu güç ülke genelinde büyüdükçe öğle saatlerinde ortaya çıkan fazla üretimi bir yerin karşılaması gerekir. Düzenlemelerin saatlik netleştirmeye doğru evrilmesinin arkasındaki teknik gerekçe budur."
+    },
+    {
+      "style": "h2",
+      "text": "Saatlik mahsuplaşmada ne değişir?"
+    },
+    {
+      "style": "normal",
+      "text": "Saatlik modelde netleştirme her saat için ayrı yapılır. Saat 12'de 6 kWh üretip 2 kWh tüketiyorsanız o saatin fazlası 4 kWh'tir ve fazla üretim olarak değerlendirilir. Saat 20'de 4 kWh çekiyorsanız, o çekiş kendi başına faturalanır."
+    },
+    {
+      "style": "normal",
+      "text": "Yani öğlenin fazlası akşamın eksiğini birebir kapatmaz. Enerji hâlâ üretilir ve hâlâ şebekeye gider, ancak fazla üretimin karşılığı, tükettiğiniz enerjiye ödediğiniz birim fiyattan farklı bir bedelle belirlenir. Bu bedeller bileşen bazında tanımlanır ve dönemsel olarak güncellenir, bu yüzden projelendirmeden önce güncel duruma bakmak gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Sonuç, mühendislik açısından tek bir kavramı öne çıkarır: eşzamanlılık. Ürettiğiniz saatte ne kadar tüketiyorsanız, projenin getirisi o kadar yüksektir."
+    },
+    {
+      "style": "blockquote",
+      "text": "Aylık modelde doğru cevap çoğu zaman çatıya sığan en büyük sistemdi. Saatlik modelde doğru cevap, tüketim profiline en iyi oturan sistem oluyor."
+    },
+    {
+      "style": "h2",
+      "text": "Sade bir sayısal örnek: aynı sistem, iki model"
+    },
+    {
+      "style": "normal",
+      "text": "Küçük bir işletme düşünelim. Çatıya güney yönlü 10 kWp'lik bir sistem kuruluyor. Fizibilite katsayılarımızla kurulum bedeli 700 USD/kWp ve 47 TL/USD kurdan 329.000 TL (KDV hariç). Güney yönlü çatıda yıllık üretim 10 × 1.600 = 16.000 kWh. Elektrik birim fiyatı 5 TL/kWh."
+    },
+    {
+      "style": "normal",
+      "text": "İşletmenin yıllık tüketimi de 16.000 kWh olsun. Kağıt üstünde üretim ve tüketim tam olarak eşit."
+    },
+    {
+      "style": "h3",
+      "text": "Aylık modelde tablo"
+    },
+    {
+      "style": "normal",
+      "text": "Toplamlar eşit olduğu için enerji bedeli büyük ölçüde kapanır. Yıllık tasarruf 16.000 × 5 = 80.000 TL. Basit geri ödeme süresi 329.000 / 80.000 = yaklaşık 4,1 yıl."
+    },
+    {
+      "style": "normal",
+      "text": "Dikkat edin: bu hesapta üretimin ve tüketimin gün içinde ne zaman gerçekleştiği hiç sorulmadı. Sorulmasına gerek yoktu."
+    },
+    {
+      "style": "h3",
+      "text": "Saatlik modelde tablo"
+    },
+    {
+      "style": "normal",
+      "text": "Aynı işletmede üretimin yüzde 45'inin üretildiği saatte tüketildiğini varsayalım. Bu oran, gündüz çalışan ama akşam da yükü olan bir işletme için gerçekçi bir bandın alt ucudur."
+    },
+    {
+      "style": "normal",
+      "text": "Doğrudan tükettiğiniz enerji: 16.000 × 0,45 = 7.200 kWh. Bu kısım tam tarifeden kurtardığınız enerjidir ve karşılığı 7.200 × 5 = 36.000 TL/yıl."
+    },
+    {
+      "style": "normal",
+      "text": "Kalan 8.800 kWh fazla üretim olarak şebekeye gider ve mevzuatta tanımlı bedelden değerlendirilir. Bu bedel perakende tarifenin altındadır. Oranı burada rakamla vermiyoruz, çünkü dönemsel olarak güncellenir ve başvuru anındaki değer geçerlidir."
+    },
+    {
+      "style": "normal",
+      "text": "Görülen şu: aylık modelde 80.000 TL olan yıllık getirinin 36.000 TL'lik kısmı doğrudan eşzamanlılıktan geliyor, geri kalanı ise fazla üretim bedeline bağlı. Aynı çatı, aynı üretim, aynı yatırım bedeli; ama iki farklı yatırım kararı."
+    },
+    {
+      "style": "h2",
+      "text": "Yatırım kararına etkisi: sistem ne kadar büyük olmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "Aylık modelde boyutlandırmanın üst sınırını çatı alanı ve bağlantı gücü belirlerdi. Yıllık tüketiminize kadar üretmek neredeyse her zaman kârlıydı."
+    },
+    {
+      "style": "normal",
+      "text": "Saatlik modelde üst sınırı tüketim eğriniz belirler. Öğle saatlerinde tükettiğinizden fazlasını üreten her kWp, marjinal getirisi düşük bir yatırımdır. Bu, sistemi otomatik olarak küçültmek anlamına gelmez. Çoğu projede doğru hamle, sistemi tüketimin şekline göre yeniden kurgulamaktır."
+    },
+    {
+      "style": "h3",
+      "text": "Yönlendirmeyi tüketime göre seçmek"
+    },
+    {
+      "style": "normal",
+      "text": "Güney yönlü bir dizi, öğle saatlerinde keskin bir tepe yapar. Doğu-batı yönlü bir dizi ise aynı enerjiyi sabaha ve akşamüstüne yayar. Fizibilitemizde güney 1.600 kWh/kWp·yıl, doğu-batı 1.350 kWh/kWp·yıl üretir; yani doğu-batı toplamda daha az üretir."
+    },
+    {
+      "style": "normal",
+      "text": "Saatlik modelde bu kayıp bazen kabul edilebilir hale gelir. Toplam üretimi bir miktar azaltıp eşzamanlı tüketilen payı belirgin biçimde artırıyorsanız, net sonuç lehinize dönebilir. Bu karar tahminle değil, saatlik simülasyonla verilir."
+    },
+    {
+      "style": "h3",
+      "text": "Tüketimi üretime kaydırmak"
+    },
+    {
+      "style": "normal",
+      "text": "Bazı yükler saat seçmez. Soğutma, kompresör, pompa, kurutma ve araç şarjı gündüze alınabiliyorsa hiçbir ek yatırım yapmadan eşzamanlılığı artırırsınız. Saatlik mahsuplaşma altında bu, elinizdeki en ucuz iyileştirmedir ve genellikle ilk bakılması gereken yerdir."
+    },
+    {
+      "style": "h2",
+      "text": "Batarya saatlik mahsuplaşmada ne zaman anlamlı olur?"
+    },
+    {
+      "style": "normal",
+      "text": "Batarya, gündüz üretilen enerjiyi akşam tüketimine taşır. Saatlik modelde bu taşımanın doğrudan bir parasal karşılığı vardır: enerjiyi fazla üretim bedeliyle verip sonra tam tarifeden geri almak yerine kendi enerjinizi kullanırsınız."
+    },
+    {
+      "style": "normal",
+      "text": "Rakamla bakalım. 10 kWh'lik bir batarya paketi 2.750 USD, yani 47 TL/USD kurdan yaklaşık 129.250 TL (KDV hariç). Yılın büyük kısmında etkin bir gündüz-akşam çevrimi yaptığını kabul edersek, 2.500-3.000 kWh mertebesinde enerjiyi saatler arasında taşır."
+    },
+    {
+      "style": "normal",
+      "text": "Üst sınır hesabı şöyle kurulur: taşınan 2.700 kWh'in tamamı 5 TL/kWh'lik tarifeden kurtulsaydı yıllık kazanç 13.500 TL olurdu ve batarya kendini ancak 9-10 yılda öderdi. Gerçek kazanç bunun altındadır, çünkü o enerjinin bataryasız hali de bedelsiz değildir; fazla üretim olarak bir karşılığı vardır. Bataryanın net getirisi, iki bedel arasındaki farktır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden batarya kararını tek başına mahsuplaşma modeline bağlamıyoruz. Kesinti sıklığı, kritik yüklerin varlığı ve akşam tüketiminin ağırlığı da aynı tabloya girer. Bu üçü güçlüyse batarya erken anlam kazanır. Değilse önce eşzamanlılığı bedelsiz yollarla artırmak daha doğru bir sıralamadır."
+    },
+    {
+      "style": "h2",
+      "text": "Hangi modele tabi olduğunuzu nasıl öğrenirsiniz?"
+    },
+    {
+      "style": "normal",
+      "text": "Bu, tahmin edilecek bir konu değil. Projenizin hangi netleştirme modeline tabi olacağı; başvuru tarihinize, bağlantı ve abone grubunuza ve başvuru anında yürürlükte olan düzenlemeye göre belirlenir. Kurallar dönemsel olarak güncellenir."
+    },
+    {
+      "style": "normal",
+      "text": "Pratikte yapılacak iş şudur: dağıtım şirketine başvurudan önce geçerli çerçeveyi teyit etmek ve fizibiliteyi o çerçeveye göre kurmak. Eski tarihli bir projenin geri ödeme tablosunu yeni bir projeye kopyalamak, bugün en sık karşılaştığımız hatadır."
+    },
+    {
+      "style": "normal",
+      "text": "Bir de sunumlara dikkat edin. Size tek satırlık bir geri ödeme süresi veriliyorsa, o sayının hangi mahsuplaşma modelini ve hangi eşzamanlılık oranını varsaydığını sorun. Bu iki bilgi yoksa ortada bir hesap da yoktur."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Saatlik mahsuplaşma GES yatırımını anlamsız kılar mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Hayır. Kendi tükettiğiniz her kWh, şebekeden almadığınız kWh'tir ve tam tarife üzerinden değer kazanır. Değişen şey getirinin kaynağıdır: fazla üretimi satmaktan kendi enerjinizi kullanmaya kayar."
+    },
+    {
+      "style": "normal",
+      "text": "Doğru boyutlandırılmış ve tüketim profiline oturtulmuş projelerde geri ödeme süreleri hâlâ makul aralıklarda kalır. Anlamsızlaşan şey yatırım değil, tüketimden bağımsız kurgulanan büyük sistemlerdir."
+    },
+    {
+      "style": "h3",
+      "text": "Mevcut sistemim aylık mahsuplaşmadaysa saatliğe geçer mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Bunun tek bir cevabı yok. Düzenlemelerin kapsamı ve projenizin tabi olduğu şartlar belirleyicidir. Doğru yaklaşım, mevcut projenizin bağlantı ve kabul evrakları üzerinden durumunuzu teyit etmek, ardından iki senaryolu bir duyarlılık analizi yaptırmaktır."
+    },
+    {
+      "style": "h3",
+      "text": "Saatlik mahsuplaşmada batarya zorunlu mu?"
+    },
+    {
+      "style": "normal",
+      "text": "Zorunlu değil. Batarya bir çözümdür, bir koşul değil. Gündüz yoğun çalışan bir üretim tesisinde eşzamanlılık zaten yüksektir ve batarya ancak belirli bir noktadan sonra anlam kazanır. Akşam tüketimi ağır basan bir konutta ise tablo tersine döner."
+    },
+    {
+      "style": "h3",
+      "text": "Eşzamanlılık oranımı nasıl ölçerim?"
+    },
+    {
+      "style": "normal",
+      "text": "Sayaç verinizden ya da yük analiziyle çıkarılan saatlik tüketim profilinizi, çatınız için üretilen saatlik üretim modeliyle çakıştırarak. Hafta içi ile hafta sonuna, yaz ile kışa ayrı ayrı bakılmalıdır. Tek bir yıllık toplam bu soruyu cevaplamaz."
+    },
+    {
+      "style": "normal",
+      "text": "Projenizin hangi mahsuplaşma modeline tabi olacağını ve iki modelde nasıl bir tabloyla karşılaşacağınızı keşif aşamasında birlikte netleştiriyoruz. Son 12 aylık faturanız ve çatı bilginizle saatlik üretim modelini tüketim profilinizle çakıştırıyor, iki senaryoyu ve batarya seçeneğini aynı tabloda yan yana koyuyoruz. Ücretsiz keşif için MİNADA ile iletişime geçebilirsiniz."
+    }
+  ]
+}

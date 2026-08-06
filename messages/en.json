@@ -480,7 +480,8 @@
     "back": "All posts",
     "by": "By",
     "latest": "Latest posts",
-    "minRead": "{min} min read"
+    "minRead": "{min} min read",
+    "metaDesc": "Engineering-led guides on solar, energy storage, heat pumps and EV charging: regulation, feasibility, equipment selection and operations."
   },
   "Projects": {
     "eyebrow": "Projects",

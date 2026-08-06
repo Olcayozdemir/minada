@@ -1,0 +1,256 @@
+{
+  "language": "tr",
+  "slug": "saatlik-mahsuplasma-ges-uretim-tuketim-profili",
+  "altSlug": "sizing-solar-for-hourly-net-metering",
+  "title": "Üretim tüketim profiline göre GES boyutlandırma nasıl yapılır?",
+  "metaTitle": "Üretim Tüketim Profili ile GES Boyutlandırma | MİNADA",
+  "metaDescription": "Üretim tüketim profili, saatlik mahsuplaşmada GES boyutlandırmanın merkezindedir. Profil çıkarma, öz tüketim, yük kaydırma ve batarya kararını anlatıyoruz.",
+  "excerpt": "Saatlik mahsuplaşmada doğru sistem, çatıya sığan en büyük sistem değil profile en iyi oturan sistemdir. Profil çıkarma, öz tüketim, yük kaydırma ve batarya kararı.",
+  "keywords": [
+    "üretim tüketim profili",
+    "ges boyutlandırma",
+    "öz tüketim",
+    "saatlik mahsuplaşma",
+    "yük kaydırma",
+    "batarya depolama",
+    "saatlik üretim simülasyonu",
+    "çatı GES fizibilite"
+  ],
+  "category": "Rehber",
+  "coverImage": "/images/v2/business-hero.jpeg",
+  "publishedAt": "2026-07-13",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Saatlik mahsuplaşmaya tabi bir projede işin merkezi üretim tüketim profilidir: üretimin ve tüketimin saat saat nasıl örtüştüğü. Doğru sistem, çatıya sığan en büyük sistem değil, bu iki eğriyi en iyi çakıştıran sistemdir. Boyutlandırma, yük kaydırma ve batarya kararlarının tamamı bu profilden çıkar. Aşağıda profili nasıl çıkardığımızı ve karara nasıl dönüştürdüğümüzü anlatıyoruz."
+    },
+    {
+      "style": "h2",
+      "text": "Üretim tüketim profili nedir?"
+    },
+    {
+      "style": "normal",
+      "text": "Üretim tüketim profili, bir tesisin gün içinde saat saat ne kadar enerji tükettiğini ve aynı saatlerde çatıdaki sistemin ne kadar ürettiğini gösteren iki eğridir. Fatura size ayın toplamını verir. Profil ise o toplamın günün hangi saatlerinde oluştuğunu verir."
+    },
+    {
+      "style": "normal",
+      "text": "Aylık mahsuplaşmada bu ayrım büyük ölçüde önemsizdi. Ay boyunca şebekeye verdiğiniz enerji ile şebekeden çektiğiniz enerji toplam üzerinden netleştiği için, öğlen üretilen bir kilovatsaat ile gece tüketilen bir kilovatsaat aynı değerdeydi. Şebeke, pratikte ücretsiz bir depo gibi çalışıyordu."
+    },
+    {
+      "style": "normal",
+      "text": "Saatlik mahsuplaşmada netleştirme her saatin kendi içinde yapılır. Saat 13.00'te ürettiğiniz fazla enerji, saat 21.00'de çektiğiniz enerjiyle birebir kapanmaz. Kapanmayan kısım şebekeye verilir ve karşılığı mevzuatta belirlenen esaslara göre hesaplanır; bu bedel perakende tarifeden ödediğiniz bedelle aynı değildir."
+    },
+    {
+      "style": "normal",
+      "text": "Sonuç sert bir kural doğuruyor: iyi proje çok üreten değil, ürettiği saatte tüketilen projedir."
+    },
+    {
+      "style": "h2",
+      "text": "Üretim tüketim profili nasıl çıkarılır?"
+    },
+    {
+      "style": "normal",
+      "text": "Profil çıkarmak üç adımdır: tüketimi saatlendirmek, üretimi saatlendirmek, ikisini aynı takvimde üst üste bindirmek. Üçü de ölçüme dayanır, tahmine değil."
+    },
+    {
+      "style": "h3",
+      "text": "Tüketim tarafı: sayaç verisi ve fatura"
+    },
+    {
+      "style": "normal",
+      "text": "Ticari abonelerde saatlik yük verisi çoğu zaman zaten mevcuttur; sayaç kayıtları dağıtım şirketinden ya da tedarikçinizden istenebilir. Bu verinin en az bir yılı kapsaması gerekir, çünkü yaz ve kış profilleri ciddi biçimde ayrışır."
+    },
+    {
+      "style": "normal",
+      "text": "Saatlik veri yoksa profil, kurulu yüklerin gücü ve çalışma saatleri üzerinden kurulur. Kompresör, soğutma grubu, pompa, fırın, aydınlatma; her birinin gücü ve günlük çalışma süresi yazılır, vardiya takvimiyle çakıştırılır, fatura toplamlarıyla kalibre edilir. Konutlarda son 12 aylık fatura hane alışkanlığıyla birlikte değerlendirilir."
+    },
+    {
+      "style": "normal",
+      "text": "Hafta içi ve hafta sonu mutlaka ayrı çıkarılır. Cumartesi kapalı bir atölyede hafta sonu üretiminin neredeyse tamamı fazladır ve bu gerçek, yıllık ortalamada tamamen kaybolur."
+    },
+    {
+      "style": "h3",
+      "text": "Üretim tarafı: saatlik üretim simülasyonu"
+    },
+    {
+      "style": "normal",
+      "text": "Üretim tarafında çatının konumu, yönü, eğimi, panel yerleşimi ve gölgelenme modellenir; sonuç yıllık toplam olarak değil, saatlik üretim serisi olarak alınır. MİNADA projelerinde bu adımı PVsyst ile yapıyoruz."
+    },
+    {
+      "style": "normal",
+      "text": "Yıllık kabullerimiz kaba kontrol için işe yarar. Fizibilite modelimizde güney yönlü bir çatı için kWp başına yaklaşık 1600 kWh, güney-kuzey ve doğu-batı yerleşimler için yaklaşık 1350 kWh yıllık üretim kabul ediyoruz. Bu değerler toplamı verir; profilin şeklini ise yalnızca simülasyon verir."
+    },
+    {
+      "style": "h3",
+      "text": "İki eğriyi üst üste bindirmek"
+    },
+    {
+      "style": "normal",
+      "text": "Son adımda yılın 8.760 saatinin her biri için üretim ve tüketim yan yana yazılır. Her saatte hangisinin büyük olduğuna bakılır: tüketim büyükse aradaki farkı şebekeden çekersiniz, üretim büyükse farkı şebekeye verirsiniz."
+    },
+    {
+      "style": "normal",
+      "text": "Bu tablodan çıkan iki sayı bütün kararı belirler. Üretimin ne kadarı üretildiği anda tüketiliyor ve tüketimin ne kadarı güneşten karşılanıyor. Birincisi öz tüketim oranı, ikincisi kapsama oranıdır ve ikisi aynı şey değildir."
+    },
+    {
+      "style": "h2",
+      "text": "Öz tüketim oranı: kararı belirleyen sayı"
+    },
+    {
+      "style": "normal",
+      "text": "Öz tüketim oranı, ürettiğiniz enerjinin üretildiği saatte tesiste kullanılan yüzdesidir. Saatlik mahsuplaşmada bu oran geri ödeme süresinin doğrudan sürücüsüdür."
+    },
+    {
+      "style": "normal",
+      "text": "Rakamla bakalım. Güney yönlü 30 kWp bir sistem, kWp başına 1600 kWh kabulüyle yılda yaklaşık 48.000 kWh üretir. Kurulum bedeli 700 USD/kWp ve 47 TL kur ile yaklaşık 987.000 TL olur, KDV hariç."
+    },
+    {
+      "style": "normal",
+      "text": "Bu üretimin yüzde 60'ı üretildiği anda tüketiliyorsa 28.800 kWh doğrudan faturadan düşer; 5 TL/kWh birim fiyatla yıllık 144.000 TL. Öz tüketim oranı yüzde 80'e çıkarsa aynı sistemden 38.400 kWh doğrudan kullanılır ve karşılığı 192.000 TL olur. Tek bir kWp bile eklemeden, yıllık 48.000 TL fark."
+    },
+    {
+      "style": "normal",
+      "text": "Kalan fazla üretim değersiz değildir; şebekeye verilir ve mevzuata göre karşılığı hesaplanır. Ancak bu bedel dönemsel olarak güncellenir ve perakende tarifeyle aynı değildir. Bu yüzden fizibiliteyi ona yaslamıyoruz; yatırımın omurgasını öz tüketimin üzerine kuruyoruz."
+    },
+    {
+      "style": "h2",
+      "text": "GES boyutlandırma: büyük değil, isabetli"
+    },
+    {
+      "style": "normal",
+      "text": "Aylık modelde GES boyutlandırmanın cevabı basitti: çatıya ne sığıyorsa o. Saatlik modelde cevap değişti. Sistemin ilk kilovatları en değerlisidir, çünkü gündüz taban yükünüzü karşılar ve tamamı öz tüketime yazılır. Taban yükü aşıldıktan sonra eklenen her kWp, giderek daha büyük oranda fazla üretime dönüşür."
+    },
+    {
+      "style": "normal",
+      "text": "Pratikte şöyle çalışıyoruz. Önce gündüz bandındaki taban tüketimi belirliyoruz, sistemi o bandı karşılayacak şekilde kuruyoruz, sonra üstüne eklenecek her kademenin marjinal getirisini ayrı hesaplıyoruz. Getiri eşiğin altına düştüğü noktada duruyoruz ya da aşağıdaki kaldıraçlara geçiyoruz."
+    },
+    {
+      "style": "blockquote",
+      "text": "Saatlik mahsuplaşmada çatınıza sığan en büyük sistem, çoğu zaman size en çok kazandıran sistem değildir."
+    },
+    {
+      "style": "normal",
+      "text": "Bunu küçük kurun tavsiyesi olarak okumayın. Tüketimi yüksek ve gündüze yayılmış bir işletmede doğru cevap yine büyük bir sistemdir. Değişen şey, kararı artık çatı alanının değil profilin vermesidir."
+    },
+    {
+      "style": "h2",
+      "text": "Yük kaydırma: en ucuz kaldıraç"
+    },
+    {
+      "style": "normal",
+      "text": "Profil uyuşmuyorsa ilk bakılacak yer batarya değil, yükün kendisidir. Planlanabilir her yük güneş saatlerine çekilebilirse öz tüketim oranı bedelsiz yükselir."
+    },
+    {
+      "style": "normal",
+      "text": "Konutta bunlar sıcak su ısıtması, bulaşık ve çamaşır makinesi, havuz pompası, elektrikli araç şarjı ve ısı pompasının depolu çalıştırılmasıdır. İşletmede basınçlı hava üretimi, soğuk hava deposunun ön soğutması, sulama pompaları, kurutma hatları ve şarj istasyonlarının gündüz bandına alınması ilk akla gelen başlıklardır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu düzenlemelerin çoğu birkaç saatlik kaydırmadan ibarettir, ek yatırım gerektirmez. Fizibilitede sırayı bu yüzden bozmuyoruz: önce yük kaydırma, sonra batarya."
+    },
+    {
+      "style": "h2",
+      "text": "Batarya ne zaman anlamlı hale gelir?"
+    },
+    {
+      "style": "normal",
+      "text": "Batarya, kaydırılamayan tüketim için vardır. Akşam yoğunlaşan bir konutta ya da vardiya bittikten sonra devam eden bir yükte, gündüz üretilen fazlayı akşama taşır."
+    },
+    {
+      "style": "normal",
+      "text": "Hesabı açık yapalım. Fizibilite modelimizde 5 kWh batarya 1.750 USD, 10 kWh batarya 2.750 USD, 15 kWh batarya 3.500 USD tutar; hepsi KDV hariç. 47 TL kurla 10 kWh'lik paket yaklaşık 129.250 TL eder. Yılda 300 gün tam çevrim yaptığını varsayarsak akşama taşınan enerji 3.000 kWh olur ve 5 TL/kWh ile karşılığı yıllık 15.000 TL'dir."
+    },
+    {
+      "style": "normal",
+      "text": "Bu rakam bir üst sınırdır. Aynı enerji bataryaya girmeseydi şebekeye verilecek ve orada da bir karşılığı olacaktı; bataryanın net faydası iki bedel arasındaki farktır. Bu yüzden batarya kararını tek başına vermiyoruz. Önce yük kaydırmayla ulaşılabilecek öz tüketim tavanını buluyor, bataryayı yalnızca o tavanın üstünde kalan boşluk için ölçüyoruz."
+    },
+    {
+      "style": "normal",
+      "text": "Bataryanın ikinci bir faydası daha var: kesinti anında kritik yükleri ayakta tutmak. Soğuk zincir gibi durma maliyeti yüksek işlerde bu tek başına yatırım gerekçesidir ve hesap tasarruf üzerinden değil, önlenen kayıp üzerinden yapılır."
+    },
+    {
+      "style": "h2",
+      "text": "Çatı yönü profili nasıl değiştirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Güney yönlü yerleşim en yüksek yıllık üretimi verir, ama üretimi öğle saatlerinde dar bir tepeye toplar. Doğu-batı yerleşim ise üretimi sabaha ve ikindiye yayar: tepe alçalır, bant genişler."
+    },
+    {
+      "style": "normal",
+      "text": "Kabullerimizle doğu-batı yerleşim güneye göre kWp başına yıllık yaklaşık yüzde 16 daha az üretir (1350'ye karşı 1600 kWh). Buna karşılık üretim eğrisi tipik bir mesai gününe daha çok benzer. Bu takas her projede ayrı hesaplanmalıdır; bazı çatılarda daha az üreten yerleşim daha çok kazandırır."
+    },
+    {
+      "style": "h2",
+      "text": "Konut ve işletme profilleri nasıl ayrışır?"
+    },
+    {
+      "style": "normal",
+      "text": "Tipik bir işletmede tüketim mesai saatlerine oturur ve güneş eğrisiyle doğal olarak örtüşür. Saatlik mahsuplaşmanın en az zorladığı profil budur; öz tüketim oranı ek önlem almadan yüksek çıkar."
+    },
+    {
+      "style": "normal",
+      "text": "Konutta durum tersidir. Gündüz ev boşken üretim tepe yapar, akşam herkes döndüğünde tüketim tepe yapar. Bu yüzden konut projelerinde yük kaydırma ve batarya çok daha erken devreye girer."
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü bir grup daha var: kesintisiz çalışan tesisler, soğuk hava depoları, veri odaları. Bunlarda gece de devam eden bir taban yük vardır ve güneş o yükün yalnızca gündüz kısmını karşılar."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Saatlik sayaç verim yoksa profil çıkarılabilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Evet. Sayaç verisi yoksa profil, kurulu yüklerin gücü ve çalışma saatleri üzerinden kurulur ve fatura toplamlarıyla kalibre edilir. Doğruluğu ölçülmüş veriye göre daha düşüktür, ama karar vermeye yeter."
+    },
+    {
+      "style": "normal",
+      "text": "Yatırımın büyük olduğu projelerde bir aylık geçici ölçüm öneriyoruz. Bir aylık gerçek veri, tahminle kurulmuş bir modelin belirsizliğini ciddi ölçüde daraltır."
+    },
+    {
+      "style": "h3",
+      "text": "Öz tüketim oranı kaç olmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "Tek bir hedef sayı yok. Ölçüt, eklenen son kademenin getirisinin kabul ettiğiniz eşiğin altına düştüğü noktadır. Gündüz ağırlıklı işletmelerde bu oran doğal olarak yüksek çıkar, konutlarda ise yük kaydırma ve batarya olmadan düşük kalır."
+    },
+    {
+      "style": "normal",
+      "text": "Doğru soru oranın kendisi değil, oranı bir puan artırmanın kaça mal olduğudur. Çalışma saati düzenlemesiyle gelen puan bedavadır, bataryayla gelen puanın bir fiyatı vardır."
+    },
+    {
+      "style": "h3",
+      "text": "Batarya geri ödeme süresini kısaltır mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Çoğu projede kısaltmaz, uzatır. Batarya toplam yatırımı artırır ve getirisi, kaydırdığı enerjinin perakende bedeli ile aynı enerjinin şebekeye verildiğindeki bedeli arasındaki farkla sınırlıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Bataryayı geri ödemeyi kısaltmak için değil, öz tüketimi ve enerji sürekliliğini yükseltmek için kuruyoruz. Karar, bataryalı ve bataryasız iki senaryo aynı tabloda yan yana görüldükten sonra verilmelidir."
+    },
+    {
+      "style": "h3",
+      "text": "Mevcut GES'imi saatlik modele göre yeniden değerlendirebilir miyim?"
+    },
+    {
+      "style": "normal",
+      "text": "Evet ve bunu öneriyoruz. Mevcut sisteminizin üretim kayıtlarını tüketim kayıtlarınızla çakıştırdığımızda öz tüketim oranınız ve kaçırdığınız saatler net biçimde ortaya çıkar."
+    },
+    {
+      "style": "normal",
+      "text": "Pek çok tesiste ilk kazanç, yatırım gerektirmeyen bir çalışma saati düzenlemesinden gelir. Batarya bu listede genellikle en sonda yer alır."
+    },
+    {
+      "style": "normal",
+      "text": "Kendi profilinizi görmek isterseniz keşif ve etüt çalışmamız ücretsizdir. Son 12 aylık faturanız ve varsa saatlik sayaç verinizle başlıyoruz; çatınızın saatlik üretim simülasyonunu tüketiminizle çakıştırıp yük kaydırma ve batarya senaryolarını aynı tabloda sunuyoruz."
+    }
+  ]
+}

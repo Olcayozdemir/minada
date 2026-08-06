@@ -1,0 +1,204 @@
+{
+  "language": "en",
+  "slug": "solar-equipment-selection",
+  "altSlug": "ges-urun-secimi",
+  "title": "Solar equipment selection: panels, inverters, mounting and cable",
+  "metaTitle": "Solar Equipment Selection: Panels, Inverters, Mounting",
+  "metaDescription": "Solar equipment selection read from datasheets: panel temperature coefficient and degradation, inverter DC/AC ratio and MPPTs, mounting statics and cable sizing.",
+  "excerpt": "Nameplate power tells you almost nothing about what a solar plant will produce. Which datasheet lines actually decide output, and where a cheap quotation quietly gets expensive.",
+  "keywords": [
+    "solar equipment selection",
+    "how to choose solar panels",
+    "inverter selection",
+    "solar panel datasheet",
+    "DC AC ratio",
+    "MPPT inputs",
+    "solar mounting structure",
+    "solar quotation comparison"
+  ],
+  "category": "Guide",
+  "coverImage": "/images/v2/how/procurement.jpg",
+  "publishedAt": "2026-07-04",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Solar equipment selection comes down to four items: panels, inverter, mounting structure and the cable and switchgear package. The decision is read from datasheets, not from nameplate power. Temperature coefficient, degradation, MPPT layout, structural calculation and cable cross section are what a plant really produces over 25 years."
+    },
+    {
+      "style": "h2",
+      "text": "Why solar equipment selection is not about nameplate power"
+    },
+    {
+      "style": "normal",
+      "text": "The most visible number in a quotation is installed capacity, yet two 30 kWp systems on one roof can produce noticeably different energy in a year. The gap sits in how the panel behaves when hot, how the inverter handles shade, and what the cabling loses."
+    },
+    {
+      "style": "normal",
+      "text": "An equipment list is a performance commitment. The panel datasheet defines the production curve, the inverter topology the loss structure, the structural calculation both safety and the remaining life of your roof. No item covers for weakness in another."
+    },
+    {
+      "style": "h2",
+      "text": "What to read on a solar panel datasheet"
+    },
+    {
+      "style": "normal",
+      "text": "A brochure cover carries watts and efficiency; the tables inside carry the answers."
+    },
+    {
+      "style": "h3",
+      "text": "Temperature coefficient"
+    },
+    {
+      "style": "normal",
+      "text": "Panel output is rated at 25 degrees cell temperature. A rooftop module runs far hotter on a summer afternoon, and the power temperature coefficient states what share of output is lost per degree of that rise."
+    },
+    {
+      "style": "normal",
+      "text": "A coefficient closer to zero means less loss in heat, and it matters because the sunniest hours are also the hottest. Two panels of identical wattage can end the year several percent apart on this line alone."
+    },
+    {
+      "style": "h3",
+      "text": "Degradation and the two warranties"
+    },
+    {
+      "style": "normal",
+      "text": "The product warranty covers material and workmanship; the performance warranty commits to how much power the module retains. Read the second as three figures: first year loss, annual degradation after that, and guaranteed output at the end of the term."
+    },
+    {
+      "style": "normal",
+      "text": "Then ask who the counterparty is: a claim in year twelve is worth only as much as the entity you can reach. Cell technology, mostly N-type TOPCon today, explains those figures but does not replace them."
+    },
+    {
+      "style": "h2",
+      "text": "Choosing an inverter: ratio, MPPTs and hybrid readiness"
+    },
+    {
+      "style": "h3",
+      "text": "DC/AC ratio"
+    },
+    {
+      "style": "normal",
+      "text": "The DC/AC ratio is total panel power divided by rated AC output. Sizing above 1.0 is normal, because modules reach nameplate output for very few hours a year and a higher ratio keeps the inverter in its efficient band."
+    },
+    {
+      "style": "normal",
+      "text": "Push it too far and clipping starts at peak hours, when the inverter cannot pass everything the array offers. A little clipping is economic, more is straight loss. The right ratio follows from orientation, tilt and local irradiance."
+    },
+    {
+      "style": "h3",
+      "text": "MPPT count and string design"
+    },
+    {
+      "style": "normal",
+      "text": "Strings sharing an MPPT input operate together, so shade on one drags the other to the same operating point. Surfaces facing different directions, different tilts and partly shaded areas belong on separate inputs. On a multi-pitch roof, MPPT count buys more energy than the last decimal of catalogue efficiency."
+    },
+    {
+      "style": "h3",
+      "text": "Hybrid readiness and service"
+    },
+    {
+      "style": "normal",
+      "text": "If storage is a possibility later, a hybrid capable unit now is cheaper than a second converter afterwards. Our feasibility figures put a 5 kWh battery at 1,750 USD, 10 kWh at 2,750 USD and 15 kWh at 3,500 USD, excluding VAT."
+    },
+    {
+      "style": "normal",
+      "text": "The inverter needs the most attention over a plant's life and is replaced first, so warranty term, spare parts and field service belong in the selection. So does monitoring: string level data turns a fault into something you see in hours."
+    },
+    {
+      "style": "h2",
+      "text": "Mounting structure: the cheapest line, the most expensive mistake"
+    },
+    {
+      "style": "normal",
+      "text": "Mounting is a small slice of the budget and the first place a quotation gets trimmed. It is also what holds the array for 25 years, carries wind and snow load, and touches your waterproofing."
+    },
+    {
+      "style": "normal",
+      "text": "The first question is the structural calculation: are profile sections, spans and fixing points calculated for local wind and snow loads? Without it you are buying an assumption. Aluminium rails with stainless fixings are standard, and dissimilar metals in contact invite galvanic corrosion."
+    },
+    {
+      "style": "normal",
+      "text": "The second is the roof interface. Trapezoidal roofs need the right screw class and seal, tiled roofs a hook matched to the rafter, flat concrete roofs a choice between ballast and anchoring. Every penetration through the waterproofing needs its own detail, and clamps must sit where the module manufacturer permits."
+    },
+    {
+      "style": "blockquote",
+      "text": "The difference in a cheap quotation lives in the lines nobody looks at: mounting with no structural calculation, undersized DC cable, uncertified switchgear. It shows up in year five, not on day one."
+    },
+    {
+      "style": "h2",
+      "text": "Cables, switchgear and protection"
+    },
+    {
+      "style": "normal",
+      "text": "DC cable must be made for photovoltaic use: double insulated, UV resistant, rated for high temperature. Cross section comes out of a voltage drop calculation, not out of habit. Dropping one size makes a quotation cheaper, then bills you a small loss every day for 25 years."
+    },
+    {
+      "style": "normal",
+      "text": "Connectors follow one rule: same type, same manufacturer on both halves, since mating different brands is a common cause of heating and arcing. In the switchgear, the DC isolator, string protection, surge protection device, AC breaker, residual current protection and earthing form one system that inspection will test."
+    },
+    {
+      "style": "h2",
+      "text": "How equipment choice changes the feasibility"
+    },
+    {
+      "style": "normal",
+      "text": "Use our own feasibility coefficients. A 30 kWp rooftop system costs about 700 USD per kWp, roughly 987,000 TL at 47 TL to the dollar. On a south facing roof yielding 1600 kWh per kWp it produces 48,000 kWh a year; at 5 TL per kWh that is 240,000 TL, so simple payback lands near four years. Figures exclude VAT."
+    },
+    {
+      "style": "normal",
+      "text": "Now drop the equipment difference into that table. One percent of annual yield is 480 kWh here, about 2,400 TL a year. Temperature behaviour, shade management and cable losses look small separately, but together they reach a few percent every year for 25 years."
+    },
+    {
+      "style": "normal",
+      "text": "An equipment list five percent more expensive means roughly 49,000 TL of extra investment. If it buys two percent more output, that returns 4,800 TL a year and pays for itself within a decade while lowering fault risk. East-west and south-north layouts yield 1350 kWh per kWp."
+    },
+    {
+      "style": "normal",
+      "text": "Under net metering in Türkiye, daytime exports are netted against what you later import from your distribution company, so almost every kilowatt hour produced carries value. A few percent of lost yield is not a rounding error."
+    },
+    {
+      "style": "h2",
+      "text": "What to ask for when comparing quotations"
+    },
+    {
+      "style": "normal",
+      "text": "Two quotations can only be compared if both are written to the same detail. The equipment list should name make and model; \"or equivalent\" is a right to change the list after you sign."
+    },
+    {
+      "style": "normal",
+      "text": "Ask for six documents: panel and inverter datasheets, the structural calculation, the roof fixing and sealing detail, the single line diagram, cable sizing with voltage drop, and a warranty table. If a yield figure is promised, ask which simulation produced it."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Do expensive panels always produce more?"
+    },
+    {
+      "style": "normal",
+      "text": "No. Price reflects technology, warranty length, brand position and supply terms together. On a given roof the useful comparison is temperature coefficient, degradation curve and warranty conditions read side by side. Convert the price gap into an annual yield gap and see whether it pays back."
+    },
+    {
+      "style": "h3",
+      "text": "Do manufacturer rankings guarantee quality?"
+    },
+    {
+      "style": "normal",
+      "text": "They do not. Such lists mostly reflect scale and bankability rather than field performance, though they work as a first filter for supply continuity. The real questions stay the same: what do the warranty terms say, and who do you approach in Türkiye?"
+    },
+    {
+      "style": "h3",
+      "text": "Can I enlarge the inverter later?"
+    },
+    {
+      "style": "normal",
+      "text": "Adding panels usually runs into the inverter's DC input limits, since string voltage and current must stay inside its window, and your connection capacity caps installed power anyway. If expansion is likely, say so at the design stage."
+    },
+    {
+      "style": "normal",
+      "text": "We select equipment against the roof, not against a catalogue. During the survey we measure orientation, tilt, shading and load capacity, then present the system design and equipment list alongside your consumption profile. Every item in our quotations is named by make and model. The survey and preliminary feasibility study are free; contact the MİNADA team."
+    }
+  ]
+}

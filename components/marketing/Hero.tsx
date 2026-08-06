@@ -10,19 +10,22 @@ export async function Hero() {
   const t = await getTranslations("Hero");
   const tc = await getTranslations("Common");
 
-  // "Sinematik Panorama" (Hero Keşif 1d): tek aydınlık kare, soldan navy geçişli
+  // "Sinematik Panorama" (Hero Keşif 1d): tek ışıklı kare, soldan navy geçişli
   // scrim, sol blokta başlık + alt metin + CTA'lar, sağ altta hesaplayıcı kartı.
-  // Eski alacakaranlık/ışıklı crossfade ikilisi kalktı. Buradaki görsel, Prompt A
-  // ile üretilecek nihai aydınlık render gelene kadarki yer tutucu.
+  // Eski alacakaranlık/ışıklı crossfade ikilisi kalktı.
+  // NOT: tasarım dosyasındaki hero-settled/hero-mobile.webp, aşağıdaki iki
+  // dosyanın 1200px'e küçültülmüş kopyalarıydı (algısal fark 1/256) ve tam
+  // ekranda yumuşak görünüyordu. Kadraj birebir aynı olduğu için yüksek
+  // çözünürlüklü orijinallere dönüldü; ürün noktalarının yüzdeleri geçerli.
   const photoCommon = { sizes: "100vw", fill: true } as const;
   const { props: photo } = getImageProps({
     ...photoCommon,
     alt: t("imageAlt"),
-    src: "/images/v2/hero-settled.webp",
+    src: "/images/v2/hero-solar.jpeg",
   });
   const {
     props: { srcSet: mobileSrcSet },
-  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-mobile.webp" });
+  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-solar-mobile.jpeg" });
 
   return (
     <section className={styles.hero} data-hero="">

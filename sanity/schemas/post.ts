@@ -15,6 +15,13 @@ export const post = defineType({
       validation: (r) => r.required(),
     }),
     languageField,
+    defineField({
+      name: "altSlug",
+      title: "Diğer dildeki slug",
+      type: "string",
+      description:
+        "Bu yazının diğer dildeki karşılığının slug'ı. hreflang etiketleri buradan üretilir.",
+    }),
     defineField({ name: "excerpt", title: "Özet", type: "text", rows: 3 }),
     defineField({ name: "coverImage", title: "Kapak görseli", type: "image", options: { hotspot: true } }),
     defineField({ name: "category", title: "Kategori", type: "reference", to: [{ type: "category" }] }),
@@ -35,6 +42,13 @@ export const post = defineType({
       fields: [
         defineField({ name: "metaTitle", title: "Meta başlık", type: "string" }),
         defineField({ name: "metaDescription", title: "Meta açıklama", type: "text", rows: 2 }),
+        defineField({
+          name: "keywords",
+          title: "Anahtar kelimeler",
+          type: "array",
+          of: [{ type: "string" }],
+          options: { layout: "tags" },
+        }),
         defineField({ name: "ogImage", title: "OG görseli", type: "image" }),
       ],
     }),

@@ -1,0 +1,187 @@
+{
+  "language": "en",
+  "slug": "solar-plus-storage-feasibility-turkey",
+  "altSlug": "lisansli-depolamali-ges-fizibilite",
+  "title": "Solar plus storage feasibility: modelling a licensed plant",
+  "metaTitle": "Solar plus storage feasibility for licensed plants",
+  "metaDescription": "Solar plus storage feasibility explained: revenue streams, hourly generation modelling, battery degradation, the full cost table and sensitivity testing.",
+  "excerpt": "A storage feasibility study asks not only how much a plant generates but when that energy is sold. Revenue streams, costs, degradation and sensitivity testing.",
+  "keywords": [
+    "solar plus storage feasibility",
+    "battery energy storage feasibility",
+    "utility scale solar Turkey",
+    "BESS financial model",
+    "battery degradation assumptions",
+    "grid connection curtailment",
+    "solar plant sensitivity analysis"
+  ],
+  "category": "Guide",
+  "coverImage": "/images/v2/how/engineering.jpg",
+  "publishedAt": "2026-07-16",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Solar plus storage feasibility asks not only how much energy a site produces, but when that energy reaches the market. A credible study combines an hourly generation model, a defined dispatch strategy, a full cost table and a sensitivity run on the assumptions that matter."
+    },
+    {
+      "style": "normal",
+      "text": "This is not rooftop sizing scaled up. In Turkey, rooftop projects sit under the unlicensed regime, where a kilowatt hour is worth the retail tariff it offsets through net metering. A licensed plant sells into a market at a price that moves through the day, and storage turns that movement into value."
+    },
+    {
+      "style": "h2",
+      "text": "What makes solar plus storage feasibility different?"
+    },
+    {
+      "style": "normal",
+      "text": "A conventional plant has one chain: irradiance, generation, sale. Most of the uncertainty sits on the generation side, and long term irradiance data is remarkably stable across years. Storage opens a second chain, which is the timing of the sale."
+    },
+    {
+      "style": "normal",
+      "text": "That second chain is the volatile one: timing value follows price movement, dispatch strategy and whatever capacity the battery has left. Two identical plants on the same site can return very different numbers, and the difference is dispatch, not hardware."
+    },
+    {
+      "style": "h2",
+      "text": "Where does the battery actually earn money?"
+    },
+    {
+      "style": "normal",
+      "text": "Energy sales remain the backbone of revenue. The battery adds three distinct mechanisms on top, and each belongs on its own line, because their risk profiles differ."
+    },
+    {
+      "style": "h3",
+      "text": "Shifting energy through the day"
+    },
+    {
+      "style": "normal",
+      "text": "Energy stored while midday prices are low is released into the evening peak, and the gain is that spread minus round trip losses. What matters is how often a meaningful spread appears and how wide it is. A single average assumption inflates this line more easily than any other input."
+    },
+    {
+      "style": "h3",
+      "text": "Recovering curtailed energy"
+    },
+    {
+      "style": "normal",
+      "text": "The power a plant can export is capped by its connection agreement. When midday output exceeds the cap, the excess is curtailed or stored. Recovering it is often the sturdiest line in the model, because it rests on your own generation curve rather than a price forecast. In reverse, storage lets a larger array sit behind the same cap."
+    },
+    {
+      "style": "h3",
+      "text": "Balancing and flexibility"
+    },
+    {
+      "style": "normal",
+      "text": "The third line is reducing the cost of the gap between forecast and actual output, and offering flexibility to the system operator. Rules here are set by regulation and revised over time, so treat this as upside to confirm, not base case revenue."
+    },
+    {
+      "style": "h2",
+      "text": "The hourly generation model underneath everything"
+    },
+    {
+      "style": "normal",
+      "text": "Beneath the financial model sits an hourly generation series. Irradiance data, array layout, tilt and orientation, temperature losses, cable and inverter losses and a soiling allowance combine into an estimate for each of the 8,760 hours in a year."
+    },
+    {
+      "style": "normal",
+      "text": "Specific yield gives the order of magnitude. The figures we work with put a south facing array at 1,600 kWh per kWp per year, and an east to west or south to north layout at 1,350 kWh. Orientation changes more than the total: east to west gives a lower, broader peak that reduces clipping."
+    },
+    {
+      "style": "h2",
+      "text": "Cost lines that get left out"
+    },
+    {
+      "style": "normal",
+      "text": "Capital cost does not end with modules, inverters, mounting and battery racks. A storage site also carries the power conversion system, energy management software, thermal management, fire detection and suppression, medium voltage switchgear, transformer works, the connection line and civil works."
+    },
+    {
+      "style": "normal",
+      "text": "Operating cost has a similar list: maintenance, insurance, land lease, monitoring, spares, and the auxiliary consumption of the battery's own thermal management. Auxiliary load looks trivial in year one and is visible across a twenty year model."
+    },
+    {
+      "style": "normal",
+      "text": "Then there is replacement. Modules and mounting tend to carry the full life of the plant; batteries and power electronics may not. A model with no mid life replacement assumption is incomplete, not optimistic."
+    },
+    {
+      "style": "normal",
+      "text": "On unit cost, honesty beats precision. The 700 USD per kWp reference we use at rooftop scale, at 47 TL and excluding VAT, does not transfer to a licensed site. Ground conditions, distance to the connection point and procurement volume produce a different figure every time."
+    },
+    {
+      "style": "h2",
+      "text": "Battery degradation is a revenue assumption, not a footnote"
+    },
+    {
+      "style": "normal",
+      "text": "This is where storage feasibility goes wrong most often. A battery does not hold its nameplate capacity for twenty years. It fades along two paths: calendar ageing, which happens with time alone, and cycle ageing, which happens with every charge and discharge."
+    },
+    {
+      "style": "normal",
+      "text": "Both are tied to how you run the asset. Two cycles a day earn more than one and consume capacity faster; deep discharge wears cells harder than shallow. Revenue and life assumptions therefore belong on the same page. Raise the cycle count on one side, keep it low on the other, and the payback means nothing."
+    },
+    {
+      "style": "blockquote",
+      "text": "A storage feasibility study is not asking how many kilowatt hours the battery holds. It is asking how many times a year that capacity fills and empties, and at what spread."
+    },
+    {
+      "style": "normal",
+      "text": "Here the warranty text matters as much as the datasheet. Up to how many cycles, and under which conditions, does the manufacturer guarantee usable capacity? A strategy that steps outside those limits raises revenue on paper and puts the warranty in dispute."
+    },
+    {
+      "style": "h2",
+      "text": "Connection, permitting and land: the quiet variables"
+    },
+    {
+      "style": "normal",
+      "text": "On a licensed project the outcome is usually decided by process rather than equipment. Whether connection capacity exists, how far the connection point sits, the land status and the permitting calendar all land either in the cost column or in the date revenue begins."
+    },
+    {
+      "style": "normal",
+      "text": "A year of delay does not only remove a year of revenue; financing costs keep accruing through a year without income. The schedule assumption is as fragile as the price assumption, and questioned far less often."
+    },
+    {
+      "style": "h2",
+      "text": "Building the financial model and testing it"
+    },
+    {
+      "style": "normal",
+      "text": "Once the technical model and the cost table meet, you have a cash flow across the asset life, and from it come net present value, internal rate of return and levelised cost of energy. Simple payback communicates well but decides badly: it sees neither the time value of money nor the replacement."
+    },
+    {
+      "style": "normal",
+      "text": "The real work is the sensitivity run. Five inputs should move one at a time: energy price and intraday spread, exchange rate, capital cost, capacity fade and commissioning date. If a project only stands up in the optimistic case, it does not stand up. Incentives, defined per component and revised periodically, get the same treatment."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "How long does a storage feasibility study take?"
+    },
+    {
+      "style": "normal",
+      "text": "With site and connection data in hand, the technical model and a first financial table take a few weeks. What stretches the timeline is inputs, not calculation: confirmed connection capacity, land status and settled sales assumptions. Waiting costs less than deciding from the wrong table."
+    },
+    {
+      "style": "h3",
+      "text": "How is battery capacity chosen?"
+    },
+    {
+      "style": "normal",
+      "text": "Capacity is sized against the generation curve, not as a fixed ratio of plant output. The energy that would exceed the connection limit, the target discharge duration and the intraday spread are weighed together, and several capacities run through the same model to find where marginal return falls away."
+    },
+    {
+      "style": "normal",
+      "text": "Package prices are clearer at small scale. Our residential and light commercial references are 1,750 USD for 5 kWh, 2,750 USD for 10 kWh and 3,500 USD for 15 kWh, excluding VAT. Licensed procurement does not scale from these figures."
+    },
+    {
+      "style": "h3",
+      "text": "How do I stress test a feasibility report?"
+    },
+    {
+      "style": "normal",
+      "text": "Three questions usually do it. Which irradiance dataset and loss assumptions sit behind the generation estimate? How many cycles a year does the battery run, and how much capacity remains at end of life? Where does the price assumption come from, and over what range was it tested?"
+    },
+    {
+      "style": "normal",
+      "text": "At MİNADA we bring the hourly generation model, the dispatch scenarios and the sensitivity run into a single table, with the source of every assumption written into the report. To review the connection and land position of your site together, get in touch for a free site survey."
+    }
+  ]
+}

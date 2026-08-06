@@ -36,16 +36,16 @@
   background:
     linear-gradient(
       100deg,
-      rgba(8, 26, 48, 0.85) 0%,
-      rgba(8, 26, 48, 0.5) 34%,
-      rgba(8, 26, 48, 0.05) 62%
+      rgba(8, 26, 48, 0.62) 0%,
+      rgba(8, 26, 48, 0.34) 34%,
+      rgba(8, 26, 48, 0) 60%
     ),
     linear-gradient(
       180deg,
-      rgba(8, 26, 48, 0.18) 0%,
-      transparent 30%,
-      transparent 68%,
-      rgba(8, 26, 48, 0.5) 100%
+      rgba(8, 26, 48, 0.12) 0%,
+      transparent 28%,
+      transparent 70%,
+      rgba(8, 26, 48, 0.38) 100%
     );
 }
 
@@ -152,9 +152,13 @@
   max-width: 46ch;
   font-size: 1.08rem;
   line-height: 1.65;
-  /* on-dark-2 fotoğrafın üstünde eriyor; 1d'nin kendi tonu bir kademe açık. */
-  color: #c9d5e6;
-  text-shadow: 0 2px 18px rgba(8, 26, 48, 0.5);
+  /* on-dark-2 fotoğrafın üstünde eriyor; 1d'nin kendi tonu bir kademe açık.
+     Scrim hafifletildiği için okunurluğu maske değil, metnin kendi halesi
+     taşıyor: dar+koyu bir kat cephedeki aydınlık lekelerden ayırıyor. */
+  color: #dbe4f0;
+  text-shadow:
+    0 1px 3px rgba(8, 26, 48, 0.85),
+    0 2px 22px rgba(8, 26, 48, 0.7);
 }
 
 .subMobile {
@@ -304,12 +308,12 @@
   .scrim {
     background: linear-gradient(
       180deg,
-      rgba(8, 26, 48, 0.55) 0%,
-      rgba(8, 26, 48, 0.08) 20%,
-      rgba(8, 26, 48, 0) 32%,
-      rgba(8, 26, 48, 0.4) 56%,
-      rgba(8, 26, 48, 0.9) 80%,
-      #081a30 100%
+      rgba(8, 26, 48, 0.42) 0%,
+      rgba(8, 26, 48, 0.06) 20%,
+      rgba(8, 26, 48, 0) 34%,
+      rgba(8, 26, 48, 0.3) 58%,
+      rgba(8, 26, 48, 0.78) 80%,
+      rgba(8, 26, 48, 0.94) 100%
     );
   }
 

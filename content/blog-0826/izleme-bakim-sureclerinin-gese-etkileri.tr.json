@@ -1,0 +1,259 @@
+{
+  "language": "tr",
+  "slug": "izleme-bakim-sureclerinin-gese-etkileri",
+  "altSlug": "solar-monitoring-and-maintenance-impact",
+  "title": "GES izleme ve planlı bakım: üretim kaybı nasıl önlenir?",
+  "metaTitle": "GES izleme ve planlı bakım ile üretim kaybını önleyin",
+  "metaDescription": "GES izleme ve planlı bakım üretim kaybını nasıl azaltır? String bazlı izleme, SCADA, alarm kuralları, plansız duruş maliyeti ve işletme sözleşmesi ölçütleri.",
+  "excerpt": "İzlenmeyen santral sessizce kaybettirir. String bazlı izleme, doğru kurulmuş alarm kuralları ve planlı bakımın üretime somut katkısını rakamla anlatıyoruz.",
+  "keywords": [
+    "ges izleme",
+    "scada",
+    "planlı bakım",
+    "üretim kaybı",
+    "performans oranı",
+    "string bazlı izleme",
+    "ges işletme sözleşmesi"
+  ],
+  "category": "Bakım",
+  "coverImage": "/images/v2/how/om.jpg",
+  "publishedAt": "2026-08-06",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "GES izleme, santralin ürettiği enerjiyi sürekli ölçüp beklenenle karşılaştırma işidir; planlı bakım ise bu ölçümün gösterdiği sapmaları kalıcı hale gelmeden kapatır. İkisi birlikte yıllık üretim kaybını belirgin şekilde azaltır, çünkü kayıpların büyük kısmı tek seferde değil, fark edilmeden birikerek oluşur. Fark ilk yıl değil, beşinci yılda görünür."
+    },
+    {
+      "style": "h2",
+      "text": "GES izleme nedir ve neyi görünür kılar?"
+    },
+    {
+      "style": "normal",
+      "text": "Bir santralde yalnızca sayaç okumak, hastanın sadece ateşini ölçmeye benzer. Şebekeye verilen toplam enerji size santralin çalıştığını söyler; nerede aksadığını söylemez. İzleme altyapısı ölçümü inverter, string ve gerektiğinde panel grubu seviyesine indirerek bu boşluğu kapatır."
+    },
+    {
+      "style": "normal",
+      "text": "İyi kurulmuş bir izleme üç veriyi aynı anda toplar: üretim, ışınım ve sıcaklık. Üretimi tek başına görmek yeterli değildir, çünkü bulutlu bir günün düşük üretimi normaldir. Anlamlı olan, o günün ışınımına göre beklenen üretim ile gerçekleşen arasındaki farktır."
+    },
+    {
+      "style": "h3",
+      "text": "Performans oranı (PR) neden temel göstergedir?"
+    },
+    {
+      "style": "normal",
+      "text": "Performans oranı, gerçekleşen üretimin ışınıma göre hesaplanan teorik üretime bölümüdür. Kirlilik, gölgelenme, kablo kaybı, inverter verimi ve sıcaklık etkisi bu tek sayıda toplanır. PR düşerse sebebini aramaya başlarsınız; PR yerinde duruyorsa mevsimsel üretim düşüşü sizi telaşlandırmaz."
+    },
+    {
+      "style": "normal",
+      "text": "Pratik faydası şudur: PR, mevsimden bağımsız bir kıyas ölçüsü verir. Ocak ayının üretimini haziranla kıyaslayamazsınız, ama ocak PR'ını haziran PR'ıyla kıyaslayabilirsiniz."
+    },
+    {
+      "style": "h2",
+      "text": "String bazlı izleme neden fark yaratır?"
+    },
+    {
+      "style": "normal",
+      "text": "Bir çatı santralinde paneller birkaç string halinde invertere bağlanır. Sadece inverter çıkışını ölçerseniz, bir string tamamen düştüğünde kaybettiğiniz oran o stringin toplam içindeki payı kadardır: sekiz stringli bir sistemde yaklaşık yüzde 12. Bu düşüş geçen bir bulutla karışacak kadar küçüktür ve haftalarca gözden kaçabilir. Buna karşılık iki ya da üç stringli küçük bir sistemde aynı arıza üretimin üçte birini götürür ve kendini daha çabuk belli eder."
+    },
+    {
+      "style": "normal",
+      "text": "String bazlı izlemede her stringin akımı ayrı okunur. Kardeş stringler aynı çatıda, aynı yönde ve aynı ışınım altında olduğu için birbirinin doğal referansıdır. Biri diğerlerinden kalıcı olarak saparsa sebep dar bir listeye iner: gölge, kirlenme, gevşemiş konnektör, arızalı bypass diyotu ya da atmış sigorta."
+    },
+    {
+      "style": "normal",
+      "text": "Bu ayrım sahaya çıkan ekibin işini de değiştirir. String numarası ve sapmanın günün hangi saatinde başladığı elinizdeyken, saatlerce arıza aramak yerine doğrudan doğru noktaya gidilir. Sabah saatlerinde başlayıp öğlen kapanan bir sapma gölgeyi, gün boyu süren sabit bir sapma ise donanım arızasını işaret eder."
+    },
+    {
+      "style": "h2",
+      "text": "SCADA mı, inverter izleme portalı mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Küçük ve orta ölçekli çatı santrallerinde inverter üreticisinin bulut portalı ihtiyacın çoğunu karşılar: üretim eğrisi, string akımları, hata kodları ve temel alarmlar. Ticari ölçekte ise SCADA devreye girer."
+    },
+    {
+      "style": "normal",
+      "text": "SCADA, sahadaki bütün cihazları tek bir veri modelinde toplayan denetim ve veri toplama katmanıdır: inverterler, sayaç, trafo, hava istasyonu, yangın ve güvenlik sistemleri aynı ekranda buluşur. Farkı üç yerde hissedersiniz. Veri markadan bağımsız ve sizin elinizde durur, alarm mantığını kendi işletme düzeninize göre kurarsınız, şebeke işletmecisinin talep ettiği güç kısıtlama komutlarını uygulayabilirsiniz."
+    },
+    {
+      "style": "normal",
+      "text": "Seçim bir ölçek meselesidir, prestij meselesi değil. Çatıda 50 kWp'lik bir sistem için SCADA gereksiz bir yatırımdır; çok inverterli ve şebeke tarafında yükümlülüğü olan sahalarda ise portal yetersiz kalır."
+    },
+    {
+      "style": "h2",
+      "text": "Alarm kuralları nasıl kurulmalı?"
+    },
+    {
+      "style": "normal",
+      "text": "İzleme altyapısı veriyi toplar; işi asıl yapan alarm kurallarıdır. Kötü kurulmuş alarmların iki tipik hatası vardır: ya hiç ötmez, ya da o kadar çok öter ki bir süre sonra kimse bakmaz."
+    },
+    {
+      "style": "h3",
+      "text": "Eşik alarmı"
+    },
+    {
+      "style": "normal",
+      "text": "En basit kural, üretim gün içinde beklenen değerin altına düştüğünde haber vermektir. Işınım verisine bağlanmadan kurulursa her bulutlu günde yanlış alarm üretir. Bu yüzden eşik her zaman ölçülen ışınıma göre hesaplanmalıdır."
+    },
+    {
+      "style": "h3",
+      "text": "Karşılaştırmalı alarm"
+    },
+    {
+      "style": "normal",
+      "text": "Daha güvenilir olan, stringleri birbiriyle kıyaslayan kuraldır. Bir string kardeşlerinin ortalamasından belirli bir oranda ve belirli bir süre boyunca saparsa alarm üretilir. Bulut bütün stringleri aynı anda etkilediği için bu kural hava koşullarından yanlış tetiklenmez."
+    },
+    {
+      "style": "h3",
+      "text": "Durum ve iletişim alarmı"
+    },
+    {
+      "style": "normal",
+      "text": "İnverter hata kodu, izolasyon arızası, DC ark koruması ve veri iletişiminin kesilmesi ayrı alarm sınıflarıdır. Veri kesintisi alarmı özellikle önemlidir: veri gelmiyorsa santral duruyor olabilir ve sessizlik, izlemede en tehlikeli durumdur."
+    },
+    {
+      "style": "normal",
+      "text": "Her alarmın bir sahibi ve bir hedef müdahale süresi olmalıdır. Sahibi tanımlanmamış alarm, kayıt üretir; iş üretmez."
+    },
+    {
+      "style": "h2",
+      "text": "Planlı bakım neyi kapsar, ne kazandırır?"
+    },
+    {
+      "style": "h3",
+      "text": "Temizlik"
+    },
+    {
+      "style": "normal",
+      "text": "Toz, polen, kuş pisliği ve tarımsal partikül panel yüzeyinde ışığı keser. Kaybın büyüklüğü bölgeye ve mevsime göre çok değişir; bu yüzden temizlik takvimi sabit bir kural değil, izleme verisinden çıkarılan bir karardır. PR her yağmurdan sonra belirgin şekilde sıçrıyorsa, temizlik aralığınız uzun demektir."
+    },
+    {
+      "style": "h3",
+      "text": "Termal tarama"
+    },
+    {
+      "style": "normal",
+      "text": "Termal kamera, gözle görünmeyen sıcak noktaları, arızalı bypass diyotlarını ve gevşemiş bağlantıları ortaya çıkarır. Pano içi taramada ısınan bir klemens, henüz arıza değilken yakalanır. Bu, yangın riskini ve plansız duruşu aynı anda düşüren en verimli kontrollerden biridir."
+    },
+    {
+      "style": "h3",
+      "text": "Elektriksel ve mekanik kontroller"
+    },
+    {
+      "style": "normal",
+      "text": "Bağlantı torkları, izolasyon direnci, topraklama sürekliliği, string I-V eğrisi ölçümü ve koruma cihazlarının testi periyodik olarak tekrarlanır. Mekanik tarafta konstrüksiyon bağlantıları, panel kelepçeleri ve çatı sızdırmazlık detayları kontrol edilir. Çatı santrallerinde su yalıtımı kontrolü, ödenen en ucuz sigorta primidir."
+    },
+    {
+      "style": "normal",
+      "text": "Planlı bakımın ikinci getirisi takvimdir. İşi siz planladığınızda duruşu üretimin en düşük olduğu güne ve saate kaydırırsınız; arıza planladığında ise duruş, çoğu zaman üretimin en yüksek olduğu döneme denk gelir."
+    },
+    {
+      "style": "h2",
+      "text": "Plansız duruşun üretim kaybı maliyeti ne kadar?"
+    },
+    {
+      "style": "normal",
+      "text": "Plansız duruşun faturası iki kalemden oluşur: onarım bedeli ve durduğu sürede üretilmeyen enerji. İkincisi genellikle daha büyüktür ve kimse fatura kesmediği için görünmez."
+    },
+    {
+      "style": "normal",
+      "text": "Kaba bir hesap yapalım. Kendi fizibilite katsayılarımızla, güney yönlü 250 kWp'lik bir çatı santrali yılda yaklaşık 400.000 kWh üretir (250 x 1.600 kWh/kWp). Elektriğin 5 TL/kWh olduğu bir tarifede bu, yılda 2.000.000 TL'lik enerji değeri demektir. Günlük ortalamaya vurulduğunda yaklaşık 1.100 kWh, yani günde yaklaşık 5.500 TL."
+    },
+    {
+      "style": "normal",
+      "text": "Bu santralde beş inverterden biri arızalanır ve fark edilmesi 12 gün sürerse, üretilmeyen enerji yaklaşık 2.600 kWh, yani 13.000 TL civarındadır. Aynı arıza iki gün içinde yakalanırsa kayıp yaklaşık 2.200 TL'ye iner. Aradaki farkı yaratan onarımın kendisi değil, teşhis süresidir."
+    },
+    {
+      "style": "normal",
+      "text": "Bu hesap ortalama bir gün üzerinden yapılmıştır; yaz aylarında kayıp daha yüksek, kışın daha düşük olur. Yine de büyüklük mertebesini doğru verir ve izleme yatırımının neden hızla kendini ödediğini açıklar."
+    },
+    {
+      "style": "blockquote",
+      "text": "İyi bir işletme sözleşmesinin ölçüsü şudur: santralin dün ne ürettiğini bilen bir insan var mı, ve sapma olduğunda kim, kaç saat içinde sahada?"
+    },
+    {
+      "style": "h2",
+      "text": "İyi bir işletme sözleşmesi neyi yazar?"
+    },
+    {
+      "style": "h3",
+      "text": "Müdahale süresi"
+    },
+    {
+      "style": "normal",
+      "text": "Sözleşmede iki süre ayrı ayrı yazılmalıdır: alarmın değerlendirilme süresi ve sahaya çıkış süresi. En kısa sürede ifadesi ölçülemez, dolayısıyla taahhüt sayılmaz. Arızanın kritikliğine göre kademeli süre tanımlamak en pratik yöntemdir; santralin tamamını durduran bir arıza ile tek stringin sapması aynı aciliyette değildir."
+    },
+    {
+      "style": "h3",
+      "text": "Kapsam ve kapsam dışı"
+    },
+    {
+      "style": "normal",
+      "text": "Yılda kaç periyodik bakım yapılacağı, temizliğin dahil olup olmadığı, termal taramanın sıklığı, yedek parça stoğunun kimde duracağı ve garanti takibinin kimde olduğu tek tek yazılmalıdır. Uygulamada en çok tartışma yaratan kalem, yedek parça bedelinin kime ait olduğudur; bunu sözleşme aşamasında netleştirmek arıza anındaki pazarlığı ortadan kaldırır."
+    },
+    {
+      "style": "h3",
+      "text": "Raporlama ve veri sahipliği"
+    },
+    {
+      "style": "normal",
+      "text": "Aylık rapor üretimi, PR'ı, alarm listesini, kapatılan işleri ve açık kalan riskleri içermelidir. Verinin sahibi santral sahibidir: sözleşme sona erdiğinde geçmiş üretim verisini ham haliyle alabilmelisiniz. Bu kayıt hem garanti taleplerinde hem de santralin devrinde doğrudan değer taşır."
+    },
+    {
+      "style": "h3",
+      "text": "Performans taahhüdü"
+    },
+    {
+      "style": "normal",
+      "text": "Bazı sözleşmeler kullanılabilirlik taahhüdü içerir: santralin ışınımlı saatlerde çalışır durumda olduğu sürenin oranı. Bu ölçü, PR taahhüdünden daha adildir; çünkü hava koşullarını değil, işletmecinin müdahale performansını ölçer."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "GES izleme sistemi ne kadar ek maliyet getirir?"
+    },
+    {
+      "style": "normal",
+      "text": "İnverterlerin çoğu bulut izleme özelliğiyle birlikte gelir; ek maliyet genellikle kalıcı internet bağlantısı, veri kaydedici ve string bazlı ölçüm donanımıyla sınırlıdır. Bu kalemin toplam yatırım içindeki payı küçüktür."
+    },
+    {
+      "style": "normal",
+      "text": "Kıyas ölçüsü şu olmalı: fark edilmeyen tek bir inverter arızasının iki haftalık üretim kaybı, çoğu santralde izleme altyapısının bedelini aşar."
+    },
+    {
+      "style": "h3",
+      "text": "Panelleri ne sıklıkla temizlemek gerekir?"
+    },
+    {
+      "style": "normal",
+      "text": "Herkes için geçerli sabit bir aralık vermek doğru olmaz. Tozlu, tarımsal veya sanayi bölgelerinde daha sık, düzenli yağış alan yerlerde daha seyrek gerekir."
+    },
+    {
+      "style": "normal",
+      "text": "Doğru yöntem, PR eğrisini izleyip temizlik sonrası sıçramanın büyüklüğüne bakmaktır. Sıçrama küçükse aralığı uzatır, büyükse kısaltırsınız. Böylece takvim tahminle değil kendi santralinizin verisiyle kurulur."
+    },
+    {
+      "style": "h3",
+      "text": "İzleme yoksa bir arızayı ne zaman fark ederim?"
+    },
+    {
+      "style": "normal",
+      "text": "Genellikle faturada, yani bir ile iki ay sonra. Bu da tüketiminizin sabit kaldığı durumda geçerlidir. Tüketim mevsimsel dalgalanıyorsa üretim kaybı fatura içinde gizlenir ve aylarca fark edilmeyebilir."
+    },
+    {
+      "style": "h3",
+      "text": "Mevcut santralimin izleme ve bakımını devralabilir misiniz?"
+    },
+    {
+      "style": "normal",
+      "text": "Evet. Kurulumu biz yapmamış olsak da mevcut tesisleri işletmeye alıyoruz. Süreç bir işletme denetimiyle başlar: mevcut izleme altyapısı, alarm kuralları, elektriksel ölçümler, bakım geçmişi ve garanti dosyası gözden geçirilir; eksikler önceliklendirilmiş bir listeyle raporlanır."
+    },
+    {
+      "style": "normal",
+      "text": "Santralinizin ne ürettiğini ve sessizce ne kaybettiğini konuşmak isterseniz, ücretsiz keşif için bize yazın. Mevcut üretim verinize ve sahadaki duruma birlikte bakar, izleme altyapısının ve bakım takviminin bugün nerede durduğunu kalem kalem çıkarırız."
+    }
+  ]
+}

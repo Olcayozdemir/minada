@@ -7,7 +7,8 @@ import { Link } from "@/i18n/navigation";
 import { getPost, getPostSlugs, getPosts } from "@/sanity/queries";
 import { coverSrc } from "@/sanity/image";
 import { PortableBody } from "@/components/marketing/PortableBody";
-import { SITE_URL } from "@/lib/seo";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { SITE_URL, articleAlternates, articleLd, breadcrumbLd } from "@/lib/seo";
 import styles from "./article.module.scss";
 
 export const revalidate = 60;
@@ -26,11 +27,29 @@ export async function generateMetadata({
   const post = await getPost(slug, locale);
   if (!post) return {};
   const url = `${SITE_URL}/${locale}/blog/${slug}`;
+  const description = post.seo?.metaDescription || post.excerpt;
+  // Absolute OG image: the article's own cover beats the site-wide default.
+  const ogImage = post.coverImage ? coverSrc(post.coverImage, 1200, 630) : undefined;
   return {
     title: post.seo?.metaTitle || post.title,
-    description: post.seo?.metaDescription || post.excerpt,
-    alternates: { canonical: url },
-    openGraph: { url, type: "article" },
+    description,
+    keywords: post.seo?.keywords,
+    alternates: articleAlternates(locale, slug, post.altSlug),
+    openGraph: {
+      url,
+      type: "article",
+      title: post.seo?.metaTitle || post.title,
+      description,
+      publishedTime: post.publishedAt,
+      authors: post.author?.name ? [post.author.name] : undefined,
+      images: ogImage ? [{ url: ogImage, width: 1200, height: 630 }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seo?.metaTitle || post.title,
+      description,
+      images: ogImage ? [ogImage] : undefined,
+    },
   };
 }
 
@@ -56,6 +75,25 @@ export default async function PostPage({
 
   return (
     <Section tone="light">
+      <JsonLd
+        data={articleLd({
+          locale,
+          slug,
+          title: post.title,
+          description: post.seo?.metaDescription || post.excerpt,
+          image: post.coverImage ? coverSrc(post.coverImage, 1200, 630) : undefined,
+          publishedAt: post.publishedAt,
+          authorName: post.author?.name,
+          keywords: post.seo?.keywords,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "MİNADA", url: `${SITE_URL}/${locale}` },
+          { name: t("eyebrow"), url: `${SITE_URL}/${locale}/blog` },
+          { name: post.title, url: `${SITE_URL}/${locale}/blog/${slug}` },
+        ])}
+      />
       <article>
         <header className={styles.header}>
           <Link href="/blog" className={styles.back}>

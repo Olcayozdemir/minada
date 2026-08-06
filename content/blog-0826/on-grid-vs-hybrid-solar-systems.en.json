@@ -1,0 +1,195 @@
+{
+  "language": "en",
+  "slug": "on-grid-vs-hybrid-solar-systems",
+  "altSlug": "on-grid-hibrit-fark",
+  "title": "On-grid vs hybrid solar: is a battery worth the cost?",
+  "metaTitle": "On-grid vs hybrid solar: which one fits you?",
+  "metaDescription": "On-grid vs hybrid solar explained: how each system works, what a battery adds to the price, what happens in a blackout, and which profile suits which.",
+  "excerpt": "How grid-tied and battery-backed solar systems actually differ: operating logic, cost, blackout behaviour, and the consumption profile each one suits.",
+  "keywords": [
+    "on-grid vs hybrid solar",
+    "battery backup solar system",
+    "hybrid solar inverter",
+    "grid-tied solar Turkey",
+    "solar battery cost",
+    "off-grid vs hybrid",
+    "net metering Turkey"
+  ],
+  "category": "Technology",
+  "coverImage": "/images/v2/hero-solar.jpeg",
+  "publishedAt": "2026-07-07",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "On-grid vs hybrid solar comes down to one question: where does surplus production go? An on-grid system exports it to the grid and nets it off your bill. A hybrid system stores it in a battery, returns it after sunset, and keeps running during a blackout."
+    },
+    {
+      "style": "h2",
+      "text": "Where on-grid and hybrid solar systems diverge"
+    },
+    {
+      "style": "normal",
+      "text": "On the roof, the two look identical: same modules, same mounting structure, same DC cabling. The split happens the moment production exceeds consumption, because that surplus has exactly two possible destinations, the grid or a battery. On-grid picks the first; hybrid fills the second before exporting what is left."
+    },
+    {
+      "style": "normal",
+      "text": "Structurally that means two additions on the hybrid side: an inverter built to manage a battery, and an islanding arrangement so the system can run alone."
+    },
+    {
+      "style": "h2",
+      "text": "How an on-grid system works"
+    },
+    {
+      "style": "normal",
+      "text": "In an on-grid installation the grid behaves like your storage. You export at midday, import in the evening, and the two are settled under net metering rules, in Türkiye through your distribution company and a bidirectional meter. No round-trip loss, no battery to maintain, lowest upfront cost of any configuration."
+    },
+    {
+      "style": "normal",
+      "text": "The weakness sits in the same dependency. When the grid goes down, the inverter shuts itself off. This is not a fault: pushing power onto a dead line endangers the crews working on it, so anti-islanding protection is mandatory. In full sun, with a blackout on the street, an on-grid house has no power."
+    },
+    {
+      "style": "normal",
+      "text": "The second exposure is regulatory. How often netting is settled, and what surplus exports are worth, drive the return on an on-grid investment. Those rules are revised periodically, so confirm your connection's regime before the system is designed."
+    },
+    {
+      "style": "h2",
+      "text": "How a battery backup solar system works"
+    },
+    {
+      "style": "normal",
+      "text": "In a battery backup solar system, surplus is stored before anything is exported. The priority order is the same everywhere: serve the live load first, charge the battery second, export third. After sunset the building draws from the battery before the grid."
+    },
+    {
+      "style": "normal",
+      "text": "That buys two things. The first is self-consumption, using your own production at your own hours instead of sending it out and buying it back. The second is continuity: during an outage your critical loads keep running."
+    },
+    {
+      "style": "normal",
+      "text": "Continuity does not arrive by default. Backed-up loads are gathered on a separate critical-load panel, typically the refrigerator, lighting, the router, a circulation pump and, where it matters, the boiler. Backing up a whole building is possible, but capacity and inverter rating grow with it."
+    },
+    {
+      "style": "h2",
+      "text": "What happens during a power cut?"
+    },
+    {
+      "style": "normal",
+      "text": "For an on-grid system the answer is short. Production stops. The inverter loses the grid reference frequency, disconnects, and waits until supply returns."
+    },
+    {
+      "style": "normal",
+      "text": "A hybrid inverter switches to island mode and feeds the critical-load panel from the battery. Transfer time varies: some change over in milliseconds, like an uninterruptible power supply, others take seconds. If you back up servers or a sensitive line, put that number in the specification."
+    },
+    {
+      "style": "normal",
+      "text": "Set expectations on runtime too. A battery with 10 kWh of usable capacity carries a 1 kW critical load for roughly 10 hours in theory. Put an air conditioner on the same panel and it empties in a couple of hours. Endurance is capacity divided by load."
+    },
+    {
+      "style": "h2",
+      "text": "What a battery adds to the cost"
+    },
+    {
+      "style": "normal",
+      "text": "Our feasibility model prices rooftop solar at 700 USD per kWp, converted at 47 TRY to the dollar: roughly 32,900 TRY per kWp before VAT. A south-facing roof is assumed to yield 1,600 kWh per kWp per year, electricity is valued at 5 TRY per kWh, and east-west layouts drop that yield to 1,350 kWh per kWp."
+    },
+    {
+      "style": "normal",
+      "text": "A 10 kWp south-facing on-grid system comes to about 329,000 TRY and produces 16,000 kWh a year. At 5 TRY per kWh that is 80,000 TRY of avoided cost annually, and a simple payback of 4.1 years."
+    },
+    {
+      "style": "normal",
+      "text": "Add a 10 kWh battery at 2,750 USD, roughly 129,250 TRY, and the total becomes 458,250 TRY. On the same annual saving, payback stretches to 5.7 years. Other packs sit at 1,750 USD for 5 kWh and 3,500 USD for 15 kWh. All figures exclude VAT and are recalculated for your own roof after a site visit."
+    },
+    {
+      "style": "blockquote",
+      "text": "A battery is not a savings line item, it is an insurance line item. Do not ask how many kilowatt-hours it adds; ask what stays running when the grid does not."
+    },
+    {
+      "style": "h2",
+      "text": "Which system fits which profile?"
+    },
+    {
+      "style": "normal",
+      "text": "The useful question is never which system is better in the abstract, but which one matches your load curve. Twelve months of billing history and an honest account of when you use electricity answer it almost entirely."
+    },
+    {
+      "style": "h3",
+      "text": "On-grid is the right call when"
+    },
+    {
+      "style": "normal",
+      "text": "Outages are rare, consumption falls mostly in daylight hours, and the priority is the shortest possible payback. Daytime-shift manufacturing, offices, schools, retail and daylight irrigation fit this description. If the single objective is cutting the energy bill, adding storage dilutes the return."
+    },
+    {
+      "style": "h3",
+      "text": "A hybrid earns its keep when"
+    },
+    {
+      "style": "normal",
+      "text": "Outages are frequent or long, consumption is concentrated in the evening, or some load simply cannot stop. Server rooms, cold storage, poultry and greenhouse ventilation, homes with medical equipment. Here the battery is measured against the cost of an interrupted process."
+    },
+    {
+      "style": "normal",
+      "text": "One regulatory trend is worth watching. As the netting interval shortens, matching midday exports against evening imports gets harder, and shifting production with a battery gains value."
+    },
+    {
+      "style": "h2",
+      "text": "Hybrid is not the same as off-grid"
+    },
+    {
+      "style": "normal",
+      "text": "Off-grid is a third category, for sites with no utility connection: mountain houses, remote relay stations, irrigation points that would cost a fortune to connect. There the battery is the only source of energy, sized around the worst day of the year, usually alongside a generator. Going off-grid where a connection already exists is almost always the expensive choice."
+    },
+    {
+      "style": "h2",
+      "text": "Can you add a battery later?"
+    },
+    {
+      "style": "normal",
+      "text": "You can, and the cost is decided by the inverter you buy today. With a hybrid-ready inverter, adding storage later is simply the price of the battery and its connection. Around a standard string inverter, you either replace the inverter or bolt on a separate AC-coupled battery inverter."
+    },
+    {
+      "style": "normal",
+      "text": "That is why we recommend a battery-ready design even when storage is not in this year's budget. The premium at installation is small. The premium for changing your mind later is not."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Does a hybrid system cut my bill further?"
+    },
+    {
+      "style": "normal",
+      "text": "On a connection settled monthly, usually not. The grid already behaves like lossless storage, so the battery earns no extra kilowatt-hour; it lets you consume the same one at a different time. As the netting interval shortens, or exports are valued below your tariff, the case strengthens."
+    },
+    {
+      "style": "h3",
+      "text": "How long does a solar battery last?"
+    },
+    {
+      "style": "normal",
+      "text": "Battery life is measured in cycles, not calendar years; a system that charges and discharges once a day accumulates a few hundred cycles annually. Manufacturers warrant three numbers together: years, cycles, and the capacity still available when the warranty ends. Compare offers on all three."
+    },
+    {
+      "style": "h3",
+      "text": "Will the whole building run during an outage?"
+    },
+    {
+      "style": "normal",
+      "text": "That depends on the design. The standard approach backs up only the critical-load panel, which keeps the battery and inverter at a sensible size. To carry the whole building, your instantaneous demand during the outage has to stay below the inverter's island-mode rating."
+    },
+    {
+      "style": "h3",
+      "text": "Can a hybrid system still use net metering?"
+    },
+    {
+      "style": "normal",
+      "text": "Yes. A hybrid system does not remove your grid connection. Once the battery is full, surplus is exported as usual and settled under the rules that apply to you. Storage does not replace net metering, it adds a priority layer in front of it."
+    },
+    {
+      "style": "normal",
+      "text": "Before you decide, gather two things: twelve months of consumption data and a clear picture of when you use power during the day. Our site survey is free, and we put both scenarios in one table: installed cost, annual production, payback period and the loads that stay alive during an outage."
+    }
+  ]
+}

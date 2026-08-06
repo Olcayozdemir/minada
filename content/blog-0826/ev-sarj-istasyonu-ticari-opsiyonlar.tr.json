@@ -1,0 +1,232 @@
+{
+  "language": "tr",
+  "slug": "ev-sarj-istasyonu-ticari-opsiyonlar",
+  "altSlug": "ev-charging-business-models",
+  "title": "Elektrikli araç şarj istasyonu: işletmeler için 4 ticari opsiyon",
+  "metaTitle": "Elektrikli araç şarj istasyonu: 4 ticari opsiyon",
+  "metaDescription": "İşletmeler için elektrikli araç şarj istasyonu: dört ticari opsiyon, AC ile DC hızlı şarj farkı, trafo kapasitesi ve carport GES entegrasyonu.",
+  "excerpt": "Şarj altyapısı bir cihaz alımı değil, bir bağlantı kararıdır. İşletmeler için dört ticari opsiyon, AC ile DC hızlı şarj arasındaki fark, trafo kapasitesi ve GES entegrasyonu.",
+  "keywords": [
+    "elektrikli araç şarj istasyonu",
+    "ev şarj istasyonu kurulumu",
+    "işletmeler için ev şarj",
+    "AC DC şarj farkı",
+    "şarj ağı işletmecisi",
+    "OCPP uyumlu şarj",
+    "carport GES",
+    "filo şarj altyapısı"
+  ],
+  "category": "Rehber",
+  "coverImage": "/images/v2/service-ev.jpg",
+  "publishedAt": "2026-07-31",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "İşletmeler için elektrikli araç şarj istasyonu dört ticari opsiyona ayrılır: kendi filonuzu şarj etmek, müşteriye hizmet olarak sunmak, lokasyonunuzu lisanslı bir ağa açmak ya da kendi adınıza halka açık istasyon işletmek. Hangisinin doğru olduğunu lokasyonunuzun trafiği, park süreleri ve trafo kapasiteniz belirler."
+    },
+    {
+      "style": "h2",
+      "text": "Elektrikli araç şarj istasyonu neden bir işletme kararıdır?"
+    },
+    {
+      "style": "normal",
+      "text": "Şarj ünitesi almak bir cihaz alımı gibi görünür. Uygulamada ise ünitenin kendisi yatırımın en küçük kalemidir; kararı belirleyen şey elektrik bağlantınız, otoparktaki park süreleri ve şarjı kime hangi bedelle sunacağınızdır."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden teklif toplamadan önce üç soruyu netleştirmenizi öneriyoruz. Kimi şarj edeceksiniz: kendi araçlarınızı mı, müşterinizi mi, yoldan geçen herkesi mi? Araç sizde ne kadar kalıyor: yirmi dakika mı, üç saat mi, bütün gece mi? Mevcut aboneliğiniz bu yükü kaldırıyor mu?"
+    },
+    {
+      "style": "normal",
+      "text": "Bu üç cevap, aşağıdaki dört opsiyondan hangisinin size uyduğunu büyük ölçüde belirler; cihaz seçimi ondan sonra gelir."
+    },
+    {
+      "style": "h2",
+      "text": "AC şarj ile DC hızlı şarj arasındaki fark ne?"
+    },
+    {
+      "style": "normal",
+      "text": "Fark, dönüşümün nerede yapıldığındadır. AC şarjda şebeke elektriği araca alternatif akım olarak gider; doğru akıma çeviren birim aracın içindeki şarj cihazıdır ve üst sınırı büyük ölçüde araç belirler. DC hızlı şarjda dönüşüm istasyonun içinde yapılır ve doğru akım doğrudan bataryaya verilir, bu yüzden çok daha yüksek güçlere çıkılabilir."
+    },
+    {
+      "style": "h3",
+      "text": "AC şarj: park süresi uzun olan yerler"
+    },
+    {
+      "style": "normal",
+      "text": "Kurduğumuz AC üniteler 7,4-22 kW bandındadır. Aradaki fark bağlantı tipinden gelir: 7,4 kW tek fazdan alınır, 22 kW üç faz gerektirir. Tipik bir araç 7,4 kW'lık bir ünitede gece boyunca, altı sekiz saatte dolar."
+    },
+    {
+      "style": "normal",
+      "text": "Konut garajı, personel otoparkı, ofis ve otel gibi aracın uzun süre park ettiği yerler için doğru seçim budur. Ünite bedeli düşüktür, elektrik altyapısına getirdiği yük sınırlıdır ve birden çok soketi yük yönetimiyle aynı hattan besleyebilirsiniz."
+    },
+    {
+      "style": "h3",
+      "text": "DC hızlı şarj: mola süresi kadar"
+    },
+    {
+      "style": "normal",
+      "text": "DC tarafında kurduğumuz üniteler 90 kW ve üzeridir. Bu güçte bir araç, yüzde 20 ile yüzde 80 arasını modeline bağlı olarak 20-40 dakikada tamamlar; bir kahve molası kadar. Karşılığında ünite bedeli, gereken bağlantı gücü ve soğutma ihtiyacı belirgin biçimde büyür."
+    },
+    {
+      "style": "normal",
+      "text": "Bataryanın kabul ettiği güç sabit değildir: doluluk arttıkça araç akımı kendisi kısar, bu yüzden yüzde 80 sonrası yavaşlar. Şarj süresi hesabını istasyonun etiket gücüne göre değil, aracın şarj eğrisine göre yapın."
+    },
+    {
+      "style": "h2",
+      "text": "Opsiyon 1: filo ve personel şarjı"
+    },
+    {
+      "style": "normal",
+      "text": "En yalın senaryo şarjı bir gelir kalemi olarak değil, bir gider kalemini küçültme aracı olarak kurmaktır. Otoparkınıza AC üniteler koyar, kendi araçlarınızı ve personelinizin araçlarını şarj edersiniz. Ticari model yoktur; kazanç, yakıt giderinin yerini alan elektrik biriminde saklıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Buradaki asıl mühendislik işi yük yönetimidir. On aracın hepsi mesai bitiminde aynı anda fişe takıldığında talep mevcut aboneliğinizi zorlar. Yük yönetimi yazılımı toplam çekişi belirlenen tavanın altında tutar ve gücü üniteler arasında paylaştırır; böylece trafo büyütmeden soket sayısını artırabilirsiniz."
+    },
+    {
+      "style": "normal",
+      "text": "Çatı ya da carport GES eklendiğinde tablo tamamlanır: gündüz üretilen elektrik, gündüz otoparkta duran araca gider. Filo araçları gündüz sahadaysa park programını üretim eğrisiyle birlikte kurgulamak gerekir."
+    },
+    {
+      "style": "h2",
+      "text": "Opsiyon 2: müşteriye hizmet olarak şarj"
+    },
+    {
+      "style": "normal",
+      "text": "Otel, alışveriş merkezi, restoran ve market gibi müşterinin bir süre kaldığı işletmelerde şarj bir hizmettir. Bedelsiz ya da maliyetine sunulur; getirisi kWh satışında değil, müşterinin sizi tercih etmesinde ve kalış süresinde görünür."
+    },
+    {
+      "style": "normal",
+      "text": "Bu opsiyonda AC üniteler çoğu zaman yeterlidir ve yatırım ölçeği küçük kalır. Şarjı bedelsiz sunmak ile ücret karşılığı sunmak mevzuat açısından farklı kapılardır: halka açık ve ücretli şarj hizmeti, lisanslı bir şarj ağı üzerinden verilir."
+    },
+    {
+      "style": "normal",
+      "text": "Yine de ünitelerin OCPP uyumlu olmasını isteyin. Açık protokol, ileride ücretlendirmeye geçmek ya da bir ağa bağlanmak istediğinizde cihazı değil sadece sözleşmeyi değiştirmenizi sağlar. Kapalı protokole kilitlenmiş bir park, üç yıl sonra ticari opsiyonlarınızı daraltır."
+    },
+    {
+      "style": "h2",
+      "text": "Opsiyon 3: lokasyonunuzu lisanslı bir ağa açmak"
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü yol, sahneye lokasyon sahibi olarak çıkmaktır. Otoparkınızı ve elektrik bağlantınızı lisanslı bir şarj ağı işletmecisine açar, istasyonun kurulumunu ve işletmesini ona bırakırsınız. Sizin tarafınızda kalan şey alan, bağlantı ve müşteri trafiğidir."
+    },
+    {
+      "style": "normal",
+      "text": "Ticari kurgu taraflar arasında serbestçe belirlenir. Kimi anlaşmada yatırımı tamamen ağ üstlenir ve size kullanım üzerinden pay verir; kimi anlaşmada altyapıyı siz kurar, işletmeyi ağa devredersiniz. İlk yatırımı düşük tutmak isteyen ama lokasyonu güçlü işletmeler için makul bir başlangıçtır."
+    },
+    {
+      "style": "normal",
+      "text": "Sözleşmede bakılacak maddeler nettir: süre, münhasırlık, elektrik bedelinin hangi tarafa yazıldığı, arıza ve bakım sorumluluğu, kullanım verisinin sizinle paylaşılıp paylaşılmadığı ve süre bitiminde donanımın kimde kaldığı."
+    },
+    {
+      "style": "h2",
+      "text": "Opsiyon 4: kendi adınıza halka açık istasyon işletmeciliği"
+    },
+    {
+      "style": "normal",
+      "text": "Gelirin tamamını hedefliyorsanız yol, halka açık şarj hizmetini kendi adınıza vermektir. Türkiye'de bu faaliyet düzenlemeye tabidir: şarj ağı işletmecisi lisans alır, istasyonlar bu ağa bağlı olarak sertifikalandırılır ve kullanıcıya faturalama ağ üzerinden yürür."
+    },
+    {
+      "style": "normal",
+      "text": "Lisans ve sertifika için aranan şartlar, asgari nitelikler ve ödenecek bedeller ilgili düzenlemeyle belirlenir ve dönemsel olarak güncellenir. Bu yüzden burada rakam vermiyoruz; yatırım kararından önce düzenleyici kurumun yayımladığı güncel metinlere bakılması gerekir. Mevcut bir ağa katılmak, kendi lisansınızı almaya göre daha kısa bir yoldur."
+    },
+    {
+      "style": "normal",
+      "text": "Fizibilitenin kendisi ise mevzuattan bağımsız olarak üç değişkende toplanır: lokasyonun günlük araç trafiği, istasyonun günde kaç saat dolu çalıştığı ve enerjiyi hangi maliyetle aldığınız. Ana yol güzergahları, dinlenme tesisleri ve şehir girişleri bu yüzden aranır."
+    },
+    {
+      "style": "blockquote",
+      "text": "Bir şarj istasyonunun karlılığı soketin gücünde değil, o soketin günde kaç saat dolu olduğunda saklıdır."
+    },
+    {
+      "style": "h2",
+      "text": "Trafo kapasitesi ve bağlantı: en çok atlanan kalem"
+    },
+    {
+      "style": "normal",
+      "text": "Şarj projelerinde sürpriz cihaz fiyatında değil, bağlantıda çıkar. Mevcut aboneliğinizin sözleşme gücü yeni yükü kaldırmıyorsa iki seçeneğiniz olur: dağıtım şirketine güç artırımı için başvurmak ya da yükü mevcut gücün içinde yönetmek."
+    },
+    {
+      "style": "normal",
+      "text": "Güç artırımı şebekenin o noktadaki durumuna bağlıdır; süresi ve maliyeti lokasyona göre değişir. Bu yüzden adımları hep aynı sırayla atıyoruz: mevcut sözleşme gücü ve trafo yükünün ölçülmesi, tepe talep analizi, sonra ünite seçimi. Ters sırayla ilerleyen projelerde üniteler gelir ve bekler."
+    },
+    {
+      "style": "normal",
+      "text": "Yük yönetimi burada gerçek bir tasarruf aracıdır. İstasyonların toplam çekişini bir tavanın altında tutmak, çoğu işletmede güç artırımı ihtiyacını tamamen ortadan kaldırır. Batarya eklendiğinde ise tepe talep şebekeden değil bataryadan karşılanır; DC istasyonlarda bu, bağlantı gücünü küçük tutmanın en etkili yoludur."
+    },
+    {
+      "style": "h2",
+      "text": "Şarj istasyonunu GES ve depolama ile beslemek"
+    },
+    {
+      "style": "normal",
+      "text": "Şarj yatırımının elektriği nereden aldığı, karlılığın sessiz değişkenidir. Şebekeden alınan her kWh bir maliyettir; çatınızdan ya da carport yapınızdan gelen kWh ise kurulum bedeli dışında maliyetsizdir."
+    },
+    {
+      "style": "normal",
+      "text": "Ölçek fikri vermek için kendi fizibilite katsayılarımızı kullanalım. Güneye bakan bir çatıda 30 kWp'lik GES, kWp başına yıllık 1600 kWh üretimle yılda yaklaşık 48.000 kWh verir. 5 TL/kWh birim fiyatla bu, yılda 240.000 TL mertebesinde bir karşılık demektir. Aynı sistemin kurulum bedeli kWp başına 700 USD ve 47 TL kur ile yaklaşık 987.000 TL'dir; kaba geri dönüş 4 yıl civarına oturur. Doğu-batı ya da güney-kuzey yerleşimde üretim katsayısı 1350 kWh/kWp'ye iner. Bütün rakamlar KDV hariçtir."
+    },
+    {
+      "style": "normal",
+      "text": "Batarya, üretim saatleri ile şarj talebinin saatlerini birbirine bağlar. Fizibilite modelimizde 5 kWh batarya 1.750 USD, 10 kWh 2.750 USD, 15 kWh 3.500 USD seviyesindedir (KDV hariç). Otoparkınız akşam doluyorsa gündüz üretimini bataryaya alıp akşam araçlara vermek hem şebeke alımını hem tepe talebi düşürür."
+    },
+    {
+      "style": "normal",
+      "text": "Carport bu ikisini fiziksel olarak da birleştirir. Araçların üzerini örten çelik taşıyıcı yapı hem gölge verir hem elektrik üretir; şarj ünitesi de aynı taşıyıcıya monte edilir."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "İşletmemde şarjı ücretlendirebilir miyim?"
+    },
+    {
+      "style": "normal",
+      "text": "Teknik tarafta evet: OCPP uyumlu üniteler işletici platformlarına bağlanır ve kWh bazlı ücretlendirme yapılabilir. Ticari tarafta ise halka açık ve ücretli şarj hizmeti lisanslı bir şarj ağı üzerinden verilir."
+    },
+    {
+      "style": "normal",
+      "text": "Yani soru cihazla değil kurguyla ilgilidir: ya mevcut bir ağa katılırsınız ya da kendi lisansınızı alırsınız. Şartlar ve bedeller için başvuru öncesinde güncel düzenlemeye bakmak gerekir."
+    },
+    {
+      "style": "h3",
+      "text": "AC mi DC mi kurmalıyım?"
+    },
+    {
+      "style": "normal",
+      "text": "Kararı aracın sizde ne kadar kaldığı verir. Park süresi bir saatin altındaysa DC, birkaç saat ya da daha uzunsa AC doğru seçimdir. Yol kenarı, akaryakıt istasyonu ve dinlenme tesisi gibi lokasyonlar DC'ye; otel, ofis, konut ve alışveriş merkezi otoparkları AC'ye yakındır. Büyük otoparklarda ikisini karma kurmak çoğu zaman en dengeli çözümdür."
+    },
+    {
+      "style": "h3",
+      "text": "Mevcut trafom yetmezse ne olur?"
+    },
+    {
+      "style": "normal",
+      "text": "İki yol var. Birincisi dağıtım şirketine güç artırımı başvurusu; süresi ve maliyeti şebekenin o noktadaki durumuna göre değişir. İkincisi yük yönetimi ve gerekirse batarya desteğiyle mevcut gücün içinde kalmak."
+    },
+    {
+      "style": "normal",
+      "text": "Çoğu işletmede ikinci yol daha hızlı ve daha ucuz çözülür. Hangisinin geçerli olduğunu tahmin değil ölçüm gösterir: tepe talep ve sözleşme gücü çıkarılmadan bu soru cevaplanamaz."
+    },
+    {
+      "style": "h3",
+      "text": "Şarj ünitesinin bakımı ne gerektirir?"
+    },
+    {
+      "style": "normal",
+      "text": "Hareketli parçası az olduğu için bakım yükü düşüktür, ama sıfır değildir. Kablo ve soket aşınması, kaçak akım korumasının testi, topraklama kontrolü ve DC ünitelerde soğutma fanlarıyla filtrelerin temizliği periyodik kontrol ister."
+    },
+    {
+      "style": "normal",
+      "text": "Ücretli işletmede asıl gösterge çalışır durumda kalma oranıdır. Arızalı bir soket hem gelir hem itibar kaybıdır; uzaktan izleme bu yüzden opsiyon değil, işletme modelinin parçasıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Şarj tarafında işi cihaz seçerek değil, elektrik bağlantınızı ölçerek başlatıyoruz. Keşifte mevcut sözleşme gücünüzü ve tepe talebinizi çıkarıyor, park sürelerinize göre AC ve DC dağılımını öneriyor, çatı ya da carport GES ile birlikte çalışma senaryosunu aynı tabloda gösteriyoruz. Lisanslı ağ ortaklıkları için de yönlendirme yapıyoruz. Keşif ve ön fizibilite çalışması ücretsizdir; MİNADA ekibine ulaşmanız yeterli."
+    }
+  ]
+}

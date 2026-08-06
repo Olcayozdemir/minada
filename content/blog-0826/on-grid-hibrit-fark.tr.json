@@ -1,0 +1,216 @@
+{
+  "language": "tr",
+  "slug": "on-grid-hibrit-fark",
+  "altSlug": "on-grid-vs-hybrid-solar-systems",
+  "title": "On grid ile hibrit sistem farkı: bataryaya değer mi?",
+  "metaTitle": "On grid hibrit fark: hangisi size uygun?",
+  "metaDescription": "On grid ile hibrit sistem farkı nedir? Çalışma mantığı, maliyet farkı, kesintide davranış ve hangi tüketim profiline hangisinin uyduğu, rakamlarla.",
+  "excerpt": "Şebeke bağlantılı sistemle bataryalı hibrit sistemin çalışma mantığı, maliyet farkı, kesinti anındaki davranışı ve hangi profile hangisinin uyduğu.",
+  "keywords": [
+    "on grid hibrit fark",
+    "bataryalı güneş enerjisi sistemi",
+    "hibrit güneş enerjisi sistemi",
+    "on grid GES",
+    "elektrik kesintisinde güneş enerjisi",
+    "batarya maliyeti",
+    "off grid sistem",
+    "mahsuplaşma"
+  ],
+  "category": "Teknoloji",
+  "coverImage": "/images/v2/hero-solar.jpeg",
+  "publishedAt": "2026-07-07",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "On grid ile hibrit sistem farkı tek cümlede şudur: on grid kurulumda fazla üretim şebekeye verilir ve faturadan mahsup edilir, hibrit kurulumda ise önce bataryaya yazılır ve akşam kullanılır. On grid daha ucuzdur ve daha hızlı geri döner; hibrit ise kesintide elektriğinizi ayakta tutar."
+    },
+    {
+      "style": "h2",
+      "text": "On grid ile hibrit sistem farkı nerede başlıyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Panel, konstrüksiyon ve kablolama tarafında iki sistem birbirinin neredeyse aynısıdır. Çatıdaki modüller gün boyu doğru akım üretir, inverter bunu alternatif akıma çevirir ve tesisatınıza verir. Ayrım, üretimin tüketimi aştığı ilk anda başlar."
+    },
+    {
+      "style": "normal",
+      "text": "O anda fazla enerjinin gidebileceği iki adres vardır: şebeke ya da batarya. On grid sistem birinciyi seçer, hibrit sistem önce ikinciyi doldurur. Donanım tarafındaki yapısal fark ise ikidir: inverterin batarya yönetebilecek şekilde tasarlanmış olması ve sisteme kesintide kendi başına çalışabilmesini sağlayan bir ada modu kurgusunun eklenmesi."
+    },
+    {
+      "style": "normal",
+      "text": "Bu küçük görünen ayrım, yatırımın hem bedelini hem karakterini değiştirir. Aşağıda ikisini sırayla açıyoruz, sonra aynı katsayılarla maliyeti yan yana koyuyoruz."
+    },
+    {
+      "style": "h2",
+      "text": "On grid sistem nasıl çalışır?"
+    },
+    {
+      "style": "normal",
+      "text": "On grid sistemde şebeke, sizin deponuz gibi davranır. Gündüz fazlanızı verirsiniz, akşam eksiğinizi çekersiniz; ay sonunda ikisi mahsuplaşma kurallarına göre netleşir. Depolama kaybı yoktur, bakım isteyen bir batarya yoktur, ilk yatırım en düşük seviyededir."
+    },
+    {
+      "style": "normal",
+      "text": "Zayıf noktası da tam olarak bu bağımlılıktır. Şebeke kesildiğinde sistem, hat üzerinde çalışan ekiplerin güvenliği için kendini otomatik olarak durdurur. Bu bir arıza değil, standart bir koruma davranışıdır: şebekesiz bir hatta enerji basmak hem yasaktır hem tehlikelidir. Yani güneş tepedeyken bile kesinti anında eviniz karanlıkta kalır."
+    },
+    {
+      "style": "normal",
+      "text": "İkinci hassasiyet mevzuat tarafındadır. Mahsuplaşmanın hangi zaman aralığında yapıldığı ve fazla üretimin hangi bedelle değerlendirildiği, on grid bir yatırımın getirisini doğrudan belirler. Bu kurallar dönemsel olarak güncellenir; projelendirmeden önce bağlantınızın hangi modele tabi olacağını netleştirmek gerekir. Kurallar lehinize işlediği sürece on grid, kWh başına en verimli çözümdür."
+    },
+    {
+      "style": "h2",
+      "text": "Hibrit (bataryalı) güneş enerjisi sistemi nasıl çalışır?"
+    },
+    {
+      "style": "normal",
+      "text": "Bataryalı güneş enerjisi sisteminde gün içindeki fazla enerji önce depolanır. Akış önceliği genellikle şudur: önce tesisatın anlık tüketimi, sonra batarya, en son şebeke. Akşam güneş çekildiğinde ev, şebekeye dönmeden önce bataryadan beslenir."
+    },
+    {
+      "style": "normal",
+      "text": "Kazanç iki katmanlıdır. Birincisi öz tüketim: şebekeye verip geri almak yerine kendi enerjinizi kendi saatinizde kullanırsınız. İkincisi süreklilik: doğru kurgulanmış bir hibrit sistemde kesinti anında kritik yükleriniz bataryadan beslenmeye devam eder."
+    },
+    {
+      "style": "normal",
+      "text": "Bu ikinci katman kendiliğinden gelmez. Kesintide beslenecek yükler ayrı bir kritik yük panosunda toplanır ve sistem ada moduna geçebilecek şekilde projelendirilir. Buzdolabı, aydınlatma, modem, sirkülasyon pompası ve gerekiyorsa kombi tipik olarak bu panoya alınır. Evin tamamını kesintide taşımak isterseniz hem batarya kapasitesi hem inverter gücü buna göre büyür."
+    },
+    {
+      "style": "h2",
+      "text": "Elektrik kesintisinde iki sistem ne yapar?"
+    },
+    {
+      "style": "normal",
+      "text": "On grid sistemde cevap nettir: üretim durur. İnverter şebeke frekansını göremediği anda devreden çıkar ve kesinti bitene kadar bekler. Paneller üretebilecek durumda olsa bile o enerji kullanılamaz."
+    },
+    {
+      "style": "normal",
+      "text": "Hibrit sistemde inverter ada moduna geçer ve kritik yük panosunu bataryadan beslemeye başlar. Geçiş süresi ekipmana göre değişir; kesintisiz güç kaynağı gibi milisaniyeler mertebesinde geçen çözümler de vardır, birkaç saniyede devreye girenler de. Sunucu, laboratuvar cihazı ya da hassas üretim hattı besliyorsanız bu geçiş süresi teknik şartnamenin konusudur, katalog dipnotu değil."
+    },
+    {
+      "style": "normal",
+      "text": "Süre tarafında beklentiyi doğru kurmak gerekir. Kullanılabilir kapasitesi 10 kWh olan bir batarya, 1 kW mertebesinde çeken bir kritik yük setini teorik olarak 10 saat taşır. Aynı bataryayı klima ve elektrikli ısıtıcıyla yüklerseniz birkaç saatte biter. Kesinti dayanımı kapasiteyle değil, kapasitenin yüke oranıyla ölçülür."
+    },
+    {
+      "style": "h2",
+      "text": "Maliyet farkı: batarya faturaya ne ekliyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Rakamı somutlaştıralım. Fizibilite modelimizde çatı GES kurulum bedeli 700 USD/kWp, kur 47 TL alınır; yani kWp başına yaklaşık 32.900 TL, KDV hariç. Güney yönlü bir çatıda yıllık üretim 1.600 kWh/kWp, elektrik birim fiyatı 5 TL/kWh kabul edilir. Doğu-batı ya da güney-kuzey yerleşimde üretim varsayımı 1.350 kWh/kWp seviyesine iner."
+    },
+    {
+      "style": "normal",
+      "text": "10 kWp güney yönlü bir on grid sistem bu katsayılarla yaklaşık 329.000 TL tutar ve yılda 16.000 kWh üretir. 5 TL/kWh üzerinden yıllık karşılığı 80.000 TL, kaba geri ödeme süresi 4,1 yıldır."
+    },
+    {
+      "style": "normal",
+      "text": "Aynı sisteme 10 kWh batarya eklendiğinde 2.750 USD, yani yaklaşık 129.250 TL ek yatırım gelir. Toplam 458.250 TL olur ve aynı yıllık tasarrufla geri ödeme 5,7 yıla çıkar. Daha küçük paketler için 5 kWh 1.750 USD, daha büyüğü için 15 kWh 3.500 USD seviyesindedir. Bütün rakamlar KDV hariçtir ve keşif sonrasında sizin çatınıza göre yeniden hesaplanır."
+    },
+    {
+      "style": "normal",
+      "text": "Özetle batarya, bu örnekte geri ödemeyi yaklaşık bir buçuk yıl uzatan bir karardır. Karşılığında aldığınız şey daha fazla kWh değil; kesintide ayakta kalmak ve ürettiğinizi kendi saatinize taşımaktır."
+    },
+    {
+      "style": "blockquote",
+      "text": "Batarya bir tasarruf kalemi değil, bir sigorta kalemidir. Kaç kWh kazandırdığını değil, kesintide neyin çalışmaya devam ettiğini sorun."
+    },
+    {
+      "style": "h2",
+      "text": "Hangi profile hangisi uyuyor?"
+    },
+    {
+      "style": "normal",
+      "text": "Doğru soru “hangisi daha iyi” değil, “benim tüketim profilime hangisi uyuyor” sorusudur. Son 12 aylık faturanız ve gün içi kullanım alışkanlığınız, cevabın neredeyse tamamıdır."
+    },
+    {
+      "style": "h3",
+      "text": "On grid şu durumlarda doğru seçim"
+    },
+    {
+      "style": "normal",
+      "text": "Kesintinin nadir yaşandığı, tüketimin ağırlıklı olarak gündüze düştüğü ve önceliğin en kısa geri ödeme olduğu yerlerde on grid hâlâ en verimli çözümdür. Gündüz vardiyalı üretim tesisi, ofis, okul, market ve gün boyu çalışan tarımsal sulama bu tarife oturur. Yatırımın tek amacı elektrik maliyetini düşürmekse, batarya eklemek getiriyi seyreltir."
+    },
+    {
+      "style": "h3",
+      "text": "Hibrit şu durumlarda kendini savunur"
+    },
+    {
+      "style": "normal",
+      "text": "Kesintinin sık ya da uzun olduğu bölgelerde, tüketimin akşama yığıldığı konutlarda ve kesintiye tahammülü olmayan yüklerde hibrit sistem gerçek bir karşılık üretir. Sunucu odası, soğuk hava deposu, kümes ve sera havalandırması, evde tıbbi cihaz kullanımı bu gruptadır. Buralarda bataryanın karşılığı tasarruf değil, durmayan bir prosestir."
+    },
+    {
+      "style": "normal",
+      "text": "Bir de mevzuat kaynaklı bir eğilim var. Mahsuplaşmanın zaman aralığı kısaldıkça, öğlen ürettiğiniz enerjiyi akşam birebir geri almanız zorlaşır. Böyle bir modelde üretimi tüketimle aynı saate denk getirmek ya da bataryayla akşama taşımak değer kazanır. Yeni projelerde hibrit kurulumun daha sık gündeme gelmesinin ana sebebi budur."
+    },
+    {
+      "style": "h2",
+      "text": "Hibrit ile off grid aynı şey değil"
+    },
+    {
+      "style": "normal",
+      "text": "Üçüncü bir kategori olan off grid, yani şebekeden tamamen bağımsız sistem, şebeke bağlantısının hiç olmadığı yerler içindir: dağ evi, yayla tesisi, uzak röle istasyonu, şebekeye çok pahalıya bağlanacak sulama noktaları. Orada batarya bir konfor kalemi değil, sistemin tek enerji kaynağıdır."
+    },
+    {
+      "style": "normal",
+      "text": "Off grid tasarımda batarya yılın en kötü günü baz alınarak boyutlandırılır ve çoğu kurguya yedek bir jeneratör de girer. Şebekesi olan bir adreste off grid kurmak neredeyse her zaman pahalı bir tercihtir. Şebekeniz varsa doğru soru on grid ile hibrit arasındadır."
+    },
+    {
+      "style": "h2",
+      "text": "Sonradan bataryaya geçilebilir mi?"
+    },
+    {
+      "style": "normal",
+      "text": "Geçilebilir, ama bu kararın maliyeti bugünkü inverter seçiminize bağlıdır. Baştan hibrit hazırlığı olan bir inverter seçildiyse batarya ekleme işi, akü grubunun ve bağlantısının bedelinden ibarettir. Standart bir string inverterle kurulmuş sistemde ise ya inverter değişir ya da mevcut sisteme AC kuplajlı ayrı bir batarya inverteri eklenir."
+    },
+    {
+      "style": "normal",
+      "text": "Bu yüzden bataryayı bugün almasanız bile projeyi bataryaya hazır kurmanızı öneriyoruz. Aradaki ilk yatırım farkı küçüktür; sonradan dönmenin farkı değildir."
+    },
+    {
+      "style": "h2",
+      "text": "Sık sorulan sorular"
+    },
+    {
+      "style": "h3",
+      "text": "Hibrit sistem faturamı daha mı çok düşürür?"
+    },
+    {
+      "style": "normal",
+      "text": "Aylık mahsuplaşmanın işlediği bir bağlantıda genelde hayır. Şebeke zaten kayıpsız bir depo gibi davrandığı için batarya size ek bir kWh kazandırmaz; aynı kWh'yi farklı bir saatte kullanmanızı sağlar."
+    },
+    {
+      "style": "normal",
+      "text": "Mahsuplaşmanın zaman aralığı kısaldıkça ya da fazla üretim tarifenizin altında bir bedelle değerlendirildikçe bataryanın finansal katkısı artar. Yani bataryanın getirisi, teknik bir konu olduğu kadar mevzuat konusudur."
+    },
+    {
+      "style": "h3",
+      "text": "Batarya kaç yıl dayanır?"
+    },
+    {
+      "style": "normal",
+      "text": "Bataryanın ömrü takvim yılıyla değil, çevrim sayısıyla ölçülür. Günde bir kez dolup boşalan bir sistemde yıllık çevrim sayısı birkaç yüz mertebesindedir. Üreticiler garantiyi genellikle üç sayı üzerinden verir: yıl, çevrim ve garanti sonunda elde kalacak kapasite yüzdesi."
+    },
+    {
+      "style": "normal",
+      "text": "Teklifleri karşılaştırırken bu üç sayıya birlikte bakın. Onuncu yılda elinizde kalacak kullanılabilir kapasite, ilk gün etikette yazan kapasiteden daha belirleyicidir."
+    },
+    {
+      "style": "h3",
+      "text": "Kesintide evin tamamı çalışır mı?"
+    },
+    {
+      "style": "normal",
+      "text": "Nasıl projelendirdiğinize bağlıdır. Standart kurgu, kritik yükleri ayrı bir panoda toplayıp kesintide sadece onları beslemektir; bu hem bataryayı hem inverteri makul boyutta tutar. Evin tamamını taşımak isterseniz kesinti anındaki anlık güç ihtiyacınızın, inverterin ada modu gücünün altında kalması gerekir."
+    },
+    {
+      "style": "h3",
+      "text": "Hibrit sistemde de mahsuplaşma yapabilir miyim?"
+    },
+    {
+      "style": "normal",
+      "text": "Evet. Hibrit sistem şebeke bağlantısını ortadan kaldırmaz. Batarya dolduktan sonra fazla üretim yine şebekeye verilir ve bağlantınızın tabi olduğu kurallara göre mahsuplaşır. Batarya, mahsuplaşmanın yerine geçmez; ona bir öncelik katmanı ekler."
+    },
+    {
+      "style": "normal",
+      "text": "Karar vermeden önce elinizde iki şey olmalı: son 12 aylık tüketiminiz ve gün içi kullanım alışkanlığınız. MİNADA olarak keşif ziyaretini ücretsiz yapıyor, on grid ve hibrit senaryoyu aynı tabloda karşılaştırıyoruz. Kurulum bedeli, yıllık üretim, geri ödeme süresi ve kesintide beslenecek yük listesi yan yana durur; hangisinin size uyduğuna rakamlara bakarak birlikte karar veririz."
+    }
+  ]
+}

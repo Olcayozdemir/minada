@@ -18,7 +18,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Nav" });
-  return { title: t("blog"), alternates: buildAlternates("/blog", locale) };
+  const tb = await getTranslations({ locale, namespace: "Blog" });
+  return {
+    title: t("blog"),
+    description: tb("metaDesc"),
+    alternates: buildAlternates("/blog", locale),
+    openGraph: {
+      type: "website",
+      title: `${tb("title")} · MİNADA`,
+      description: tb("metaDesc"),
+    },
+  };
 }
 
 function postDate(iso: string, locale: string) {

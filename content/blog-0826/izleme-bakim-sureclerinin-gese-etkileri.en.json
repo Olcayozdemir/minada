@@ -1,0 +1,207 @@
+{
+  "language": "en",
+  "slug": "solar-monitoring-and-maintenance-impact",
+  "altSlug": "izleme-bakim-sureclerinin-gese-etkileri",
+  "title": "Solar monitoring and planned maintenance: stopping yield loss",
+  "metaTitle": "Solar monitoring and planned maintenance: cut yield loss",
+  "metaDescription": "How solar monitoring and planned maintenance reduce yield loss: string level data, SCADA, alarm rules, downtime cost and what an O&M contract must say.",
+  "excerpt": "An unmonitored plant loses quietly. What string level solar monitoring, sensible alarm rules and planned maintenance are actually worth, in numbers.",
+  "keywords": [
+    "solar monitoring",
+    "planned maintenance",
+    "yield loss",
+    "SCADA",
+    "string level monitoring",
+    "performance ratio",
+    "solar O&M contract"
+  ],
+  "category": "Maintenance",
+  "coverImage": "/images/v2/how/om.jpg",
+  "publishedAt": "2026-08-06",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "Solar monitoring tells you what your plant produced against what it should have produced. Planned maintenance closes the gaps that measurement reveals, before they turn permanent. Together they cut annual yield loss, because most losses are not one dramatic failure. They accumulate quietly, and the difference shows up in year five."
+    },
+    {
+      "style": "h2",
+      "text": "What does solar monitoring actually measure?"
+    },
+    {
+      "style": "normal",
+      "text": "Reading a single export meter is like taking a patient's temperature and nothing else. It confirms the plant is running, not where output is being lost."
+    },
+    {
+      "style": "normal",
+      "text": "Real monitoring measures at inverter and string level, and records production, irradiance and temperature together. Production alone is not enough: low output on a cloudy day is normal. What matters is the gap between what the irradiance predicted and what the plant delivered."
+    },
+    {
+      "style": "h3",
+      "text": "Why performance ratio is the number to watch"
+    },
+    {
+      "style": "normal",
+      "text": "Performance ratio is actual output divided by the theoretical output implied by measured irradiance. Soiling, shading, cable losses, inverter efficiency and temperature derating collapse into that one figure, and it is season independent. You cannot compare January's kWh with June's, but you can compare their PR."
+    },
+    {
+      "style": "h2",
+      "text": "Why string level monitoring catches what inverter data misses"
+    },
+    {
+      "style": "normal",
+      "text": "On a rooftop plant, panels are wired into several strings per inverter. Measure only at the inverter output and a dead string costs you exactly its own share of the total: on an eight string system that is around 12 percent, small enough to look like passing cloud and hide for weeks. On a two or three string system the same fault takes a third of the output and announces itself far sooner."
+    },
+    {
+      "style": "normal",
+      "text": "Read each string current separately and the picture sharpens. Sibling strings share a roof, an orientation and the same irradiance, so they are each other's reference. When one drifts persistently from the rest, the cause list is short: shading, soiling, a loose connector or a failed bypass diode."
+    },
+    {
+      "style": "normal",
+      "text": "It also changes the site visit. With the string number and the hour the deviation starts, half a day of fault hunting becomes a targeted repair. Morning deviation clearing by noon means shading; a flat one all day means hardware."
+    },
+    {
+      "style": "h2",
+      "text": "SCADA or the inverter manufacturer's portal?"
+    },
+    {
+      "style": "normal",
+      "text": "For small and medium rooftop plants, the manufacturer's cloud portal covers most needs: production curves, string currents, fault codes and basic alarms. At commercial scale, SCADA earns its place."
+    },
+    {
+      "style": "normal",
+      "text": "SCADA brings every device on site into one data model: inverters, meters, transformer, weather station and protection equipment. Three things change. Data becomes vendor neutral, alarm logic follows your own operating routine, and you can execute the curtailment setpoints a distribution company may require."
+    },
+    {
+      "style": "normal",
+      "text": "It is a question of scale. SCADA is an unnecessary line item on a 50 kWp rooftop, and a consumer portal is not enough on a multi inverter site."
+    },
+    {
+      "style": "h2",
+      "text": "Writing alarm rules people will act on"
+    },
+    {
+      "style": "normal",
+      "text": "Monitoring hardware gathers data; alarm rules turn it into action. Badly configured alarms fail in two directions. They never fire, or they fire so often that nobody opens the email."
+    },
+    {
+      "style": "normal",
+      "text": "A threshold alarm flags output below the expected value, computed against measured irradiance or it cries wolf on every overcast day. A comparative alarm, firing when one string deviates from its siblings for a set duration, is more reliable, because cloud moves them all together."
+    },
+    {
+      "style": "normal",
+      "text": "Keep status alarms separate: inverter fault codes, insulation faults, DC arc protection trips and loss of communication. The last matters most: if no data arrives the plant may be down, and silence is the most dangerous state a plant can be in."
+    },
+    {
+      "style": "normal",
+      "text": "Every alarm needs a named owner and a target response time. An alarm without an owner produces a log entry, not a repair."
+    },
+    {
+      "style": "h2",
+      "text": "What planned maintenance covers"
+    },
+    {
+      "style": "h3",
+      "text": "Cleaning"
+    },
+    {
+      "style": "normal",
+      "text": "Dust, pollen, bird droppings and agricultural particulates block light at the glass. What that costs varies by site and season, so the schedule should come from monitoring data, not a template. If PR jumps after every rainfall, your interval is too long."
+    },
+    {
+      "style": "h3",
+      "text": "Thermal inspection"
+    },
+    {
+      "style": "normal",
+      "text": "A thermal camera finds hot spots, failed bypass diodes and loose connections no visual inspection would catch. In the switchgear, a terminal running warm is caught while it is still a warning. Few checks cut fire risk and downtime at once."
+    },
+    {
+      "style": "h3",
+      "text": "Electrical and mechanical checks"
+    },
+    {
+      "style": "normal",
+      "text": "Torque verification, insulation resistance, earthing continuity, string I-V curve tracing and protection device testing run on a fixed cycle, alongside mounting fixings, module clamps and roof sealing. On rooftops the annual waterproofing check is the cheapest insurance you can buy."
+    },
+    {
+      "style": "normal",
+      "text": "The second return is easy to miss: when you schedule the work, the outage falls in the lowest yield hours of the year. When a fault schedules it, it falls in peak season."
+    },
+    {
+      "style": "h2",
+      "text": "What unplanned downtime costs, and how planned maintenance limits yield loss"
+    },
+    {
+      "style": "normal",
+      "text": "An unplanned outage bills you twice: once for the repair, once for the energy never generated. The second number is usually larger, and invisible, because nobody issues an invoice for it."
+    },
+    {
+      "style": "normal",
+      "text": "A rough calculation with our own feasibility coefficients. A south facing 250 kWp rooftop plant produces roughly 400,000 kWh per year (250 x 1,600 kWh/kWp). At a retail tariff of 5 TL/kWh that is 2,000,000 TL of energy value annually, or about 1,100 kWh and 5,500 TL on an average day."
+    },
+    {
+      "style": "normal",
+      "text": "If one of five inverters fails and nobody notices for 12 days, the unproduced energy is around 2,600 kWh, roughly 13,000 TL. Catch the same fault within two days and the loss falls to about 2,200 TL. What separates those figures is not the repair bill. It is time to diagnosis."
+    },
+    {
+      "style": "blockquote",
+      "text": "The test of a good O&M contract is simple: is there a human being who knows what the plant produced yesterday, and when output deviates, who is on site and within how many hours?"
+    },
+    {
+      "style": "h2",
+      "text": "What a good O&M contract puts in writing"
+    },
+    {
+      "style": "normal",
+      "text": "Two clocks belong in the contract: time to assess an alarm, and time to arrive on site. As soon as possible is not measurable and therefore not a commitment. Tier the response by severity."
+    },
+    {
+      "style": "normal",
+      "text": "Then scope. How many preventive visits per year, whether cleaning is included, how often thermal inspection runs, who holds spare parts and who pursues warranty claims. The clause that produces the most disputes is who pays for spare parts, so settle it at signature."
+    },
+    {
+      "style": "normal",
+      "text": "Finally reporting and ownership. The monthly report should carry production, PR, the alarm log, closed work orders and open risks, and the raw production history must be yours to take when the contract ends. An availability commitment measures response rather than weather."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "How much does solar monitoring add to project cost?"
+    },
+    {
+      "style": "normal",
+      "text": "Most inverters ship with cloud monitoring included, so the incremental cost is a permanent internet connection, a datalogger and string level measurement hardware. As a share of capital cost it is small: two weeks of undetected inverter downtime usually costs more."
+    },
+    {
+      "style": "h3",
+      "text": "How often should panels be cleaned?"
+    },
+    {
+      "style": "normal",
+      "text": "No single interval works everywhere: dusty, agricultural and industrial sites need cleaning far more often than sites with regular rainfall. Watch the PR curve and measure how far it jumps after a clean. A small jump means you can stretch the interval."
+    },
+    {
+      "style": "h3",
+      "text": "Without monitoring, when would I notice a fault?"
+    },
+    {
+      "style": "normal",
+      "text": "Usually in the bill, one to two months later, and only if your consumption is stable. When consumption moves seasonally, the missing generation hides inside normal variation and can go unnoticed for an entire season."
+    },
+    {
+      "style": "h3",
+      "text": "Can you take over an existing plant?"
+    },
+    {
+      "style": "normal",
+      "text": "Yes. We operate plants we did not build. The process starts with an operational audit: monitoring infrastructure, alarm configuration, electrical measurements, maintenance history and the warranty file, with the gaps returned as a prioritised list."
+    },
+    {
+      "style": "normal",
+      "text": "If you want to know what your plant is producing and what it is quietly losing, contact us for a free site assessment. We look at your production data alongside the condition on site and report where you stand."
+    }
+  ]
+}

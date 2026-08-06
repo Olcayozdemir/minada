@@ -1,0 +1,211 @@
+{
+  "language": "en",
+  "slug": "nearly-zero-energy-buildings-turkey",
+  "altSlug": "nseb-projeleri-surec",
+  "title": "Nearly Zero Energy Building Turkey: How NZEB Rules Work",
+  "metaTitle": "Nearly Zero Energy Building Turkey: NZEB Guide",
+  "metaDescription": "How Turkey's nearly zero energy building rule works: who it covers, how rooftop solar meets the renewable share, and where it lands in the permit process.",
+  "excerpt": "Turkey's NZEB requirement lands at the building permit stage, not at handover. How the renewable share is met with rooftop solar, and what developers should plan early.",
+  "keywords": [
+    "nearly zero energy building Turkey",
+    "NZEB requirement",
+    "energy performance certificate",
+    "rooftop solar Turkey",
+    "building permit renewable energy",
+    "occupancy certificate",
+    "developer solar planning"
+  ],
+  "category": "Regulation",
+  "coverImage": "/images/v2/area-konut.jpg",
+  "publishedAt": "2026-08-04",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "A nearly zero energy building in Turkey, called NSEB locally, is a new building whose energy demand is cut to a minimum by design and whose remaining demand is largely covered by renewable sources. The requirement lands at the building permit stage, and rooftop solar is the most common way to meet it."
+    },
+    {
+      "style": "h2",
+      "text": "What the nearly zero energy building rule asks for in Turkey"
+    },
+    {
+      "style": "normal",
+      "text": "Two conditions apply together in covered buildings: the building has to reach a defined energy performance class, and a defined share of its annual demand must come from renewable sources."
+    },
+    {
+      "style": "normal",
+      "text": "Scope follows building size and use type. Thresholds, percentages and the phase-in calendar are updated periodically, so the check is always the same: read the text in force on your permit filing date, not the one you remember."
+    },
+    {
+      "style": "h2",
+      "text": "Why demand reduction comes before generation"
+    },
+    {
+      "style": "normal",
+      "text": "The order of the two halves matters. The building is designed to consume little first, then part of what remains comes from renewables. Compensating for a weak envelope with a larger array is expensive and fragile."
+    },
+    {
+      "style": "normal",
+      "text": "Producing a kilowatt-hour costs more than never consuming it. Insulation, glazing, resolved thermal bridges and efficient mechanical systems lower the demand figure, so a smaller array clears the same threshold."
+    },
+    {
+      "style": "h2",
+      "text": "How rooftop solar meets the renewable share"
+    },
+    {
+      "style": "normal",
+      "text": "Rooftop solar is rarely the only option, but it is usually the most direct one. The surface exists, the technology is predictable, and the yield calculation feeds straight into the performance certificate."
+    },
+    {
+      "style": "normal",
+      "text": "That makes array sizing an architectural decision rather than a procurement one. The usable roof is what remains after lift machine rooms, ventilation units, chimneys and parapet shading are subtracted. Skip that step and the capacity in the drawings will not match the roof."
+    },
+    {
+      "style": "normal",
+      "text": "Orientation belongs in that calculation. We work with 1600 kWh per installed kilowatt per year on a south-facing plane and 1350 kWh on south-north or east-west layouts. The renewable share follows that figure, not nameplate capacity."
+    },
+    {
+      "style": "h3",
+      "text": "Structure and electrical routing"
+    },
+    {
+      "style": "normal",
+      "text": "A rooftop array is a load the structural calculation should already know about. Mounting dead load sits alongside wind and snow loads, and calculated late it turns into a strengthening item rather than a design choice."
+    },
+    {
+      "style": "normal",
+      "text": "The electrical side behaves the same way. Inverter room, DC routing, panel connection point and meter location shorten cable runs when drawn in early. Every route resolved later costs copper and labour."
+    },
+    {
+      "style": "h2",
+      "text": "Where the energy performance certificate fits"
+    },
+    {
+      "style": "normal",
+      "text": "Turkey uses an energy performance certificate, known as EKB, that grades a building from A to G. In NZEB projects this is not paperwork collected at the end. It is the target that shapes the design."
+    },
+    {
+      "style": "normal",
+      "text": "The calculation runs on the architectural and mechanical drawings, and renewable generation enters the same model. Capacity on the roof therefore moves the class printed on the certificate."
+    },
+    {
+      "style": "normal",
+      "text": "So array capacity is calculated, not estimated. If the installation differs from the design, calculation and certificate both have to be reissued."
+    },
+    {
+      "style": "blockquote",
+      "text": "Compliance left to the end is the most expensive kind. What is a drawing revision at permit stage becomes a roof teardown after the structure is up."
+    },
+    {
+      "style": "h2",
+      "text": "From building permit to occupancy certificate"
+    },
+    {
+      "style": "normal",
+      "text": "The process reads as four stops. Design comes first: the performance calculation is run, the target class and renewable share are fixed, and the array is drawn into the architectural and electrical sets."
+    },
+    {
+      "style": "normal",
+      "text": "The permit is the second stop, with the performance calculation and the generation design inside the file. Construction follows, and what matters there is that the build matches the approval. Module count, capacity and inverter placement all feed the certificate calculation, so deviations are cheapest to catch before fabrication."
+    },
+    {
+      "style": "normal",
+      "text": "The fourth stop is the occupancy certificate. By then the system is expected to be installed, commissioned and documented, with the energy performance certificate in the file."
+    },
+    {
+      "style": "normal",
+      "text": "A second track runs in parallel. A self-consumption system is filed under Turkey's unlicensed generation framework with the regional distribution company, which issues a connection opinion and later a provisional acceptance. Planning both tracks on one schedule keeps occupancy from waiting on grid paperwork."
+    },
+    {
+      "style": "h2",
+      "text": "Why early planning is cheaper for developers"
+    },
+    {
+      "style": "normal",
+      "text": "Putting an array into the design costs less than adding the same system once the structure is finished. The difference shows up in coordination, not in equipment prices."
+    },
+    {
+      "style": "normal",
+      "text": "Planned early, the roof load is calculated once, the cable route finds space in a shaft, the inverter room exists in the architecture and panel capacity is specified correctly the first time. Planned late, each is a modification line."
+    },
+    {
+      "style": "normal",
+      "text": "There is a commercial gain as well. Buyers understand a strong performance class through service charges and heating costs, and for that to reach the sales conversation the calculation has to exist at permit stage."
+    },
+    {
+      "style": "normal",
+      "text": "The third gain is schedule. A renewable requirement found missing at occupancy stage delays handover, and that delay usually costs more than the system."
+    },
+    {
+      "style": "h2",
+      "text": "Where heat pumps and storage fit"
+    },
+    {
+      "style": "normal",
+      "text": "Heat pumps carry weight in the performance calculation because they meet heating and cooling demand electrically at high efficiency. Combined with rooftop generation, total demand drops and becomes coverable from renewable supply."
+    },
+    {
+      "style": "normal",
+      "text": "Storage answers a different question. Generation is what the requirement counts; a battery does not increase output, it changes when that output is used. In residential projects, where evening consumption dominates, that distinction matters."
+    },
+    {
+      "style": "normal",
+      "text": "Our battery prices are 1,750 USD for 5 kWh, 2,750 USD for 10 kWh and 3,500 USD for 15 kWh, all excluding VAT. The decision is arithmetic: it holds when the annual value of the shifted energy repays the extra investment in a reasonable period."
+    },
+    {
+      "style": "h2",
+      "text": "Budgeting the rooftop system"
+    },
+    {
+      "style": "normal",
+      "text": "A rough frame places the budget line early. We use 700 USD per installed kilowatt, an exchange rate of 47 TL and an electricity price of 5 TL per kWh, all excluding VAT."
+    },
+    {
+      "style": "normal",
+      "text": "On those coefficients a 30 kWp system serving common areas is roughly 987,000 TL. On a south-facing roof it produces about 48,000 kWh a year, worth around 240,000 TL, which puts payback in the four-year band."
+    },
+    {
+      "style": "normal",
+      "text": "That changes how the requirement reads on a budget sheet. A system installed because the rule demands it also lowers common area costs permanently, and the management plan should say who that saving belongs to."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Does the NZEB requirement cover every new building?"
+    },
+    {
+      "style": "normal",
+      "text": "No. Scope follows building size and use type, and the thresholds are updated periodically, so a single dwelling and a large development are not assessed in the same frame. What decides your case is the text in force on your permit filing date, which is why the check belongs at the start of design."
+    },
+    {
+      "style": "h3",
+      "text": "When is the energy performance certificate issued?"
+    },
+    {
+      "style": "normal",
+      "text": "It is required in the file at the occupancy stage, but the calculation behind it is done during design and the building is engineered to that calculation. The document arrives at the end, the decisions are made at the beginning."
+    },
+    {
+      "style": "h3",
+      "text": "Can the renewable share be met without solar?"
+    },
+    {
+      "style": "normal",
+      "text": "Solar is not the only route. High-efficiency systems such as heat pumps and other renewable sources also enter the calculation. Rooftop solar tends to be the most direct answer because the surface is available and the yield is predictable."
+    },
+    {
+      "style": "h3",
+      "text": "Can the system be installed after handover?"
+    },
+    {
+      "style": "normal",
+      "text": "On most projects, no. The requirement expects the system installed, commissioned and documented at the occupancy stage, so installation belongs on the programme before the structure is complete. The grid connection track runs on its own clock as well, and leaving it out of the programme slips the handover date."
+    },
+    {
+      "style": "normal",
+      "text": "The first step on any NZEB project is confirming whether you are in scope and fixing the target energy class. Working from your drawings, we establish the net usable roof area, the capacity required and a realistic budget range in a free site assessment. MİNADA handles the solar side from design to occupancy."
+    }
+  ]
+}

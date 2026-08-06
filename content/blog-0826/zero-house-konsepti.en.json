@@ -1,0 +1,236 @@
+{
+  "language": "en",
+  "slug": "zero-house-concept",
+  "altSlug": "zero-house-konsepti",
+  "title": "Zero energy house: how a self-sufficient home is built",
+  "metaTitle": "Zero energy house: the right order to build one",
+  "metaDescription": "Zero energy house explained: solar, storage, heat pump and EV charging in the right order, plus a realistic view of what your bill will look like.",
+  "excerpt": "A zero energy house is not a product but a sequence: efficiency first, then generation, then storage. How the pieces fit and what to expect from the bill.",
+  "keywords": [
+    "zero energy house",
+    "self-sufficient home energy",
+    "net zero energy home",
+    "solar and heat pump",
+    "home battery storage",
+    "home energy management system",
+    "EV charging at home",
+    "energy independent house"
+  ],
+  "category": "Technology",
+  "coverImage": "/images/v2/home-hero.jpeg",
+  "publishedAt": "2026-08-02",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "A zero energy house produces, over a year, as much energy as it consumes. Solar, storage, a heat pump, EV charging and an energy management layer work as one system. What decides the outcome is not the equipment list but the order you install it in."
+    },
+    {
+      "style": "h2",
+      "text": "What is a zero energy house?"
+    },
+    {
+      "style": "normal",
+      "text": "The accounting is annual, not monthly. Summer surplus offsets the winter shortfall, so the goal is not to draw nothing from the grid, but to generate as much as you draw."
+    },
+    {
+      "style": "normal",
+      "text": "The second half of the idea is scope. Heating runs on gas and transport on fuel, so electricity is only part of the spend. A zero energy house moves all three onto one carrier, fed from one roof."
+    },
+    {
+      "style": "normal",
+      "text": "There is no single box to buy, only five decisions taken in the right sequence."
+    },
+    {
+      "style": "h2",
+      "text": "The right order for self-sufficient home energy"
+    },
+    {
+      "style": "normal",
+      "text": "Sequence is the most expensive thing people get wrong. Start in the wrong place and the system comes out oversized, with payback stretching to match."
+    },
+    {
+      "style": "h3",
+      "text": "Step 1: Measure demand, then reduce it"
+    },
+    {
+      "style": "normal",
+      "text": "We start with twelve months of bills, then look at insulation, glazing, lighting and old appliances. You can heat a poorly insulated house with a heat pump, but the unit and the array both grow."
+    },
+    {
+      "style": "normal",
+      "text": "Every kilowatt-hour removed from demand saves several kilowatt-hours of generating capacity you would otherwise buy. Efficiency is the cheapest component here."
+    },
+    {
+      "style": "h3",
+      "text": "Step 2: Build the generation"
+    },
+    {
+      "style": "normal",
+      "text": "Only once demand is settled do we size the rooftop array. Orientation, pitch, shading and usable area set the ceiling; the roof decides more than the budget."
+    },
+    {
+      "style": "h3",
+      "text": "Step 3: Add storage"
+    },
+    {
+      "style": "normal",
+      "text": "A battery does not create energy. It moves midday surplus into the evening, raising the share of your own production you actually use. That is why it comes after generation."
+    },
+    {
+      "style": "h3",
+      "text": "Step 4: Electrify heating and driving"
+    },
+    {
+      "style": "normal",
+      "text": "A heat pump and a home charger are the two largest loads in the house, and the two most flexible: both can shift in time. That is the real lever."
+    },
+    {
+      "style": "h3",
+      "text": "Step 5: Put a controller on top"
+    },
+    {
+      "style": "normal",
+      "text": "An energy management system sees generation and loads in the same moment and automates the decision. Without it, four components sit in one building without cooperating."
+    },
+    {
+      "style": "blockquote",
+      "text": "A zero energy house is not a shopping list. It is a discipline of sequence, and a system built out of order is always bigger and costlier than it needed to be."
+    },
+    {
+      "style": "h2",
+      "text": "How much solar does a zero energy house need?"
+    },
+    {
+      "style": "normal",
+      "text": "The calculation is one line: annual consumption divided by your roof's annual specific yield. Our model assumes 1,600 kWh per kWp for a south-facing roof and 1,350 for east-west or split roofs."
+    },
+    {
+      "style": "normal",
+      "text": "Take a worked example. A home using 5,000 kWh today lands near 12,000 kWh once heating moves to a heat pump and a car charges at home. Both additions depend on heat loss and mileage, so we size them during the survey."
+    },
+    {
+      "style": "normal",
+      "text": "At 1,600 kWh per kWp, 12,000 kWh needs roughly 7.5 kWp. The same house on an east-west roof needs about 8.9 kWp for the same output. The roof makes that difference."
+    },
+    {
+      "style": "normal",
+      "text": "Our model uses 700 USD per kWp at 47 TL, or 32,900 TL per kWp excluding VAT, so 7.5 kWp is around 246,750 TL. At 5 TL per kWh, 12,000 kWh is worth 60,000 TL a year: the solar side alone pays back in roughly 4.1 years."
+    },
+    {
+      "style": "h2",
+      "text": "How big should the home battery be?"
+    },
+    {
+      "style": "normal",
+      "text": "Battery size follows your evening and overnight consumption, not your annual total. Whatever you use after sunset is what it has to carry."
+    },
+    {
+      "style": "normal",
+      "text": "For most homes that lands between 5 and 15 kWh. Excluding VAT, our packages are 1,750 USD for 5 kWh, 2,750 USD for 10 kWh and 3,500 USD for 15 kWh. Capacity you never cycle is money standing still."
+    },
+    {
+      "style": "normal",
+      "text": "In the example above, a 10 kWh pack adds 129,250 TL and stretches payback to roughly 6.3 years. What it buys is not money, but your own energy at night and a house that survives outages."
+    },
+    {
+      "style": "h2",
+      "text": "Why heat pumps and EV charging belong in the same design"
+    },
+    {
+      "style": "normal",
+      "text": "A heat pump does not make heat, it moves heat that already exists outdoors into the building, returning several units of heat per unit of electricity. That is what puts heating on your roof."
+    },
+    {
+      "style": "normal",
+      "text": "An electric car is a battery that happens to drive away. Charging at midday rather than midnight raises self-consumption with no extra hardware."
+    },
+    {
+      "style": "normal",
+      "text": "Hot water belongs here too. Heating the cylinder during the strongest solar hours stores energy as temperature rather than electricity, far cheaper than a battery."
+    },
+    {
+      "style": "h2",
+      "text": "What does a home energy management system do?"
+    },
+    {
+      "style": "normal",
+      "text": "The controller sees production, consumption, charge state and the car in one place, then applies a priority order: household load, shiftable loads such as hot water and charging, the battery, and the grid last."
+    },
+    {
+      "style": "normal",
+      "text": "Good systems make that order dynamic: if tomorrow is forecast cloudy, the battery is left fuller tonight. The second job of this layer is visibility, since you cannot make a decision about a load you have never measured."
+    },
+    {
+      "style": "h2",
+      "text": "Is a zero bill realistic?"
+    },
+    {
+      "style": "normal",
+      "text": "Bringing the annual balance close to zero is realistic. A zero bill every month is not. In December and January production falls as heating demand rises, and you import from the grid."
+    },
+    {
+      "style": "normal",
+      "text": "The invoice also has a non-energy part: distribution charges, meter fees, taxes and levies. Those remain even when generation fully covers consumption. The honest target is to demote the grid to backup."
+    },
+    {
+      "style": "normal",
+      "text": "On the billing side, exports are netted against imports under Türkiye's unlicensed generation framework. Whether the settlement window is monthly or hourly follows your connection type and the regulation in force when you apply, so confirm it before you file."
+    },
+    {
+      "style": "normal",
+      "text": "Going off-grid is possible but rarely economic in a city. A system large enough to survive the worst week of winter alone sits idle for most of the year."
+    },
+    {
+      "style": "h2",
+      "text": "How to phase the transition"
+    },
+    {
+      "style": "normal",
+      "text": "You do not have to install everything at once, only to make sure the first step does not close the door on the next."
+    },
+    {
+      "style": "normal",
+      "text": "We split the plan in two: what gets installed now, and what only needs infrastructure prepared. Battery cabling pulled during the roof work cuts the later cost of storage, and a spare conduit to the garage does the same for a charger. Connection capacity and project approval progress differently per component, so plan the order rather than assume it."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Do I need a new build for this?"
+    },
+    {
+      "style": "normal",
+      "text": "No. Most existing homes can be converted in stages. Difficulty comes from heat loss and roof suitability, not the age of the building. A retrofitted older house often gets there more easily than an uninsulated new one."
+    },
+    {
+      "style": "h3",
+      "text": "Can I get self-sufficient home energy without a battery?"
+    },
+    {
+      "style": "normal",
+      "text": "In energy terms, yes: over a year the roof can generate what the house consumes. Billing follows your settlement window, and under hourly netting the grid is not a free store, because exports and imports are matched hour by hour. In either case the house stops during an outage, and night consumption stays on the grid. The battery is the costly but genuine part of independence."
+    },
+    {
+      "style": "h3",
+      "text": "Will a heat pump cope with winter?"
+    },
+    {
+      "style": "normal",
+      "text": "A unit sized against the design temperature of your region runs through winter. Efficiency falls as it gets colder, so consumption rises in the worst weeks. What matters is that capacity was calculated against heat loss, not floor area."
+    },
+    {
+      "style": "h3",
+      "text": "What is the payback on the whole package?"
+    },
+    {
+      "style": "normal",
+      "text": "The solar side alone typically returns in 4-6 years. Storage lengthens that; a heat pump replacing gas shortens it, because the saving reaches past the electricity bill. A firm number needs your bills and a roof simulation."
+    },
+    {
+      "style": "normal",
+      "text": "If you want the roadmap for your own house, we run the survey free of charge: we measure the roof, read twelve months of consumption and write down which step makes sense this year and which one can wait."
+    }
+  ]
+}

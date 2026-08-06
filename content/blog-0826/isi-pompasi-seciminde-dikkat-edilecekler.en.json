@@ -1,0 +1,175 @@
+{
+  "language": "en",
+  "slug": "how-to-choose-a-heat-pump",
+  "altSlug": "isi-pompasi-seciminde-dikkat-edilecekler",
+  "title": "How to choose a heat pump: sizing, COP and SCOP explained",
+  "metaTitle": "How to Choose a Heat Pump: Sizing, COP and SCOP",
+  "metaDescription": "How to choose a heat pump the engineering way: heat loss sizing, COP and SCOP explained, cold weather capacity tables, refrigerants, noise and radiator fit.",
+  "excerpt": "Sizing comes from a heat loss calculation, not a catalogue. A practical guide to capacity, COP and SCOP, cold weather performance, refrigerants, noise and radiator fit.",
+  "keywords": [
+    "how to choose a heat pump",
+    "COP SCOP explained",
+    "air source heat pump",
+    "heat pump sizing",
+    "heat pump radiators",
+    "R290 heat pump",
+    "heat pump and solar"
+  ],
+  "category": "Guide",
+  "coverImage": "/images/v2/service-heatpump.jpg",
+  "publishedAt": "2026-07-28",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "How to choose a heat pump comes down to three questions: how much heat your building loses on the coldest design day, what the unit actually delivers at that temperature, and what flow temperature your radiators or underfloor loops need. Everything else, including the COP on the brochure, follows from those answers."
+    },
+    {
+      "style": "h2",
+      "text": "How to choose a heat pump: start with the heat loss calculation"
+    },
+    {
+      "style": "normal",
+      "text": "A heat pump does not convert electricity into heat. It moves heat that already exists outside into the building, so a well matched unit returns several units of heat per unit of electricity. Its size follows from the building's heat loss, not from the fuel you burned."
+    },
+    {
+      "style": "normal",
+      "text": "The calculation runs through insulation, glazing, air tightness, ventilation and your winter design temperature. In Malatya and the colder inland belt of Türkiye, the same floor area needs more power than a coastal apartment. Watts per square metre is no basis for a purchase, and if insulation work is planned, size for the building as it will be."
+    },
+    {
+      "style": "h2",
+      "text": "What size heat pump do I need?"
+    },
+    {
+      "style": "normal",
+      "text": "The heat loss calculation gives you the design load. Selection adds two layers: domestic hot water demand, and real capacity at low outdoor temperatures. Catalogue output is measured at a mild test point; it is not the power you have in January."
+    },
+    {
+      "style": "h3",
+      "text": "Why oversizing costs you"
+    },
+    {
+      "style": "normal",
+      "text": "The most common mistake is stepping up one model size for safety. Every unit modulates down only to a floor, and below it the compressor cycles on and off instead of running steadily. Efficiency drops, compressor life shortens and room temperatures swing. The right size runs quietly at part load most of the year."
+    },
+    {
+      "style": "h3",
+      "text": "The bivalent point and back-up heat"
+    },
+    {
+      "style": "normal",
+      "text": "In an air source heat pump, capacity falls as outside air gets colder while demand rises. Where the two curves cross is the bivalent point; below it an electric element or the existing boiler covers the gap. Setting that point deliberately beats sizing for the three coldest days, provided the calculation shows the back-up hours."
+    },
+    {
+      "style": "h2",
+      "text": "COP and SCOP explained"
+    },
+    {
+      "style": "normal",
+      "text": "COP is heat delivered divided by electricity consumed at a single operating point. SCOP averages the whole heating season across changing outdoor temperatures and part loads. If you care about the annual bill rather than a peak number, SCOP is the metric that matters."
+    },
+    {
+      "style": "normal",
+      "text": "A COP quoted without its test conditions is not comparable to anything. Conditions use two letters: A for outdoor air, W for the water produced. A7/W35 means 7 degrees outside and 35 degree water; A-7/W55 is far harder, and the same machine reads much lower there. Always compare at the same letter pair."
+    },
+    {
+      "style": "blockquote",
+      "text": "A heat pump is described by its capacity table on the coldest day, not by the single number on the brochure cover."
+    },
+    {
+      "style": "h2",
+      "text": "Why low temperature performance decides the outcome"
+    },
+    {
+      "style": "normal",
+      "text": "A heat pump is tested by the coldest week of winter, not by a mild autumn afternoon. Ask for the capacity and power input table: it lists how many kW the unit delivers as outdoor temperature falls and how much electricity it draws. Select from that table, not from a headline figure."
+    },
+    {
+      "style": "normal",
+      "text": "The second issue is defrost. Around freezing with high humidity, frost builds on the outdoor coil and the unit reverses the cycle to melt it. That is normal and unnoticeable in a good design. Trouble starts when the circuit holds too little water, since defrost heat comes from the system itself. A buffer tank is the decisive detail."
+    },
+    {
+      "style": "h2",
+      "text": "Does the refrigerant matter?"
+    },
+    {
+      "style": "normal",
+      "text": "The refrigerant sets two things: environmental load and the water temperature the machine reaches without losing much efficiency. Propane (R290) has a global warming potential in the single digits, against hundreds for common synthetics, and it holds efficiency better at high flow temperatures, which is what an existing radiator system asks for. In return it is flammable, so outdoor placement must respect clearance and ventilation rules: a design question, not an obstacle."
+    },
+    {
+      "style": "h2",
+      "text": "Outdoor unit noise and placement"
+    },
+    {
+      "style": "normal",
+      "text": "Noise is the most frequent complaint in heat pump projects and the easiest to design out. Catalogues quote two quantities: sound power level is what the unit produces, sound pressure level is what a microphone reads at a stated distance, so never compare the two. Sound pressure drops substantially each time the distance doubles, which makes placement away from bedroom windows and the neighbour's wall the most effective measure. In terraced housing, add a night mode and anti-vibration base."
+    },
+    {
+      "style": "h2",
+      "text": "Will my existing radiators work with a heat pump?"
+    },
+    {
+      "style": "normal",
+      "text": "Usually yes, with one condition. In a boiler heated building the radiators were sized for high flow temperatures, while a heat pump gets more efficient as flow temperature drops. The rule is simple: every degree you take off the flow temperature goes straight into efficiency."
+    },
+    {
+      "style": "normal",
+      "text": "That is why we check emitters room by room during the survey. Some radiators are already adequate at lower water temperature; others need a larger panel or a fan convector. Underfloor heating runs cool by nature and is the best partner, and mixed layouts work as long as one circuit is not asked to serve two regimes."
+    },
+    {
+      "style": "h2",
+      "text": "Running a heat pump on rooftop solar"
+    },
+    {
+      "style": "normal",
+      "text": "A heat pump ties heating to electricity; a rooftop plant produces that electricity on site. Together they turn a fluctuating fuel bill into part of the energy you generate yourself."
+    },
+    {
+      "style": "normal",
+      "text": "For scale, our own feasibility coefficients. A 10 kWp south facing rooftop system in Türkiye yields roughly 1600 kWh per kWp per year, about 16,000 kWh annually; at 5 TL per kWh that is on the order of 80,000 TL a year. The system costs around 700 USD per kWp, roughly 329,000 TL at 47 TL to the dollar, putting simple payback near four years. East-west and south-north layouts drop the yield to 1350 kWh per kWp. All figures exclude VAT."
+    },
+    {
+      "style": "normal",
+      "text": "Timing matters too. A heat pump works hardest on winter mornings and evenings, while solar peaks around midday. Either store midday heat in the hot water tank and the building's mass, or add a battery: in our model 5 kWh is 1,750 USD, 10 kWh 2,750 USD and 15 kWh 3,500 USD, before VAT. Net metering covers the rest: daytime exports are netted against later imports through your distribution company."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Do heat pumps work in very cold weather?"
+    },
+    {
+      "style": "normal",
+      "text": "They do. Modern air source units produce heat well below freezing, though capacity and efficiency decline as it gets colder. The question is never whether the machine runs, but whether it still covers your demand at that temperature. The manufacturer's low temperature capacity table answers that."
+    },
+    {
+      "style": "h3",
+      "text": "What is the difference between COP and SCOP?"
+    },
+    {
+      "style": "normal",
+      "text": "COP is instantaneous efficiency at one stated pair of air and water temperatures. SCOP averages the entire heating season and accounts for part load, the distribution of outdoor temperatures and defrost losses. For annual running cost, SCOP is the more realistic basis."
+    },
+    {
+      "style": "h3",
+      "text": "Can a heat pump run alongside my existing boiler?"
+    },
+    {
+      "style": "normal",
+      "text": "Yes, and the arrangement is called hybrid operation. The heat pump covers most of the season alone, and the boiler takes over below the bivalent point or during short peaks. Where the existing boiler is relatively new, it is a sensible way to cut the initial investment."
+    },
+    {
+      "style": "h3",
+      "text": "What documents should a quotation include?"
+    },
+    {
+      "style": "normal",
+      "text": "Ask for three: the building heat loss calculation, the unit's capacity and power input table at low outdoor temperatures, and the calculation showing which flow temperature the emitters will run at. If those three agree, most of what remains is preference."
+    },
+    {
+      "style": "normal",
+      "text": "We select heat pumps against the building, not against a catalogue. During the survey we produce the heat loss calculation, check what water temperature your emitters need, and put the rooftop solar scenario in the same table. The survey and preliminary feasibility study are free; contact the MİNADA team to arrange one."
+    }
+  ]
+}

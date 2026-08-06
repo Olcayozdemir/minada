@@ -1,0 +1,188 @@
+{
+  "language": "en",
+  "slug": "ev-charging-business-models",
+  "altSlug": "ev-sarj-istasyonu-ticari-opsiyonlar",
+  "title": "EV charging for business: four commercial models",
+  "metaTitle": "EV Charging for Business: Four Commercial Models",
+  "metaDescription": "EV charging for business explained: fleet charging, customer amenity, hosting a licensed network, or running public stations. AC vs DC, grid capacity and solar.",
+  "excerpt": "Charging infrastructure is a grid connection decision, not a device purchase. Four commercial models for businesses, the real difference between AC and DC, and how rooftop solar changes the maths.",
+  "keywords": [
+    "EV charging for business",
+    "EV charging business model",
+    "AC vs DC charging",
+    "commercial EV charger installation",
+    "charging network operator Turkey",
+    "OCPP charger",
+    "solar carport EV charging",
+    "fleet charging infrastructure"
+  ],
+  "category": "Guide",
+  "coverImage": "/images/v2/service-ev.jpg",
+  "publishedAt": "2026-07-31",
+  "blocks": [
+    {
+      "style": "normal",
+      "text": "EV charging for business comes down to four commercial models: charging your own fleet, offering it as a customer amenity, hosting a licensed network on your site, or operating public stations under your own licence. Which one fits depends on how long vehicles park, your site traffic and what your grid connection can carry."
+    },
+    {
+      "style": "h2",
+      "text": "Why EV charging for business is a connection decision"
+    },
+    {
+      "style": "normal",
+      "text": "Buying a charger looks like buying a device. In fact the unit is the smallest line in the budget: the project is decided by your connection, your dwell times, and who pays for the energy."
+    },
+    {
+      "style": "normal",
+      "text": "So before collecting quotations, settle three questions. Who are you charging: your own vehicles, your customers, or anyone passing by? How long does a vehicle stay? And can your supply agreement carry the load?"
+    },
+    {
+      "style": "h2",
+      "text": "AC or DC: what the power levels really mean"
+    },
+    {
+      "style": "normal",
+      "text": "The difference is where the conversion happens. In AC the supply reaches the car as alternating current and the onboard charger converts it, so the car sets the ceiling. In DC the station converts, and direct current goes straight to the battery, which allows far higher power."
+    },
+    {
+      "style": "h3",
+      "text": "AC charging suits long dwell times"
+    },
+    {
+      "style": "normal",
+      "text": "The AC units we install run from 7.4 to 22 kW: 7.4 kW from a single phase, 22 kW from three. At 7.4 kW a typical car fills overnight in six to eight hours, which suits an office, hotel or residential garage. Hardware cost is modest and several sockets can share one circuit."
+    },
+    {
+      "style": "h3",
+      "text": "DC fast charging suits short stops"
+    },
+    {
+      "style": "normal",
+      "text": "On the DC side the units we install are 90 kW and above. At that power a car covers 20 to 80 percent in 20 to 40 minutes, a coffee stop, while unit cost, connection capacity and cooling all rise sharply. Battery acceptance is not constant either: the vehicle tapers current as it fills, so estimate session times from the charging curve, not the rating."
+    },
+    {
+      "style": "h2",
+      "text": "Model 1: fleet and staff charging"
+    },
+    {
+      "style": "normal",
+      "text": "The simplest case treats charging as a cost reduction, not a revenue line. You install AC units and charge company vehicles and staff cars. There is no commercial model to design; the gain is the electricity that replaces fuel."
+    },
+    {
+      "style": "normal",
+      "text": "The engineering work is load management. If ten cars plug in at shift end, simultaneous demand strains your supply agreement. Software holds total draw under a ceiling and shares it between units, so you add sockets without upsizing the transformer. Add rooftop or carport solar and daytime generation feeds daytime parking."
+    },
+    {
+      "style": "h2",
+      "text": "Model 2: charging as a customer amenity"
+    },
+    {
+      "style": "normal",
+      "text": "In hotels, shopping centres, restaurants and supermarkets, where the customer stays a while, charging is a service rather than a product. It is offered free or at cost, and the return shows up in footfall and dwell time, not in kilowatt hours sold."
+    },
+    {
+      "style": "normal",
+      "text": "AC units are usually enough here. Giving energy away and selling it are different doors: in Türkiye, paid public charging is delivered through a licensed charging network. Whatever you decide today, specify OCPP compatible hardware: the open protocol lets you change the contract later rather than the equipment."
+    },
+    {
+      "style": "h2",
+      "text": "Model 3: hosting a licensed charging network"
+    },
+    {
+      "style": "normal",
+      "text": "Here you appear as the site owner: you make your car park and connection available to a licensed charging network operator, who installs and runs the station. Your side keeps the land, the connection and the traffic."
+    },
+    {
+      "style": "normal",
+      "text": "Terms are agreed freely: some networks fund everything and pay a share of usage, in others you build and hand over operation. Read the contract for term, exclusivity, who pays for the electricity, and who owns the hardware at the end."
+    },
+    {
+      "style": "h2",
+      "text": "Model 4: operating public stations yourself"
+    },
+    {
+      "style": "normal",
+      "text": "If you want the whole revenue line, you deliver public charging in your own name. In Türkiye this is a regulated activity: the network operator holds a licence, stations are certified as part of that network, and billing to the end user runs through it."
+    },
+    {
+      "style": "normal",
+      "text": "The conditions, minimum requirements and fees attached to that licence are set by regulation and revised periodically, which is why we quote no figures; check the regulator's current texts before committing. Joining an existing network is a much shorter path. Feasibility itself reduces to three variables: traffic past the site, hours the station is occupied, and what you pay for the energy."
+    },
+    {
+      "style": "blockquote",
+      "text": "The profitability of a charging station lies not in the power of the socket but in how many hours a day that socket is occupied."
+    },
+    {
+      "style": "h2",
+      "text": "Grid connection: the line everyone underestimates"
+    },
+    {
+      "style": "normal",
+      "text": "In charging projects the surprise comes from the connection, not the hardware price. If your contracted capacity cannot carry the new load, you either apply to the distribution company for an increase or manage the load within what you have."
+    },
+    {
+      "style": "normal",
+      "text": "Cost and lead time for an increase vary with the state of the local network. We run the steps in one order: measure contracted capacity and transformer load, analyse peak demand, then select the units. Projects run in reverse end up with chargers waiting in a crate."
+    },
+    {
+      "style": "normal",
+      "text": "Capping the combined draw removes the need for a capacity increase in most businesses. Add a battery and the peak comes from storage, the most effective way to keep a DC connection small."
+    },
+    {
+      "style": "h2",
+      "text": "Pairing chargers with rooftop solar and storage"
+    },
+    {
+      "style": "normal",
+      "text": "Where the charging energy comes from is the quiet variable in profitability: every grid kilowatt hour is a cost, one from your own roof is not."
+    },
+    {
+      "style": "normal",
+      "text": "For scale, our own feasibility coefficients. A 30 kWp south facing rooftop plant yields about 1600 kWh per kWp per year, roughly 48,000 kWh annually, worth around 240,000 TL at 5 TL per kWh. At 700 USD per kWp and 47 TL to the dollar the system costs about 987,000 TL, putting simple payback near four years. East-west or south-north layouts drop the yield to 1350 kWh per kWp. All figures exclude VAT."
+    },
+    {
+      "style": "normal",
+      "text": "Storage connects generation hours to charging hours: in our model a 5 kWh battery is 1,750 USD, 10 kWh is 2,750 USD and 15 kWh is 3,500 USD, before VAT. Net metering nets daytime exports against later imports through your distribution company. A carport combines shade, generation and the charger on one frame."
+    },
+    {
+      "style": "h2",
+      "text": "Frequently asked questions"
+    },
+    {
+      "style": "h3",
+      "text": "Can I charge customers for using my chargers?"
+    },
+    {
+      "style": "normal",
+      "text": "Technically yes: OCPP compatible units connect to operator platforms and bill per kilowatt hour. Commercially, paid public charging in Türkiye runs through a licensed charging network, so the question is structural, not technical. You either join an existing network or obtain your own licence, and the current regulation sets the conditions."
+    },
+    {
+      "style": "h3",
+      "text": "Should I install AC or DC?"
+    },
+    {
+      "style": "normal",
+      "text": "Dwell time decides. Under an hour points to DC; a few hours or more points to AC. Roadside sites, fuel stations and service areas lean DC, while hotels, offices and shopping centre car parks lean AC. Larger sites usually want both."
+    },
+    {
+      "style": "h3",
+      "text": "What if my existing supply is not enough?"
+    },
+    {
+      "style": "normal",
+      "text": "Two routes. The first is a capacity increase application to the distribution company, with cost and timing set by the local network situation. The second is staying inside your existing capacity through load management and, where needed, a battery. Only a peak demand measurement tells you which applies."
+    },
+    {
+      "style": "h3",
+      "text": "How much maintenance does a charger need?"
+    },
+    {
+      "style": "normal",
+      "text": "Less than most electrical plant, but not none. Cable and connector wear, residual current device testing, earthing checks and, on DC units, cooling fans and filters need attention. In a paid operation the metric is uptime: a faulty socket costs revenue and reputation."
+    },
+    {
+      "style": "normal",
+      "text": "We start charging projects by measuring your connection, not by selecting hardware. During the survey we establish your contracted capacity and peak demand, propose an AC and DC mix from your dwell times, and put the solar scenario in the same table. We also advise on licensed network partnerships. The survey and preliminary feasibility study are free; contact the MİNADA team to arrange one."
+    }
+  ]
+}
