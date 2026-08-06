@@ -92,6 +92,14 @@ export async function Footer() {
             >
               WhatsApp
             </a>
+            <a
+              href={SITE.addressMapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactLink}
+            >
+              {SITE.address}
+            </a>
             <p className={styles.note}>{t("placeholderNote")}</p>
           </div>
         </div>

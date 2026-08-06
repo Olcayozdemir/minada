@@ -41,7 +41,14 @@ export function localBusinessLd(locale: string) {
     telephone: SITE.phone,
     email: SITE.email,
     areaServed: "TR",
-    address: { "@type": "PostalAddress", addressCountry: "TR" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Görgü Mah. 2. Sk., Ankara Asfaltı 15. Km",
+      addressLocality: "Yeşilyurt",
+      addressRegion: "Malatya",
+      postalCode: "44900",
+      addressCountry: "TR",
+    },
   };
 }
 

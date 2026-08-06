@@ -76,7 +76,7 @@
     "how": {
       "eyebrow": "How it works",
       "title": "Six steps from survey to operation",
-      "intro": "Our goal is to turn your existing home into a self-sufficient one: six transparent steps, and you know in advance what happens at each stage.",
+      "intro": "With renewable-energy engineering, our goal is to turn your existing home into one that is self-sufficient in every condition: six transparent steps, so you know in advance what happens at each stage.",
       "discovery": {
         "title": "Free Survey & Consumption Analysis",
         "desc": "We inspect the site in person and analyze your bills and load profile. The survey is free."
@@ -108,7 +108,7 @@
       "intro": "From individual homes to industrial facilities — systems that scale to your needs.",
       "konut": {
         "title": "Residential",
-        "desc": "Turnkey rooftop solar for villas and detached homes."
+        "desc": "Turn-key energy solutions for villas and detached homes."
       },
       "ticari": {
         "title": "Commercial & Industrial",
@@ -206,7 +206,7 @@
       "lead": "Electricity is no longer an expense,",
       "boldPart": "it is independent power your own roof produces.",
       "rest": "With MİNADA Enerji Mühendislik we design, install and operate solar energy, energy storage, heat pumps and electric vehicle charging stations from a single hand, from homes to businesses.",
-      "chipValue": "5 solutions",
+      "chipValue": "4 solutions",
       "chipLabel": "under one roof"
     },
     "gateway": {
@@ -864,7 +864,7 @@
           "l": "AC home charging"
         },
         "s2": {
-          "v": "30 kW+",
+          "v": "90 kW+",
           "l": "DC fast charging"
         },
         "s3": {
@@ -943,7 +943,7 @@
       "dc": {
         "title": "DC Fast Charging",
         "lead": "Minutes-scale charging on the road and in heavy use.",
-        "power": "30 kW and up",
+        "power": "90 kW and up",
         "conn": "CCS2",
         "time": "20-80% in 20-40 min",
         "best": "Business / fleet / car parks"
