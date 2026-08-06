@@ -9,6 +9,7 @@ import {
   type ProductGroupItem,
 } from "@/lib/catalog-data";
 import { fallbackPost, fallbackPosts, fallbackSlugs } from "@/lib/blog-fallback";
+import { readMinutes } from "@/lib/reading-time";
 
 const postFields = groq`
   _id, title, "slug": slug.current, excerpt, coverImage, publishedAt,
@@ -43,10 +44,9 @@ export type ProjectItem = {
   coverImage?: any;
 };
 
-// ~1100 chars/min — matches lib/blog-fallback's reading-speed estimate.
 function withReadMinutes<T extends { bodyChars?: number }>(post: T): T & { readMinutes: number } {
   const { bodyChars, ...rest } = post;
-  return { ...rest, readMinutes: Math.max(1, Math.round((bodyChars ?? 0) / 1100)) } as T & {
+  return { ...rest, readMinutes: readMinutes(bodyChars) } as T & {
     readMinutes: number;
   };
 }

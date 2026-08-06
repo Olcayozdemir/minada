@@ -5,6 +5,7 @@
 // then own the blog from /studio.
 
 import type { PostDetail, PostListItem } from "@/sanity/queries";
+import { bodyTextLength, readMinutes } from "@/lib/reading-time";
 
 let k = 0;
 const key = () => `fb${(k++).toString(36)}`;
@@ -386,18 +387,8 @@ const POSTS: FallbackPost[] = [
   },
 ];
 
-// ~1100 chars/min is a rough Turkish/English silent-reading speed.
-function textLength(body: any[]): number {
-  return body.reduce(
-    (sum, b) =>
-      sum + (b.children ?? []).reduce((s: number, c: any) => s + (c.text?.length ?? 0), 0),
-    0,
-  );
-}
-
 export function fallbackReadMinutes(body: any[] | undefined): number {
-  if (!body?.length) return 1;
-  return Math.max(1, Math.round(textLength(body) / 1100));
+  return readMinutes(bodyTextLength(body));
 }
 
 export function fallbackPosts(locale: string): PostListItem[] {
