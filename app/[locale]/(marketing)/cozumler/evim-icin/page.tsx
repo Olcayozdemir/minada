@@ -35,11 +35,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      {/* Foto hero — aydınlık gün ışığı görseli. */}
+      {/* Foto hero — akşamüstü aile karesi: panel, batarya, wallbox ve şarjdaki
+          araç aynı sahnede; segmentin vaadi tek bakışta okunuyor. */}
       <section className={styles.pHero} data-hero="">
         <Image
-          src="/images/v2/home-hero.jpeg"
-          alt=""
+          src="/images/v2/home-hero-family.jpg"
+          alt={t("heroAlt")}
           fill
           sizes="100vw"
           priority

@@ -128,10 +128,14 @@
 
 .pHeroPhoto {
   object-fit: cover;
-  object-position: 68% center;
+  /* Kare 16:9'a yakın, bant ondan daha geniş: kırpma dikeyde oluyor. 42%
+     çatıdaki panelleri karede tutar, fazlalığı çimenden alır. */
+  object-position: center 42%;
 
   @include bp-down(760px) {
-    object-position: 62% center;
+    /* Dar kadrajda kırpma yatayda oluyor: metin bloğu yüzlerin üstüne binmesin
+       diye pencere ekipman duvarına kaydırıldı (batarya, wallbox, şarjdaki araç). */
+    object-position: 81% 48%;
   }
 }
 
