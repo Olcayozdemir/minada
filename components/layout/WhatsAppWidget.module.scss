@@ -27,6 +27,8 @@ $wa-dark: #1da851;
 }
 
 .trigger {
+  position: relative;
+  z-index: 0;
   display: inline-grid;
   place-items: center;
   width: 56px;
@@ -49,6 +51,51 @@ $wa-dark: #1da851;
   @include bp-down(640px) {
     width: 52px;
     height: 52px;
+  }
+
+  /* Genişleyip sönen halka: sabit düğmenin işe yaraması için önce fark
+     edilmesi gerekiyor. Hareket düğmenin arkasında kalır — düğmenin kendisi
+     kıpırdarsa dokunma hedefi kaçar. Tıklamayı da engellemez. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: var(--r-pill);
+    background: $wa;
+    pointer-events: none;
+    /* Sabit hızlı süregelen döngü -> linear. ease-out genişlemeyi başa yığıyor,
+       halka daha yola çıkmadan sönüyordu. */
+    animation: ping 2.4s linear infinite;
+  }
+
+  /* Kart açıkken dikkat çekmenin işi bitti; hover'da da susar. */
+  &[aria-expanded="true"]::after,
+  &:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Halka yayılırken görünür kalır, sonra bir sonraki atıma kadar bekler:
+   nabız gibi, titrek değil. */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  65%,
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+/* Dekoratif, süregelen bir döngü — hareket duyarlılığında tamamen kalkar. */
+@media (prefers-reduced-motion: reduce) {
+  .trigger::after {
+    animation: none;
+    opacity: 0;
   }
 }
 
