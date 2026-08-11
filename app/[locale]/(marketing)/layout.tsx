@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
 
 export default async function MarketingLayout({
   children,
@@ -22,6 +23,7 @@ export default async function MarketingLayout({
       <Header />
       <main id="main">{children}</main>
       <Footer />
+      <WhatsAppWidget />
     </>
   );
 }

@@ -203,3 +203,11 @@ export const IconLinkedin = (p: IconProps) => (
     <path d="M8 10.5V17M8 7.6v.1M12 17v-3.8a2.2 2.2 0 0 1 4.4 0V17" />
   </Svg>
 );
+// Konuşma balonu + ahize. Resmi WhatsApp path'i değil, diğer sosyal ikonlar
+// gibi bizim çizgi dilimizde — tanınırlığı yeşil zemin taşıyor.
+export const IconWhatsapp = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M20.4 11.6a8.4 8.4 0 0 1-12.5 7.3L3.6 20.4l1.5-4.3a8.4 8.4 0 1 1 15.3-4.5z" />
+    <path d="M9.3 8.4h1l1 2.2-1 1.1a6.3 6.3 0 0 0 2.9 2.9l1.1-1 2.2 1v1a1.4 1.4 0 0 1-1.5 1.4 8.9 8.9 0 0 1-7.5-7.5 1.4 1.4 0 0 1 1.3-1.5z" />
+  </Svg>
+);

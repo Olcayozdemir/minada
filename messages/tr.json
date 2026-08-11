@@ -27,6 +27,13 @@
     "line_heatpump": "Isı Pompası",
     "line_evcharge": "EV Şarj İstasyonları"
   },
+  "WhatsAppWidget": {
+    "title": "WhatsApp'tan yazın",
+    "close": "Kapat",
+    "prompt": "Hangi konuda yardımcı olalım?",
+    "other": "Diğer",
+    "message": "Merhaba, {topic} hakkında bilgi almak istiyorum."
+  },
   "Common": {
     "getQuote": "Ücretsiz keşif al",
     "getQuoteShort": "Ücretsiz keşif",

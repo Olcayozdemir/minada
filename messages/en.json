@@ -27,6 +27,13 @@
     "line_heatpump": "Heat Pumps",
     "line_evcharge": "EV Charging"
   },
+  "WhatsAppWidget": {
+    "title": "Message us on WhatsApp",
+    "close": "Close",
+    "prompt": "What can we help you with?",
+    "other": "Something else",
+    "message": "Hello, I'd like information about {topic}."
+  },
   "Common": {
     "getQuote": "Get a free survey",
     "getQuoteShort": "Free survey",
