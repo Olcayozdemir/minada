@@ -11,7 +11,10 @@
 
   /* Gold / amber accent (logo) */
   --gold-700: #7a5210;
-  --gold-600: #9c6c14; /* gold text on light (AA) */
+  /* Gold text on light. #9c6c14 only cleared AA on pure --surface (4.60); on
+     --bg it measured 4.29 and on --surface-2 4.05, so every gold eyebrow on a
+     tinted section was under 4.5. This value clears all three: 5.35 / 4.99 / 4.72. */
+  --gold-600: #8f6212;
   --gold-500: #c98a1c;
   --gold: #f2a82c;
   --gold-300: #ffc24d;
