@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
+import { ScrollTopLink } from "@/components/ui/ScrollTopLink";
 import { Link } from "@/i18n/navigation";
 import { NAV_ITEMS } from "@/lib/site";
 import { HeaderShell } from "./HeaderShell";
@@ -65,6 +66,10 @@ export async function Header() {
                       ))}
                     </div>
                   </div>
+                ) : i.href === "/" ? (
+                  <ScrollTopLink key={i.href} href={i.href} className={styles.link}>
+                    {t(i.key)}
+                  </ScrollTopLink>
                 ) : (
                   <Link key={i.href} href={i.href} className={styles.link}>
                     {t(i.key)}

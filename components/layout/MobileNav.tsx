@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import type { StaticPathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { ScrollTopLink } from "@/components/ui/ScrollTopLink";
 import { IconArrowRight } from "@/components/ui/icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import styles from "./MobileNav.module.scss";
@@ -40,7 +41,7 @@ export function MobileNav({
         <Dialog.Content className={styles.content} aria-describedby={undefined}>
           <div className={styles.head}>
             <Dialog.Title className={styles.title}>
-              <Logo />
+              <Logo onClick={() => setOpen(false)} />
               <span className="sr-only">MİNADA</span>
             </Dialog.Title>
             <Dialog.Close asChild>
@@ -59,20 +60,37 @@ export function MobileNav({
               return (
                 <div key={gi} className={styles.group}>
                   {g.title ? <span className={styles.groupTitle}>{g.title}</span> : null}
-                  {g.items.map((i, ii) => (
-                    <Link
-                      key={i.href}
-                      href={i.href}
-                      className={styles.link}
-                      onClick={() => setOpen(false)}
-                    >
-                      <span className={styles.linkNum}>
-                        {String(offset + ii + 1).padStart(2, "0")}
-                      </span>
-                      {i.label}
-                      <IconArrowRight size={17} className={styles.linkArrow} />
-                    </Link>
-                  ))}
+                  {g.items.map((i, ii) => {
+                    const inner = (
+                      <>
+                        <span className={styles.linkNum}>
+                          {String(offset + ii + 1).padStart(2, "0")}
+                        </span>
+                        {i.label}
+                        <IconArrowRight size={17} className={styles.linkArrow} />
+                      </>
+                    );
+                    // Ana sayfa linki, zaten ana sayfadaysak yukarı kaydırır.
+                    return i.href === "/" ? (
+                      <ScrollTopLink
+                        key={i.href}
+                        href={i.href}
+                        className={styles.link}
+                        onClick={() => setOpen(false)}
+                      >
+                        {inner}
+                      </ScrollTopLink>
+                    ) : (
+                      <Link
+                        key={i.href}
+                        href={i.href}
+                        className={styles.link}
+                        onClick={() => setOpen(false)}
+                      >
+                        {inner}
+                      </Link>
+                    );
+                  })}
                 </div>
               );
             })}
