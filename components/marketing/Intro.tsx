@@ -10,13 +10,12 @@ export async function Intro() {
     <Section tone="light" className={styles.deco}>
       <div className={styles.grid}>
         <div className={styles.visual}>
-          <div className={styles.stage} aria-hidden="true" />
           <Image
             src="/images/v2/intro-home.png"
             alt=""
             width={1920}
             height={1072}
-            sizes="(max-width: 900px) 84vw, 460px"
+            sizes="(max-width: 900px) 92vw, 620px"
             className={styles.cutout}
           />
           <div className={styles.chip}>

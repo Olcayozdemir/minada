@@ -13,7 +13,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1.05fr 1fr;
   gap: clamp(var(--space-8), 5vw, var(--space-16));
   align-items: center;
 
@@ -29,22 +29,13 @@
   padding-block: var(--space-6);
 }
 
-/* Soft navy stage so the cutout's glass slabs read on the light body. */
-.stage {
-  position: absolute;
-  inset: 4% 2%;
-  border-radius: var(--r-xl);
-  background:
-    radial-gradient(70% 80% at 50% 42%, rgba(44, 92, 144, 0.16), transparent 75%),
-    linear-gradient(180deg, var(--surface-2), rgba(231, 237, 245, 0.4));
-  border: 1px solid var(--line);
-}
-
+/* Çerçevesiz: render zeminin üstünde serbest durur, gölge onu yere oturtur.
+   Eski panel kesitin cam yüzeylerini okutmak içindi; bu render opak. */
 .cutout {
   position: relative;
-  width: min(100%, 460px);
+  width: min(100%, 620px);
   height: auto;
-  filter: drop-shadow(0 30px 44px rgba(18, 36, 63, 0.28));
+  filter: drop-shadow(0 26px 40px rgba(18, 36, 63, 0.22));
 }
 
 .chip {
