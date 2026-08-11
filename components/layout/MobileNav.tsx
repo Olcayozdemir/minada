@@ -115,7 +115,11 @@ export function MobileNav({
           </nav>
 
           <div className={styles.footer}>
-            <LanguageSwitcher />
+            {/* Switcher inline-flex; sarmalayıcı olmadan footer onu tam genişliğe
+                geriyor ve sağında boş bir track kalıyor. */}
+            <span className={styles.lang}>
+              <LanguageSwitcher />
+            </span>
             <Button href="/contact" size="lg" className={styles.cta}>
               {cta}
             </Button>
