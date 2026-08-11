@@ -12,10 +12,10 @@ export async function Intro() {
         <div className={styles.visual}>
           <div className={styles.stage} aria-hidden="true" />
           <Image
-            src="/hero/hero-home-alt.png"
+            src="/images/v2/intro-home.png"
             alt=""
-            width={760}
-            height={424}
+            width={1920}
+            height={1072}
             sizes="(max-width: 900px) 84vw, 460px"
             className={styles.cutout}
           />
