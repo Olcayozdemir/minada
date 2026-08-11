@@ -13,19 +13,21 @@ export async function Header() {
   const t = await getTranslations("Nav");
   const tc = await getTranslations("Common");
 
-  // Mobile drawer: dropdown columns become titled groups, the rest one flat group.
+  // Mobile drawer: dropdown columns become titled, icon-led groups; everything
+  // else lands in the trailing untitled group, which renders as the compact
+  // secondary cluster. `key` is the Nav message key — MobileNav maps it to an icon.
   const mobileGroups = [
     ...NAV_ITEMS.flatMap((i) =>
       "columns" in i
         ? i.columns.map((col) => ({
             title: t(col.key),
-            items: col.children.map((c) => ({ href: c.href, label: t(c.key) })),
+            items: col.children.map((c) => ({ href: c.href, label: t(c.key), key: c.key })),
           }))
         : [],
     ),
     {
       items: NAV_ITEMS.flatMap((i) =>
-        "columns" in i ? [] : [{ href: i.href, label: t(i.key) }],
+        "columns" in i ? [] : [{ href: i.href, label: t(i.key), key: i.key }],
       ),
     },
   ];
