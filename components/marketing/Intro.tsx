@@ -15,7 +15,7 @@ export async function Intro() {
             alt=""
             width={1920}
             height={1072}
-            sizes="(max-width: 900px) 92vw, 620px"
+            sizes="(max-width: 900px) 92vw, 780px"
             className={styles.cutout}
           />
           <div className={styles.chip}>

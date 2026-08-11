@@ -13,7 +13,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.25fr 1fr;
   gap: clamp(var(--space-8), 5vw, var(--space-16));
   align-items: center;
 
@@ -33,7 +33,7 @@
    Eski panel kesitin cam yüzeylerini okutmak içindi; bu render opak. */
 .cutout {
   position: relative;
-  width: min(100%, 620px);
+  width: min(100%, 780px);
   height: auto;
   filter: drop-shadow(0 26px 40px rgba(18, 36, 63, 0.22));
 }
