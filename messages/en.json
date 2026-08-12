@@ -426,8 +426,7 @@
       "emailLabel": "Email",
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Working hours",
-      "hours": "Weekdays 09:00 – 18:00",
-      "note": "Email goes live together with the domain setup."
+      "hours": "Weekdays 09:00 – 18:00"
     },
     "form": {
       "name": "Full name",
@@ -506,7 +505,6 @@
     "privacy": "Privacy & GDPR",
     "cookies": "Cookie Policy",
     "rights": "All rights reserved.",
-    "placeholderNote": "Email goes live together with the domain setup.",
     "linesTitle": "What we do",
     "forYouTitle": "For you"
   },

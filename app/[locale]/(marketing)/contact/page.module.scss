@@ -70,13 +70,6 @@
   color: var(--on-dark-3);
 }
 
-.infoNote {
-  margin-top: 24px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--on-dark-3);
-}
-
 @include bp-down(880px) {
   .layout {
     grid-template-columns: 1fr;

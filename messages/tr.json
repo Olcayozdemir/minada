@@ -426,8 +426,7 @@
       "emailLabel": "E-posta",
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Çalışma saatleri",
-      "hours": "Hafta içi 09:00 – 18:00",
-      "note": "E-posta adresi domain kurulumuyla birlikte aktifleşecek."
+      "hours": "Hafta içi 09:00 – 18:00"
     },
     "form": {
       "name": "Ad Soyad",
@@ -506,7 +505,6 @@
     "privacy": "Gizlilik & KVKK",
     "cookies": "Çerez Politikası",
     "rights": "Tüm hakları saklıdır.",
-    "placeholderNote": "E-posta adresi domain kurulumuyla birlikte aktifleşecek.",
     "linesTitle": "İş kollarımız",
     "forYouTitle": "Sizin için"
   },

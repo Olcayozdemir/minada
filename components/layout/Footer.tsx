@@ -100,7 +100,6 @@ export async function Footer() {
             >
               {SITE.address}
             </a>
-            <p className={styles.note}>{t("placeholderNote")}</p>
           </div>
         </div>
 

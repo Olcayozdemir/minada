@@ -75,7 +75,6 @@ export default async function Page({
               <span>{t("info.hours")}</span>
             </li>
           </ul>
-          <p className={styles.infoNote}>{t("info.note")}</p>
         </aside>
       </div>
     </Section>
