@@ -46,12 +46,15 @@ export const NAV_ITEMS: ReadonlyArray<NavItem> = [
 export const GES_TYPES = ["rooftop", "ground", "agripv", "carport"] as const;
 
 // Contact + social. Telefon 2026-08-06'da güncellendi (Olcay); Instagram gerçek
-// (Okan, 2026-07-11); e-posta domain kurulumunu bekliyor. WhatsApp numarası env
-// ile override edilebilir, varsayılan aynı hattır.
+// (Okan, 2026-07-11); e-posta posta kutusu kurulumunu bekliyor. WhatsApp numarası
+// env ile override edilebilir, varsayılan aynı hattır.
+//
+// Alan adı .com.tr: minada.com bizim değil (2003'te kaydedilmiş, eName'de, park
+// sayfası dönüyor). Üretimde bağlı olan ve DNS'i Vercel'de duran minada.com.tr.
 export const SITE = {
   name: "MİNADA",
-  domain: "minada.com",
-  email: "info@minada.com",
+  domain: "minada.com.tr",
+  email: "info@minada.com.tr",
   phone: "+90 505 146 30 11",
   // Adres Notion 06.08 notundan (Okan/Olcay).
   address: "Görgü Mah. 2. Sk., Ankara Asfaltı 15. Km, 44900 Yeşilyurt / Malatya",

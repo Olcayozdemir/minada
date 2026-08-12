@@ -3,7 +3,10 @@ import { getPathname } from "@/i18n/navigation";
 import { routing, type StaticPathname } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://minada.com";
+// Varsayılan da üretimdeki alan adı olmalı: env eksik kaldığında canonical ve
+// sitemap bizim olmayan bir alan adını işaret ediyordu (minada.com bir park
+// sayfası), yani Google'a "asıl sayfa orada" deniyordu.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://minada.com.tr";
 
 type Locale = (typeof routing.locales)[number];
 

@@ -26,11 +26,12 @@ function escapeHtml(s: string) {
 // dev before keys are provisioned) it logs and no-ops so the form still works.
 export async function sendLeadEmail(data: LeadInput) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL ?? "info@minada.com";
+  const to = process.env.CONTACT_EMAIL ?? "info@minada.com.tr";
   const from = process.env.RESEND_FROM ?? "MİNADA <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.warn("[lead] RESEND_API_KEY not set — email skipped:", JSON.stringify(data));
+    // Talebin tek kopyası bu log satırı — uyarı değil, hata.
+    console.error("[lead] RESEND_API_KEY not set — LEAD LOST:", JSON.stringify(data));
     return { sent: false as const };
   }
 

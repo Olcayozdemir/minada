@@ -30,8 +30,15 @@ export async function POST(request: Request) {
     }
   }
 
+  // Talep e-postadan başka hiçbir yere yazılmıyor: gönderilemediyse kaybolmuş
+  // demektir. Bu yüzden `sent: false` da hata sayılır — ziyaretçiye "gönderildi"
+  // demek, aranmayı bekleyip aranmayan bir insan bırakır. Hata durumunda form
+  // WhatsApp bağlantısını gösteriyor.
   try {
-    await sendLeadEmail(data);
+    const result = await sendLeadEmail(data);
+    if (!result.sent) {
+      return NextResponse.json({ ok: false, error: "email" }, { status: 500 });
+    }
   } catch {
     return NextResponse.json({ ok: false, error: "email" }, { status: 500 });
   }
