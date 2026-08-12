@@ -14,15 +14,22 @@ function capacityLabel(kw: number, locale: string): string {
     : `${kw.toLocaleString(locale, opts)} kWp`;
 }
 
-// Reference projects gallery (shown on the About page). Data comes from Sanity;
-// shows an empty state until reference projects are published.
-export async function ReferencesSection({ locale }: { locale: string }) {
+// Reference projects gallery. Data comes from Sanity; shows an empty state
+// until reference projects are published. `as` is "h1" when the gallery opens
+// its own page (/referanslar), "h2" when it sits inside another page.
+export async function ReferencesSection({
+  locale,
+  as = "h2",
+}: {
+  locale: string;
+  as?: "h1" | "h2";
+}) {
   const t = await getTranslations("Projects");
   const projects = await getProjects(locale);
 
   return (
     <Section tone="light">
-      <SectionHeading eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeading as={as} eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       {projects.length === 0 ? (
         <div className={styles.empty}>
           <p className={styles.emptyTitle}>{t("emptyTitle")}</p>

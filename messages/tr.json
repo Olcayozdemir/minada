@@ -491,6 +491,8 @@
     "metaDesc": "Güneş enerjisi, enerji depolama, ısı pompası ve EV şarj üzerine mühendis gözüyle rehberler: mevzuat, fizibilite, ürün seçimi ve işletme."
   },
   "Projects": {
+    "metaTitle": "Referanslar",
+    "metaDesc": "Konut çatısından endüstriyel tesise, MİNADA Enerji'nin devreye aldığı güneş enerjisi santralleri: konum ve kurulu güç bilgileriyle tamamlanan kurulumlar.",
     "eyebrow": "Referanslar",
     "title": "Tamamlanan kurulumlar",
     "intro": "Konut ve işletmelerde hayata geçirdiğimiz projeler.",

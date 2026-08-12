@@ -18,6 +18,7 @@ const HREFS = [
   "/calculator",
   "/blog",
   "/about",
+  "/projects",
   "/faq",
   "/contact",
   "/privacy",

@@ -4,13 +4,10 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FinalCta } from "@/components/marketing/FinalCta";
-import { ReferencesSection } from "@/components/marketing/ReferencesSection";
 import { StatsBand } from "@/components/marketing/StatsBand";
 import { RotatingSeal } from "@/components/marketing/RotatingSeal";
 import { buildAlternates } from "@/lib/seo";
 import styles from "./about.module.scss";
-
-export const revalidate = 60;
 
 const VALUES = ["discipline", "transparency", "oneHand", "promise", "longTerm"] as const;
 
@@ -133,9 +130,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           ))}
         </dl>
       </Section>
-
-      {/* Reference projects keep living on this page (no separate nav tab). */}
-      <ReferencesSection locale={locale} />
 
       <FinalCta namespace="About.finalCta" />
     </>

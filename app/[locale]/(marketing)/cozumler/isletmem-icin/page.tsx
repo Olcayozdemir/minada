@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
             <Button href={{ pathname: "/contact", query: { konu: "ges" } }} size="lg" withArrow>
               {tc("getQuote")}
             </Button>
-            <Button href="/about" size="lg" variant="glass">
+            <Button href="/projects" size="lg" variant="glass">
               {t("referencesCta")}
             </Button>
           </div>
