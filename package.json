@@ -9,6 +9,7 @@
     "lint": "eslint",
     "seed:products": "node scripts/seed-products.mjs",
     "seed:posts": "node scripts/seed-posts.mjs",
+    "seed:references": "node scripts/seed-references.mjs",
     "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {

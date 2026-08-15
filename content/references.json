@@ -1,0 +1,83 @@
+[
+  {
+    "source": "Fidesan",
+    "slug": "fidesan-ges",
+    "title": "Fidesan GES",
+    "kind": "endustriyel-cati",
+    "location": "Antalya",
+    "systemKw": null,
+    "cover": "fidesan.jpg"
+  },
+  {
+    "source": "Castle Hotel",
+    "slug": "castle-hotel-ges",
+    "title": "Castle Hotel GES",
+    "kind": "ticari-cati",
+    "location": null,
+    "systemKw": null,
+    "cover": "castle-hotel.jpg"
+  },
+  {
+    "source": "Başar İş Makineler",
+    "slug": "basar-is-makineleri-ges",
+    "title": "Başar İş Makineleri GES",
+    "kind": "endustriyel-cati",
+    "location": "Antalya",
+    "systemKw": null,
+    "cover": "basar-is-makineleri.jpg"
+  },
+  {
+    "source": "Demre Zümrütkaya Öğrenci Derneği",
+    "slug": "demre-zumrutkaya-ogrenci-dernegi-ges",
+    "title": "Demre Zümrütkaya Öğrenci Derneği GES",
+    "kind": "ticari-cati",
+    "location": "Antalya",
+    "systemKw": null,
+    "cover": "demre-zumrutkaya.jpg"
+  },
+  {
+    "source": "Yüceal İnşaat nSEB",
+    "slug": "yuceal-insaat-nseb-ges",
+    "title": "Yüceal İnşaat nSEB GES",
+    "kind": "konut-cati",
+    "location": null,
+    "systemKw": null,
+    "cover": "yuceal-insaat.jpg"
+  },
+  {
+    "source": "Suhan Atasoy",
+    "slug": "mesken-ges-01",
+    "title": null,
+    "kind": "konut-cati",
+    "location": "Antalya",
+    "systemKw": null,
+    "cover": "mesken-01.jpg"
+  },
+  {
+    "source": "Bilal Uymaz",
+    "slug": "mesken-ges-02",
+    "title": null,
+    "kind": "konut-cati",
+    "location": "Antalya",
+    "systemKw": null,
+    "cover": "mesken-02.jpg"
+  },
+  {
+    "source": "Erdal Kaya",
+    "slug": "mesken-ges-03",
+    "title": null,
+    "kind": "konut-cati",
+    "location": null,
+    "systemKw": null,
+    "cover": "mesken-03.jpg"
+  },
+  {
+    "source": "Gökçe Ulukaradağ",
+    "slug": "mesken-ges-04",
+    "title": null,
+    "kind": "konut-cati",
+    "location": null,
+    "systemKw": null,
+    "cover": "mesken-04.jpg"
+  }
+]

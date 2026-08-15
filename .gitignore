@@ -43,3 +43,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference project covers — uploaded to Sanity by scripts/seed-references.mjs,
+# never served from the repo, and they arrive as multi-MB drone frames
+/content/reference-photos
