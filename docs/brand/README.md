@@ -6,10 +6,11 @@ Türetilmiş dosyaları yeniden üretmen gerekirse kaynak burada.
 | Dosya | Ne |
 |---|---|
 | `minada-mark-master.png` | 2048², alfalı. **Açık zemin sürümü**: lacivert kontur, sol kol açık kontur. |
-| `minada-mark-on-dark-master.png` | 2048², alfalı. **Koyu zemin sürümü**: krem kontur, sol kolun içi dolu beyaz. |
+| `minada-mark-on-dark-master.png` | 2048², alfalı. **Koyu zemin sürümü**: kontur beyaza dönüyor, boşluklar açık sürümdeki gibi saydam kalıyor. |
 | `minada-lockup-master.jpg` | 2000², beyaz zemin. Marka + MİNADA yazısı + "Enerji - Mühendislik". Yazılı kilide ihtiyaç olursa. |
 
-İki usta **aynı geometride** (kırpılmış bbox 1704×991 ve 1705×988, oran farkı %0.4).
+İki usta **aynı geometride** (kırpılmış oran 1.719 ve 1.725, fark %0.3; siluet
+örtüşmesi %86).
 Header açık↔koyu geçişinde logo yerinden oynamasın diye bu şart; yeni bir varyant
 üretilirse aynı ölçüyle doğrulanmalı.
 
@@ -34,6 +35,9 @@ her sayfada ham servis edildiği için boyut orada gerçekten önemli.
 `adaptive` iki görseli de basar, CSS `HeaderShell`'in `[data-scrolled]` niteliğine
 bakarak birini gizler. Header `adaptive`, Footer `dark`, mobil menü varsayılan
 (drawer zemini `var(--bg)`, yani açık).
+
+Sol kolun içini dolduran bir koyu varyant da denendi ve **elendi**: 40px'te
+beyaz kütle harfin dengesini bozup illüstrasyonlu kolları ikinci plana atıyordu.
 
 Marka 30px'te okunmuyordu — yaprak damarları ve güneş ışınları piksel altına
 düşüyordu. **40px**'e çıkarıldı; header pill'i 66px ve en uzun elemanı 44px CTA

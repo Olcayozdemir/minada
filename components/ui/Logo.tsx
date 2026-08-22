@@ -4,8 +4,9 @@ import { ScrollTopLink } from "@/components/ui/ScrollTopLink";
 import styles from "./Logo.module.scss";
 
 // MİNADA markası: çift-M, orta kolda güneş, sağ kolda yapraklar.
-// İki dosya var çünkü sol kol açık zeminde ince konturdan ibaret ve lacivert
-// footer'da kayboluyordu. Koyu sürümde kontur beyaz ve sol kolun içi dolu.
+// İki dosya var çünkü kontur açık zeminde lacivert ve koyu zeminde kayboluyordu.
+// Koyu sürümde kontur beyaza dönüyor, boşluklar iki sürümde de açık kalıyor;
+// harfin karakteri böyle korunuyor.
 // tone="adaptive" header için: hero fotoğrafının üstünde koyu, sayfa kayıp pill
 // açık zemine dönünce açık sürüm devreye giriyor (CSS, HeaderShell'in
 // [data-scrolled] niteliği üzerinden).
