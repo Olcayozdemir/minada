@@ -60,15 +60,18 @@
   margin-top: 20px;
 }
 
+/* Instagram is the only account we link for now, so the lone chip carries the
+   weight a pair used to: full-strength glyph on a surface you can actually see,
+   not the muted secondary it was when it had a neighbour. */
 .socialLink {
   display: inline-grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--r-pill);
-  color: var(--on-dark-2);
-  background: rgba(238, 242, 247, 0.06);
-  border: 1px solid rgba(238, 242, 247, 0.12);
+  color: var(--on-dark);
+  background: rgba(238, 242, 247, 0.1);
+  border: 1px solid rgba(238, 242, 247, 0.24);
   transition:
     color 0.15s ease,
     border-color 0.15s ease,
@@ -210,11 +213,6 @@
     padding-block: 12px;
     padding-inline: 8px;
     margin-inline: -8px;
-  }
-
-  .socialLink {
-    width: 44px;
-    height: 44px;
   }
 }
 

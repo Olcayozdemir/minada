@@ -1,0 +1,90 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;700&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    /* --green-900 -> --green-700, the site's dark band */
+    background: radial-gradient(1100px 700px at 78% 12%, #16375e 0%, #0b2140 46%, #081a30 100%);
+    color: #eef2f7;
+    font-family: Manrope, sans-serif;
+    padding: 62px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Faint gold sweep, same idea as the site's dark bands. */
+  body::after {
+    content: "";
+    position: absolute;
+    right: -180px; top: -220px;
+    width: 760px; height: 760px;
+    background: radial-gradient(circle, rgba(242,168,44,0.13) 0%, rgba(242,168,44,0) 62%);
+    pointer-events: none;
+  }
+  .lockup { display: flex; align-items: center; gap: 16px; }
+  .lockup img { height: 74px; width: auto; display: block; }
+  .word {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0.05em;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    font-size: 86px;
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+  h1 em {
+    display: block;
+    margin-top: 0.06em;
+    font-family: Fraunces, Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.79em;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #ffc24d;
+  }
+  .sub {
+    margin-top: 26px;
+    max-width: 830px;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #a7b6cc;
+  }
+  .chips { display: flex; gap: 12px; }
+  .chip {
+    border: 1px solid rgba(233, 240, 250, 0.2);
+    background: rgba(233, 240, 250, 0.06);
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffc24d;
+  }
+</style>
+<body>
+  <div class="lockup">
+    <img src="../../../public/logo/logo1-on-dark.png" alt="">
+    <span class="word">MİNADA</span>
+  </div>
+
+  <div>
+    <h1>Üret, depola,<em>yönet.</em></h1>
+    <p class="sub">Güneş enerjisi · Enerji depolama · Isı pompası · EV şarj. Tek elden tasarlıyor, kuruyor ve işletiyoruz.</p>
+  </div>
+
+  <div class="chips">
+    <span class="chip">Çatı GES</span>
+    <span class="chip">Tasarruf hesaplayıcı</span>
+    <span class="chip">Ücretsiz keşif</span>
+  </div>
+</body>

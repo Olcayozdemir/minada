@@ -171,9 +171,35 @@
   padding-top: 22px;
 }
 
-/* Switcher inline-flex: gerilmesin diye kendi genişliğinde kalır. */
+/* Dil seçici ve Instagram aynı satırı paylaşır; CTA altlarında tam genişlikte
+   kalır. Switcher inline-flex, gerilmesin diye kendi genişliğinde durur. */
+.utilities {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .lang {
-  align-self: flex-start;
+  display: inline-flex;
+}
+
+.social {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-pill);
+  color: var(--ink-2);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+
+  &:hover {
+    color: var(--gold-600);
+    border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  }
 }
 
 .cta {

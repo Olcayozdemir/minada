@@ -29,7 +29,7 @@ export function organizationLd() {
     "@type": "Organization",
     name: "MİNADA Enerji",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo/minada-mark.svg`,
+    logo: `${SITE_URL}/logo/logo1.png`,
     sameAs: [SITE.social.instagram, SITE.social.linkedin].filter(Boolean),
   };
 }
@@ -40,7 +40,7 @@ export function localBusinessLd(locale: string) {
     "@type": "LocalBusiness",
     name: "MİNADA Enerji",
     url: `${SITE_URL}/${locale}`,
-    image: `${SITE_URL}/og/og-default.png`,
+    image: `${SITE_URL}/og/og-default.jpg`,
     telephone: SITE.phone,
     email: SITE.email,
     areaServed: "TR",
@@ -89,7 +89,7 @@ export function articleLd(a: {
     "@type": "BlogPosting",
     headline: a.title,
     description: a.description,
-    image: a.image ? [a.image] : [`${SITE_URL}/og/og-default.png`],
+    image: a.image ? [a.image] : [`${SITE_URL}/og/og-default.jpg`],
     datePublished: a.publishedAt,
     dateModified: a.publishedAt,
     inLanguage: a.locale,
@@ -99,7 +99,7 @@ export function articleLd(a: {
     publisher: {
       "@type": "Organization",
       name: "MİNADA Enerji",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo/minada-mark.svg` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo/logo1.png` },
     },
     ...(a.keywords?.length ? { keywords: a.keywords.join(", ") } : {}),
   };

@@ -11,7 +11,7 @@
 | `services/` | Hizmet görselleri ve ürün (Veichi tarzı) fotoğrafları. | `solar.webp`, `battery.webp`, `ev-charger.webp`, `heat-pump.webp` |
 | `projects/` | Tamamlanmış kurulum / referans fotoğrafları. | `proje-izmir-01.webp` |
 | `images/` | Genel/diğer görseller (hakkımızda, ekip vb.). | `about-team.webp` |
-| `og/` | Sosyal paylaşım (Open Graph) görselleri, 1200×630. | `og-default.png`, `og-tr.png`, `og-en.png` |
+| `og/` | Sosyal paylaşım (Open Graph) görselleri, 1200×630. | `og-default.jpg` (1200×630; JPEG, çünkü gradyan zemin paletli PNG'de bandlanıyor) |
 
 ## App-seviyesi ikonlar (bunlar `public/` değil, `app/` içine)
 

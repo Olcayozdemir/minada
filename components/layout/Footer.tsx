@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/ui/Logo";
 import { Link } from "@/i18n/navigation";
-import { IconInstagram, IconLinkedin } from "@/components/ui/icons";
+import { IconInstagram } from "@/components/ui/icons";
 import { SITE, BUSINESS_LINES, AUDIENCES, whatsappLink } from "@/lib/site";
 import styles from "./Footer.module.scss";
 
@@ -18,7 +18,7 @@ export async function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Logo />
+            <Logo tone="dark" />
             <p className={styles.tagline}>{t("tagline")}</p>
             <div className={styles.social}>
               <a
@@ -28,16 +28,7 @@ export async function Footer() {
                 aria-label="Instagram"
                 className={styles.socialLink}
               >
-                <IconInstagram size={18} />
-              </a>
-              <a
-                href={SITE.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className={styles.socialLink}
-              >
-                <IconLinkedin size={18} />
+                <IconInstagram size={20} />
               </a>
             </div>
           </div>

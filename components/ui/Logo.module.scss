@@ -7,8 +7,8 @@
   gap: 11px;
 }
 
-/* The mark is 30px tall, so the link was a 32px target. Grow the hit area on
-   touch without moving the mark or the wordmark. */
+/* The mark is 40px tall, still under the 44px touch target. Grow the hit area
+   on touch without moving the mark or the wordmark. */
 @include touch {
   .logo::before {
     content: "";
@@ -22,10 +22,31 @@
   align-items: center;
 }
 
+/* 30px was too small for this mark: the leaf veins, sun rays and hill lines all
+   fell below a pixel and read as noise. The header pill is 66px tall and its
+   tallest child is the 44px CTA, so 40px costs nothing in layout. */
 .img {
-  height: 30px;
+  height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+/* Adaptive (header): the pill starts as dark glass over the hero photo, so the
+   reversed mark is the default and the light one takes over once HeaderShell
+   flips [data-scrolled]. Both are rendered and swapped in CSS because the
+   scroll state lives on a client ancestor, not on this server component. */
+.adaptive .light {
+  display: none;
+}
+
+:global([data-scrolled]) {
+  .adaptive .light {
+    display: block;
+  }
+
+  .adaptive .dark {
+    display: none;
+  }
 }
 
 .word {

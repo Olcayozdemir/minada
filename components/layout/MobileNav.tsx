@@ -16,6 +16,7 @@ import {
   IconSolar,
 } from "@/components/ui/icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { InstagramLink } from "@/components/ui/InstagramLink";
 import styles from "./MobileNav.module.scss";
 
 type Item = { href: StaticPathname; label: string; key: string };
@@ -117,9 +118,12 @@ export function MobileNav({
           <div className={styles.footer}>
             {/* Switcher inline-flex; sarmalayıcı olmadan footer onu tam genişliğe
                 geriyor ve sağında boş bir track kalıyor. */}
-            <span className={styles.lang}>
-              <LanguageSwitcher />
-            </span>
+            <div className={styles.utilities}>
+              <span className={styles.lang}>
+                <LanguageSwitcher />
+              </span>
+              <InstagramLink className={styles.social} size={19} />
+            </div>
             <Button href="/contact" size="lg" className={styles.cta}>
               {cta}
             </Button>

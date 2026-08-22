@@ -63,7 +63,9 @@ export const SITE = {
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905051463011",
   social: {
     instagram: "https://instagram.com/minadaenerji",
-    linkedin: "https://linkedin.com/",
+    // Şirket sayfası açılana kadar boş: dolduğu anda footer ikonu ve JSON-LD
+    // sameAs'ı geri gelir (seo.ts filter(Boolean) ile eliyor).
+    linkedin: "",
   },
 } as const;
 
