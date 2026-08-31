@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import clsx from "clsx";
 import { leadSchema, type LeadInput, PROPERTY_TYPES, LEAD_TOPICS } from "@/lib/lead-schema";
 import { whatsappLink } from "@/lib/site";
+import { Link } from "@/i18n/navigation";
 import { IconCheck } from "@/components/ui/icons";
 import styles from "./LeadForm.module.scss";
 
@@ -209,9 +210,21 @@ export function LeadForm({
         />
       </Field>
 
+      {/* The tick claims the visitor has read the notice, so the notice has to
+          be one click away. It opens in a new tab rather than navigating: a
+          half-filled form should survive someone checking what they are
+          agreeing to. */}
       <label className={styles.consent}>
         <input type="checkbox" {...register("consent")} />
-        <span>{t("form.consent")}</span>
+        <span>
+          {t.rich("form.consent", {
+            link: (chunks) => (
+              <Link href="/privacy" target="_blank" rel="noopener noreferrer">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
       </label>
       {errors.consent ? <span className={styles.err}>{t("errors.consent")}</span> : null}
 

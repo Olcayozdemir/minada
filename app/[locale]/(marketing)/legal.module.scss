@@ -1,7 +1,8 @@
-@use "../../../../styles/mixins" as *;
+@use "../../../styles/mixins" as *;
 
-/* A legal page is read, not scanned, so the column is set to a reading measure
-   rather than the full container. */
+/* Shared by the cookie policy and the KVKK notice. A legal page is read, not
+   scanned, so the column is set to a reading measure rather than the full
+   container. */
 .page {
   max-width: 720px;
 }
@@ -98,4 +99,45 @@
 
 .cta {
   margin-top: var(--space-8);
+}
+
+/* Data controller details. A definition list rather than prose: the address,
+   the email and the phone are the three things someone comes here to copy. */
+.contact {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+
+  dt {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  dd {
+    margin-top: 3px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  a:hover {
+    color: var(--gold-700);
+    text-decoration: underline;
+  }
+}
+
+.inlineLink {
+  color: var(--gold-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: var(--gold-700);
+  }
 }

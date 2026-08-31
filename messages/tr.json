@@ -450,7 +450,7 @@
       "message": "Mesajınız",
       "messagePh": "İhtiyacınızı kısaca yazın…",
       "optional": "opsiyonel",
-      "consent": "Kişisel verilerimin işlenmesine ilişkin KVKK Aydınlatma Metni'ni okudum ve onaylıyorum.",
+      "consent": "Kişisel verilerimin işlenmesine ilişkin <link>KVKK Aydınlatma Metni</link>'ni okudum ve onaylıyorum.",
       "submit": "Teklif talebi gönder",
       "submitting": "Gönderiliyor…",
       "whatsapp": "WhatsApp'tan yaz",
@@ -1150,6 +1150,84 @@
       "title": "Haklarınız ve iletişim",
       "p1": "Kişisel verilerinize ilişkin 6698 sayılı KVKK kapsamındaki haklarınız için bizimle iletişime geçebilirsiniz.",
       "cta": "İletişime geç"
+    }
+  },
+  "Faq": {
+    "metaTitle": "Sık Sorulan Sorular",
+    "metaDesc": "Güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarjı hakkında en çok sorulan sorular ve yanıtları.",
+    "title": "Sık sorulan sorular",
+    "intro": "Aşağıdakiler bize en çok gelen sorular. Aradığınızı bulamazsanız yazın, aynı gün dönüyoruz.",
+    "generalTitle": "Genel",
+    "lineLink": "Sayfaya git",
+    "ctaTitle": "Sorunuz burada yok mu?",
+    "ctaDesc": "Kısa bir keşif görüşmesinde kendi çatınıza, faturanıza ve kullanım profilinize göre yanıtlayalım.",
+    "ctaLabel": "Ücretsiz keşif al"
+  },
+  "Privacy": {
+    "metaTitle": "Gizlilik ve KVKK Aydınlatma Metni",
+    "metaDesc": "MİNADA Enerji olarak kişisel verilerinizi hangi amaçla işlediğimiz, kimlerle paylaştığımız, ne kadar sakladığımız ve KVKK kapsamındaki haklarınız.",
+    "title": "Gizlilik ve KVKK Aydınlatma Metni",
+    "intro": "Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 10. maddesi uyarınca, siteyi kullandığınızda kişisel verilerinizin nasıl işlendiğini anlatır.",
+    "updated": "Son güncelleme: 31 Ağustos 2026",
+    "s1": {
+      "title": "Veri sorumlusu",
+      "p1": "Verilerinizin sorumlusu MİNADA Enerji'dir. Aşağıdaki adreslerden bize ulaşabilirsiniz.",
+      "addressLabel": "Adres",
+      "emailLabel": "E-posta",
+      "phoneLabel": "Telefon"
+    },
+    "s2": {
+      "title": "Hangi verileri işliyoruz",
+      "p1": "Site üzerinde tek veri toplama noktası teklif ve keşif formudur. Formu doldurduğunuzda şunları iletmiş olursunuz:",
+      "i1": "Ad soyad, telefon, e-posta ve şehir.",
+      "i2": "İsteğe bağlı olarak: ilgilendiğiniz konu, yapı tipi, aylık fatura tutarı ve serbest metin mesajınız.",
+      "p2": "Bunların dışında ziyaretinizle ilgili teknik kayıtlar tutulur: sunucu günlüklerine düşen IP adresi, tarayıcı bilgisi ve istek zamanı. Bu kayıtlar siteyi ayakta tutmak ve kötüye kullanımı önlemek içindir.",
+      "p3": "Site analitik veya reklam amacıyla hiçbir izleme yapmaz. Hangi çerezlerin tutulduğunu çerez politikasında tek tek yazdık."
+    },
+    "s3": {
+      "title": "Hangi amaçla işliyoruz",
+      "i1": "Talebinize dönmek, keşif planlamak ve size teklif hazırlamak.",
+      "i2": "Sözleşme öncesi ve sözleşme süresince sizinle iletişim kurmak.",
+      "i3": "Formun otomatik yazılımlarla doldurulmasını engellemek.",
+      "i4": "Mevzuattan doğan yükümlülüklerimizi yerine getirmek."
+    },
+    "s4": {
+      "title": "Hukuki sebep",
+      "p1": "Formu gönderirken verdiğiniz açık rıza ile işleriz. Ayrıca sözleşmenin kurulması ve ifası için gerekli olması, hukuki yükümlülüğümüzü yerine getirmemiz ve meşru menfaatimiz de dayanaklarımız arasındadır. Rızanızı istediğiniz zaman geri alabilirsiniz."
+    },
+    "s5": {
+      "title": "Kimlerle paylaşıyoruz",
+      "p1": "Verilerinizi satmıyoruz ve pazarlama amacıyla üçüncü taraflara aktarmıyoruz. Yalnızca hizmeti yürütebilmek için aşağıdaki tedarikçileri kullanıyoruz:",
+      "i1": "Vercel: siteyi barındırır, sunucu günlüklerini tutar.",
+      "i2": "Resend: form içeriğini bize e-posta olarak iletir.",
+      "i3": "Cloudflare Turnstile: form spam korumasında kullanılır ve bu koruma açıkken IP adresinizi görür.",
+      "p2": "Bu tedarikçilerin sunucuları yurt dışındadır, dolayısıyla verileriniz yurt dışına aktarılmış olur. Kurulumu yapan ekiplerimiz ve iş ortaklarımızla ise yalnızca işin gerektirdiği kadarını paylaşırız."
+    },
+    "s6": {
+      "title": "Ne kadar süre saklıyoruz",
+      "p1": "Talebinizi, sizinle olan ilişkimiz sürdüğü ve mevzuatın öngördüğü zamanaşımı ve saklama süreleri boyunca tutarız. Süre dolduğunda veya silinmesini istediğinizde kaydı sileriz."
+    },
+    "s7": {
+      "title": "Haklarınız",
+      "p1": "KVKK'nın 11. maddesi size şu hakları verir:",
+      "i1": "Kişisel verinizin işlenip işlenmediğini öğrenmek ve işlenmişse bilgi istemek.",
+      "i2": "İşlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenmek.",
+      "i3": "Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilmek.",
+      "i4": "Eksik veya yanlış işlenmişse düzeltilmesini istemek.",
+      "i5": "Şartları oluştuğunda silinmesini veya yok edilmesini istemek.",
+      "i6": "Düzeltme ve silme işlemlerinin aktarılan üçüncü kişilere bildirilmesini istemek.",
+      "i7": "Yalnızca otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonuç çıkmasına itiraz etmek.",
+      "i8": "Hukuka aykırı işleme nedeniyle zarara uğradıysanız zararın giderilmesini talep etmek."
+    },
+    "s8": {
+      "title": "Nasıl başvurursunuz",
+      "p1": "Haklarınızı kullanmak için kimliğinizi doğrulayabileceğimiz bir başvuruyla bize yazın. Başvurunuzu en geç otuz gün içinde sonuçlandırırız.",
+      "cta": "İletişime geç"
+    },
+    "s9": {
+      "title": "Çerezler",
+      "p1": "Sitede hangi çerezlerin tutulduğunu ve kararınızı nasıl değiştireceğinizi ayrı bir sayfada yazdık.",
+      "link": "Çerez politikası"
     }
   }
 }

@@ -99,6 +99,19 @@
   color: var(--ink-2);
   cursor: pointer;
 
+  /* The notice link has to read as a link inside a label that is otherwise all
+     one muted colour, or the tick claims the visitor read something they had no
+     way of seeing was clickable. */
+  a {
+    color: var(--gold-600);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: var(--gold-700);
+    }
+  }
+
   input {
     margin-top: 3px;
     width: 18px;

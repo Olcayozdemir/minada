@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { buildAlternates } from "@/lib/seo";
-import styles from "./cookies.module.scss";
+import styles from "../legal.module.scss";
 
 export async function generateMetadata({
   params,

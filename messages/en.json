@@ -450,7 +450,7 @@
       "message": "Your message",
       "messagePh": "Briefly describe your needs…",
       "optional": "optional",
-      "consent": "I have read and accept the privacy notice regarding the processing of my personal data.",
+      "consent": "I have read and accept the <link>privacy notice</link> regarding the processing of my personal data.",
       "submit": "Send request",
       "submitting": "Sending…",
       "whatsapp": "Message on WhatsApp",
@@ -1150,6 +1150,84 @@
       "title": "Your rights and contact",
       "p1": "For your rights regarding your personal data under Turkish law no. 6698 (KVKK), please get in touch with us.",
       "cta": "Contact us"
+    }
+  },
+  "Faq": {
+    "metaTitle": "Frequently Asked Questions",
+    "metaDesc": "The questions we get asked most about solar, energy storage, heat pumps and electric vehicle charging, answered.",
+    "title": "Frequently asked questions",
+    "intro": "These are the questions that reach us most often. If yours is not here, write to us and we will come back the same day.",
+    "generalTitle": "General",
+    "lineLink": "Go to the page",
+    "ctaTitle": "Not the question you had?",
+    "ctaDesc": "In a short discovery call we can answer it against your own roof, your bill and how you actually use power.",
+    "ctaLabel": "Book a free survey"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy and Data Protection Notice",
+    "metaDesc": "How MİNADA Enerji processes your personal data, who we share it with, how long we keep it, and your rights under Turkish law no. 6698.",
+    "title": "Privacy and Data Protection Notice",
+    "intro": "This notice explains how your personal data is handled when you use this site, as required by article 10 of Turkish law no. 6698 on the protection of personal data (KVKK).",
+    "updated": "Last updated: 31 August 2026",
+    "s1": {
+      "title": "Who is responsible",
+      "p1": "The data controller is MİNADA Enerji. You can reach us at the addresses below.",
+      "addressLabel": "Address",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone"
+    },
+    "s2": {
+      "title": "What we process",
+      "p1": "The only place this site collects data is the quote and survey form. Filling it in sends us:",
+      "i1": "Your name, phone number, email address and city.",
+      "i2": "Optionally: the topic you are interested in, your property type, your monthly bill and whatever you write in the message field.",
+      "p2": "Beyond that, technical records of your visit are kept: the IP address, browser and request time that land in the server logs. These exist to keep the site up and to prevent abuse.",
+      "p3": "The site runs no analytics or advertising tracking at all. The cookie policy lists every record that is kept, one by one."
+    },
+    "s3": {
+      "title": "Why we process it",
+      "i1": "To answer your enquiry, arrange a survey and prepare your quote.",
+      "i2": "To stay in touch with you before and during a contract.",
+      "i3": "To stop the form being filled in by automated software.",
+      "i4": "To meet obligations placed on us by law."
+    },
+    "s4": {
+      "title": "The legal basis",
+      "p1": "We rely on the explicit consent you give when you submit the form. We also rely on necessity for entering into and performing a contract, compliance with our legal obligations, and our legitimate interests. You can withdraw your consent at any time."
+    },
+    "s5": {
+      "title": "Who we share it with",
+      "p1": "We do not sell your data and we do not pass it to third parties for marketing. We use the following suppliers only to run the service:",
+      "i1": "Vercel: hosts the site and keeps the server logs.",
+      "i2": "Resend: delivers the contents of the form to us by email.",
+      "i3": "Cloudflare Turnstile: used for form spam protection, and sees your IP address while that protection is on.",
+      "p2": "These suppliers' servers are outside Türkiye, so your data is transferred abroad. With our own installation teams and partners we share only what the work requires."
+    },
+    "s6": {
+      "title": "How long we keep it",
+      "p1": "We keep your enquiry for as long as our relationship lasts and for the limitation and retention periods the law sets. Once that ends, or once you ask us to, the record is deleted."
+    },
+    "s7": {
+      "title": "Your rights",
+      "p1": "Article 11 of the KVKK gives you the right to:",
+      "i1": "Learn whether your personal data is being processed, and ask for information if it is.",
+      "i2": "Learn the purpose of the processing and whether it is being used accordingly.",
+      "i3": "Know the third parties the data is transferred to, in Türkiye or abroad.",
+      "i4": "Ask for correction if it has been processed incompletely or wrongly.",
+      "i5": "Ask for erasure or destruction where the conditions for it are met.",
+      "i6": "Ask that correction and erasure be notified to the third parties it was transferred to.",
+      "i7": "Object to a result reached against you purely by automated analysis.",
+      "i8": "Claim compensation if unlawful processing has caused you loss."
+    },
+    "s8": {
+      "title": "How to apply",
+      "p1": "To exercise your rights, write to us with an application that lets us verify your identity. We will respond within thirty days at the latest.",
+      "cta": "Contact us"
+    },
+    "s9": {
+      "title": "Cookies",
+      "p1": "Which cookies this site keeps, and how to change your decision, are set out on their own page.",
+      "link": "Cookie policy"
     }
   }
 }
