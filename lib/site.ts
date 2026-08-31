@@ -71,6 +71,12 @@ export const SITE = {
   addressMapUrl:
     "https://www.google.com/maps/place//data=!4m2!3m1!1s0x40762d71b98a0df1:0xb9974f2de8840182",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905551734509",
+  /* Opening hours in schema.org's own shape, so localBusinessLd can hand them
+     straight over and the visible copy can interpolate the same two numbers.
+     Sunday is deliberately absent: it is by appointment, not an opening time,
+     and listing it here would tell search engines the door is open when it is
+     not. The Sunday line lives in Contact.info.hoursNote instead. */
+  hours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "08:30", closes: "19:00" },
   social: {
     instagram: "https://instagram.com/minadaenerji",
     facebook: "https://www.facebook.com/minadaenerji/",

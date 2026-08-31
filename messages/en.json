@@ -430,7 +430,8 @@
       "emailLabel": "Email",
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Working hours",
-      "hours": "Weekdays 09:00 – 18:00"
+      "hours": "Monday to Saturday {hours}",
+      "hoursNote": "If Sunday is the only day that works for you, ask us and we will arrange it."
     },
     "form": {
       "name": "Full name",

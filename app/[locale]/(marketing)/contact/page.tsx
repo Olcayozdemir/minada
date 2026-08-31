@@ -72,7 +72,8 @@ export default async function Page({
             </li>
             <li>
               <span className={styles.infoLabel}>{t("info.hoursLabel")}</span>
-              <span>{t("info.hours")}</span>
+              <span>{t("info.hours", { hours: `${SITE.hours.opens}-${SITE.hours.closes}` })}</span>
+              <span className={styles.infoNote}>{t("info.hoursNote")}</span>
             </li>
           </ul>
         </aside>

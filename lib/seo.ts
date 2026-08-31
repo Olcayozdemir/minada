@@ -46,6 +46,14 @@ export function localBusinessLd(locale: string) {
     telephone: SITE.phone,
     email: SITE.email,
     areaServed: "TR",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [...SITE.hours.days],
+        opens: SITE.hours.opens,
+        closes: SITE.hours.closes,
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Görgü Mah. 2. Sk., Ankara Asfaltı 15. Km",

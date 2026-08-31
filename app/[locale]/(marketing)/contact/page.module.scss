@@ -76,3 +76,13 @@
     gap: 28px;
   }
 }
+
+/* The Sunday line under the hours: same row, quieter, so it reads as the
+   exception to the fact above it rather than a second fact. */
+.infoNote {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--on-dark-3);
+}
