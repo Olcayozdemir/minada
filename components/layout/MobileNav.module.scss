@@ -205,3 +205,20 @@
 .cta {
   width: 100%;
 }
+
+/* Hareket duyarlılığında çekmece kenardan kaymaz, yerinde açılır. */
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation-name: sheetFade;
+  }
+}
+
+@keyframes sheetFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

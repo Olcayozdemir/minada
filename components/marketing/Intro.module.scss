@@ -38,6 +38,31 @@
   filter: drop-shadow(0 26px 40px rgba(18, 36, 63, 0.22));
 }
 
+/* Phones: the render carries wide transparent margins — the house is only 67%
+   of the frame's width — so at container width it lands about 230px on a 375px
+   screen and reads as a thumbnail. Sizing the frame off the viewport instead
+   puts the house at roughly 88vw; what spills past the gutters is empty pixels,
+   which the band clips. */
+@include bp-down(640px) {
+  .deco {
+    overflow-x: clip;
+  }
+
+  .cutout {
+    width: 132vw;
+    max-width: none;
+  }
+
+  .visual {
+    padding-block: var(--space-3);
+    /* Without this the 132vw render sets the column's min-content width, the
+       single-column grid grows to match, and the copy beside it is laid out
+       off-screen. Zero minimum lets the column stay at container width and the
+       render overflow it instead, which is the whole point. */
+    min-width: 0;
+  }
+}
+
 .chip {
   position: absolute;
   left: 50%;

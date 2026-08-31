@@ -111,8 +111,7 @@ $wa-dark: #1da851;
   animation: pop 0.18s cubic-bezier(0.32, 0.72, 0.35, 1);
 }
 
-/* Ayrık durum değişimi -> kısa bir yay hissi. prefers-reduced-motion altında
-   globals.scss süreyi sıfırlıyor: kart hareketsiz, olduğu yerde belirir. */
+/* Ayrık durum değişimi -> kısa bir yay hissi. */
 @keyframes pop {
   from {
     opacity: 0;
@@ -182,5 +181,23 @@ $wa-dark: #1da851;
   &:hover {
     background: color-mix(in srgb, #{$wa} 10%, var(--surface));
     border-color: color-mix(in srgb, #{$wa} 45%, transparent);
+  }
+}
+
+/* Hareket duyarlılığında kart yol almaz, olduğu yerde belirir — kartın
+   açıldığını söyleyen sönümleme kalır. */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation-name: popFade;
+  }
+}
+
+@keyframes popFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

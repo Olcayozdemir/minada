@@ -53,19 +53,41 @@
   opacity: 0.75;
 }
 
+/* Two-up below 900px. The four figures were reading as scattered rather than
+   as a set: the rows sized to their own content, so the top row measured 77px
+   against the bottom row's 146, with nothing between them to say they belonged
+   together. Equalising the rows fixed the alignment and bought a hundred pixels
+   of dead air at the top, which is worse — so the rows keep their natural
+   height and a rule closes the block instead. */
 @include bp-down(900px) {
   .stats {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 40px;
   }
 
   .stat {
     border-left: none !important;
     padding-inline: 0;
+    padding-block: 22px;
+
+    &:first-child,
+    &:nth-child(2) {
+      padding-top: 0;
+    }
+
+    &:last-child,
+    &:nth-last-child(2) {
+      padding-bottom: 0;
+    }
 
     &:nth-child(2n) {
       border-left: 1px solid rgba(255, 255, 255, 0.14) !important;
       padding-left: clamp(18px, 5vw, 36px);
+    }
+
+    /* Each cell of the second row draws its own top rule; with no column gap
+       between them the pair reads as one line across the band. */
+    &:nth-child(n + 3) {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
     }
   }
 }
