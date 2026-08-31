@@ -51,6 +51,12 @@
   .cutout {
     width: 132vw;
     max-width: none;
+    /* Centre the bleed. Without this the block starts at the column's left edge
+       and spills all 132vw to the right: measured at 390px it ran 16 -> 531,
+       so the house sat against the right rim with a wide empty margin at the
+       left. The render's own silhouette is centred in its frame (49.7%), so
+       centring the frame centres the house. */
+    margin-inline: calc((100% - 132vw) / 2);
   }
 
   .visual {
