@@ -1,27 +1,22 @@
-import Image from "next/image";
+import { ViewTransition } from "react";
+import Image, { getImageProps } from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
-import type { StaticPathname } from "@/i18n/routing";
+import { BUSINESS_LINES, LINE_ART, lineArtName } from "@/lib/site";
 import styles from "./Services.module.scss";
 
 // The four business-line doors. Renders as the homepage gateway (dark band)
-// and as the /services hub. Every door carries one of the
-// isometric diorama renders (alpha PNG, client assets, images/v2/service-*).
-const DOORS: ReadonlyArray<{
-  id: string;
-  href: StaticPathname;
-  img: string;
-  w: number;
-  h: number;
-}> = [
-  { id: "ges", href: "/hizmetler/gunes-enerjisi", img: "/images/v2/service-solar.png", w: 1920, h: 1434 },
-  { id: "bess", href: "/hizmetler/enerji-depolama", img: "/images/v2/service-battery.png", w: 1920, h: 1434 },
-  { id: "heatpump", href: "/hizmetler/isi-pompasi", img: "/images/v2/service-heatpump.png", w: 1920, h: 1434 },
-  { id: "evcharge", href: "/hizmetler/ev-sarj", img: "/images/v2/service-ev.png", w: 1920, h: 1434 },
-];
+// and as the /services hub. Ids, routes and dioramas come from BUSINESS_LINES,
+// which the line pages read too — see lineArtName for why that matters.
+
+/** A small optimised variant of a diorama, for use as a CSS mask. */
+function maskSrc(src: string): string {
+  const { props } = getImageProps({ src, alt: "", width: 320, height: 239, quality: 45 });
+  return props.src;
+}
 
 export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
   const t = await getTranslations("Home.gateway");
@@ -38,17 +33,31 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
         />
       </div>
       <ul className={styles.grid}>
-        {DOORS.map(({ id, href, img, w, h }) => (
+        {BUSINESS_LINES.map(({ id, href, art }) => (
           <li key={id}>
             <Link href={href} className={styles.card}>
               <span className={styles.stage} aria-hidden="true">
-                <Image
-                  src={img}
-                  alt=""
-                  width={w}
-                  height={h}
-                  sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
-                  className={styles.stageImg}
+                {/* Named for the morph: clicking through carries this exact
+                    render into the line page's own hero (see LineHero). */}
+                <ViewTransition name={lineArtName(id)} share="morph">
+                  <Image
+                    src={art}
+                    alt=""
+                    width={LINE_ART.w}
+                    height={LINE_ART.h}
+                    sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
+                    className={styles.stageImg}
+                  />
+                </ViewTransition>
+                {/* Rake light. Masked to the render's own alpha, so on hover
+                    the light crosses the object rather than washing the panel
+                    behind it — the diorama stops being a flat PNG and becomes
+                    something sitting under a lamp. The mask is a deliberately
+                    small variant (a mask needs coverage, not sharpness) taken
+                    through the same optimiser as the image itself. */}
+                <span
+                  className={styles.rake}
+                  style={{ ["--art" as string]: `url(${maskSrc(art)})` }}
                 />
               </span>
               <span className={styles.body}>

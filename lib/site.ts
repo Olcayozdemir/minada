@@ -7,13 +7,23 @@ export type NavLink = { href: StaticPathname; key: string };
 export type NavColumn = { key: string; children: readonly NavLink[] };
 export type NavItem = NavLink | { key: string; columns: readonly NavColumn[] };
 
-// The four business lines (order = display order). `href` reused by nav+footer.
+// The four business lines (order = display order). `href` reused by nav+footer;
+// `art` is the isometric diorama render (alpha PNG, client asset), shared by
+// the homepage gateway card and the line page's own hero. One source matters
+// here beyond tidiness: the two are morphed into each other on navigation, and
+// a shared element that is not the same picture reads as a glitch.
 export const BUSINESS_LINES = [
-  { id: "ges", href: "/hizmetler/gunes-enerjisi" },
-  { id: "bess", href: "/hizmetler/enerji-depolama" },
-  { id: "heatpump", href: "/hizmetler/isi-pompasi" },
-  { id: "evcharge", href: "/hizmetler/ev-sarj" },
-] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname }>;
+  { id: "ges", href: "/hizmetler/gunes-enerjisi", art: "/images/v2/service-solar.png" },
+  { id: "bess", href: "/hizmetler/enerji-depolama", art: "/images/v2/service-battery.png" },
+  { id: "heatpump", href: "/hizmetler/isi-pompasi", art: "/images/v2/service-heatpump.png" },
+  { id: "evcharge", href: "/hizmetler/ev-sarj", art: "/images/v2/service-ev.png" },
+] as const satisfies ReadonlyArray<{ id: string; href: StaticPathname; art: string }>;
+
+/** Every diorama render is authored at this size. */
+export const LINE_ART = { w: 1920, h: 1434 } as const;
+
+/** The view-transition identity a line's diorama carries across routes. */
+export const lineArtName = (id: string) => `line-art-${id}`;
 
 // Audience/use-case entries ("Sizin için").
 export const AUDIENCES = [

@@ -91,6 +91,10 @@
       transform: translateY(-5px) scale(1.05);
     }
 
+    .rake {
+      animation: service-rake 1.25s cubic-bezier(0.25, 0.55, 0.3, 1);
+    }
+
     .rule::after {
       transform: scaleX(1);
     }
@@ -131,6 +135,70 @@
   object-fit: contain;
   object-position: 50% 100%;
   transition: transform 0.35s ease;
+}
+
+/* Rake light — a band of warm light crossing the diorama on hover.
+
+   Masked to the render's own alpha (--art, set per card), so the light lands
+   on the object and nowhere else: the stage behind it stays put and only the
+   thing on it catches the sweep. Geometry mirrors .stageImg exactly, mask
+   included, or the light would slide against the object it is lighting.
+
+   The band is painted straight on rather than blended: these renders are
+   mostly white, and `screen` over white returns white, so an additive band
+   would have shown up only in the dioramas' shadows. A warm translucent wash
+   goes gold across the whole object, light parts included, which is what a
+   raking light actually does to a pale surface. */
+.rake {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  width: calc(100% - 24px);
+  height: calc(100% + 14px);
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    104deg,
+    transparent 30%,
+    rgba(255, 196, 92, 0.3) 42%,
+    rgba(255, 233, 176, 0.58) 50%,
+    rgba(255, 196, 92, 0.26) 58%,
+    transparent 70%
+  );
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  mask-image: var(--art);
+  mask-size: contain;
+  mask-position: 50% 100%;
+  mask-repeat: no-repeat;
+}
+
+/* The band travels by moving the gradient, not the box: a background-position
+   animation cannot disturb the mask, whereas transforming the element would
+   drag the mask along with it and the light would sit still on the object. */
+@keyframes service-rake {
+  0% {
+    opacity: 0;
+    background-position: 116% 0;
+  }
+
+  16%,
+  74% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    background-position: -16% 0;
+  }
+}
+
+/* The sweep is a flourish on a pointer device; it carries nothing the card
+   does not already say, so it goes entirely rather than being slowed down. */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .rake {
+    animation: none;
+  }
 }
 
 .body {
