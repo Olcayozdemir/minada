@@ -711,8 +711,6 @@
         "q": "How long do the batteries last?",
         "a": "The LFP cells we use are 6,000+ cycle class — roughly 15 years at one charge-discharge a day. Capacity warranties are on the product cards."
       },
-      "productsTitle": "Storage products",
-      "productsCta": "Energy storage catalog",
       "flow": {
         "aria": "Diagram showing energy flowing from solar panels through the inverter to the battery, the building and the grid",
         "solar": "Solar Array",
@@ -760,7 +758,8 @@
         "p1": "Most modern BESS units run on LFP (lithium iron phosphate) cells: high safety, a 6,000+ cycle life (about 15 years of daily use) and thermal stability.",
         "t2": "Inverter + BMS/EMS",
         "p2": "The inverter handles DC-AC conversion; a smart battery and energy management system (BMS/EMS) governs charge-discharge balance, safety and grid compliance."
-      }
+      },
+      "faqTitle": "Common questions"
     },
     "heatpump": {
       "metaTitle": "Heat Pumps — Heating, Cooling, Hot Water and Pools",
@@ -768,8 +767,6 @@
       "eyebrow": "What we do",
       "title": "Heat Pumps",
       "intro": "Heating, cooling, hot water and underfloor circuits in one system: heat pumps turn each unit of electricity into 3–4 units of heat. With PV on your roof, your heating comes from the sun.",
-      "productsTitle": "Heat pump series",
-      "productsCta": "Heat pump catalog",
       "what": {
         "title": "What is a heat pump?",
         "p1": "A heat pump is a high-efficiency climate system that heats, cools and produces hot water using the natural energy held in air, water or the ground. Instead of generating energy it transfers existing heat: high performance from low consumption, with lower carbon emissions."
@@ -865,8 +862,6 @@
         "q": "Is my home's electrical infrastructure enough?",
         "a": "We measure meter power and panel capacity during the survey and file the capacity upgrade if one is needed. With load management, most homes install without extra power."
       },
-      "productsTitle": "Charging units",
-      "productsCta": "EV charging catalog",
       "stats": {
         "s1": {
           "v": "7.4-22 kW",
@@ -968,7 +963,8 @@
       "f4": {
         "q": "Can I bill users for charging at my business?",
         "a": "Yes — OCPP-compliant units connect to operator platforms for kWh-based billing; we guide you through the licensing requirements."
-      }
+      },
+      "faqTitle": "Common questions"
     }
   },
   "About": {
@@ -1088,7 +1084,7 @@
     "policyLink": "Cookie policy",
     "acceptAll": "Accept all",
     "rejectAll": "Reject all",
-    "settings": "Settings",
+    "settings": "Customize",
     "saveChoice": "Save my choice",
     "prefsTitle": "Cookie preferences",
     "prefsIntro": "You can turn each group on or off separately. You can change your decision at any time from the link in the footer.",
@@ -1104,7 +1100,9 @@
     "marketing": {
       "title": "Marketing",
       "desc": "Measures ad delivery and what visits from ads lead to. While off, no advertising cookie is written."
-    }
+    },
+    "accept": "Accept",
+    "reject": "Reject"
   },
   "Cookies": {
     "metaTitle": "Cookie Policy",

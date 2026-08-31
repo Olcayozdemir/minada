@@ -343,11 +343,3 @@
   color: var(--ink-2);
   line-height: 1.6;
 }
-
-.productRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-}

@@ -87,12 +87,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </ul>
       </Section>
 
-      <Section tone="light">
-        <div className={styles.productRow}>
-          <SectionHeading title={t("productsTitle")} />
-        </div>
-      </Section>
-
       <Section tone="sand">
         <SectionHeading title={t("faqTitle")} />
         <ul className={`${styles.faq} ${styles.faqWide}`}>

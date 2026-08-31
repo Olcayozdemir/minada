@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CONSENT_CATEGORIES, CONSENT_DENIED, CONSENT_GRANTED, type Consent } from "@/lib/consent";
@@ -96,22 +97,22 @@ export function CookieConsent() {
             </p>
           </div>
 
+          {/* Three peers. The banner takes the short labels because the
+              choice there is the whole cookie question; the dialog keeps
+              "all", where a bare "accept" would read as "accept what I just
+              ticked" next to the per-category switches. */}
           <div className={styles.actions}>
-            <button
-              type="button"
-              className={styles.choice}
-              onClick={() => save(CONSENT_DENIED)}
-            >
-              {t("rejectAll")}
+            <button type="button" className={styles.choice} onClick={() => save(CONSENT_DENIED)}>
+              {t("reject")}
+            </button>
+            <button type="button" className={styles.choice} onClick={() => save(CONSENT_GRANTED)}>
+              {t("accept")}
             </button>
             <button
               type="button"
-              className={styles.choice}
-              onClick={() => save(CONSENT_GRANTED)}
+              className={clsx(styles.choice, styles.customize)}
+              onClick={openSettings}
             >
-              {t("acceptAll")}
-            </button>
-            <button type="button" className={styles.settings} onClick={openSettings}>
               {t("settings")}
             </button>
           </div>

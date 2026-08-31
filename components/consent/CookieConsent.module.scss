@@ -108,7 +108,9 @@
    the consent rules exist to stop. Restyle both or neither. */
 .choice {
   flex: 1 1 0;
-  min-width: 128px;
+  /* Three of these plus two gaps have to fit the 398px card interior, which
+     puts the floor at about 125px each. */
+  min-width: 108px;
   padding: 11px 16px;
   border: 1px solid var(--ink);
   border-radius: var(--r-pill);
@@ -129,30 +131,15 @@
   }
 }
 
-.settings {
-  flex: 0 0 auto;
-  padding: 11px 4px;
-  border: 0;
-  background: none;
+/* The third option is a peer of the other two, not a footnote: the same box,
+   quieter ink. On a phone it takes its own row, since three across leaves each
+   about 111px and the labels stop fitting. */
+.customize {
   color: var(--ink-2);
-  font: inherit;
-  font-size: 0.85rem;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
+  border-color: var(--line);
 
-  &:hover {
-    color: var(--ink);
-  }
-
-  /* Its own row on a phone. Sharing one with the two choices left them about
-     148px each, which wrapped "Tümünü kabul et" onto a second line while
-     "Tümünü reddet" stayed on one: the pair has to stay the same size. */
   @include bp-down(640px) {
     flex: 1 0 100%;
-    order: 1;
-    padding-block: 6px 0;
-    text-align: center;
   }
 }
 

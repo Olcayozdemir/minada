@@ -114,9 +114,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       </Section>
 
       <Section tone="sand">
-        <div className={styles.productRow}>
-          <SectionHeading title={t("productsTitle")} />
-        </div>
+        <SectionHeading title={t("faqTitle")} />
         <ul className={styles.faq}>
           {EV_FAQ.map((id) => (
             <li key={id} className={styles.faqItem}>

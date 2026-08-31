@@ -711,8 +711,6 @@
         "q": "Batarya ömrü ne kadar?",
         "a": "Kullandığımız LFP hücreler 6.000+ çevrim sınıfında — günlük bir dolum-boşalımla 15 yıl mertebesi. Kapasite garantileri ürün kartlarında."
       },
-      "productsTitle": "Depolama ürünleri",
-      "productsCta": "Enerji depolama kataloğu",
       "flow": {
         "aria": "Güneş panelinden invertere, bataryaya, eve ve şebekeye enerji akışını gösteren diyagram",
         "solar": "Güneş Paneli",
@@ -760,7 +758,8 @@
         "p1": "Modern BESS'lerin çoğu LFP (lityum demir fosfat) hücre kullanır: yüksek güvenlik, 6.000+ çevrim ömrü (günlük kullanımda 15 yıl mertebesi) ve termal kararlılık.",
         "t2": "İnverter + BMS/EMS",
         "p2": "DC-AC dönüşümünü inverter yapar; şarj-deşarj dengesini, güvenliği ve şebekeyle uyumu akıllı batarya ve enerji yönetim sistemi (BMS/EMS) kontrol eder."
-      }
+      },
+      "faqTitle": "Sık sorulanlar"
     },
     "heatpump": {
       "metaTitle": "Isı Pompası — Isıtma, Soğutma, Sıcak Su ve Havuz",
@@ -768,8 +767,6 @@
       "eyebrow": "İş kolumuz",
       "title": "Isı Pompası",
       "intro": "Isıtma-soğutma, sıcak su ve yerden ısıtma tek sistemde: elektriğin her birimini 3-4 birim ısıya çeviren ısı pompaları. Çatınızda GES varsa, ısınmanız da güneşten.",
-      "productsTitle": "Isı pompası serileri",
-      "productsCta": "Isı pompası kataloğu",
       "what": {
         "title": "Isı pompası nedir?",
         "p1": "Isı pompası; havada, suda veya toprakta bulunan doğal enerjiyi kullanarak mekanların ısıtma, soğutma ve sıcak su ihtiyacını karşılayan yüksek verimli bir iklimlendirme sistemidir. Enerji üretmek yerine mevcut ısıyı transfer eder: daha düşük tüketimle yüksek performans sunar, karbon salımının azalmasına katkı sağlar."
@@ -865,8 +862,6 @@
         "q": "Evimin elektrik altyapısı yeterli mi?",
         "a": "Keşifte sayaç gücü ve pano kapasitesini ölçüyoruz; gerekiyorsa güç artırımı başvurusunu biz yürütüyoruz. Yük yönetimiyle çoğu evde ek güç gerekmeden kurulum mümkün."
       },
-      "productsTitle": "Şarj üniteleri",
-      "productsCta": "EV şarj kataloğu",
       "stats": {
         "s1": {
           "v": "7,4-22 kW",
@@ -968,7 +963,8 @@
       "f4": {
         "q": "İşletmemde şarjı ücretlendirebilir miyim?",
         "a": "Evet — OCPP uyumlu ünitelerle işletici platformlarına bağlanıp kWh bazlı ücretlendirme yapılabilir; lisans gerekliliklerinde yol gösteriyoruz."
-      }
+      },
+      "faqTitle": "Sık sorulanlar"
     }
   },
   "About": {
@@ -1088,7 +1084,7 @@
     "policyLink": "Çerez politikası",
     "acceptAll": "Tümünü kabul et",
     "rejectAll": "Tümünü reddet",
-    "settings": "Ayarlar",
+    "settings": "Özelleştir",
     "saveChoice": "Seçimimi kaydet",
     "prefsTitle": "Çerez tercihleri",
     "prefsIntro": "Her grubu ayrı ayrı açıp kapatabilirsiniz. Kararınızı istediğiniz zaman sayfanın altındaki bağlantıdan değiştirebilirsiniz.",
@@ -1104,7 +1100,9 @@
     "marketing": {
       "title": "Pazarlama",
       "desc": "Reklam gösterimini ve reklamdan gelen ziyaretlerin sonucunu ölçer. Kapalıyken reklam çerezi yazılmaz."
-    }
+    },
+    "accept": "Kabul et",
+    "reject": "Reddet"
   },
   "Cookies": {
     "metaTitle": "Çerez Politikası",

@@ -81,9 +81,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       </Section>
 
       <Section tone="light">
-        <div className={styles.productRow}>
-          <SectionHeading title={t("productsTitle")} />
-        </div>
+        <SectionHeading title={t("faqTitle")} />
         <ul className={styles.faq}>
           {(["f1", "f2"] as const).map((id) => (
             <li key={id} className={styles.faqItem}>
