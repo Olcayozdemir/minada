@@ -1,11 +1,39 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { CONSENT_CATEGORIES, CONSENT_DENIED, CONSENT_GRANTED, type Consent } from "@/lib/consent";
 import { useConsent } from "./ConsentProvider";
 import styles from "./CookieConsent.module.scss";
+
+/**
+ * A cookie, with a bite out of it. The one place on this site where a drawing
+ * beats a photograph: the banner is a chore everybody recognises, and saying so
+ * lightly is friendlier than dressing it up. Two colours off the brand ramp, no
+ * outline, no shading, so it reads at 34px and stays out of the way.
+ */
+function CookieMark() {
+  // The banner stays mounted behind the dialog, so both marks are in the
+  // document at once and cannot share a mask id.
+  const id = useId();
+  return (
+    <svg className={styles.mark} viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+      <mask id={id}>
+        <rect width="34" height="34" fill="#000" />
+        <circle cx="17" cy="17" r="16" fill="#fff" />
+        <circle cx="31" cy="6" r="7" fill="#000" />
+      </mask>
+      <g mask={`url(#${id})`}>
+        <circle cx="17" cy="17" r="16" fill="var(--gold-300)" />
+        <circle cx="11" cy="12" r="2.6" fill="var(--gold-700)" />
+        <circle cx="21" cy="20" r="2.2" fill="var(--gold-700)" />
+        <circle cx="12" cy="23" r="1.9" fill="var(--gold-700)" />
+        <circle cx="24" cy="12" r="1.6" fill="var(--gold-700)" />
+      </g>
+    </svg>
+  );
+}
 
 /**
  * The banner and its preferences dialog.
@@ -56,7 +84,10 @@ export function CookieConsent() {
           aria-label={t("title")}
         >
           <div className={styles.copy}>
-            <p className={styles.title}>{t("title")}</p>
+            <p className={styles.title}>
+              <CookieMark />
+              {t("title")}
+            </p>
             <p className={styles.body}>
               {t("body")}{" "}
               <Link href="/cookies" className={styles.link}>
@@ -118,6 +149,7 @@ function PreferencesDialog({
     <dialog ref={ref} className={styles.dialog} onClose={onClose} aria-labelledby="consent-title">
       <form method="dialog" className={styles.dialogForm}>
         <h2 id="consent-title" className={styles.dialogTitle}>
+          <CookieMark />
           {t("prefsTitle")}
         </h2>
         <p className={styles.dialogIntro}>{t("prefsIntro")}</p>

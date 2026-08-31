@@ -15,8 +15,13 @@
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
   background: var(--surface);
-  box-shadow: var(--shadow-card-light);
-  animation: consentIn 0.34s ease both;
+  box-shadow:
+    var(--shadow-card-light),
+    0 0 0 4px rgba(242, 168, 44, 0.12);
+  /* Quick and decisive rather than springy. An overshoot is the lazy way to
+     read as friendly and it dates the panel; the warmth is carried by the
+     mark, the gold and the plain type instead. */
+  animation: consentIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
 
   @include bp-down(640px) {
     left: 0;
@@ -36,7 +41,7 @@
 @keyframes consentIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px) scale(0.97);
   }
 }
 
@@ -59,10 +64,19 @@
   gap: 6px;
 }
 
+.mark {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+}
+
 .title {
-  font-family: var(--font-display), sans-serif;
-  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
 
@@ -109,8 +123,9 @@
     color 0.2s ease;
 
   &:hover {
-    background: var(--ink);
-    color: var(--surface);
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--green-900);
   }
 }
 
@@ -128,6 +143,16 @@
 
   &:hover {
     color: var(--ink);
+  }
+
+  /* Its own row on a phone. Sharing one with the two choices left them about
+     148px each, which wrapped "Tümünü kabul et" onto a second line while
+     "Tümünü reddet" stayed on one: the pair has to stay the same size. */
+  @include bp-down(640px) {
+    flex: 1 0 100%;
+    order: 1;
+    padding-block: 6px 0;
+    text-align: center;
   }
 }
 
@@ -158,9 +183,12 @@
 }
 
 .dialogTitle {
-  font-family: var(--font-display), sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1.3rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .dialogIntro {
@@ -254,7 +282,7 @@
   border-radius: 50%;
   background: #fff;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
