@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
+import { LineHero } from "@/components/marketing/LineHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../line.module.scss";
 
+/* Each type is drawn as a cutaway, because what separates them is where the
+   heat comes from: outside air, groundwater, a buried loop, the pool itself.
+   That lives below or beside the building, so the plinth is cut open. */
 const HP_TYPES = ["air", "water", "geo", "pool"] as const;
 const HP_ADVANTAGES = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"] as const;
 const HP_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"] as const;
@@ -29,26 +33,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Lines.heatpump");
-  const tc = await getTranslations("Common");
 
   return (
     <>
-      <Section tone="dark">
-        <SectionHeading
-          as="h1"
-          tone="dark"
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
-        />
-        <Button
-          href={{ pathname: "/contact", query: { konu: "isi-pompasi" } }}
-          size="lg"
-          withArrow
-        >
-          {tc("getQuote")}
-        </Button>
-      </Section>
+      <LineHero id="heatpump" namespace="Lines.heatpump" topic="isi-pompasi">
+      </LineHero>
 
       <Section tone="light">
         <div className={styles.proseCols}>
@@ -73,6 +62,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <ul className={styles.grid2}>
           {HP_TYPES.map((id) => (
             <li key={id} className={styles.card}>
+              <Image
+                src={`/images/v2/hp-${id}-iso.jpg`}
+                alt=""
+                width={1200}
+                height={896}
+                sizes="(max-width: 760px) 92vw, (max-width: 1200px) 46vw, 530px"
+                className={styles.cardArt}
+              />
               <h3 className={styles.cardTitle}>{t(`types.${id}.title`)}</h3>
               <p className={styles.cardDesc}>{t(`types.${id}.desc`)}</p>
             </li>

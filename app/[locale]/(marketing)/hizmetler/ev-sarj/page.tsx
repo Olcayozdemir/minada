@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import clsx from "clsx";
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
+import { LineHero } from "@/components/marketing/LineHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../line.module.scss";
@@ -32,36 +33,33 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Lines.evcharge");
-  const tc = await getTranslations("Common");
 
   return (
     <>
-      <Section tone="dark">
-        <SectionHeading
-          as="h1"
-          tone="dark"
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
-        />
-        <Button href={{ pathname: "/contact", query: { konu: "ev-sarj" } }} size="lg" withArrow>
-          {tc("getQuote")}
-        </Button>
-        <div className={styles.heroStats}>
-          {EV_STATS.map((id) => (
-            <div key={id} className={styles.heroStat}>
-              <span className={styles.n}>{t(`stats.${id}.v`)}</span>
-              <span className={styles.l}>{t(`stats.${id}.l`)}</span>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <LineHero id="evcharge" namespace="Lines.evcharge" topic="ev-sarj">
+          <div className={styles.heroStats}>
+            {EV_STATS.map((id) => (
+              <div key={id} className={styles.heroStat}>
+                <span className={styles.n}>{t(`stats.${id}.v`)}</span>
+                <span className={styles.l}>{t(`stats.${id}.l`)}</span>
+              </div>
+            ))}
+          </div>
+      </LineHero>
 
       <Section tone="light">
         <SectionHeading title={t("solTitle")} intro={t("solIntro")} />
         <ul className={styles.grid3}>
           {EV_SOLUTIONS.map((id) => (
             <li key={id} className={styles.card}>
+              <Image
+                src={`/images/v2/ev-${id}-iso.jpg`}
+                alt=""
+                width={1200}
+                height={896}
+                sizes="(max-width: 700px) 92vw, (max-width: 1000px) 46vw, (max-width: 1200px) 31vw, 350px"
+                className={styles.cardArt}
+              />
               <span className={styles.cardTag}>{t(`sol.${id}.tag`)}</span>
               <h3 className={styles.cardTitle}>{t(`sol.${id}.title`)}</h3>
               <p className={styles.cardDesc}>{t(`sol.${id}.desc`)}</p>

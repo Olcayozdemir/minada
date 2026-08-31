@@ -29,6 +29,24 @@
   }
 }
 
+/* Render at the head of a card. The 4:3 box matches the renders' own ratio so
+   nothing of the plinth is cropped, and the warm tone behind it is their own
+   backdrop, so the scene sits on its ground rather than on a white step. */
+.cardArt {
+  display: block;
+  width: calc(100% + var(--space-5) * 2);
+  /* The global img rule clamps to the content box, which would undo the bleed. */
+  max-width: none;
+  /* next/image's width/height attributes land as presentational hints, and a
+     used height would win over aspect-ratio. auto hands the box back to it. */
+  height: auto;
+  margin: calc(var(--space-5) * -1) calc(var(--space-5) * -1) var(--space-4);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: calc(var(--r-xl) - 1px) calc(var(--r-xl) - 1px) 0 0;
+  background: #e9e5df;
+}
+
 .cardTitle {
   font-family: var(--font-display), sans-serif;
   font-size: 1.12rem;
@@ -116,7 +134,13 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-4);
 
+  /* Two-up before one-up: these cards now carry a 4:3 render, and dropping
+     straight to a single column at 1000px gave it a ~560px-tall bed. */
   @include bp-down(1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-down(700px) {
     grid-template-columns: 1fr;
   }
 }
@@ -254,9 +278,14 @@
 .checkGrid {
   @include list-reset;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2) var(--space-6);
-  max-width: 900px;
+  /* Columns take their content's width rather than half of a fixed 900px.
+     At 900 each column was 438px and the longest line (61 characters in
+     Turkish) wrapped, which then dragged its whole grid row taller and left
+     ragged gaps down the other column. minmax keeps the shrink available if a
+     translation ever outgrows the band. */
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  justify-content: start;
+  gap: var(--space-3) var(--space-10);
 
   @include bp-down(700px) {
     grid-template-columns: 1fr;

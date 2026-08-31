@@ -1,0 +1,65 @@
+@use "../../styles/mixins" as *;
+
+/* The band's own bottom padding is carried by the diorama, which sits on the
+   floor of the section rather than floating in it. */
+.hero.hero {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  align-items: end;
+  gap: var(--space-10);
+
+  @include bp-down(860px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding-bottom: clamp(48px, 6vw, 96px);
+}
+
+/* A wide diagram cannot live in the copy column: `align-items: flex-start`
+   shrinks every child to its content, so a 960-unit SVG at width:100% collapsed
+   to about 290px and its labels became unreadable. Full-band width instead. */
+.below {
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.hasBelow.hasBelow {
+  padding-bottom: clamp(48px, 6vw, 88px);
+}
+
+/* Lit stage for the render: the same gold wash and dot grid the gateway cards
+   use, so the diorama arrives somewhere it recognises. */
+.stage {
+  @include lit-stage(dark);
+  position: relative;
+  align-self: stretch;
+  min-height: 240px;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+
+  @include bp-down(860px) {
+    min-height: 200px;
+    margin-inline: calc(var(--space-4) * -1);
+  }
+}
+
+.art {
+  position: absolute;
+  left: 6%;
+  bottom: 0;
+  width: 88%;
+  height: auto;
+  max-height: 118%;
+  object-fit: contain;
+  object-position: 50% 100%;
+}

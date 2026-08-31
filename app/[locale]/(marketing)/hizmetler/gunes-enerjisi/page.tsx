@@ -3,8 +3,8 @@ import Image from "next/image";
 import clsx from "clsx";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
+import { LineHero } from "@/components/marketing/LineHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Button } from "@/components/ui/Button";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { buildAlternates } from "@/lib/seo";
 import { GES_TYPES } from "@/lib/site";
@@ -37,22 +37,11 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Lines.ges");
-  const tc = await getTranslations("Common");
 
   return (
     <>
-      <Section tone="dark">
-        <SectionHeading
-          as="h1"
-          tone="dark"
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
-        />
-        <Button href={{ pathname: "/contact", query: { konu: "ges" } }} size="lg" withArrow>
-          {tc("getQuote")}
-        </Button>
-      </Section>
+      <LineHero id="ges" namespace="Lines.ges" topic="ges">
+      </LineHero>
 
       <Section tone="light">
         <SectionHeading title={t("typesTitle")} />
