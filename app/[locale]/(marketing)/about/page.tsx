@@ -106,6 +106,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </Section>
 
       <Section tone="sand" className={styles.tight}>
+        {/* One picture over both statements rather than one each. Mission and
+            vision are two halves of the same sentence, and a second image
+            would have had to be invented to fill a slot. */}
+        <Image
+          src="/images/v2/about-purpose.jpg"
+          alt=""
+          width={1376}
+          height={768}
+          sizes="(max-width: 900px) 92vw, 1100px"
+          className={styles.pairArt}
+        />
         <div className={styles.pair}>
           <div className={styles.pairItem}>
             <h2 className={styles.h2}>{t("missionTitle")}</h2>

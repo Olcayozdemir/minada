@@ -246,6 +246,20 @@
 
 /* ── Mission / Vision ────────────────────────────────────────────────────── */
 
+/* Evening, and the house is still lit: the promise the two statements below
+   are making, said once in a picture. */
+.pairArt {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: 50% 42%;
+  border-radius: var(--r-xl);
+  background: #1a1712;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
 .pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
