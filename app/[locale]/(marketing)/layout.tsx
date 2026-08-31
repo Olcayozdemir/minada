@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
+import { SocialRail } from "@/components/layout/SocialRail";
 import { RevealOnScroll } from "@/components/ui/Reveal";
 import { ConsentProvider } from "@/components/consent/ConsentProvider";
 import { CookieConsent } from "@/components/consent/CookieConsent";
@@ -28,6 +29,7 @@ export default async function MarketingLayout({
       <Header />
       <main id="main">{children}</main>
       <Footer />
+      <SocialRail />
       <WhatsAppWidget />
       <RevealOnScroll />
       <CookieConsent />

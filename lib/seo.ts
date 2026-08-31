@@ -30,7 +30,9 @@ export function organizationLd() {
     name: "MİNADA Enerji",
     url: SITE_URL,
     logo: `${SITE_URL}/logo/logo1.png`,
-    sameAs: [SITE.social.instagram, SITE.social.linkedin].filter(Boolean),
+    sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin].filter(
+      Boolean,
+    ),
   };
 }
 

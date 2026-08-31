@@ -197,6 +197,13 @@ export const IconInstagram = (p: IconProps) => (
     <circle cx="17" cy="7" r="0.4" fill="currentColor" stroke="none" />
   </Svg>
 );
+export const IconFacebook = (p: IconProps) => (
+  <Svg {...p}>
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
+    <path d="M15.3 7.3h-1.2a2.1 2.1 0 0 0-2.1 2.1v8.3" />
+    <path d="M9.9 11.7h4.6" />
+  </Svg>
+);
 export const IconLinkedin = (p: IconProps) => (
   <Svg {...p}>
     <rect x="3.5" y="3.5" width="17" height="17" rx="3.5" />

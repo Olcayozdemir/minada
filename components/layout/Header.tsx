@@ -6,7 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { NAV_ITEMS } from "@/lib/site";
 import { HeaderShell } from "./HeaderShell";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { InstagramLink } from "@/components/ui/InstagramLink";
 import { MobileNav } from "./MobileNav";
 import styles from "./Header.module.scss";
 
@@ -85,7 +84,6 @@ export async function Header() {
             </nav>
 
             <div className={styles.actions}>
-              <InstagramLink className={styles.igDesktop} />
               <span className={styles.langDesktop}>
                 <LanguageSwitcher />
               </span>

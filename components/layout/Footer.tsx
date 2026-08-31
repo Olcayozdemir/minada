@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/ui/Logo";
 import { Link } from "@/i18n/navigation";
-import { IconInstagram } from "@/components/ui/icons";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { SITE, BUSINESS_LINES, AUDIENCES, whatsappLink } from "@/lib/site";
 import clsx from "clsx";
 import { CookiePreferencesButton } from "@/components/consent/CookieConsent";
@@ -23,15 +23,7 @@ export async function Footer() {
             <Logo tone="dark" />
             <p className={styles.tagline}>{t("tagline")}</p>
             <div className={styles.social}>
-              <a
-                href={SITE.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className={styles.socialLink}
-              >
-                <IconInstagram size={20} />
-              </a>
+              <SocialLinks className={styles.socialLink} size={20} />
             </div>
           </div>
 

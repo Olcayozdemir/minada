@@ -60,9 +60,9 @@
   margin-top: 20px;
 }
 
-/* Instagram is the only account we link for now, so the lone chip carries the
-   weight a pair used to: full-strength glyph on a surface you can actually see,
-   not the muted secondary it was when it had a neighbour. */
+/* Full-strength glyph on a surface you can actually see, rather than the muted
+   secondary these were when the row was longer. Count comes from SITE.social,
+   so the row grows and shrinks with the accounts that actually exist. */
 .socialLink {
   display: inline-grid;
   place-items: center;
