@@ -134,6 +134,10 @@
 /* ---------- preferences dialog ---------- */
 
 .dialog {
+  /* The browser centres a modal dialog with margin:auto against inset:0. The
+     global `* { margin: 0 }` reset in globals.scss beats that, which pinned
+     this to the top left corner, so it has to be restated here. */
+  margin: auto;
   width: min(560px, calc(100vw - 32px));
   padding: 0;
   border: 1px solid var(--line);
