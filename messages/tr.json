@@ -77,7 +77,11 @@
     "proof2v": "300+",
     "proof2l": "tamamlanan proje",
     "proof3v": "250 MWp+",
-    "proof3l": "devreye alınan güç"
+    "proof3l": "devreye alınan güç",
+    "marker1": "Çatı GES: gündüz üretim buradan başlar.",
+    "marker2": "Enerji depolama: fazla üretimi akşama saklar.",
+    "marker3": "EV şarj: aracı gece sessizce doldurur.",
+    "marker4": "Isı pompası: ısıtma, soğutma ve sıcak su."
   },
   "Home": {
     "how": {

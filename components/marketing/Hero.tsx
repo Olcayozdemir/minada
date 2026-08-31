@@ -49,6 +49,7 @@ export async function Hero() {
         {[1, 2, 3, 4].map((n) => (
           <span key={n} className={clsx(styles.dot, styles[`dot${n}`])}>
             {n}
+            <span className={styles.tip}>{t(`marker${n}`)}</span>
           </span>
         ))}
       </div>
