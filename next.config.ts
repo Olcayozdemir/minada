@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
     // Largest source asset is 2400px — serving 2K+ variants is wasted bytes
     // (and some constrained renderers refuse to composite ≥2048px decodes).
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    // The isometric renders are large soft gradients over near-white, which is
+    // the worst case for lossy encoding: at DPR 1 the delivered WebP is shown
+    // near 1:1 with no downscale to hide banding. 75 was visibly breaking up on
+    // a non-retina monitor. Next 16 requires the allowlist, so 90 is declared
+    // here and asked for per-image; everything else stays on the default.
+    qualities: [75, 90],
   },
 };
 

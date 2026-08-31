@@ -57,7 +57,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 alt=""
                 width={1200}
                 height={896}
-                sizes="(max-width: 700px) 92vw, (max-width: 1000px) 46vw, (max-width: 1200px) 31vw, 350px"
+                sizes="(max-width: 700px) 92vw, (max-width: 1000px) 46vw, (max-width: 1400px) 31vw, 425px"
+                quality={90}
                 className={styles.cardArt}
               />
               <span className={styles.cardTag}>{t(`sol.${id}.tag`)}</span>

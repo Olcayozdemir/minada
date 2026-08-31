@@ -46,6 +46,7 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
                     width={LINE_ART.w}
                     height={LINE_ART.h}
                     sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
+                    quality={90}
                     className={styles.stageImg}
                   />
                 </ViewTransition>

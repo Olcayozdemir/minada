@@ -46,7 +46,8 @@ export async function AreaShowcase() {
                 src={img}
                 alt=""
                 fill
-                sizes="(max-width: 900px) 92vw, 46vw"
+                sizes="(max-width: 900px) 92vw, (max-width: 1400px) 46vw, 645px"
+                quality={90}
                 className={styles.photo}
               />
               <span className={styles.badge} aria-hidden="true">

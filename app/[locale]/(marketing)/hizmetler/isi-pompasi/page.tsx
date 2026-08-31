@@ -67,7 +67,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 alt=""
                 width={1200}
                 height={896}
-                sizes="(max-width: 760px) 92vw, (max-width: 1200px) 46vw, 530px"
+                sizes="(max-width: 760px) 92vw, (max-width: 1400px) 46vw, 645px"
+                quality={90}
                 className={styles.cardArt}
               />
               <h3 className={styles.cardTitle}>{t(`types.${id}.title`)}</h3>
