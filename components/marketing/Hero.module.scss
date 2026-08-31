@@ -80,13 +80,56 @@
     0 0 0 4px rgba(242, 168, 44, 0.3),
     0 4px 14px rgba(8, 26, 48, 0.45);
   transform: translate(-50%, -50%);
+
+  /* Karşılama halkası: HeroCircuit'in paketi bu ürüne vardığında bir kez
+     açılır. Gecikmeler o bileşenin altı saniyelik saatinden okunuyor
+     (HeroCircuit.module.scss'teki zaman çizelgesi); süre ikisinde de 6s
+     olduğu için faz sonsuza kadar kilitli kalır. */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--gold-300);
+    box-shadow: 0 0 10px rgba(255, 194, 77, 0.55);
+    opacity: 0;
+    animation: dotPing 6s cubic-bezier(0.2, 0.7, 0.3, 1) var(--ping) infinite;
+  }
 }
 
-/* hero-settled.webp (1200x670) üzerindeki ürün konumları. */
-.dot1 { left: 56.7%; top: 27.6%; } /* çatıdaki panel dizisi */
-.dot2 { left: 69%; top: 74.2%; } /* batarya kulesi */
-.dot3 { left: 59.3%; top: 69.9%; } /* duvardaki wallbox */
-.dot4 { left: 56%; top: 81.3%; } /* ısı pompası */
+@keyframes dotPing {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+  14% {
+    opacity: 0;
+    transform: scale(2.7);
+  }
+
+  /* Kalan tur boyunca görünmez ve toplanmış bekler. */
+  14.01%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* hero-settled.webp (1200x670) üzerindeki ürün konumları. --ping, paketin o
+   ürüne vardığı an. */
+.dot1 { left: 56.7%; top: 27.6%; --ping: 0.1s; } /* çatıdaki panel dizisi */
+.dot2 { left: 69%; top: 74.2%; --ping: 2.11s; } /* batarya kulesi */
+.dot3 { left: 59.3%; top: 69.9%; --ping: 2.6s; } /* duvardaki wallbox */
+.dot4 { left: 56%; top: 81.3%; --ping: 3.74s; } /* ısı pompası */
+
+/* Devre durunca halkanın anlamı da kalmıyor: hareket yokken "paket geldi"
+   diyecek bir paket yok. Noktalar sabit künye olarak kalır. */
+@media (prefers-reduced-motion: reduce) {
+  .dot::after {
+    animation: none;
+  }
+}
 
 .inner {
   @include container(var(--container-wide));
@@ -177,6 +220,13 @@
   justify-content: flex-end;
   position: relative;
   z-index: 6;
+  /* The photo is full-bleed but this card was aligned to the text container,
+     which on a wide screen parks it on top of the house: at 1920x950 the card
+     started at x1223 and the wall-foot cable run reaches x1290, so the card
+     covered the last stretch of the circuit. It floats over the photograph
+     rather than over the column, so it belongs against the viewport's edge.
+     min() keeps the pull at zero once the container is the viewport. */
+  margin-right: min(0px, calc((100vw - var(--container-wide)) / -2));
 }
 
 .calcCard {
@@ -289,13 +339,19 @@
     transform: translate(-50%, -45%);
   }
 
+  /* Telefonda numaralar kalkıyor. Dikey kadrajda dört ünite y'nin %70-74
+     bandında duruyor, alt metin bloğu da tam oradan başlıyor (ölçüldü: metin
+     467px'de, 2/3/4 işaretleri 457-505 arasında). Cihazlar orada olduğu için
+     işaretleri kaydırmak onları ünitelerinden koparır; çakışmayı çözen bir
+     konum yok. Zaten sayfada 1-4'ün ne olduğunu söyleyen bir künye de yok:
+     dar ekranda cümlenin üstüne oturmuş dört rozet kalıyordu.
+
+     Yerini devre alıyor — ışık zaten her üniteye tek tek varıyor, işaret
+     etme işini o yapıyor. Geri açmak için tek satır: display'i kaldır.
+     Aşağıdaki koordinatlar duruyor, çünkü mobil render'da ünitelerin nerede
+     olduğunun kaydı onlar. */
   .dot {
-    width: 22px;
-    height: 22px;
-    font-size: 11px;
-    box-shadow:
-      0 0 0 3px rgba(242, 168, 44, 0.3),
-      0 4px 14px rgba(8, 26, 48, 0.45);
+    display: none;
   }
 
   .dot1 { left: 65%; top: 46.5%; }
@@ -342,12 +398,13 @@
     max-width: none;
   }
 
-  .subDesktop {
-    display: none;
-  }
-
+  /* Telefonda alt metin yok (Olcay, 2026-08-30): dar ekranda hero zaten
+     başlık, iki buton ve hesaplayıcı kartını taşıyor, cümle onların arasına
+     sıkışıyordu. Kısa mobil varyantı mesajda duruyor — geri açmak için
+     display'i block yap. */
+  .subDesktop,
   .subMobile {
-    display: block;
+    display: none;
   }
 
   .actions {

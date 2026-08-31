@@ -1,0 +1,276 @@
+/* Hero "live circuit" — a bead of light travelling the cables that the hero
+   render already draws. Geometry lives in heroCircuit.ts; this file is the
+   choreography.
+
+   ONE SHARED SIX-SECOND CLOCK. Every bead, flash and marker ping (the ping
+   lives in Hero.module.scss) runs at exactly this duration, so they stay in
+   lockstep forever without a JS timer. Elements that fire late carry their
+   offset one of two ways: the flashes as a plain animation-delay, the beads
+   as a travel window baked into their own keyframes — beads need this because
+   their runs differ in length and so must differ in travel time, and
+   differing durations would drift out of phase within a single cycle. */
+$cycle: 6s;
+
+/* THE BEATS. Shared by both planes, because the four markers are one set of
+   DOM nodes serving both and their ping delays live in Hero.module.scss.
+   Move one, move the other.
+
+     0.10s  panel array wakes    (marker 1)
+     1.60s  inverter flashes — DC becomes AC, gold hands off to volt
+     2.11s  battery charged      (marker 2)
+     2.60s  wallbox picks up     (marker 3)
+     3.74s  heat pump running    (marker 4)
+
+   The windows below place each bead's travel against those beats. They differ
+   per plane because the two renders frame the house differently: on mobile the
+   four units are lined up along one wall, so the runs off the inverter are a
+   third of their desktop length. Holding one set of windows for both would
+   leave the phone's beads crawling. Each plane instead travels at its own
+   constant speed — 229 viewBox units per second wide, 219 tall — and each
+   window is that run's length divided by it.
+
+   Which end of a window is pinned follows from what the beat means. A beat
+   that marks an arrival (markers 2 and 4, the inverter flash) pins the end, so
+   the bead lands on it. Marker 3 marks the wallbox picking up, a departure, so
+   the EV run pins its start instead — which leaves its arrival, the charge
+   port glow, free to differ per plane. */
+$wide-trunk: (0%, 26.67%);
+$wide-battery: (28.83%, 35.17%);
+$wide-heatpump: (51.17%, 62.33%);
+$wide-ev: (43.33%, 77.67%);
+
+$tall-trunk: (0%, 26.67%);
+$tall-battery: (28.17%, 35.17%);
+$tall-heatpump: (57.67%, 62.33%);
+$tall-ev: (43.33%, 65.67%);
+
+$flash-convert: 1.6s;
+$wide-arrive: 4.66s;
+$tall-arrive: 3.94s;
+
+/* The bead is one near-zero dash on a path normalised to pathLength 100, so
+   what you see is the round linecap: a circle the width of the stroke, not a
+   streak. Opacity, rather than parking the dash off the end, is what hides it
+   outside its window — at this dash length there is no "off the end" to park
+   in. The fades are a share of the window rather than a fixed slice, because
+   the shortest window here is a fifth of the longest and a fixed slice would
+   swallow it whole. Only the two dashoffset stops are declared, so the travel
+   itself stays linear across the intermediate opacity stops. */
+@mixin bead($name, $window) {
+  $start: nth($window, 1);
+  $end: nth($window, 2);
+  $span: $end - $start;
+  $head: if($start == 0%, "0%", "0%, #{$start}");
+
+  @keyframes #{$name} {
+    #{$head} {
+      opacity: 0;
+      stroke-dashoffset: 0;
+    }
+
+    #{$start + $span * 0.12} {
+      opacity: 1;
+    }
+
+    #{$end - $span * 0.18} {
+      opacity: 1;
+    }
+
+    #{$end},
+    100% {
+      opacity: 0;
+      stroke-dashoffset: -100;
+    }
+  }
+}
+
+@include bead(wTrunk, $wide-trunk);
+@include bead(wBattery, $wide-battery);
+@include bead(wHeatpump, $wide-heatpump);
+@include bead(wEv, $wide-ev);
+@include bead(tTrunk, $tall-trunk);
+@include bead(tBattery, $tall-battery);
+@include bead(tHeatpump, $tall-heatpump);
+@include bead(tEv, $tall-ev);
+
+.wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Off screen, the clock stops rather than burning paint behind the fold. */
+.wrap:not([data-run]) * {
+  animation-play-state: paused;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glow,
+.halo,
+.core {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 0.4 100;
+  opacity: 0;
+  /* A continuous loop takes linear: a spring would either settle and die or
+     lurch once per turn. */
+  animation-duration: $cycle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* The falloff rides stroke-opacity, not opacity: the keyframes need opacity to
+   gate the bead in and out of its window, so it cannot also carry the
+   per-layer weighting. */
+.glow {
+  stroke: var(--wire);
+  stroke-width: var(--glow-w);
+  stroke-opacity: 0.14;
+}
+
+.halo {
+  stroke: var(--wire);
+  stroke-width: var(--halo-w);
+  stroke-opacity: 0.34;
+}
+
+.core {
+  stroke: var(--spark);
+  stroke-width: var(--core-w);
+}
+
+/* Generation leg is gold; everything downstream of the inverter is volt. */
+.trunk {
+  --wire: var(--gold-300);
+  --spark: #fff4d6;
+}
+
+.battery,
+.heatpump,
+.ev {
+  --wire: var(--volt);
+  --spark: #e2fbff;
+}
+
+.wide .trunk path {
+  animation-name: wTrunk;
+}
+
+.wide .battery path {
+  animation-name: wBattery;
+}
+
+.wide .heatpump path {
+  animation-name: wHeatpump;
+}
+
+.wide .ev path {
+  animation-name: wEv;
+}
+
+.tall .trunk path {
+  animation-name: tTrunk;
+}
+
+.tall .battery path {
+  animation-name: tBattery;
+}
+
+.tall .heatpump path {
+  animation-name: tHeatpump;
+}
+
+.tall .ev path {
+  animation-name: tEv;
+}
+
+/* Widths are in viewBox units and the two renders have very different
+   unit-to-pixel scales (1920 across a desktop against 1242 across a phone), so
+   each plane carries its own set. Both land the bead at roughly 10px with a
+   ~30px falloff on screen. The outer ring is deliberately faint: it stands in
+   for the tail of a glow, not for a second cable. */
+.wide {
+  --core-w: 11;
+  --halo-w: 24;
+  --glow-w: 46;
+}
+
+.tall {
+  --core-w: 26;
+  --halo-w: 58;
+  --glow-w: 112;
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .wide {
+    display: none;
+  }
+
+  .tall {
+    display: block;
+  }
+}
+
+/* Arrival blooms: a soft radial that swells and fades once per cycle. */
+.pop {
+  opacity: 0;
+  animation: heroPop $cycle linear infinite;
+}
+
+.convert {
+  animation-delay: $flash-convert;
+}
+
+.wide .arrive {
+  animation-delay: $wide-arrive;
+}
+
+.tall .arrive {
+  animation-delay: $tall-arrive;
+}
+
+@keyframes heroPop {
+  0% {
+    opacity: 0;
+  }
+
+  3% {
+    opacity: 1;
+  }
+
+  16%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.flash0 {
+  stop-color: #eafcff;
+  stop-opacity: 0.8;
+}
+
+.flash1 {
+  stop-color: var(--volt);
+  stop-opacity: 0.4;
+}
+
+.flash2 {
+  stop-color: var(--volt);
+  stop-opacity: 0;
+}
+
+/* The render draws these cables lit already, so dropping the overlay leaves a
+   complete, correct hero rather than a gap: the circuit simply stops moving.
+   Nothing here carries meaning the still photograph does not. */
+@media (prefers-reduced-motion: reduce) {
+  .wrap {
+    display: none;
+  }
+}

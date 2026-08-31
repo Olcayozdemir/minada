@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
+import { HeroCircuit } from "./HeroCircuit";
 import styles from "./Hero.module.scss";
 
 export async function Hero() {
@@ -37,8 +38,14 @@ export async function Hero() {
 
       {/* Ürün işaretleri (1d): 1 GES · 2 depolama · 3 EV şarj · 4 ısı pompası.
           Düzlem, fotoğrafın cover kırpımını kopyalar; koordinatlar görsel-uzayı
-          yüzdesi olduğundan kadraj değişse de nokta ürünün üstünde kalır. */}
+          yüzdesi olduğundan kadraj değişse de nokta ürünün üstünde kalır.
+          Devre katmanı aynı düzlemin içinde: render'a çizili kabloları o da
+          görsel-uzayı koordinatıyla izliyor, yani kırpım ne olursa olsun ışık
+          kablonun üstünden geçiyor. Noktalar da paketleri kendi sıralarında
+          karşılıyor (ping gecikmeleri HeroCircuit'in altı saniyelik saatine
+          bağlı — birini oynatırsan ötekini de oynat). */}
       <div className={styles.dots} aria-hidden="true">
+        <HeroCircuit />
         {[1, 2, 3, 4].map((n) => (
           <span key={n} className={clsx(styles.dot, styles[`dot${n}`])}>
             {n}
