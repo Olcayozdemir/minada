@@ -127,3 +127,52 @@
   transform: translateY(-3px);
   border-color: rgba(242, 168, 44, 0.4);
 }
+
+/* Gold light travelling around a border: a rotating conic-gradient comet,
+   masked down to the ring so only the edge glows. Started on the hero's
+   calculator card; shared so the two cannot drift apart.
+
+   Pair it with edge-beam-keyframes at the consuming file's top level. */
+@mixin edge-beam($duration: 3.2s, $ring: 1.6px) {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: $ring;
+  background: conic-gradient(
+    from var(--edge-beam),
+    transparent 0deg,
+    transparent 240deg,
+    var(--gold-300) 300deg,
+    #fff6dd 330deg,
+    var(--gold-300) 350deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 3px rgba(255, 194, 77, 0.7));
+  pointer-events: none;
+  /* A continuous loop takes linear: a spring would settle and die or lurch
+     once per turn. */
+  animation: edgeBeam $duration linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* CSS modules scope an animation name to the file that declares it, so the
+   consumer includes this at its top level alongside the rule above. */
+@mixin edge-beam-keyframes {
+  @keyframes edgeBeam {
+    to {
+      --edge-beam: 360deg;
+    }
+  }
+}

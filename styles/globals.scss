@@ -1,3 +1,12 @@
+/* Animatable angle behind the travelling border light (see the edge-beam mixin).
+   Registered here rather than in a module because custom properties are global
+   either way, and two modules declaring it would be one registration twice. */
+@property --edge-beam {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 *,
 *::before,
 *::after {

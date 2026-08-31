@@ -1,11 +1,6 @@
 @use "../../styles/mixins" as *;
 
-/* Animatable angle for the calculator card's travelling border light. */
-@property --calc-beam {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
+@include edge-beam-keyframes;
 
 .hero {
   position: relative;
@@ -296,46 +291,9 @@
     transform: translateY(-2px);
   }
 
-  /* Gold light travelling around the border: a rotating conic-gradient comet,
-     masked down to the ~1.6px ring so only the edge glows. */
+  /* Gold light travelling around the border. Shared with the social tab. */
   &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.6px;
-    background: conic-gradient(
-      from var(--calc-beam),
-      transparent 0deg,
-      transparent 240deg,
-      var(--gold-300) 300deg,
-      #fff6dd 330deg,
-      var(--gold-300) 350deg,
-      transparent 360deg
-    );
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    mask-composite: exclude;
-    filter: drop-shadow(0 0 3px rgba(255, 194, 77, 0.7));
-    pointer-events: none;
-    animation: calcBeam 3.2s linear infinite;
-  }
-}
-
-@keyframes calcBeam {
-  to {
-    --calc-beam: 360deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .calcCard::after {
-    animation: none;
+    @include edge-beam;
   }
 }
 

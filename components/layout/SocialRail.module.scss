@@ -1,11 +1,17 @@
 @use "../../styles/mixins" as *;
 
+@include edge-beam-keyframes;
+
 /* A tab on the right edge, flush to it and rounded only on the side that faces
-   in. Navy rather than the white chip this started as: white on a photographic
-   hero read as something the browser had attached to the page, where the
-   brand's own dark surface reads as part of the site. Same z-index as the
-   WhatsApp button lower down the same edge: above the page, under the drawer. */
+   in. Same treatment as the hero's calculator card: glass over whatever is
+   behind, with the gold light travelling its border. It began as a solid white
+   chip with grey glyphs, which over a photographic hero read like something the
+   browser had attached to the page rather than part of the site.
+
+   Same z-index as the WhatsApp button further down this edge: above the page,
+   under the mobile drawer. */
 .rail {
+  @include glass;
   position: fixed;
   right: 0;
   top: 50%;
@@ -15,11 +21,12 @@
   flex-direction: column;
   gap: 2px;
   padding: 6px 0 6px 4px;
-  border: 1px solid rgba(238, 242, 247, 0.14);
   border-right: 0;
   border-radius: var(--r-lg) 0 0 var(--r-lg);
-  background: var(--green-800);
-  box-shadow: 0 12px 34px -14px rgba(8, 26, 48, 0.6);
+
+  &::after {
+    @include edge-beam;
+  }
 
   @media print {
     display: none;
@@ -32,7 +39,7 @@
   width: 44px;
   height: 44px;
   border-radius: var(--r-md) 0 0 var(--r-md);
-  color: var(--on-dark-2);
+  color: var(--on-dark);
   transition:
     color 0.18s ease,
     background-color 0.18s ease;
