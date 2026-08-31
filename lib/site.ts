@@ -74,9 +74,7 @@ export const SITE = {
   social: {
     instagram: "https://instagram.com/minadaenerji",
     facebook: "https://www.facebook.com/minadaenerji/",
-    // Şirket sayfası açılana kadar boş: dolduğu anda footer ikonu ve JSON-LD
-    // sameAs'ı geri gelir (seo.ts filter(Boolean) ile eliyor).
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/company/minada-enerji/",
   },
 } as const;
 
