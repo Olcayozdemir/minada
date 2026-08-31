@@ -295,8 +295,13 @@
      started at x1223 and the wall-foot cable run reaches x1290, so the card
      covered the last stretch of the circuit. It floats over the photograph
      rather than over the column, so it belongs against the viewport's edge.
-     min() keeps the pull at zero once the container is the viewport. */
-  margin-right: min(0px, calc((100vw - var(--container-wide)) / -2));
+     min() keeps the pull at zero once the container is the viewport.
+
+     The 80px comes back off it for the floating dock in that same corner: the
+     card and the WhatsApp button were both ending at the gutter, so the button
+     sat on the card's arrow. 24px of inset plus a 56px button plus breathing
+     room. */
+  margin-right: calc(80px + min(0px, calc((100vw - var(--container-wide)) / -2)));
 }
 
 .calcCard {
@@ -457,6 +462,10 @@
   .bottom {
     margin-top: var(--space-3);
     justify-content: stretch;
+    /* Same corner, same clash, smaller numbers: 16px inset plus a 52px button.
+       The card stretches here, so it gives up the width rather than moving. */
+    margin-right: 0;
+    padding-right: 64px;
   }
 
   .calcCard {
