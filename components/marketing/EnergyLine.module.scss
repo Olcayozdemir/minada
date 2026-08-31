@@ -74,7 +74,11 @@
   }
 }
 
-/* Desktop-only effect — the wave crowds narrow screens. */
+/* Desktop-only effect — the wave crowds narrow screens. Tried at 761px and
+   below: the amplitude is a share of the viewport, so on a narrow page the
+   crests land inside the text column instead of out by the gutters, and the
+   line cuts straight across section headings. Widening it there would need a
+   different figure, not a smaller one. Mirrors MOBILE_MAX in EnergyLine.tsx. */
 @media (max-width: 1023px) {
   .overlay {
     display: none;

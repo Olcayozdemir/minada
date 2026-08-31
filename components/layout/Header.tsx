@@ -33,8 +33,11 @@ export async function Header() {
     },
   ];
 
+  // The header is named for view transitions so the browser treats it as one
+  // persistent element rather than snapshotting it on both pages and
+  // cross-fading two copies of it mid-navigation (see globals.scss).
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={{ viewTransitionName: "site-header" }}>
       <HeaderShell>
         <div className={styles.inner}>
           <div className={styles.pill}>

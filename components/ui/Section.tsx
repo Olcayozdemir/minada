@@ -17,7 +17,9 @@ export function Section({
 }) {
   return (
     <section id={id} className={clsx(styles.section, styles[tone], className)}>
-      <div className={styles.inner}>{children}</div>
+      <div className={styles.inner} data-reveal="">
+        {children}
+      </div>
     </section>
   );
 }

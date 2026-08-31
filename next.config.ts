@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
   sassOptions: {
     quietDeps: true,
   },
+  experimental: {
+    // Shared-element morphs between the Çözümler cards and the line pages.
+    // Browsers without the View Transitions API navigate normally, unanimated.
+    viewTransition: true,
+  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
     // Largest source asset is 2400px — serving 2K+ variants is wasted bytes

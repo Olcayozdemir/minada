@@ -22,8 +22,14 @@
   color: var(--ink);
 }
 
-/* Inset rounded dark band — the page's contrast beat. */
+/* Inset rounded dark band — the page's contrast beat.
+
+   z:2 puts it above the home energy line, the same as the hero and the CTA
+   photo panel: the wave dives behind every inset panel and surfaces again on
+   the light sections between them. Left at auto, a bright cyan line would cut
+   straight across the band instead. */
 .dark {
+  z-index: 2;
   background: linear-gradient(180deg, var(--green-850), var(--green-800));
   color: var(--on-dark);
   border-radius: var(--r-xl);
@@ -32,6 +38,8 @@
 }
 
 .band {
+  /* Same dive as .dark — see the note there. */
+  z-index: 2;
   background:
     radial-gradient(900px 380px at 80% -10%, rgba(255, 194, 77, 0.14), transparent 60%),
     linear-gradient(150deg, var(--green-700), var(--green-850));

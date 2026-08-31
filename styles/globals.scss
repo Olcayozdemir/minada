@@ -115,13 +115,115 @@ button {
   transform: translate(-50%, 0);
 }
 
+/* Section entrances — the page's shared beat.
+
+   Armed by components/ui/Reveal.tsx rather than by a default-hidden rule: with
+   no script, or before hydration, nothing here is hidden and the page reads
+   exactly as it always did. The observer hides only what is still below the
+   fold, so no element is ever blinked out from under someone. */
+[data-reveal-armed] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+[data-reveal-shown] {
+  animation: reveal-rise 0.6s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion is a reduction, not a shutdown.
+
+   A blanket `*{animation-duration:.01ms!important}` used to sit here. It also
+   erased every opacity and colour transition on the site — the feedback that
+   tells you a button took your click or a panel opened — which is the opposite
+   of what the preference asks for. Each animation now carries its own rule and
+   strips the part that actually moves, keeping the part that explains. The
+   only blanket left is the scroll glide, because a hijacked scroll is the one
+   thing here with a genuine vestibular cost. */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  html {
     scroll-behavior: auto !important;
+  }
+
+  /* Sections still announce themselves, they just stop travelling to do it. */
+  [data-reveal-armed] {
+    transform: none;
+  }
+
+  [data-reveal-shown] {
+    animation-name: reveal-fade;
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* — View transitions —
+
+   Clicking a business-line card carries its diorama into that line's own page
+   instead of cutting between two screens: same object, new place. The names
+   are paired in Services and LineHero; everything here is tuning.
+
+   Browsers without the View Transitions API navigate normally and none of this
+   applies, which is the correct fallback rather than a degraded one. */
+::view-transition-group(.morph) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.32, 0.08, 0.24, 1);
+}
+
+/* A touch of blur across the handover hides the pixel interpolation between
+   two very different sizes of the same render. */
+::view-transition-image-pair(.morph) {
+  animation-name: morph-blur;
+}
+
+@keyframes morph-blur {
+  32% {
+    filter: blur(3px);
+  }
+}
+
+/* The header is fixed, so it must not travel with the page. Hiding the old
+   snapshot outright avoids the flash of two headers stacked mid-flight. */
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* A morph moves a real object across the viewport, which is the case the
+   preference is actually about. Without it the pages simply swap, which is
+   what the browser does anyway when it cannot animate. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }

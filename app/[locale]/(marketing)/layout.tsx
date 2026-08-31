@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
+import { RevealOnScroll } from "@/components/ui/Reveal";
 
 export default async function MarketingLayout({
   children,
@@ -24,6 +25,7 @@ export default async function MarketingLayout({
       <main id="main">{children}</main>
       <Footer />
       <WhatsAppWidget />
+      <RevealOnScroll />
     </>
   );
 }

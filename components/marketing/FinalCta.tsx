@@ -26,7 +26,7 @@ export async function FinalCta({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img {...photo} className={styles.photo} />
       </picture>
-      <div className={styles.card}>
+      <div className={styles.card} data-reveal="">
         <p className={styles.eyebrow}>{t("eyebrow")}</p>
         <h2 className={styles.title}>{t("title")}</h2>
         <p className={styles.desc}>{t("desc")}</p>
