@@ -7,6 +7,28 @@ import { IconArrowRight } from "@/components/ui/icons";
 import { HeroCircuit } from "./HeroCircuit";
 import styles from "./Hero.module.scss";
 
+/**
+ * Wraps the commas so they can be set smaller than the words around them.
+ *
+ * At the display size Bricolage's comma is a heavy blob, and the headline has
+ * two of them carrying the whole rhythm of "üret, depola, yönet". CSS cannot
+ * reach a single character, so the only way to size one is to give it an
+ * element. Splitting on the glyph rather than writing the markup into the
+ * message keeps the translations plain text, and a line that loses its commas
+ * simply comes back unchanged.
+ */
+function withSmallCommas(text: string) {
+  return text.split(/(,)/).map((part, i) =>
+    part === "," ? (
+      <span key={i} className={styles.comma}>
+        ,
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
 export async function Hero() {
   const t = await getTranslations("Hero");
   const tc = await getTranslations("Common");
@@ -57,7 +79,7 @@ export async function Hero() {
       <div className={styles.inner}>
         <div className={styles.content}>
           <h1 className={styles.display}>
-            <span className={styles.d1}>{t("display1")}</span>
+            <span className={styles.d1}>{withSmallCommas(t("display1"))}</span>
             <em className={styles.d2}>{t("display2")}</em>
           </h1>
 

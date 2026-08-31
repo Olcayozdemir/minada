@@ -165,10 +165,16 @@
 
 /* hero-settled.webp (1200x670) üzerindeki ürün konumları. --ping, paketin o
    ürüne vardığı an. */
+/* 2, 3 and 4 sit on their unit's top left corner, so the marker straddles it
+   the way a badge does rather than covering the thing it is pointing at. Read
+   off hero-solar.jpeg, which the plane matches in aspect ratio, so these are
+   the image's own coordinates: battery (1286, 721), wallbox (1128, 722), heat
+   pump (1008, 812) of 1920 x 1072. Marker 1 stays where it was, over the panel
+   array, which has no corner to hang off. */
 .dot1 { left: 56.7%; top: 27.6%; --ping: 0.1s; } /* çatıdaki panel dizisi */
-.dot2 { left: 69%; top: 74.2%; --ping: 2.11s; } /* batarya kulesi */
-.dot3 { left: 59.3%; top: 69.9%; --ping: 2.6s; } /* duvardaki wallbox */
-.dot4 { left: 56%; top: 81.3%; --ping: 3.74s; } /* ısı pompası */
+.dot2 { left: 66.98%; top: 67.26%; --ping: 2.11s; } /* batarya kulesi */
+.dot3 { left: 58.75%; top: 67.35%; --ping: 2.6s; } /* duvardaki wallbox */
+.dot4 { left: 52.5%; top: 75.75%; --ping: 3.74s; } /* ısı pompası */
 
 /* Devre durunca halkanın anlamı da kalmıyor: hareket yokken "paket geldi"
    diyecek bir paket yok. Noktalar sabit künye olarak kalır. */
@@ -214,6 +220,11 @@
 
 .d1 {
   display: block;
+}
+
+/* Just the glyph. Everything else about the line stays where it was. */
+.comma {
+  font-size: 0.65em;
 }
 
 /* İkinci satır: Fraunces italik, altın — sloganın imge yarısı. */
