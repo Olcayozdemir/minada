@@ -1,0 +1,146 @@
+@use "../../styles/mixins" as *;
+
+.grid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+
+  @include bp-down(900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  /* Anchored from the homepage tiles, so keep the fixed header off the title. */
+  scroll-margin-top: calc(var(--header-h) + var(--space-6));
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    @include card-hover-gold;
+  }
+}
+
+/* Matches the renders' own 4:3, so nothing of the plinth gets cropped away.
+   The warm off-white behind the box is the renders' own backdrop tone, so the
+   scene sits on its ground rather than on a white step. */
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #e9e5df;
+}
+
+.photo {
+  object-fit: cover;
+}
+
+/* The area's own mark, sat on the seam between photo and caption. */
+.badge {
+  position: absolute;
+  left: var(--space-5);
+  bottom: -22px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--on-accent);
+  box-shadow: 0 0 0 5px var(--surface);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-8) var(--space-5) var(--space-5);
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.points {
+  @include list-reset;
+  margin-top: var(--space-4);
+  display: grid;
+  gap: var(--space-2);
+
+  li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+  }
+}
+
+.lines {
+  margin-top: auto;
+  padding-top: var(--space-5);
+}
+
+.linesLabel {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background: var(--gold);
+    border-color: transparent;
+    color: var(--on-accent);
+  }
+}

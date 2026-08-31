@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Link } from "@/i18n/navigation";
 import { IconHome, IconBuilding, IconLeaf, IconLandmark } from "@/components/ui/icons";
 import styles from "./ApplicationAreas.module.scss";
 
@@ -19,8 +20,10 @@ export async function ApplicationAreas() {
     <Section tone="sand" id="uygulama-alanlari">
       <SectionHeading eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className={styles.grid}>
+        {/* Each tile opens its own block on the applications page; the ids
+            match the cards there (AreaShowcase). They used to lead nowhere. */}
         {AREAS.map(({ id, Icon, img }) => (
-          <div key={id} className={styles.tile}>
+          <Link key={id} href={{ pathname: "/solutions", hash: id }} className={styles.tile}>
             <Image
               src={img}
               alt=""
@@ -37,7 +40,7 @@ export async function ApplicationAreas() {
                 <p className={styles.desc}>{t(`${id}.desc`)}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </Section>

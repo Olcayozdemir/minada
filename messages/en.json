@@ -1042,5 +1042,44 @@
       "desc": "Book a free survey and together we will map out the system and savings tailored to your roof and your consumption.",
       "waMessage": "Hello, I'd like to get a free survey from MİNADA."
     }
+  },
+  "Areas": {
+    "eyebrow": "Applications",
+    "title": "One system, four scales",
+    "intro": "From homes to industry, farms to public buildings: the four lines we build are the same everywhere. What changes is which one leads, and at what scale.",
+    "listEyebrow": "Where we build",
+    "listTitle": "Four settings, four priorities",
+    "listIntro": "Every setting has its own consumption curve and its own constraint, and the system design follows from that.",
+    "linesLabel": "Lines involved",
+    "konut": {
+      "title": "Homes & Private",
+      "desc": "In villas, detached houses and gated communities the rooftop array, battery, heat pump and charger come together as one system.",
+      "p1": "Energy made in the day is carried into the evening, so less is drawn from the grid.",
+      "p2": "During an outage the house switches to the battery on its own.",
+      "p3": "The car charges overnight on energy the roof made that day."
+    },
+    "ticari": {
+      "title": "Commercial & Industrial",
+      "desc": "In factories, warehouses, industrial estates and hotels, large roofs and land become high-capacity plants.",
+      "p1": "Production runs by day, so the consumption curve lines up with the sun.",
+      "p2": "The battery steps in at peak hours, cutting demand charges and peak penalties.",
+      "p3": "Charging for fleets and customers runs off the same system."
+    },
+    "tarim": {
+      "title": "Agricultural Sites",
+      "desc": "For irrigation, greenhouses, cold storage and livestock operations, energy stops being the largest line on the books.",
+      "p1": "Irrigation pumps run in the hours the sun is strongest.",
+      "p2": "With agri-PV the same land both generates and farms.",
+      "p3": "Cold storage keeps running off the battery through an outage."
+    },
+    "kamu": {
+      "title": "Public & Institutional",
+      "desc": "For municipalities, schools, hospitals and public buildings the energy budget becomes predictable and critical loads are protected.",
+      "p1": "The institution gets a predictable energy cost spread across years.",
+      "p2": "Critical loads keep drawing from the battery the moment supply fails.",
+      "p3": "Public charging points run on the institution's own generation."
+    },
+    "ctaTitle": "Which one is yours?",
+    "ctaDesc": "Let us look at your roof, your land or your site in person and work out together which line leads for your consumption profile. The survey is free."
   }
 }

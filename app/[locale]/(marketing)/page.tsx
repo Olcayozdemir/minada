@@ -56,6 +56,12 @@ export default async function HomePage({
         {/* Rakamlarla MİNADA — same band as the About page. */}
         <StatsBand />
         <ApplicationAreas />
+        {/* Buraya bir "Bir gün" zaman çizelgesi denendi ve düştü (Olcay,
+            2026-08-30). Üç ayrı görsel dil denendi (grafik · kâğıt kesme sahne
+            · mimari kesit), üçü de tutmadı. Teşhis fikrin kendisinde: elle
+            çizilen bir bölüm, sayfanın geri kalanını taşıyan fotoğrafik
+            render'ların yanında zayıf kalıyor. Aynı fikri dördüncü kez
+            denemeden önce bunu bil. */}
         <CalculatorTeaser />
         {/* Ürünler teaser'ı ana sayfadan kaldırıldı (Olcay, 2026-08-06);
             /urunler sayfası yaşıyor. */}

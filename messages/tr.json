@@ -1042,5 +1042,44 @@
       "desc": "Ücretsiz keşif oluşturun; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım.",
       "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
     }
+  },
+  "Areas": {
+    "eyebrow": "Uygulama Alanları",
+    "title": "Aynı sistem, dört farklı ölçek",
+    "intro": "Konuttan endüstriye, tarımdan kamuya: kurduğumuz dört iş kolu her yerde aynı. Değişen, hangisinin öne çıktığı ve hangi ölçekte kurulduğu.",
+    "listEyebrow": "Nerede kuruyoruz",
+    "listTitle": "Dört ortam, dört öncelik",
+    "listIntro": "Her ortamın kendi tüketim eğrisi ve kendi kısıtı var. Sistem tasarımı da ona göre değişiyor.",
+    "linesLabel": "İlgili iş kolları",
+    "konut": {
+      "title": "Konut & Bireysel",
+      "desc": "Villa, müstakil ev ve site içi konutlarda çatı santrali, batarya, ısı pompası ve şarj ünitesi tek sistemde birleşir.",
+      "p1": "Gündüz üretilen enerji akşama taşınır, şebekeden alınan pay küçülür.",
+      "p2": "Kesintide ev otomatik olarak bataryadan çalışmaya devam eder.",
+      "p3": "Araç, evin kendi çatısının ürettiği enerjiyle gece dolar."
+    },
+    "ticari": {
+      "title": "Ticari & Endüstriyel",
+      "desc": "Fabrika, depo, OSB tesisi ve otellerde geniş çatı ve arazi alanları yüksek kapasiteli santrallere dönüşür.",
+      "p1": "Üretim gündüz olduğu için tüketim eğrisi güneşle örtüşür.",
+      "p2": "Batarya puant saatlerde devreye girer, güç bedelini ve puant cezasını düşürür.",
+      "p3": "Filo ve müşteri araçlarının şarj altyapısı aynı sistemden beslenir."
+    },
+    "tarim": {
+      "title": "Tarımsal Tesisler",
+      "desc": "Sulama, sera, soğuk hava deposu ve hayvancılık tesislerinde enerji, işletmenin en büyük gider kalemi olmaktan çıkar.",
+      "p1": "Sulama pompaları güneşin en güçlü olduğu saatlerde çalışır.",
+      "p2": "Agri-PV kurulumunda aynı arazi hem üretim hem tarım yapar.",
+      "p3": "Soğuk hava depoları kesintide bataryadan beslenmeye devam eder."
+    },
+    "kamu": {
+      "title": "Kamu & Kurumsal",
+      "desc": "Belediye, okul, hastane ve kamu binalarında enerji bütçesi öngörülebilir hâle gelir, kritik yükler kesintiden korunur.",
+      "p1": "Kurum, yıllara yayılan öngörülebilir bir enerji maliyetine kavuşur.",
+      "p2": "Kritik yükler kesinti anında bataryadan beslenir.",
+      "p3": "Halka açık şarj noktaları kurumun kendi üretimiyle çalışır."
+    },
+    "ctaTitle": "Sizin ortamınız hangisi?",
+    "ctaDesc": "Çatınızı, arazinizi ya da tesisinizi yerinde inceleyelim; tüketim profilinize göre hangi iş kolunun öne çıktığını birlikte görelim. Keşif ücretsiz."
   }
 }
