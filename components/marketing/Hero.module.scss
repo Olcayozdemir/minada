@@ -11,7 +11,7 @@
   position: relative;
   /* Above the home energy-line overlay (z:1); the line dives behind this panel. */
   z-index: 2;
-  margin-top: calc(-1 * var(--header-h));
+  margin-top: calc(-1 * var(--header-clear));
   /* Full fold. At 95svh the light page surface showed as a bare strip along the
      bottom edge — read as a stray white bar, not as "there is more below". */
   min-height: 100svh;
@@ -136,7 +136,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-top: calc(var(--header-h) + var(--space-8));
+  padding-top: calc(var(--header-clear) + var(--space-8));
   padding-bottom: var(--space-10);
 }
 
@@ -374,7 +374,7 @@
   }
 
   .inner {
-    padding-top: calc(var(--header-h) + var(--space-4));
+    padding-top: calc(var(--header-clear) + var(--space-4));
     padding-bottom: var(--space-5);
   }
 

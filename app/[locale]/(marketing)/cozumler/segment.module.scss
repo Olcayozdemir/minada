@@ -122,7 +122,7 @@
   min-height: clamp(520px, 62vh, 680px);
   display: grid;
   align-items: center;
-  margin-top: calc(var(--header-h) * -1);
+  margin-top: calc(var(--header-clear) * -1);
   overflow: hidden;
 }
 
@@ -172,7 +172,7 @@
   @include container;
   position: relative;
   z-index: 1;
-  padding-top: var(--header-h);
+  padding-top: var(--header-clear);
   padding-bottom: var(--space-6);
   color: #fff;
 }

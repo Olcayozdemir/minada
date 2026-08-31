@@ -18,7 +18,7 @@
 
 .head {
   position: sticky;
-  top: calc(var(--header-h) + 12px);
+  top: calc(var(--header-clear) + 12px);
 
   /* Single column on mobile: sticky would ride over the list. */
   @include bp-down(900px) {

@@ -76,7 +76,15 @@
   /* Layout */
   --container: 1200px;
   --container-wide: 1360px;
-  --header-h: 84px;
+  /* Fallback only: HeaderShell measures the bar and overwrites this on the
+     root, so anything keyed to it stays right when the pill changes height.
+     80px is what it measures from 390 to 1440px, so the pre-hydration paint
+     matches and nothing shifts. */
+  --header-h: 80px;
+  /* What content clears, as opposed to the bar's own height. The old single
+     84px folded the two together; separating them keeps the 4px breath when
+     the measured bar turns out to be a different height. */
+  --header-clear: calc(var(--header-h) + 4px);
 
   /* Type */
   --lh-tight: 1.03;

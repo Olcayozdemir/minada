@@ -65,6 +65,9 @@
 .link {
   font-size: 15px;
   font-weight: 600;
+  /* Nav items never break mid-item. Between 980 and roughly 1200px "Ana Sayfa"
+     was wrapping to two lines, which grew the whole bar from 84 to 97px. */
+  white-space: nowrap;
   opacity: 0.85;
   padding: 0.4rem 0.15rem;
   transition: opacity 0.15s ease;

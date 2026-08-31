@@ -21,7 +21,7 @@
   box-shadow: var(--shadow-soft);
   overflow: hidden;
   /* Anchored from the homepage tiles, so keep the fixed header off the title. */
-  scroll-margin-top: calc(var(--header-h) + var(--space-6));
+  scroll-margin-top: calc(var(--header-clear) + var(--space-6));
   transition:
     transform 0.3s ease,
     border-color 0.3s ease;

@@ -83,7 +83,7 @@ button {
 /* Header is fixed; give page content clearance. The home hero pulls itself
    back up (negative margin) to run full-bleed underneath the glass pill. */
 #main {
-  padding-top: var(--header-h);
+  padding-top: var(--header-clear);
 }
 
 .sr-only {

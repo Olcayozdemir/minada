@@ -4,6 +4,13 @@
 
 .headerSection {
   position: relative;
+  /* The header pill would otherwise land half on the night render and half on
+     the light copy column, which is the home page's arrangement on a page that
+     actually opens light. This band drops the whole composition clear of it so
+     the pill sits on one ground. Margin rather than padding on purpose: the
+     section background is the page background, so the gap is invisible, and
+     the panel, the seal and the copy keep every offset they were tuned with. */
+  margin-top: var(--space-8);
   background: var(--bg);
   overflow: hidden;
   /* The masked panel needs hero-scale presence even with short copy. */
