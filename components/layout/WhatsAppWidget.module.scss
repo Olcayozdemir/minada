@@ -18,7 +18,12 @@ $wa-dark: #1da851;
 
   @include bp-down(640px) {
     right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    /* --consent-h is the cookie banner's measured height, published by the
+       banner while it is up and removed when it goes. On phones the banner is
+       a full-width sheet at the bottom, so without this it would sit on top of
+       this button. Unset the rest of the time, hence the 0px fallback. */
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px) + var(--consent-h, 0px));
+    transition: bottom 0.3s ease;
   }
 
   @media print {

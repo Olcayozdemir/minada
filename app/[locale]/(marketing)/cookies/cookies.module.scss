@@ -1,0 +1,101 @@
+@use "../../../../styles/mixins" as *;
+
+/* A legal page is read, not scanned, so the column is set to a reading measure
+   rather than the full container. */
+.page {
+  max-width: 720px;
+}
+
+.updated {
+  margin-top: var(--space-4);
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.prose {
+  margin-top: var(--space-8);
+
+  h2 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  p {
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.groups {
+  @include list-reset;
+  display: grid;
+  gap: var(--space-3);
+
+  li {
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--line);
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+}
+
+.records {
+  @include list-reset;
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.record {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+
+.recordName {
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.recordMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-8);
+  margin: var(--space-3) 0;
+
+  dt {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  dd {
+    margin-top: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+}
+
+.recordWhat {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.cta {
+  margin-top: var(--space-8);
+}

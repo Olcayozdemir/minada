@@ -1,0 +1,285 @@
+@use "../../styles/mixins" as *;
+
+/* Sits above the header (100) and the WhatsApp button (90), below the mobile
+   drawer (150/151) so an open menu covers it rather than fighting it. */
+.banner {
+  position: fixed;
+  z-index: 140;
+  left: 24px;
+  bottom: 24px;
+  width: min(440px, calc(100vw - 48px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-card-light);
+  animation: consentIn 0.34s ease both;
+
+  @include bp-down(640px) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    padding: var(--space-5) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+    border-width: 1px 0 0;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+@keyframes consentIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* Motion goes, the fade stays: the entrance is what tells you something new
+   arrived, and a crossfade is not the vestibular trigger the setting is for. */
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation-name: consentFade;
+  }
+}
+
+@keyframes consentFade {
+  from {
+    opacity: 0;
+  }
+}
+
+.copy {
+  display: grid;
+  gap: 6px;
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.body {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.link {
+  color: var(--gold-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: var(--gold-700);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Accept and refuse share one class on purpose. They must stay the same size,
+   weight and colour: making refusal the quieter of the two is the dark pattern
+   the consent rules exist to stop. Restyle both or neither. */
+.choice {
+  flex: 1 1 0;
+  min-width: 128px;
+  padding: 11px 16px;
+  border: 1px solid var(--ink);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background: var(--ink);
+    color: var(--surface);
+  }
+}
+
+.settings {
+  flex: 0 0 auto;
+  padding: 11px 4px;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--ink);
+  }
+}
+
+/* ---------- preferences dialog ---------- */
+
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-card-light);
+
+  &::backdrop {
+    background: rgba(8, 26, 48, 0.5);
+  }
+}
+
+.dialogForm {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.dialogTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.dialogIntro {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.rows {
+  @include list-reset;
+  display: grid;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+
+  & + & {
+    border-top: 1px solid var(--line);
+  }
+}
+
+.rowText {
+  display: grid;
+  gap: 3px;
+}
+
+.rowTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.rowDesc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.always {
+  flex: 0 0 auto;
+  padding-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.switch {
+  flex: 0 0 auto;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  input:focus-visible + .track {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  input:checked + .track {
+    background: var(--green-700);
+
+    .knob {
+      transform: translateX(20px);
+    }
+  }
+}
+
+.track {
+  width: 46px;
+  height: 26px;
+  padding: 3px;
+  border-radius: var(--r-pill);
+  background: rgba(18, 36, 63, 0.22);
+  transition: background-color 0.2s ease;
+}
+
+.knob {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knob {
+    transition: none;
+  }
+}
+
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.save {
+  flex: 1 1 100%;
+  order: -1;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--gold);
+  color: var(--green-900);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--gold-300);
+  }
+}

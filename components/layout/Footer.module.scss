@@ -178,6 +178,19 @@
   }
 }
 
+/* The cookie preferences entry opens a dialog rather than navigating, so it is
+   a button. It borrows .legalLink to stay in the same typographic row and this
+   only undoes the user-agent button chrome. Padding is deliberately left at 0
+   here and not repeated: the touch block below comes later in the file, so its
+   .legalLink rule still wins and grows the button to a 44px target. */
+.legalButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
 /* Finger targets. These link rows are 22-24px of text — right at the WCAG floor
    and nowhere near comfortable. On touch the padding does the growing and the
    gap goes to zero, so every row is exactly 44px and no two hit areas overlap

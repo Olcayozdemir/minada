@@ -3,6 +3,8 @@ import { Logo } from "@/components/ui/Logo";
 import { Link } from "@/i18n/navigation";
 import { IconInstagram } from "@/components/ui/icons";
 import { SITE, BUSINESS_LINES, AUDIENCES, whatsappLink } from "@/lib/site";
+import clsx from "clsx";
+import { CookiePreferencesButton } from "@/components/consent/CookieConsent";
 import styles from "./Footer.module.scss";
 
 export async function Footer() {
@@ -105,6 +107,7 @@ export async function Footer() {
             <Link href="/cookies" className={styles.legalLink}>
               {t("cookies")}
             </Link>
+            <CookiePreferencesButton className={clsx(styles.legalLink, styles.legalButton)} />
           </div>
         </div>
       </div>

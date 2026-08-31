@@ -1081,5 +1081,73 @@
     },
     "ctaTitle": "Which one is yours?",
     "ctaDesc": "Let us look at your roof, your land or your site in person and work out together which line leads for your consumption profile. The survey is free."
+  },
+  "Consent": {
+    "title": "Cookies",
+    "body": "We use the cookies the site needs in order to work. Analytics and marketing cookies run only if you allow them.",
+    "policyLink": "Cookie policy",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "settings": "Settings",
+    "saveChoice": "Save my choice",
+    "prefsTitle": "Cookie preferences",
+    "prefsIntro": "You can turn each group on or off separately. You can change your decision at any time from the link in the footer.",
+    "alwaysOn": "Always on",
+    "necessary": {
+      "title": "Necessary",
+      "desc": "Things the site cannot work without, such as your language preference and the choice you make on this screen. Cannot be turned off and needs no consent."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "desc": "Lets us see in aggregate which pages get read and how often. Not used to identify you as a person."
+    },
+    "marketing": {
+      "title": "Marketing",
+      "desc": "Measures ad delivery and what visits from ads lead to. While off, no advertising cookie is written."
+    }
+  },
+  "Cookies": {
+    "metaTitle": "Cookie Policy",
+    "metaDesc": "Which cookies the MİNADA Enerji website uses, what they do, and how to change your choice.",
+    "title": "Cookie Policy",
+    "intro": "This page explains which cookies minada.com.tr uses, what they do, and how you can change your decision.",
+    "updated": "Last updated: 31 August 2026",
+    "s1": {
+      "title": "What is a cookie?",
+      "p1": "A cookie is a small text file your browser saves on your device when you visit a site. It lets the site remember you. Your browser's local storage does a similar job, and this policy covers both together.",
+      "p2": "Cookies are grouped by what they are for. Necessary ones exist so the site can work at all and need no consent. Nothing beyond those runs unless you allow it."
+    },
+    "s2": {
+      "title": "The groups",
+      "necessary": "Necessary: things the site needs in order to function, such as your language preference and your cookie decision. Cannot be turned off.",
+      "analytics": "Analytics: measures in aggregate how much each page is read. Does not identify you as a person.",
+      "marketing": "Marketing: measures ad delivery and what visits from ads lead to."
+    },
+    "s3": {
+      "title": "What is in use today",
+      "intro": "As of today this site keeps necessary records only. No third party analytics or advertising cookie is written, and no tracking request leaves the site. This table is updated whenever a new record is added.",
+      "col1": "Record",
+      "col2": "Group",
+      "col3": "What it does",
+      "col4": "Lifetime",
+      "r1n": "NEXT_LOCALE",
+      "r1g": "Necessary",
+      "r1w": "Remembers whether you want the site in Turkish or English.",
+      "r1d": "1 year",
+      "r2n": "minada.consent",
+      "r2g": "Necessary",
+      "r2w": "Stores the decision you make on this page so you are not asked again on every page. Kept in your browser's local storage and never sent to the server.",
+      "r2d": "Until you clear it"
+    },
+    "s4": {
+      "title": "Changing your decision",
+      "p1": "The \"Cookie preferences\" link at the foot of every page reopens the screen where you made your choice. You can withdraw consent there at any time.",
+      "p2": "You can also delete or block all cookies from your browser settings. If you block the necessary records, your language preference will not be remembered."
+    },
+    "s5": {
+      "title": "Your rights and contact",
+      "p1": "For your rights regarding your personal data under Turkish law no. 6698 (KVKK), please get in touch with us.",
+      "cta": "Contact us"
+    }
   }
 }

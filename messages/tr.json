@@ -1081,5 +1081,73 @@
     },
     "ctaTitle": "Sizin ortamınız hangisi?",
     "ctaDesc": "Çatınızı, arazinizi ya da tesisinizi yerinde inceleyelim; tüketim profilinize göre hangi iş kolunun öne çıktığını birlikte görelim. Keşif ücretsiz."
+  },
+  "Consent": {
+    "title": "Çerezler",
+    "body": "Sitenin çalışması için gereken çerezleri kullanıyoruz. Analiz ve pazarlama çerezleri ise yalnızca siz izin verirseniz çalışır.",
+    "policyLink": "Çerez politikası",
+    "acceptAll": "Tümünü kabul et",
+    "rejectAll": "Tümünü reddet",
+    "settings": "Ayarlar",
+    "saveChoice": "Seçimimi kaydet",
+    "prefsTitle": "Çerez tercihleri",
+    "prefsIntro": "Her grubu ayrı ayrı açıp kapatabilirsiniz. Kararınızı istediğiniz zaman sayfanın altındaki bağlantıdan değiştirebilirsiniz.",
+    "alwaysOn": "Her zaman açık",
+    "necessary": {
+      "title": "Zorunlu",
+      "desc": "Dil tercihiniz ve bu ekranda verdiğiniz karar gibi, site olmadan çalışamayacağı bilgiler. Kapatılamaz ve izin gerektirmez."
+    },
+    "analytics": {
+      "title": "Analiz",
+      "desc": "Hangi sayfaların ne kadar okunduğunu toplu olarak görmemizi sağlar. Sizi kişi olarak tanımlamak için kullanılmaz."
+    },
+    "marketing": {
+      "title": "Pazarlama",
+      "desc": "Reklam gösterimini ve reklamdan gelen ziyaretlerin sonucunu ölçer. Kapalıyken reklam çerezi yazılmaz."
+    }
+  },
+  "Cookies": {
+    "metaTitle": "Çerez Politikası",
+    "metaDesc": "MİNADA Enerji web sitesinde hangi çerezlerin kullanıldığı, ne işe yaradıkları ve tercihinizi nasıl değiştireceğiniz.",
+    "title": "Çerez Politikası",
+    "intro": "Bu sayfa minada.com.tr adresinde hangi çerezlerin kullanıldığını, ne işe yaradıklarını ve kararınızı nasıl değiştirebileceğinizi anlatır.",
+    "updated": "Son güncelleme: 31 Ağustos 2026",
+    "s1": {
+      "title": "Çerez nedir?",
+      "p1": "Çerez, bir siteyi ziyaret ettiğinizde tarayıcınızın cihazınıza kaydettiği küçük bir metin dosyasıdır. Sitenin sizi hatırlamasını sağlar. Tarayıcının yerel depolama alanı da benzer iş görür; bu politika ikisini birlikte ele alır.",
+      "p2": "Çerezler kullanım amaçlarına göre gruplanır. Zorunlu olanlar site çalışsın diye vardır ve izin gerektirmez. Bunun dışındaki hiçbir çerez, siz açıkça izin vermeden çalışmaz."
+    },
+    "s2": {
+      "title": "Gruplar",
+      "necessary": "Zorunlu: Dil tercihiniz ve çerez kararınız gibi, sitenin temel işleyişi için gereken bilgiler. Kapatılamaz.",
+      "analytics": "Analiz: Sayfaların ne kadar okunduğunu toplu olarak ölçer. Sizi kişi olarak tanımlamaz.",
+      "marketing": "Pazarlama: Reklam gösterimini ve reklamdan gelen ziyaretlerin sonucunu ölçer."
+    },
+    "s3": {
+      "title": "Şu anda kullanılanlar",
+      "intro": "Bu sitede bugün itibarıyla yalnızca zorunlu kayıtlar tutuluyor. Üçüncü taraf analiz veya reklam çerezi yazılmıyor ve siteden dışarıya izleme isteği gitmiyor. Bu tabloya yeni bir kayıt eklendiğinde sayfa güncellenir.",
+      "col1": "Kayıt",
+      "col2": "Grup",
+      "col3": "Ne işe yarar",
+      "col4": "Süre",
+      "r1n": "NEXT_LOCALE",
+      "r1g": "Zorunlu",
+      "r1w": "Siteyi Türkçe mi İngilizce mi görmek istediğinizi hatırlar.",
+      "r1d": "1 yıl",
+      "r2n": "minada.consent",
+      "r2g": "Zorunlu",
+      "r2w": "Bu sayfadaki kararınızı saklar; her sayfada yeniden sorulmasını önler. Tarayıcınızın yerel depolamasında tutulur, sunucuya gönderilmez.",
+      "r2d": "Siz silene kadar"
+    },
+    "s4": {
+      "title": "Kararınızı değiştirmek",
+      "p1": "Sayfanın en altındaki \"Çerez tercihleri\" bağlantısı kararınızı verdiğiniz ekranı yeniden açar. Verdiğiniz izni orada dilediğiniz zaman geri alabilirsiniz.",
+      "p2": "Tarayıcınızın ayarlarından da tüm çerezleri silebilir veya engelleyebilirsiniz. Zorunlu kayıtları engellerseniz dil tercihiniz hatırlanmaz."
+    },
+    "s5": {
+      "title": "Haklarınız ve iletişim",
+      "p1": "Kişisel verilerinize ilişkin 6698 sayılı KVKK kapsamındaki haklarınız için bizimle iletişime geçebilirsiniz.",
+      "cta": "İletişime geç"
+    }
   }
 }
