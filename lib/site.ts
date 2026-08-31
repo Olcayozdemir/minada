@@ -65,12 +65,12 @@ export const SITE = {
   name: "MİNADA",
   domain: "minada.com.tr",
   email: "info@minada.com.tr",
-  phone: "+90 505 146 30 11",
+  phone: "+90 555 173 45 09",
   // Adres Notion 06.08 notundan (Okan/Olcay).
   address: "Görgü Mah. 2. Sk., Ankara Asfaltı 15. Km, 44900 Yeşilyurt / Malatya",
   addressMapUrl:
     "https://www.google.com/maps/place//data=!4m2!3m1!1s0x40762d71b98a0df1:0xb9974f2de8840182",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905051463011",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "905551734509",
   social: {
     instagram: "https://instagram.com/minadaenerji",
     facebook: "https://www.facebook.com/minadaenerji/",
