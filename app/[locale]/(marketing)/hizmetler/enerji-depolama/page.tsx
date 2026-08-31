@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { LineHero } from "@/components/marketing/LineHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { BessFlow } from "@/components/marketing/BessFlow";
-import { BessScaleMark } from "@/components/marketing/BessScale";
 import { buildAlternates } from "@/lib/seo";
 import styles from "../line.module.scss";
 
+/* The section's whole point is size, so each tier is drawn as its own diorama
+   with the same 1.75 m figure standing in it: shoulder-height beside the wall
+   unit, level with the cabinets, a speck at the foot of the containers. Read
+   across the three cards the figure shrinks, which is the comparison the
+   numbers underneath only state. */
 const BESS_SCALES = ["home", "ci", "utility"] as const;
 
 export async function generateMetadata({
@@ -39,7 +44,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <ul className={styles.grid3}>
           {BESS_SCALES.map((id) => (
             <li key={id} className={styles.card}>
-              <BessScaleMark id={id} />
+              <Image
+                src={`/images/v2/bess-${id}-iso.jpg`}
+                alt=""
+                width={1200}
+                height={896}
+                sizes="(max-width: 700px) 92vw, (max-width: 1000px) 46vw, (max-width: 1200px) 31vw, 350px"
+                className={styles.cardArt}
+              />
               <h3 className={styles.cardTitle}>{t(`scales.${id}.title`)}</h3>
               <p className={styles.cardDesc}>{t(`scales.${id}.desc`)}</p>
               <ul className={styles.cardList}>
