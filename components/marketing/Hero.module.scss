@@ -170,7 +170,8 @@
    points at without covering its face. The share is of the unit rather than a
    fixed nudge, because the wallbox is 42px wide and the heat pump 128, and one
    offset would read very differently on each; the 5px came off all three by
-   eye, at 70% they sat too far out.
+   eye, at 70% they sat too far out, and the heat pump took another 10 on top
+   of that, being much the widest of the three.
 
    Read off hero-solar.jpeg, whose aspect ratio the plane matches, so a
    percentage here is the image's own coordinate. Spans measured from the
@@ -178,14 +179,14 @@
 
      battery   1287..1355, top 721  -> 1330, 706
      wallbox   1124..1166, top 722  -> 1148, 707
-     heat pump 1010..1138, top 812  -> 1095, 797
+     heat pump 1010..1138, top 812  -> 1085, 797
 
    Marker 1 stays where it was, over the panel array, which has no edge of its
    own to sit on. */
 .dot1 { left: 56.7%; top: 27.6%; --ping: 0.1s; } /* çatıdaki panel dizisi */
 .dot2 { left: 69.27%; top: 65.86%; --ping: 2.11s; } /* batarya kulesi */
 .dot3 { left: 59.79%; top: 65.95%; --ping: 2.6s; } /* duvardaki wallbox */
-.dot4 { left: 57.03%; top: 74.35%; --ping: 3.74s; } /* ısı pompası */
+.dot4 { left: 56.51%; top: 74.35%; --ping: 3.74s; } /* ısı pompası */
 
 /* Devre durunca halkanın anlamı da kalmıyor: hareket yokken "paket geldi"
    diyecek bir paket yok. Noktalar sabit künye olarak kalır. */
