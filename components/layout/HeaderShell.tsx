@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { usePathname } from "@/i18n/navigation";
 
 // Toggles data-scrolled so the header pill can swap from photo-glass to
 // light-surface styling once the hero is scrolled past. Pages without a
 // [data-hero] section have no photo underneath, so they start "scrolled".
+//
+// Keyed to the pathname because this lives in the layout and survives a client
+// navigation: with an empty dependency list it measured the landing page once
+// and never again, so arriving at a hero-less page from the home page left the
+// attribute saying "there is a photo up there" when there was not.
 //
 // It also publishes the header's measured height as --header-h, which --header-clear
 // derives from: what #main reserves and what the home hero pulls back up by.
@@ -15,6 +21,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export function HeaderShell({ children }: { children: ReactNode }) {
   const [scrolled, setScrolled] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const hasHero = document.querySelector("[data-hero]") !== null;
@@ -22,7 +29,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const el = ref.current?.closest("header");

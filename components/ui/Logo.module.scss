@@ -39,7 +39,7 @@
   display: none;
 }
 
-:global([data-scrolled]) {
+%mark-light {
   .adaptive .light {
     display: block;
   }
@@ -47,6 +47,18 @@
   .adaptive .dark {
     display: none;
   }
+}
+
+:global([data-scrolled]) {
+  @extend %mark-light;
+}
+
+/* The same match the pill makes in Header.module.scss. Keying the mark only to
+   [data-scrolled] tied it to an attribute a client component sets, so on a page
+   with no hero the pill went white from CSS while the mark stayed on its
+   reversed, white-outlined version: outline gone, leaf floating on white. */
+:global(body):not(:has([data-hero])) {
+  @extend %mark-light;
 }
 
 .word {
