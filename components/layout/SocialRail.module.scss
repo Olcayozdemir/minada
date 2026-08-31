@@ -40,13 +40,13 @@
   height: 44px;
   border-radius: var(--r-md) 0 0 var(--r-md);
   color: var(--on-dark);
-  transition:
-    color 0.18s ease,
-    background-color 0.18s ease;
+  transition: background-color 0.2s ease;
 
+  /* The same move the glass button makes: the wash deepens and nothing else
+     changes. A solid gold fill turned each chip into a slab and fought the
+     panel it sits in; on this component the gold belongs to the edge light. */
   &:hover {
-    color: var(--green-900);
-    background: var(--gold);
+    background: rgba(233, 240, 250, 0.2);
   }
 
   &:focus-visible {
