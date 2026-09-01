@@ -40,8 +40,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <LineHero id="ges" namespace="Lines.ges" topic="ges">
-      </LineHero>
+      <LineHero id="ges" namespace="Lines.ges" topic="ges" note={t("introNote")} />
 
       <Section tone="light">
         <SectionHeading title={t("typesTitle")} />

@@ -663,27 +663,28 @@
       "metaDesc": "Keşiften devreye almaya anahtar teslim GES: imar ve ruhsat süreçleri, proje geliştirme, EPC ve işletme tek çatı altında.",
       "eyebrow": "İş kolumuz",
       "title": "Güneş Enerjisi Santralleri",
-      "intro": "Çatıdan araziye, tarımsal alandan otoparka — santralinizi projelendirir, izinlerini yürütür, kurar ve işletiriz. İmar, ÇED ve ruhsat dahil tüm proje geliştirme süreci tek elden.",
-      "typesTitle": "Dört kurulum tipi",
+      "intro": "Çatıdan araziye, carport'tan tarımsal uygulamalara kadar her ölçekte güneş enerjisi santralini projelendiriyor, kuruyor ve devreye alıyoruz.",
+      "introNote": "İzin süreçlerinden mühendisliğe, kurulumdan işletmeye kadar tüm süreç tek çözüm ortağıyla yönetilir.",
+      "typesTitle": "Her ihtiyaca uygun GES çözümü",
       "types": {
         "rooftop": {
           "title": "Çatı Üstü GES",
-          "desc": "Binanın çatısına kurulan güneş enerji santrali türüdür; konut, işletme, fabrika veya depo çatıları kullanılır. Üretilen elektrik öncelikle binanın kendi tüketiminde kullanılır, fazlası şebekeye verilir. İzin süreçlerinden kurulum ve devreye almaya, işletme dönemine kadar tüm adımları biz yürütürüz.",
+          "desc": "Konutlardan sanayi tesislerine kadar farklı yapıların çatılarına kurulan güneş enerjisi sistemleridir. Üretilen enerji öncelikle tesis içerisinde tüketilir, fazla üretim ise ilgili mevzuata göre şebekeye aktarılabilir. Mevcut çatı alanlarını değerlendirmek isteyen işletmeler için ideal çözümdür.",
           "alt": "Fabrika çatısını kaplayan güneş panelleri, havadan görünüm"
         },
         "ground": {
           "title": "Arazi Tipi GES",
-          "desc": "Arazi üzerine kurulan güneş enerji santrali türüdür; panel yerleşimi arazinin eğimine ve yönüne göre planlanır. Üretilen elektrik, enerji nakil hattıyla şebekeye bağlanarak mahsuplaşmada kullanılır veya satılır. ÇED ve imar izinleri ile şebeke bağlantı süreçlerini baştan sona biz yönetiriz; kurulum ve işletme dönemi de bizde.",
+          "desc": "Uygun arazi alanlarında kurulan yüksek kapasiteli güneş enerjisi santralleridir. Öz tüketim, enerji maliyetlerini azaltma veya yatırım amaçlı enerji üretimi için tercih edilir. Projelendirme, izin süreçleri ve devreye alma aşamaları uzmanlık gerektirir.",
           "alt": "Arazi üzerine kurulu güneş enerji santrali sıraları, havadan görünüm"
         },
         "agripv": {
           "title": "Tarımsal GES (Agri-PV)",
-          "desc": "Ağırlıklı olarak tarımsal sulama için kurulan güneş enerji santrali türüdür. Panellerin altında ekim, dikim ve tarım makinesi geçişi yapılabilir; aynı parselden hem ürün hem elektrik alınır.",
+          "desc": "Enerji üretimi ile tarımsal faaliyetleri aynı arazide bir araya getiren özel sistemlerdir. Sulama ihtiyaçlarını karşılamak için enerji üretirken, arazinin tarımsal kullanımını sürdürmeye olanak tanır. Özellikle tarımsal işletmeler için sürdürülebilir bir çözüm sunar.",
           "alt": "Güneş paneli dizisinin önünde otlayan inek, tarım arazisi"
         },
         "carport": {
           "title": "Carport / Otopark GES",
-          "desc": "Otopark alanına kurulan, araçların üzerini örten çelik taşıyıcı yapı üzerine panellerin yerleştirildiği santral türüdür. Hem gölgelendirme sağlar hem elektrik üretir; elektrikli araç şarj ünitesiyle birlikte kurulabilir.",
+          "desc": "Otopark alanlarını enerji üreten yapılara dönüştüren güneş enerjisi sistemleridir. Araçlar için gölgelik sağlarken aynı zamanda elektrik üretir. Elektrikli araç şarj istasyonlarıyla entegre çalışarak enerji üretimi ve tüketimini tek noktada buluşturabilir.",
           "alt": "Otoparkta araçların üzerini örten güneş panelli çelik carport yapısı"
         }
       },

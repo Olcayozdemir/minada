@@ -32,6 +32,17 @@
   color: var(--ink-2);
 }
 
+/* Sits a step below the intro, on size and space alone — no rule, no stripe,
+   so it reads as an aside rather than a second paragraph. Colour stays on the
+   body tokens: --on-dark-3 measures 4.35 against the dark band's lower stop
+   (--green-800), which is under AA, and the size step is enough on its own. */
+.note {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
 .dark {
   .eyebrow {
     color: var(--gold-300);
@@ -40,6 +51,9 @@
     color: var(--on-dark);
   }
   .intro {
+    color: var(--on-dark-2);
+  }
+  .note {
     color: var(--on-dark-2);
   }
 }

@@ -663,27 +663,28 @@
       "metaDesc": "Turnkey solar from survey to commissioning: zoning and permits, project development, EPC and operations under one roof.",
       "eyebrow": "What we do",
       "title": "Solar Power Plants",
-      "intro": "From rooftops to open fields, farmland to car parks — we design your plant, run its permits, build and operate it. Zoning, EIA and licensing included, end to end.",
-      "typesTitle": "Four ways to build",
+      "intro": "From rooftops to open land, carports to farmland, we design, build and commission solar plants at every scale.",
+      "introNote": "Permits, engineering, installation and operations: the whole process runs through a single partner.",
+      "typesTitle": "A PV solution for every need",
       "types": {
         "rooftop": {
           "title": "Rooftop PV",
-          "desc": "A solar plant built on a building's roof; homes, businesses, factories and warehouses all qualify. The electricity feeds the building's own consumption first, and any surplus is exported to the grid. We run every step, from permits through installation, commissioning and the operations period.",
+          "desc": "Solar systems built on the roofs of buildings of every kind, from homes to industrial plants. The energy generated is consumed on site first, and any surplus can be exported to the grid under the applicable regulations. The ideal solution for businesses looking to put existing roof area to work.",
           "alt": "Aerial view of a factory roof covered in solar panels"
         },
         "ground": {
           "title": "Ground-Mount PV",
-          "desc": "A solar plant built on open land; the panel layout follows the terrain's slope and orientation. The electricity reaches the grid over a transmission line and is net-metered or sold. We manage EIA and zoning permits plus the grid-connection process end to end; installation and operations included.",
+          "desc": "High-capacity solar plants built on suitable land. Chosen for self-consumption, for cutting energy costs, or for generation as an investment. Design, permitting and commissioning all call for expertise.",
           "alt": "Aerial view of ground-mounted solar array rows on open land"
         },
         "agripv": {
           "title": "Agri-PV",
-          "desc": "A solar plant built primarily for agricultural irrigation. Planting and farm machinery still pass beneath the panels; the same parcel yields both crops and electricity.",
+          "desc": "Purpose-built systems that bring energy generation and farming together on the same land. They produce the energy irrigation needs while keeping the land in agricultural use, which makes them a sustainable choice for farming operations in particular.",
           "alt": "A cow grazing in front of a solar array on farmland"
         },
         "carport": {
           "title": "Carport PV",
-          "desc": "A plant whose panels sit on a steel canopy sheltering the cars beneath. It provides shade and generates electricity at once, and pairs naturally with EV charging units.",
+          "desc": "Solar systems that turn car parks into structures which generate energy. They shelter vehicles and produce electricity at once, and can run alongside EV charging units to bring generation and consumption together in one place.",
           "alt": "Steel solar carport structure shading cars in a parking lot"
         }
       },

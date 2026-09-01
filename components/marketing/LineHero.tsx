@@ -25,6 +25,7 @@ export async function LineHero({
   id,
   namespace,
   topic,
+  note,
   children,
   below,
 }: {
@@ -34,6 +35,8 @@ export async function LineHero({
   namespace: string;
   /** `konu` query the quote form should open with. */
   topic: string;
+  /** A quieter line under the intro, e.g. what the single-partner scope covers. */
+  note?: string;
   /** Small things that belong beside the copy, e.g. a row of figures. */
   children?: ReactNode;
   /** Anything that needs the band's full width, e.g. a wide diagram. */
@@ -53,6 +56,7 @@ export async function LineHero({
             eyebrow={t("eyebrow")}
             title={t("title")}
             intro={t("intro")}
+            note={note}
           />
           <Button href={{ pathname: "/contact", query: { konu: topic } }} size="lg" withArrow>
             {tc("getQuote")}
