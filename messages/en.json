@@ -78,10 +78,10 @@
     "proof2l": "completed projects",
     "proof3v": "250 MWp+",
     "proof3l": "commissioned capacity",
-    "marker1": "Rooftop solar: daytime generation starts here.",
-    "marker2": "Energy storage: keeps the surplus for the evening.",
-    "marker3": "EV charging: fills the car quietly overnight.",
-    "marker4": "Heat pump: heating, cooling and hot water."
+    "marker1": "Rooftop solar: generation starts here.",
+    "marker2": "Energy storage: the surplus sits in the battery, ready for the hours with no generation or for a power cut.",
+    "marker3": "EV charging: charge your car on the electricity your own roof made, by day or at night.",
+    "marker4": "Heat pump: heating, cooling and hot water, all covered."
   },
   "Home": {
     "how": {

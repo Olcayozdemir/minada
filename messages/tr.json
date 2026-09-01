@@ -78,10 +78,10 @@
     "proof2l": "tamamlanan proje",
     "proof3v": "250 MWp+",
     "proof3l": "devreye alınan güç",
-    "marker1": "Çatı GES: gündüz üretim buradan başlar.",
-    "marker2": "Enerji depolama: fazla üretimi akşama saklar.",
-    "marker3": "EV şarj: aracı gece sessizce doldurur.",
-    "marker4": "Isı pompası: ısıtma, soğutma ve sıcak su."
+    "marker1": "Çatı GES: Üretim buradan başlar.",
+    "marker2": "Enerji Depolama: Bataryada depolanan fazla enerji üretimin olmadığı saatlerde veya elektrik kesintisi olduğunda kullanılmak için hazır bekler.",
+    "marker3": "EV Şarj: Çatınızda ürettiğiniz elektrik ile ister gündüz ister gece aracınızı şarj edebilirsiniz.",
+    "marker4": "Isı Pompası: Isıtma, soğutma ve sıcak su ihtiyacınızı karşılayabilirsiniz."
   },
   "Home": {
     "how": {
