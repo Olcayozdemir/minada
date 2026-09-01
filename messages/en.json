@@ -222,26 +222,26 @@
     },
     "gateway": {
       "eyebrow": "Solutions",
-      "title": "How can we help?",
-      "intro": "Four lines of work, one team. Pick what you need — we carry it from survey to commissioning.",
+      "title": "Four fields of expertise, one partner",
+      "intro": "Pick what you need; we run the whole process, from survey and design through installation and commissioning.",
       "ges": {
         "title": "Solar Energy (PV)",
-        "desc": "Rooftop, ground-mount, agri-PV and carport plants — from design to production.",
+        "desc": "Turnkey solar for rooftop, ground-mount, agri-PV and carport projects.",
         "chips": "Homes · Commercial · Agri"
       },
       "bess": {
         "title": "Energy Storage",
-        "desc": "From home batteries to container ESS; store what you produce, ride through outages.",
+        "desc": "From home batteries to industrial storage systems; store your energy, ride through outages.",
         "chips": "Home · Business"
       },
       "heatpump": {
         "title": "Heat Pumps",
-        "desc": "Heating, cooling, hot water and pools — the comfort side of electrification.",
+        "desc": "High-efficiency climate solutions for your heating, cooling and hot water needs.",
         "chips": "Homes · Villas · Hotels"
       },
       "evcharge": {
         "title": "EV Charging",
-        "desc": "AC at home, DC fast charging at work; a natural pair with carport PV.",
+        "desc": "AC and DC electric vehicle charging for homes, businesses and fleets.",
         "chips": "Home · Workplace · Fleet"
       }
     }

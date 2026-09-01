@@ -222,26 +222,26 @@
     },
     "gateway": {
       "eyebrow": "Çözümler",
-      "title": "Size nasıl yardımcı olalım?",
-      "intro": "Dört iş kolu, tek ekip. Neye ihtiyacınız olduğunu seçin — gerisini keşiften devreye almaya biz üstlenelim.",
+      "title": "Dört uzmanlık alanı, tek çözüm ortağı",
+      "intro": "İhtiyacınızı seçin; keşiften projelendirmeye, kurulumdan devreye almaya kadar tüm süreci biz yönetelim.",
       "ges": {
         "title": "Güneş Enerjisi (GES)",
-        "desc": "Çatı, arazi, tarımsal ve carport santralleri — projelendirmeden üretime.",
+        "desc": "Çatı, arazi, tarımsal ve carport GES projeleri için anahtar teslim güneş enerjisi çözümleri.",
         "chips": "Konut · Ticari · Tarım"
       },
       "bess": {
         "title": "Enerji Depolama",
-        "desc": "Ev tipi bataryadan konteyner ESS'e; ürettiğinizi saklayın, kesintide devam edin.",
+        "desc": "Konut tipi bataryalardan endüstriyel depolama sistemlerine; enerjinizi depolayın, kesintilerden etkilenmeyin.",
         "chips": "Ev · İşletme"
       },
       "heatpump": {
         "title": "Isı Pompası",
-        "desc": "Isıtma, soğutma, sıcak su ve havuz — elektrifikasyonun konfor ayağı.",
+        "desc": "Isıtma, soğutma ve sıcak su ihtiyaçlarınız için yüksek verimli iklimlendirme çözümleri.",
         "chips": "Konut · Villa · Otel"
       },
       "evcharge": {
         "title": "EV Şarj",
-        "desc": "Evde AC, işletmede DC hızlı şarj; carport GES ile doğal ikili.",
+        "desc": "Ev, işletme ve filo kullanımları için AC ve DC elektrikli araç şarj çözümleri.",
         "chips": "Ev · İşyeri · Filo"
       }
     }
