@@ -23,16 +23,21 @@
   max-width: 52ch;
 }
 
+/* Six gains, not three: a single column ran the copy well past the render
+   beside it, so they pair up when there is room. auto-fit rather than a
+   breakpoint because the column that holds them is a fraction of the section
+   grid — between 900 and 1200px it is narrow enough that two columns would
+   wrap every line, and only the track width knows that. */
 .points {
   @include list-reset;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--space-3) var(--space-6);
   margin-block: var(--space-6);
 
   li {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.6rem;
     font-weight: 600;
     color: var(--ink);

@@ -7,7 +7,7 @@ import styles from "./CalculatorTeaser.module.scss";
 
 export async function CalculatorTeaser() {
   const t = await getTranslations("Home.calc");
-  const points = [t("point1"), t("point2"), t("point3")];
+  const points = [1, 2, 3, 4, 5, 6].map((n) => t(`point${n}`));
 
   return (
     <Section tone="light">
