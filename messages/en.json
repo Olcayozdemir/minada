@@ -35,7 +35,7 @@
     "message": "Hello, I'd like information about {topic}."
   },
   "Common": {
-    "getQuote": "Get a free survey",
+    "getQuote": "Request a free survey",
     "getQuoteShort": "Free survey",
     "calculate": "Calculate my savings",
     "whatsapp": "Message on WhatsApp",
@@ -1263,7 +1263,7 @@
     "lineLink": "Go to the page",
     "ctaTitle": "Not the question you had?",
     "ctaDesc": "In a short discovery call we can answer it against your own roof, your bill and how you actually use power.",
-    "ctaLabel": "Book a free survey"
+    "ctaLabel": "Request a free survey"
   },
   "Privacy": {
     "metaTitle": "Privacy and Data Protection Notice",

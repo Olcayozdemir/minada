@@ -35,7 +35,7 @@
     "message": "Merhaba, {topic} hakkında bilgi almak istiyorum."
   },
   "Common": {
-    "getQuote": "Ücretsiz keşif al",
+    "getQuote": "Ücretsiz keşif talep et",
     "getQuoteShort": "Ücretsiz keşif",
     "calculate": "Tasarrufumu hesapla",
     "whatsapp": "WhatsApp'tan yaz",
@@ -1263,7 +1263,7 @@
     "lineLink": "Sayfaya git",
     "ctaTitle": "Sorunuz burada yok mu?",
     "ctaDesc": "Kısa bir keşif görüşmesinde kendi çatınıza, faturanıza ve kullanım profilinize göre yanıtlayalım.",
-    "ctaLabel": "Ücretsiz keşif al"
+    "ctaLabel": "Ücretsiz keşif talep et"
   },
   "Privacy": {
     "metaTitle": "Gizlilik ve KVKK Aydınlatma Metni",
