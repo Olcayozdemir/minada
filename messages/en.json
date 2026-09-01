@@ -690,11 +690,35 @@
       },
       "f1": {
         "q": "Who runs the permits and licensing?",
-        "a": "We do. Zoning status, EIA exemption or application, call letter and connection agreement — every project-development step is in scope."
+        "a": "Our own team handles every stage: zoning status, EIA exemption or application, the call letter, connection agreements and the project-development steps that go with them."
       },
       "f2": {
         "q": "How long does installation take?",
-        "a": "Rooftop systems typically run 4–8 weeks from survey to commissioning; unlicensed ground projects take 3–6 months depending on the permit calendar."
+        "a": "It depends on the scope. On rooftop projects, survey to commissioning typically runs 4-8 weeks; on ground-mount projects the permit calendar can stretch it."
+      },
+      "f3": {
+        "q": "How much will a solar system cut my electricity bill?",
+        "a": "The saving depends on your consumption profile, the system size and the installation type. We assess your generation and consumption data and put together a projection for your site."
+      },
+      "f4": {
+        "q": "Is my roof suitable for solar?",
+        "a": "Orientation, pitch, load-bearing structure and shading all go into a suitability analysis. The free survey looks at your roof's potential in detail."
+      },
+      "f5": {
+        "q": "Does the system keep running during a power cut?",
+        "a": "A standard solar system shuts down when the grid goes, for safety. A hybrid system built together with energy storage can keep feeding designated loads."
+      },
+      "f6": {
+        "q": "Can solar be added to an existing building?",
+        "a": "In most cases, yes. Existing roofs are assessed for technical suitability and fitted afterwards."
+      },
+      "f7": {
+        "q": "How much maintenance does a solar system need?",
+        "a": "Very little, as a PV system has no moving parts. Periodic checks and panel cleaning keep it performing for years."
+      },
+      "f8": {
+        "q": "Can storage or an EV charger be added to my existing system?",
+        "a": "In many cases an existing solar system can be integrated with storage and EV charging. Suitability is assessed during the survey."
       },
       "faqTitle": "Common questions"
     },

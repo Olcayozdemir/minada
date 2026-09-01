@@ -690,11 +690,35 @@
       },
       "f1": {
         "q": "İzin ve ruhsat sürecini kim yürütüyor?",
-        "a": "Biz. İmar durumu, ÇED muafiyeti/başvurusu, çağrı mektubu ve bağlantı anlaşması dahil proje geliştirme adımlarının tamamı kapsamımızda."
+        "a": "İmar durumu, ÇED muafiyeti veya başvurusu, çağrı mektubu, bağlantı anlaşmaları ve gerekli proje geliştirme süreçleri dahil tüm aşamaları uzman ekibimizle yönetiyoruz."
       },
       "f2": {
         "q": "Kurulum ne kadar sürer?",
-        "a": "Çatı sistemlerinde keşiften devreye almaya tipik süre 4–8 hafta; lisanssız arazi projelerinde izin takvimine bağlı olarak 3–6 ay."
+        "a": "Projenin kapsamına göre süre değişmekle birlikte, çatı GES projelerinde keşiften devreye almaya kadar süreç genellikle 4-8 hafta arasında tamamlanır. Arazi projelerinde ise izin süreçlerine bağlı olarak bu süre uzayabilir."
+      },
+      "f3": {
+        "q": "Güneş enerjisi sistemi elektrik faturamı ne kadar düşürür?",
+        "a": "Tasarruf oranı tüketim profilinize, sistem kapasitesine ve kurulum tipine bağlıdır. Yapılan analizlerle üretim ve tüketim verileriniz değerlendirilerek size özel bir tasarruf projeksiyonu sunulur."
+      },
+      "f4": {
+        "q": "Çatım güneş enerjisi için uygun mu?",
+        "a": "Çatının yönü, eğimi, taşıyıcı yapısı ve gölgelenme durumu değerlendirilerek uygunluk analizi yapılır. Ücretsiz keşif sırasında çatınızın potansiyeli detaylı olarak incelenir."
+      },
+      "f5": {
+        "q": "Elektrik kesintilerinde sistem çalışmaya devam eder mi?",
+        "a": "Standart güneş enerjisi sistemleri güvenlik nedeniyle şebeke kesildiğinde kapanır. Enerji depolama sistemi ile birlikte kurulan hibrit çözümler ise belirlenen yükleri besleyerek enerji sürekliliği sağlayabilir."
+      },
+      "f6": {
+        "q": "Mevcut bir binaya sonradan GES kurulabilir mi?",
+        "a": "Çoğu durumda evet. Mevcut yapıların çatıları teknik uygunluk açısından değerlendirilerek sonradan güneş enerjisi sistemi kurulabilir."
+      },
+      "f7": {
+        "q": "Güneş enerjisi sistemi ne kadar bakım gerektirir?",
+        "a": "GES sistemleri hareketli parça içermediğinden bakım ihtiyacı oldukça düşüktür. Periyodik kontroller ve panel temizliğiyle sistem uzun yıllar yüksek performansla çalışabilir."
+      },
+      "f8": {
+        "q": "Mevcut sistemime enerji depolama veya EV şarj ünitesi eklenebilir mi?",
+        "a": "Birçok durumda mevcut güneş enerjisi sistemleri, enerji depolama çözümleri ve elektrikli araç şarj istasyonlarıyla entegre edilebilir. Uygunluk değerlendirmesi keşif sürecinde yapılır."
       },
       "faqTitle": "Sık sorulanlar"
     },

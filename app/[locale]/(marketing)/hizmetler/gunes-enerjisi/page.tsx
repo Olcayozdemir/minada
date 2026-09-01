@@ -11,13 +11,17 @@ import { GES_TYPES } from "@/lib/site";
 import styles from "../line.module.scss";
 
 // Kurulum tipi kart görselleri: çatı + arazi Üçay proje fotoğrafları,
-// agri-pv mevcut Unsplash karesi, carport CC BY (bkz. public/images/ges/CREDITS.md).
+// agri-pv mevcut Unsplash karesi, carport Wikimedia CC0 (bkz. public/images/ges/CREDITS.md).
 const TYPE_IMAGES: Record<(typeof GES_TYPES)[number], string> = {
   rooftop: "/images/ges/ges-rooftop.jpg",
   ground: "/images/ges/ges-ground.jpg",
   agripv: "/images/v2/area-tarim.jpg",
   carport: "/images/ges/ges-carport.jpg",
 };
+
+// Eight questions no longer sit comfortably in one column — same two-column
+// treatment the heat-pump page uses for its long list.
+const GES_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"] as const;
 
 export async function generateMetadata({
   params,
@@ -66,8 +70,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
       <Section tone="sand">
         <SectionHeading title={t("faqTitle")} />
-        <ul className={styles.faq}>
-          {(["f1", "f2"] as const).map((id) => (
+        <ul className={clsx(styles.faq, styles.faqWide)}>
+          {GES_FAQ.map((id) => (
             <li key={id} className={styles.faqItem}>
               <p className={styles.faqQ}>{t(`${id}.q`)}</p>
               <p className={styles.faqA}>{t(`${id}.a`)}</p>
