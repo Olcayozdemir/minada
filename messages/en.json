@@ -930,7 +930,7 @@
       "metaDesc": "7.4–22 kW AC at home, 30–400 kW DC fast charging at work: design, installation and carport PV integration.",
       "eyebrow": "What we do",
       "title": "EV Charging Stations",
-      "intro": "Charge overnight at home and during the day at work: from AC wallboxes to DC fast-charging parks, we design, install and commission.",
+      "intro": "The charging infrastructure electric mobility depends on. We design, install and commission both AC and DC solutions.",
       "aud1": {
         "title": "Home",
         "desc": "7.4–22 kW AC wall charging: with meter capacity checks, load management and PV integration."
@@ -940,8 +940,8 @@
         "desc": "OCPP-compliant DC fast charging for car parks and fleets; carport PV puts generation and charging in one structure."
       },
       "f1": {
-        "q": "Is my home's electrical infrastructure enough?",
-        "a": "We measure meter power and panel capacity during the survey and file the capacity upgrade if one is needed. With load management, most homes install without extra power."
+        "q": "Is my home's electrical supply suitable for an EV charger?",
+        "a": "Before installation we assess your existing supply, your distribution board capacity and how you use the car. Where needed, load management or a capacity upgrade gives you the right solution."
       },
       "stats": {
         "s1": {
@@ -967,26 +967,35 @@
         "home": {
           "tag": "Home",
           "title": "Residential Charging",
-          "desc": "Quiet, safe overnight charging with a 7.4-22 kW AC wallbox.",
+          "lead": "Safe, smart charging for your home",
+          "desc": "An AC charger matched to your existing electrical supply. Smart energy management keeps it safe and efficient in daily use.",
           "b1": "Meter capacity check",
           "b2": "Smart load management",
-          "b3": "PV integration"
+          "b3": "Mobile app support",
+          "b4": "Certified installation and commissioning",
+          "opt": "Optional: with PV integration, some or all of the charging energy comes from the sun."
         },
         "business": {
           "tag": "Business & Fleet",
           "title": "Commercial Charge Park",
-          "desc": "OCPP-compliant DC fast charging; with a carport PV, generation and charging share one structure.",
-          "b1": "Per-kWh billing",
-          "b2": "Remote monitoring",
-          "b3": "Fleet load planning"
+          "lead": "Scalable charging for businesses and fleets",
+          "desc": "Centrally managed AC and DC charging for customers, staff and fleet vehicles.",
+          "b1": "OCPP-compliant infrastructure",
+          "b2": "Remote monitoring and control",
+          "b3": "Per-kWh billing",
+          "b4": "Fleet load planning",
+          "opt": "Optional: can be integrated with carport or rooftop PV."
         },
         "shared": {
           "tag": "Residences & Malls",
           "title": "Shared Car Park",
-          "desc": "Multi-socket shared infrastructure with per-user billing.",
-          "b1": "User authorization",
+          "lead": "A manageable solution for residences and shared spaces",
+          "desc": "Charging infrastructure for communal areas, with per-user authorisation and individual consumption tracking.",
+          "b1": "User authorisation",
           "b2": "Management panel",
-          "b3": "Scalable socket count"
+          "b3": "Individual consumption tracking",
+          "b4": "Scalable socket layout",
+          "opt": "Optional: can be designed alongside PV on the communal areas."
         }
       },
       "stepsTitle": "Four steps from survey to handover",
@@ -1035,17 +1044,33 @@
       },
       "f2": {
         "q": "How long does charging take?",
-        "a": "On a 7.4 kW home unit a typical car fills overnight (6-8 hours). On DC fast charging the 20-80% window takes 20-40 minutes depending on the car."
+        "a": "It depends on the car's battery capacity, how full it already is, and the charger's power. AC charging suits daily use, while DC fast charging moves a lot of energy in a short window."
       },
       "f3": {
-        "q": "Does it work with my PV system?",
-        "a": "Yes. We set the car to charge on solar first; surplus production goes into the car instead of being sold to the grid."
+        "q": "Can chargers be installed in apartment buildings and residences?",
+        "a": "Yes. Solutions can be fitted in individual parking bays or in communal areas to match the existing infrastructure. Each project gets a technical assessment to settle the right model."
       },
       "f4": {
-        "q": "Can I bill users for charging at my business?",
-        "a": "Yes — OCPP-compliant units connect to operator platforms for kWh-based billing; we guide you through the licensing requirements."
+        "q": "Can it work together with a solar system?",
+        "a": "Yes. EV chargers integrate with existing or new solar plants, so the energy you generate goes into the car and your costs come down."
       },
-      "faqTitle": "Common questions"
+      "faqTitle": "Common questions",
+      "f5": {
+        "q": "How do I choose between AC and DC charging?",
+        "a": "AC suits homes, workplaces and anywhere cars stay parked for a while. DC fast charging is the choice for commercial sites with high vehicle turnover, fleet operations and public charging points."
+      },
+      "f6": {
+        "q": "Can a business offer charging as a service?",
+        "a": "Yes. OCPP-compliant systems let user management, consumption tracking, remote monitoring and billing all be run centrally."
+      },
+      "f7": {
+        "q": "How does an EV charger show up on my electricity bill?",
+        "a": "Consumption depends on the car, how often it is used and the annual mileage. In most cases an electric car costs less per kilometre in energy than a conventional one."
+      },
+      "f8": {
+        "q": "Do you provide technical support after installation?",
+        "a": "Yes. After design and installation we commission the system and back it with technical support and maintenance so it runs safely and efficiently."
+      }
     }
   },
   "About": {

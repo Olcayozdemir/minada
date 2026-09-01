@@ -930,7 +930,7 @@
       "metaDesc": "Evde 7,4-22 kW AC, işletmede 30-400 kW DC hızlı şarj: projelendirme, kurulum ve carport GES entegrasyonu.",
       "eyebrow": "İş kolumuz",
       "title": "EV Şarj İstasyonları",
-      "intro": "Aracınız evde gece, işletmenizde gündüz dolsun: AC duvar ünitelerinden DC hızlı şarj parklarına projelendirme, kurulum ve devreye alma bizde.",
+      "intro": "Elektrikli mobilitenin ihtiyaç duyduğu güvenilir şarj altyapıları. AC ve DC çözümlerle projelendirme, kurulum ve devreye alma hizmetleri sunuyoruz.",
       "aud1": {
         "title": "Ev",
         "desc": "7,4–22 kW AC duvar şarjı: sayaç kapasite kontrolü, yük yönetimi ve GES entegrasyonuyla."
@@ -940,8 +940,8 @@
         "desc": "Otopark ve filolar için OCPP uyumlu DC hızlı şarj; carport GES ile üretim + şarj aynı yapıda."
       },
       "f1": {
-        "q": "Evimin elektrik altyapısı yeterli mi?",
-        "a": "Keşifte sayaç gücü ve pano kapasitesini ölçüyoruz; gerekiyorsa güç artırımı başvurusunu biz yürütüyoruz. Yük yönetimiyle çoğu evde ek güç gerekmeden kurulum mümkün."
+        "q": "Evimin elektrik altyapısı EV şarj istasyonu için uygun mu?",
+        "a": "Kurulum öncesinde mevcut elektrik altyapınızı, pano kapasitesini ve kullanım alışkanlıklarınızı analiz ediyoruz. Gerekli durumlarda yük yönetimi veya güç artırımı seçenekleriyle en uygun çözümü sunuyoruz."
       },
       "stats": {
         "s1": {
@@ -967,26 +967,35 @@
         "home": {
           "tag": "Ev",
           "title": "Konut Şarjı",
-          "desc": "7,4-22 kW AC duvar ünitesiyle gece boyunca sessiz ve güvenli dolum.",
+          "lead": "Eviniz için güvenli ve akıllı şarj çözümü",
+          "desc": "Elektrikli aracınız için mevcut elektrik altyapınıza uygun AC şarj sistemi. Akıllı enerji yönetimi sayesinde güvenli ve verimli kullanım sunar.",
           "b1": "Sayaç kapasite kontrolü",
           "b2": "Akıllı yük yönetimi",
-          "b3": "GES entegrasyonu"
+          "b3": "Mobil uygulama desteği",
+          "b4": "Yetkili kurulum ve devreye alma",
+          "opt": "Opsiyonel: GES entegrasyonu ile şarj enerjisinin bir kısmı veya tamamı güneşten karşılanabilir."
         },
         "business": {
           "tag": "İşletme & Filo",
           "title": "Ticari Şarj Parkı",
-          "desc": "OCPP uyumlu DC hızlı şarj; carport GES ile üretim ve şarj aynı yapıda.",
-          "b1": "kWh bazlı ücretlendirme",
-          "b2": "Uzaktan izleme",
-          "b3": "Filo yük planlaması"
+          "lead": "İşletmeler ve filolar için ölçeklenebilir şarj altyapısı",
+          "desc": "Müşteriler, çalışanlar ve filo araçları için merkezi yönetilebilir AC ve DC şarj çözümleri.",
+          "b1": "OCPP uyumlu altyapı",
+          "b2": "Uzaktan izleme ve yönetim",
+          "b3": "kWh bazlı ücretlendirme",
+          "b4": "Filo yük planlaması",
+          "opt": "Opsiyonel: Carport veya çatı GES sistemleriyle entegre edilebilir."
         },
         "shared": {
           "tag": "Site & AVM",
           "title": "Ortak Otopark",
-          "desc": "Çok soketli, kullanıcı bazlı faturalandırılabilen paylaşımlı altyapı.",
+          "lead": "Site ve ortak yaşam alanları için yönetilebilir çözüm",
+          "desc": "Ortak kullanım alanlarında bireysel tüketim takibi ve kullanıcı bazlı yetkilendirme sağlayan şarj altyapısı.",
           "b1": "Kullanıcı yetkilendirme",
           "b2": "Yönetim paneli",
-          "b3": "Ölçeklenebilir soket sayısı"
+          "b3": "Bireysel tüketim takibi",
+          "b4": "Ölçeklenebilir soket yapısı",
+          "opt": "Opsiyonel: Ortak alan GES sistemleriyle birlikte tasarlanabilir."
         }
       },
       "stepsTitle": "Keşiften teslime 4 adım",
@@ -1034,18 +1043,34 @@
         "best": "İşletme / filo / otopark"
       },
       "f2": {
-        "q": "Şarj süresi ne kadar?",
-        "a": "7,4 kW ev ünitesinde tipik bir araç gece boyunca (6-8 saat) tam dolar. DC hızlı şarjda %20-80 aralığı araca göre 20-40 dakikadır."
+        "q": "Elektrikli aracın şarj süresi ne kadar sürer?",
+        "a": "Şarj süresi; aracın batarya kapasitesine, mevcut doluluk seviyesine ve şarj cihazının gücüne bağlı olarak değişir. AC şarj çözümleri günlük kullanım için ideal bir deneyim sunarken, DC hızlı şarj sistemleri kısa sürede yüksek enerji aktarımı sağlar."
       },
       "f3": {
-        "q": "GES'imle birlikte çalışır mı?",
-        "a": "Evet. Aracınızı öncelikli olarak güneş enerjisiyle şarj edecek şekilde ayarlarız; fazla üretim şebekeye satılmak yerine araca aktarılır."
+        "q": "Apartman ve sitelerde şarj istasyonu kurulabilir mi?",
+        "a": "Evet. Bireysel otopark alanlarında veya ortak kullanım alanlarında, mevcut altyapıya uygun çözümler uygulanabilir. Her proje için teknik değerlendirme yapılarak en uygun kurulum modeli belirlenir."
       },
       "f4": {
-        "q": "İşletmemde şarjı ücretlendirebilir miyim?",
-        "a": "Evet — OCPP uyumlu ünitelerle işletici platformlarına bağlanıp kWh bazlı ücretlendirme yapılabilir; lisans gerekliliklerinde yol gösteriyoruz."
+        "q": "Güneş Enerji Sistemi (GES) ile entegre çalışabilir mi?",
+        "a": "Evet. EV şarj istasyonları mevcut veya yeni kurulacak GES sistemleriyle entegre çalışabilir. Bu sayede aracınızın şarjında ürettiğiniz güneş enerjisinden faydalanarak enerji maliyetlerinizi azaltabilirsiniz."
       },
-      "faqTitle": "Sık sorulanlar"
+      "faqTitle": "Sık sorulanlar",
+      "f5": {
+        "q": "AC ve DC şarj arasında nasıl seçim yapmalıyım?",
+        "a": "AC şarj çözümleri; konutlar, iş yerleri ve araçların uzun süre park halinde kaldığı alanlar için idealdir. DC hızlı şarj çözümleri ise yüksek araç sirkülasyonunun bulunduğu ticari uygulamalar, filo operasyonları ve halka açık şarj noktalarında tercih edilir."
+      },
+      "f6": {
+        "q": "İşletmeler şarj hizmeti sunabilir mi?",
+        "a": "Evet. OCPP uyumlu sistemler sayesinde kullanıcı yönetimi, tüketim takibi, uzaktan izleme ve ücretlendirme işlemleri merkezi olarak yönetilebilir."
+      },
+      "f7": {
+        "q": "EV şarj istasyonu elektrik faturama nasıl yansır?",
+        "a": "Tüketim miktarı; aracın modeli, kullanım sıklığı ve yıllık kilometreye göre değişiklik gösterir. Elektrikli araçlar, çoğu kullanım senaryosunda kilometre başına enerji maliyeti açısından geleneksel yakıtlı araçlara göre avantaj sağlayabilir."
+      },
+      "f8": {
+        "q": "Kurulum sonrasında teknik destek sunuyor musunuz?",
+        "a": "Evet. Projelendirme ve kurulum süreçlerinin ardından devreye alma, teknik destek ve bakım hizmetleriyle sistemlerinizin güvenli ve verimli şekilde çalışmasını destekliyoruz."
+      }
     }
   },
   "About": {

@@ -13,7 +13,8 @@ const EV_STATS = ["s1", "s2", "s3", "s4"] as const;
 const EV_SOLUTIONS = ["home", "business", "shared"] as const;
 const EV_STEPS = ["s1", "s2", "s3", "s4"] as const;
 const EV_KV = ["power", "conn", "time", "best"] as const;
-const EV_FAQ = ["f1", "f2", "f3", "f4"] as const;
+const EV_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"] as const;
+const EV_POINTS = ["b1", "b2", "b3", "b4"] as const;
 
 export async function generateMetadata({
   params,
@@ -63,12 +64,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               />
               <span className={styles.cardTag}>{t(`sol.${id}.tag`)}</span>
               <h3 className={styles.cardTitle}>{t(`sol.${id}.title`)}</h3>
+              <p className={styles.cardLead}>{t(`sol.${id}.lead`)}</p>
               <p className={styles.cardDesc}>{t(`sol.${id}.desc`)}</p>
               <ul className={styles.cardList}>
-                {(["b1", "b2", "b3"] as const).map((b) => (
+                {EV_POINTS.map((b) => (
                   <li key={b}>{t(`sol.${id}.${b}`)}</li>
                 ))}
               </ul>
+              <p className={styles.cardFoot}>{t(`sol.${id}.opt`)}</p>
             </li>
           ))}
         </ul>
