@@ -15,6 +15,8 @@ import styles from "../line.module.scss";
    across the three cards the figure shrinks, which is the comparison the
    numbers underneath only state. */
 const BESS_SCALES = ["home", "ci", "utility"] as const;
+const BESS_FAQ = ["f1", "f2", "f3", "f4", "f5"] as const;
+const SCALE_POINTS = ["b1", "b2", "b3", "b4"] as const;
 
 export async function generateMetadata({
   params,
@@ -37,7 +39,13 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <LineHero id="bess" namespace="Lines.bess" topic="depolama" below={<BessFlow />} />
+      <LineHero
+        id="bess"
+        namespace="Lines.bess"
+        topic="depolama"
+        note={t("introNote")}
+        below={<BessFlow />}
+      />
 
       <Section tone="light">
         <SectionHeading title={t("scalesTitle")} intro={t("scalesIntro")} />
@@ -56,7 +64,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               <h3 className={styles.cardTitle}>{t(`scales.${id}.title`)}</h3>
               <p className={styles.cardDesc}>{t(`scales.${id}.desc`)}</p>
               <ul className={styles.cardList}>
-                {(["b1", "b2", "b3"] as const).map((b) => (
+                {SCALE_POINTS.map((b) => (
                   <li key={b}>{t(`scales.${id}.${b}`)}</li>
                 ))}
               </ul>
@@ -83,7 +91,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <Section tone="light">
         <SectionHeading title={t("faqTitle")} />
         <ul className={styles.faq}>
-          {(["f1", "f2"] as const).map((id) => (
+          {BESS_FAQ.map((id) => (
             <li key={id} className={styles.faqItem}>
               <p className={styles.faqQ}>{t(`${id}.q`)}</p>
               <p className={styles.faqA}>{t(`${id}.a`)}</p>

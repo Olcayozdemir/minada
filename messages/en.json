@@ -727,7 +727,8 @@
       "metaDesc": "Energy storage from LFP home batteries to container ESS: uninterrupted power, higher self-consumption, peak shaving.",
       "eyebrow": "What we do",
       "title": "Energy Storage Systems",
-      "intro": "BESS stores electricity, generated or drawn from the grid, in batteries and gives it back the moment it's needed: it carries daytime solar into the evening, steps in during outages and puts you in charge of the bill.",
+      "intro": "Carry the power of solar into every hour of the day.",
+      "introNote": "Store what you generate for the moment you need it: bring your energy costs under control, lean less on the grid, and keep your home or business running through a power cut.",
       "aud1": {
         "title": "Home",
         "desc": "Hybrid inverter + wall-mounted LFP battery: the house keeps running through outages, daytime production gets spent at night."
@@ -738,11 +739,23 @@
       },
       "f1": {
         "q": "Can storage be added to my existing PV system?",
-        "a": "Usually yes — by moving to a hybrid inverter or with an AC-coupled add-on unit. We measure the existing system during the survey and give a firm answer."
+        "a": "In most cases, yes. Depending on how the existing system is built, integration comes either through a hybrid inverter conversion or an add-on storage unit."
       },
       "f2": {
         "q": "How long do the batteries last?",
-        "a": "The LFP cells we use are 6,000+ cycle class — roughly 15 years at one charge-discharge a day. Capacity warranties are on the product cards."
+        "a": "LFP batteries generally have a 6,000+ cycle life. Depending on how they are used, that means 10-15 years of service or more."
+      },
+      "f3": {
+        "q": "Does the system keep running during a power cut?",
+        "a": "Storage systems with a backup function step in when the grid goes and keep feeding designated loads."
+      },
+      "f4": {
+        "q": "How does storage affect my bill?",
+        "a": "By putting the energy you generate to better use, it can reduce how much you draw from the grid and optimise your energy costs."
+      },
+      "f5": {
+        "q": "How is the capacity I need decided?",
+        "a": "Consumption habits, installed solar capacity and your energy goals are analysed to arrive at the right capacity."
       },
       "flow": {
         "aria": "Diagram showing energy flowing from solar panels through the inverter to the battery, the building and the grid",
@@ -757,40 +770,43 @@
         "grid": "Grid",
         "gridSub": "Net metering"
       },
-      "scalesTitle": "Three scales of use",
-      "scalesIntro": "From a wall-mounted home battery to container-sized grid systems; your consumption profile sets the capacity.",
+      "scalesTitle": "Storage at every scale",
+      "scalesIntro": "From homes to commercial facilities and grid applications: storage systems that deliver continuity, cost optimisation and energy independence.",
       "scales": {
         "home": {
           "title": "Home",
-          "desc": "A compact solution designed for a single household: wall-mounted LFP battery plus hybrid inverter.",
-          "b1": "Stores surplus daytime production for the evening, raising self-consumption.",
-          "b2": "During an outage the house switches to battery power automatically.",
-          "b3": "On time-of-use tariffs it charges in cheap hours and spends in expensive ones.",
-          "scale": "Typical scale: 5-100 kWh"
+          "desc": "Home storage lets you use the solar energy generated during the day in the evening. It feeds critical loads through a power cut, keeping the house comfortable and leaning less on the grid.",
+          "b1": "More of your solar put to use",
+          "b2": "Backup power during outages",
+          "b3": "A higher self-consumption rate",
+          "b4": "Greater energy independence",
+          "scale": "Typical capacity: 5-100 kWh"
         },
         "ci": {
           "title": "Commercial & Industrial",
-          "desc": "Scalable rack or cabinet systems for businesses, factories and commercial sites: the goal is lower cost and continuity.",
-          "b1": "Peak shaving: the battery steps in at peak consumption, cutting demand charges.",
-          "b2": "Demand management: spreading load over time for flat, lower costs.",
-          "b3": "Uninterrupted production: keeps critical lines from stopping.",
-          "scale": "Typical scale: 100 kWh to a few MWh"
+          "desc": "Storage built for businesses and production facilities: it optimises consumption profiles to lower energy costs, holds operations steady through outages, and makes energy management more efficient.",
+          "b1": "Lower demand and peak charges",
+          "b2": "Uninterrupted power for critical loads",
+          "b3": "Continuity of production and operations",
+          "b4": "Effective management of energy costs",
+          "scale": "Typical capacity: 100 kWh to a few MWh"
         },
         "utility": {
           "title": "Utility Scale",
-          "desc": "Container systems in the MW/MWh class connected directly to the grid, keeping the distribution network in balance.",
-          "b1": "Holds the grid steady with frequency and voltage regulation.",
-          "b2": "Smooths fluctuations in solar and wind output, storing and releasing on demand.",
-          "b3": "Energy arbitrage: stores cheap energy and feeds it back at peak demand.",
-          "scale": "Typical scale: a few MWh to hundreds of MWh"
+          "desc": "Large-scale storage supports renewable generation and contributes to grid stability. It lets energy be used when it is needed and helps the infrastructure run more flexibly. It also opens up investment in licensed solar-plus-storage projects.",
+          "b1": "Grid flexibility and stability",
+          "b2": "Renewable energy integration",
+          "b3": "Load balancing and energy management",
+          "b4": "Large-scale storage capacity",
+          "scale": "Typical capacity: a few MWh to hundreds of MWh"
         }
       },
-      "techTitle": "The heart of the system",
+      "techTitle": "The main components",
       "tech": {
-        "t1": "LFP cell chemistry",
-        "p1": "Most modern BESS units run on LFP (lithium iron phosphate) cells: high safety, a 6,000+ cycle life (about 15 years of daily use) and thermal stability.",
-        "t2": "Inverter + BMS/EMS",
-        "p2": "The inverter handles DC-AC conversion; a smart battery and energy management system (BMS/EMS) governs charge-discharge balance, safety and grid compliance."
+        "t1": "LFP cell technology",
+        "p1": "The LFP (lithium iron phosphate) batteries used in storage systems offer high safety, a long cycle life and steady performance. Built for daily use, they store energy reliably for years.",
+        "t2": "Inverter and energy management system (BMS/EMS)",
+        "p2": "The inverter and energy management system act as the brain, governing energy flow in real time. By optimising what is generated, stored and consumed, they raise efficiency and keep operation safe and uninterrupted."
       },
       "faqTitle": "Common questions"
     },
