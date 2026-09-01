@@ -815,14 +815,34 @@
       "metaDesc": "Havadan suya ısı pompası ile yerden ısıtmaya, sıcak suya ve havuz ısıtmaya tek cihazla verimli çözüm. GES ile birleşince ısınma güneşten.",
       "eyebrow": "İş kolumuz",
       "title": "Isı Pompası",
-      "intro": "Isıtma-soğutma, sıcak su ve yerden ısıtma tek sistemde: elektriğin her birimini 3-4 birim ısıya çeviren ısı pompaları. Çatınızda GES varsa, ısınmanız da güneşten.",
+      "intro": "Geleceğin ısıtma ve soğutma teknolojisi. Konut ve ticari yapılar için; ısıtma, soğutma ve kullanım sıcak suyu ihtiyaçlarını tek sistemde karşılayan yüksek verimli ısı pompası çözümleri sunuyoruz.",
+      "introNote": "Enerji tüketimini optimize eden bu sistemler, yıl boyunca konforlu ve sürdürülebilir bir iklimlendirme sağlar. Güneş Enerji Santrali (GES) entegrasyonu ile enerji maliyetleri daha da azaltılabilir ve enerji bağımsızlığı güçlendirilebilir.",
+      "trustTitle": "Güven unsurları",
+      "trust": {
+        "t1": {
+          "title": "Mühendislik ve projelendirme desteği",
+          "desc": "Her projeye özel keşif, analiz ve sistem tasarımı."
+        },
+        "t2": {
+          "title": "Yetkili kurulum ve devreye alma",
+          "desc": "Uzman ekipler tarafından standartlara uygun uygulama."
+        },
+        "t3": {
+          "title": "Satış sonrası teknik destek",
+          "desc": "Kurulum sonrası bakım ve teknik servis hizmetleri."
+        },
+        "t4": {
+          "title": "GES entegrasyon uzmanlığı",
+          "desc": "Isı pompası ve güneş enerji sistemlerini tek noktadan yönetebilme."
+        }
+      },
       "what": {
         "title": "Isı pompası nedir?",
-        "p1": "Isı pompası; havada, suda veya toprakta bulunan doğal enerjiyi kullanarak mekanların ısıtma, soğutma ve sıcak su ihtiyacını karşılayan yüksek verimli bir iklimlendirme sistemidir. Enerji üretmek yerine mevcut ısıyı transfer eder: daha düşük tüketimle yüksek performans sunar, karbon salımının azalmasına katkı sağlar."
+        "p1": "Isı pompaları; havada, suda veya toprakta bulunan doğal ısı enerjisinden yararlanarak ısıtma, soğutma ve kullanım sıcak suyu sağlayan yüksek verimli iklimlendirme sistemleridir. Enerji üretmek yerine mevcut enerjiyi transfer ederek düşük tüketimle yüksek performans sunar. Konutlardan ticari yapılara kadar geniş kullanım alanına sahip olan bu sistemler, sürdürülebilir ve uzun ömürlü bir çözüm olarak öne çıkar."
       },
       "how": {
         "title": "Nasıl çalışır?",
-        "p1": "Dış ortamdan aldığı ısı enerjisini iç mekana aktararak ısıtır; yazın çalışma yönünü tersine çevirip serinletir. İhtiyaç duyduğu enerjinin büyük bölümünü doğadan, kalanını elektrikten alır. Sonuç: yüksek verim, düşük işletme maliyeti. Tek sistemle üçü birden:",
+        "p1": "Isı pompaları, çevrede bulunan doğal ısı enerjisini kullanarak kışın iç mekanları ısıtır, yazın ise çalışma prensibini tersine çevirerek soğutma sağlar. İhtiyaç duyduğu enerjinin büyük bölümünü doğadan, kalan kısmını elektrikten alır. Bu sayede tek sistemle yüksek verimlilik, konfor ve düşük işletme maliyetini bir arada sunar.",
         "i1": "Isıtma",
         "i2": "Soğutma",
         "i3": "Kullanım sıcak suyu"
@@ -861,35 +881,47 @@
       "faq": {
         "f1": {
           "q": "Isı pompası kışın verimli çalışır mı?",
-          "a": "Evet. Modern ısı pompaları düşük dış ortam sıcaklıklarında da yüksek verimle çalışacak şekilde tasarlanır. Doğru kapasite seçimi ve projelendirmeyle kış aylarında etkili ısıtma sağlar."
+          "a": "Evet. Modern hava kaynaklı ısı pompaları düşük dış ortam sıcaklıklarında çalışabilecek şekilde tasarlanır. Doğru kapasite seçimi ve uygun projelendirme ile yıl boyunca yüksek verimli ısıtma performansı sağlar."
         },
         "f2": {
-          "q": "Doğalgaza gerek kalır mı?",
-          "a": "Hayır. Isı pompası tek başına ısıtma, soğutma ve sıcak su ihtiyacını karşılayabilir; doğalgaza bağımlılığı azaltır veya tamamen ortadan kaldırır."
+          "q": "Doğalgaza ihtiyaç kalır mı?",
+          "a": "Çoğu uygulamada hayır. Isı pompaları, ısıtma, soğutma ve kullanım sıcak suyu ihtiyaçlarını tek sistemle karşılayabilir. Projenin bulunduğu bölge, iklim koşulları ve yapı özelliklerine göre hibrit veya tamamen elektrikli çözümler uygulanabilir."
         },
         "f3": {
           "q": "Elektrik tüketimi yüksek midir?",
-          "a": "Hayır. Enerjinin büyük kısmını doğal kaynaklardan aldığı için elektriği verimli kullanır; geleneksel sistemlere göre önemli tasarruf sağlar."
+          "a": "Hayır. Isı pompaları enerjiyi üretmek yerine transfer ettiği için tükettiği elektrik enerjisinden daha fazla ısı enerjisi elde edebilir. Bu sayede geleneksel elektrikli ısıtma sistemlerine göre çok daha verimli çalışır."
         },
         "f4": {
           "q": "Hangi alanlarda kullanılabilir?",
-          "a": "Konut, villa, apartman, otel, ofis, ticari işletme, endüstriyel tesis ve havuz uygulamalarında kullanılabilir."
+          "a": "Konutlar, villalar, apartmanlar, ofisler, oteller, hastaneler, eğitim yapıları, ticari işletmeler, endüstriyel tesisler ve havuz uygulamalarında kullanılabilir."
         },
         "f5": {
-          "q": "Sıcak su üretebilir mi?",
-          "a": "Evet. Isıtma ve soğutmanın yanı sıra kullanım sıcak suyu ihtiyacını da karşılar."
+          "q": "Isı pompası sıcak su üretebilir mi?",
+          "a": "Evet. Isıtma ve soğutmanın yanı sıra kullanım sıcak suyu ihtiyacını da karşılayabilir. Böylece birden fazla sistem yerine tek bir merkezi çözüm sunar."
         },
         "f6": {
           "q": "Havuz ısı pompası ne işe yarar?",
-          "a": "Dış havadaki enerjiyle havuz suyunu ekonomik şekilde ısıtır; yüzme sezonu uzar, enerji maliyeti düşer."
+          "a": "Havuz suyunu ekonomik ve kontrollü şekilde ısıtarak yüzme sezonunu uzatır. Geleneksel yöntemlere göre daha düşük işletme maliyetleriyle konforlu kullanım sağlar."
         },
         "f7": {
-          "q": "Çevre dostu mudur?",
-          "a": "Evet. Fosil yakıt kullanımını azaltır, karbon salımını düşürür ve enerjisinin büyük bölümünü yenilenebilir kaynaklardan alır."
+          "q": "Çevre dostu bir çözüm müdür?",
+          "a": "Evet. Fosil yakıt tüketimini azaltan yapısı sayesinde karbon emisyonlarının düşürülmesine katkı sağlar. Yenilenebilir enerji sistemleriyle birlikte kullanıldığında çevresel faydaları daha da artar."
         },
         "f8": {
-          "q": "GES ile birlikte kurmanın avantajı ne?",
-          "a": "Isı pompasının tüketimi güneşten karşılanır: ısınma maliyeti fatura yerine çatınızdan gelir. İki sistemi tek projede boyutlandırıyoruz."
+          "q": "GES ile birlikte kullanmanın avantajı nedir?",
+          "a": "Isı pompasının ihtiyaç duyduğu elektrik enerjisi, GES tarafından üretilen enerjiyle desteklenebilir. Bu entegrasyon enerji maliyetlerini azaltırken, enerji bağımsızlığını ve yatırımın uzun vadeli verimliliğini artırır."
+        },
+        "f9": {
+          "q": "Yerden ısıtma ile uyumlu mudur?",
+          "a": "Evet. Isı pompaları yerden ısıtma sistemleriyle yüksek verimlilikle çalışır ve konforlu bir iç ortam sağlar."
+        },
+        "f10": {
+          "q": "Mevcut radyatör tesisatında kullanılabilir mi?",
+          "a": "Uygun kapasite ve sıcaklık seviyelerine göre mevcut radyatör sistemleriyle de kullanılabilir. Projeye özel keşif ve analiz önerilir."
+        },
+        "f11": {
+          "q": "GES olmadan kullanılabilir mi?",
+          "a": "Evet. Isı pompaları şebeke elektriğiyle bağımsız olarak çalışabilir. GES entegrasyonu ise ek tasarruf ve enerji bağımsızlığı avantajı sağlar."
         }
       }
     },

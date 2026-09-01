@@ -13,7 +13,8 @@ import styles from "../line.module.scss";
    That lives below or beside the building, so the plinth is cut open. */
 const HP_TYPES = ["air", "water", "geo", "pool"] as const;
 const HP_ADVANTAGES = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"] as const;
-const HP_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"] as const;
+const HP_TRUST = ["t1", "t2", "t3", "t4"] as const;
+const HP_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11"] as const;
 
 export async function generateMetadata({
   params,
@@ -36,8 +37,12 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <LineHero id="heatpump" namespace="Lines.heatpump" topic="isi-pompasi">
-      </LineHero>
+      <LineHero
+        id="heatpump"
+        namespace="Lines.heatpump"
+        topic="isi-pompasi"
+        note={t("introNote")}
+      />
 
       <Section tone="light">
         <div className={styles.proseCols}>
@@ -58,6 +63,18 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       </Section>
 
       <Section tone="sand">
+        <SectionHeading title={t("trustTitle")} />
+        <ul className={styles.trustGrid}>
+          {HP_TRUST.map((id) => (
+            <li key={id}>
+              <h3>{t(`trust.${id}.title`)}</h3>
+              <p>{t(`trust.${id}.desc`)}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section tone="light">
         <SectionHeading title={t("typesTitle")} />
         <ul className={styles.grid2}>
           {HP_TYPES.map((id) => (
@@ -78,7 +95,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </ul>
       </Section>
 
-      <Section tone="light">
+      <Section tone="sand">
         <SectionHeading title={t("advTitle")} />
         <ul className={styles.checkGrid}>
           {HP_ADVANTAGES.map((id) => (
@@ -87,7 +104,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </ul>
       </Section>
 
-      <Section tone="sand">
+      <Section tone="light">
         <SectionHeading title={t("faqTitle")} />
         <ul className={`${styles.faq} ${styles.faqWide}`}>
           {HP_FAQ.map((id) => (

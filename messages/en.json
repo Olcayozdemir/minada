@@ -815,14 +815,34 @@
       "metaDesc": "Air-to-water heat pumps: one efficient system for underfloor heating, hot water and pool heating. Paired with PV, your heating runs on sunshine.",
       "eyebrow": "What we do",
       "title": "Heat Pumps",
-      "intro": "Heating, cooling, hot water and underfloor circuits in one system: heat pumps turn each unit of electricity into 3–4 units of heat. With PV on your roof, your heating comes from the sun.",
+      "intro": "The heating and cooling technology of the years ahead. For homes and commercial buildings, high-efficiency heat pumps that cover heating, cooling and domestic hot water in one system.",
+      "introNote": "These systems optimise consumption and keep the building comfortable and sustainable all year. Paired with a solar plant, energy costs fall further and independence grows.",
+      "trustTitle": "What you can count on",
+      "trust": {
+        "t1": {
+          "title": "Engineering and design support",
+          "desc": "A survey, an analysis and a system design for every project."
+        },
+        "t2": {
+          "title": "Certified installation and commissioning",
+          "desc": "Work carried out to standard by specialist teams."
+        },
+        "t3": {
+          "title": "After-sales technical support",
+          "desc": "Maintenance and technical service once the system is running."
+        },
+        "t4": {
+          "title": "PV integration expertise",
+          "desc": "Heat pump and solar managed from one place."
+        }
+      },
       "what": {
         "title": "What is a heat pump?",
-        "p1": "A heat pump is a high-efficiency climate system that heats, cools and produces hot water using the natural energy held in air, water or the ground. Instead of generating energy it transfers existing heat: high performance from low consumption, with lower carbon emissions."
+        "p1": "A heat pump is a high-efficiency climate system that provides heating, cooling and domestic hot water by drawing on the natural heat held in air, water or the ground. Rather than generating energy it transfers what is already there, giving high performance from low consumption. It suits everything from homes to commercial buildings, and it is built to last."
       },
       "how": {
         "title": "How does it work?",
-        "p1": "It moves heat energy from outdoors into the building; in summer it reverses direction and cools. Most of the energy it needs comes from nature, the rest from electricity. The result: high efficiency and low running costs. One system covers all three:",
+        "p1": "A heat pump uses the natural heat around it to warm the building in winter, and reverses its cycle in summer to cool. Most of the energy it needs comes from nature and the rest from electricity, so one system delivers efficiency, comfort and low running costs together.",
         "i1": "Heating",
         "i2": "Cooling",
         "i3": "Domestic hot water"
@@ -861,35 +881,47 @@
       "faq": {
         "f1": {
           "q": "Does a heat pump work efficiently in winter?",
-          "a": "Yes. Modern heat pumps are designed to run efficiently even at low outdoor temperatures. With the right capacity and engineering they heat effectively through winter."
+          "a": "Yes. Modern air-source heat pumps are built to run at low outdoor temperatures. With the right capacity and a proper design, they heat efficiently all year round."
         },
         "f2": {
-          "q": "Do I still need natural gas?",
-          "a": "No. A heat pump can cover heating, cooling and hot water on its own, reducing or completely removing the dependence on gas."
+          "q": "Will I still need gas?",
+          "a": "In most cases, no. A heat pump can cover heating, cooling and domestic hot water on its own. Depending on the region, the climate and the building, the solution can be hybrid or fully electric."
         },
         "f3": {
-          "q": "Is the electricity use high?",
-          "a": "No. Because most of its energy comes from natural sources it uses electricity efficiently, with significant savings over conventional systems."
+          "q": "Does it use a lot of electricity?",
+          "a": "No. Because a heat pump transfers energy rather than generating it, it can yield more heat energy than the electricity it consumes, which makes it far more efficient than conventional electric heating."
         },
         "f4": {
           "q": "Where can it be used?",
-          "a": "Homes, villas, apartment buildings, hotels, offices, commercial and industrial facilities, and pool applications."
+          "a": "Homes, villas, apartment buildings, offices, hotels, hospitals, schools, commercial businesses, industrial facilities and pools."
         },
         "f5": {
-          "q": "Can it produce hot water?",
-          "a": "Yes. Alongside heating and cooling it also covers domestic hot water."
+          "q": "Can a heat pump produce hot water?",
+          "a": "Yes. Alongside heating and cooling it also covers domestic hot water, so one central system replaces several."
         },
         "f6": {
           "q": "What does a pool heat pump do?",
-          "a": "It heats pool water economically using the energy in outdoor air; the swimming season stretches and energy costs drop."
+          "a": "It heats pool water economically and under control, extending the swimming season at lower running costs than conventional methods."
         },
         "f7": {
-          "q": "Is it environmentally friendly?",
-          "a": "Yes. It cuts fossil-fuel use, lowers carbon emissions and draws most of its energy from renewable sources."
+          "q": "Is it an environmentally sound choice?",
+          "a": "Yes. By cutting fossil-fuel use it helps bring carbon emissions down, and paired with renewable generation the benefit grows."
         },
         "f8": {
-          "q": "Why pair it with PV?",
-          "a": "The heat pump's consumption is covered by the sun: your heating cost comes from your roof, not your bill. We size both systems in a single project."
+          "q": "What is the advantage of pairing it with PV?",
+          "a": "The electricity the heat pump needs can be supplied by your own solar generation. That integration lowers energy costs while strengthening independence and the long-term return on the investment."
+        },
+        "f9": {
+          "q": "Does it work with underfloor heating?",
+          "a": "Yes. Heat pumps run at high efficiency with underfloor systems and keep the interior comfortable."
+        },
+        "f10": {
+          "q": "Can it be used with existing radiators?",
+          "a": "With the right capacity and flow temperatures, yes. A project-specific survey and analysis is recommended."
+        },
+        "f11": {
+          "q": "Can it be used without PV?",
+          "a": "Yes. A heat pump runs independently on grid electricity. PV integration simply adds savings and energy independence."
         }
       }
     },

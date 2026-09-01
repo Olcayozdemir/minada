@@ -119,6 +119,14 @@
   margin-bottom: var(--space-3);
 }
 
+/* Kartın kendi vaadi: başlıkla açıklama arasında, ikisinden de ayrı bir ton. */
+.cardLead {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+}
+
 .cardFoot {
   margin-top: var(--space-3);
   padding-top: var(--space-3);
@@ -307,6 +315,54 @@
       border-radius: 50%;
       background: var(--gold);
     }
+  }
+}
+
+/* Güven unsurları (ısı pompası): dört kısa taahhüt. Kart değil — bunlar bir
+   vitrin değil, sırayla okunacak bir söz listesi; işaret de sayfanın kendi
+   altın noktası, checkGrid ve cardList'te olduğu gibi. */
+.trustGrid {
+  @include list-reset;
+  display: grid;
+  /* Dört madde: band yeterince genişse tek sıra, değilse 2+2. auto-fit
+     1024'te üçe düşüp dördüncüyü tek başına alt satıra bırakıyordu. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6) var(--space-8);
+
+  @include bp-up(1180px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @include bp-down(560px) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    position: relative;
+    padding-left: 22px;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  h3 {
+    font-family: var(--font-display), sans-serif;
+    font-size: 1rem;
+    margin-bottom: var(--space-2);
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-2);
   }
 }
 
