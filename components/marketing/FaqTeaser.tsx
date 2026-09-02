@@ -5,7 +5,15 @@ import { Link } from "@/i18n/navigation";
 import { IconArrowRight } from "@/components/ui/icons";
 import styles from "./FaqTeaser.module.scss";
 
-const ITEMS = ["cost", "payback", "warranty", "incentives"] as const;
+const ITEMS = [
+  "cost",
+  "payback",
+  "warranty",
+  "incentives",
+  "roof",
+  "outage",
+  "duration",
+] as const;
 
 export async function FaqTeaser() {
   const t = await getTranslations("Home.faq");

@@ -194,19 +194,31 @@
       "cta": "Tüm soruları gör",
       "cost": {
         "q": "Kurulum maliyeti ne kadar?",
-        "a": "Maliyet; sistem gücüne, çatı tipine ve seçilen ekipmana göre değişir. Ücretsiz keşifte size net bir aralık sunarız."
+        "a": "Maliyet; yıllık elektrik tüketiminize, çatı yapınıza ve seçilen ekipmanlara göre belirlenir. Ücretsiz keşif sonrasında ihtiyaçlarınıza özel teknik analiz ve net maliyet çalışması sunuyoruz."
       },
       "payback": {
         "q": "Yatırım kaç yılda geri döner?",
-        "a": "Konut sistemlerinde geri ödeme genellikle birkaç yıl içindedir; tüketiminize ve tarifelere göre hesaplayıcıyla öngörebilirsiniz."
+        "a": "Geri dönüş süresi; tüketim alışkanlıklarına, elektrik tarifelerine ve sistem kapasitesine göre değişir. Ücretsiz fizibilite çalışmamızda yatırımınızın geri dönüş süresini size özel olarak hesaplıyoruz."
       },
       "warranty": {
         "q": "Garanti ve servis kapsamı nedir?",
-        "a": "Panel ve ekipmanlarda üretici garantisi, kurulumda işçilik garantisi ve satış sonrası bakım desteği sağlarız."
+        "a": "Kullanılan panel ve ekipmanlar üretici garantisi kapsamındadır. Ayrıca kurulum işçiliği, devreye alma ve satış sonrası teknik destek hizmetleriyle yanınızda olmaya devam ederiz."
       },
       "incentives": {
-        "q": "Teşvik ve mahsuplaşma nasıl işliyor?",
-        "a": "Ürettiğiniz fazla enerji şebekeye verilerek faturanızdan mahsup edilebilir; ilgili izin süreçlerini biz yönetiriz."
+        "q": "Mahsuplaşma nasıl işliyor?",
+        "a": "İhtiyacınızdan fazla ürettiğiniz enerji, ilgili mevzuat kapsamında şebekeye aktarılabilir ve tüketiminizle mahsuplaştırılabilir. Başvuru ve izin süreçlerinde size rehberlik ediyoruz."
+      },
+      "roof": {
+        "q": "Çatım güneş enerjisi sistemi için uygun mu?",
+        "a": "Çatı yönü, eğimi, gölgelenme durumu ve kullanılabilir alan değerlendirilerek sistem kurulumu için uygunluk belirlenir. Bu analiz ücretsiz keşif sırasında yapılır."
+      },
+      "outage": {
+        "q": "Elektrik kesintilerinde sistem çalışmaya devam eder mi?",
+        "a": "Standart güneş enerji sistemleri güvenlik gereği şebeke kesintilerinde üretimi durdurur. Enerji depolama sistemi ile birlikte tasarlanan çözümlerde ise belirlenen kritik yükler beslenmeye devam eder."
+      },
+      "duration": {
+        "q": "Kurulum ne kadar sürer?",
+        "a": "Sistem büyüklüğüne ve proje koşullarına bağlı olarak değişmekle birlikte, konut projelerinde kurulum ve devreye alma süreci genellikle birkaç gün içerisinde tamamlanır. İzin süreçleri ise 16-20 hafta arasında sürebilmektedir."
       }
     },
     "finalCta": {

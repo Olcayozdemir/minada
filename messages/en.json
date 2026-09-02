@@ -193,20 +193,32 @@
       "title": "Frequently asked questions",
       "cta": "See all questions",
       "cost": {
-        "q": "How much does installation cost?",
-        "a": "Cost depends on system size, roof type and chosen equipment. We give you a clear range during the free survey."
+        "q": "How much does an installation cost?",
+        "a": "Cost is set by your annual electricity consumption, your roof and the equipment chosen. After the free survey we give you a technical analysis and a clear costing for your own needs."
       },
       "payback": {
-        "q": "How many years until payback?",
-        "a": "For residential systems payback is usually within a few years; estimate it with the calculator based on your usage and tariffs."
+        "q": "How many years until the investment pays back?",
+        "a": "Payback depends on consumption habits, electricity tariffs and system size. Our free feasibility study calculates the payback period for your own case."
       },
       "warranty": {
-        "q": "What do warranty and service cover?",
-        "a": "Manufacturer warranty on panels and equipment, workmanship warranty on installation, and after-sales maintenance support."
+        "q": "What do the warranty and service cover?",
+        "a": "The panels and equipment carry manufacturer warranties. Beyond that we stay with you through installation workmanship, commissioning and after-sales technical support."
       },
       "incentives": {
-        "q": "How do incentives and net-metering work?",
-        "a": "Excess energy you produce can be fed to the grid and offset against your bill; we manage the relevant permit processes."
+        "q": "How does net metering work?",
+        "a": "Energy you generate beyond your own need can be exported to the grid and netted against your consumption under the applicable regulations. We guide you through the application and permit process."
+      },
+      "roof": {
+        "q": "Is my roof suitable for a solar system?",
+        "a": "Orientation, pitch, shading and usable area are assessed to decide suitability. That analysis happens during the free survey."
+      },
+      "outage": {
+        "q": "Does the system keep running during a power cut?",
+        "a": "A standard solar system stops generating during an outage, for safety. In systems designed together with storage, designated critical loads keep being fed."
+      },
+      "duration": {
+        "q": "How long does installation take?",
+        "a": "It varies with system size and project conditions, but on residential projects installation and commissioning are usually finished within a few days. Permit processes can run 16-20 weeks."
       }
     },
     "finalCta": {
