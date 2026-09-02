@@ -18,9 +18,10 @@ export const leadSchema = z.object({
   phone: z.string().trim().refine(isTrMobile),
   email: z.email(),
   city: z.string().trim().min(2),
-  // Optional — not every topic implies a property type (e.g. "diger").
-  // Selects submit "" when untouched — accepted and treated as "not provided".
-  propertyType: z.union([z.enum(PROPERTY_TYPES), z.literal("")]).optional(),
+  // Required: a lead without a property type cannot be sized, and Okan asked
+  // that the form refuse to submit without it. The select still submits "" when
+  // untouched, so the enum alone is what rejects it.
+  propertyType: z.enum(PROPERTY_TYPES),
   topic: z.union([z.enum(LEAD_TOPICS), z.literal("")]).optional(),
   bill: z.string().trim().optional(),
   message: z.string().trim().max(1200).optional(),

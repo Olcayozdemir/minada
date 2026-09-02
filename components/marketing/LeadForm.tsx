@@ -174,11 +174,7 @@ export function LeadForm({
       </Field>
 
       <div className={styles.row2}>
-        <Field
-          label={t("form.propertyType")}
-          optional={t("form.optional")}
-          error={fieldError("propertyType")}
-        >
+        <Field label={t("form.propertyType")} error={fieldError("propertyType")}>
           <select
             {...register("propertyType")}
             className={clsx(styles.input, errors.propertyType && styles.invalid)}
