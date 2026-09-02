@@ -237,6 +237,17 @@
   }
 }
 
+/* Ne zaman: rakamın üstünde, üç kartı bir zaman çizgisine dizen küçük etiket. */
+.gainWhen {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: var(--space-2);
+}
+
 .gainStat {
   display: block;
   font-family: var(--font-display), sans-serif;

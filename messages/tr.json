@@ -255,7 +255,7 @@
       "metaDesc": "Villa ve müstakil evler için anahtar teslim güneş enerjisi: %90'a varan fatura tasarrufu, mahsuplaşma ve 25 yıl panel ömrü.",
       "eyebrow": "Evim için",
       "title": "Eviniz kendi enerjisini üretsin",
-      "intro": "Villanız ya da müstakil eviniz için anahtar teslim güneş enerjisi. Faturanız düşer, konforunuz artar; eviniz enerjisi kendinden, size ait bir liman olur.",
+      "intro": "Villanız ya da müstakil eviniz için anahtar teslim güneş enerjisi ve depolama çözümü. Faturanız düşer, konforunuz artar; eviniz, kendi enerjisini üreten size ait bir liman olur.",
       "stepsEyebrow": "Süreç",
       "stepsTitle": "Çatınıza giden yol: 6 adım",
       "stepsIntro": "Keşiften devreye almaya kadar her adım bizde — siz sadece güneşin tadını çıkarın.",
@@ -284,18 +284,21 @@
         "intro": "Rakamlar çatınıza ve tüketiminize göre değişir — keşifte size özel tabloyu çıkarıyoruz. Tipik bir konut sisteminde:",
         "g1": {
           "stat": "%90'a varan",
+          "when": "Bugünden itibaren",
           "title": "Fatura düşüşü",
-          "desc": "Elektriği şebekeden değil çatınızdan kullanırsınız; fazla üretim mahsuplaşmayla faturanızdan düşer, artan tarifeler sizi teğet geçer."
+          "desc": "Gündüz tükettiğiniz elektriğin önemli bir kısmını çatınızdan karşılarsınız; fazla üretim mahsuplaşmayla faturanızdan düşer, tarife zamları sizi daha az etkiler."
         },
         "g2": {
           "stat": "Birkaç yıl",
+          "when": "Orta vadede",
           "title": "Kendini amorti eder",
-          "desc": "Yükselen tarifeler geri ödemeyi hızlandırır; amortisman sonrası her kWh, panel ömrü boyunca net kazanç yazar."
+          "desc": "Yükselen elektrik tarifeleri geri ödeme süresini kısaltır; amortisman tamamlandıktan sonra ürettiğiniz her bir kWh enerji doğrudan kazanca dönüşür."
         },
         "g3": {
           "stat": "25+ yıl",
+          "when": "Uzun vadede",
           "title": "Performans garantisi",
-          "desc": "Paneller 25 yıl ve üzeri performans garantisiyle üretir; eviniz hem konforunu hem değerini artırır."
+          "desc": "Paneller 25 yılın üzerinde performans garantisiyle üretime devam eder; sisteminiz eviniz için hem uzun ömürlü bir yatırım hem de artı bir değer olur."
         }
       },
       "ctaTitle": "Evinize özel kazanç tablosu",

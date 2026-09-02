@@ -255,7 +255,7 @@
       "metaDesc": "Turnkey solar for villas and detached homes: up to 90% bill savings, net-metering and 25-year panel life.",
       "eyebrow": "For my home",
       "title": "Let your home make its own energy",
-      "intro": "Turnkey solar for your villa or detached home. Your bill drops, your comfort rises — and your home becomes a harbor that powers itself.",
+      "intro": "Turnkey solar and storage for your villa or detached house. Your bill falls, your comfort rises, and the house becomes a harbour of your own that makes its own energy.",
       "stepsEyebrow": "Process",
       "stepsTitle": "The road to your roof: 6 steps",
       "stepsIntro": "From survey to switch-on, every step is on us — you just enjoy the sun.",
@@ -284,18 +284,21 @@
         "intro": "Numbers depend on your roof and consumption — we build your personal table during the survey. In a typical home system:",
         "g1": {
           "stat": "Up to 90%",
+          "when": "From day one",
           "title": "Bill reduction",
-          "desc": "You use electricity from your roof, not the grid; net metering credits surplus production, and rising tariffs pass you by."
+          "desc": "A good share of the electricity you use by day comes off your own roof; surplus generation is netted off the bill, and tariff rises reach you less."
         },
         "g2": {
           "stat": "A few years",
+          "when": "Over the medium term",
           "title": "Pays for itself",
-          "desc": "Rising tariffs shorten the payback; after that, every kWh is net profit for the panels' lifetime."
+          "desc": "Rising tariffs shorten the payback; once the system has paid for itself, every kWh it makes turns straight into gain."
         },
         "g3": {
           "stat": "25+ yrs",
+          "when": "Over the long term",
           "title": "Performance warranty",
-          "desc": "Panels produce under 25+ year performance warranties; your home gains comfort and value alike."
+          "desc": "The panels keep producing under a performance warranty of 25 years and more, so the system is both a long-lived investment and value added to the house."
         }
       },
       "ctaTitle": "A gains table for your home",

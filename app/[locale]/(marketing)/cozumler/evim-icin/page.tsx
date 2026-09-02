@@ -72,6 +72,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <ul className={styles.gains}>
           {GAINS.map((id) => (
             <li key={id} className={styles.gainCard}>
+              <span className={styles.gainWhen}>{t(`gains.${id}.when`)}</span>
               <span className={styles.gainStat}>{t(`gains.${id}.stat`)}</span>
               <h3 className={styles.gainTitle}>{t(`gains.${id}.title`)}</h3>
               <p className={styles.gainDesc}>{t(`gains.${id}.desc`)}</p>
