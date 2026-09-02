@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as *;
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -36,6 +38,21 @@
 .lg {
   font-size: 16.5px;
   padding: 17px 26px;
+}
+
+/* Telefonda lg bir beden küçülür ve dekoratif ok çipini bırakır. Etiket
+   "Ücretsiz keşif al"dan "Ücretsiz keşif talep et"e uzayınca buton 390px'lik
+   ekranda satırın %64'ünü kaplayan turuncu bir levhaya döndü; ok da yanında
+   34px daha götürüyordu. Metin aynı kalsın diye kısaltma yerine kabuk küçüldü. */
+@include bp-down(560px) {
+  .lg {
+    font-size: 15px;
+    padding: 13px 19px;
+  }
+
+  .lg .arrow {
+    display: none;
+  }
 }
 
 .arrow {
