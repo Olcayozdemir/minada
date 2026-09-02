@@ -318,19 +318,19 @@
         "title": "GES işletmenize ne kazandırır?",
         "intro": "Ölçek büyüdükçe kazanç da büyür — fizibiliteyi tesisinize özel, ücretsiz çıkarıyoruz. Tipik bir ticari sistemde:",
         "g1": {
-          "stat": "OPEX ↓",
-          "title": "Enerji gideri küçülür",
-          "desc": "Elektrik maliyetiniz kalem kalem düşer, üretim maliyetiniz öngörülebilir olur; tarife artışları bütçenizi sarsmaz."
+          "stat": "OPEX↓",
+          "title": "Daha Düşük Enerji Maliyetleri",
+          "desc": "Kendi elektriğinizi üreterek şebekeden çektiğiniz enerji miktarını azaltabilir, enerji giderlerinizi daha öngörülebilir hale getirebilirsiniz."
         },
         "g2": {
-          "stat": "Hızlı geri dönüş",
-          "title": "Yatırım kendini öder",
-          "desc": "Ticari tüketim yüksek olduğu için sistem kendini hızla geri öder; sonrası doğrudan kâr hanenize yazar."
+          "stat": "Hızlı Geri Dönüş",
+          "title": "Uzun Vadeli Finansal Kazanç",
+          "desc": "Yüksek tüketimli işletmelerde güneş enerjisi yatırımları, enerji maliyetlerini düşürerek yatırımın geri dönüşünü destekler ve uzun vadeli tasarruf sağlar."
         },
         "g3": {
-          "stat": "1–5 MW",
-          "title": "Lisanssız üretim hakkı",
-          "desc": "Kendi elektriğinizi lisanssız üretir, fazlasını mahsuplaşırsınız; başvuru ve izin süreçlerini biz yürütürüz."
+          "stat": "25+ Yıl",
+          "title": "Uzun Ömürlü Enerji Varlığı",
+          "desc": "GES yatırımları uzun yıllar boyunca enerji üretmeye devam ederek işletmenizin sürdürülebilirlik ve maliyet yönetimi hedeflerine katkı sağlar."
         },
         "charts": {
           "opex": {
@@ -352,12 +352,13 @@
             "tipBreakeven": "Başabaş: yatırım kendini bu noktada geri öder",
             "tipProfit": "Sonrası: doğrudan kâr"
           },
-          "capacity": {
-            "header": "Lisanssız kapasite · MW",
-            "aria": "Sıfırdan 5 MW'a kadar lisanssız üretim bölgesi; 5 MW'da lisans sınırı.",
-            "band": "1–5 MW",
-            "limit": "5 MW · sınır",
-            "foot": "5 MW'a kadar lisans gerekmez"
+          "lifetime": {
+            "header": "Yıllık üretim · 25 yıl",
+            "aria": "Panellerin yıllık üretimi 25 yıl boyunca yavaşça azalır ve performans garantisi eşiğinin üzerinde kalır.",
+            "floor": "garanti eşiği",
+            "start": "Yıl 1",
+            "end": "Yıl 25",
+            "foot": "Panel performans garantisi süresince üretim"
           }
         },
         "chartsNote": "Grafikler tipik bir ticari senaryoyu illüstratif olarak gösterir; gerçek değerler tesisinize özel fizibilitede çıkar."

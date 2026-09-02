@@ -318,19 +318,19 @@
         "title": "What does solar earn your business?",
         "intro": "The bigger the scale, the bigger the gain — we prepare a free feasibility study for your facility. In a typical commercial system:",
         "g1": {
-          "stat": "OPEX ↓",
-          "title": "Energy costs shrink",
-          "desc": "Your electricity cost drops line by line and production costs become predictable; tariff hikes stop shaking the budget."
+          "stat": "OPEX↓",
+          "title": "Lower Energy Costs",
+          "desc": "Generating your own electricity cuts how much you draw from the grid and makes your energy spend more predictable."
         },
         "g2": {
-          "stat": "Fast payback",
-          "title": "The investment pays itself",
-          "desc": "High commercial consumption means the system pays back quickly; everything after that lands on your bottom line."
+          "stat": "Fast Payback",
+          "title": "Long-Term Financial Gain",
+          "desc": "Where consumption is high, solar lowers energy costs, supports the return on the investment and delivers savings over the long run."
         },
         "g3": {
-          "stat": "1–5 MW",
-          "title": "Unlicensed generation",
-          "desc": "Generate your own power unlicensed and net-meter the surplus; we run the applications and permits."
+          "stat": "25+ Years",
+          "title": "A Long-Lived Energy Asset",
+          "desc": "A solar plant keeps generating for many years, contributing to your sustainability and cost-management goals."
         },
         "charts": {
           "opex": {
@@ -352,12 +352,13 @@
             "tipBreakeven": "Break-even: the investment pays for itself here",
             "tipProfit": "After that: direct profit"
           },
-          "capacity": {
-            "header": "Unlicensed capacity · MW",
-            "aria": "Unlicensed generation zone from zero to 5 MW; license limit at 5 MW.",
-            "band": "1–5 MW",
-            "limit": "5 MW · limit",
-            "foot": "No license needed up to 5 MW"
+          "lifetime": {
+            "header": "Annual output · 25 years",
+            "aria": "Annual panel output declines slowly across 25 years and stays above the performance-warranty floor.",
+            "floor": "warranty floor",
+            "start": "Year 1",
+            "end": "Year 25",
+            "foot": "Output across the performance-warranty term"
           }
         },
         "chartsNote": "The charts illustrate a typical commercial scenario; real figures come from your facility-specific feasibility study."

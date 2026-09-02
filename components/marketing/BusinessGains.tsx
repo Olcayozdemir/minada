@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import styles from "./BusinessGains.module.scss";
 
 // İşletmem için "Kazancınız" — üç kanıt grafiği (OPEX düşüşü, geri dönüş/başabaş,
-// 1–5 MW lisanssız kapasite). Premium palet: derin teal-cyan gradient veri
+// 25 yıllık üretim ömrü). Premium palet: derin teal-cyan gradient veri
 // çizgisi, altın (marka) pozitif dolgu, navy yapı; gradient alanlar + yumuşak
 // glow + ince ızgara. Statik SVG + CSS hover (JS yok). Etiketler i18n'den gelir.
 
@@ -170,37 +170,58 @@ export async function BusinessGains() {
           <p className={styles.body}>{t("g2.desc")}</p>
         </li>
 
-        {/* ── Kart 3 — Lisanssız kapasite ───────────────────────────── */}
+        {/* ── Kart 3 — Üretim ömrü ──────────────────────────────────
+            Buradaki eski grafik "1–5 MW lisanssız kapasite" idi; Okan böyle bir
+            sınırın olmadığını yazdı, kart da uzun ömürlü yatırım eksenine
+            çekildi. Yerine gelen eğri kasten rakamsız: yıllık düşüş oranı ve
+            garanti eşiği Okan'dan gelince etiketlenecek, o zamana kadar
+            grafik yalnızca "yavaşça azalır, eşiğin üstünde kalır" diyor. */}
         <li className={styles.card}>
-          <p className={styles.chartH}>{t("charts.capacity.header")}</p>
+          <p className={styles.chartH}>{t("charts.lifetime.header")}</p>
           <div className={styles.legend} aria-hidden="true">
             <span className={styles.spacer}>·</span>
           </div>
-          <svg viewBox="0 0 340 150" role="img" aria-label={t("charts.capacity.aria")} className={styles.chart}>
-            <rect x="30" y="66" width="290" height="22" rx="9" fill="var(--sand)" />
-            <rect x="78.33" y="66" width="193.34" height="22" rx="9" fill="url(#bgBandBar)" filter="url(#bgGlow)" />
-            {/* üst parlaklık */}
-            <rect x="80" y="68" width="190" height="7" rx="4" fill="#fff" fillOpacity="0.16" />
-            <text className={styles.tWhite} x="175" y="81" textAnchor="middle">
-              {t("charts.capacity.band")}
+          <svg viewBox="0 0 340 150" role="img" aria-label={t("charts.lifetime.aria")} className={styles.chart}>
+            <Grid ys={[40, 60, 80]} />
+            {/* üretim alanı — teal gradient, eşiğe kadar iner */}
+            <path
+              d="M30,44 L41.6,50 L88,55.7 L146,62.8 L204,69.9 L262,77 L320,84 L320,100 L30,100 Z"
+              fill="url(#bgTealArea)"
+            />
+            <polyline
+              points="30,44 41.6,50 88,55.7 146,62.8 204,69.9 262,77 320,84"
+              fill="none"
+              stroke="url(#bgLineGrad)"
+              strokeWidth="2.75"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              filter="url(#bgGlow)"
+            />
+            {/* garanti eşiği — altın, kesikli */}
+            <line
+              x1="30"
+              y1="100"
+              x2="320"
+              y2="100"
+              stroke="var(--gold-600)"
+              strokeWidth="1.5"
+              strokeDasharray="4 4"
+            />
+            {/* Eşik etiketi çizginin üstünde ve solda: altına konunca "Yıl 25"
+                tikiyle sıfır boşlukta değiyordu, sağa konunca eğrinin uç
+                noktasına giriyordu. */}
+            <text className={styles.tGold} x="34" y="96">
+              {t("charts.lifetime.floor")}
             </text>
-            {/* 5 MW sınır — altın */}
-            <line x1="271.67" y1="52" x2="271.67" y2="98" stroke="var(--gold-600)" strokeWidth="1.5" />
-            <text className={styles.tGold} x="271.67" y="46" textAnchor="middle">
-              {t("charts.capacity.limit")}
+            <circle cx="320" cy="84" r="4.5" fill="#149dc4" stroke="#fff" strokeWidth="2.2" filter="url(#bgGlow)" />
+            <text className={styles.tTick} x="30" y="126">
+              {t("charts.lifetime.start")}
             </text>
-            <g>
-              {[30, 78.33, 126.67, 175, 223.33, 271.67, 320].map((x, i) => (
-                <g key={x}>
-                  <line x1={x} y1="90" x2={x} y2="94" stroke="var(--ink)" strokeOpacity="0.28" strokeWidth="1" />
-                  <text className={styles.tTick} x={x} y="106" textAnchor="middle">
-                    {i}
-                  </text>
-                </g>
-              ))}
-            </g>
-            <text className={styles.tMut} x="175" y="130" textAnchor="middle">
-              {t("charts.capacity.foot")}
+            <text className={styles.tTick} x="320" y="126" textAnchor="end">
+              {t("charts.lifetime.end")}
+            </text>
+            <text className={styles.tMut} x="175" y="140" textAnchor="middle">
+              {t("charts.lifetime.foot")}
             </text>
           </svg>
           <div className={styles.divider} />
