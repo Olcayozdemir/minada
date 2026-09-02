@@ -44,7 +44,7 @@
     "language": "Dil",
     "skipToContent": "İçeriğe geç",
     "backHome": "Ana sayfa",
-    "pageComingDesc": "Bu sayfanın içeriği hazırlanıyor. O zamana kadar ücretsiz keşif oluşturabilirsiniz."
+    "pageComingDesc": "Bu sayfanın içeriği hazırlanıyor. O zamana kadar ücretsiz keşif talep edebilirsiniz."
   },
   "Hero": {
     "kicker": "Güneş · Enerji Depolama · EV şarj · Isı pompası",
@@ -212,7 +212,7 @@
     "finalCta": {
       "eyebrow": "Hazır mısınız?",
       "title": "Enerji geleceğinize bugün yatırım yapın",
-      "desc": "Ücretsiz keşif oluşturun; size özel tasarruf ve sistem önerinizi sunalım.",
+      "desc": "Ücretsiz keşif talep edin; size özel tasarruf ve sistem önerinizi sunalım.",
       "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
     },
     "intro": {
@@ -399,7 +399,7 @@
     "paybackLabel": "Geri ödeme süresi",
     "co2Label": "Yıllık CO₂ tasarrufu",
     "years": "yıl",
-    "warning": "Bu değerler tahminidir ve tüm fiyatlar KDV hariçtir; katsayılar güncel piyasa verileriyle doğrulanacaktır. Kesin teklif için ücretsiz keşif oluşturun.",
+    "warning": "Bu değerler tahminidir ve tüm fiyatlar KDV hariçtir; katsayılar güncel piyasa verileriyle doğrulanacaktır. Kesin teklif için ücretsiz keşif talep edin.",
     "cta": "Kesin teklif al",
     "roofAreaLabel": "Kullanılabilir çatı alanı",
     "roofCapacity": "≈ {count} panel kapasitesi",
@@ -425,7 +425,7 @@
   },
   "Contact": {
     "eyebrow": "İletişim",
-    "title": "Ücretsiz keşif alın",
+    "title": "Ücretsiz keşif talep edin",
     "intro": "Formu doldurun; en kısa sürede size özel tasarruf ve sistem önerinizle dönelim.",
     "info": {
       "title": "İletişim bilgileri",
@@ -1141,7 +1141,7 @@
     "finalCta": {
       "eyebrow": "Hazır mısınız?",
       "title": "Enerji geleceğinize bugün demir atın",
-      "desc": "Ücretsiz keşif oluşturun; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım.",
+      "desc": "Ücretsiz keşif talep edin; çatınıza ve tüketiminize özel sistem ve tasarruf önerinizi birlikte çıkaralım.",
       "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
     }
   },

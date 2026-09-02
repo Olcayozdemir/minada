@@ -44,7 +44,7 @@
     "language": "Language",
     "skipToContent": "Skip to content",
     "backHome": "Home",
-    "pageComingDesc": "This page is being prepared. In the meantime, you can create a free survey."
+    "pageComingDesc": "This page is being prepared. In the meantime, you can request a free survey."
   },
   "Hero": {
     "kicker": "Solar · Energy Storage · EV charging · Heat pump",
@@ -212,7 +212,7 @@
     "finalCta": {
       "eyebrow": "Ready?",
       "title": "Invest in your energy future today",
-      "desc": "Create a free survey and we'll bring you a tailored savings and system proposal.",
+      "desc": "Request a free survey and we'll bring you a tailored savings and system proposal.",
       "waMessage": "Hello, I'd like to get a free survey from MİNADA."
     },
     "intro": {
@@ -399,7 +399,7 @@
     "paybackLabel": "Payback period",
     "co2Label": "Annual CO₂ saved",
     "years": "yr",
-    "warning": "These values are estimates and all prices exclude VAT; coefficients will be verified against current market data. Create a free survey for a precise quote.",
+    "warning": "These values are estimates and all prices exclude VAT; coefficients will be verified against current market data. Request a free survey for a precise quote.",
     "cta": "Get a precise quote",
     "roofAreaLabel": "Usable roof area",
     "roofCapacity": "≈ {count} panel capacity",
@@ -425,7 +425,7 @@
   },
   "Contact": {
     "eyebrow": "Contact",
-    "title": "Get a free survey",
+    "title": "Request a free survey",
     "intro": "Fill in the form and we'll come back with a tailored savings and system proposal.",
     "info": {
       "title": "Contact details",
@@ -1141,7 +1141,7 @@
     "finalCta": {
       "eyebrow": "Ready?",
       "title": "Drop anchor on your energy future today",
-      "desc": "Book a free survey and together we will map out the system and savings tailored to your roof and your consumption.",
+      "desc": "Request a free survey and together we will map out the system and savings tailored to your roof and your consumption.",
       "waMessage": "Hello, I'd like to get a free survey from MİNADA."
     }
   },
