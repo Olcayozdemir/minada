@@ -706,11 +706,11 @@
       },
       "f1": {
         "q": "Who runs the permits and licensing?",
-        "a": "Our own team handles every stage: zoning status, EIA exemption or application, the call letter, connection agreements and the project-development steps that go with them."
+        "a": "We run every stage with our own team: the call-letter application, project approval, the connection agreement, acceptance and the system usage agreement."
       },
       "f2": {
         "q": "How long does installation take?",
-        "a": "It depends on the scope. On rooftop projects, survey to commissioning typically runs 4-8 weeks; on ground-mount projects the permit calendar can stretch it."
+        "a": "It depends on the scope. On rooftop projects, survey to commissioning typically runs 16-20 weeks; on ground-mount projects the permit calendar can stretch it."
       },
       "f3": {
         "q": "How much will a solar system cut my electricity bill?",
@@ -722,11 +722,11 @@
       },
       "f5": {
         "q": "Does the system keep running during a power cut?",
-        "a": "A standard solar system shuts down when the grid goes, for safety. A hybrid system built together with energy storage can keep feeding designated loads."
+        "a": "A standard solar system shuts down when the grid goes, for safety. A hybrid system built together with energy storage keeps feeding designated loads."
       },
       "f6": {
         "q": "Can solar be added to an existing building?",
-        "a": "In most cases, yes. Existing roofs are assessed for technical suitability and fitted afterwards."
+        "a": "In most cases, yes. Existing roofs are assessed structurally and a solar plant fitted afterwards."
       },
       "f7": {
         "q": "How much maintenance does a solar system need?",
