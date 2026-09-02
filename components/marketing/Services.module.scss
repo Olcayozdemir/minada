@@ -51,9 +51,12 @@
     padding-inline: calc(var(--space-4) * 1.5) var(--space-4);
     scroll-padding-left: calc(var(--space-4) * 1.5);
 
+    /* Narrow enough that the next card is plainly there rather than a
+       sliver: at 375px this leaves about 90px of it showing, which is what
+       tells you the rail carries four (Olcay, 2026-09-03). */
     > li {
-      flex: 0 0 72vw;
-      max-width: 300px;
+      flex: 0 0 62vw;
+      max-width: 270px;
       scroll-snap-align: start;
     }
 
