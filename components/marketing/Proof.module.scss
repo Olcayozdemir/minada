@@ -549,9 +549,11 @@
    reference, 2026-09-02). The strip itself is a native scroll-snap row, so
    it swipes without script; ProofQuotes.tsx only syncs the pills. */
 
+/* The quotes are their own block under their own heading, so they stand
+   off the photographs rather than trailing them. */
 .quotes {
   position: relative;
-  margin-top: clamp(30px, 3.4vw, 48px);
+  margin-top: clamp(56px, 6vw, 88px);
 }
 
 /* The quotes carry their own heading, the way the projects above do:

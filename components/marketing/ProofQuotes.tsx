@@ -38,7 +38,10 @@ export function ProofQuotes({
 }) {
   const trackRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
-  const [held, setHeld] = useState(false);
+  // Held and reduced-motion live in refs, not in state: the timer must not
+  // be torn down and rebuilt every time the pointer crosses the strip, or
+  // it restarts its four seconds and the quotes barely move at all.
+  const held = useRef(false);
   const reduce = useRef(false);
 
   // Card width plus the gap: the step the strip snaps to.
@@ -85,30 +88,41 @@ export function ProofQuotes({
   }, []);
 
   useEffect(() => {
-    if (held || reduce.current || quotes.length < 2) return;
+    if (quotes.length < 2) return;
     const id = window.setInterval(() => {
       const el = trackRef.current;
-      if (!el || document.visibilityState !== "visible") return;
+      if (!el || held.current || reduce.current) return;
+      if (document.visibilityState !== "visible") return;
       const stride = strideOf(el);
       if (!stride) return;
+      // Past the last card, back to the first.
       const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 2;
-      el.scrollTo({
-        left: atEnd ? 0 : el.scrollLeft + stride,
-        behavior: reduce.current ? "auto" : "smooth",
-      });
+      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + stride, behavior: "smooth" });
     }, AUTOPLAY_MS);
     return () => window.clearInterval(id);
-  }, [held, quotes.length]);
+  }, [quotes.length]);
 
   return (
     <div
       className={styles.quotes}
-      onPointerDown={() => setHeld(true)}
-      onPointerEnter={(e) => {
-        if (e.pointerType === "mouse") setHeld(true);
+      onPointerEnter={() => {
+        held.current = true;
       }}
-      onFocusCapture={() => setHeld(true)}
-      onTouchStart={() => setHeld(true)}
+      onPointerLeave={() => {
+        held.current = false;
+      }}
+      onTouchStart={() => {
+        held.current = true;
+      }}
+      onTouchEnd={() => {
+        held.current = false;
+      }}
+      onFocusCapture={() => {
+        held.current = true;
+      }}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) held.current = false;
+      }}
     >
       <div className={styles.quotesHead}>
         <h2 className={styles.quotesTitle}>{title}</h2>
