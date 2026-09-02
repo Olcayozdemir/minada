@@ -49,6 +49,58 @@
   min-width: 0;
 }
 
+/* — Motion —
+
+   Two things move here, and they are kept on different properties so they
+   can run at once: the entrance travels the tiles' `transform`, the scroll
+   drift travels the columns' `translate`. The composite is translate then
+   transform, so neither has to know about the other.
+
+   The entrance settles the photographs in from the middle of the board
+   outward, --d steps at a time. It is armed by Reveal.tsx marking the
+   section (data-reveal-shown), so with no script nothing is ever hidden. */
+[data-reveal-shown] .tile {
+  animation: tile-settle 0.6s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0) * 55ms);
+}
+
+@keyframes tile-settle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The drift: the columns at the ends of the board travel further than the
+   ones by the heading as the section crosses the viewport, so the mosaic
+   breathes instead of sliding past as one slab. Scroll-driven, so it is
+   tied to the page rather than to a clock, and browsers without the
+   timeline simply do not run it. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .column {
+      animation: column-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+
+@keyframes column-drift {
+  from {
+    translate: 0 var(--par, 0px);
+  }
+
+  to {
+    translate: 0 calc(-1 * var(--par, 0px));
+  }
+}
+
 .columnDeep {
   grid-row: 1 / span 2;
 }
@@ -75,6 +127,7 @@
 /* Each photograph is mounted like a print: a white mat, a gold hairline
    round it, and a soft drop. */
 .frame {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
@@ -88,13 +141,58 @@
     box-shadow 0.3s ease;
 }
 
-.photo {
+/* The window inside the mat, so a photograph can grow without spilling
+   over the white border. */
+.window {
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 6px;
-  object-fit: cover;
+  overflow: hidden;
   background: var(--sand);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* A slow push in, the length of a look rather than a click. */
+.pressed .photo {
+  transform: scale(1.06);
+}
+
+@media (hover: hover) {
+  .tile:hover .photo {
+    transform: scale(1.06);
+  }
+}
+
+/* One turn of gold light around the mat as the readout opens, so the light
+   that circles the readout looks as though it came from the photograph.
+   One pass only: the readout's own beam is the one that keeps going. */
+.frame::after {
+  @include edge-beam(2.2s, 1.6px);
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pressed .frame::after,
+.tile:focus-visible .frame::after {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .tile:hover .frame::after {
+    animation-play-state: running;
+    opacity: 1;
+  }
 }
 
 /* The mat's gold hairline comes up to full and lights: the same gesture
@@ -336,9 +434,37 @@
   }
 }
 
-/* Reduced motion: nothing flickers, writes or pulses; the readout simply
-   appears. */
+@keyframes tile-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion: the photographs still announce themselves and the
+   readout still arrives, they just stop travelling, growing and flickering
+   to do it. */
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal-shown] .tile {
+    animation-name: tile-appear;
+  }
+
+  .photo {
+    transition: none;
+  }
+
+  .pressed .photo,
+  .tile:hover .photo {
+    transform: none;
+  }
+
+  .frame::after {
+    animation: none;
+  }
+
   .lead {
     transition: none;
     transform: scaleY(1);
@@ -555,6 +681,16 @@
   content: "\201D";
   right: clamp(10px, 1.2vw, 20px);
   bottom: -28px;
+}
+
+/* Five of them, in the brand gold rather than the usual review-site
+   yellow. The row carries its own label for a screen reader; the shapes
+   themselves are decoration. */
+.stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+  color: var(--gold);
 }
 
 .quoteText {

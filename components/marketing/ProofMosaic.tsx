@@ -8,10 +8,15 @@ import styles from "./Proof.module.scss";
 
 /* The mosaic: staggered columns of site photographs with the heading in the
    notch they leave in the middle (proofColumns.ts). Each photograph raises a
-   small glass readout naming the plant; a mouse raises it by hovering, a
-   finger or a keyboard by pressing, and that press state is the only reason
-   this is a client component. The heading arrives as children so it stays a
-   server component with its own link. */
+   small readout naming the plant; a mouse raises it by hovering, a finger or
+   a keyboard by pressing, and that press state is the only reason this is a
+   client component. The heading arrives as children so it stays a server
+   component with its own link.
+
+   Each column carries its distance from the middle of the board as --d.
+   The stylesheet reads it twice: to settle the photographs in from the
+   centre outward when the section arrives, and to drift the outer columns
+   further than the inner ones as the page scrolls past. */
 export function ProofMosaic({
   columns,
   label,
@@ -26,11 +31,22 @@ export function ProofMosaic({
   return (
     <div className={styles.mosaic}>
       <ul className={styles.columns} aria-label={label}>
-        {columns.map((col, i) => (
+        {columns.map((col, i) => {
+          // 3.5 at the ends of an eight-column board, 0.5 either side of
+          // the middle; a half step because the board has no centre column.
+          const d = Math.abs(i - (columns.length - 1) / 2);
+          return (
           <li
             key={col.tiles[0].id}
             className={clsx(styles.column, col.deep && styles.columnDeep)}
-            style={{ "--top": `${col.top}px`, "--c": i + 1 } as CSSProperties}
+            style={
+              {
+                "--top": `${col.top}px`,
+                "--c": i + 1,
+                "--d": d,
+                "--par": `${Math.round(d * 6)}px`,
+              } as CSSProperties
+            }
           >
             {col.tiles.map((p) => {
               const pressed = open === p.id;
@@ -44,14 +60,16 @@ export function ProofMosaic({
                   onClick={() => setOpen(pressed ? null : p.id)}
                 >
                   <span className={styles.frame}>
-                    <Image
-                      src={p.src}
-                      alt=""
-                      width={p.w}
-                      height={p.h}
-                      sizes="(max-width: 900px) 44vw, 220px"
-                      className={styles.photo}
-                    />
+                    <span className={styles.window}>
+                      <Image
+                        src={p.src}
+                        alt=""
+                        width={p.w}
+                        height={p.h}
+                        sizes="(max-width: 900px) 44vw, 220px"
+                        className={styles.photo}
+                      />
+                    </span>
                   </span>
                   {/* The readout: a lead line up from the photo, then the
                       glass card. Purely visual pieces are hidden from the
@@ -73,7 +91,8 @@ export function ProofMosaic({
               );
             })}
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       {children}

@@ -22,6 +22,11 @@ import styles from "./Proof.module.scss";
    sorular" §4, 2026-09-02). The three invented quotes that used to sit here
    were removed on 2026-07-11; these are real, so the section is back.
 
+   The five stars are the house's reading, not the customer's: none of the
+   four was asked for a score, and Olcay asked for them anyway (2026-09-02)
+   because they carry. The number is a field rather than a constant in the
+   markup, so a customer who says otherwise is a one-line change.
+
    The section stays off the page until at least one project is published
    rather than announcing an empty board. Add a fifth quote by adding a key
    to QUOTES and its `Home.proof.tN` copy in both locales. */
@@ -73,7 +78,12 @@ export async function Proof({ locale }: { locale: string }) {
           four across a desktop row squeezed every one into a narrow column
           (Olcay, 2026-09-02). */}
       <ProofQuotes
-        quotes={QUOTES.map((id) => ({ id, quote: t(`${id}.quote`), name: t(`${id}.name`) }))}
+        quotes={QUOTES.map((id) => ({
+          id,
+          quote: t(`${id}.quote`),
+          name: t(`${id}.name`),
+          rating: 5,
+        }))}
         label={t("quotesLabel")}
       />
     </Section>
