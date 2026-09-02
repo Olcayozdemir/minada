@@ -1082,10 +1082,11 @@
     "metaDesc": "MİNADA Enerji: 15 yılı aşkın saha deneyimiyle güneş enerjisi, enerji depolama, ısı pompası ve EV şarj çözümlerini tek elden tasarlayan, kuran ve işleten bütünleşik enerji ortağınız.",
     "eyebrow": "Hakkımızda",
     "title": "Enerji dönüşümünüzde güvenilir bir <em>liman</em>",
-    "intro": "MİNADA Enerji, elektriği bir gider kalemi olmaktan çıkarıp kendi çatınızın ürettiği bağımsız bir güce dönüştürmek için kuruldu. 15 yılı aşkın sektör deneyimine sahip, enerji mühendisliği üzerine yoğunlaşmış bir kadroyla; konuttan işletmeye güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini tek elden tasarlıyor, kuruyor ve işletiyoruz. Amacımız net: yaşadığınız yeri kendine yeten, enerjisi kendinden bir limana çevirmek.",
+    "intro": "MİNADA Enerji, elektriği yalnızca tüketilen bir kaynak değil, yönetilebilen ve değer üreten bir varlık olarak görüyor. 15 yılı aşkın sektör deneyimimizle güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini tek çatı altında sunuyor; projelendirmeden devreye almaya kadar tüm süreci yönetiyoruz.",
+    "intro2": "Hedefimiz, konutları ve işletmeleri kendi enerjisini üretebilen, daha verimli ve daha bağımsız yapılara dönüştürmektir.",
     "storyTitle": "Hikayemiz",
-    "storyP1": "MİNADA, sahada büyümüş bir mühendislik anlayışının ürünü. Kurucu ekibimiz 15 yılı aşkın süredir yenilenebilir enerji projelerinde tasarımdan devreye almaya kadar her aşamada görev aldı. Bu birikimi tek bir çatı altında topladık: bugün MİNADA Enerji olarak, güneş enerjisinin yanında enerji depolama, ısı pompası ve EV şarj çözümlerini de aynı ekiple sunan bütünleşik bir enerji ortağıyız.",
-    "storyP2": "Bizim için her proje bir satış kalemi değil, bir mühendislik taahhüdüdür. Bu yüzden keşiften işletmeye kadar altı şeffaf adımda ilerler, her aşamada ne olacağını önceden bilmenizi sağlarız. Teklifimiz açık, sürelerimiz gerçekçi, önerilerimiz sizin tüketiminize özeldir.",
+    "storyP1": "MİNADA, sahada edinilmiş mühendislik tecrübesinin doğal bir sonucu olarak doğdu. Kurucu ekibimiz, 15 yılı aşkın süredir yenilenebilir enerji projelerinde tasarım, uygulama ve devreye alma süreçlerinde aktif rol aldı. Bu deneyimi tek bir çatı altında bir araya getirerek; güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini entegre bir yaklaşımla sunan MİNADA Enerji'yi oluşturduk.",
+    "storyP2": "Bizim için her proje yalnızca bir yatırım değil, aynı zamanda bir mühendislik sorumluluğudur. Bu nedenle keşiften devreye almaya kadar tüm süreci şeffaf ve planlı şekilde yönetir, müşterilerimizin her aşamayı net bir şekilde takip edebilmesini sağlarız. Açık iletişim, gerçekçi planlama ve ihtiyaca özel çözümlerle uzun vadeli güvene dayalı iş ortaklıkları kurmayı hedefleriz.",
     "storyImageAlt": "Çatı GES üzerinde keşif yapan iki mühendis",
     "statsTitle": "Rakamlarla MİNADA",
     "stats": {
@@ -1111,34 +1112,35 @@
         "sub": "GES · Depolama · Isı pompası · EV şarj"
       }
     },
-    "whereTitle": "Nerede hizmet veriyoruz?",
-    "whereText": "Merkezimiz Malatya'da; bunun yanında Sivas, Elazığ, Erzincan ve Antalya bölgelerinde aktif olarak faaliyet gösteriyoruz. Gelen taleplere istinaden ise ülkemizin dört bir yanında uygulamalarımızı sürdürüyor, projenizin bulunduğu yere ekibimizle ulaşıyoruz.",
+    "whereTitle": "Nerede Hizmet Veriyoruz?",
+    "whereText": "Merkezimiz Malatya'da, operasyon ağımız ise; Sivas, Elazığ, Erzincan ve Antalya'da faaliyet göstermektedir. Bölgesel gücümüzün yanı sıra, Türkiye'nin dört bir yanında güneş enerjisi, enerji depolama, ısı pompası ve EV şarj projeleri gerçekleştiriyoruz.",
     "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
+    "whereNote": "Proje bazlı olarak Türkiye genelinde hizmet vermekteyiz.",
     "missionTitle": "Misyonumuz",
-    "missionText": "Konuttan işletmeye her müşterimizin enerji bağımsızlığına ulaşmasını; mühendislik bütünlüğü, şeffaflık ve tek elden hizmetle mümkün kılmak. Enerji yolculuğunuzun her adımında güvenle demir atabileceğiniz bir liman olmak.",
+    "missionText": "Konutlardan işletmelere kadar her müşterimizin enerji bağımsızlığına ulaşmasını; mühendislik disiplini, şeffaf süreç yönetimi ve tek elden sunulan çözümlerle mümkün kılmak. Enerji dönüşümünün her aşamasında güvenle başvurulan bir iş ortağı olmak.",
     "visionTitle": "Vizyonumuz",
-    "visionText": "Türkiye'nin enerji dönüşümünde konut ve işletme ölçeğinin en güvenilir çözüm ortağı olmak; güneş, depolama, ısınma ve elektrikli mobiliteyi tek bir bütünleşik ekosistemde buluşturarak enerjide kendine yeten yaşam alanlarını yaygınlaştırmak.",
+    "visionText": "Güneş enerjisi, enerji depolama, ısı pompaları ve elektrikli mobilite çözümlerini tek bir ekosistemde buluşturarak; enerji üreten, depolayan ve yöneten yaşam alanlarının yaygınlaşmasına öncülük etmek.",
     "valuesTitle": "Değerlerimiz",
     "values": {
       "discipline": {
-        "term": "Mühendislik disiplini",
-        "desc": "Her proje ölçülür, simüle edilir, kanıta dayanır."
+        "term": "Mühendislik Disiplini",
+        "desc": "Her proje veriyle değerlendirilir, analiz edilir ve teknik doğrulamaya dayanır."
       },
       "transparency": {
         "term": "Şeffaflık",
-        "desc": "Net teklif, gerçekçi süre, sürpriz olmayan süreç."
+        "desc": "Net teklifler, gerçekçi süreç planları ve açık iletişim."
       },
       "oneHand": {
-        "term": "Tek elden çözüm",
-        "desc": "Keşiften bakıma kadar tüm adımlar aynı ekipte."
+        "term": "Tek Elden Çözüm",
+        "desc": "Keşiften projelendirmeye, uygulamadan teknik desteğe kadar tüm süreçlerin tek muhatapla yönetilmesi."
       },
       "promise": {
-        "term": "Sözünü tutmak",
-        "desc": "Verdiğimiz taahhüdün arkasında dururuz."
+        "term": "Taahhüde Bağlılık",
+        "desc": "Verdiğimiz sözlerin ve üstlendiğimiz sorumlulukların arkasında dururuz."
       },
       "longTerm": {
-        "term": "Uzun vadeli ortaklık",
-        "desc": "Kurulumla değil, 25+ yıllık üretim yolculuğunuzla ilgileniyoruz."
+        "term": "Uzun Vadeli İş Ortaklığı",
+        "desc": "Kurulumla sınırlı kalmaz, sistemlerinizin uzun yıllar verimli çalışmasına destek oluruz."
       }
     },
     "sealText": "GÜNEŞ · DEPOLAMA · ISI POMPASI · EV ŞARJ · MİNADA · ",

@@ -70,6 +70,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t.rich("title", { em: (chunks) => <em>{chunks}</em> })}
             </h1>
             <p className={styles.lead}>{t("intro")}</p>
+            <p className={styles.lead}>{t("intro2")}</p>
           </div>
         </div>
       </section>
@@ -102,6 +103,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <h2 className={styles.h2}>{t("whereTitle")}</h2>
           <p>{t("whereText")}</p>
           <p className={styles.cities}>{t("cities")}</p>
+          <p className={styles.whereNote}>{t("whereNote")}</p>
         </div>
       </Section>
 

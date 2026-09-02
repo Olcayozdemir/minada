@@ -1082,10 +1082,11 @@
     "metaDesc": "MİNADA Enerji: your integrated energy partner with 15+ years in the field, designing, installing and operating solar, energy storage, heat pump and EV charging solutions from one hand.",
     "eyebrow": "About us",
     "title": "A trusted <em>harbor</em> for your energy transition",
-    "intro": "MİNADA Enerji was founded to turn electricity from a line on your bill into an independent power your own roof produces. With a team focused on energy engineering and more than 15 years of industry experience, we design, install and operate solar, energy storage, heat pump and EV charging solutions for homes and businesses, all from one hand. Our goal is clear: to turn the place you live into a harbor that powers itself.",
+    "intro": "MİNADA Enerji sees electricity not merely as something consumed, but as an asset that can be managed and made to produce value. With more than 15 years in the sector we bring solar, energy storage, heat pumps and electric vehicle charging under one roof, and run the whole process from design through commissioning.",
+    "intro2": "Our aim is to turn homes and businesses into buildings that generate their own energy, more efficient and more independent.",
     "storyTitle": "Our story",
-    "storyP1": "MİNADA is the product of an engineering mindset that grew up in the field. For more than 15 years our founding team has worked on renewable energy projects at every stage, from design to commissioning. We brought that experience under one roof: today, as MİNADA Enerji, we are an integrated energy partner delivering energy storage, heat pumps and EV charging alongside solar, all with the same team.",
-    "storyP2": "For us, every project is an engineering commitment, not a sales line. That is why we move through six transparent steps from survey to operation, so you know in advance what happens at every stage. Our offer is clear, our timelines are realistic, and our recommendations are tailored to your consumption.",
+    "storyP1": "MİNADA grew out of engineering experience earned on site. Our founding team has spent more than 15 years working on renewable energy projects through design, installation and commissioning. We brought that experience together under one roof to build MİNADA Enerji, offering solar, energy storage, heat pumps and EV charging as one integrated approach.",
+    "storyP2": "For us a project is not only an investment but an engineering responsibility. That is why we run everything from survey to commissioning transparently and to a plan, so our clients can follow each stage clearly. Through open communication, realistic planning and solutions built for the need, we set out to form long-term partnerships based on trust.",
     "storyImageAlt": "Two engineers surveying a rooftop solar plant",
     "statsTitle": "MİNADA in numbers",
     "stats": {
@@ -1111,34 +1112,35 @@
         "sub": "Solar · Storage · Heat pump · EV charging"
       }
     },
-    "whereTitle": "Where do we operate?",
-    "whereText": "Our headquarters is in Malatya, and we are also active across the Sivas, Elazığ, Erzincan and Antalya regions. Beyond these, we take on projects all over Türkiye and bring our team to wherever your project is.",
+    "whereTitle": "Where We Work",
+    "whereText": "Our head office is in Malatya, and our operations network covers Sivas, Elazığ, Erzincan and Antalya. Alongside that regional strength, we deliver solar, energy storage, heat pump and EV charging projects across Türkiye.",
     "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
+    "whereNote": "We work project by project across Türkiye.",
     "missionTitle": "Our mission",
-    "missionText": "To make energy independence achievable for every customer, from homes to businesses, through engineering integrity, transparency and single-point service. To be the harbor you can drop anchor in with confidence at every step of your energy journey.",
+    "missionText": "To make energy independence reachable for every client, from homes to businesses, through engineering discipline, transparent process management and solutions delivered from a single source. To be the partner turned to with confidence at every stage of the energy transition.",
     "visionTitle": "Our vision",
-    "visionText": "To be the most trusted solution partner of Türkiye's energy transition at home and business scale; to bring solar, storage, heating and electric mobility together in one integrated ecosystem and make energy-self-sufficient living spaces the norm.",
+    "visionText": "To bring solar, energy storage, heat pumps and electric mobility together in a single ecosystem, and to lead the spread of living and working spaces that generate, store and manage their own energy.",
     "valuesTitle": "Our values",
     "values": {
       "discipline": {
-        "term": "Engineering discipline",
-        "desc": "Every project is measured, simulated and grounded in evidence."
+        "term": "Engineering Discipline",
+        "desc": "Every project is assessed against data, analysed, and grounded in technical verification."
       },
       "transparency": {
         "term": "Transparency",
-        "desc": "A clear offer, realistic timelines, a process without surprises."
+        "desc": "Clear quotes, realistic schedules and open communication."
       },
       "oneHand": {
-        "term": "One hand, end to end",
-        "desc": "Every step from survey to maintenance stays with the same team."
+        "term": "A Single Point of Contact",
+        "desc": "Survey, design, installation and technical support all run through one team."
       },
       "promise": {
-        "term": "Keeping our word",
-        "desc": "We stand behind every commitment we make."
+        "term": "Standing Behind What We Promise",
+        "desc": "We stand behind the commitments we give and the responsibilities we take on."
       },
       "longTerm": {
-        "term": "Long-term partnership",
-        "desc": "We care about your 25+ years of production, not just the installation."
+        "term": "A Long-Term Partnership",
+        "desc": "We do not stop at installation; we support your systems in running efficiently for years."
       }
     },
     "sealText": "SOLAR · STORAGE · HEAT PUMP · EV CHARGING · MİNADA · ",

@@ -244,6 +244,15 @@
   letter-spacing: 0.01em;
 }
 
+/* Şehir şeridinin altındaki kayıt: liste kapsamı sınırlamasın diye italik ve
+   bir adım sessiz — bölgeler kalın, ülke geneli notu onun dipnotu. */
+.whereNote {
+  margin-top: var(--space-2);
+  font-style: italic;
+  font-size: 0.9rem !important;
+  color: var(--ink-2) !important;
+}
+
 /* ── Mission / Vision ────────────────────────────────────────────────────── */
 
 /* Evening, and the house is still lit: the promise the two statements below
