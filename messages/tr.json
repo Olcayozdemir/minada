@@ -164,30 +164,6 @@
       },
       "cta": "Ürünleri incele"
     },
-    "testimonials": {
-      "eyebrow": "Referanslar",
-      "title": "Evini MİNADA'ya emanet edenler",
-      "segHome": "Ev",
-      "segBusiness": "İşletme",
-      "t1": {
-        "segment": "home",
-        "quote": "Keşiften kuruluma kadar her şey şeffaftı. Faturamız gerçekten neredeyse sıfırlandı.",
-        "name": "Ayşe K.",
-        "meta": "Villa sahibi · İzmir"
-      },
-      "t2": {
-        "segment": "home",
-        "quote": "Ekip çok profesyoneldi; kurulum söz verilen sürede, sorunsuz tamamlandı.",
-        "name": "Mehmet D.",
-        "meta": "Müstakil ev · Antalya"
-      },
-      "t3": {
-        "segment": "home",
-        "quote": "Enerji depolamayla birlikte gece de kendi enerjimizi kullanıyoruz. Çok memnunuz.",
-        "name": "Zeynep A.",
-        "meta": "Villa sahibi · Muğla"
-      }
-    },
     "faq": {
       "eyebrow": "SSS",
       "title": "Sık sorulan sorular",
@@ -259,6 +235,29 @@
         "desc": "Ev, işletme ve filo kullanımları için AC ve DC elektrikli araç şarj çözümleri.",
         "chips": "Ev · İşyeri · Filo"
       }
+    },
+    "proof": {
+      "title": "Sahadan kareler, müşterilerimizden sözler",
+      "intro": "Yukarıdaki her fotoğraf bizim kurduğumuz bir santral. Aşağıdaki her söz, adıyla paylaşmayı kabul eden bir müşterimizin.",
+      "all": "Tüm referanslar",
+      "list": "Referans projeler",
+      "t1": {
+        "quote": "Keşif talebimizden birkaç saat sonra ziyaret ettiler ve birçok soru işaretini giderdiler. Okan Bey'in mühendis olması ve konuyu bize teknik olarak detaylarıyla anlatması içimizi rahatlattı. Şeffaf bir şekilde işin başında anlattıkları her şeyi süreç içinde yaşayarak gördük. Artık elektrik kesintilerinden etkilenmiyoruz. Teşekkürler MİNADA Ailesi.",
+        "name": "Emre E."
+      },
+      "t2": {
+        "quote": "Bölgemizde çok fazla elektrik kesintisi oluyordu. İhtiyacımıza uygun kapasiteleri belirlediler ve söz verdikleri süreler içerisinde kurulumu gerçekleştirdiler. Sistemi kullanma alışkanlığı edinene kadar geç saatlerde de olsa her zaman destek oldular. Okan Bey ve ekibine teşekkür ederiz.",
+        "name": "Kenan Ş."
+      },
+      "t3": {
+        "quote": "Almanya'da kullandığımız ürünlerle aynı ürünleri tedarik ederek süreci yönettiler. Birçok yerle görüşmemizde daha standart ve kalitesi tartışılır ürünlerle teklif aldık. MİNADA Enerji, kaliteli ürünlerle ihtiyacımıza uygun sistemi tasarladı. Özellikle keşif sırasında gösterdikleri hassasiyet, kurulum sürecinde çok temiz çalışmaları ve öğle aralarında çalışmaya başlamak için evde uyuyan bebeğin uyanmasını beklemeleri bize ne kadar doğru bir tercihte bulunduğumuzu gösterdi.",
+        "name": "Avades A."
+      },
+      "t4": {
+        "quote": "MİNADA Enerji ile yarım kalmış GES işimizin tamamlanması için tanıştık. Yapılan uygulamayı gelip çok detaylı bir şekilde incelediler. Yanlış montaj yapılan ürünlerin tamamını söküp, projeyi yeniden tasarlayıp, eksik malzemeleri tamamladıktan sonra kurulum yaptılar. İşin başında kayda değer olmayan bir fiyat farkı nedeniyle tercih etmediğimiz için pişman olsak da işi kendileriyle tamamlamış olmaktan ötürü mutluyuz.",
+        "name": "Berna B."
+      },
+      "quotesLabel": "Müşteri yorumları"
     }
   },
   "Segments": {

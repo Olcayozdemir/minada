@@ -8,7 +8,7 @@ import { StatsBand } from "@/components/marketing/StatsBand";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { ApplicationAreas } from "@/components/marketing/ApplicationAreas";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
-// import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — aşağıdaki nota bak
+import { Proof } from "@/components/marketing/Proof";
 import { FaqTeaser } from "@/components/marketing/FaqTeaser";
 import { FinalCta } from "@/components/marketing/FinalCta";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -65,10 +65,11 @@ export default async function HomePage({
         <CalculatorTeaser />
         {/* Ürünler teaser'ı ana sayfadan kaldırıldı (Olcay, 2026-08-06);
             /urunler sayfası yaşıyor. */}
-        {/* Referanslar ("Evini MİNADA'ya emanet edenler") — gerçek müşteri
-            referansları toplanana kadar askıda (Olcay, 2026-07-11). Geri açmak
-            için: yorumdan çıkar + üstteki Testimonials importunu geri al. */}
-        {/* <Testimonials /> */}
+        {/* Sayfanın geri kalanı render; bu bölüm gerçek. Referans fotoğrafları
+            /referanslar'daki Sanity kayıtlarından gelir, yorumlar Okan'ın
+            2026-09-02'de Notion'a yazdığı dört müşteriden. Uydurma üç yorum
+            2026-07-11'de kaldırılmıştı; bunlar isimli ve gerçek. */}
+        <Proof locale={locale} />
         <FinalCta />
         <FaqTeaser />
       </EnergyLine>

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/Button";
 import { CalculatorTeaser } from "@/components/marketing/CalculatorTeaser";
 import { StepsShowcase } from "@/components/marketing/StepsShowcase";
 import { CrossSell } from "@/components/marketing/CrossSell";
-// import { Testimonials } from "@/components/marketing/Testimonials"; // askıda — gerçek referanslar gelince
 import { buildAlternates } from "@/lib/seo";
 import styles from "../segment.module.scss";
 
@@ -93,7 +92,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       <CrossSell />
 
       <CalculatorTeaser />
-      {/* <Testimonials /> — askıda, gerçek referanslarla geri gelecek. */}
+      {/* Müşteri yorumları ana sayfadaki Proof bölümünde (2026-09-02); burada
+          tekrar etmiyor. */}
 
       <Section tone="dark">
         <div className={`${styles.ctaRow} ${styles.ctaRowDark}`}>

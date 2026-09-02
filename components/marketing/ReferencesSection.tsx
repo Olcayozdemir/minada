@@ -7,7 +7,8 @@ import { urlFor } from "@/sanity/image";
 import styles from "./ReferencesSection.module.scss";
 
 // MW-scale systems read as "1,18 MW", smaller ones stay in kWp ("941,76 kWp").
-function capacityLabel(kw: number, locale: string): string {
+// Shared with the home page strip (ReferencesStrip) so both read the same.
+export function capacityLabel(kw: number, locale: string): string {
   const opts = { maximumFractionDigits: 2 };
   return kw >= 1000
     ? `${(kw / 1000).toLocaleString(locale, opts)} MW`

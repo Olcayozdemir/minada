@@ -164,30 +164,6 @@
       },
       "cta": "Explore products"
     },
-    "testimonials": {
-      "eyebrow": "Projects",
-      "title": "Homeowners who chose MİNADA",
-      "segHome": "Home",
-      "segBusiness": "Business",
-      "t1": {
-        "segment": "home",
-        "quote": "Everything was transparent from survey to install. Our bill really did drop to almost zero.",
-        "name": "Ayşe K.",
-        "meta": "Villa owner · İzmir"
-      },
-      "t2": {
-        "segment": "home",
-        "quote": "The team was very professional; installation finished on time, without a hitch.",
-        "name": "Mehmet D.",
-        "meta": "Detached home · Antalya"
-      },
-      "t3": {
-        "segment": "home",
-        "quote": "With energy storage we use our own energy at night too. We're delighted.",
-        "name": "Zeynep A.",
-        "meta": "Villa owner · Muğla"
-      }
-    },
     "faq": {
       "eyebrow": "FAQ",
       "title": "Frequently asked questions",
@@ -259,6 +235,29 @@
         "desc": "AC and DC electric vehicle charging for homes, businesses and fleets.",
         "chips": "Home · Workplace · Fleet"
       }
+    },
+    "proof": {
+      "title": "Photos from site, words from customers",
+      "intro": "Every photo above is a plant we built. Every quote below is from a customer who agreed to be named.",
+      "all": "All projects",
+      "list": "Reference projects",
+      "t1": {
+        "quote": "They visited a few hours after our survey request and cleared up a lot of question marks. Okan being an engineer, and explaining the technical details to us properly, put our minds at ease. Everything they laid out transparently at the start, we then saw happen during the process. Power cuts no longer affect us. Thank you, MİNADA family.",
+        "name": "Emre E."
+      },
+      "t2": {
+        "quote": "We were getting a lot of power cuts in our area. They sized the system to what we needed and completed the installation within the time they promised. Until we got used to running the system they were always there to help, even late in the evening. Our thanks to Okan and the team.",
+        "name": "Kenan Ş."
+      },
+      "t3": {
+        "quote": "They sourced the very same products we use in Germany and managed the whole process. Elsewhere we were quoted more standard products of questionable quality. MİNADA Enerji designed a system to our needs with quality products. The care they took during the survey, how cleanly they worked during installation, and the fact that they waited for the baby sleeping in the house to wake before starting again after lunch showed us how right our choice was.",
+        "name": "Avades A."
+      },
+      "t4": {
+        "quote": "We met MİNADA Enerji when we needed a half-finished solar job completed. They came and inspected the existing work in great detail. They removed every wrongly mounted component, redesigned the project, made up the missing materials and then installed. We regret not choosing them at the start over a price difference that was hardly worth mentioning, but we are glad to have finished the job with them.",
+        "name": "Berna B."
+      },
+      "quotesLabel": "Customer quotes"
     }
   },
   "Segments": {

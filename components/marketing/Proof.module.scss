@@ -1,0 +1,753 @@
+@use "../../styles/mixins" as *;
+
+@include edge-beam-keyframes;
+
+/* Site photographs, each mounted like a print, pinned in staggered columns
+   that gather around the heading; four customer quotes under them. The band
+   runs close to the full width of the page (Olcay, 2026-09-02). Which
+   photograph goes where is in proofColumns.ts; this file places the columns
+   and the notch the heading sits in.
+
+   --cw: one column. --s: scale for the tile heights the columns carry
+   inline. --container-wide is redefined here rather than in the tokens:
+   Section's inner reads it, and this is the one band on the page that wants
+   to be nearly edge to edge. */
+
+.section {
+  --cw: 220px;
+  --s: 1;
+  --container-wide: min(1800px, 94vw);
+}
+
+/* — The mosaic —
+
+   Two rows and eight columns. Every column starts in the first row; the
+   four in the middle stop there, and the four at the ends carry on into the
+   second, down either side of the heading. That is what puts the words in a
+   notch with photographs around them rather than under a band of them. */
+.mosaic {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, var(--cw)));
+  grid-template-rows: auto auto;
+  justify-content: center;
+  column-gap: clamp(12px, 1.1vw, 18px);
+}
+
+.columns {
+  @include list-reset;
+  display: contents;
+}
+
+.column {
+  grid-row: 1;
+  grid-column: var(--c);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: calc(var(--top) * var(--s));
+  min-width: 0;
+}
+
+.columnDeep {
+  grid-row: 1 / span 2;
+}
+
+/* — Tile — */
+
+.tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(var(--h) * var(--s));
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
+
+  &:focus-visible {
+    outline: 2px solid var(--gold-600);
+    outline-offset: 3px;
+  }
+}
+
+/* Each photograph is mounted like a print: a white mat, a gold hairline
+   round it, and a soft drop. */
+.frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid rgba(242, 168, 44, 0.45);
+  box-shadow: 0 14px 30px -20px rgba(18, 36, 63, 0.4);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--sand);
+}
+
+/* The mat's gold hairline comes up to full and lights: the same gesture
+   the rest of the site's cards make on hover. */
+.pressed .frame {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 26px -8px rgba(242, 168, 44, 0.55),
+    0 14px 30px -20px rgba(18, 36, 63, 0.4);
+}
+
+@media (hover: hover) {
+  .tile:hover .frame {
+    border-color: var(--gold);
+    box-shadow:
+      0 0 26px -8px rgba(242, 168, 44, 0.55),
+      0 14px 30px -20px rgba(18, 36, 63, 0.4);
+  }
+}
+
+/* — Readout —
+
+   Not a tooltip: a small instrument panel, the way a plant's monitoring
+   screen names a string, in the site's own glass with the gold light
+   travelling its border, the same treatment as the hero's calculator card
+   and the social tab. A hairline of light rises from the photo's top edge,
+   the panel powers on with one short flicker, and its three lines write
+   themselves in, top to bottom, in steps. */
+.lead {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 1px;
+  height: 26px;
+  margin-left: -0.5px;
+  background: linear-gradient(to top, var(--gold-300), rgba(255, 194, 77, 0.15));
+  box-shadow: 0 0 8px rgba(255, 194, 77, 0.6);
+  transform-origin: bottom;
+  transform: scaleY(0);
+  opacity: 0;
+  transition:
+    transform 0.16s ease-out,
+    opacity 0.1s ease-out;
+  pointer-events: none;
+
+  /* The contact point on the photo's edge. */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    border-radius: 50%;
+    background: var(--gold-300);
+    box-shadow: 0 0 10px 2px rgba(255, 194, 77, 0.65);
+  }
+}
+
+/* Solid navy, not glass: the site's glass is built for dark grounds and
+   over photographs, and on this light band it washed the white text out
+   until the readout could barely be read (Olcay, 2026-09-02). White on
+   --green-850 measures 14.5:1, and the gold lines clear AA on it too. */
+.card {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 26px);
+  width: max-content;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 11px 14px 12px;
+  border-radius: var(--r-md);
+  background: var(--green-850);
+  border: 1px solid rgba(255, 194, 77, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 18px 40px -18px rgba(8, 26, 48, 0.7);
+  color: var(--on-dark);
+  text-align: left;
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.15s ease-out;
+  pointer-events: none;
+  z-index: 3;
+
+  /* Gold light travelling around the border. */
+  &::after {
+    @include edge-beam(3.2s, 1.4px);
+  }
+}
+
+/* Each line is revealed left to right in steps, one after the other. */
+.line {
+  display: block;
+  clip-path: inset(0 100% 0 0);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-300);
+  box-shadow: 0 0 8px 1px rgba(255, 194, 77, 0.8);
+  animation: dot-pulse 1.6s linear infinite;
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.cardMeta {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold-300);
+}
+
+/* A small triangle pointing down at the photograph, so the readout reads as
+   attached to it and not as a card floating loose above the mosaic. */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 9px;
+  height: 9px;
+  margin-left: -4.5px;
+  background: var(--green-850);
+  border-right: 1px solid rgba(255, 194, 77, 0.35);
+  border-bottom: 1px solid rgba(255, 194, 77, 0.35);
+  transform: rotate(45deg);
+}
+
+.cardKind {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* --on-dark-2 measures 6.4:1 on this navy; --on-dark-3 would be 3.9. */
+  color: var(--on-dark-2);
+}
+
+/* Powering on: hover, press, or keyboard focus. */
+.pressed .lead,
+.tile:focus-visible .lead {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.pressed .card,
+.tile:focus-visible .card {
+  animation: hud-on 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both;
+}
+
+.pressed .line,
+.tile:focus-visible .line {
+  animation: line-write 0.26s steps(10) both;
+}
+
+@media (hover: hover) {
+  .tile:hover .lead {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .tile:hover .card {
+    animation: hud-on 0.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s both;
+  }
+
+  .tile:hover .line {
+    animation: line-write 0.26s steps(10) both;
+  }
+}
+
+.line:nth-child(1) {
+  animation-delay: 0.28s;
+}
+
+.line:nth-child(2) {
+  animation-delay: 0.38s;
+}
+
+.line:nth-child(3) {
+  animation-delay: 0.48s;
+}
+
+@keyframes hud-on {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px);
+  }
+
+  35% {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  65%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes line-write {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Reduced motion: nothing flickers, writes or pulses; the readout simply
+   appears. */
+@media (prefers-reduced-motion: reduce) {
+  .lead {
+    transition: none;
+    transform: scaleY(1);
+  }
+
+  .line {
+    clip-path: none;
+  }
+
+  .dot {
+    animation: none;
+  }
+
+  .pressed .card,
+  .tile:focus-visible .card,
+  .tile:hover .card {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .pressed .line,
+  .tile:focus-visible .line,
+  .tile:hover .line {
+    animation: none;
+  }
+}
+
+/* — Heading —
+
+   In the notch: the second row, under the four middle columns and between
+   the two deep pairs at the ends. */
+.headline {
+  grid-row: 2;
+  grid-column: 3 / 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: clamp(26px, 2.8vw, 40px) clamp(8px, 1.5vw, 20px) 0;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 19ch;
+  text-wrap: balance;
+}
+
+.intro {
+  font-size: clamp(14.5px, 1.1vw, 16px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 48ch;
+  text-wrap: pretty;
+}
+
+.all {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-600);
+  white-space: nowrap;
+  transition: gap 0.2s ease;
+
+  &:hover {
+    gap: 11px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -11px -12px;
+  }
+}
+
+/* — Quotes —
+
+   One quote at a time on a wide card, with oversized quotation marks
+   breaking out of its top-left and bottom-right corners, a monogram and the
+   name at its foot, and pills above it that say where you are (Olcay's
+   reference, 2026-09-02). The strip itself is a native scroll-snap row, so
+   it swipes without script; ProofQuotes.tsx only syncs the pills. */
+
+.quotes {
+  position: relative;
+  margin-top: clamp(30px, 3.4vw, 48px);
+}
+
+.pills {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* A pill, not a dot: the one you are on is long and gold, the rest are
+   short and quiet, so the row reads as a position in a sequence. */
+.pill {
+  position: relative;
+  width: 22px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: rgba(18, 36, 63, 0.16);
+  cursor: pointer;
+  transition:
+    width 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.3s ease;
+
+  /* A 8px bar is not a finger target; grow the hit area, not the bar. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -14px -6px;
+  }
+
+  &:hover {
+    background: rgba(242, 168, 44, 0.55);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--gold-600);
+    outline-offset: 4px;
+  }
+}
+
+.pillOn {
+  width: 44px;
+  background: var(--gold);
+}
+
+.track {
+  --qgap: clamp(16px, 1.8vw, 26px);
+  @include list-reset;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--qgap);
+  align-items: stretch;
+  /* A sideways strip only. Setting one axis to auto makes the other auto
+     as well, and the quotation marks hanging off the cards then gave the
+     strip a vertical scrollbar of its own; the marks live in this padding
+     instead. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 22px 42px;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--gold-600);
+    outline-offset: 2px;
+    border-radius: var(--r-lg);
+  }
+}
+
+/* Two whole cards across, one on a phone. A half card at the edge read as
+   a slice rather than as a promise of more (Olcay, 2026-09-02); the pills
+   above already say how many there are. */
+.slide {
+  display: flex;
+  flex: 0 0 calc((100% - var(--qgap)) / 2);
+  scroll-snap-align: start;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: clamp(22px, 1.8vw, 28px) clamp(20px, 1.8vw, 28px);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  border: 1px solid rgba(242, 168, 44, 0.35);
+  box-shadow: var(--shadow-card-light);
+}
+
+/* The marks: set in the display face at a size that reads as ornament, in a
+   gold light enough to sit under the text without competing. They hang off
+   the card's two opposite corners, which is what gives the card its lift. */
+.quote::before,
+.quote::after {
+  position: absolute;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(46px, 3.6vw, 62px);
+  font-weight: 700;
+  line-height: 0.75;
+  color: rgba(242, 168, 44, 0.5);
+  pointer-events: none;
+}
+
+.quote::before {
+  content: "\201C";
+  top: -16px;
+  left: clamp(10px, 1.2vw, 20px);
+}
+
+.quote::after {
+  content: "\201D";
+  right: clamp(10px, 1.2vw, 20px);
+  bottom: -28px;
+}
+
+.quoteText {
+  flex: 1;
+  margin: 0;
+  font-size: clamp(15px, 1vw, 16px);
+  line-height: 1.58;
+  color: var(--ink);
+  text-wrap: pretty;
+
+  p {
+    margin: 0;
+  }
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: clamp(16px, 1.4vw, 22px);
+}
+
+/* No customer photographs, so the initial stands in for one: a plain disc
+   rather than a stock face, which would be a lie about who wrote this. */
+.monogram {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(242, 168, 44, 0.14);
+  border: 1px solid rgba(242, 168, 44, 0.45);
+  font-family: var(--font-display), sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--gold-600);
+}
+
+.personName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* — Tablets and phones —
+
+   Eight columns will not fit. Below 1100px the mosaic drops to four columns
+   and the heading takes the full row under them; below 640px, to two. The
+   readout cannot float above a photograph in the top row without leaving
+   the section, so it lies over the photo's lower edge instead. */
+@include bp-down(1300px) {
+  .section {
+    --cw: 180px;
+    --s: 0.86;
+  }
+}
+
+@include bp-down(1100px) {
+  .section {
+    --cw: 1fr;
+    --s: 0.8;
+  }
+
+  .mosaic {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+  }
+
+  .column {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .columnDeep {
+    grid-row: auto;
+  }
+
+  .headline {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding-top: clamp(24px, 3vw, 36px);
+  }
+}
+
+/* — Phones —
+
+   No grid at all: the photographs become a two-row strip that runs off the
+   right edge and is swiped (Olcay, 2026-09-02). The columns dissolve
+   (display: contents), so all fourteen photographs flow into the two rows
+   themselves, and the heading sits under the strip. */
+@include bp-down(820px) {
+  .section {
+    --s: 1;
+  }
+
+  .mosaic {
+    display: block;
+  }
+
+  .columns {
+    --sgap: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 140px);
+    /* Exactly two per screen, so a photograph is never sliced by the
+       viewport's edge (Olcay, 2026-09-02). */
+    grid-auto-columns: calc((100% - var(--sgap)) / 2);
+    gap: var(--sgap);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--space-6));
+    padding-inline: var(--space-6);
+    scroll-padding-inline: var(--space-6);
+    padding-block: 4px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .column {
+    display: contents;
+  }
+
+  .tile {
+    /* The row sets the height here, not the column layout's slot. */
+    height: 100%;
+    scroll-snap-align: start;
+  }
+
+  .headline {
+    padding: 26px 0 0;
+  }
+}
+
+@include bp-down(640px) {
+  .columns {
+    grid-template-rows: repeat(2, 120px);
+    margin-inline: calc(-1 * var(--space-4));
+    padding-inline: var(--space-4);
+    scroll-padding-inline: var(--space-4);
+  }
+
+  .lead {
+    display: none;
+  }
+
+  .card {
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    width: auto;
+    max-width: none;
+    padding: 8px 10px 9px;
+    transform: translate(0, 4px);
+  }
+
+  .pressed .card {
+    transform: none;
+  }
+
+  .slide {
+    flex-basis: 100%;
+  }
+
+  .quote {
+    padding: 20px 18px;
+  }
+
+  @keyframes hud-on {
+    0% {
+      opacity: 0;
+      transform: translate(0, 4px);
+    }
+
+    35% {
+      opacity: 0.9;
+      transform: translate(0, 0);
+    }
+
+    50% {
+      opacity: 0.4;
+    }
+
+    65%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
