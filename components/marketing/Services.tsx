@@ -14,11 +14,21 @@ import styles from "./Services.module.scss";
 
 /** A small optimised variant of a diorama, for use as a CSS mask. */
 function maskSrc(src: string): string {
-  const { props } = getImageProps({ src, alt: "", width: 320, height: 239, quality: 45 });
+  const { props } = getImageProps({
+    src,
+    alt: "",
+    width: 320,
+    height: 239,
+    quality: 45,
+  });
   return props.src;
 }
 
-export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }) {
+export async function Services({
+  headingAs = "h2",
+}: {
+  headingAs?: "h1" | "h2";
+}) {
   const t = await getTranslations("Home.gateway");
 
   return (
@@ -32,50 +42,58 @@ export async function Services({ headingAs = "h2" }: { headingAs?: "h1" | "h2" }
           intro={t("intro")}
         />
       </div>
-      <ul className={styles.grid}>
-        {BUSINESS_LINES.map(({ id, href, art }) => (
-          <li key={id}>
-            <Link href={href} className={styles.card}>
-              <span className={styles.stage} aria-hidden="true">
-                {/* Named for the morph: clicking through carries this exact
+      {/* Two wrappers that are `display: contents` everywhere but a phone,
+          where they become the pinned rail: .pin is the tall block whose
+          passage through the viewport drives the rail, .viewport is what
+          sticks while it does. See the stylesheet. */}
+      <div className={styles.pin}>
+        <div className={styles.viewport}>
+          <ul className={styles.grid}>
+            {BUSINESS_LINES.map(({ id, href, art }) => (
+              <li key={id}>
+                <Link href={href} className={styles.card}>
+                  <span className={styles.stage} aria-hidden="true">
+                    {/* Named for the morph: clicking through carries this exact
                     render into the line page's own hero (see LineHero). */}
-                <ViewTransition name={lineArtName(id)} share="morph">
-                  <Image
-                    src={art}
-                    alt=""
-                    width={LINE_ART.w}
-                    height={LINE_ART.h}
-                    sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
-                    quality={90}
-                    className={styles.stageImg}
-                  />
-                </ViewTransition>
-                {/* Rake light. Masked to the render's own alpha, so on hover
+                    <ViewTransition name={lineArtName(id)} share="morph">
+                      <Image
+                        src={art}
+                        alt=""
+                        width={LINE_ART.w}
+                        height={LINE_ART.h}
+                        sizes="(max-width: 700px) 72vw, (max-width: 1100px) 30vw, 19vw"
+                        quality={90}
+                        className={styles.stageImg}
+                      />
+                    </ViewTransition>
+                    {/* Rake light. Masked to the render's own alpha, so on hover
                     the light crosses the object rather than washing the panel
                     behind it — the diorama stops being a flat PNG and becomes
                     something sitting under a lamp. The mask is a deliberately
                     small variant (a mask needs coverage, not sharpness) taken
                     through the same optimiser as the image itself. */}
-                <span
-                  className={styles.rake}
-                  style={{ ["--art" as string]: `url(${maskSrc(art)})` }}
-                />
-              </span>
-              <span className={styles.body}>
-                <span className={styles.chips}>{t(`${id}.chips`)}</span>
-                <span className={styles.cardTitle}>{t(`${id}.title`)}</span>
-                <span className={styles.cardDesc}>{t(`${id}.desc`)}</span>
-                <span className={styles.foot} aria-hidden="true">
-                  <span className={styles.rule} />
-                  <span className={styles.go}>
-                    <IconArrowRight size={16} />
+                    <span
+                      className={styles.rake}
+                      style={{ ["--art" as string]: `url(${maskSrc(art)})` }}
+                    />
                   </span>
-                </span>
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+                  <span className={styles.body}>
+                    <span className={styles.chips}>{t(`${id}.chips`)}</span>
+                    <span className={styles.cardTitle}>{t(`${id}.title`)}</span>
+                    <span className={styles.cardDesc}>{t(`${id}.desc`)}</span>
+                    <span className={styles.foot} aria-hidden="true">
+                      <span className={styles.rule} />
+                      <span className={styles.go}>
+                        <IconArrowRight size={16} />
+                      </span>
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </Section>
   );
 }

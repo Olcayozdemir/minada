@@ -4,16 +4,26 @@
    wash + dot grid over deep navy) + editorial caption; the foot rule fills
    gold and the arrow chip lights on hover. */
 
+/* One card, and the step the first one sits in from the edge. Both the
+   rail and the travel it has to make are worked out from these, so they
+   cannot drift apart. */
+.band {
+  --cw: min(66vw, 300px);
+  --rail-inset: calc(var(--space-4) * 1.5);
+}
+
 /* Phones: the band was mostly air — the global section chrome plus the
    heading's own bottom margin left a near-empty screen above the cards.
    Double class beats .section's padding (FaqTeaser pattern). */
 @include bp-down(700px) {
+  /* Asymmetric: the rail carries its own foot padding, so the band only
+     needs a hairline of air under it. */
   .band.band {
-    padding-block: var(--space-8);
+    padding-block: var(--space-8) var(--space-4);
   }
 
   .head {
-    margin-bottom: calc(var(--space-4) * -1);
+    margin-bottom: calc(var(--space-6) * -1);
   }
 }
 
@@ -27,20 +37,128 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* One under another on a phone.
+  /* Phones: a sideways rail. */
+  @include bp-down(700px) {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* A scroll container clips both axes, so the diorama's 24px breakout and
+       the card's -4px hover lift would be cut off along the top edge. Keep
+       headroom for both and take it back with the margin so nothing moves. */
+    padding-top: 30px;
+    margin-top: -30px;
+    padding-bottom: var(--space-3);
+    margin-inline: calc(var(--space-4) * -1);
+    /* First card rests a step in from the edge; scroll-padding keeps the
+       mandatory snap aligned to the same inset instead of pulling the card
+       flush (snap was eating a plain margin at load). */
+    padding-inline: var(--rail-inset) var(--space-4);
+    scroll-padding-left: var(--rail-inset);
 
-     These four were a sideways rail here, and a rail is something you can
-     flick past: whichever card happened to be showing was the only one
-     read, and the other three might as well not have shipped (Olcay,
-     2026-09-03). Down the page they cannot be skipped — reaching what
-     follows means all four have gone by — and at full width the caption on
-     each has room to be read rather than truncated.
+    > li {
+      flex: 0 0 var(--cw);
+      scroll-snap-align: start;
+    }
+  }
+}
 
-     A two-up grid holds until the cards would be too narrow for their
-     captions, which on this card is around 560px. */
-  @include bp-down(560px) {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-5);
+/* — The pinned rail —
+
+   A rail you can flick past is a rail three of whose four cards never get
+   read, and standing them down the page cost the band its shape (Olcay,
+   2026-09-03). So the page carries the rail instead: while the band is on
+   screen it holds still and the cards travel sideways, and the page goes on
+   down only once the fourth has arrived. One gesture still moves one thing;
+   it is just moving the rail, and the page it costs is exactly the width
+   the rail has left to run.
+
+   .pin is the tall block whose passage through the viewport is the
+   timeline; .viewport is what sticks while it passes; the rail itself is
+   the animated thing. Both wrappers are `display: contents` anywhere else,
+   so the desktop grid is untouched.
+
+   The band has to stop clipping for the length of this: `overflow: hidden`
+   makes it a scroll container, and a sticky element inside one resolves
+   against that container rather than the viewport, so it never sticks
+   (`clip` behaves the same way here). Nothing bleeds past the band in this
+   branch — the rail keeps to the container and .viewport does its own
+   sideways clipping — so there is nothing left for the band to cut.
+
+   Browsers without a view timeline, and readers who asked for less motion,
+   keep the plain swipeable rail above: the same markup, minus the pinning. */
+.pin,
+.viewport {
+  display: contents;
+}
+
+@include bp-down(700px) {
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .band.band {
+        overflow: visible;
+      }
+
+      /* The shared section reveal leaves an identity matrix on the inner
+         wrapper for good, and a transformed ancestor is the other thing
+         that stops a sticky child resolving against the viewport. The band
+         gives up its entrance for the length of this branch; the cards
+         arrive by travelling instead. */
+      .band > :global([data-reveal]) {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+
+      .pin {
+        /* What the rail still has to travel once it is on screen, and so
+           how much page the band is worth. The 48px is the container's own
+           two insets, which the rail now sits inside. max() keeps it at
+           zero on a screen already wide enough to hold the whole rail. */
+        --rail-w: calc(4 * var(--cw) + 3 * var(--space-4));
+        --travel: max(0px, calc(var(--rail-w) - 100vw + 48px));
+
+        display: block;
+        view-timeline-name: --rail;
+      }
+
+      /* The travel has to be content, not padding: a sticky child is
+         constrained to its containing block's content box, and padding
+         sits outside it, so a padded block gives the rail nowhere to go. */
+      .pin::after {
+        content: "";
+        display: block;
+        height: var(--travel);
+      }
+
+      .viewport {
+        display: block;
+        position: sticky;
+        /* Clear of the fixed header. */
+        top: 96px;
+        /* Sideways only: the diorama breaks out above each card and that
+           has to stay visible. */
+        overflow-x: clip;
+        overflow-y: visible;
+      }
+
+      .grid {
+        /* The page is the scroll now. */
+        overflow-x: visible;
+        scroll-snap-type: none;
+        margin-inline: 0;
+        padding-inline: 0;
+        padding-bottom: 0;
+        animation: rail-x linear both;
+        animation-timeline: --rail;
+        animation-range: contain 0% contain 100%;
+      }
+
+      @keyframes rail-x {
+        to {
+          transform: translateX(calc(-1 * var(--travel)));
+        }
+      }
+    }
   }
 }
 
