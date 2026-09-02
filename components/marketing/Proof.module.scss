@@ -3,7 +3,7 @@
 @include edge-beam-keyframes;
 
 /* Six site photographs on an even grid, three across, and four customer
-   quotes under them; the band runs close to the full width of the page.
+   quotes under them.
 
    It began as a staggered mosaic and did not hold: at that size fourteen
    drone frames of roofs read as one grey field, and columns of uneven
@@ -11,13 +11,9 @@
    order is the design now, and the photographs are large enough to be
    looked at.
 
-   --container-wide is redefined here rather than in the tokens: Section's
-   inner reads it, and this is the one band on the page that wants to be
-   nearly edge to edge. */
-
-.section {
-  --container-wide: min(1800px, 94vw);
-}
+   The band sat on its own near-full width while it was a mosaic, which
+   needed the room; on an even grid it keeps to the page's own container
+   like every other section. */
 
 /* The heading and the way through to the rest of the work, on one line,
    the same pair the questions band makes. */
