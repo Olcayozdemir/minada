@@ -137,6 +137,7 @@
   border: 1px solid rgba(242, 168, 44, 0.45);
   box-shadow: 0 14px 30px -20px rgba(18, 36, 63, 0.4);
   transition:
+    transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
@@ -195,21 +196,29 @@
   }
 }
 
-/* The mat's gold hairline comes up to full and lights: the same gesture
-   the rest of the site's cards make on hover. */
-.pressed .frame {
+/* The lift and the gold ring the application tiles make on the home page,
+   and the same one the solution cards make: a 2px gold ring outside the
+   mat, the light card shadow under it, and a 3px rise (Olcay, 2026-09-02).
+   The soft gold bloom is this section's own, since a photograph on a mat
+   can carry one where a flat tile cannot. */
+.pressed .frame,
+.tile:focus-visible .frame {
+  transform: translateY(-3px);
   border-color: var(--gold);
   box-shadow:
+    0 0 0 2px rgba(242, 168, 44, 0.55),
     0 0 26px -8px rgba(242, 168, 44, 0.55),
-    0 14px 30px -20px rgba(18, 36, 63, 0.4);
+    var(--shadow-card-light);
 }
 
 @media (hover: hover) {
   .tile:hover .frame {
+    transform: translateY(-3px);
     border-color: var(--gold);
     box-shadow:
+      0 0 0 2px rgba(242, 168, 44, 0.55),
       0 0 26px -8px rgba(242, 168, 44, 0.55),
-      0 14px 30px -20px rgba(18, 36, 63, 0.4);
+      var(--shadow-card-light);
   }
 }
 
@@ -458,6 +467,17 @@
 
   .pressed .photo,
   .tile:hover .photo {
+    transform: none;
+  }
+
+  /* The ring and the glow stay; only the rise goes. */
+  .frame {
+    transition-property: border-color, box-shadow;
+  }
+
+  .pressed .frame,
+  .tile:focus-visible .frame,
+  .tile:hover .frame {
     transform: none;
   }
 
