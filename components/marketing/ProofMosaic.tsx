@@ -13,10 +13,13 @@ import styles from "./Proof.module.scss";
    client component. The heading arrives as children so it stays a server
    component with its own link.
 
-   Each column carries its distance from the middle of the board as --d.
-   The stylesheet reads it twice: to settle the photographs in from the
-   centre outward when the section arrives, and to drift the outer columns
-   further than the inner ones as the page scrolls past. */
+   Each column carries two numbers for the stylesheet: --d, its place from
+   the left, which sets when its photographs settle in; and --par, its
+   distance from the middle, which sets how far it drifts as the page
+   scrolls past. The entrance sweeps rather than opening from the centre,
+   because on a board this symmetrical a centre-out order animates the
+   columns in pairs and the eye reads that as everything arriving at once
+   (Olcay, 2026-09-02). */
 export function ProofMosaic({
   columns,
   label,
@@ -34,7 +37,7 @@ export function ProofMosaic({
         {columns.map((col, i) => {
           // 3.5 at the ends of an eight-column board, 0.5 either side of
           // the middle; a half step because the board has no centre column.
-          const d = Math.abs(i - (columns.length - 1) / 2);
+          const fromCentre = Math.abs(i - (columns.length - 1) / 2);
           return (
           <li
             key={col.tiles[0].id}
@@ -43,8 +46,8 @@ export function ProofMosaic({
               {
                 "--top": `${col.top}px`,
                 "--c": i + 1,
-                "--d": d,
-                "--par": `${Math.round(d * 6)}px`,
+                "--d": i,
+                "--par": `${Math.round(fromCentre * 6)}px`,
               } as CSSProperties
             }
           >

@@ -56,18 +56,34 @@
    drift travels the columns' `translate`. The composite is translate then
    transform, so neither has to know about the other.
 
-   The entrance settles the photographs in from the middle of the board
-   outward, --d steps at a time. It is armed by Reveal.tsx marking the
-   section (data-reveal-shown), so with no script nothing is ever hidden. */
-[data-reveal-shown] .tile {
-  animation: tile-settle 0.6s cubic-bezier(0.22, 0.7, 0.3, 1) both;
-  animation-delay: calc(var(--d, 0) * 55ms);
+   The entrance sweeps the photographs in from the left of the board,
+   --d steps at a time.
+
+   The shared section-level reveal is stood down for this one section: it
+   fades the whole block in as a single object, and under that fade the
+   order of the photographs cannot be read at all. The arming moves to the
+   tiles instead, so the mechanism is unchanged (Reveal.tsx marks the
+   section, and with no script nothing is ever hidden) while the entrance
+   becomes the cascade rather than the block. */
+.section > :global([data-reveal]) {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+:global([data-reveal-armed]) .tile {
+  opacity: 0;
+}
+
+:global([data-reveal-shown]) .tile {
+  animation: tile-settle 0.62s cubic-bezier(0.22, 0.7, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0) * 90ms);
 }
 
 @keyframes tile-settle {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px) scale(0.96);
   }
 
   to {
@@ -457,7 +473,7 @@
    readout still arrives, they just stop travelling, growing and flickering
    to do it. */
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal-shown] .tile {
+  :global([data-reveal-shown]) .tile {
     animation-name: tile-appear;
   }
 
