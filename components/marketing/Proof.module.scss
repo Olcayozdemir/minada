@@ -2,69 +2,56 @@
 
 @include edge-beam-keyframes;
 
-/* Site photographs, each mounted like a print, pinned in staggered columns
-   that gather around the heading; four customer quotes under them. The band
-   runs close to the full width of the page (Olcay, 2026-09-02). Which
-   photograph goes where is in proofColumns.ts; this file places the columns
-   and the notch the heading sits in.
+/* Six site photographs on an even grid, three across, and four customer
+   quotes under them; the band runs close to the full width of the page.
 
-   --cw: one column. --s: scale for the tile heights the columns carry
-   inline. --container-wide is redefined here rather than in the tokens:
-   Section's inner reads it, and this is the one band on the page that wants
-   to be nearly edge to edge. */
+   It began as a staggered mosaic and did not hold: at that size fourteen
+   drone frames of roofs read as one grey field, and columns of uneven
+   height read as untidy rather than editorial (Olcay, 2026-09-02). The
+   order is the design now, and the photographs are large enough to be
+   looked at.
+
+   --container-wide is redefined here rather than in the tokens: Section's
+   inner reads it, and this is the one band on the page that wants to be
+   nearly edge to edge. */
 
 .section {
-  --cw: 220px;
-  --s: 1;
   --container-wide: min(1800px, 94vw);
 }
 
-/* — The mosaic —
-
-   Two rows and eight columns. Every column starts in the first row; the
-   four in the middle stop there, and the four at the ends carry on into the
-   second, down either side of the heading. That is what puts the words in a
-   notch with photographs around them rather than under a band of them. */
-.mosaic {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, var(--cw)));
-  grid-template-rows: auto auto;
-  justify-content: center;
-  column-gap: clamp(12px, 1.1vw, 18px);
-}
-
-.columns {
-  @include list-reset;
-  display: contents;
-}
-
-.column {
-  grid-row: 1;
-  grid-column: var(--c);
+/* The heading and the way through to the rest of the work, on one line,
+   the same pair the questions band makes. */
+.head {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: calc(var(--top) * var(--s));
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: clamp(28px, 3vw, 44px);
+
+  > :first-child {
+    margin-bottom: 0;
+  }
+}
+
+.grid {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.6vw, 26px);
+}
+
+.cell {
   min-width: 0;
 }
 
 /* — Motion —
 
-   Two things move here, and they are kept on different properties so they
-   can run at once: the entrance travels the tiles' `transform`, the scroll
-   drift travels the columns' `translate`. The composite is translate then
-   transform, so neither has to know about the other.
-
-   The entrance sweeps the photographs in from the left of the board,
-   --d steps at a time.
-
-   The shared section-level reveal is stood down for this one section: it
-   fades the whole block in as a single object, and under that fade the
-   order of the photographs cannot be read at all. The arming moves to the
-   tiles instead, so the mechanism is unchanged (Reveal.tsx marks the
-   section, and with no script nothing is ever hidden) while the entrance
-   becomes the cascade rather than the block. */
+   The photographs sweep in from the left when the section arrives, --d
+   steps at a time. The site's shared section-level reveal is stood down
+   here: it fades the whole block in as one object and no order inside it
+   survives that fade. The arming moves to the photographs, so the
+   mechanism is unchanged (Reveal.tsx marks the section, and with no script
+   nothing is ever hidden) while the entrance becomes the sweep. */
 .section > :global([data-reveal]) {
   opacity: 1;
   transform: none;
@@ -92,42 +79,12 @@
   }
 }
 
-/* The drift: the columns at the ends of the board travel further than the
-   ones by the heading as the section crosses the viewport, so the mosaic
-   breathes instead of sliding past as one slab. Scroll-driven, so it is
-   tied to the page rather than to a clock, and browsers without the
-   timeline simply do not run it. */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .column {
-      animation: column-drift linear both;
-      animation-timeline: view();
-      animation-range: entry 0% exit 100%;
-    }
-  }
-}
-
-@keyframes column-drift {
-  from {
-    translate: 0 var(--par, 0px);
-  }
-
-  to {
-    translate: 0 calc(-1 * var(--par, 0px));
-  }
-}
-
-.columnDeep {
-  grid-row: 1 / span 2;
-}
-
 /* — Tile — */
 
 .tile {
   position: relative;
   display: block;
   width: 100%;
-  height: calc(var(--h) * var(--s));
   padding: 0;
   border: 0;
   background: none;
@@ -146,9 +103,8 @@
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
-  padding: 6px;
-  border-radius: 12px;
+  padding: 7px;
+  border-radius: 14px;
   background: var(--surface);
   border: 1px solid rgba(242, 168, 44, 0.45);
   box-shadow: 0 14px 30px -20px rgba(18, 36, 63, 0.4);
@@ -160,13 +116,28 @@
 
 /* The window inside the mat, so a photograph can grow without spilling
    over the white border. */
+/* At rest every photograph is held to one tone: the colour pulled most of
+   the way out and a navy wash laid over it, so six drone frames of six
+   different roofs read as one set rather than as six unrelated pictures.
+   Pointing at one gives it its own colour back, which is both the tidying
+   and the reward for looking (Olcay, 2026-09-02). */
 .window {
+  position: relative;
   display: block;
   width: 100%;
-  height: 100%;
-  border-radius: 6px;
+  aspect-ratio: 8 / 5;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--sand);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 42, 74, 0.34);
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+  }
 }
 
 .photo {
@@ -174,17 +145,33 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+  filter: saturate(0.3) contrast(1.06) brightness(1.04);
+  transition:
+    transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.45s ease;
 }
 
-/* A slow push in, the length of a look rather than a click. */
-.pressed .photo {
+/* A slow push in, the length of a look rather than a click, and the
+   photograph's own colour with it. */
+.pressed .photo,
+.tile:focus-visible .photo {
   transform: scale(1.06);
+  filter: none;
+}
+
+.pressed .window::after,
+.tile:focus-visible .window::after {
+  opacity: 0;
 }
 
 @media (hover: hover) {
   .tile:hover .photo {
     transform: scale(1.06);
+    filter: none;
+  }
+
+  .tile:hover .window::after {
+    opacity: 0;
   }
 }
 
@@ -477,11 +464,13 @@
     animation-name: tile-appear;
   }
 
+  /* The colour still comes back; only the push in goes. */
   .photo {
-    transition: none;
+    transition: filter 0.45s ease;
   }
 
   .pressed .photo,
+  .tile:focus-visible .photo,
   .tile:hover .photo {
     transform: none;
   }
@@ -529,44 +518,15 @@
   }
 }
 
-/* — Heading —
-
-   In the notch: the second row, under the four middle columns and between
-   the two deep pairs at the ends. */
-.headline {
-  grid-row: 2;
-  grid-column: 3 / 7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: clamp(26px, 2.8vw, 40px) clamp(8px, 1.5vw, 20px) 0;
-  text-align: center;
-}
-
-.title {
-  font-size: clamp(26px, 2.6vw, 38px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  max-width: 19ch;
-  text-wrap: balance;
-}
-
-.intro {
-  font-size: clamp(14.5px, 1.1vw, 16px);
-  line-height: 1.55;
-  color: var(--ink-2);
-  max-width: 48ch;
-  text-wrap: pretty;
-}
+/* — The way through — */
 
 .all {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  margin-top: 4px;
+  flex-shrink: 0;
+  padding-bottom: 6px;
   font-size: 15px;
   font-weight: 700;
   color: var(--gold-600);
@@ -577,6 +537,7 @@
     gap: 11px;
   }
 
+  /* A 24px line of text is not a finger target; grow the hit area. */
   &::before {
     content: "";
     position: absolute;
@@ -597,11 +558,27 @@
   margin-top: clamp(30px, 3.4vw, 48px);
 }
 
+/* The quotes carry their own heading, the way the projects above do:
+   Okan named the two halves separately (WhatsApp, 2026-09-02). Title on
+   the left, the pills on the right, on one line. */
+.quotesHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: 10px;
+}
+
+.quotesTitle {
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
 .pills {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
-  margin-bottom: 10px;
 }
 
 /* A pill, not a dot: the one you are on is long and gold, the rest are
@@ -774,105 +751,24 @@
 
 /* — Tablets and phones —
 
-   Eight columns will not fit. Below 1100px the mosaic drops to four columns
-   and the heading takes the full row under them; below 640px, to two. The
-   readout cannot float above a photograph in the top row without leaving
-   the section, so it lies over the photo's lower edge instead. */
-@include bp-down(1300px) {
-  .section {
-    --cw: 180px;
-    --s: 0.86;
-  }
-}
-
+   Three across becomes two, then one. The readout cannot float above a
+   photograph in the top row without leaving the section, so on a phone it
+   lies over the photograph's lower edge instead, like a caption. */
 @include bp-down(1100px) {
-  .section {
-    --cw: 1fr;
-    --s: 0.8;
-  }
-
-  .mosaic {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: auto auto auto;
-  }
-
-  .column {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .columnDeep {
-    grid-row: auto;
-  }
-
-  .headline {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    padding-top: clamp(24px, 3vw, 36px);
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* — Phones —
-
-   No grid at all: the photographs become a two-row strip that runs off the
-   right edge and is swiped (Olcay, 2026-09-02). The columns dissolve
-   (display: contents), so all fourteen photographs flow into the two rows
-   themselves, and the heading sits under the strip. */
-@include bp-down(820px) {
-  .section {
-    --s: 1;
+@include bp-down(700px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
   }
 
-  .mosaic {
-    display: block;
-  }
-
-  .columns {
-    --sgap: 10px;
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(2, 140px);
-    /* Exactly two per screen, so a photograph is never sliced by the
-       viewport's edge (Olcay, 2026-09-02). */
-    grid-auto-columns: calc((100% - var(--sgap)) / 2);
-    gap: var(--sgap);
-    overflow-x: auto;
-    overflow-y: hidden;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    margin-inline: calc(-1 * var(--space-6));
-    padding-inline: var(--space-6);
-    scroll-padding-inline: var(--space-6);
-    padding-block: 4px;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .column {
-    display: contents;
-  }
-
-  .tile {
-    /* The row sets the height here, not the column layout's slot. */
-    height: 100%;
-    scroll-snap-align: start;
-  }
-
-  .headline {
-    padding: 26px 0 0;
-  }
-}
-
-@include bp-down(640px) {
-  .columns {
-    grid-template-rows: repeat(2, 120px);
-    margin-inline: calc(-1 * var(--space-4));
-    padding-inline: var(--space-4);
-    scroll-padding-inline: var(--space-4);
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .lead {
@@ -880,12 +776,12 @@
   }
 
   .card {
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
     width: auto;
     max-width: none;
-    padding: 8px 10px 9px;
+    padding: 9px 11px 10px;
     transform: translate(0, 4px);
   }
 
@@ -899,6 +795,10 @@
 
   .quote {
     padding: 20px 18px;
+  }
+
+  .quotesHead {
+    gap: var(--space-4);
   }
 
   @keyframes hud-on {

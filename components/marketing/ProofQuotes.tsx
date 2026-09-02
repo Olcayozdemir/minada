@@ -13,7 +13,7 @@ export type ProofQuote = {
   rating: number;
 };
 
-const AUTOPLAY_MS = 6500;
+const AUTOPLAY_MS = 4000;
 
 /* Two quotes at a time on wide cards, swiped or stepped with the pills
    above them. The strip is a native scroll-snap container, so a touch
@@ -23,11 +23,19 @@ const AUTOPLAY_MS = 6500;
    hydration and with the script gone: the quotes are simply a scrollable
    row.
 
-   It also advances on its own every few seconds, and stops for good the
+   It also advances on its own every four seconds, and stops for good the
    moment the reader touches it, points at it or tabs into it: an autoplay
    that keeps stealing the quote you are halfway through is worse than no
    autoplay at all. */
-export function ProofQuotes({ quotes, label }: { quotes: ProofQuote[]; label: string }) {
+export function ProofQuotes({
+  quotes,
+  title,
+  label,
+}: {
+  quotes: ProofQuote[];
+  title: string;
+  label: string;
+}) {
   const trackRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
   const [held, setHeld] = useState(false);
@@ -102,18 +110,21 @@ export function ProofQuotes({ quotes, label }: { quotes: ProofQuote[]; label: st
       onFocusCapture={() => setHeld(true)}
       onTouchStart={() => setHeld(true)}
     >
-      <div className={styles.pills} role="tablist" aria-label={label}>
-        {quotes.map((q, i) => (
-          <button
-            key={q.id}
-            type="button"
-            role="tab"
-            aria-selected={i === active}
-            aria-label={q.name}
-            className={clsx(styles.pill, i === active && styles.pillOn)}
-            onClick={() => goTo(i)}
-          />
-        ))}
+      <div className={styles.quotesHead}>
+        <h2 className={styles.quotesTitle}>{title}</h2>
+        <div className={styles.pills} role="tablist" aria-label={label}>
+          {quotes.map((q, i) => (
+            <button
+              key={q.id}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              aria-label={q.name}
+              className={clsx(styles.pill, i === active && styles.pillOn)}
+              onClick={() => goTo(i)}
+            />
+          ))}
+        </div>
       </div>
 
       <ul ref={trackRef} className={styles.track} aria-label={label} tabIndex={0}>

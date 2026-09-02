@@ -237,10 +237,11 @@
       }
     },
     "proof": {
-      "title": "Sahadan kareler, müşterilerimizden sözler",
-      "intro": "Yukarıdaki her fotoğraf bizim kurduğumuz bir santral. Aşağıdaki her söz, adıyla paylaşmayı kabul eden bir müşterimizin.",
+      "title": "Kurulumunu tamamladığımız bazı projeler",
+      "quotesTitle": "Müşteri yorumları",
       "all": "Tüm referanslar",
       "list": "Referans projeler",
+      "quotesLabel": "Müşteri yorumları",
       "t1": {
         "quote": "Keşif talebimizden birkaç saat sonra ziyaret ettiler ve birçok soru işaretini giderdiler. Okan Bey'in mühendis olması ve konuyu bize teknik olarak detaylarıyla anlatması içimizi rahatlattı. Şeffaf bir şekilde işin başında anlattıkları her şeyi süreç içinde yaşayarak gördük. Artık elektrik kesintilerinden etkilenmiyoruz. Teşekkürler MİNADA Ailesi.",
         "name": "Emre E."
@@ -256,8 +257,7 @@
       "t4": {
         "quote": "MİNADA Enerji ile yarım kalmış GES işimizin tamamlanması için tanıştık. Yapılan uygulamayı gelip çok detaylı bir şekilde incelediler. Yanlış montaj yapılan ürünlerin tamamını söküp, projeyi yeniden tasarlayıp, eksik malzemeleri tamamladıktan sonra kurulum yaptılar. İşin başında kayda değer olmayan bir fiyat farkı nedeniyle tercih etmediğimiz için pişman olsak da işi kendileriyle tamamlamış olmaktan ötürü mutluyuz.",
         "name": "Berna B."
-      },
-      "quotesLabel": "Müşteri yorumları"
+      }
     }
   },
   "Segments": {

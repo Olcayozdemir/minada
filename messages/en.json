@@ -237,10 +237,11 @@
       }
     },
     "proof": {
-      "title": "Photos from site, words from customers",
-      "intro": "Every photo above is a plant we built. Every quote below is from a customer who agreed to be named.",
+      "title": "Some of the projects we have completed",
+      "quotesTitle": "Customer reviews",
       "all": "All projects",
       "list": "Reference projects",
+      "quotesLabel": "Customer quotes",
       "t1": {
         "quote": "They visited a few hours after our survey request and cleared up a lot of question marks. Okan being an engineer, and explaining the technical details to us properly, put our minds at ease. Everything they laid out transparently at the start, we then saw happen during the process. Power cuts no longer affect us. Thank you, MİNADA family.",
         "name": "Emre E."
@@ -256,8 +257,7 @@
       "t4": {
         "quote": "We met MİNADA Enerji when we needed a half-finished solar job completed. They came and inspected the existing work in great detail. They removed every wrongly mounted component, redesigned the project, made up the missing materials and then installed. We regret not choosing them at the start over a price difference that was hardly worth mentioning, but we are glad to have finished the job with them.",
         "name": "Berna B."
-      },
-      "quotesLabel": "Customer quotes"
+      }
     }
   },
   "Segments": {
