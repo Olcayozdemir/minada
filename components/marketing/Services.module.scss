@@ -121,10 +121,11 @@
         view-timeline-name: --rail;
       }
 
-      /* Trim the tail: the band's own foot padding would sit under the
-         spacer and add a second empty screen. */
+      /* The foot follows the spacer, so it is the air under the cards once
+         the rail has finished rather than air in the middle of the pin. It
+         matches the head. */
       .band.band {
-        padding-bottom: var(--space-2);
+        padding-bottom: var(--space-8);
       }
 
       /* The travel has to be content, not padding: a sticky child is
