@@ -89,15 +89,15 @@
       "title": "Six steps from survey to operation",
       "intro": "With renewable-energy engineering, our goal is to turn your existing home into one that is self-sufficient in every condition: six transparent steps, so you know in advance what happens at each stage.",
       "discovery": {
-        "title": "Free Survey & Consumption Analysis",
+        "title": "Free survey & consumption analysis",
         "desc": "We inspect the site in person and analyze your bills and load profile. The survey is free."
       },
       "engineering": {
-        "title": "Engineering & System Design",
+        "title": "Engineering & system design",
         "desc": "We model monthly and annual production with PVsyst or PV*SOL and size the battery capacity to your consumption profile."
       },
       "licensing": {
-        "title": "Permits & Project Approval",
+        "title": "Permits & project approval",
         "desc": "We run the entire official process, including the utility application, the connection invitation letter and the connection agreement."
       },
       "procurement": {
@@ -105,11 +105,11 @@
         "desc": "We source every component, from panels to batteries, from tier-1 manufacturers. The equipment list is written into the offer by brand and model."
       },
       "install": {
-        "title": "Installation & Commissioning",
+        "title": "Installation & commissioning",
         "desc": "We complete the installation, run the tests and bring the system online. The work area is contained and the site is tidied at the end of every day."
       },
       "om": {
-        "title": "Monitoring & Maintenance",
+        "title": "Monitoring & maintenance",
         "desc": "We monitor the system remotely around the clock, carry out periodic maintenance and send you performance reports."
       }
     },
@@ -122,7 +122,7 @@
         "desc": "Turn-key energy solutions for villas and detached homes."
       },
       "ticari": {
-        "title": "Commercial & Industrial",
+        "title": "Commercial & industrial",
         "desc": "High-capacity energy solutions for businesses and industrial zones."
       },
       "tarim": {
@@ -130,7 +130,7 @@
         "desc": "Sustainable energy for irrigation and farming operations."
       },
       "kamu": {
-        "title": "Public & Institutional",
+        "title": "Public & institutional",
         "desc": "Scalable, reliable systems for institutions and public projects."
       }
     },
@@ -330,17 +330,17 @@
         "intro": "The bigger the scale, the bigger the gain — we prepare a free feasibility study for your facility. In a typical commercial system:",
         "g1": {
           "stat": "OPEX↓",
-          "title": "Lower Energy Costs",
+          "title": "Lower energy costs",
           "desc": "Generating your own electricity cuts how much you draw from the grid and makes your energy spend more predictable."
         },
         "g2": {
           "stat": "Fast Payback",
-          "title": "Long-Term Financial Gain",
+          "title": "Long-term financial gain",
           "desc": "Where consumption is high, solar lowers energy costs, supports the return on the investment and delivers savings over the long run."
         },
         "g3": {
           "stat": "25+ Years",
-          "title": "A Long-Lived Energy Asset",
+          "title": "A long-lived energy asset",
           "desc": "A solar plant keeps generating for many years, contributing to your sustainability and cost-management goals."
         },
         "charts": {
@@ -769,7 +769,7 @@
         "desc": "Hybrid inverter + wall-mounted LFP battery: the house keeps running through outages, daytime production gets spent at night."
       },
       "aud2": {
-        "title": "Commercial & Industrial",
+        "title": "Commercial & industrial",
         "desc": "Rack and container ESS: scalable capacity for peak shaving, demand management and grid services."
       },
       "f1": {
@@ -818,7 +818,7 @@
           "scale": "Typical capacity: 5-100 kWh"
         },
         "ci": {
-          "title": "Commercial & Industrial",
+          "title": "Commercial & industrial",
           "desc": "Storage built for businesses and production facilities: it optimises consumption profiles to lower energy costs, holds operations steady through outages, and makes energy management more efficient.",
           "b1": "Lower demand and peak charges",
           "b2": "Uninterrupted power for critical loads",
@@ -827,7 +827,7 @@
           "scale": "Typical capacity: 100 kWh to a few MWh"
         },
         "utility": {
-          "title": "Utility Scale",
+          "title": "Utility scale",
           "desc": "Large-scale storage supports renewable generation and contributes to grid stability. It lets energy be used when it is needed and helps the infrastructure run more flexibly. It also opens up investment in licensed solar-plus-storage projects.",
           "b1": "Grid flexibility and stability",
           "b2": "Renewable energy integration",
@@ -971,7 +971,7 @@
         "desc": "7.4–22 kW AC wall charging: with meter capacity checks, load management and PV integration."
       },
       "aud2": {
-        "title": "Business & Fleet",
+        "title": "Business & fleet",
         "desc": "OCPP-compliant DC fast charging for car parks and fleets; carport PV puts generation and charging in one structure."
       },
       "f1": {
@@ -1001,7 +1001,7 @@
       "sol": {
         "home": {
           "tag": "Home",
-          "title": "Residential Charging",
+          "title": "Residential charging",
           "lead": "Safe, smart charging for your home",
           "desc": "An AC charger matched to your existing electrical supply. Smart energy management keeps it safe and efficient in daily use.",
           "b1": "Meter capacity check",
@@ -1012,7 +1012,7 @@
         },
         "business": {
           "tag": "Business & Fleet",
-          "title": "Commercial Charge Park",
+          "title": "Commercial charge park",
           "lead": "Scalable charging for businesses and fleets",
           "desc": "Centrally managed AC and DC charging for customers, staff and fleet vehicles.",
           "b1": "OCPP-compliant infrastructure",
@@ -1023,7 +1023,7 @@
         },
         "shared": {
           "tag": "Residences & Malls",
-          "title": "Shared Car Park",
+          "title": "Shared car park",
           "lead": "A manageable solution for residences and shared spaces",
           "desc": "Charging infrastructure for communal areas, with per-user authorisation and individual consumption tracking.",
           "b1": "User authorisation",
@@ -1037,7 +1037,7 @@
       "stepsIntro": "We run the whole process; you just plug in and charge.",
       "steps": {
         "s1": {
-          "title": "Survey & Measurement",
+          "title": "Survey & measurement",
           "desc": "We measure meter power and panel capacity, and define the need."
         },
         "s2": {
@@ -1143,7 +1143,7 @@
         "sub": "Solar · Storage · Heat pump · EV charging"
       }
     },
-    "whereTitle": "Where We Work",
+    "whereTitle": "Where we work",
     "whereText": "Our head office is in Malatya, and our operations network covers Sivas, Elazığ, Erzincan and Antalya. Alongside that regional strength, we deliver solar, energy storage, heat pump and EV charging projects across Türkiye.",
     "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
     "whereNote": "We work project by project across Türkiye.",
@@ -1154,7 +1154,7 @@
     "valuesTitle": "Our values",
     "values": {
       "discipline": {
-        "term": "Engineering Discipline",
+        "term": "Engineering discipline",
         "desc": "Every project is assessed against data, analysed, and grounded in technical verification."
       },
       "transparency": {
@@ -1162,15 +1162,15 @@
         "desc": "Clear quotes, realistic schedules and open communication."
       },
       "oneHand": {
-        "term": "A Single Point of Contact",
+        "term": "A single point of contact",
         "desc": "Survey, design, installation and technical support all run through one team."
       },
       "promise": {
-        "term": "Standing Behind What We Promise",
+        "term": "Standing behind what we promise",
         "desc": "We stand behind the commitments we give and the responsibilities we take on."
       },
       "longTerm": {
-        "term": "A Long-Term Partnership",
+        "term": "A long-term partnership",
         "desc": "We do not stop at installation; we support your systems in running efficiently for years."
       }
     },
@@ -1191,28 +1191,28 @@
     "listIntro": "Every setting has its own consumption curve and its own constraint, and the system design follows from that.",
     "linesLabel": "Lines involved",
     "konut": {
-      "title": "Homes & Private",
+      "title": "Homes & private",
       "desc": "In villas, detached houses and gated communities the rooftop array, battery, heat pump and charger come together as one system.",
       "p1": "Energy made in the day is carried into the evening, so less is drawn from the grid.",
       "p2": "During an outage the house switches to the battery on its own.",
       "p3": "The car charges overnight on energy the roof made that day."
     },
     "ticari": {
-      "title": "Commercial & Industrial",
+      "title": "Commercial & industrial",
       "desc": "In factories, warehouses, industrial estates and hotels, large roofs and land become high-capacity plants.",
       "p1": "Production runs by day, so the consumption curve lines up with the sun.",
       "p2": "The battery steps in at peak hours, cutting demand charges and peak penalties.",
       "p3": "Charging for fleets and customers runs off the same system."
     },
     "tarim": {
-      "title": "Agricultural Sites",
+      "title": "Agricultural sites",
       "desc": "For irrigation, greenhouses, cold storage and livestock operations, energy stops being the largest line on the books.",
       "p1": "Irrigation pumps run in the hours the sun is strongest.",
       "p2": "With agri-PV the same land both generates and farms.",
       "p3": "Cold storage keeps running off the battery through an outage."
     },
     "kamu": {
-      "title": "Public & Institutional",
+      "title": "Public & institutional",
       "desc": "For municipalities, schools, hospitals and public buildings the energy budget becomes predictable and critical loads are protected.",
       "p1": "The institution gets a predictable energy cost spread across years.",
       "p2": "Critical loads keep drawing from the battery the moment supply fails.",

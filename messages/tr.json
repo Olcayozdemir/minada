@@ -89,15 +89,15 @@
       "title": "Keşiften işletmeye 6 adım",
       "intro": "Yenilenebilir enerji mühendisliği ile hedefimiz; mevcut evinizi her koşulda kendine yeten bir eve çevirmek: Altı şeffaf adımla her aşamada ne olacağını önceden bilirsiniz.",
       "discovery": {
-        "title": "Ücretsiz Keşif & Tüketim Analizi",
+        "title": "Ücretsiz keşif & tüketim analizi",
         "desc": "Sahayı yerinde inceler, faturalarınızı ve yük profilinizi analiz ederiz. Keşif ücretsizdir."
       },
       "engineering": {
-        "title": "Mühendislik & Sistem Tasarımı",
+        "title": "Mühendislik & sistem tasarımı",
         "desc": "PVsyst veya PV*SOL ile aylık ve yıllık üretim modelini çıkarır, tüketim profilinize göre batarya kapasitesini boyutlandırırız."
       },
       "licensing": {
-        "title": "İzin & Proje Onayı",
+        "title": "İzin & proje onayı",
         "desc": "Dağıtım şirketi başvurusu, çağrı mektubu ve bağlantı anlaşması dahil tüm resmî süreci biz yürütürüz."
       },
       "procurement": {
@@ -105,11 +105,11 @@
         "desc": "Panelden bataryaya kadar her bileşeni tier-1 üreticilerden tedarik ederiz. Ekipman listesi teklifte marka ve model bazında yazılıdır."
       },
       "install": {
-        "title": "Kurulum & Devreye Alma",
+        "title": "Kurulum & devreye alma",
         "desc": "Montajı tamamlar, testleri yapar ve sistemi devreye alırız. Çalışma alanı sınırlandırılır, her gün sonunda saha toparlanır."
       },
       "om": {
-        "title": "İzleme & Bakım",
+        "title": "İzleme & bakım",
         "desc": "Sistemi 7/24 uzaktan izler, periyodik bakımını yapar ve performans raporlarını size iletiriz."
       }
     },
@@ -118,19 +118,19 @@
       "title": "Her ölçek için çözüm",
       "intro": "Bireysel konutlardan endüstriyel tesislere kadar, ihtiyaca göre ölçeklenen enerji çözümleri.",
       "konut": {
-        "title": "Konut & Bireysel",
+        "title": "Konut & bireysel",
         "desc": "Villa ve müstakil evler için anahtar teslim enerji çözümleri."
       },
       "ticari": {
-        "title": "Ticari & Endüstriyel",
+        "title": "Ticari & endüstriyel",
         "desc": "İşletmeler ve OSB tesisleri için yüksek kapasiteli enerji çözümleri."
       },
       "tarim": {
-        "title": "Tarımsal Tesisler",
+        "title": "Tarımsal tesisler",
         "desc": "Sulama ve tarımsal işletmeler için sürdürülebilir enerji."
       },
       "kamu": {
-        "title": "Kamu & Kurumsal",
+        "title": "Kamu & kurumsal",
         "desc": "Kurumlar ve kamu projeleri için ölçeklenebilir, güvenilir sistemler."
       }
     },
@@ -330,17 +330,17 @@
         "intro": "Ölçek büyüdükçe kazanç da büyür — fizibiliteyi tesisinize özel, ücretsiz çıkarıyoruz. Tipik bir ticari sistemde:",
         "g1": {
           "stat": "OPEX↓",
-          "title": "Daha Düşük Enerji Maliyetleri",
+          "title": "Daha düşük enerji maliyetleri",
           "desc": "Kendi elektriğinizi üreterek şebekeden çektiğiniz enerji miktarını azaltabilir, enerji giderlerinizi daha öngörülebilir hale getirebilirsiniz."
         },
         "g2": {
           "stat": "Hızlı Geri Dönüş",
-          "title": "Uzun Vadeli Finansal Kazanç",
+          "title": "Uzun vadeli finansal kazanç",
           "desc": "Yüksek tüketimli işletmelerde güneş enerjisi yatırımları, enerji maliyetlerini düşürerek yatırımın geri dönüşünü destekler ve uzun vadeli tasarruf sağlar."
         },
         "g3": {
           "stat": "25+ Yıl",
-          "title": "Uzun Ömürlü Enerji Varlığı",
+          "title": "Uzun ömürlü enerji varlığı",
           "desc": "GES yatırımları uzun yıllar boyunca enerji üretmeye devam ederek işletmenizin sürdürülebilirlik ve maliyet yönetimi hedeflerine katkı sağlar."
         },
         "charts": {
@@ -769,7 +769,7 @@
         "desc": "Hibrit inverter + duvar tipi LFP batarya: kesintide ev çalışmaya devam eder, gündüz üretim akşam harcanır."
       },
       "aud2": {
-        "title": "Ticari & Endüstriyel",
+        "title": "Ticari & endüstriyel",
         "desc": "Rack ve konteyner ESS: puant tıraşlama, talep yönetimi ve şebeke hizmetleri için ölçeklenebilir kapasite."
       },
       "f1": {
@@ -818,7 +818,7 @@
           "scale": "Tipik kapasite: 5-100 kWh"
         },
         "ci": {
-          "title": "Ticari & Endüstriyel",
+          "title": "Ticari & endüstriyel",
           "desc": "İşletmeler ve üretim tesisleri için geliştirilen enerji depolama sistemleri; tüketim profillerini optimize ederek enerji maliyetlerini düşürür, elektrik kesintilerine karşı operasyonel süreklilik sağlar ve enerji yönetimini daha verimli hale getirir.",
           "b1": "Talep ve puant maliyetlerinin azaltılması",
           "b2": "Kritik yükler için kesintisiz enerji",
@@ -827,7 +827,7 @@
           "scale": "Tipik kapasite: 100 kWh - birkaç MWh"
         },
         "utility": {
-          "title": "Şebeke Ölçeği (Utility)",
+          "title": "Şebeke ölçeği (utility)",
           "desc": "Büyük ölçekli enerji depolama sistemleri, yenilenebilir enerji üretimini destekleyerek şebeke kararlılığına katkı sağlar. Enerjinin ihtiyaç duyulan zamanda kullanılmasına olanak tanır ve enerji altyapısının daha esnek çalışmasına yardımcı olur. Bunun yanı sıra lisanslı depolamalı GES projeleri özelinde yatırım imkanı sunar.",
           "b1": "Şebeke esnekliği ve kararlılığı",
           "b2": "Yenilenebilir enerji entegrasyonu",
@@ -971,7 +971,7 @@
         "desc": "7,4–22 kW AC duvar şarjı: sayaç kapasite kontrolü, yük yönetimi ve GES entegrasyonuyla."
       },
       "aud2": {
-        "title": "İşletme & Filo",
+        "title": "İşletme & filo",
         "desc": "Otopark ve filolar için OCPP uyumlu DC hızlı şarj; carport GES ile üretim + şarj aynı yapıda."
       },
       "f1": {
@@ -1001,7 +1001,7 @@
       "sol": {
         "home": {
           "tag": "Ev",
-          "title": "Konut Şarjı",
+          "title": "Konut şarjı",
           "lead": "Eviniz için güvenli ve akıllı şarj çözümü",
           "desc": "Elektrikli aracınız için mevcut elektrik altyapınıza uygun AC şarj sistemi. Akıllı enerji yönetimi sayesinde güvenli ve verimli kullanım sunar.",
           "b1": "Sayaç kapasite kontrolü",
@@ -1012,7 +1012,7 @@
         },
         "business": {
           "tag": "İşletme & Filo",
-          "title": "Ticari Şarj Parkı",
+          "title": "Ticari şarj parkı",
           "lead": "İşletmeler ve filolar için ölçeklenebilir şarj altyapısı",
           "desc": "Müşteriler, çalışanlar ve filo araçları için merkezi yönetilebilir AC ve DC şarj çözümleri.",
           "b1": "OCPP uyumlu altyapı",
@@ -1023,7 +1023,7 @@
         },
         "shared": {
           "tag": "Site & AVM",
-          "title": "Ortak Otopark",
+          "title": "Ortak otopark",
           "lead": "Site ve ortak yaşam alanları için yönetilebilir çözüm",
           "desc": "Ortak kullanım alanlarında bireysel tüketim takibi ve kullanıcı bazlı yetkilendirme sağlayan şarj altyapısı.",
           "b1": "Kullanıcı yetkilendirme",
@@ -1037,7 +1037,7 @@
       "stepsIntro": "Süreci baştan sona biz yönetiyoruz; siz sadece aracınızı takıp şarj ediyorsunuz.",
       "steps": {
         "s1": {
-          "title": "Keşif & Ölçüm",
+          "title": "Keşif & ölçüm",
           "desc": "Sayaç gücü ve pano kapasitesi ölçülür, ihtiyaç belirlenir."
         },
         "s2": {
@@ -1049,7 +1049,7 @@
           "desc": "Elektriksel bağlantı ve montaj standartlara uygun yapılır."
         },
         "s4": {
-          "title": "Devreye Alma",
+          "title": "Devreye alma",
           "desc": "Ünite test edilir, uygulamaya bağlanır ve size teslim edilir."
         }
       },
@@ -1143,7 +1143,7 @@
         "sub": "GES · Depolama · Isı pompası · EV şarj"
       }
     },
-    "whereTitle": "Nerede Hizmet Veriyoruz?",
+    "whereTitle": "Nerede hizmet veriyoruz?",
     "whereText": "Merkezimiz Malatya'da, operasyon ağımız ise; Sivas, Elazığ, Erzincan ve Antalya'da faaliyet göstermektedir. Bölgesel gücümüzün yanı sıra, Türkiye'nin dört bir yanında güneş enerjisi, enerji depolama, ısı pompası ve EV şarj projeleri gerçekleştiriyoruz.",
     "cities": "Malatya · Sivas · Elazığ · Erzincan · Antalya",
     "whereNote": "Proje bazlı olarak Türkiye genelinde hizmet vermekteyiz.",
@@ -1154,7 +1154,7 @@
     "valuesTitle": "Değerlerimiz",
     "values": {
       "discipline": {
-        "term": "Mühendislik Disiplini",
+        "term": "Mühendislik disiplini",
         "desc": "Her proje veriyle değerlendirilir, analiz edilir ve teknik doğrulamaya dayanır."
       },
       "transparency": {
@@ -1162,15 +1162,15 @@
         "desc": "Net teklifler, gerçekçi süreç planları ve açık iletişim."
       },
       "oneHand": {
-        "term": "Tek Elden Çözüm",
+        "term": "Tek elden çözüm",
         "desc": "Keşiften projelendirmeye, uygulamadan teknik desteğe kadar tüm süreçlerin tek muhatapla yönetilmesi."
       },
       "promise": {
-        "term": "Taahhüde Bağlılık",
+        "term": "Taahhüde bağlılık",
         "desc": "Verdiğimiz sözlerin ve üstlendiğimiz sorumlulukların arkasında dururuz."
       },
       "longTerm": {
-        "term": "Uzun Vadeli İş Ortaklığı",
+        "term": "Uzun vadeli iş ortaklığı",
         "desc": "Kurulumla sınırlı kalmaz, sistemlerinizin uzun yıllar verimli çalışmasına destek oluruz."
       }
     },
@@ -1191,28 +1191,28 @@
     "listIntro": "Her ortamın kendi tüketim eğrisi ve kendi kısıtı var. Sistem tasarımı da ona göre değişiyor.",
     "linesLabel": "İlgili iş kolları",
     "konut": {
-      "title": "Konut & Bireysel",
+      "title": "Konut & bireysel",
       "desc": "Villa, müstakil ev ve site içi konutlarda çatı santrali, batarya, ısı pompası ve şarj ünitesi tek sistemde birleşir.",
       "p1": "Gündüz üretilen enerji akşama taşınır, şebekeden alınan pay küçülür.",
       "p2": "Kesintide ev otomatik olarak bataryadan çalışmaya devam eder.",
       "p3": "Araç, evin kendi çatısının ürettiği enerjiyle gece dolar."
     },
     "ticari": {
-      "title": "Ticari & Endüstriyel",
+      "title": "Ticari & endüstriyel",
       "desc": "Fabrika, depo, OSB tesisi ve otellerde geniş çatı ve arazi alanları yüksek kapasiteli santrallere dönüşür.",
       "p1": "Üretim gündüz olduğu için tüketim eğrisi güneşle örtüşür.",
       "p2": "Batarya puant saatlerde devreye girer, güç bedelini ve puant cezasını düşürür.",
       "p3": "Filo ve müşteri araçlarının şarj altyapısı aynı sistemden beslenir."
     },
     "tarim": {
-      "title": "Tarımsal Tesisler",
+      "title": "Tarımsal tesisler",
       "desc": "Sulama, sera, soğuk hava deposu ve hayvancılık tesislerinde enerji, işletmenin en büyük gider kalemi olmaktan çıkar.",
       "p1": "Sulama pompaları güneşin en güçlü olduğu saatlerde çalışır.",
       "p2": "Agri-PV kurulumunda aynı arazi hem üretim hem tarım yapar.",
       "p3": "Soğuk hava depoları kesintide bataryadan beslenmeye devam eder."
     },
     "kamu": {
-      "title": "Kamu & Kurumsal",
+      "title": "Kamu & kurumsal",
       "desc": "Belediye, okul, hastane ve kamu binalarında enerji bütçesi öngörülebilir hâle gelir, kritik yükler kesintiden korunur.",
       "p1": "Kurum, yıllara yayılan öngörülebilir bir enerji maliyetine kavuşur.",
       "p2": "Kritik yükler kesinti anında bataryadan beslenir.",
