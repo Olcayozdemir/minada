@@ -112,28 +112,13 @@
 
 /* The window inside the mat, so a photograph can grow without spilling
    over the white border. */
-/* At rest every photograph is held to one tone: the colour pulled most of
-   the way out and a navy wash laid over it, so six drone frames of six
-   different roofs read as one set rather than as six unrelated pictures.
-   Pointing at one gives it its own colour back, which is both the tidying
-   and the reward for looking (Olcay, 2026-09-02). */
 .window {
-  position: relative;
   display: block;
   width: 100%;
   aspect-ratio: 8 / 5;
   border-radius: 8px;
   overflow: hidden;
   background: var(--sand);
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(15, 42, 74, 0.34);
-    transition: opacity 0.45s ease;
-    pointer-events: none;
-  }
 }
 
 .photo {
@@ -141,33 +126,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.3) contrast(1.06) brightness(1.04);
-  transition:
-    transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1),
-    filter 0.45s ease;
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* A slow push in, the length of a look rather than a click, and the
-   photograph's own colour with it. */
+/* A slow push in, the length of a look rather than a click. */
 .pressed .photo,
 .tile:focus-visible .photo {
   transform: scale(1.06);
-  filter: none;
-}
-
-.pressed .window::after,
-.tile:focus-visible .window::after {
-  opacity: 0;
 }
 
 @media (hover: hover) {
   .tile:hover .photo {
     transform: scale(1.06);
-    filter: none;
-  }
-
-  .tile:hover .window::after {
-    opacity: 0;
   }
 }
 
@@ -460,9 +430,8 @@
     animation-name: tile-appear;
   }
 
-  /* The colour still comes back; only the push in goes. */
   .photo {
-    transition: filter 0.45s ease;
+    transition: none;
   }
 
   .pressed .photo,
@@ -765,22 +734,65 @@
     gap: var(--space-3);
   }
 
+  /* Two rows that run off the right edge and are swiped, rather than six
+     photographs stacked down 1400px of page (Olcay, 2026-09-03). Exactly
+     two columns fit a screen, so a photograph is never sliced by the
+     viewport's edge, and the strip bleeds to both edges so the row reads as
+     one band rather than as a boxed carousel. */
   .grid {
-    grid-template-columns: minmax(0, 1fr);
+    --sgap: 12px;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - var(--sgap)) / 2);
+    gap: var(--sgap);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--space-6));
+    padding-inline: var(--space-6);
+    scroll-padding-inline: var(--space-6);
+    padding-block: 4px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
+  .cell {
+    scroll-snap-align: start;
+  }
+
+  /* The readout cannot float above a photograph inside a scroll container,
+     so it lies over its lower edge instead, like a caption. */
   .lead {
     display: none;
   }
 
   .card {
-    left: 6px;
-    right: 6px;
-    bottom: 6px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
     width: auto;
     max-width: none;
-    padding: 9px 11px 10px;
+    padding: 7px 9px 8px;
+    gap: 2px;
     transform: translate(0, 4px);
+  }
+
+  .cardTitle {
+    font-size: 12.5px;
+  }
+
+  .cardMeta {
+    font-size: 11px;
+  }
+
+  .cardKind {
+    display: none;
   }
 
   .pressed .card {
