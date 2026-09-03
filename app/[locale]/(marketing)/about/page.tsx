@@ -87,8 +87,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <Image
               src="/images/v2/about-story.jpg"
               alt={t("storyImageAlt")}
-              width={1440}
-              height={1929}
+              width={1434}
+              height={1920}
               sizes="(max-width: 900px) 92vw, 42vw"
             />
           </figure>
