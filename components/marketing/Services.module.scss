@@ -96,6 +96,12 @@
     @media (prefers-reduced-motion: no-preference) {
       .band.band {
         overflow: visible;
+        /* Flat, not the usual ramp. The band's background belongs to the
+           band, so while the content is held still the gradient carries on
+           scrolling behind it and the ground appears to drift (Olcay,
+           2026-09-03; the energy line is off below 1024px, so this was the
+           only thing moving). One colour has nothing to drift. */
+        background: var(--green-850);
       }
 
       /* The shared section reveal leaves an identity matrix on the inner
