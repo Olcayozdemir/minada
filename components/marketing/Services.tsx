@@ -33,21 +33,23 @@ export async function Services({
 
   return (
     <Section tone="dark" id="cozumler" className={styles.band}>
-      <div className={styles.head}>
-        <SectionHeading
-          as={headingAs}
-          tone="dark"
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          intro={t("intro")}
-        />
-      </div>
       {/* Two wrappers that are `display: contents` everywhere but a phone,
           where they become the pinned rail: .pin is the tall block whose
           passage through the viewport drives the rail, .viewport is what
-          sticks while it does. See the stylesheet. */}
+          sticks while it does — the heading rides with it, so the band is
+          composed the whole time the cards are travelling rather than
+          leaving a screen of empty navy behind them. See the stylesheet. */}
       <div className={styles.pin}>
         <div className={styles.viewport}>
+          <div className={styles.head}>
+            <SectionHeading
+              as={headingAs}
+              tone="dark"
+              eyebrow={t("eyebrow")}
+              title={t("title")}
+              intro={t("intro")}
+            />
+          </div>
           <ul className={styles.grid}>
             {BUSINESS_LINES.map(({ id, href, art }) => (
               <li key={id}>

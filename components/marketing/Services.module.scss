@@ -121,6 +121,12 @@
         view-timeline-name: --rail;
       }
 
+      /* Trim the tail: the band's own foot padding would sit under the
+         spacer and add a second empty screen. */
+      .band.band {
+        padding-bottom: var(--space-2);
+      }
+
       /* The travel has to be content, not padding: a sticky child is
          constrained to its containing block's content box, and padding
          sits outside it, so a padded block gives the rail nowhere to go. */
@@ -133,8 +139,10 @@
       .viewport {
         display: block;
         position: sticky;
-        /* Clear of the fixed header. */
-        top: 96px;
+        /* Clear of the fixed header. The heading is inside this block, so
+           what holds still is the whole band's composition rather than a
+           bare rail with a screen of empty navy under it. */
+        top: 88px;
         /* Sideways only: the diorama breaks out above each card and that
            has to stay visible. */
         overflow-x: clip;
