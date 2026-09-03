@@ -403,16 +403,12 @@
   /* Ünitenin üst yarısı: alttaki metin satırıyla çakışmasın. */
   .dot4 { left: 44.9%; top: 73.2%; }
 
+  /* Telefonda maske yok (Olcay, 2026-09-03). Dikey kadrajın alt yarısı
+     zaten koyu; üstüne binen rampa fotoğrafın son üçte birini neredeyse
+     düz lacivert bir banda çeviriyordu. Okunurluğu metnin kendi gölgesi
+     taşıyor. */
   .scrim {
-    background: linear-gradient(
-      180deg,
-      rgba(8, 26, 48, 0.42) 0%,
-      rgba(8, 26, 48, 0.06) 20%,
-      rgba(8, 26, 48, 0) 34%,
-      rgba(8, 26, 48, 0.3) 58%,
-      rgba(8, 26, 48, 0.78) 80%,
-      rgba(8, 26, 48, 0.94) 100%
-    );
+    background: none;
   }
 
   .inner {
