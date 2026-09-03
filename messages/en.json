@@ -463,7 +463,11 @@
       "property": {
         "villa": "Villa",
         "detached": "Detached house",
-        "apartment": "Apartment"
+        "apartment": "Apartment",
+        "office": "Office / retail",
+        "factory": "Factory / plant",
+        "land": "Land",
+        "other": "Other"
       },
       "bill": "Monthly bill (₺)",
       "message": "Your message",
@@ -735,7 +739,23 @@
         "q": "Can storage or an EV charger be added to my existing system?",
         "a": "In many cases an existing solar system can be integrated with storage and EV charging. Suitability is assessed during the survey."
       },
-      "faqTitle": "Common questions"
+      "faqTitle": "Common questions",
+      "nsebTitle": "nZEB projects",
+      "nsebIntro": "Under Türkiye's building energy performance regulation, new buildings over 2,000 m² have had to be built as nearly zero energy buildings since 1 January 2025. At least 10% of the energy they consume must come from renewable sources, and their energy performance certificate must be class B or better.",
+      "nseb": {
+        "a": {
+          "title": "Sizing the renewable share",
+          "desc": "We work the required share out from the building's own energy demand, then size the array to the roof and the land available."
+        },
+        "b": {
+          "title": "Designed into the drawings",
+          "desc": "The system goes into the project at permit stage with the architectural and mechanical teams, planned together with the heat pump and storage."
+        },
+        "c": {
+          "title": "Support through certification",
+          "desc": "We prepare the generation figures and technical documents the energy performance certificate needs, and carry out the site work ourselves."
+        }
+      }
     },
     "bess": {
       "metaTitle": "Energy Storage (BESS) — Home and Commercial",

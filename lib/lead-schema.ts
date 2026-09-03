@@ -1,6 +1,17 @@
 import { z } from "zod";
 
-export const PROPERTY_TYPES = ["villa", "detached", "apartment"] as const;
+// The four residential options were all a business could pick from, so a
+// factory enquiry had nothing to choose (Okan, Notion §2, approved
+// 2026-09-02). "Yapı tipi" rather than "Konut tipi" for the same reason.
+export const PROPERTY_TYPES = [
+  "villa",
+  "detached",
+  "apartment",
+  "office",
+  "factory",
+  "land",
+  "other",
+] as const;
 export type PropertyType = (typeof PROPERTY_TYPES)[number];
 
 // Lead routing topic — mirrors the four doors (CTA'lar ?konu= ile taşır).

@@ -5,6 +5,10 @@ const PROPERTY_LABELS: Record<string, string> = {
   villa: "Villa",
   detached: "Müstakil ev",
   apartment: "Apartman",
+  office: "İşyeri / Ofis",
+  factory: "Fabrika / Tesis",
+  land: "Arazi",
+  other: "Diğer",
 };
 
 const TOPIC_LABELS: Record<string, string> = {
@@ -41,7 +45,7 @@ export async function sendLeadEmail(data: LeadInput) {
     ["E-posta", data.email],
     ["Şehir", data.city],
     ["Konu", data.topic ? (TOPIC_LABELS[data.topic] ?? data.topic) : "—"],
-    ["Konut tipi", data.propertyType ? (PROPERTY_LABELS[data.propertyType] ?? data.propertyType) : "—"],
+    ["Yapı tipi", data.propertyType ? (PROPERTY_LABELS[data.propertyType] ?? data.propertyType) : "—"],
     ["Aylık fatura", data.bill || "—"],
     ["İlgilenilen ürün", data.product || "—"],
     ["Mesaj", data.message || "—"],

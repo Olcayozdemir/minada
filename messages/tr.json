@@ -458,12 +458,16 @@
       "email": "E-posta",
       "city": "Şehir",
       "cityPh": "Şehriniz",
-      "propertyType": "Konut tipi",
+      "propertyType": "Yapı tipi",
       "propertyPh": "Seçin",
       "property": {
         "villa": "Villa",
         "detached": "Müstakil ev",
-        "apartment": "Apartman"
+        "apartment": "Apartman",
+        "office": "İşyeri / Ofis",
+        "factory": "Fabrika / Tesis",
+        "land": "Arazi",
+        "other": "Diğer"
       },
       "bill": "Aylık fatura (₺)",
       "message": "Mesajınız",
@@ -735,7 +739,23 @@
         "q": "Mevcut sistemime enerji depolama veya EV şarj ünitesi eklenebilir mi?",
         "a": "Birçok durumda mevcut güneş enerjisi sistemleri, enerji depolama çözümleri ve elektrikli araç şarj istasyonlarıyla entegre edilebilir. Uygunluk değerlendirmesi keşif sürecinde yapılır."
       },
-      "faqTitle": "Sık sorulanlar"
+      "faqTitle": "Sık sorulanlar",
+      "nsebTitle": "nSEB Projeleri",
+      "nsebIntro": "Binalarda Enerji Performansı Yönetmeliği'ne göre 1 Ocak 2025'ten bu yana toplam inşaat alanı 2.000 m² ve üzerindeki yeni binaların neredeyse sıfır enerjili bina (nSEB) olarak yapılması gerekiyor. Bu binalarda tüketilen enerjinin en az %10'u yenilenebilir kaynaklardan karşılanmalı, Enerji Kimlik Belgesi sınıfı da en az B olmalı.",
+      "nseb": {
+        "a": {
+          "title": "Gereken üretimin hesabı",
+          "desc": "Binanın enerji ihtiyacı üzerinden yönetmeliğin istediği yenilenebilir pay hesaplanır, çatı ve arazi imkânlarına göre sistem boyutlandırılır."
+        },
+        "b": {
+          "title": "Projeye işlenmiş çözüm",
+          "desc": "Sistem, mimari ve mekanik ekiple birlikte ruhsat aşamasında projeye girer; ısı pompası ve enerji depolamayla bütünleşik kurgulanır."
+        },
+        "c": {
+          "title": "Belgelendirme desteği",
+          "desc": "Enerji Kimlik Belgesi sürecinde gereken üretim verileri ve teknik dokümanlar hazırlanır, saha uygulaması tek elden yürütülür."
+        }
+      }
     },
     "bess": {
       "metaTitle": "Enerji Depolama (BESS) — Ev Tipi ve Ticari",

@@ -23,6 +23,12 @@ const TYPE_IMAGES: Record<(typeof GES_TYPES)[number], string> = {
 // treatment the heat-pump page uses for its long list.
 const GES_FAQ = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"] as const;
 
+// nSEB: what the regulation asks of a new building, and the three things we
+// do about it. Okan asked for the heading by name (Notion, 2026-09-03); the
+// figures are the ones in the Binalarda Enerji Performansı Yönetmeliği, in
+// force for buildings over 2.000 m² since 1 January 2025.
+const NSEB = ["a", "b", "c"] as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -69,6 +75,18 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
       </Section>
 
       <Section tone="sand">
+        <SectionHeading title={t("nsebTitle")} intro={t("nsebIntro")} />
+        <ul className={styles.trustGrid}>
+          {NSEB.map((id) => (
+            <li key={id}>
+              <h3>{t(`nseb.${id}.title`)}</h3>
+              <p>{t(`nseb.${id}.desc`)}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section tone="light">
         <SectionHeading title={t("faqTitle")} />
         <ul className={clsx(styles.faq, styles.faqWide)}>
           {GES_FAQ.map((id) => (
