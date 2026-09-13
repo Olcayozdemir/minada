@@ -1,80 +1,185 @@
 "use client";
 
 import Image from "next/image";
-import { useState, type CSSProperties } from "react";
-import clsx from "clsx";
+import { useEffect, useState, type CSSProperties } from "react";
+import { Link } from "@/i18n/navigation";
+import { IconArrowRight, IconSolar } from "@/components/ui/icons";
 import styles from "./Proof.module.scss";
 
 export type ProofPhoto = {
   id: string;
   title: string;
-  /** "Antalya · 1,18 MW", or "" when neither is known. */
-  meta: string;
-  /** The type line, "Endüstriyel çatı GES". */
+  location: string;
+  capacity: string;
+  /** The project type or short summary supplied with the record. */
   kind: string;
   src: string;
   w: number;
   h: number;
 };
 
-/* Six photographs on an even grid, three across.
+type ProofGridProps = {
+  photos: ProofPhoto[];
+  label: string;
+  eyebrow: string;
+  title: string;
+  allLabel: string;
+  previousLabel: string;
+  nextLabel: string;
+  capacityLabel: string;
+  locationLabel: string;
+};
 
-   This started as a staggered mosaic and did not work: fourteen drone
-   frames of roofs read as one grey field at that size, and columns of
-   uneven heights read as untidy rather than editorial (Olcay,
-   2026-09-02). Six frames of the same shape, large enough to see, say more
-   about the work than fourteen that cannot be made out.
+/* The reference uses one lead story and two compact previews rather than an
+   even gallery. The arrows rotate the dataset through those three roles. On
+   phones all records remain available in the previously approved two-row
+   swipe rail; the desktop-only arrows are stood down there. */
+export function ProofGrid({
+  photos,
+  label,
+  eyebrow,
+  title,
+  allLabel,
+  previousLabel,
+  nextLabel,
+  capacityLabel,
+  locationLabel,
+}: ProofGridProps) {
+  const [active, setActive] = useState(0);
+  const [isMobileRail, setIsMobileRail] = useState(false);
+  const ordered = photos.map((_, index) => photos[(active + index) % photos.length]);
+  const canCycle = photos.length > 1;
 
-   Each raises a small readout naming the plant; a mouse raises it by
-   hovering, a finger or a keyboard by pressing, and that press state is
-   the only reason this is a client component. */
-export function ProofGrid({ photos, label }: { photos: ProofPhoto[]; label: string }) {
-  const [open, setOpen] = useState<string | null>(null);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 700px)");
+    const update = () => setIsMobileRail(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  const step = (direction: -1 | 1) => {
+    setActive((current) => (current + direction + photos.length) % photos.length);
+  };
 
   return (
-    <ul className={styles.grid} aria-label={label}>
-      {photos.map((p, i) => {
-        const pressed = open === p.id;
-        return (
-          <li key={p.id} className={styles.cell} style={{ "--d": i } as CSSProperties}>
-            <button
-              type="button"
-              className={clsx(styles.tile, pressed && styles.pressed)}
-              aria-pressed={pressed}
-              onClick={() => setOpen(pressed ? null : p.id)}
+    <div className={styles.projects}>
+      <div className={styles.projectHead}>
+        <div className={styles.projectHeading}>
+          <p className={styles.projectEyebrow}>{eyebrow}</p>
+          <h2 className={styles.projectTitle}>{title}</h2>
+        </div>
+
+        <div className={styles.projectAside}>
+          <div className={styles.projectActions}>
+            <Link href="/projects" className={styles.all}>
+              {allLabel} <IconArrowRight size={16} />
+            </Link>
+
+            {canCycle ? (
+              <div className={styles.projectNav} role="group" aria-label={label}>
+                <button
+                  type="button"
+                  className={`${styles.roundButton} ${styles.previous}`}
+                  aria-label={previousLabel}
+                  onClick={() => step(-1)}
+                >
+                  <IconArrowRight size={17} />
+                </button>
+                <button
+                  type="button"
+                  className={styles.roundButton}
+                  aria-label={nextLabel}
+                  onClick={() => step(1)}
+                >
+                  <IconArrowRight size={17} />
+                </button>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </div>
+
+      <ul
+        key={ordered[0]?.id}
+        className={styles.projectGrid}
+        aria-label={label}
+        tabIndex={isMobileRail ? 0 : -1}
+      >
+        {ordered.map((project, index) => (
+          <li
+            key={project.id}
+            className={`${styles.projectCell} ${
+              index === 0 ? styles.featuredCell : index > 2 ? styles.offstageCell : ""
+            }`}
+            style={{ "--d": Math.min(index, 2) } as CSSProperties}
+          >
+            <article
+              className={`${styles.projectCard} ${index === 0 ? styles.featuredCard : styles.previewCard}`}
             >
-              <span className={styles.frame}>
-                <span className={styles.window}>
-                  <Image
-                    src={p.src}
-                    alt=""
-                    width={p.w}
-                    height={p.h}
-                    sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 31vw"
-                    className={styles.photo}
-                  />
-                </span>
-              </span>
-              {/* The readout: a lead line up from the photograph, then the
-                  card. Purely visual pieces are hidden from the
-                  accessibility tree. */}
-              <span className={styles.lead} aria-hidden="true" />
-              <span className={styles.card}>
-                <span className={clsx(styles.line, styles.cardTitle)}>
-                  <span className={styles.dot} aria-hidden="true" />
-                  {p.title}
-                </span>
-                {p.meta ? (
-                  <span className={clsx(styles.line, styles.cardMeta)}>{p.meta}</span>
-                ) : null}
-                {p.kind ? (
-                  <span className={clsx(styles.line, styles.cardKind)}>{p.kind}</span>
-                ) : null}
-              </span>
-            </button>
+              <div className={styles.projectImage}>
+                <Image
+                  src={project.src}
+                  alt=""
+                  width={project.w}
+                  height={project.h}
+                  sizes={
+                    index === 0
+                      ? "(max-width: 700px) 92vw, (max-width: 900px) 100vw, 50vw"
+                      : "(max-width: 700px) 46vw, (max-width: 900px) 50vw, 25vw"
+                  }
+                  className={styles.projectPhoto}
+                />
+              </div>
+
+              {index === 0 ? (
+                <div className={styles.featuredReadout}>
+                  <div className={styles.featuredIdentity}>
+                    {project.kind ? <p>{project.kind}</p> : null}
+                    <h3>{project.title}</h3>
+                  </div>
+
+                  <div className={styles.featuredFacts}>
+                    {project.capacity ? (
+                      <div className={styles.featuredFact}>
+                        <IconSolar size={23} />
+                        <div>
+                          <span className={styles.factValue}>{project.capacity}</span>
+                          <span className={styles.factLabel}>{capacityLabel}</span>
+                        </div>
+                      </div>
+                    ) : null}
+                    {project.location ? (
+                      <div className={styles.featuredPlace}>
+                        <span className={styles.factValue}>{project.location}</span>
+                        <span className={styles.factLabel}>{locationLabel}</span>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              ) : (
+                <div className={styles.previewBody}>
+                  {project.kind ? <p className={styles.previewKind}>{project.kind}</p> : null}
+                  <h3>{project.title}</h3>
+                  <div className={styles.previewMeta}>
+                    {project.location ? <span>{project.location}</span> : null}
+                    {project.capacity ? <strong>{project.capacity}</strong> : null}
+                  </div>
+                </div>
+              )}
+            </article>
           </li>
-        );
-      })}
-    </ul>
+        ))}
+        <li className={styles.mobileAllCell}>
+          <Link href="/projects" className={styles.mobileAllCard}>
+            <span>{allLabel}</span>
+            <IconArrowRight size={18} />
+          </Link>
+        </li>
+      </ul>
+      <p className="sr-only" aria-live="polite">
+        {active + 1} / {photos.length}: {ordered[0]?.title}
+      </p>
+    </div>
   );
 }

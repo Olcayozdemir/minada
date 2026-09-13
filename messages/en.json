@@ -242,6 +242,30 @@
       "all": "All projects",
       "list": "Reference projects",
       "quotesLabel": "Customer quotes",
+      "previousProject": "Previous project",
+      "nextProject": "Next project",
+      "capacity": "Installed capacity",
+      "location": "Location",
+      "previousQuote": "Previous review",
+      "nextQuote": "Next review",
+      "localProjects": {
+        "tileRoof": {
+          "title": "Tiled-roof residential solar",
+          "kind": "Residential installation"
+        },
+        "modernVilla": {
+          "title": "Modern villa rooftop solar",
+          "kind": "Residential installation"
+        },
+        "commercialRoof": {
+          "title": "Commercial rooftop solar",
+          "kind": "Commercial installation"
+        },
+        "petrolStation": {
+          "title": "Petrol station canopy solar",
+          "kind": "Commercial installation"
+        }
+      },
       "t1": {
         "quote": "They visited a few hours after our survey request and cleared up a lot of question marks. Okan being an engineer, and explaining the technical details to us properly, put our minds at ease. Everything they laid out transparently at the start, we then saw happen during the process. Power cuts no longer affect us. Thank you, MİNADA family.",
         "name": "Emre E."

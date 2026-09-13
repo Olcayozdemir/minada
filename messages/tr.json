@@ -242,6 +242,30 @@
       "all": "Tüm referanslar",
       "list": "Referans projeler",
       "quotesLabel": "Müşteri yorumları",
+      "previousProject": "Önceki proje",
+      "nextProject": "Sonraki proje",
+      "capacity": "Kurulu güç",
+      "location": "Konum",
+      "previousQuote": "Önceki yorum",
+      "nextQuote": "Sonraki yorum",
+      "localProjects": {
+        "tileRoof": {
+          "title": "Kiremit çatılı konut GES",
+          "kind": "Konut uygulaması"
+        },
+        "modernVilla": {
+          "title": "Modern villa çatı GES",
+          "kind": "Konut uygulaması"
+        },
+        "commercialRoof": {
+          "title": "Ticari çatı GES",
+          "kind": "Ticari uygulama"
+        },
+        "petrolStation": {
+          "title": "Akaryakıt istasyonu kanopi GES",
+          "kind": "Ticari uygulama"
+        }
+      },
       "t1": {
         "quote": "Keşif talebimizden birkaç saat sonra ziyaret ettiler ve birçok soru işaretini giderdiler. Okan Bey'in mühendis olması ve konuyu bize teknik olarak detaylarıyla anlatması içimizi rahatlattı. Şeffaf bir şekilde işin başında anlattıkları her şeyi süreç içinde yaşayarak gördük. Artık elektrik kesintilerinden etkilenmiyoruz. Teşekkürler MİNADA Ailesi.",
         "name": "Emre E."

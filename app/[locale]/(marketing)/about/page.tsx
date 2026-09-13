@@ -112,7 +112,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             vision are two halves of the same sentence, and a second image
             would have had to be invented to fill a slot. */}
         <Image
-          src="/images/v2/about-purpose.jpg"
+          src="/images/v2/about-purpose-family.webp"
           alt=""
           width={1376}
           height={768}
