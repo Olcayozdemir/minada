@@ -17,7 +17,7 @@ import styles from "./SocialRail.module.scss";
 export function SocialRail() {
   return (
     <aside className={styles.rail} aria-label="MİNADA">
-      <SocialLinks className={styles.link} size={20} />
+      <SocialLinks className={styles.link} size={24} />
     </aside>
   );
 }

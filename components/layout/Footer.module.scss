@@ -60,26 +60,26 @@
   margin-top: 20px;
 }
 
-/* Full-strength glyph on a surface you can actually see, rather than the muted
-   secondary these were when the row was longer. Count comes from SITE.social,
-   so the row grows and shrinks with the accounts that actually exist. */
+/* The marks stay unframed at rest; their interactive surface appears only on
+   hover or keyboard focus. Count comes from SITE.social. */
 .socialLink {
   display: inline-grid;
   place-items: center;
   width: 46px;
   height: 46px;
   border-radius: var(--r-pill);
-  color: var(--on-dark);
-  background: rgba(238, 242, 247, 0.1);
-  border: 1px solid rgba(238, 242, 247, 0.24);
+  color: var(--social-color, var(--on-dark));
+  background: transparent;
+  border: 1px solid transparent;
   transition:
-    color 0.15s ease,
+    background-color 0.15s ease,
     border-color 0.15s ease,
     transform 0.15s ease;
 
-  &:hover {
-    color: var(--gold-300);
-    border-color: rgba(242, 168, 44, 0.45);
+  &:hover,
+  &:focus-visible {
+    background: color-mix(in srgb, var(--social-color) 16%, rgba(8, 26, 48, 0.58));
+    border-color: color-mix(in srgb, var(--social-color) 68%, transparent);
     transform: translateY(-2px);
   }
 }

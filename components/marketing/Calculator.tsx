@@ -88,13 +88,13 @@ function Gauge({ pct, value, label }: { pct: number; value: string; label: strin
   return (
     <div className={styles.gauge}>
       <svg className={styles.gaugeRing} width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
-        <circle cx="26" cy="26" r="20" fill="none" stroke="rgba(238,242,247,0.16)" strokeWidth="4" />
+        <circle cx="26" cy="26" r="20" fill="none" stroke="#e0e4e8" strokeWidth="4" />
         <circle
           cx="26"
           cy="26"
           r="20"
           fill="none"
-          stroke="var(--gold-300)"
+          stroke="#b97706"
           strokeWidth="4"
           strokeLinecap="round"
           strokeDasharray={RING_C}
@@ -111,12 +111,12 @@ function Gauge({ pct, value, label }: { pct: number; value: string; label: strin
   );
 }
 
-export function Calculator() {
+export function Calculator({ initialBill = "1500", initialCity = "antalya", fromDemo = false }: { initialBill?: string; initialCity?: string; fromDemo?: boolean }) {
   const t = useTranslations("Calculator");
   const locale = useLocale();
   const [mode, setMode] = useState<"bill" | "consumption">("bill");
-  const [value, setValue] = useState("");
-  const [cityId, setCityId] = useState("");
+  const [value, setValue] = useState(initialBill);
+  const [cityId, setCityId] = useState(initialCity);
   const [roofArea, setRoofArea] = useState(60);
   const [orientation, setOrientation] = useState<Orientation>("south");
   const [pitch, setPitch] = useState<RoofPitch>("moderate");
@@ -161,6 +161,10 @@ export function Calculator() {
   return (
     <div className={styles.wrap}>
       <div className={styles.form}>
+        <div className={styles.formHeading}>
+          <h2>{locale === "tr" ? "Evinizin enerji planı" : "Your home energy plan"}</h2>
+          <p>{locale === "tr" ? (fromDemo ? "Demodaki seçiminizle devam edin." : "Örnek hesap: Antalya, aylık 1.500 TL. Kendi bilgilerinizi girerek uyarlayın.") : (fromDemo ? "Continue with your demo settings." : "Example: Antalya, TRY 1,500 per month. Adjust to your home.")}</p>
+        </div>
         <div className={styles.toggle} role="tablist" aria-label={t("modeLabel")}>
           <button
             type="button"
@@ -233,6 +237,8 @@ export function Calculator() {
           </span>
         </label>
 
+        <details className={styles.advanced}>
+          <summary>{locale === "tr" ? "Çatı yönü, eğim ve batarya" : "Roof direction, pitch & battery"}</summary>
         <div className={styles.fieldGrid}>
           <label className={styles.label}>
             {t("orientationLabel")}
@@ -285,13 +291,19 @@ export function Calculator() {
           />
         </label>
 
+        </details>
         <p className={styles.note}>{t("note")}</p>
       </div>
 
-      <div className={styles.result}>
+      <div className={styles.scene}>
+        <div className={styles.sceneHeading}>
+          <h1>{t("title")}</h1>
+          <p>{locale === "tr" ? "Çatınızı keşfedin, potansiyelinizi görün." : "Explore your roof. See its potential."}</p>
+        </div>
         <RoofSim3D
           installed={result ? result.panelsInstalled : 0}
           max={capacity}
+          roofAreaM2={roofArea}
           pitch={pitch}
           orientation={orientation}
           batteryKwh={batteryKwh}
@@ -305,7 +317,9 @@ export function Calculator() {
               })
             : t("simIdle", { count: capacity })}
         </p>
-
+        <p className={styles.note}>{locale === "tr" ? "Bina ve panel yerleşimi temsilidir; hesaplama kullanılabilir çatı alanına dayanır." : "The building and panel layout are illustrative; the estimate uses the available roof area."}</p>
+      </div>
+      <div className={styles.result}>
         {result ? (
           <>
             {result.roofLimited && (
@@ -322,16 +336,12 @@ export function Calculator() {
                 value={fmtPct(Math.min(100, result.coverageRatio * 100))}
                 label={t("coverageLabel")}
               />
-              <Gauge
-                pct={1 - Math.min(1, result.paybackYears / 25)}
-                value={`${fmt(result.paybackYears, 1)} ${t("years")}`}
-                label={t("paybackShort")}
-              />
+              <Metric label={t("paybackShort")} value={`${fmt(result.paybackYears, 1)} ${t("years")}`} />
             </div>
             <div className={styles.metrics}>
               <Metric
                 label={t("costLabel")}
-                value={`${fmtTL(result.costLow)} – ${fmtTL(result.costHigh)}`}
+                value={`${fmtTL(result.costLow)} - ${fmtTL(result.costHigh)}`}
               />
               <Metric label={t("annualSavingsLabel")} value={fmtTL(result.annualSavings)} highlight />
               <Metric label={t("savings25Label")} value={fmtTL(result.savings25yr)} />

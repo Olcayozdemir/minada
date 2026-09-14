@@ -191,23 +191,38 @@ export const IconStar = (p: IconProps) => (
 
 /* --- Social --- */
 export const IconInstagram = (p: IconProps) => (
-  <Svg {...p}>
-    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-    <circle cx="12" cy="12" r="3.6" />
-    <circle cx="17" cy="7" r="0.4" fill="currentColor" stroke="none" />
+  <Svg fill="none" stroke="none" {...p}>
+    <defs>
+      <radialGradient id="instagram-brand-gradient" cx="30%" cy="107%" r="130%">
+        <stop offset="0" stopColor="#ffdc80" />
+        <stop offset="0.32" stopColor="#fcaf45" />
+        <stop offset="0.58" stopColor="#f77737" />
+        <stop offset="0.76" stopColor="#e1306c" />
+        <stop offset="1" stopColor="#833ab4" />
+      </radialGradient>
+    </defs>
+    <rect x="1" y="1" width="22" height="22" rx="6.2" fill="url(#instagram-brand-gradient)" />
+    <rect x="5.3" y="5.3" width="13.4" height="13.4" rx="4" stroke="#fff" strokeWidth="1.8" />
+    <circle cx="12" cy="12" r="3.35" stroke="#fff" strokeWidth="1.8" />
+    <circle cx="17.05" cy="6.95" r="1.05" fill="#fff" />
   </Svg>
 );
 export const IconFacebook = (p: IconProps) => (
-  <Svg {...p}>
-    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-    <path d="M15.3 7.3h-1.2a2.1 2.1 0 0 0-2.1 2.1v8.3" />
-    <path d="M9.9 11.7h4.6" />
+  <Svg fill="none" stroke="none" {...p}>
+    <rect x="1" y="1" width="22" height="22" rx="3.2" fill="#1877f2" />
+    <path
+      fill="#fff"
+      d="M13.6 20v-7h2.4l.36-2.78H13.6V8.45c0-.8.22-1.35 1.38-1.35h1.48V4.62c-.26-.03-1.13-.11-2.15-.11-2.13 0-3.59 1.3-3.59 3.69v2.02H8.3V13h2.42v7h2.88z"
+    />
   </Svg>
 );
 export const IconLinkedin = (p: IconProps) => (
-  <Svg {...p}>
-    <rect x="3.5" y="3.5" width="17" height="17" rx="3.5" />
-    <path d="M8 10.5V17M8 7.6v.1M12 17v-3.8a2.2 2.2 0 0 1 4.4 0V17" />
+  <Svg fill="none" stroke="none" {...p}>
+    <rect x="1" y="1" width="22" height="22" rx="3.2" fill="#0a66c2" />
+    <path
+      fill="#fff"
+      d="M7.28 9.4H4.5V18h2.78V9.4zM5.89 5.12a1.61 1.61 0 1 0 0 3.22 1.61 1.61 0 0 0 0-3.22zM11.74 9.4H9.08V18h2.66v-4.26c0-1.12.21-2.21 1.61-2.21 1.38 0 1.4 1.29 1.4 2.28V18h2.77v-4.72c0-2.32-.5-4.1-3.21-4.1-1.3 0-2.17.71-2.53 1.39h-.04V9.4z"
+    />
   </Svg>
 );
 // Dolu balon, ahize içinden oyulmuş (evenodd) — çizgi versiyonu 28px'te

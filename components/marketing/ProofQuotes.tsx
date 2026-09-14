@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { IconArrowRight } from "@/components/ui/icons";
 import styles from "./Proof.module.scss";
@@ -12,10 +12,12 @@ export type ProofQuote = {
   name: string;
 };
 
+const AUTOPLAY_MS = 8000;
+
 /* A single real customer voice sits beside a neutral clean-energy photograph.
    Every quote remains in the same grid cell so the longest one reserves the
-   panel height and changing slides cannot make the page jump. The reader owns
-   the pace: quotes only change through the previous and next controls. */
+   panel height and changing slides cannot make the page jump. Autoplay leaves
+   enough time to read and waits whenever the reader engages with the panel. */
 export function ProofQuotes({
   quotes,
   title,
@@ -32,13 +34,61 @@ export function ProofQuotes({
   visualSrc: string;
 }) {
   const [active, setActive] = useState(0);
+  const [announcedActive, setAnnouncedActive] = useState<number | null>(null);
+  const held = useRef(false);
+  const reduceMotion = useRef(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      reduceMotion.current = media.matches;
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (quotes.length < 2) return;
+
+    const id = window.setInterval(() => {
+      if (held.current || reduceMotion.current || document.visibilityState !== "visible") return;
+      setActive((current) => (current + 1) % quotes.length);
+    }, AUTOPLAY_MS);
+
+    return () => window.clearInterval(id);
+  }, [active, quotes.length]);
 
   const step = (direction: -1 | 1) => {
-    setActive((current) => (current + direction + quotes.length) % quotes.length);
+    const next = (active + direction + quotes.length) % quotes.length;
+    setActive(next);
+    setAnnouncedActive(next);
   };
 
   return (
-    <div className={styles.quotes} role="region" aria-label={label}>
+    <div
+      className={styles.quotes}
+      role="region"
+      aria-label={label}
+      onPointerEnter={() => {
+        held.current = true;
+      }}
+      onPointerLeave={() => {
+        held.current = false;
+      }}
+      onTouchStart={() => {
+        held.current = true;
+      }}
+      onTouchEnd={() => {
+        held.current = false;
+      }}
+      onFocusCapture={() => {
+        held.current = true;
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) held.current = false;
+      }}
+    >
       <div className={styles.quotePanel}>
         <div className={styles.quotesHead}>
           <h2 className={styles.quotesTitle}>{title}</h2>
@@ -90,8 +140,10 @@ export function ProofQuotes({
             </figure>
           ))}
         </div>
-        <p className="sr-only" aria-live="polite">
-          {active + 1} / {quotes.length}: {quotes[active]?.name}
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          {announcedActive === null
+            ? ""
+            : `${announcedActive + 1} / ${quotes.length}: ${quotes[announcedActive]?.name}`}
         </p>
       </div>
 

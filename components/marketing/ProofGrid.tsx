@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Link } from "@/i18n/navigation";
 import { IconArrowRight, IconSolar } from "@/components/ui/icons";
 import styles from "./Proof.module.scss";
@@ -30,10 +30,13 @@ type ProofGridProps = {
   locationLabel: string;
 };
 
+const AUTOPLAY_MS = 5000;
+
 /* The reference uses one lead story and two compact previews rather than an
-   even gallery. The arrows rotate the dataset through those three roles. On
-   phones all records remain available in the previously approved two-row
-   swipe rail; the desktop-only arrows are stood down there. */
+   even gallery. The dataset rotates through those roles automatically while
+   the arrows keep manual control available. On phones all records remain in
+   the approved two-row swipe rail; reordering that rail would steal the
+   reader's scroll position, so autoplay is stood down there with the arrows. */
 export function ProofGrid({
   photos,
   label,
@@ -46,7 +49,10 @@ export function ProofGrid({
   locationLabel,
 }: ProofGridProps) {
   const [active, setActive] = useState(0);
+  const [announcedActive, setAnnouncedActive] = useState<number | null>(null);
   const [isMobileRail, setIsMobileRail] = useState(false);
+  const held = useRef(false);
+  const reduceMotion = useRef(false);
   const ordered = photos.map((_, index) => photos[(active + index) % photos.length]);
   const canCycle = photos.length > 1;
 
@@ -58,12 +64,55 @@ export function ProofGrid({
     return () => media.removeEventListener("change", update);
   }, []);
 
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      reduceMotion.current = media.matches;
+    };
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!canCycle || isMobileRail) return;
+
+    const id = window.setInterval(() => {
+      if (held.current || reduceMotion.current || document.visibilityState !== "visible") return;
+      setActive((current) => (current + 1) % photos.length);
+    }, AUTOPLAY_MS);
+
+    return () => window.clearInterval(id);
+  }, [active, canCycle, isMobileRail, photos.length]);
+
   const step = (direction: -1 | 1) => {
-    setActive((current) => (current + direction + photos.length) % photos.length);
+    const next = (active + direction + photos.length) % photos.length;
+    setActive(next);
+    setAnnouncedActive(next);
   };
 
   return (
-    <div className={styles.projects}>
+    <div
+      className={styles.projects}
+      onPointerEnter={() => {
+        held.current = true;
+      }}
+      onPointerLeave={() => {
+        held.current = false;
+      }}
+      onTouchStart={() => {
+        held.current = true;
+      }}
+      onTouchEnd={() => {
+        held.current = false;
+      }}
+      onFocusCapture={() => {
+        held.current = true;
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) held.current = false;
+      }}
+    >
       <div className={styles.projectHead}>
         <div className={styles.projectHeading}>
           <p className={styles.projectEyebrow}>{eyebrow}</p>
@@ -177,8 +226,10 @@ export function ProofGrid({
           </Link>
         </li>
       </ul>
-      <p className="sr-only" aria-live="polite">
-        {active + 1} / {photos.length}: {ordered[0]?.title}
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {announcedActive === null
+          ? ""
+          : `${announcedActive + 1} / ${photos.length}: ${photos[announcedActive]?.title}`}
       </p>
     </div>
   );

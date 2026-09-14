@@ -13,7 +13,7 @@
     "slug": "castle-hotel-ges",
     "title": "Castle Hotel GES",
     "kind": "ticari-cati",
-    "location": null,
+    "location": "Antalya",
     "systemKw": null,
     "cover": "castle-hotel.jpg"
   },
@@ -38,9 +38,9 @@
   {
     "source": "Yüceal İnşaat nSEB",
     "slug": "yuceal-insaat-nseb-ges",
-    "title": "Yüceal İnşaat nSEB GES",
+    "title": "Yücel İnşaat GES",
     "kind": "konut-cati",
-    "location": null,
+    "location": "Isparta",
     "systemKw": null,
     "cover": "yuceal-insaat.jpg"
   },
@@ -67,7 +67,7 @@
     "slug": "mesken-ges-03",
     "title": null,
     "kind": "konut-cati",
-    "location": null,
+    "location": "Antalya",
     "systemKw": null,
     "cover": "mesken-03.jpg"
   },
@@ -76,7 +76,7 @@
     "slug": "mesken-ges-04",
     "title": null,
     "kind": "konut-cati",
-    "location": null,
+    "location": "Antalya",
     "systemKw": null,
     "cover": "mesken-04.jpg"
   }

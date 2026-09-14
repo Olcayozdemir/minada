@@ -5,6 +5,7 @@ import { urlFor } from "@/sanity/image";
 import { capacityLabel } from "./ReferencesSection";
 import { ProofGrid, type ProofPhoto } from "./ProofGrid";
 import { ProofQuotes } from "./ProofQuotes";
+import { LOCAL_REFERENCE_PROJECTS } from "./localReferenceProjects";
 import styles from "./Proof.module.scss";
 
 /* Published Sanity projects and the supplied field photographs feed the
@@ -15,29 +16,6 @@ const QUOTES = ["t1", "t2", "t3", "t4"] as const;
 
 /** Six CMS projects lead the set; the four supplied photographs follow. */
 const SANITY_SHOWN = 6;
-
-const LOCAL_PROJECTS = [
-  {
-    id: "residential-tile-roof",
-    key: "tileRoof",
-    src: "/images/projects/residential-tile-roof.jpg",
-  },
-  {
-    id: "modern-villa-roof",
-    key: "modernVilla",
-    src: "/images/projects/modern-villa-roof.jpg",
-  },
-  {
-    id: "commercial-rooftop",
-    key: "commercialRoof",
-    src: "/images/projects/commercial-rooftop.jpg",
-  },
-  {
-    id: "petrol-station-canopy",
-    key: "petrolStation",
-    src: "/images/projects/petrol-station-canopy.jpg",
-  },
-] as const;
 
 /** One crop serves both the panoramic lead card and the compact previews. */
 const CROP_W = 1200;
@@ -66,15 +44,15 @@ export async function Proof({ locale }: { locale: string }) {
       w: CROP_W,
       h: CROP_H,
     })),
-    ...LOCAL_PROJECTS.map((project) => ({
-      id: project.id,
-      title: t(`localProjects.${project.key}.title`),
-      location: "",
+    ...LOCAL_REFERENCE_PROJECTS.map((project) => ({
+      id: `local:${project.id}`,
+      title: t(`localProjects.${project.translationKey}.title`),
+      location: project.location,
       capacity: "",
-      kind: t(`localProjects.${project.key}.kind`),
+      kind: t(`localProjects.${project.translationKey}.kind`),
       src: project.src,
-      w: 1600,
-      h: 1200,
+      w: project.width,
+      h: project.height,
     })),
   ];
 

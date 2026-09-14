@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CalculatorDemo } from "./CalculatorDemo";
 import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -31,14 +31,7 @@ export async function CalculatorTeaser() {
         </div>
 
         <div className={styles.media}>
-          <Image
-            src="/images/v2/calc-2.jpg"
-            alt=""
-            width={720}
-            height={560}
-            sizes="(max-width: 900px) 92vw, 46vw"
-            className={styles.img}
-          />
+          <CalculatorDemo />
         </div>
       </div>
     </Section>

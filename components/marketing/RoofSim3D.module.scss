@@ -1,6 +1,6 @@
 .scene {
   position: relative;
-  height: clamp(250px, 26vw, 340px);
+  height: var(--scene-height, 340px);
   /* Bleed out of the result panel's padding — full-width stage, no cropped edges. */
   margin: calc(-1 * var(--sim-pad, 0px)) calc(-1 * var(--sim-pad, 0px)) 4px;
   cursor: grab;
@@ -25,10 +25,10 @@
 /* Floating glass stat cards, pinned over the scene's left edge */
 .cards {
   position: absolute;
-  top: 18px;
+  bottom: 8px;
   left: 18px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   pointer-events: none;
 }
@@ -37,10 +37,10 @@
   min-width: 128px;
   padding: 10px 14px;
   border-radius: 14px;
-  background: rgba(16, 42, 74, 0.38);
-  border: 1px solid rgba(214, 234, 255, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(20, 40, 60, 0.08);
   backdrop-filter: blur(7px);
-  box-shadow: 0 8px 24px rgba(2, 10, 24, 0.35);
+  box-shadow: 0 8px 24px rgba(2, 10, 24, 0.06);
 
   span {
     display: block;
@@ -48,7 +48,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(217, 236, 255, 0.75);
+    color: #4b5662;
   }
 
   strong {
@@ -56,6 +56,6 @@
     margin-top: 2px;
     font-size: 16px;
     font-weight: 700;
-    color: #fff;
+    color: #142434;
   }
 }

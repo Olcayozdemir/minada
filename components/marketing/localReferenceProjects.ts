@@ -1,0 +1,34 @@
+export const LOCAL_REFERENCE_PROJECTS = [
+  {
+    id: "residential-tile-roof",
+    translationKey: "tileRoof",
+    src: "/images/projects/residential-tile-roof.jpg",
+    location: "Antalya",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    id: "modern-villa-roof",
+    translationKey: "modernVilla",
+    src: "/images/projects/modern-villa-roof.jpg",
+    location: "Antalya",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    id: "commercial-rooftop",
+    translationKey: "commercialRoof",
+    src: "/images/projects/commercial-rooftop.jpg",
+    location: "Antalya",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    id: "petrol-station-canopy",
+    translationKey: "petrolStation",
+    src: "/images/projects/petrol-station-canopy.jpg",
+    location: "Antalya",
+    width: 1600,
+    height: 1200,
+  },
+] as const;
