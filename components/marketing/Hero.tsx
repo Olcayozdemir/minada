@@ -48,13 +48,24 @@ export async function Hero() {
   });
   const {
     props: { srcSet: mobileSrcSet },
-  } = getImageProps({ ...photoCommon, alt: "", src: "/images/v2/hero-solar-mobile.jpeg" });
+  } = getImageProps({
+    ...photoCommon,
+    alt: "",
+    src: "/images/v2/hero-solar-mobile-modern.webp",
+  });
 
   return (
     <section className={styles.hero} data-hero="">
       <picture>
         <source media="(max-width: 760px)" srcSet={mobileSrcSet} />
-        <img {...photo} className={styles.photo} loading="eager" fetchPriority="high" />
+        <img
+          {...photo}
+          src={photo.src}
+          alt={photo.alt}
+          className={styles.photo}
+          loading="eager"
+          fetchPriority="high"
+        />
       </picture>
       <div className={styles.scrim} aria-hidden="true" />
 

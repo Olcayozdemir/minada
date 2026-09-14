@@ -6,7 +6,7 @@
 // runs traced as polylines, so a bead of light can be sent down them.
 //
 // Coordinates are in each render's own pixel space (hero-solar.jpeg is
-// 1920x1072, hero-solar-mobile.jpeg is 1242x2225), so the SVG viewBox is the
+// 1920x1072, hero-solar-mobile-modern.webp is 941x1672), so the SVG viewBox is
 // file's intrinsic size and every number below is a pixel in that file. They
 // were traced by scanning the renders rather than by eye: for each slice
 // across a run, the brightest pixel against the slice's own median is the
@@ -126,43 +126,50 @@ export const DESKTOP_CIRCUIT: Circuit = {
   carPort: [890, 858],
 };
 
-/* hero-solar-mobile.jpeg — a different render, not a crop: the house is seen
-   from further left and the four units are lined up along one wall, which
-   makes the runs off the inverter much shorter than their desktop
-   counterparts (see the per-plane travel windows in the stylesheet). */
+/* hero-solar-mobile-modern.webp — the selected 9:16 mobile render. The paths
+   below trace only the cables visible in that render. */
 export const MOBILE_CIRCUIT: Circuit = {
-  viewBox: "0 0 1242 2225",
+  viewBox: "0 0 941 1672",
   trunk: [
-    [703, 1222],
-    [725, 1275],
-    [727, 1337],
-    [669, 1362],
-    [669, 1530],
+    [634, 770],
+    [652, 795],
+    [652, 815],
+    [632, 827],
+    [632, 898],
+    [651, 900],
+    [651, 978],
+    [633, 989],
+    [633, 1097],
   ],
   battery: [
-    [690, 1622], // inverter's underside, right-hand cable
-    [690, 1648],
-    [701, 1660],
-    [750, 1660],
+    [532, 1148], // inverter underside to the battery's left-hand input
+    [532, 1170],
+    [555, 1170],
+    [572, 1160],
+    [572, 1128],
   ],
   heatpump: [
-    [668, 1622], // inverter's underside, left-hand cable
-    [668, 1648],
-    [657, 1660],
-    [638, 1661],
+    [573, 1245], // wall-foot strip from the battery toward the heat pump
+    [520, 1248],
+    [465, 1249],
+    [410, 1249],
+    [355, 1249],
+    [310, 1249],
   ],
   ev: [
-    [897, 1615], // wallbox underside
-    [895, 1700],
-    [899, 1740],
-    [910, 1766], // the slack loop resting on the drive
-    [930, 1771],
-    [946, 1753],
-    [953, 1722],
-    [959, 1688],
-    [968, 1650],
-    [974, 1641], // charge port
+    [460, 1140], // wallbox underside
+    [469, 1185],
+    [471, 1225],
+    [478, 1245],
+    [520, 1251],
+    [575, 1255],
+    [620, 1273], // slack loop on the drive
+    [646, 1280],
+    [656, 1265],
+    [655, 1220],
+    [660, 1198],
+    [680, 1178], // charge port
   ],
-  inverter: [682, 1577],
-  carPort: [975, 1640],
+  inverter: [530, 1120],
+  carPort: [680, 1178],
 };

@@ -14,6 +14,7 @@
   align-items: stretch;
   overflow: hidden;
   color: var(--on-dark);
+  background: #081a30;
 }
 
 .photo {
@@ -370,23 +371,23 @@
   /* 1d mobil: başlık üstte, alt metin + CTA'lar + hesaplayıcı kartı alta
      sabitlenir; dikey kadraj (hero-mobile.webp) evi orta bantta taşır. */
   .photo {
-    object-position: 50% 45%;
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
-  /* Dikey kadraj (hero-mobile.webp, 768x1376) — düzlem ve konumlar ona göre. */
+  /* Seçilen 941x1672 render ekranla aynı 9:16 oranına yakın. Devre düzlemi
+     fotoğrafın cover geometrisini aynı merkezden izler. */
   .dots {
-    aspect-ratio: 768 / 1376;
+    aspect-ratio: 941 / 1672;
     left: 50%;
-    top: 45%;
-    transform: translate(-50%, -45%);
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  /* Telefonda numaralar kalkıyor. Dikey kadrajda dört ünite y'nin %70-74
-     bandında duruyor, alt metin bloğu da tam oradan başlıyor (ölçüldü: metin
-     467px'de, 2/3/4 işaretleri 457-505 arasında). Cihazlar orada olduğu için
-     işaretleri kaydırmak onları ünitelerinden koparır; çakışmayı çözen bir
-     konum yok. Zaten sayfada 1-4'ün ne olduğunu söyleyen bir künye de yok:
-     dar ekranda cümlenin üstüne oturmuş dört rozet kalıyordu.
+  /* Telefonda numaralar kalkıyor. Yeni dikey kadrajda panel işareti üstte,
+     cihaz işaretleri ise y'nin %74-80 bandında; alt aksiyon bloğu da bu banda
+     giriyor. İşaretleri kaydırmak onları ürünlerinden koparır ve dar ekranda
+     1-4'ün ne olduğunu söyleyen ayrı bir künye de yoktur.
 
      Yerini devre alıyor — ışık zaten her üniteye tek tek varıyor, işaret
      etme işini o yapıyor. Geri açmak için tek satır: display'i kaldır.
@@ -396,12 +397,12 @@
     display: none;
   }
 
-  .dot1 { left: 65%; top: 46.5%; }
-  .dot2 { left: 63.8%; top: 73.8%; }
+  .dot1 { left: 67%; top: 33%; }
+  .dot2 { left: 64.7%; top: 75%; }
   /* Şarj ünitesinin sol üst omzu — cihazın yüzünü ve EV'yi kapatmasın. */
-  .dot3 { left: 70.3%; top: 70%; }
+  .dot3 { left: 50.2%; top: 74.2%; }
   /* Ünitenin üst yarısı: alttaki metin satırıyla çakışmasın. */
-  .dot4 { left: 44.9%; top: 73.2%; }
+  .dot4 { left: 38.5%; top: 80%; }
 
   /* Telefonda maske yok (Olcay, 2026-09-03). Dikey kadrajın alt yarısı
      zaten koyu; üstüne binen rampa fotoğrafın son üçte birini neredeyse
