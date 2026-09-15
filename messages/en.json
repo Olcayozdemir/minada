@@ -85,30 +85,38 @@
   },
   "Home": {
     "how": {
+      "pauseMotion": "Pause animation",
+      "playMotion": "Play animation",
       "eyebrow": "How it works",
       "title": "Six steps from survey to operation",
-      "intro": "With renewable-energy engineering, our goal is to turn your existing home into one that is self-sufficient in every condition: six transparent steps, so you know in advance what happens at each stage.",
+      "intro": "We bring your project to life in six transparent steps, from the first idea to long-term operation.",
       "discovery": {
+        "shortTitle": "Free Survey",
         "title": "Free survey & consumption analysis",
         "desc": "We inspect the site in person and analyze your bills and load profile. The survey is free."
       },
       "engineering": {
+        "shortTitle": "System Design",
         "title": "Engineering & system design",
         "desc": "We model monthly and annual production with PVsyst or PV*SOL and size the battery capacity to your consumption profile."
       },
       "licensing": {
+        "shortTitle": "Permits and Approval",
         "title": "Permits & project approval",
         "desc": "We run the entire official process, including the utility application, the connection invitation letter and the connection agreement."
       },
       "procurement": {
+        "shortTitle": "Procurement",
         "title": "Procurement",
         "desc": "We source every component, from panels to batteries, from tier-1 manufacturers. The equipment list is written into the offer by brand and model."
       },
       "install": {
+        "shortTitle": "Installation",
         "title": "Installation & commissioning",
         "desc": "We complete the installation, run the tests and bring the system online. The work area is contained and the site is tidied at the end of every day."
       },
       "om": {
+        "shortTitle": "Monitoring and Maintenance",
         "title": "Monitoring & maintenance",
         "desc": "We monitor the system remotely around the clock, carry out periodic maintenance and send you performance reports."
       }

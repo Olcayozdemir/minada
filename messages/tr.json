@@ -85,30 +85,38 @@
   },
   "Home": {
     "how": {
+      "pauseMotion": "Hareketi durdur",
+      "playMotion": "Hareketi oynat",
       "eyebrow": "Nasıl Çalışır",
       "title": "Keşiften işletmeye 6 adım",
-      "intro": "Yenilenebilir enerji mühendisliği ile hedefimiz; mevcut evinizi her koşulda kendine yeten bir eve çevirmek: Altı şeffaf adımla her aşamada ne olacağını önceden bilirsiniz.",
+      "intro": "Projenizi ilk fikirden uzun vadeli işletmeye kadar altı şeffaf adımda birlikte hayata geçiriyoruz.",
       "discovery": {
+        "shortTitle": "Ücretsiz Keşif",
         "title": "Ücretsiz Keşif & Tüketim Analizi",
         "desc": "Sahayı yerinde inceler, faturalarınızı ve yük profilinizi analiz ederiz. Keşif ücretsizdir."
       },
       "engineering": {
+        "shortTitle": "Sistem Tasarımı",
         "title": "Mühendislik & Sistem Tasarımı",
         "desc": "PVsyst veya PV*SOL ile aylık ve yıllık üretim modelini çıkarır, tüketim profilinize göre batarya kapasitesini boyutlandırırız."
       },
       "licensing": {
+        "shortTitle": "İzin ve Onay",
         "title": "İzin & Proje Onayı",
         "desc": "Dağıtım şirketi başvurusu, çağrı mektubu ve bağlantı anlaşması dahil tüm resmî süreci biz yürütürüz."
       },
       "procurement": {
+        "shortTitle": "Tedarik",
         "title": "Tedarik",
         "desc": "Panelden bataryaya kadar her bileşeni tier-1 üreticilerden tedarik ederiz. Ekipman listesi teklifte marka ve model bazında yazılıdır."
       },
       "install": {
+        "shortTitle": "Kurulum",
         "title": "Kurulum & Devreye Alma",
         "desc": "Montajı tamamlar, testleri yapar ve sistemi devreye alırız. Çalışma alanı sınırlandırılır, her gün sonunda saha toparlanır."
       },
       "om": {
+        "shortTitle": "İzleme ve Bakım",
         "title": "İzleme & Bakım",
         "desc": "Sistemi 7/24 uzaktan izler, periyodik bakımını yapar ve performans raporlarını size iletiriz."
       }

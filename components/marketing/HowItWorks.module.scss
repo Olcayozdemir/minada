@@ -1,342 +1,234 @@
 @use "../../styles/mixins" as *;
 
-/* Six-card grid runs tall, so the section gives back some of the default
-   .section chrome — double class beats .section's padding (FaqTeaser pattern). */
 .deco.deco {
-  padding-block: clamp(56px, 6.5vw, 88px);
-}
-
-/* Subtle dot grid + gold wash — quiet texture behind the step cards. */
-.deco::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(560px 380px at 90% 8%, rgba(242, 168, 44, 0.07), transparent 70%),
-    radial-gradient(rgba(18, 36, 63, 0.055) 1px, transparent 1.3px);
-  background-size:
-    auto,
-    24px 24px;
-  mask-image: linear-gradient(180deg, black 60%, transparent);
-}
-
-.head {
-  margin-bottom: var(--space-8);
-}
-
-/* ---- step grid --------------------------------------------------------- */
-.grid {
-  @include list-reset;
-  /* Two rows of three. This used to be a single row pinned to the viewport,
-     sliding sideways on scroll — the slide read as the page being taken away
-     from the reader, so all six steps are on screen at once now. */
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
-
-  @include bp-down(900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Phones keep two columns. One column stacked six arch photos at 390px
-     each and ran the section to 4.6 screens, against 0.6-1 for everything
-     around it; the same six read as a 2x3 plate at a third of the height.
-     Same figures, same rhythm, just not one per screen. */
-  @include bp-down(560px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8) var(--space-4);
-  }
-}
-
-/* Compact (homepage): no photo, so the numeral row is the card's top edge and
-   carries the visual weight alone — slightly larger to hold the line. */
-.compact {
-  .meta {
-    margin-top: 0;
-  }
-
-  .num {
-    font-size: 3rem;
-  }
-
-  /* Phones keep two columns. These are index lines, not photo cards — six
-     full-width rows read as an endless list; a 2x3 index scans in one screen.
-     Type steps down to sit in the ~170px column. */
-  @include bp-down(560px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6) var(--space-5);
-
-    .num {
-      font-size: 2rem;
-    }
-
-    .stepTitle {
-      font-size: 1rem;
-    }
-
-    .stepDesc {
-      font-size: 0.85rem;
-    }
-  }
-}
-
-/* Arch figure: dome-topped photo + gold step badge on the photo/caption
-   seam + centered caption. Even steps flip (caption above, dome below) and
-   sink slightly, so the row reads as an alternating rhythm, not a grid. */
-.step {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.35s ease;
-}
-
-.mediaWrap {
-  position: relative;
-}
-
-.media {
-  position: relative;
-  aspect-ratio: 0.88;
-  border-radius: 999px 999px var(--r-lg) var(--r-lg);
+  /* The page-wide energy line passes behind this self-contained model. */
+  z-index: 2;
+  padding-block: clamp(48px, 5.5vw, 76px);
+  background: #f8fafc;
   overflow: hidden;
-  background: linear-gradient(160deg, var(--green-700), var(--green-850));
-  box-shadow: var(--shadow-soft);
-  transition: box-shadow 0.35s ease;
 }
-
-/* Gold seam badge; the bg-colored ring lifts it off the photo edge. */
-.badge {
-  position: absolute;
-  left: 50%;
-  bottom: -23px;
-  transform: translateX(-50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: var(--gold);
-  color: var(--on-accent);
-  font-family: var(--font-display), sans-serif;
-  font-weight: 800;
-  font-size: 0.95rem;
-  box-shadow: 0 0 0 6px var(--bg);
-}
-
-.flip {
-  .mediaWrap {
-    order: 2;
-  }
-
-  .body {
-    order: 1;
-  }
-
-  .media {
-    border-radius: var(--r-lg) var(--r-lg) 999px 999px;
-  }
-
-  .badge {
-    bottom: auto;
-    top: -23px;
+.journey { position: relative; isolation: isolate; }
+.head {
+  max-width: 780px;
+  margin-bottom: 28px;
+  > div { max-width: none; margin-bottom: 0; }
+  h1, h2 { font-size: clamp(30px, 3.3vw, 46px); line-height: 1.1; }
+  > div > p:last-child {
+    max-width: 620px;
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 1.6;
+    margin-top: 18px;
   }
 }
-
-/* Two-up on a phone leaves each arch about 160px wide, so the badge and the
-   caption come down with it — at their desktop sizes the badge alone would be
-   a third of the photo's width. */
-@include bp-down(560px) {
-  .grid:not(.compact) {
-    .badge {
-      width: 34px;
-      height: 34px;
-      bottom: -17px;
-      font-size: 0.78rem;
-      box-shadow: 0 0 0 5px var(--bg);
-    }
-
-    .flip .badge {
-      bottom: auto;
-      top: -17px;
-    }
-
-    .stepTitle {
-      font-size: 0.95rem;
-    }
-
-    .stepDesc {
-      font-size: 0.82rem;
-    }
-  }
+.scene { position: relative; }
+.pin, .sticky { display: contents; }
+.sceneStage { width: 100%; }
+.sceneViewport {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #9aaec5 #e8edf4;
+  &:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 }
-
-/* Checkerboard sink for the flipped columns; wide screens only. */
-@include bp-up(901px) {
-  .flip {
-    margin-top: 52px;
-  }
+.maquette { display: block; width: 100%; height: auto; }
+.mobileVisual, .stepIndex { display: none; }
+.connectors {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1;
+  path { vector-effect: non-scaling-stroke; }
 }
-
-/* Olcay: "tek satır" — on wide screens all six steps sit in one row of
-   smaller arches, so the section reads as a band instead of a wall. */
-@include bp-up(1200px) {
-  .grid:not(.compact) {
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-4);
-
-    .stepTitle {
-      font-size: 0.95rem;
-    }
-
-    .stepDesc {
-      font-size: 0.8rem;
-    }
-
-    .badge {
-      width: 40px;
-      height: 40px;
-      bottom: -20px;
-      font-size: 0.85rem;
-    }
-
-    .flip {
-      margin-top: 40px;
-
-      .badge {
-        bottom: auto;
-        top: -20px;
-      }
-    }
-  }
+.panelLayer, .truckLayer, .boomLayer {
+  animation-duration: 14s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  transform-box: view-box;
 }
-
-.mediaImg {
-  object-fit: cover;
-  transition: transform 0.6s ease;
+.panelLayer { animation-name: fit-panel; }
+.truckLayer { animation-name: deliver-material; filter: drop-shadow(0 5px 3px rgb(28 36 48 / 20%)); }
+.boomLayer { animation-name: lift-panel; transform-origin: 33px 129px; }
+.scene[data-running="true"][data-paused="false"] {
+  .panelLayer, .truckLayer, .boomLayer { animation-play-state: running; }
 }
-
-/* Quiet navy grade so six stock photos read as one set. */
-.scrim {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 26, 48, 0.14),
-    transparent 36%,
-    transparent 60%,
-    rgba(8, 26, 48, 0.3)
-  );
+/* One shared installation story, with holds so each action has time to read. */
+@keyframes fit-panel {
+  0%, 5%, 88%, 100% { transform: translateY(0); }
+  17%, 76% { transform: translateY(34px); }
 }
-
-/* Branded stand-in until a real step photo is dropped in. */
-.placeholder {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: var(--gold-300);
-  background:
-    radial-gradient(120% 90% at 20% 0%, rgba(96, 214, 234, 0.16), transparent 60%),
-    linear-gradient(160deg, var(--green-700), var(--green-900));
+@keyframes deliver-material {
+  0%, 22%, 100% { transform: translate(0, 0); }
+  34%, 70% { transform: translate(-32px, 13px); }
+  84% { transform: translate(0, 0); }
 }
-
-/* Illustrated icon inherited from the old process service cards. */
-.art {
-  width: 84px;
-  height: 84px;
-  object-fit: contain;
-  filter: drop-shadow(0 6px 18px rgba(8, 26, 48, 0.35));
+@keyframes lift-panel {
+  0%, 42%, 94%, 100% { transform: rotate(0deg); }
+  56%, 78% { transform: rotate(-7deg); }
 }
-
-/* ---- editorial index caption ------------------------------------------- */
-.meta {
+.sceneToolbar {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  margin-top: var(--space-3);
+  justify-content: flex-end;
+  min-height: 44px;
+  margin-top: 4px;
 }
-
-/* Oversized outlined numeral — fills gold as the step enters the frame. */
-.num {
-  font-family: var(--font-display), sans-serif;
-  font-weight: 800;
-  font-size: 2.5rem;
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  color: transparent;
-  -webkit-text-stroke: 1.3px rgba(18, 36, 63, 0.38);
-  transition:
-    color 0.35s ease,
-    -webkit-text-stroke-color 0.35s ease;
+.motionToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #c9d3df;
+  border-radius: 24px;
+  background: #f8fafc;
+  color: var(--ink);
+  font-size: 12px;
+  cursor: pointer;
+  &:hover { background: #e8edf4; }
+  &:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 }
-
-/* Hairline that fills with gold, left to right, on the active step. */
-.rule {
-  position: relative;
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-  overflow: hidden;
-
-  &::after {
-    content: "";
+.steps {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 12px;
+}
+.step { color: var(--ink); padding-inline: 12px; }
+.stepCopy { min-width: 0; }
+.stepTitle { font-size: clamp(14px, 1.2vw, 18px); line-height: 1.3; text-align: center; }
+.stepDesc { margin-top: 10px; font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+.compact .stepDesc { display: none; }
+@include bp-down(900px) {
+  .head { margin-bottom: 24px; }
+  .stepTitle { font-size: 14px; }
+  .stepDesc { font-size: 12px; }
+}
+@include bp-down(700px) {
+  .scene { position: relative; }
+  .sceneStage { width: 100%; }
+  .sceneViewport {
+    overflow: visible;
+    scrollbar-width: none;
+  }
+  .maquette { display: none; }
+  .mobileVisual {
+    position: relative;
+    display: block;
+    width: min(100%, 560px);
+    margin-inline: auto;
+  }
+  .mobileMaquette {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .mobileEnergy {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.5s ease 0.1s;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    path {
+      fill: none;
+      stroke-linecap: round;
+    }
+  }
+  .mobileEnergyBase {
+    stroke: rgb(93 220 255 / 92%);
+    stroke-width: 6;
+    filter: drop-shadow(0 0 4px rgb(70 194 236 / 55%));
+  }
+  .mobileEnergyPulse {
+    stroke: rgb(235 253 255 / 98%);
+    stroke-width: 14;
+    stroke-dasharray: .001 .999;
+    filter:
+      drop-shadow(0 0 5px rgb(142 235 255 / 90%))
+      drop-shadow(0 0 10px rgb(70 194 236 / 72%));
+    animation: mobile-energy-flow 3.8s linear infinite paused;
+  }
+  .scene[data-running="true"][data-paused="false"] .mobileEnergyPulse {
+    animation-play-state: running;
+  }
+  .mobileMarkers {
+    @include list-reset;
+    position: absolute;
+    inset: 0;
+  }
+  .mobileMarker {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 46%;
+    padding: 5px 7px;
+    border: 1px solid rgb(11 43 83 / 16%);
+    border-radius: 6px;
+    background: rgb(248 250 252 / 94%);
+    box-shadow: 0 4px 14px rgb(26 42 62 / 10%);
+    color: var(--ink);
+    font-size: clamp(10px, 3vw, 12px);
+    font-weight: 650;
+    line-height: 1.2;
+    text-wrap: balance;
+    &::after {
+      position: absolute;
+      top: 50%;
+      width: clamp(14px, 6vw, 26px);
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+    span { color: #c55200; font-variant-numeric: tabular-nums; }
+    &:nth-child(1) { top: 7%; left: 1%; }
+    &:nth-child(2) { top: 24%; right: 1%; }
+    &:nth-child(3) { top: 39%; left: 1%; }
+    &:nth-child(4) { top: 54%; right: 1%; }
+    &:nth-child(5) { top: 70%; left: 1%; }
+    &:nth-child(6) { top: 87%; right: 1%; }
+    &:nth-child(odd)::after { left: 100%; }
+    &:nth-child(even)::after { right: 100%; }
+  }
+  .sceneToolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    min-height: 44px;
+    margin: 0;
+  }
+  .motionToggle { flex: 0 0 44px; width: 44px; justify-content: center; padding: 8px; span { display: none; } }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 18px;
+    border-top: 1px solid #d8e0e9;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px 2px;
+    border-bottom: 1px solid #d8e0e9;
+  }
+  .stepIndex {
+    display: block;
+    color: #c55200;
+    font-size: 13px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.3;
+  }
+  .stepTitle { font-size: 14px; text-align: left; }
+  .stepDesc { margin-top: 5px; font-size: 13px; line-height: 1.55; }
+  @keyframes mobile-energy-flow {
+    to { stroke-dashoffset: -1; }
   }
 }
-
-.body {
-  padding-top: var(--space-6);
-  text-align: center;
+@media (prefers-reduced-motion: reduce) {
+  .panelLayer, .truckLayer, .boomLayer { animation: none; }
+  .mobileEnergyPulse { display: none; }
+  .motionToggle { display: none; }
 }
-
-/* Flipped cards carry the caption above the dome. */
-.flip .body {
-  padding-top: 0;
-  padding-bottom: var(--space-6);
-}
-
-/* Compact keeps the left-aligned magazine caption. */
-.compact .body {
-  padding-top: var(--space-3);
-  text-align: left;
-}
-
-.stepTitle {
-  font-size: 1.08rem;
-  margin-bottom: var(--space-2);
-}
-
-.stepDesc {
-  font-size: 0.92rem;
-  color: var(--ink-2);
-  max-width: 30ch;
-  margin-inline: auto;
-}
-
-.compact .stepDesc {
-  max-width: none;
-}
-
-/* Pointer fallback (no JS / reduced motion): hover mirrors the active state. */
-.step:hover {
-  .mediaImg {
-    transform: scale(1.045);
-  }
-
-  .num {
-    color: var(--gold-500);
-    -webkit-text-stroke-color: var(--gold-500);
-  }
-
-  .rule::after {
-    transform: scaleX(1);
-  }
-}
-
