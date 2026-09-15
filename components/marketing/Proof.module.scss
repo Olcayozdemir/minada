@@ -327,7 +327,7 @@
 }
 
 .previewCard .projectImage {
-  flex: 0 0 58%;
+  flex: 0 0 70%;
   min-height: 0;
 }
 
@@ -336,7 +336,7 @@
   flex: 1;
   min-height: 0;
   flex-direction: column;
-  padding: clamp(14px, 1.5vw, 20px);
+  padding: clamp(11px, 1vw, 14px);
 
   h3 {
     overflow: hidden;
@@ -350,7 +350,7 @@
 }
 
 .previewKind {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   overflow: hidden;
   font-size: 10.5px;
   font-weight: 700;
@@ -367,7 +367,7 @@
   justify-content: space-between;
   gap: 10px;
   margin-top: auto;
-  padding-top: 10px;
+  padding-top: 8px;
   border-top: 1px solid var(--line);
   font-size: 11.5px;
   line-height: 1.25;
@@ -629,6 +629,10 @@
   .previewCard {
     height: clamp(250px, 31vw, 310px);
   }
+
+  .previewCard .projectImage {
+    flex-basis: 66%;
+  }
 }
 
 @include bp-down(860px) {
@@ -761,7 +765,7 @@
   }
 
   .previewCard .projectImage {
-    flex-basis: 56%;
+    flex-basis: 60%;
   }
 
   .previewBody {

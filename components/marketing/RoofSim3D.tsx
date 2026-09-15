@@ -47,8 +47,13 @@ function getCellTexture() {
     g.beginPath();
     g.moveTo(i * 32, 0);
     g.lineTo(i * 32, 128);
-    g.moveTo(0, i * 32);
-    g.lineTo(128, i * 32);
+    g.stroke();
+  }
+  for (let i = 1; i < 6; i++) {
+    g.beginPath();
+    const y = (i * 128) / 6;
+    g.moveTo(0, y);
+    g.lineTo(128, y);
     g.stroke();
   }
   g.strokeStyle = "#a4b0bc";
@@ -130,11 +135,7 @@ function getSunDiscTexture() {
   return sunDiscTex;
 }
 
-/**
- * One roof cell: a translucent mounting slot that is always there, plus the
- * live panel that scales/glows in when `on`. Activation is staggered by
- * `delay` so panels sweep across the roof.
- */
+/** One roof cell. Activation is staggered so panels sweep across the roof. */
 function PanelCell({
   x,
   z,
@@ -142,7 +143,6 @@ function PanelCell({
   d,
   on,
   delay,
-  showSlot,
 }: {
   x: number;
   z: number;
@@ -150,8 +150,6 @@ function PanelCell({
   d: number;
   on: boolean;
   delay: number;
-  /** Mounting pads only make sense once a system is being simulated. */
-  showSlot: boolean;
 }) {
   const panel = useRef<THREE.Group>(null!);
   const mat = useRef<THREE.MeshPhysicalMaterial>(null!);
@@ -180,18 +178,10 @@ function PanelCell({
 
   return (
     <group position={[x, 0, z]}>
-      {/* empty mounting slot — outline only, so it reads the same from any angle */}
-      {showSlot && (
-        <mesh position={[0, 0.004, 0]}>
-          <boxGeometry args={[w * 0.92, 0.008, d * 0.86]} />
-          <meshBasicMaterial color="#eef2f7" transparent opacity={0.025} depthWrite={false} />
-          <Edges color="#cfe0f2" threshold={30} transparent opacity={0.18} />
-        </mesh>
-      )}
       {/* live panel: dark cell body + solar-cell texture on top */}
       <group ref={panel} position={[0, 0.04, 0]}>
         <mesh>
-          <boxGeometry args={[w * 0.92, 0.05, d * 0.85]} />
+          <boxGeometry args={[w * 0.96, 0.05, d * 0.98]} />
           <meshPhysicalMaterial
             ref={mat}
             color="#123a63"
@@ -205,7 +195,7 @@ function PanelCell({
           <Edges color="#88979e" threshold={30} />
         </mesh>
         <mesh position={[0, 0.028, 0]} rotation={[-Math.PI / 2, 0, 0]} material={topMat}>
-          <planeGeometry args={[w * 0.92, d * 0.85]} />
+          <planeGeometry args={[w * 0.96, d * 0.98]} />
         </mesh>
       </group>
     </group>
@@ -377,24 +367,22 @@ function House({
     return geo;
   }, [ridgeY, eaveHeight, WALL_W, WALL_D]);
 
-  // Whole grid lives on the front slope. Size the visual modules from the
-  // available roof plane instead of using a tiny fixed cell size. Modules use
-  // a regular portrait grid and each row fills symmetrically from its centre.
+  // Only installed modules are laid out. Their portrait proportions remain
+  // legible instead of shrinking to the roof's theoretical slot count.
   const cells = useMemo(() => {
-    // The camera foreshortens the roof slope. Fewer rows preserve a clearly
-    // portrait module proportion in the final projected view.
-    const rows = Math.max(2, Math.round(Math.sqrt(slots / 6)));
-    const cols = Math.ceil(slots / rows);
+    const visualCount = Math.max(1, lit);
+    const rows = Math.max(1, Math.ceil(Math.sqrt(visualCount / 2.4)));
+    const cols = Math.ceil(visualCount / rows);
     const usableWidth = roofW - 0.3;
     const usableDepth = (isFlat ? flatDepth : slope) - 0.22;
-    const stepX = usableWidth / cols;
-    const stepZ = usableDepth / rows;
-    const panelWidth = Math.max(0.22, stepX - 0.035);
-    const panelDepth = Math.max(0.24, stepZ - 0.035);
+    const panelWidth = Math.max(0.22, Math.min(0.46, (usableWidth - (cols - 1) * 0.045) / cols));
+    const panelDepth = Math.max(0.28, Math.min(0.72, (usableDepth - (rows - 1) * 0.045) / rows));
+    const stepX = panelWidth + 0.045;
+    const stepZ = panelDepth + 0.045;
     const centerRow = (rows - 1) / 2;
 
     const positions = Array.from({ length: rows }, (_, row) => {
-      const rowCount = Math.min(cols, slots - row * cols);
+      const rowCount = Math.min(cols, visualCount - row * cols);
       const centerCol = (rowCount - 1) / 2;
       return Array.from({ length: rowCount }, (_, col) => ({
         row,
@@ -411,7 +399,7 @@ function House({
         d: panelDepth,
         delay: idx * 0.035,
       }));
-  }, [slots, roofW, slope, isFlat, flatDepth]);
+  }, [lit, roofW, slope, isFlat, flatDepth]);
 
   return (
     <group>
@@ -449,7 +437,6 @@ function House({
                 d={c.d}
                 on={c.idx < lit}
                 delay={c.delay}
-                showSlot
               />
             ))}
           </group>
@@ -482,7 +469,6 @@ function House({
                       d={c.d}
                       on={c.idx < lit}
                       delay={c.delay}
-                      showSlot
                     />
                   ))}
                 </group>
