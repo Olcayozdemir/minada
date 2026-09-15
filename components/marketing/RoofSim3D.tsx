@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useSyncExternalStore } from "react";
+import { useLayoutEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { ContactShadows, Edges, Line, OrbitControls, RoundedBox } from "@react-three/drei";
@@ -27,7 +27,7 @@ const PITCH_ANGLE: Record<RoofPitch, number> = { flat: 0, moderate: 0.38, steep:
    bakar: Güney'de güneş tam karşıda ve yüksekte, GD/GB'de köşede,
    Doğu-Batı'da yandan (mahya doğrultusunda) vurur. */
 const SUN_POS: Record<Orientation, [number, number, number]> = {
-  south: [0.5, 2.7, 2.1],
+  south: [-1.35, 2.9, 2.15],
   southNorth: [2.3, 2.5, 1.5], // köşeden — çatının iki yamacı da pay alır
   eastWest: [3.2, 2.2, -0.5],
 };
@@ -57,6 +57,40 @@ function getCellTexture() {
   cellTex = new THREE.CanvasTexture(c);
   cellTex.anisotropy = 4;
   return cellTex;
+}
+
+let grassTex: THREE.CanvasTexture | null = null;
+function getGrassTexture() {
+  if (grassTex) return grassTex;
+  const canvas = document.createElement("canvas");
+  canvas.width = canvas.height = 256;
+  const ctx = canvas.getContext("2d")!;
+  ctx.fillStyle = "#88ad70";
+  ctx.fillRect(0, 0, 256, 256);
+
+  let seed = 1847;
+  const random = () => {
+    seed = (seed * 1664525 + 1013904223) >>> 0;
+    return seed / 4294967296;
+  };
+
+  for (let i = 0; i < 360; i += 1) {
+    const x = random() * 256;
+    const y = random() * 256;
+    const radius = 0.8 + random() * 2.4;
+    ctx.beginPath();
+    ctx.ellipse(x, y, radius * 1.8, radius, random() * Math.PI, 0, Math.PI * 2);
+    ctx.fillStyle = random() > 0.45 ? "rgba(45, 103, 43, 0.15)" : "rgba(184, 215, 145, 0.16)";
+    ctx.fill();
+  }
+
+  grassTex = new THREE.CanvasTexture(canvas);
+  grassTex.colorSpace = THREE.SRGBColorSpace;
+  grassTex.wrapS = THREE.RepeatWrapping;
+  grassTex.wrapT = THREE.RepeatWrapping;
+  grassTex.repeat.set(2.4, 1.9);
+  grassTex.anisotropy = 4;
+  return grassTex;
 }
 
 /* Radial-gradient glow sprite for the sun's halo. */
@@ -150,8 +184,8 @@ function PanelCell({
       {showSlot && (
         <mesh position={[0, 0.004, 0]}>
           <boxGeometry args={[w * 0.92, 0.008, d * 0.86]} />
-          <meshBasicMaterial color="#eef2f7" transparent opacity={0.04} depthWrite={false} />
-          <Edges color="#cfe0f2" threshold={30} transparent opacity={0.45} />
+          <meshBasicMaterial color="#eef2f7" transparent opacity={0.025} depthWrite={false} />
+          <Edges color="#cfe0f2" threshold={30} transparent opacity={0.18} />
         </mesh>
       )}
       {/* live panel: dark cell body + solar-cell texture on top */}
@@ -180,54 +214,106 @@ function PanelCell({
 
 /** The moving markers indicate direction, not a measured charging rate. */
 function BatteryFlow({ width, depth, eaveHeight, tilt, reduceMotion }: { width: number; depth: number; eaveHeight: number; tilt: number; reduceMotion: boolean }) {
-  const markers = useRef<Array<THREE.Mesh | null>>([]);
+  const markers = useRef<Array<THREE.Group | null>>([]);
   const curve = useMemo(() => {
-    const z = depth / 2 - 0.22;
-    const roofY = eaveHeight + Math.tan(tilt) * (depth / 2 - z) + 0.1;
-    const path = new THREE.CurvePath<THREE.Vector3>();
-    path.add(new THREE.LineCurve3(
-      new THREE.Vector3(width * 0.05, eaveHeight + Math.tan(tilt) * (depth / 2 - 0.2) + 0.1, 0.2), new THREE.Vector3(width / 2 + 0.34, roofY, z),
-    ));
-    path.add(new THREE.LineCurve3(
-      new THREE.Vector3(width / 2 + 0.34, roofY, z), new THREE.Vector3(width / 2 + 0.34, 0.92, z),
-    ));
-    path.add(new THREE.LineCurve3(
-      new THREE.Vector3(width / 2 + 0.34, 0.92, z), new THREE.Vector3(width / 2 + 0.15, 0.86, z),
-    ));
-    return path;
+    const batteryX = width / 2 + 0.22;
+    const batteryZ = depth / 2 - 0.08;
+    const routeX = width / 2 + 0.38;
+    const startZ = depth * 0.12;
+    const startY = eaveHeight + Math.tan(tilt) * (depth / 2 - startZ) + 0.2;
+    return new THREE.CatmullRomCurve3([
+      new THREE.Vector3(width * 0.05, startY, startZ),
+      new THREE.Vector3(width * 0.34, startY + 0.01, startZ),
+      new THREE.Vector3(routeX, startY + 0.04, startZ),
+      new THREE.Vector3(routeX, eaveHeight + 0.18, batteryZ - 0.12),
+      new THREE.Vector3(routeX, 1.24, batteryZ),
+      new THREE.Vector3(batteryX, 1.16, batteryZ),
+    ], false, "centripetal");
   }, [width, depth, eaveHeight, tilt]);
-  const points = useMemo(() => curve.getPoints(40), [curve]);
+  const points = useMemo(() => curve.getPoints(56), [curve]);
   useFrame(({ clock }) => {
     markers.current.forEach((marker, i) => {
-      if (marker) curve.getPointAt(reduceMotion ? (i + 1) / 4 : (clock.elapsedTime * 0.22 + i / 3) % 1, marker.position);
+      if (marker) curve.getPointAt(reduceMotion ? (i + 1) / 5 : (clock.elapsedTime * 0.3 + i / 4) % 1, marker.position);
     });
   });
   return <group>
-    <Line points={points} color="#c99736" lineWidth={1.5} transparent opacity={0.7} />
-    {[0, 1, 2].map((i) => <mesh key={i} ref={(mesh) => { markers.current[i] = mesh; }}>
-      <sphereGeometry args={[0.035, 12, 12]} />
-      <meshBasicMaterial color="#ffb62e" toneMapped={false} />
-    </mesh>)}
+    <Line points={points} color="#29d6ff" lineWidth={6} transparent opacity={0.12} depthWrite={false} />
+    <Line points={points} color="#29d6ff" lineWidth={2.2} transparent opacity={0.88} depthWrite={false} />
+    {[0, 1, 2, 3].map((i) => <group key={i} ref={(marker) => { markers.current[i] = marker; }}>
+      <mesh>
+        <sphereGeometry args={[0.045, 14, 14]} />
+        <meshBasicMaterial color="#d8faff" toneMapped={false} depthWrite={false} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[0.09, 14, 14]} />
+        <meshBasicMaterial color="#29d6ff" transparent opacity={0.2} toneMapped={false} depthWrite={false} />
+      </mesh>
+    </group>)}
   </group>;
 }
 
-/** Matte wall-mounted modules: one enclosure per 5 kWh, not a charge gauge. */
-function Battery({ capacity, width, depth, eaveHeight }: { capacity: number; width: number; depth: number; eaveHeight: number }) {
-  const modules = Math.min(3, Math.ceil(capacity / 5));
+/** One residential battery cabinet; cyan segments communicate package size. */
+function Battery({ capacity, width, depth }: { capacity: number; width: number; depth: number }) {
+  const activeSegments = Math.min(3, Math.ceil(capacity / 5));
+  const boltShape = useMemo(() => {
+    const shape = new THREE.Shape();
+    shape.moveTo(0.025, 0.22);
+    shape.lineTo(-0.105, 0.015);
+    shape.lineTo(-0.02, 0.015);
+    shape.lineTo(-0.07, -0.22);
+    shape.lineTo(0.12, 0.055);
+    shape.lineTo(0.025, 0.055);
+    shape.lineTo(0.095, 0.22);
+    shape.closePath();
+    return shape;
+  }, []);
   return (
-    <group position={[width / 2 + 0.065, 0.53, depth / 2 - 0.22]} rotation={[0, Math.PI / 2, 0]}>
-      {Array.from({ length: modules }, (_, i) => (
-        <group key={i} position={[i * 0.29, 0, 0]}>
-          <RoundedBox args={[0.25, 0.66, 0.14]} radius={0.025} smoothness={3} castShadow receiveShadow>
-            <meshStandardMaterial color="#e9e9e3" roughness={0.78} metalness={0.08} />
-          </RoundedBox>
-          <mesh position={[0, 0.23, 0.073]}><boxGeometry args={[0.14, 0.028, 0.008]} /><meshStandardMaterial color="#344340" /></mesh>
-          <mesh position={[0, -0.23, 0.073]}><boxGeometry args={[0.16, 0.05, 0.008]} /><meshStandardMaterial color="#b5bdb6" /></mesh>
-          {[-1, 0, 1].map((slot) => <mesh key={slot} position={[slot * 0.04, -0.23, 0.079]}><boxGeometry args={[0.018, 0.025, 0.003]} /><meshStandardMaterial color="#59645e" /></mesh>)}
-        </group>
+    <group position={[width / 2 + 0.22, 0.7, depth / 2 - 0.08]} rotation={[0, 0.24, 0]}>
+      <pointLight position={[0.18, 0.08, 0.35]} color="#29d6ff" intensity={0.48} distance={1.25} decay={2} />
+
+      {/* slim mounting shadow keeps the cabinet visually attached to the wall */}
+      <RoundedBox args={[0.61, 0.94, 0.08]} radius={0.06} smoothness={4} position={[0, 0, -0.09]} castShadow>
+        <meshStandardMaterial color="#253b45" roughness={0.72} metalness={0.12} />
+      </RoundedBox>
+
+      <RoundedBox args={[0.56, 0.9, 0.18]} radius={0.07} smoothness={5} castShadow receiveShadow>
+        <meshPhysicalMaterial color="#f4f7f4" roughness={0.38} metalness={0.08} clearcoat={0.55} clearcoatRoughness={0.25} />
+        <Edges color="#8fa0a4" threshold={22} transparent opacity={0.62} />
+      </RoundedBox>
+
+      {/* inset face and the site's cyan energy signature */}
+      <RoundedBox args={[0.42, 0.62, 0.012]} radius={0.045} smoothness={4} position={[0, 0.015, 0.097]}>
+        <meshStandardMaterial color="#e4ece9" roughness={0.6} />
+      </RoundedBox>
+      <mesh position={[0.205, 0.08, 0.108]}>
+        <boxGeometry args={[0.022, 0.48, 0.008]} />
+        <meshBasicMaterial color="#29d6ff" toneMapped={false} />
+      </mesh>
+      <mesh position={[0, 0.015, 0.109]}>
+        <circleGeometry args={[0.155, 32]} />
+        <meshBasicMaterial color="#c9f5ff" transparent opacity={0.72} toneMapped={false} />
+      </mesh>
+      <mesh position={[-0.005, 0.015, 0.112]}>
+        <shapeGeometry args={[boltShape]} />
+        <meshBasicMaterial color="#12627a" toneMapped={false} />
+      </mesh>
+
+      {[-1, 0, 1].map((segment, index) => (
+        <mesh key={segment} position={[segment * 0.075, -0.34, 0.109]}>
+          <boxGeometry args={[0.052, 0.025, 0.007]} />
+          <meshBasicMaterial
+            color={index < activeSegments ? "#29d6ff" : "#8f9da0"}
+            transparent
+            opacity={index < activeSegments ? 1 : 0.35}
+            toneMapped={false}
+          />
+        </mesh>
       ))}
-      <Line points={[[0, 0.35, -0.018], [0, eaveHeight - 0.49, -0.018]]} color="#626c65" lineWidth={1.5} />
-      {modules > 1 && <Line points={[[0, -0.38, 0], [(modules - 1) * 0.29, -0.38, 0]]} color="#626c65" lineWidth={1.5} />}
+
+      <mesh position={[0, 0.49, 0]}>
+        <cylinderGeometry args={[0.065, 0.065, 0.08, 16]} />
+        <meshStandardMaterial color="#314b55" roughness={0.55} metalness={0.25} />
+      </mesh>
     </group>
   );
 }
@@ -291,26 +377,41 @@ function House({
     return geo;
   }, [ridgeY, eaveHeight, WALL_W, WALL_D]);
 
-  // Whole grid lives on the front slope — panels showing through the frosted
-  // glass from the far slope read as confusing ghost patches. Cells are
-  // portrait (taller down the slope than wide) and fill column-major, so new
-  // panels stack below each other instead of forming a long sideways band.
+  // Whole grid lives on the front slope. Size the visual modules from the
+  // available roof plane instead of using a tiny fixed cell size. Modules use
+  // a regular portrait grid and each row fills symmetrically from its centre.
   const cells = useMemo(() => {
-    // One roof, with a fixed module grid sized for the full visual capacity.
-    const cols = Math.floor((WALL_W - 0.15) / 0.24);
-    return Array.from({ length: slots }, (_, idx) => {
-      const col = idx % cols;
-      const row = Math.floor(idx / cols);
-      return {
+    // The camera foreshortens the roof slope. Fewer rows preserve a clearly
+    // portrait module proportion in the final projected view.
+    const rows = Math.max(2, Math.round(Math.sqrt(slots / 6)));
+    const cols = Math.ceil(slots / rows);
+    const usableWidth = roofW - 0.3;
+    const usableDepth = (isFlat ? flatDepth : slope) - 0.22;
+    const stepX = usableWidth / cols;
+    const stepZ = usableDepth / rows;
+    const panelWidth = Math.max(0.22, stepX - 0.035);
+    const panelDepth = Math.max(0.24, stepZ - 0.035);
+    const centerRow = (rows - 1) / 2;
+
+    const positions = Array.from({ length: rows }, (_, row) => {
+      const rowCount = Math.min(cols, slots - row * cols);
+      const centerCol = (rowCount - 1) / 2;
+      return Array.from({ length: rowCount }, (_, col) => ({
+        row,
+        col,
+        centerCol,
+      })).sort((a, b) => Math.abs(a.col - a.centerCol) - Math.abs(b.col - b.centerCol) || a.col - b.col);
+    }).flat();
+
+    return positions.map(({ col, row, centerCol }, idx) => ({
         idx,
-        x: (col + 0.5 - cols / 2) * 0.24,
-        z: isFlat ? (row - 2) * 0.27 : -slope / 2 + 0.12 + (row + 0.5) * 0.27,
-        w: 0.24,
-        d: 0.27,
-        delay: row * 0.07 + col * 0.05,
-      };
-    });
-  }, [slots, slope, isFlat, WALL_W]);
+        x: (col - centerCol) * stepX,
+        z: (row - centerRow) * stepZ,
+        w: panelWidth,
+        d: panelDepth,
+        delay: idx * 0.035,
+      }));
+  }, [slots, roofW, slope, isFlat, flatDepth]);
 
   return (
     <group>
@@ -348,7 +449,7 @@ function House({
                 d={c.d}
                 on={c.idx < lit}
                 delay={c.delay}
-                showSlot={false}
+                showSlot
               />
             ))}
           </group>
@@ -381,7 +482,7 @@ function House({
                       d={c.d}
                       on={c.idx < lit}
                       delay={c.delay}
-                      showSlot={false}
+                      showSlot
                     />
                   ))}
                 </group>
@@ -400,7 +501,7 @@ function House({
       {/* storage: battery + flowing energy, only when a pack is selected */}
       {batteryKwh > 0 && (
         <>
-          <Battery capacity={batteryKwh} width={WALL_W} depth={WALL_D} eaveHeight={eaveHeight} />
+          <Battery capacity={batteryKwh} width={WALL_W} depth={WALL_D} />
           {lit > 0 && <BatteryFlow width={WALL_W} depth={WALL_D} eaveHeight={eaveHeight} tilt={tilt} reduceMotion={reduceMotion} />}
         </>
       )}
@@ -490,19 +591,78 @@ function Sun({ orientation, reduceMotion, floorOffset = 0 }: { orientation: Orie
   );
 }
 
-/** Rounded frosted-glass stage the diorama sits on. */
-function Stage() {
-  const glass = useMemo(() => new THREE.MeshStandardMaterial({ color: "#d8decf", roughness: 1 }), []);
+/** Instanced triangular blades keep the lawn dimensional without a heavy grass model. */
+function GrassBlades() {
+  const dark = useRef<THREE.InstancedMesh>(null!);
+  const light = useRef<THREE.InstancedMesh>(null!);
+  const matrices = useMemo(() => {
+    const random = (index: number, salt: number) => {
+      const value = Math.sin(index * 12.9898 + salt * 78.233) * 43758.5453;
+      return value - Math.floor(value);
+    };
+    const blades = Array.from({ length: 3600 }, (_, index) => ({
+      index,
+      x: (random(index, 1) - 0.5) * 4.9,
+      z: (random(index, 2) - 0.5) * 3.7,
+    }))
+      .filter(({ x, z }) => !(Math.abs(x) < 1.72 && Math.abs(z) < 1.28))
+      .slice(0, 1800);
+
+    return [false, true].map((isLight) => blades
+      .filter(({ index }) => (random(index, 3) > 0.7) === isLight)
+      .map(({ index, x, z }) => new THREE.Matrix4().compose(
+        new THREE.Vector3(x, 0, z),
+        new THREE.Quaternion().setFromEuler(new THREE.Euler(
+          (random(index, 4) - 0.5) * 0.12,
+          random(index, 5) * Math.PI,
+          (random(index, 6) - 0.5) * 0.12,
+        )),
+        new THREE.Vector3(
+          0.75 + random(index, 7) * 0.45,
+          0.72 + random(index, 8) * 0.55,
+          0.75 + random(index, 9) * 0.45,
+        ),
+      )));
+  }, []);
+
+  useLayoutEffect(() => {
+    [dark.current, light.current].forEach((mesh, groupIndex) => {
+      matrices[groupIndex].forEach((matrix, index) => mesh.setMatrixAt(index, matrix));
+      mesh.instanceMatrix.needsUpdate = true;
+    });
+  }, [matrices]);
+
   return (
-    <RoundedBox
-      args={[5.3, 0.22, 4.1]}
-      radius={0.1}
-      smoothness={6}
-      position={[0, -0.11, 0]}
-      material={glass}
-      receiveShadow
-    />
+    <group position={[0, 0.022, 0]}>
+      <instancedMesh ref={dark} args={[undefined, undefined, matrices[0].length]}>
+        <coneGeometry args={[0.009, 0.044, 3]} />
+        <meshStandardMaterial color="#5b8d4d" roughness={1} />
+      </instancedMesh>
+      <instancedMesh ref={light} args={[undefined, undefined, matrices[1].length]}>
+        <coneGeometry args={[0.008, 0.038, 3]} />
+        <meshStandardMaterial color="#8fb66d" roughness={1} />
+      </instancedMesh>
+    </group>
   );
+}
+
+/** Rounded lawn stage the diorama sits on. */
+function Stage() {
+  const grass = useMemo(
+    () => new THREE.MeshStandardMaterial({ map: getGrassTexture(), roughness: 0.98, metalness: 0 }),
+    [],
+  );
+  return <group>
+    <RoundedBox
+        args={[5.3, 0.22, 4.1]}
+        radius={0.1}
+        smoothness={6}
+        position={[0, -0.11, 0]}
+        material={grass}
+        receiveShadow
+      />
+    <GrassBlades />
+  </group>;
 }
 
 export type SimCard = { label: string; value: string };
@@ -543,11 +703,12 @@ export default function RoofSim3D({
   const tilt = PITCH_ANGLE[pitch];
 
   return (
-    <div className={styles.scene} aria-hidden="true">
+    <div className={styles.scene}>
       <Canvas
+        aria-hidden="true"
         shadows
         dpr={[1, 2]}
-        camera={{ position: [6.5, 5.8, 7.4], fov: 30 }}
+        camera={{ position: [3.2, 5.8, 9.3], fov: 30 }}
         gl={{ antialias: true, alpha: true }}
         // pan-y keeps vertical page scroll alive over the canvas on touch.
         style={{ touchAction: "pan-y" }}

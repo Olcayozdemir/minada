@@ -26,8 +26,8 @@ function escapeHtml(s: string) {
   );
 }
 
-// Sends the lead notification via Resend. If RESEND_API_KEY is unset (e.g. local
-// dev before keys are provisioned) it logs and no-ops so the form still works.
+// Sends the lead notification via Resend. The API route treats a missing key as
+// an error so the visitor is never shown a false-success state.
 export async function sendLeadEmail(data: LeadInput) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_EMAIL ?? "info@minada.com.tr";

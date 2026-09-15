@@ -97,8 +97,10 @@ export type CalcResult = {
   annualProduction: number;
   /** kWh/year the household actually offsets (direct use + battery shift). */
   selfConsumed: number;
-  /** selfConsumed / annualConsumption — what the coverage gauge shows. */
-  coverageRatio: number;
+  /** Annual generation / annual consumption, capped at 100% in the UI. */
+  consumptionCoverageRatio: number;
+  /** Share of generated energy consumed on site, directly or through storage. */
+  selfConsumptionRatio: number;
   batteryKwh: number;
   batteryCost: number;
   systemCost: number;
@@ -136,7 +138,9 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
   const annualConsumption = monthlyKwh * 12;
   const idealKwp = annualConsumption / specificYield;
 
-  const panelsNeeded = Math.max(1, Math.round(idealKwp / panelKwp));
+  // A fractional module cannot be installed. Round upward so the recommendation
+  // never silently undersizes the system against the calculated annual need.
+  const panelsNeeded = Math.max(1, Math.ceil(idealKwp / panelKwp));
   const panelsMax =
     input.roofAreaM2 && input.roofAreaM2 > 0
       ? Math.floor(input.roofAreaM2 / panelAreaM2)
@@ -178,7 +182,9 @@ export function calculateSolar(input: CalcInput): CalcResult | null {
     systemKwp,
     annualProduction,
     selfConsumed,
-    coverageRatio: annualConsumption > 0 ? selfConsumed / annualConsumption : 0,
+    consumptionCoverageRatio:
+      annualConsumption > 0 ? Math.min(annualProduction, annualConsumption) / annualConsumption : 0,
+    selfConsumptionRatio: annualProduction > 0 ? selfConsumed / annualProduction : 0,
     batteryKwh,
     batteryCost,
     systemCost,

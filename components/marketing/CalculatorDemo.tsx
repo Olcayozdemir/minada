@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { calculateSolar, CITIES, type CityId } from "@/lib/solar-config";
+import { CalculatorSelect } from "./CalculatorSelect";
 import styles from "./CalculatorDemo.module.scss";
 
 const RoofSim3D = dynamic(() => import("./RoofSim3D"), { ssr: false });
@@ -28,13 +29,15 @@ export function CalculatorDemo() {
   return (
     <div ref={host} className={styles.demo}>
       <div className={styles.top}>
-        <span>{locale === "tr" ? "Evinizin güneş potansiyeli" : "Your home's solar potential"}</span>
-        <label>
-          <span className={styles.srOnly}>{t("cityLabel")}</span>
-          <select value={city} onChange={(e) => setCity(e.target.value as CityId)}>
-            {CITIES.map((c) => <option key={c.id} value={c.id}>{t(`cities.${c.id}`)}</option>)}
-          </select>
-        </label>
+        <span>{locale === "tr" ? "Güneş enerjisi potansiyeliniz" : "Your solar energy potential"}</span>
+        <CalculatorSelect
+          className={styles.citySelect}
+          value={city}
+          onChange={(value) => setCity(value as CityId)}
+          label={t("cityLabel")}
+          placeholder={t("cityPlaceholder")}
+          options={CITIES.map((item) => ({ value: item.id, label: t(`cities.${item.id}`) }))}
+        />
       </div>
       <div className={styles.scene}>
         {visible && <RoofSim3D installed={result.panelsInstalled} max={25} />}

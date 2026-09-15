@@ -11,7 +11,14 @@
 .top {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
   > span { font-weight: 600; font-size: 18px; line-height: 1.3; }
-  select { max-width: 120px; min-height: 44px; padding: 10px; background: #fff; border: 1px solid #d4dbe1; border-radius: 12px; color: var(--ink); font: inherit; }
+}
+.citySelect {
+  flex: none;
+  width: 136px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 5px 16px rgba(16, 38, 43, 0.05);
+  font-weight: 600;
 }
 .scene { height: 300px; }
 .bill {
@@ -29,7 +36,6 @@
   small { font-size: 12px; font-weight: 500; }
 }
 .link { display: flex; justify-content: space-between; align-items: center; min-height: 48px; margin-top: 16px; font-weight: 600; border-top: 1px solid #ccd4dc; }
-.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 @media (max-width: 480px) {
   .demo { padding: 16px; --scene-height: 260px; }
   .scene { height: 260px; }

@@ -16,6 +16,8 @@ import {
   type RoofPitch,
 } from "@/lib/solar-config";
 import { IconArrowRight } from "@/components/ui/icons";
+import { CalculatorLeadGate } from "./CalculatorLeadGate";
+import { CalculatorSelect } from "./CalculatorSelect";
 import styles from "./Calculator.module.scss";
 
 // WebGL sim is heavy (three.js), so it loads lazily on the client only; the
@@ -122,6 +124,9 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
   const [pitch, setPitch] = useState<RoofPitch>("moderate");
   const [dayUse, setDayUse] = useState(50); // %
   const [batteryKwh, setBatteryKwh] = useState(0);
+  const [step, setStep] = useState(0);
+  const [showStepError, setShowStepError] = useState(false);
+  const [resultsRevealed, setResultsRevealed] = useState(false);
 
   const num = parseFloat(value.replace(",", "."));
   const result =
@@ -158,14 +163,54 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
       ]
     : undefined;
 
+  const stepLabels = locale === "tr"
+    ? ["Tüketim", "Çatı", "Kullanım", "Sonuç"]
+    : ["Usage", "Roof", "Preferences", "Result"];
+  const stepTitles = locale === "tr"
+    ? ["Tüketiminizi belirtin", "Çatınızı tanımlayın", "Kullanımınızı tamamlayın", resultsRevealed ? "Hesabınız hazır" : "Sonucunuzu görüntüleyin"]
+    : ["Tell us your usage", "Describe your roof", "Complete your preferences", resultsRevealed ? "Your estimate is ready" : "View your estimate"];
+  const stepDescriptions = locale === "tr"
+    ? ["Fatura veya tüketim tutarınızı ve şehrinizi seçin.", "Kullanılabilir alanı, yönü ve eğimi belirtin.", "Gündüz kullanımınızı ve batarya tercihinizi seçin.", resultsRevealed ? "Seçimlerinizi ve tahmini sonuçları birlikte inceleyin." : "Hesabınızı görmek için iletişim bilgilerinizi bırakın."]
+    : ["Enter your bill or consumption and select your city.", "Set the available area, direction and pitch.", "Choose daytime usage and battery storage.", resultsRevealed ? "Review your choices and estimated results together." : "Leave your contact details to view your estimate."];
+
+  const leadMessage = locale === "tr"
+    ? `Hesaplayıcı: ${roofArea} m² çatı, ${t(ORIENTATION_KEY[orientation])}, ${t(PITCH_KEY[pitch])}, gündüz kullanım ${fmtPct(dayUse)}, batarya ${batteryKwh === 0 ? t("batteryNone") : `${batteryKwh} kWh`}.`
+    : `Calculator: ${roofArea} m² roof, ${t(ORIENTATION_KEY[orientation])}, ${t(PITCH_KEY[pitch])}, daytime use ${fmtPct(dayUse)}, battery ${batteryKwh === 0 ? t("batteryNone") : `${batteryKwh} kWh`}.`;
+
+  const goNext = () => {
+    if (step === 0 && (!cityId || !Number.isFinite(num) || num <= 0)) {
+      setShowStepError(true);
+      return;
+    }
+    setShowStepError(false);
+    setStep((current) => Math.min(3, current + 1));
+  };
+
   return (
-    <div className={styles.wrap}>
+    <div className={clsx(styles.wrap, step < 3 || !resultsRevealed ? styles.wizardMode : styles.summaryMode)}>
       <div className={styles.form}>
+        <ol className={styles.steps} aria-label={locale === "tr" ? "Hesaplama adımları" : "Estimate steps"}>
+          {stepLabels.map((label, index) => (
+            <li key={label} className={clsx(index === step && styles.stepCurrent, index < step && styles.stepDone)}>
+              <button type="button" onClick={() => step < 3 && index < step && setStep(index)} disabled={index > step || (step === 3 && index < step)} aria-current={index === step ? "step" : undefined}>
+                <span>{index + 1}</span>{label}
+              </button>
+            </li>
+          ))}
+        </ol>
         <div className={styles.formHeading}>
-          <h2>{locale === "tr" ? "Evinizin enerji planı" : "Your home energy plan"}</h2>
-          <p>{locale === "tr" ? (fromDemo ? "Demodaki seçiminizle devam edin." : "Örnek hesap: Antalya, aylık 1.500 TL. Kendi bilgilerinizi girerek uyarlayın.") : (fromDemo ? "Continue with your demo settings." : "Example: Antalya, TRY 1,500 per month. Adjust to your home.")}</p>
+          <h2>{stepTitles[step]}</h2>
+          <p>{stepDescriptions[step]}</p>
+          {step === 3 && resultsRevealed && (
+            <button type="button" className={styles.recalculateButton} onClick={() => setStep(0)}>
+              {locale === "tr" ? "Yeniden hesapla" : "Recalculate"}
+            </button>
+          )}
         </div>
-        <div className={styles.toggle} role="tablist" aria-label={t("modeLabel")}>
+
+        {step === 0 && <div className={styles.stepPanel}>
+          {fromDemo && <p className={styles.demoNote}>{locale === "tr" ? "Ana sayfadaki seçiminiz aktarıldı." : "Your homepage selection was carried over."}</p>}
+          <div className={styles.toggle} role="tablist" aria-label={t("modeLabel")}>
           <button
             type="button"
             role="tab"
@@ -184,9 +229,9 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
           >
             {t("modeConsumption")}
           </button>
-        </div>
+          </div>
 
-        <label className={styles.label}>
+          <label className={styles.label}>
           {mode === "bill" ? t("billLabel") : t("consumptionLabel")}
           <div className={styles.inputRow}>
             <input
@@ -199,25 +244,24 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
             />
             <span className={styles.unit}>{mode === "bill" ? t("unitBill") : t("unitKwh")}</span>
           </div>
-        </label>
+          </label>
 
-        <label className={styles.label}>
-          {t("cityLabel")}
-          <select
-            className={styles.select}
+          <div className={styles.label}>
+          <span>{t("cityLabel")}</span>
+          <CalculatorSelect
+            className={styles.calculatorSelect}
             value={cityId}
-            onChange={(e) => setCityId(e.target.value)}
-          >
-            <option value="">{t("cityPlaceholder")}</option>
-            {CITIES.map((c) => (
-              <option key={c.id} value={c.id}>
-                {t(`cities.${c.id}`)}
-              </option>
-            ))}
-          </select>
-        </label>
+            onChange={setCityId}
+            label={t("cityLabel")}
+            placeholder={t("cityPlaceholder")}
+            options={CITIES.map((city) => ({ value: city.id, label: t(`cities.${city.id}`) }))}
+          />
+          </div>
+          {showStepError && <p className={styles.stepError} role="alert">{locale === "tr" ? "Devam etmek için geçerli bir değer ve şehir seçin." : "Enter a valid value and select a city to continue."}</p>}
+        </div>}
 
-        <label className={styles.label}>
+        {step === 1 && <div className={styles.stepPanel}>
+          <label className={styles.label}>
           <span className={styles.rangeHead}>
             {t("roofAreaLabel")}
             <span className={styles.rangeValue}>{roofArea} m²</span>
@@ -235,11 +279,8 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
           <span className={styles.rangeHint}>
             {t("roofCapacity", { count: capacity })}
           </span>
-        </label>
-
-        <details className={styles.advanced}>
-          <summary>{locale === "tr" ? "Çatı yönü, eğim ve batarya" : "Roof direction, pitch & battery"}</summary>
-        <div className={styles.fieldGrid}>
+          </label>
+          <div className={styles.fieldGrid}>
           <label className={styles.label}>
             {t("orientationLabel")}
             <Segmented
@@ -260,9 +301,11 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
               label={t("pitchLabel")}
             />
           </label>
-        </div>
+          </div>
+        </div>}
 
-        <label className={styles.label}>
+        {step === 2 && <div className={styles.stepPanel}>
+          <label className={styles.label}>
           <span className={styles.rangeHead}>
             {t("dayUseLabel")}
             <span className={styles.rangeValue}>{fmtPct(dayUse)}</span>
@@ -278,9 +321,9 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
             aria-label={t("dayUseLabel")}
           />
           <span className={styles.rangeHint}>{t("dayUseHint")}</span>
-        </label>
+          </label>
 
-        <label className={styles.label}>
+          <label className={styles.label}>
           {t("batteryLabel")}
           <Segmented
             value={batteryKwh}
@@ -289,10 +332,30 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
             format={(v) => (v === 0 ? t("batteryNone") : `${v} kWh`)}
             label={t("batteryLabel")}
           />
-        </label>
+          </label>
+        </div>}
 
-        </details>
-        <p className={styles.note}>{t("note")}</p>
+        {step === 3 && !resultsRevealed && (
+          <CalculatorLeadGate
+            city={t(`cities.${cityId}`)}
+            bill={mode === "bill" ? String(Math.round(num)) : `${Math.round(num)} kWh/ay`}
+            message={leadMessage}
+            onBack={() => setStep(2)}
+            onSuccess={() => setResultsRevealed(true)}
+          />
+        )}
+
+        {step === 3 && resultsRevealed && <div className={styles.selectionSummary}>
+          <div><span>{stepLabels[0]}</span><strong>{mode === "bill" ? `${fmt(num)} ${t("unitBill")}` : `${fmt(num)} ${t("unitKwh")}`} · {t(`cities.${cityId}`)}</strong></div>
+          <div><span>{stepLabels[1]}</span><strong>{roofArea} m² · {t(ORIENTATION_KEY[orientation])} · {t(PITCH_KEY[pitch])}</strong></div>
+          <div><span>{stepLabels[2]}</span><strong>{fmtPct(dayUse)} · {batteryKwh === 0 ? t("batteryNone") : `${batteryKwh} kWh`}</strong></div>
+        </div>}
+
+        {step < 3 && <div className={styles.stepActions}>
+          {step > 0 && <button type="button" className={styles.backButton} onClick={() => setStep((current) => current - 1)}>{locale === "tr" ? "Geri" : "Back"}</button>}
+          <button type="button" className={styles.nextButton} onClick={goNext}>{step === 2 ? (locale === "tr" ? "Son adıma geç" : "Continue") : (locale === "tr" ? "Devam et" : "Continue")}</button>
+        </div>}
+        {step < 3 && <p className={styles.note}>{t("note")}</p>}
       </div>
 
       <div className={styles.scene}>
@@ -307,19 +370,20 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
           pitch={pitch}
           orientation={orientation}
           batteryKwh={batteryKwh}
-          cards={simCards}
+          cards={resultsRevealed ? simCards : undefined}
         />
         <p className={styles.simCaption}>
-          {result
+          {resultsRevealed && result
             ? t("simInstalled", {
-                installed: result.panelsInstalled,
+                recommended: result.panelsNeeded,
+                capacity: result.panelsMax,
                 kwp: fmt(result.systemKwp, 1),
               })
-            : t("simIdle", { count: capacity })}
+            : (locale === "tr" ? "Panel yerleşimi seçimlerinize göre güncellenir." : "Panel placement updates with your selections.")}
         </p>
         <p className={styles.note}>{locale === "tr" ? "Bina ve panel yerleşimi temsilidir; hesaplama kullanılabilir çatı alanına dayanır." : "The building and panel layout are illustrative; the estimate uses the available roof area."}</p>
       </div>
-      <div className={styles.result}>
+      {resultsRevealed && <div className={styles.result}>
         {result ? (
           <>
             {result.roofLimited && (
@@ -332,9 +396,14 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
             )}
             <div className={styles.gauges}>
               <Gauge
-                pct={Math.min(1, result.coverageRatio)}
-                value={fmtPct(Math.min(100, result.coverageRatio * 100))}
+                pct={Math.min(1, result.consumptionCoverageRatio)}
+                value={fmtPct(Math.min(100, result.consumptionCoverageRatio * 100))}
                 label={t("coverageLabel")}
+              />
+              <Gauge
+                pct={Math.min(1, result.selfConsumptionRatio)}
+                value={fmtPct(Math.min(100, result.selfConsumptionRatio * 100))}
+                label={t("selfConsumptionLabel")}
               />
               <Metric label={t("paybackShort")} value={`${fmt(result.paybackYears, 1)} ${t("years")}`} />
             </div>
@@ -347,24 +416,26 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
               <Metric label={t("savings25Label")} value={fmtTL(result.savings25yr)} />
               <Metric label={t("co2Label")} value={`${fmt(result.co2Savings)} kg`} />
             </div>
-            <p className={styles.warning}>{t("warning")}</p>
-            <Link
-              href={{
-                pathname: "/contact",
-                query: {
-                  city: t(`cities.${cityId}`),
-                  bill: mode === "bill" ? String(Math.round(num)) : "",
-                },
-              }}
-              className={styles.cta}
-            >
-              {t("cta")} <IconArrowRight size={16} />
-            </Link>
+            <div className={styles.resultFooter}>
+              <p className={styles.warning}>{t("warning")}</p>
+              <Link
+                href={{
+                  pathname: "/contact",
+                  query: {
+                    city: t(`cities.${cityId}`),
+                    bill: mode === "bill" ? String(Math.round(num)) : "",
+                  },
+                }}
+                className={styles.cta}
+              >
+                {t("cta")} <IconArrowRight size={16} />
+              </Link>
+            </div>
           </>
         ) : (
           <div className={styles.empty}>{t("emptyState")}</div>
         )}
-      </div>
+      </div>}
     </div>
   );
 }

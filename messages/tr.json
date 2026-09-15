@@ -442,10 +442,11 @@
     "cta": "Kesin teklif al",
     "roofAreaLabel": "Kullanılabilir çatı alanı",
     "roofCapacity": "≈ {count} panel kapasitesi",
-    "simInstalled": "{installed} panel · {kwp} kWp kurulu güç",
-    "simIdle": "Çatınıza ≈ {count} panel sığıyor — tabloyu görmek için fatura ve şehir girin",
+    "simInstalled": "Önerilen: {recommended} panel · Çatı kapasitesi: yaklaşık {capacity} panel · {kwp} kWp kurulu güç",
+    "simIdle": "Çatınıza ≈ {count} panel sığıyor. Tabloyu görmek için fatura ve şehir girin",
     "roofLimited": "İhtiyacınız {needed} panel; tam sistem için yaklaşık {area} m² çatı alanı gerekir. Tablo, sığan sisteme göre hesaplandı.",
     "coverageLabel": "tüketim karşılama",
+    "selfConsumptionLabel": "öz tüketim",
     "paybackShort": "geri ödeme",
     "orientationLabel": "Çatı yönü",
     "orientationSouth": "Güney",
@@ -514,10 +515,10 @@
     },
     "errors": {
       "name": "Lütfen ad soyad girin.",
-      "phone": "Geçerli bir telefon numarası girin (05xx…).",
+      "phone": "Telefon numarasını kontrol edin.",
       "email": "Geçerli bir e-posta girin.",
       "city": "Lütfen şehir girin.",
-      "propertyType": "Lütfen konut tipini seçin.",
+      "propertyType": "Lütfen yapı tipini seçin.",
       "consent": "Devam etmek için onay gerekli."
     },
     "success": {
@@ -531,7 +532,7 @@
   },
   "Blog": {
     "eyebrow": "Blog",
-    "title": "Haberler & rehberler",
+    "title": "Haberler & Rehberler",
     "intro": "Enerji dönüşümüne dair haberler, uzman görüşleri ve uygulama rehberleri.",
     "emptyTitle": "Yakında yeni yazılar",
     "emptyDesc": "İçerikler hazırlanıyor; çok yakında burada olacak.",
