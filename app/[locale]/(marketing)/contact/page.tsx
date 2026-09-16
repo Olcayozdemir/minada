@@ -51,6 +51,7 @@ export default async function Page({
             defaultBill={defaultBill}
             defaultProduct={defaultProduct}
             defaultTopic={defaultTopic}
+            googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
           />
         </div>
         <aside className={styles.info}>

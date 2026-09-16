@@ -23,7 +23,7 @@ export async function generateMetadata({
 }
 
 const PURPOSES = ["i1", "i2", "i3", "i4"] as const;
-const RECIPIENTS = ["i1", "i2", "i3"] as const;
+const RECIPIENTS = ["i1", "i2", "i3", "i4"] as const;
 const RIGHTS = ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8"] as const;
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

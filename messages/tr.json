@@ -127,19 +127,19 @@
       "intro": "Bireysel konutlardan endüstriyel tesislere kadar, ihtiyaca göre ölçeklenen enerji çözümleri.",
       "konut": {
         "title": "Konut & Bireysel",
-        "desc": "Villa ve müstakil evler için anahtar teslim enerji çözümleri."
+        "desc": "Villa ve müstakil konutlar için anahtar teslim enerji çözümleri."
       },
       "ticari": {
         "title": "Ticari & Endüstriyel",
-        "desc": "İşletmeler ve OSB tesisleri için yüksek kapasiteli enerji çözümleri."
+        "desc": "İşletmeler ve sanayi tesisleri için yüksek kapasiteli enerji çözümleri."
       },
       "tarim": {
-        "title": "Tarımsal tesisler",
-        "desc": "Sulama ve tarımsal işletmeler için sürdürülebilir enerji."
+        "title": "Tarımsal Tesisler",
+        "desc": "Sulama sistemleri ve tarımsal işletmeler için verimli enerji çözümleri."
       },
       "kamu": {
         "title": "Kamu & Kurumsal",
-        "desc": "Kurumlar ve kamu projeleri için ölçeklenebilir, güvenilir sistemler."
+        "desc": "Kamu kurumları ve kurumsal projeler için ölçeklenebilir enerji çözümleri."
       }
     },
     "calc": {
@@ -207,8 +207,8 @@
     },
     "finalCta": {
       "eyebrow": "Hazır mısınız?",
-      "title": "Enerji geleceğinize bugün yatırım yapın",
-      "desc": "Ücretsiz keşif talep edin; size özel tasarruf ve sistem önerinizi sunalım.",
+      "title": "Çatınızda başlayan enerji dönüşümünü birlikte planlayalım",
+      "desc": "Güneş enerjisinden depolamaya, araç şarjından iklimlendirmeye kadar ihtiyaçlarınıza uygun sistemi tasarlayalım.",
       "waMessage": "Merhaba, MİNADA'dan ücretsiz keşif almak istiyorum."
     },
     "intro": {
@@ -474,7 +474,12 @@
   "Contact": {
     "eyebrow": "İletişim",
     "title": "Ücretsiz keşif talep edin",
-    "intro": "Bilgilerinizi paylaşın; en kısa sürede sizinle iletişime geçelim.",
+    "intro": "Bilgilerinizi paylaşın, proje konumunu işaretleyin; en kısa sürede sizinle iletişime geçelim.",
+    "steps": {
+      "label": "Teklif talebi adımları",
+      "details": "Bilgiler",
+      "roof": "Çatı / Harita"
+    },
     "info": {
       "title": "İletişim bilgileri",
       "phoneLabel": "Telefon",
@@ -507,6 +512,8 @@
       "messagePh": "İhtiyacınızı kısaca yazın…",
       "optional": "opsiyonel",
       "consent": "Kişisel verilerimin işlenmesine ilişkin <link>KVKK Aydınlatma Metni</link>'ni okudum ve onaylıyorum.",
+      "next": "Çatı bilgilerine geç",
+      "back": "Bilgilere dön",
       "submit": "Teklif talebi gönder",
       "submitting": "Gönderiliyor…",
       "whatsapp": "WhatsApp'tan yaz",
@@ -520,6 +527,34 @@
         "ev-sarj": "EV Şarj",
         "diger": "Diğer"
       }
+    },
+    "map": {
+      "title": "Proje konumunu işaretleyin",
+      "intro": "Adresi arayın ve kullanılabilir çatı alanını uydu haritası üzerinde çizin.",
+      "optional": "İsteğe bağlı",
+      "addressLabel": "Proje adresi",
+      "addressPlaceholder": "Örn. Cumhuriyet Bulvarı No:120, Konak, İzmir",
+      "search": "Ara",
+      "searching": "Aranıyor",
+      "resultsLabel": "Adres sonuçları",
+      "myLocation": "Konumumu bul",
+      "mapLabel": "Uydu haritasında çatı alanı seçimi",
+      "loading": "Uydu haritası hazırlanıyor",
+      "tokenTitle": "Harita bağlantısı bekleniyor",
+      "tokenDesc": "Google Maps anahtarı eklendiğinde burada adres arama ve çatı çizimi açılacak. Formu harita olmadan da gönderebilirsiniz.",
+      "tokenErrorTitle": "Harita bağlantısı kurulamadı",
+      "tokenErrorDesc": "Google Maps yüklenemedi. Tarayıcıdaki reklam veya gizlilik engelleyicisini kontrol edebilir, formu harita olmadan da gönderebilirsiniz.",
+      "searchError": "Adres bulunamadı. Daha açık bir adresle tekrar deneyin.",
+      "locationError": "Konum alınamadı. Adresle arama yapabilirsiniz.",
+      "draw": "Çatıyı çiz",
+      "clear": "Temizle",
+      "drawHint": "Çatı köşelerini sırayla işaretleyin ve son noktada çift tıklayın.",
+      "estimateLabel": "Çatı kapasitesi ön tahmini",
+      "roofArea": "Çatı alanı",
+      "panelCount": "Panel adedi",
+      "systemPower": "Tahmini güç",
+      "annualProduction": "Yıllık üretim",
+      "estimateNote": "Hesap, panel başına {panelArea} m² kullanılabilir alan ve {panelPower} kWp güç varsayımıyla hazırlanır. Kesin değer çatı eğimi, yön ve gölgelenme analizinden sonra belirlenir."
     },
     "errors": {
       "name": "Lütfen ad soyad girin.",
@@ -1293,7 +1328,7 @@
     "metaDesc": "MİNADA Enerji web sitesinde hangi çerezlerin kullanıldığı, ne işe yaradıkları ve tercihinizi nasıl değiştireceğiniz.",
     "title": "Çerez Politikası",
     "intro": "Bu sayfa minada.com.tr adresinde hangi çerezlerin kullanıldığını, ne işe yaradıklarını ve kararınızı nasıl değiştirebileceğinizi anlatır.",
-    "updated": "Son güncelleme: 31 Ağustos 2026",
+    "updated": "Son güncelleme: 16 Eylül 2026",
     "s1": {
       "title": "Çerez nedir?",
       "p1": "Çerez, bir siteyi ziyaret ettiğinizde tarayıcınızın cihazınıza kaydettiği küçük bir metin dosyasıdır. Sitenin sizi hatırlamasını sağlar. Tarayıcının yerel depolama alanı da benzer iş görür; bu politika ikisini birlikte ele alır.",
@@ -1360,7 +1395,7 @@
       "title": "Hangi verileri işliyoruz",
       "p1": "Site üzerinde tek veri toplama noktası teklif ve keşif formudur. Formu doldurduğunuzda şunları iletmiş olursunuz:",
       "i1": "Ad soyad, telefon, e-posta ve şehir.",
-      "i2": "İsteğe bağlı olarak: ilgilendiğiniz konu, yapı tipi, aylık fatura tutarı ve serbest metin mesajınız.",
+      "i2": "İsteğe bağlı olarak: ilgilendiğiniz konu, yapı tipi, aylık fatura tutarı, mesajınız, proje adresi, haritada çizdiğiniz çatı koordinatları ve bu çizimden üretilen kapasite tahmini.",
       "p2": "Bunların dışında ziyaretinizle ilgili teknik kayıtlar tutulur: sunucu günlüklerine düşen IP adresi, tarayıcı bilgisi ve istek zamanı. Bu kayıtlar siteyi ayakta tutmak ve kötüye kullanımı önlemek içindir.",
       "p3": "Site analitik veya reklam amacıyla hiçbir izleme yapmaz. Hangi çerezlerin tutulduğunu çerez politikasında tek tek yazdık."
     },
@@ -1381,6 +1416,7 @@
       "i1": "Vercel: siteyi barındırır, sunucu günlüklerini tutar.",
       "i2": "Resend: form içeriğini bize e-posta olarak iletir.",
       "i3": "Cloudflare Turnstile: form spam korumasında kullanılır ve bu koruma açıkken IP adresinizi görür.",
+      "i4": "Mapbox: proje adresini bulmak, uydu haritasını göstermek ve çatı çizimini mümkün kılmak için kullanılır.",
       "p2": "Bu tedarikçilerin sunucuları yurt dışındadır, dolayısıyla verileriniz yurt dışına aktarılmış olur. Kurulumu yapan ekiplerimiz ve iş ortaklarımızla ise yalnızca işin gerektirdiği kadarını paylaşırız."
     },
     "s6": {

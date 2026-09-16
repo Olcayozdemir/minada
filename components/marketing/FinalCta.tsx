@@ -23,8 +23,7 @@ export async function FinalCta({
   return (
     <section className={styles.cta}>
       <picture>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img {...photo} className={styles.photo} />
+        <img {...photo} src={photo.src} alt="" className={styles.photo} />
       </picture>
       <div className={styles.card} data-reveal="">
         <p className={styles.eyebrow}>{t("eyebrow")}</p>

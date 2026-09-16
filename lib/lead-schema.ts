@@ -37,8 +37,17 @@ export const leadSchema = z.object({
   bill: z.string().trim().optional(),
   message: z.string().trim().max(1200).optional(),
   product: z.string().trim().max(200).optional(), // catalog group the visitor asked about
+  roofAddress: z.string().trim().max(300).optional(),
+  roofCoordinates: z
+    .array(z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]))
+    .max(100)
+    .optional(),
+  roofAreaM2: z.number().finite().nonnegative().max(1_000_000).optional(),
+  panelCount: z.number().int().nonnegative().max(100_000).optional(),
+  systemKwp: z.number().finite().nonnegative().max(100_000).optional(),
+  annualProductionKwh: z.number().finite().nonnegative().max(1_000_000_000).optional(),
 
-  consent: z.literal(true),
+  consent: z.boolean().refine((value) => value),
   company: z.string().optional(), // honeypot — must stay empty
   token: z.string().optional(), // Turnstile token (verified server-side if configured)
 });

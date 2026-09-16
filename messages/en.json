@@ -131,15 +131,15 @@
       },
       "ticari": {
         "title": "Commercial & industrial",
-        "desc": "High-capacity energy solutions for businesses and industrial zones."
+        "desc": "High-capacity energy solutions for businesses and industrial facilities."
       },
       "tarim": {
         "title": "Agricultural",
-        "desc": "Sustainable energy for irrigation and farming operations."
+        "desc": "Efficient energy solutions for irrigation systems and agricultural operations."
       },
       "kamu": {
         "title": "Public & institutional",
-        "desc": "Scalable, reliable systems for institutions and public projects."
+        "desc": "Scalable energy solutions for public institutions and corporate projects."
       }
     },
     "calc": {
@@ -207,8 +207,8 @@
     },
     "finalCta": {
       "eyebrow": "Ready?",
-      "title": "Invest in your energy future today",
-      "desc": "Request a free survey and we'll bring you a tailored savings and system proposal.",
+      "title": "Let's plan the energy transformation that starts on your roof",
+      "desc": "From solar and storage to EV charging and climate control, let's design the right system for your needs.",
       "waMessage": "Hello, I'd like to get a free survey from MİNADA."
     },
     "intro": {
@@ -474,7 +474,12 @@
   "Contact": {
     "eyebrow": "Contact",
     "title": "Request a free survey",
-    "intro": "Share your details and we will get back to you as soon as we can.",
+    "intro": "Share your details and mark the project location; we will get back to you as soon as we can.",
+    "steps": {
+      "label": "Quote request steps",
+      "details": "Details",
+      "roof": "Roof / Map"
+    },
     "info": {
       "title": "Contact details",
       "phoneLabel": "Phone",
@@ -507,6 +512,8 @@
       "messagePh": "Briefly describe your needs…",
       "optional": "optional",
       "consent": "I have read and accept the <link>privacy notice</link> regarding the processing of my personal data.",
+      "next": "Continue to roof details",
+      "back": "Back to details",
       "submit": "Send request",
       "submitting": "Sending…",
       "whatsapp": "Message on WhatsApp",
@@ -520,6 +527,34 @@
         "ev-sarj": "EV Charging",
         "diger": "Other"
       }
+    },
+    "map": {
+      "title": "Mark the project location",
+      "intro": "Search for the address and draw the usable roof area on the satellite map.",
+      "optional": "Optional",
+      "addressLabel": "Project address",
+      "addressPlaceholder": "Example: 120 Cumhuriyet Boulevard, Konak, İzmir",
+      "search": "Search",
+      "searching": "Searching",
+      "resultsLabel": "Address results",
+      "myLocation": "Use my location",
+      "mapLabel": "Select the roof area on the satellite map",
+      "loading": "Preparing the satellite map",
+      "tokenTitle": "Map connection pending",
+      "tokenDesc": "Address search and roof drawing will become available when the Google Maps key is added. You can still submit the form without the map.",
+      "tokenErrorTitle": "We could not connect to the map",
+      "tokenErrorDesc": "Google Maps could not load. Check any ad or privacy blocker in your browser, or submit the form without the map.",
+      "searchError": "We could not find that address. Try a more specific address.",
+      "locationError": "We could not access your location. You can search by address instead.",
+      "draw": "Draw roof",
+      "clear": "Clear",
+      "drawHint": "Mark each roof corner in order and double-click the final point.",
+      "estimateLabel": "Preliminary roof capacity estimate",
+      "roofArea": "Roof area",
+      "panelCount": "Panel count",
+      "systemPower": "Estimated power",
+      "annualProduction": "Annual production",
+      "estimateNote": "The estimate assumes {panelArea} m² of usable area and {panelPower} kWp per panel. The final figure is confirmed after roof pitch, orientation and shading analysis."
     },
     "errors": {
       "name": "Please enter your name.",
@@ -1293,7 +1328,7 @@
     "metaDesc": "Which cookies the MİNADA Enerji website uses, what they do, and how to change your choice.",
     "title": "Cookie Policy",
     "intro": "This page explains which cookies minada.com.tr uses, what they do, and how you can change your decision.",
-    "updated": "Last updated: 31 August 2026",
+    "updated": "Last updated: 16 September 2026",
     "s1": {
       "title": "What is a cookie?",
       "p1": "A cookie is a small text file your browser saves on your device when you visit a site. It lets the site remember you. Your browser's local storage does a similar job, and this policy covers both together.",
@@ -1360,7 +1395,7 @@
       "title": "What we process",
       "p1": "The only place this site collects data is the quote and survey form. Filling it in sends us:",
       "i1": "Your name, phone number, email address and city.",
-      "i2": "Optionally: the topic you are interested in, your property type, your monthly bill and whatever you write in the message field.",
+      "i2": "Optionally: the topic you are interested in, your property type, monthly bill, message, project address, roof coordinates drawn on the map and the capacity estimate produced from that drawing.",
       "p2": "Beyond that, technical records of your visit are kept: the IP address, browser and request time that land in the server logs. These exist to keep the site up and to prevent abuse.",
       "p3": "The site runs no analytics or advertising tracking at all. The cookie policy lists every record that is kept, one by one."
     },
@@ -1381,6 +1416,7 @@
       "i1": "Vercel: hosts the site and keeps the server logs.",
       "i2": "Resend: delivers the contents of the form to us by email.",
       "i3": "Cloudflare Turnstile: used for form spam protection, and sees your IP address while that protection is on.",
+      "i4": "Mapbox: used to find the project address, display the satellite map and enable roof drawing.",
       "p2": "These suppliers' servers are outside Türkiye, so your data is transferred abroad. With our own installation teams and partners we share only what the work requires."
     },
     "s6": {

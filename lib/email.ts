@@ -49,6 +49,20 @@ export async function sendLeadEmail(data: LeadInput) {
     ["Aylık fatura", data.bill || "—"],
     ["İlgilenilen ürün", data.product || "—"],
     ["Mesaj", data.message || "—"],
+    ["Proje adresi", data.roofAddress || "—"],
+    ["Çizilen çatı alanı", data.roofAreaM2 ? `${data.roofAreaM2.toFixed(1)} m²` : "—"],
+    ["Tahmini panel adedi", data.panelCount ? String(data.panelCount) : "—"],
+    ["Tahmini kurulu güç", data.systemKwp ? `${data.systemKwp.toFixed(2)} kWp` : "—"],
+    [
+      "Tahmini yıllık üretim",
+      data.annualProductionKwh ? `${Math.round(data.annualProductionKwh)} kWh` : "—",
+    ],
+    [
+      "Çatı poligonu",
+      data.roofCoordinates?.length
+        ? data.roofCoordinates.map(([lng, lat]) => `${lat.toFixed(6)},${lng.toFixed(6)}`).join(" | ")
+        : "—",
+    ],
   ];
   const html = `<h2 style="font-family:sans-serif;color:#0f2a4a">Yeni teklif talebi</h2>
     <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
