@@ -556,6 +556,14 @@
     "eyebrow": "Referanslar",
     "title": "Tamamlanan kurulumlar",
     "intro": "Konut ve işletmelerde hayata geçirdiğimiz projeler.",
+    "filterLabel": "Projeleri türüne göre filtrele",
+    "filters": {
+      "all": "Tümü",
+      "residential": "Konut",
+      "commercial": "Ticari",
+      "industrial": "Endüstriyel"
+    },
+    "resultLabel": "proje gösteriliyor",
     "emptyTitle": "Referanslar yakında",
     "emptyDesc": "Tamamlanan kurulumların görselleri çok yakında burada."
   },

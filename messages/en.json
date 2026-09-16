@@ -556,6 +556,14 @@
     "eyebrow": "Projects",
     "title": "Completed installations",
     "intro": "Projects we've delivered for homes and businesses.",
+    "filterLabel": "Filter projects by type",
+    "filters": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial"
+    },
+    "resultLabel": "projects shown",
     "emptyTitle": "References coming soon",
     "emptyDesc": "Photos of completed installations will be here shortly."
   },

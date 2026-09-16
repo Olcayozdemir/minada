@@ -2,46 +2,51 @@
   {
     "source": "Fidesan",
     "slug": "fidesan-ges",
-    "title": "Fidesan GES",
+    "title": "Fidesan",
     "kind": "endustriyel-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 165.2,
+    "acKw": 133,
     "cover": "fidesan.jpg"
   },
   {
     "source": "Castle Hotel",
     "slug": "castle-hotel-ges",
-    "title": "Castle Hotel GES",
+    "title": "Castle Otel",
     "kind": "ticari-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 174.05,
+    "acKw": 150,
     "cover": "castle-hotel.jpg"
   },
   {
     "source": "Başar İş Makineler",
     "slug": "basar-is-makineleri-ges",
-    "title": "Başar İş Makineleri GES",
+    "title": "Başar İş Makineleri",
     "kind": "endustriyel-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 53.1,
+    "acKw": 50,
     "cover": "basar-is-makineleri.jpg"
   },
   {
     "source": "Demre Zümrütkaya Öğrenci Derneği",
     "slug": "demre-zumrutkaya-ogrenci-dernegi-ges",
-    "title": "Demre Zümrütkaya Öğrenci Derneği GES",
+    "title": "Demre Öğrenci Derneği",
     "kind": "ticari-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 29.14,
+    "acKw": 25,
     "cover": "demre-zumrutkaya.jpg"
   },
   {
     "source": "Yüceal İnşaat nSEB",
     "slug": "yuceal-insaat-nseb-ges",
-    "title": "Yücel İnşaat GES",
+    "title": "Yüceal İnşaat nSEB",
     "kind": "konut-cati",
     "location": "Isparta",
-    "systemKw": null,
+    "systemKw": 11.685,
+    "acKw": 10,
     "cover": "yuceal-insaat.jpg"
   },
   {
@@ -50,7 +55,8 @@
     "title": null,
     "kind": "konut-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 8.26,
+    "acKw": 8,
     "cover": "mesken-01.jpg"
   },
   {
@@ -59,7 +65,8 @@
     "title": null,
     "kind": "konut-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 11.88,
+    "acKw": 10,
     "cover": "mesken-02.jpg"
   },
   {
@@ -68,7 +75,8 @@
     "title": null,
     "kind": "konut-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 12.98,
+    "acKw": 10,
     "cover": "mesken-03.jpg"
   },
   {
@@ -77,7 +85,8 @@
     "title": null,
     "kind": "konut-cati",
     "location": "Antalya",
-    "systemKw": null,
+    "systemKw": 13.02,
+    "acKw": 10,
     "cover": "mesken-04.jpg"
   }
 ]

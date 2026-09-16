@@ -41,7 +41,9 @@ export type ProjectItem = {
   slug: string;
   location?: string;
   systemKw?: number;
+  acKw?: number;
   excerpt?: string;
+  projectType?: "residential" | "commercial" | "industrial";
   coverImage?: any;
 };
 
@@ -120,7 +122,7 @@ export async function getProjects(locale: string): Promise<ProjectItem[]> {
   if (!hasSanity) return [];
   return client.fetch(
     groq`*[_type == "projectReference" && language == $locale] | order(publishedAt desc){
-      _id, title, "slug": slug.current, location, systemKw, excerpt, coverImage
+      _id, title, "slug": slug.current, location, systemKw, acKw, excerpt, projectType, coverImage
     }`,
     { locale },
     { next: { revalidate: 60 } },

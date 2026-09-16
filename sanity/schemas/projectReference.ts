@@ -16,7 +16,21 @@ export const projectReference = defineType({
     }),
     languageField,
     defineField({ name: "location", title: "Konum", type: "string" }),
+    defineField({
+      name: "projectType",
+      title: "Proje türü",
+      type: "string",
+      options: {
+        list: [
+          { title: "Konut", value: "residential" },
+          { title: "Ticari", value: "commercial" },
+          { title: "Endüstriyel", value: "industrial" },
+        ],
+        layout: "radio",
+      },
+    }),
     defineField({ name: "systemKw", title: "Sistem gücü (kWp)", type: "number" }),
+    defineField({ name: "acKw", title: "AC gücü (kWe)", type: "number" }),
     defineField({ name: "excerpt", title: "Özet", type: "text", rows: 3 }),
     defineField({ name: "coverImage", title: "Kapak görseli", type: "image", options: { hotspot: true } }),
     defineField({

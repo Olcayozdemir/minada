@@ -2,7 +2,7 @@
  * Seeds reference projects into Sanity, in both locales.
  *
  * Source of truth: content/references.json — one entry per project. Shape:
- *   { source, slug, title, kind, location, systemKw, cover, publishedAt?,
+ *   { source, slug, title, kind, location, systemKw, acKw, cover, publishedAt?,
  *     excerpt?: { tr, en } }
  *
  *   source     WeTransfer folder the photos came from. Repo-only bookkeeping,
@@ -17,6 +17,7 @@
  *              "Industrial rooftop PV"). Override with an explicit excerpt.
  *   location   province, e.g. "Malatya".
  *   systemKw   installed DC power in kWp.
+ *   acKw       installed AC power in kWe.
  *   cover      filename inside the photo directory (see PHOTOS below).
  *   publishedAt  optional ISO date. Omitted, the file's order becomes the
  *              display order — /referanslar sorts by publishedAt desc.
@@ -53,12 +54,12 @@ const PHOTOS = process.env.PHOTOS || join(process.cwd(), "content", "reference-p
 
 // Project kind -> the short type label both locales show under the title.
 const KINDS = {
-  "konut-cati": { tr: "Konut çatı GES", en: "Residential rooftop PV" },
-  "endustriyel-cati": { tr: "Endüstriyel çatı GES", en: "Industrial rooftop PV" },
-  "ticari-cati": { tr: "Ticari çatı GES", en: "Commercial rooftop PV" },
-  arazi: { tr: "Arazi GES", en: "Ground-mount PV" },
-  carport: { tr: "Otopark GES", en: "Carport PV" },
-  tarim: { tr: "Tarımsal GES", en: "Agrivoltaic PV" },
+  "konut-cati": { tr: "Konut çatı GES", en: "Residential rooftop PV", projectType: "residential" },
+  "endustriyel-cati": { tr: "Endüstriyel çatı GES", en: "Industrial rooftop PV", projectType: "industrial" },
+  "ticari-cati": { tr: "Ticari çatı GES", en: "Commercial rooftop PV", projectType: "commercial" },
+  arazi: { tr: "Arazi GES", en: "Ground-mount PV", projectType: "industrial" },
+  carport: { tr: "Otopark GES", en: "Carport PV", projectType: "commercial" },
+  tarim: { tr: "Tarımsal GES", en: "Agrivoltaic PV", projectType: "industrial" },
 };
 
 // Residential records are anonymous; the kWp keeps their slugs apart.
@@ -173,6 +174,8 @@ for (const r of resolved) {
       language: lang,
       ...(r.location ? { location: r.location } : {}),
       ...(typeof r.systemKw === "number" ? { systemKw: r.systemKw } : {}),
+      ...(typeof r.acKw === "number" ? { acKw: r.acKw } : {}),
+      projectType: KINDS[r.kind].projectType,
       excerpt: r.excerpt?.[lang] ?? KINDS[r.kind][lang],
       coverImage,
       publishedAt,
