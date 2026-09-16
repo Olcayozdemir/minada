@@ -34,8 +34,7 @@ export async function sendLeadEmail(data: LeadInput) {
   const from = process.env.RESEND_FROM ?? "MİNADA <onboarding@resend.dev>";
 
   if (!apiKey) {
-    // Talebin tek kopyası bu log satırı — uyarı değil, hata.
-    console.error("[lead] RESEND_API_KEY not set — LEAD LOST:", JSON.stringify(data));
+    console.error("[lead] RESEND_API_KEY is not configured; email was not sent.");
     return { sent: false as const };
   }
 

@@ -10,9 +10,9 @@
 
 .steps {
   display: grid;
-  grid-template-columns: auto minmax(48px, 1fr) auto;
+  grid-template-columns: auto minmax(28px, 1fr) auto minmax(28px, 1fr) auto;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
@@ -40,7 +40,22 @@ button.step:hover {
   color: var(--ink);
 }
 
+button.step:disabled {
+  cursor: default;
+}
+
 .stepActive {
+  color: var(--ink);
+
+  span {
+    color: var(--ink);
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(242, 168, 44, 0.14);
+  }
+}
+
+.stepComplete {
   color: var(--ink);
 
   span {
@@ -53,6 +68,10 @@ button.step:hover {
 .stepLine {
   height: 1px;
   background: rgba(16, 38, 43, 0.14);
+}
+
+.stepLineComplete {
+  background: rgba(27, 91, 79, 0.58);
 }
 
 .stepPanel {
@@ -189,6 +208,100 @@ button.step:hover {
   margin: 16px 0 4px;
 }
 
+.summary {
+  overflow: hidden;
+  border: 1px solid rgba(16, 38, 43, 0.12);
+  border-radius: var(--r-lg);
+  background: rgba(247, 244, 237, 0.55);
+}
+
+.summaryHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  background: #fff;
+  border-bottom: 1px solid rgba(16, 38, 43, 0.1);
+
+  h3 {
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+
+  p {
+    max-width: 56ch;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+
+  button {
+    flex: none;
+    padding: 7px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--green-800);
+    border-bottom: 1px solid currentColor;
+  }
+}
+
+.summaryGroupTitle {
+  padding: 20px 24px 10px;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  color: var(--ink-2);
+  text-transform: uppercase;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 24px 10px;
+  overflow: hidden;
+  background: rgba(16, 38, 43, 0.1);
+  border: 1px solid rgba(16, 38, 43, 0.1);
+  border-radius: var(--r-md);
+
+  > div {
+    min-width: 0;
+    padding: 13px 15px;
+    background: #fff;
+  }
+
+  dt {
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+    font-weight: 650;
+    color: var(--ink-2);
+  }
+
+  dd {
+    overflow-wrap: anywhere;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+}
+
+.summaryWide {
+  grid-column: 1 / -1;
+}
+
+.summaryEmpty {
+  margin: 0 24px 24px;
+  padding: 14px 15px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  background: #fff;
+  border: 1px solid rgba(16, 38, 43, 0.1);
+  border-radius: var(--r-md);
+}
+
 .formError {
   margin: 14px 0 0;
   padding: 12px 14px;
@@ -317,19 +430,46 @@ button.step:hover {
   }
 
   .steps {
-    grid-template-columns: auto minmax(24px, 1fr) auto;
-    gap: 9px;
+    grid-template-columns: auto minmax(10px, 1fr) auto minmax(10px, 1fr) auto;
+    gap: 5px;
     margin-bottom: 24px;
   }
 
   .step {
-    gap: 7px;
-    font-size: 0.8rem;
+    gap: 5px;
+    font-size: 0.72rem;
 
     span {
-      width: 29px;
-      height: 29px;
+      width: 27px;
+      height: 27px;
     }
+  }
+
+  .summaryHeading {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+
+    button {
+      justify-self: start;
+    }
+  }
+
+  .summaryGroupTitle {
+    padding-inline: 18px;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+    margin-inline: 18px;
+  }
+
+  .summaryWide {
+    grid-column: auto;
+  }
+
+  .summaryEmpty {
+    margin-inline: 18px;
   }
 
   .row2 {

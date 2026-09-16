@@ -478,7 +478,8 @@
     "steps": {
       "label": "Quote request steps",
       "details": "Details",
-      "roof": "Roof / Map"
+      "roof": "Roof / Map",
+      "summary": "Summary"
     },
     "info": {
       "title": "Contact details",
@@ -514,6 +515,8 @@
       "consent": "I have read and accept the <link>privacy notice</link> regarding the processing of my personal data.",
       "next": "Continue to roof details",
       "back": "Back to details",
+      "toSummary": "Review summary",
+      "backToRoof": "Back to map",
       "submit": "Send request",
       "submitting": "Sending…",
       "whatsapp": "Message on WhatsApp",
@@ -527,6 +530,15 @@
         "ev-sarj": "EV Charging",
         "diger": "Other"
       }
+    },
+    "summary": {
+      "title": "Quote request summary",
+      "intro": "Review your details one last time before sending.",
+      "editDetails": "Edit details",
+      "contactTitle": "Contact and requirements",
+      "roofTitle": "Preliminary roof estimate",
+      "roofEmpty": "No roof location or area was added. You can still send the request.",
+      "notProvided": "Not provided"
     },
     "map": {
       "title": "Mark the project location",

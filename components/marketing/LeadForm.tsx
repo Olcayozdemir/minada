@@ -58,7 +58,7 @@ export function LeadForm({
 }) {
   const t = useTranslations("Contact");
   const locale = useLocale();
-  const [step, setStep] = useState<1 | 2>(1);
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [status, setStatus] = useState<"idle" | "error" | "success">("idle");
   const [token, setToken] = useState("");
   const [roofEstimate, setRoofEstimate] = useState<RoofEstimate>(EMPTY_ROOF_ESTIMATE);
@@ -68,6 +68,7 @@ export function LeadForm({
   const {
     register,
     handleSubmit,
+    getValues,
     reset,
     trigger,
     control,
@@ -117,6 +118,17 @@ export function LeadForm({
     void goToRoofStep();
   }
 
+  function goToSummaryStep() {
+    setStatus("idle");
+    setStep(3);
+    window.requestAnimationFrame(() => stepHeadingRef.current?.focus());
+  }
+
+  function handleRoofStepSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    goToSummaryStep();
+  }
+
   async function onSubmit(values: LeadInput) {
     setStatus("idle");
     if (siteKey && !token) {
@@ -164,11 +176,19 @@ export function LeadForm({
 
   const fieldError = (k: keyof LeadInput) =>
     errors[k] ? <span className={styles.err}>{t(`errors.${k}`)}</span> : null;
+  const summaryValues = getValues();
+  const notProvided = t("summary.notProvided");
 
   return (
     <form
       className={styles.form}
-      onSubmit={step === 1 ? handleFirstStepSubmit : handleSubmit(onSubmit)}
+      onSubmit={
+        step === 1
+          ? handleFirstStepSubmit
+          : step === 2
+            ? handleRoofStepSubmit
+            : handleSubmit(onSubmit)
+      }
       noValidate
     >
       <input
@@ -184,25 +204,56 @@ export function LeadForm({
       <div className={styles.steps} aria-label={t("steps.label")}>
         <button
           type="button"
-          className={clsx(styles.step, step === 1 && styles.stepActive)}
+          className={clsx(
+            styles.step,
+            step === 1 && styles.stepActive,
+            step > 1 && styles.stepComplete,
+          )}
           onClick={() => setStep(1)}
           aria-current={step === 1 ? "step" : undefined}
         >
           <span>1</span>
           {t("steps.details")}
         </button>
-        <span className={styles.stepLine} aria-hidden="true" />
-        <div
-          className={clsx(styles.step, step === 2 && styles.stepActive)}
+        <span
+          className={clsx(styles.stepLine, step > 1 && styles.stepLineComplete)}
+          aria-hidden="true"
+        />
+        <button
+          type="button"
+          className={clsx(
+            styles.step,
+            step === 2 && styles.stepActive,
+            step > 2 && styles.stepComplete,
+          )}
+          onClick={() => {
+            if (step > 1) setStep(2);
+          }}
+          disabled={step === 1}
           aria-current={step === 2 ? "step" : undefined}
         >
           <span>2</span>
           {t("steps.roof")}
+        </button>
+        <span
+          className={clsx(styles.stepLine, step > 2 && styles.stepLineComplete)}
+          aria-hidden="true"
+        />
+        <div
+          className={clsx(styles.step, step === 3 && styles.stepActive)}
+          aria-current={step === 3 ? "step" : undefined}
+        >
+          <span>3</span>
+          {t("steps.summary")}
         </div>
       </div>
 
       <h2 ref={stepHeadingRef} tabIndex={-1} className="sr-only">
-        {step === 1 ? t("steps.details") : t("steps.roof")}
+        {step === 1
+          ? t("steps.details")
+          : step === 2
+            ? t("steps.roof")
+            : t("steps.summary")}
       </h2>
 
       {step === 1 ? (
@@ -306,7 +357,7 @@ export function LeadForm({
             </a>
           </div>
         </div>
-      ) : (
+      ) : step === 2 ? (
         <div className={styles.stepPanel}>
           <RoofMapPlanner
             apiKey={googleMapsApiKey}
@@ -316,8 +367,102 @@ export function LeadForm({
             onChange={updateRoofEstimate}
           />
 
-          {/* The tick claims the visitor has read the notice, so the notice has
-              to stay one click away without discarding this second step. */}
+          <div className={clsx(styles.actions, styles.finalActions)}>
+            <button type="button" className={styles.back} onClick={() => setStep(1)}>
+              {t("form.back")}
+            </button>
+            <button type="button" className={styles.submit} onClick={goToSummaryStep}>
+              {t("form.toSummary")}
+              <IconArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className={styles.stepPanel}>
+          <section className={styles.summary} aria-labelledby="quote-summary-title">
+            <div className={styles.summaryHeading}>
+              <div>
+                <h3 id="quote-summary-title">{t("summary.title")}</h3>
+                <p>{t("summary.intro")}</p>
+              </div>
+              <button type="button" onClick={() => setStep(1)}>
+                {t("summary.editDetails")}
+              </button>
+            </div>
+
+            <h4 className={styles.summaryGroupTitle}>{t("summary.contactTitle")}</h4>
+            <dl className={styles.summaryGrid}>
+              <div>
+                <dt>{t("form.name")}</dt>
+                <dd>{summaryValues.name || notProvided}</dd>
+              </div>
+              <div>
+                <dt>{t("form.phone")}</dt>
+                <dd>{summaryValues.phone || notProvided}</dd>
+              </div>
+              <div>
+                <dt>{t("form.email")}</dt>
+                <dd>{summaryValues.email || notProvided}</dd>
+              </div>
+              <div>
+                <dt>{t("form.city")}</dt>
+                <dd>{summaryValues.city || notProvided}</dd>
+              </div>
+              <div>
+                <dt>{t("form.topic")}</dt>
+                <dd>
+                  {summaryValues.topic
+                    ? t(`form.topics.${summaryValues.topic}`)
+                    : notProvided}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("form.propertyType")}</dt>
+                <dd>
+                  {summaryValues.propertyType
+                    ? t(`form.property.${summaryValues.propertyType}`)
+                    : notProvided}
+                </dd>
+              </div>
+              <div>
+                <dt>{t("form.bill")}</dt>
+                <dd>{summaryValues.bill ? `${summaryValues.bill} ₺` : notProvided}</dd>
+              </div>
+              <div className={styles.summaryWide}>
+                <dt>{t("form.message")}</dt>
+                <dd>{summaryValues.message || notProvided}</dd>
+              </div>
+            </dl>
+
+            <h4 className={styles.summaryGroupTitle}>{t("summary.roofTitle")}</h4>
+            {roofEstimate.address || roofEstimate.coordinates.length ? (
+              <dl className={styles.summaryGrid}>
+                <div className={styles.summaryWide}>
+                  <dt>{t("map.addressLabel")}</dt>
+                  <dd>{roofEstimate.address || notProvided}</dd>
+                </div>
+                <div>
+                  <dt>{t("map.roofArea")}</dt>
+                  <dd>{roofEstimate.roofAreaM2.toLocaleString(locale, { maximumFractionDigits: 1 })} m²</dd>
+                </div>
+                <div>
+                  <dt>{t("map.panelCount")}</dt>
+                  <dd>{roofEstimate.panelCount}</dd>
+                </div>
+                <div>
+                  <dt>{t("map.systemPower")}</dt>
+                  <dd>{roofEstimate.systemKwp.toLocaleString(locale, { maximumFractionDigits: 1 })} kWp</dd>
+                </div>
+                <div>
+                  <dt>{t("map.annualProduction")}</dt>
+                  <dd>≈ {Math.round(roofEstimate.annualProductionKwh).toLocaleString(locale)} kWh</dd>
+                </div>
+              </dl>
+            ) : (
+              <p className={styles.summaryEmpty}>{t("summary.roofEmpty")}</p>
+            )}
+          </section>
+
           <label className={styles.consent}>
             <input type="checkbox" {...register("consent")} />
             <span>
@@ -347,8 +492,8 @@ export function LeadForm({
           {status === "error" ? <p className={styles.formError}>{t("error.desc")}</p> : null}
 
           <div className={clsx(styles.actions, styles.finalActions)}>
-            <button type="button" className={styles.back} onClick={() => setStep(1)}>
-              {t("form.back")}
+            <button type="button" className={styles.back} onClick={() => setStep(2)}>
+              {t("form.backToRoof")}
             </button>
             <button type="submit" className={styles.submit} disabled={isSubmitting}>
               {isSubmitting ? t("form.submitting") : t("form.submit")}

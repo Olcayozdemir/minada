@@ -478,7 +478,8 @@
     "steps": {
       "label": "Teklif talebi adımları",
       "details": "Bilgiler",
-      "roof": "Çatı / Harita"
+      "roof": "Çatı / Harita",
+      "summary": "Özet"
     },
     "info": {
       "title": "İletişim bilgileri",
@@ -514,6 +515,8 @@
       "consent": "Kişisel verilerimin işlenmesine ilişkin <link>KVKK Aydınlatma Metni</link>'ni okudum ve onaylıyorum.",
       "next": "Çatı bilgilerine geç",
       "back": "Bilgilere dön",
+      "toSummary": "Özeti görüntüle",
+      "backToRoof": "Haritaya dön",
       "submit": "Teklif talebi gönder",
       "submitting": "Gönderiliyor…",
       "whatsapp": "WhatsApp'tan yaz",
@@ -527,6 +530,15 @@
         "ev-sarj": "EV Şarj",
         "diger": "Diğer"
       }
+    },
+    "summary": {
+      "title": "Teklif talebi özeti",
+      "intro": "Göndermeden önce bilgilerinizi son kez kontrol edin.",
+      "editDetails": "Bilgileri düzenle",
+      "contactTitle": "İletişim ve ihtiyaç",
+      "roofTitle": "Çatı ön tahmini",
+      "roofEmpty": "Çatı konumu veya alanı eklenmedi. Talebi yine de gönderebilirsiniz.",
+      "notProvided": "Belirtilmedi"
     },
     "map": {
       "title": "Proje konumunu işaretleyin",
