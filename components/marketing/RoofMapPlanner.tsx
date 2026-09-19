@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Script from "next/script";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { IconSearch } from "@/components/ui/icons";
 import { CITIES, SOLAR_CONFIG, panelCapacityForArea } from "@/lib/solar-config";
@@ -10,7 +9,65 @@ import styles from "./RoofMapPlanner.module.scss";
 declare global {
   interface Window {
     gm_authFailure?: () => void;
+    __minadaGoogleMapsReady?: () => void;
   }
+}
+
+const GOOGLE_MAPS_SCRIPT_ID = "google-maps-platform";
+const GOOGLE_MAPS_READY_CALLBACK = "__minadaGoogleMapsReady";
+let googleMapsLoader: Promise<void> | null = null;
+
+function loadGoogleMaps(apiKey: string, locale: string) {
+  if (window.google?.maps) return Promise.resolve();
+  if (googleMapsLoader) return googleMapsLoader;
+
+  googleMapsLoader = new Promise<void>((resolve, reject) => {
+    let settled = false;
+    const staleScript = document.getElementById(GOOGLE_MAPS_SCRIPT_ID);
+    staleScript?.remove();
+
+    const script = document.createElement("script");
+    const params = new URLSearchParams({
+      key: apiKey,
+      loading: "async",
+      libraries: "places,geometry",
+      language: locale === "tr" ? "tr" : "en",
+      region: "TR",
+      v: "weekly",
+      callback: GOOGLE_MAPS_READY_CALLBACK,
+    });
+
+    const finish = (error?: Error) => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timeoutId);
+      delete window.__minadaGoogleMapsReady;
+
+      if (error) {
+        googleMapsLoader = null;
+        script.remove();
+        reject(error);
+        return;
+      }
+
+      resolve();
+    };
+
+    window.__minadaGoogleMapsReady = () => finish();
+    script.id = GOOGLE_MAPS_SCRIPT_ID;
+    script.src = `https://maps.googleapis.com/maps/api/js?${params.toString()}`;
+    script.async = true;
+    script.onerror = () => finish(new Error("google_maps_script_failed"));
+
+    const timeoutId = window.setTimeout(
+      () => finish(new Error("google_maps_script_timeout")),
+      15000,
+    );
+
+    document.head.appendChild(script);
+  });
+
+  return googleMapsLoader;
 }
 
 export type RoofEstimate = {
@@ -128,7 +185,7 @@ export function RoofMapPlanner({
     });
   }
 
-  function initializeMap() {
+  const initializeMap = useCallback(() => {
     if (!apiKey || !mapContainerRef.current || mapRef.current || !window.google?.maps) return;
 
     try {
@@ -171,7 +228,27 @@ export function RoofMapPlanner({
       setMapError(true);
       setMapReady(false);
     }
-  }
+  }, [apiKey]);
+
+  useEffect(() => {
+    if (!apiKey) return;
+    let cancelled = false;
+
+    void loadGoogleMaps(apiKey, locale)
+      .then(() => {
+        if (!cancelled) initializeMap();
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setMapError(true);
+          setMapReady(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [apiKey, initializeMap, locale]);
 
   function focusLocation(location: google.maps.LatLng | google.maps.LatLngLiteral, title?: string) {
     const map = mapRef.current;
@@ -317,25 +394,8 @@ export function RoofMapPlanner({
   const numberFormat = new Intl.NumberFormat(locale === "tr" ? "tr-TR" : "en-US", {
     maximumFractionDigits: 1,
   });
-  const scriptUrl = apiKey
-    ? `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&loading=async&libraries=places,geometry&language=${locale === "tr" ? "tr" : "en"}&region=TR&v=weekly`
-    : "";
-
   return (
     <section className={styles.planner} aria-labelledby="roof-map-title">
-      {apiKey ? (
-        <Script
-          id="google-maps-platform"
-          src={scriptUrl}
-          strategy="afterInteractive"
-          onReady={initializeMap}
-          onError={() => {
-            setMapError(true);
-            setMapReady(false);
-          }}
-        />
-      ) : null}
-
       <div className={styles.heading}>
         <div>
           <h2 id="roof-map-title" className={styles.title}>{t("title")}</h2>
