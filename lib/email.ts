@@ -31,7 +31,10 @@ function escapeHtml(s: string) {
 export async function sendLeadEmail(data: LeadInput) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_EMAIL ?? "info@minada.com.tr";
-  const from = process.env.RESEND_FROM ?? "MİNADA <onboarding@resend.dev>";
+  const emailDomain = process.env.RESEND_EMAIL_DOMAIN?.trim();
+  const from =
+    process.env.RESEND_FROM ??
+    (emailDomain ? `MİNADA <teklif@${emailDomain}>` : "MİNADA <onboarding@resend.dev>");
 
   if (!apiKey) {
     console.error("[lead] RESEND_API_KEY is not configured; email was not sent.");
