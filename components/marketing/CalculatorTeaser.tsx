@@ -12,9 +12,12 @@ export async function CalculatorTeaser() {
   return (
     <Section tone="light">
       <div className={styles.grid}>
+        {/* Three blocks so the copy can span the demo card top to bottom. */}
         <div className={styles.copy}>
-          <h2 className={styles.title}>{t("title")}</h2>
-          <p className={styles.desc}>{t("desc")}</p>
+          <div>
+            <h2 className={styles.title}>{t("title")}</h2>
+            <p className={styles.desc}>{t("desc")}</p>
+          </div>
           <ul className={styles.points}>
             {points.map((p) => (
               <li key={p}>
@@ -22,12 +25,14 @@ export async function CalculatorTeaser() {
               </li>
             ))}
           </ul>
-          <div className={styles.actions}>
-            <Button href="/calculator" size="lg" withArrow>
-              {t("cta")}
-            </Button>
+          <div>
+            <div className={styles.actions}>
+              <Button href="/calculator" size="lg" withArrow>
+                {t("cta")}
+              </Button>
+            </div>
+            <p className={styles.note}>{t("note")}</p>
           </div>
-          <p className={styles.note}>{t("note")}</p>
         </div>
 
         <div className={styles.media}>

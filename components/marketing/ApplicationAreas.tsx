@@ -7,9 +7,9 @@ import { IconHome, IconBuilding, IconLeaf, IconLandmark } from "@/components/ui/
 import styles from "./ApplicationAreas.module.scss";
 
 const AREAS = [
-  { id: "konut", Icon: IconHome, img: "/images/v2/area-konut.jpg" },
-  { id: "ticari", Icon: IconBuilding, img: "/images/v2/area-ticari.jpg" },
-  { id: "tarim", Icon: IconLeaf, img: "/images/v2/area-tarim.jpg" },
+  { id: "konut", Icon: IconHome, img: "/images/v2/area-konut-mesken.jpg" },
+  { id: "ticari", Icon: IconBuilding, img: "/images/v2/area-ticari-saha.jpg" },
+  { id: "tarim", Icon: IconLeaf, img: "/images/v2/area-tarim-sulama.jpg" },
   { id: "kamu", Icon: IconLandmark, img: "/images/v2/area-kamu.jpg" },
 ] as const;
 

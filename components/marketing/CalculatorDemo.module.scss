@@ -30,7 +30,12 @@
 .stats {
   display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
   > div { background: #fff; border-radius: 16px; padding: 16px; }
-  > div:last-child { background: #fbe6ac; }
+  /* Savings read as money earned: a soft green, not the gold of the CTAs. */
+  > div:last-child {
+    background: #d8f3e2;
+    strong { color: #146c3c; }
+    span { color: #2f6b47; }
+  }
   span { display: block; color: var(--ink-2); font-size: 12px; margin-bottom: 8px; }
   strong { font-size: clamp(19px, 2vw, 27px); font-variant-numeric: tabular-nums; }
   small { font-size: 12px; font-weight: 500; }

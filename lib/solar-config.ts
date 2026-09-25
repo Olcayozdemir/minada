@@ -47,19 +47,116 @@ export const PITCH_FACTOR: Record<RoofPitch, number> = {
 };
 
 // Regional specific yield (kWh/kWp/year), GÜNEY yönü için. Fizibilitenin baz
-// değeri 1600; şehirler onun etrafında bölgesel nüans verir (İç Anadolu ≈ baz).
+// değeri 1600; iller onun etrafında bölgesel nüans verir (İç Anadolu ≈ baz,
+// Akdeniz / Güneydoğu üstünde, Karadeniz altında). İlk sekiz ilin değeri
+// Olcay'ın modelinden; diğerleri aynı bölge bandından türetilmiş tahmindir.
+//
+// 81 il. Sıra dropdown sırasıdır: önce MİNADA'nın hizmet illeri (Malatya
+// başta), ardından geri kalanlar Türkçe alfabetik. `id` ilin aksansız küçük
+// harf hâlidir — RoofMapPlanner seçilen ilin adını bu biçime indirip eşler.
+// İl adları iki dilde de aynı olduğu için çeviri dosyasında değil burada.
 export const CITIES = [
-  { id: "istanbul", specificYield: 1400 },
-  { id: "ankara", specificYield: 1600 },
-  { id: "izmir", specificYield: 1550 },
-  { id: "antalya", specificYield: 1700 },
-  { id: "bursa", specificYield: 1500 },
-  { id: "adana", specificYield: 1650 },
-  { id: "konya", specificYield: 1650 },
-  { id: "gaziantep", specificYield: 1680 },
+  { id: "malatya", name: "Malatya", specificYield: 1650 },
+  { id: "adiyaman", name: "Adıyaman", specificYield: 1680 },
+  { id: "elazig", name: "Elazığ", specificYield: 1630 },
+  { id: "sivas", name: "Sivas", specificYield: 1580 },
+  { id: "erzincan", name: "Erzincan", specificYield: 1580 },
+  { id: "antalya", name: "Antalya", specificYield: 1700 },
+  { id: "adana", name: "Adana", specificYield: 1650 },
+  { id: "afyonkarahisar", name: "Afyonkarahisar", specificYield: 1600 },
+  { id: "agri", name: "Ağrı", specificYield: 1560 },
+  { id: "aksaray", name: "Aksaray", specificYield: 1640 },
+  { id: "amasya", name: "Amasya", specificYield: 1500 },
+  { id: "ankara", name: "Ankara", specificYield: 1600 },
+  { id: "ardahan", name: "Ardahan", specificYield: 1480 },
+  { id: "artvin", name: "Artvin", specificYield: 1350 },
+  { id: "aydin", name: "Aydın", specificYield: 1580 },
+  { id: "balikesir", name: "Balıkesir", specificYield: 1500 },
+  { id: "bartin", name: "Bartın", specificYield: 1300 },
+  { id: "batman", name: "Batman", specificYield: 1650 },
+  { id: "bayburt", name: "Bayburt", specificYield: 1500 },
+  { id: "bilecik", name: "Bilecik", specificYield: 1480 },
+  { id: "bingol", name: "Bingöl", specificYield: 1600 },
+  { id: "bitlis", name: "Bitlis", specificYield: 1600 },
+  { id: "bolu", name: "Bolu", specificYield: 1420 },
+  { id: "burdur", name: "Burdur", specificYield: 1640 },
+  { id: "bursa", name: "Bursa", specificYield: 1500 },
+  { id: "canakkale", name: "Çanakkale", specificYield: 1500 },
+  { id: "cankiri", name: "Çankırı", specificYield: 1500 },
+  { id: "corum", name: "Çorum", specificYield: 1500 },
+  { id: "denizli", name: "Denizli", specificYield: 1600 },
+  { id: "diyarbakir", name: "Diyarbakır", specificYield: 1660 },
+  { id: "duzce", name: "Düzce", specificYield: 1350 },
+  { id: "edirne", name: "Edirne", specificYield: 1450 },
+  { id: "erzurum", name: "Erzurum", specificYield: 1540 },
+  { id: "eskisehir", name: "Eskişehir", specificYield: 1540 },
+  { id: "gaziantep", name: "Gaziantep", specificYield: 1680 },
+  { id: "giresun", name: "Giresun", specificYield: 1250 },
+  { id: "gumushane", name: "Gümüşhane", specificYield: 1450 },
+  { id: "hakkari", name: "Hakkari", specificYield: 1700 },
+  { id: "hatay", name: "Hatay", specificYield: 1620 },
+  { id: "igdir", name: "Iğdır", specificYield: 1580 },
+  { id: "isparta", name: "Isparta", specificYield: 1640 },
+  { id: "istanbul", name: "İstanbul", specificYield: 1400 },
+  { id: "izmir", name: "İzmir", specificYield: 1550 },
+  { id: "kahramanmaras", name: "Kahramanmaraş", specificYield: 1640 },
+  { id: "karabuk", name: "Karabük", specificYield: 1380 },
+  { id: "karaman", name: "Karaman", specificYield: 1680 },
+  { id: "kars", name: "Kars", specificYield: 1500 },
+  { id: "kastamonu", name: "Kastamonu", specificYield: 1380 },
+  { id: "kayseri", name: "Kayseri", specificYield: 1620 },
+  { id: "kirikkale", name: "Kırıkkale", specificYield: 1560 },
+  { id: "kirklareli", name: "Kırklareli", specificYield: 1430 },
+  { id: "kirsehir", name: "Kırşehir", specificYield: 1580 },
+  { id: "kilis", name: "Kilis", specificYield: 1680 },
+  { id: "kocaeli", name: "Kocaeli", specificYield: 1400 },
+  { id: "konya", name: "Konya", specificYield: 1650 },
+  { id: "kutahya", name: "Kütahya", specificYield: 1520 },
+  { id: "manisa", name: "Manisa", specificYield: 1560 },
+  { id: "mardin", name: "Mardin", specificYield: 1700 },
+  { id: "mersin", name: "Mersin", specificYield: 1680 },
+  { id: "mugla", name: "Muğla", specificYield: 1650 },
+  { id: "mus", name: "Muş", specificYield: 1580 },
+  { id: "nevsehir", name: "Nevşehir", specificYield: 1620 },
+  { id: "nigde", name: "Niğde", specificYield: 1660 },
+  { id: "ordu", name: "Ordu", specificYield: 1250 },
+  { id: "osmaniye", name: "Osmaniye", specificYield: 1630 },
+  { id: "rize", name: "Rize", specificYield: 1200 },
+  { id: "sakarya", name: "Sakarya", specificYield: 1400 },
+  { id: "samsun", name: "Samsun", specificYield: 1350 },
+  { id: "siirt", name: "Siirt", specificYield: 1680 },
+  { id: "sinop", name: "Sinop", specificYield: 1350 },
+  { id: "sanliurfa", name: "Şanlıurfa", specificYield: 1720 },
+  { id: "sirnak", name: "Şırnak", specificYield: 1700 },
+  { id: "tekirdag", name: "Tekirdağ", specificYield: 1430 },
+  { id: "tokat", name: "Tokat", specificYield: 1480 },
+  { id: "trabzon", name: "Trabzon", specificYield: 1250 },
+  { id: "tunceli", name: "Tunceli", specificYield: 1580 },
+  { id: "usak", name: "Uşak", specificYield: 1560 },
+  { id: "van", name: "Van", specificYield: 1680 },
+  { id: "yalova", name: "Yalova", specificYield: 1400 },
+  { id: "yozgat", name: "Yozgat", specificYield: 1560 },
+  { id: "zonguldak", name: "Zonguldak", specificYield: 1300 },
 ] as const;
 
 export type CityId = (typeof CITIES)[number]["id"];
+
+/** Preselected province — MİNADA's home base, first in the list. */
+export const DEFAULT_CITY: CityId = "malatya";
+
+/** How many provinces lead the list before the alphabetical rest. */
+const FEATURED_CITY_COUNT = 6;
+
+/** Dropdown options, with a rule closing the featured group. */
+export const CITY_OPTIONS = CITIES.map((city, index) => ({
+  value: city.id,
+  label: city.name,
+  separatorAfter: index === FEATURED_CITY_COUNT - 1,
+}));
+
+export function cityName(id: string): string {
+  return CITIES.find((c) => c.id === id)?.name ?? id;
+}
 
 export type CalcInput = {
   mode: "bill" | "consumption";

@@ -1,12 +1,15 @@
 "use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Fragment } from "react";
 import clsx from "clsx";
 import styles from "./CalculatorSelect.module.scss";
 
 export type CalculatorSelectOption = {
   value: string;
   label: string;
+  /** Draw a rule after this option, closing a group at the top of the list. */
+  separatorAfter?: boolean;
 };
 
 export function CalculatorSelect({
@@ -46,14 +49,17 @@ export function CalculatorSelect({
         <DropdownMenu.Content className={styles.content} sideOffset={6} align="start">
           <DropdownMenu.RadioGroup value={value} onValueChange={onChange}>
             {options.map((option) => (
-              <DropdownMenu.RadioItem className={styles.item} value={option.value} key={option.value}>
-                <span>{option.label}</span>
-                <DropdownMenu.ItemIndicator className={styles.indicator}>
-                  <svg viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="m5 10 3.2 3.2L15 6.5" />
-                  </svg>
-                </DropdownMenu.ItemIndicator>
-              </DropdownMenu.RadioItem>
+              <Fragment key={option.value}>
+                <DropdownMenu.RadioItem className={styles.item} value={option.value}>
+                  <span>{option.label}</span>
+                  <DropdownMenu.ItemIndicator className={styles.indicator}>
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="m5 10 3.2 3.2L15 6.5" />
+                    </svg>
+                  </DropdownMenu.ItemIndicator>
+                </DropdownMenu.RadioItem>
+                {option.separatorAfter ? <DropdownMenu.Separator className={styles.separator} /> : null}
+              </Fragment>
             ))}
           </DropdownMenu.RadioGroup>
         </DropdownMenu.Content>

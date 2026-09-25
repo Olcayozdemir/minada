@@ -56,7 +56,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
 
   return (
     <Section tone="light">
-      <SectionHeading eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeading as="h1" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       {posts.length === 0 ? (
         <div className={styles.empty}>
           <p className={styles.emptyTitle}>{t("emptyTitle")}</p>
