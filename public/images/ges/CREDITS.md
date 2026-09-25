@@ -6,4 +6,4 @@
 | ges-ground.jpg  | ucay.com.tr — Avşar Emaye Arazi GES, Afyonkarahisar, drone                                          | Okan'ın izni (aynı)                                                                   |
 | ges-carport.jpg | Wikimedia Commons — "Solar canopy Winona State 01", drone; 4000x3000 kaynaktan 16:9 kırpıldı        | CC0 — atıf gerekmiyor; kendi carport projemizin fotoğrafı gelince değiştirilmeli    |
 
-Agri-PV kartı `public/images/v2/area-tarim.jpg` (Unsplash, bkz. `../v2/CREDITS.md`) kullanıyor.
+Agri-PV kartı `public/images/v2/area-tarim-sulama.jpg` (müşteri görseli, bkz. `../v2/CREDITS.md`) kullanıyor.

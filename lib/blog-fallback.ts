@@ -133,7 +133,7 @@ const POSTS: FallbackPost[] = [
     slug: "isletmeler-icin-ges-tesvikleri-2026",
     excerpt:
       "KOSGEB ve kalkınma ajansı destekleri, yeşil dönüşüm kredileri ve vergisel avantajlar — hangi işletme neye başvurabilir?",
-    coverImage: "/images/v2/area-ticari.jpg",
+    coverImage: "/images/v2/area-ticari-saha.jpg",
     publishedAt: "2026-05-12",
     category: { title: "Teşvikler" },
     author: AUTHOR,
@@ -313,7 +313,7 @@ const POSTS: FallbackPost[] = [
     slug: "isletmeler-icin-ges-tesvikleri-2026",
     excerpt:
       "Grant programmes, green transition loans and tax advantages — which businesses qualify for what?",
-    coverImage: "/images/v2/area-ticari.jpg",
+    coverImage: "/images/v2/area-ticari-saha.jpg",
     publishedAt: "2026-05-12",
     category: { title: "Incentives" },
     author: AUTHOR_EN,

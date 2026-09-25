@@ -15,7 +15,7 @@ import styles from "../line.module.scss";
 const TYPE_IMAGES: Record<(typeof GES_TYPES)[number], string> = {
   rooftop: "/images/ges/ges-rooftop.jpg",
   ground: "/images/ges/ges-ground.jpg",
-  agripv: "/images/v2/area-tarim.jpg",
+  agripv: "/images/v2/area-tarim-sulama.jpg",
   carport: "/images/ges/ges-carport.jpg",
 };
 

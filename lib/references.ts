@@ -1,3 +1,5 @@
+import { hasLocale } from "next-intl";
+import { routing } from "@/i18n/routing";
 import type { ProjectItem } from "@/sanity/queries";
 import { urlFor } from "@/sanity/image";
 
@@ -82,9 +84,12 @@ export type ReferenceItem = {
 };
 
 /** Always two decimals, in the reader's number format: "4.500,00 kWp" in
-    Turkish, "4,500.00 kWp" in English. */
+    Turkish, "4,500.00 kWp" in English. An unsupported locale falls back to
+    the default: a stray path such as /wp-login.php reaches the page as its
+    locale, and toLocaleString would throw a 500 before the layout's 404. */
 export function formatKwp(kw: number, locale: string): string {
-  return `${kw.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} kWp`;
+  const safe = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale;
+  return `${kw.toLocaleString(safe, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} kWp`;
 }
 
 function categoryFromRecord(project: ProjectItem): ReferenceCategory | undefined {
