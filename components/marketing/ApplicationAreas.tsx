@@ -6,11 +6,16 @@ import { Link } from "@/i18n/navigation";
 import { IconHome, IconBuilding, IconLeaf, IconLandmark } from "@/components/ui/icons";
 import styles from "./ApplicationAreas.module.scss";
 
+// GEÇİCİ (2026-09-25): Konut kartı için dört mesken adayı yan yana
+// karşılaştırılsın diye her kart bir adayı gösteriyor. Seçim yapılınca bu
+// commit geri alınır ve yalnızca Konut seçilen adaya bağlanır; kalıcı
+// görseller: konut → area-konut.jpg, ticari → area-ticari-saha.jpg,
+// tarim → area-tarim-sulama.jpg, kamu → area-kamu.jpg.
 const AREAS = [
-  { id: "konut", Icon: IconHome, img: "/images/v2/area-konut.jpg" },
-  { id: "ticari", Icon: IconBuilding, img: "/images/v2/area-ticari-saha.jpg" },
-  { id: "tarim", Icon: IconLeaf, img: "/images/v2/area-tarim-sulama.jpg" },
-  { id: "kamu", Icon: IconLandmark, img: "/images/v2/area-kamu.jpg" },
+  { id: "konut", Icon: IconHome, img: "/images/v2/area-konut-aday-1.jpg" },
+  { id: "ticari", Icon: IconBuilding, img: "/images/v2/area-konut-aday-2.jpg" },
+  { id: "tarim", Icon: IconLeaf, img: "/images/v2/area-konut-aday-3.jpg" },
+  { id: "kamu", Icon: IconLandmark, img: "/images/v2/area-konut-aday-4.jpg" },
 ] as const;
 
 export async function ApplicationAreas() {
