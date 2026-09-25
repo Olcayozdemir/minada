@@ -12,13 +12,13 @@
 }
 
 /* Beside the demo card the copy spans its full height: the heading lines up
-   with the card's top edge and the note with its bottom edge, instead of a
-   short column floating in the middle of a tall one. Stacked, it is just a
-   column again. */
+   with the card's top edge and the note with its bottom edge. The gains panel
+   takes up the slack between them, so the spacing around it stays even
+   instead of opening two wide gaps above and below a floating list. Stacked,
+   it is just a column again. */
 .copy {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: var(--space-8);
   padding-block: var(--space-4);
 
@@ -48,10 +48,16 @@
    wrap every line, and only the track width knows that. */
 .points {
   @include list-reset;
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-  gap: var(--space-4) var(--space-6);
-  margin-block: 0;
+  align-content: space-evenly;
+  gap: var(--space-5) var(--space-6);
+  padding: clamp(20px, 2.4vw, 32px);
+  border: 1px solid #dce2e7;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 40px -34px rgba(18, 36, 63, 0.4);
 
   @include bp-down(900px) {
     margin-block: var(--space-6);
@@ -59,15 +65,20 @@
 
   li {
     display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 0.75rem;
     font-size: 1.05rem;
     font-weight: 600;
+    line-height: 1.35;
     color: var(--ink);
 
     svg {
-      color: var(--gold-600);
       flex: none;
+      box-sizing: content-box;
+      padding: 5px;
+      border-radius: 50%;
+      color: var(--gold-600);
+      background: rgba(242, 168, 44, 0.14);
     }
   }
 }

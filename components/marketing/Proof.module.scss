@@ -359,8 +359,8 @@
   color: var(--ink);
 }
 
+/* One line on a desktop — the width is there; it wraps only when it must. */
 .quotesPrivacy {
-  max-width: 78ch;
   margin-top: clamp(18px, 2vw, 26px);
   font-size: 13px;
   line-height: 1.6;
