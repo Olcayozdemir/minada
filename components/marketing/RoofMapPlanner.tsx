@@ -107,7 +107,8 @@ function normalizeCity(value: string) {
 
 function yieldForCity(city: string) {
   const normalized = normalizeCity(city);
-  return CITIES.find((item) => normalized.includes(item.id))?.specificYield ?? 1600;
+  // Exact match: with all 81 provinces a substring test is ambiguous.
+  return CITIES.find((item) => item.id === normalized)?.specificYield ?? 1600;
 }
 
 export function RoofMapPlanner({

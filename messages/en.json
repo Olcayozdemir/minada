@@ -72,11 +72,11 @@
     "calcCardDesc": "See a ballpark picture in 1 minute.",
     "imageAlt": "A modern home with rooftop solar panels, a wall battery and heat pump, and an EV on charge",
     "ctaSolutions": "Our solutions",
-    "proof1v": "15+ yrs",
+    "proof1v": "10+ yrs",
     "proof1l": "industry experience",
     "proof2v": "300+",
     "proof2l": "completed projects",
-    "proof3v": "250 MWp+",
+    "proof3v": "200 MWp+",
     "proof3l": "commissioned capacity",
     "marker1": "Rooftop solar: generation starts here.",
     "marker2": "Energy storage: the surplus sits in the battery, ready for the hours with no generation or for a power cut.",
@@ -252,28 +252,8 @@
       "quotesLabel": "Customer quotes",
       "previousProject": "Previous project",
       "nextProject": "Next project",
-      "capacity": "Installed capacity",
-      "location": "Location",
-      "previousQuote": "Previous review",
-      "nextQuote": "Next review",
-      "localProjects": {
-        "tileRoof": {
-          "title": "Tiled-roof residential solar",
-          "kind": "Residential installation"
-        },
-        "modernVilla": {
-          "title": "Modern villa rooftop solar",
-          "kind": "Residential installation"
-        },
-        "commercialRoof": {
-          "title": "Commercial rooftop solar",
-          "kind": "Commercial installation"
-        },
-        "petrolStation": {
-          "title": "Petrol station canopy solar",
-          "kind": "Commercial installation"
-        }
-      },
+      "quotesHeading": "What our clients say",
+      "quotesPrivacy": "Under KVKK, Turkey's personal data protection law, we do not publish our clients' details. On request, and with the person's consent, we can share their contact information.",
       "t1": {
         "quote": "They visited a few hours after our survey request and cleared up a lot of question marks. Okan being an engineer, and explaining the technical details to us properly, put our minds at ease. Everything they laid out transparently at the start, we then saw happen during the process. Power cuts no longer affect us. Thank you, MİNADA family.",
         "name": "Emre E."
@@ -427,16 +407,6 @@
     "unitKwh": "kWh/mo",
     "cityLabel": "City",
     "cityPlaceholder": "Select a city",
-    "cities": {
-      "istanbul": "İstanbul",
-      "ankara": "Ankara",
-      "izmir": "İzmir",
-      "antalya": "Antalya",
-      "bursa": "Bursa",
-      "adana": "Adana",
-      "konya": "Konya",
-      "gaziantep": "Gaziantep"
-    },
     "note": "Your details aren't stored; used only for the estimate.",
     "emptyState": "Enter your bill/usage and city to see results.",
     "systemLabel": "Recommended system",
@@ -599,16 +569,15 @@
   },
   "Projects": {
     "metaTitle": "Projects",
-    "metaDesc": "Solar plants MİNADA Enerji has designed and commissioned, from residential roofs to industrial facilities, listed with their location and installed capacity.",
+    "metaDesc": "Solar plants our founding team has designed and commissioned, from residential roofs to industrial facilities, listed with their location and installed capacity.",
     "eyebrow": "Projects",
     "title": "Completed installations",
-    "intro": "Projects we've delivered for homes and businesses.",
+    "intro": "A selection of installations completed by our founding team.",
     "filterLabel": "Filter projects by type",
     "filters": {
       "all": "All",
       "residential": "Residential",
-      "commercial": "Commercial",
-      "industrial": "Industrial"
+      "business": "Business"
     },
     "resultLabel": "projects shown",
     "emptyTitle": "References coming soon",
@@ -1198,19 +1167,20 @@
   },
   "About": {
     "metaTitle": "About us",
-    "metaDesc": "MİNADA Enerji: your integrated energy partner with 15+ years in the field, designing, installing and operating solar, energy storage, heat pump and EV charging solutions from one hand.",
+    "metaDesc": "MİNADA Enerji: your integrated energy partner with 10+ years in the field, designing, installing and operating solar, energy storage, heat pump and EV charging solutions from one hand.",
     "eyebrow": "About us",
     "title": "A trusted <em>harbor</em> for your energy transition",
-    "intro": "MİNADA Enerji sees electricity not merely as something consumed, but as an asset that can be managed and made to produce value. With more than 15 years in the sector we bring solar, energy storage, heat pumps and electric vehicle charging under one roof, and run the whole process from design through commissioning.",
+    "intro": "MİNADA Enerji sees electricity not merely as something consumed, but as an asset that can be managed and made to produce value. With more than 10 years in the sector we bring solar, energy storage, heat pumps and electric vehicle charging under one roof, and run the whole process from design through commissioning.",
     "intro2": "Our aim is to turn homes and businesses into buildings that generate their own energy, more efficient and more independent.",
     "storyTitle": "Our story",
-    "storyP1": "MİNADA grew out of engineering experience earned on site. Our founding team has spent more than 15 years working on renewable energy projects through design, installation and commissioning. We brought that experience together under one roof to build MİNADA Enerji, offering solar, energy storage, heat pumps and EV charging as one integrated approach.",
+    "storyP1": "MİNADA grew out of engineering experience earned on site. Before founding MİNADA Enerji, our founding team spent more than 10 years in the renewable energy sector, taking an active role in the design, installation and commissioning of over 300 projects and signing off more than 200 MWp of installed capacity in total. We brought that experience together under one roof and founded MİNADA Enerji, offering solar, energy storage, heat pumps and EV charging as one integrated approach.",
     "storyP2": "For us a project is not only an investment but an engineering responsibility. That is why we run everything from survey to commissioning transparently and to a plan, so our clients can follow each stage clearly. Through open communication, realistic planning and solutions built for the need, we set out to form long-term partnerships based on trust.",
     "storyImageAlt": "Two engineers in MİNADA vests surveying a rooftop solar plant with a tablet",
     "statsTitle": "MİNADA in numbers",
+    "statsNote": "We are a new company, but we are not starting from scratch. These figures reflect our founding team's individual project experience in the energy sector.",
     "stats": {
       "years": {
-        "value": "15",
+        "value": "10",
         "suffix": "+",
         "label": "Years of industry experience"
       },
@@ -1220,7 +1190,7 @@
         "label": "Completed projects"
       },
       "capacity": {
-        "value": "250",
+        "value": "200",
         "suffix": "MWp+",
         "label": "Commissioned capacity"
       },

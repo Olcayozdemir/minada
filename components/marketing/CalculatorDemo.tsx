@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { calculateSolar, CITIES, type CityId } from "@/lib/solar-config";
+import { calculateSolar, CITY_OPTIONS, DEFAULT_CITY, type CityId } from "@/lib/solar-config";
 import { CalculatorSelect } from "./CalculatorSelect";
 import styles from "./CalculatorDemo.module.scss";
 
@@ -14,7 +14,7 @@ export function CalculatorDemo() {
   const locale = useLocale();
   const t = useTranslations("Calculator");
   const [bill, setBill] = useState(1500);
-  const [city, setCity] = useState<CityId>("antalya");
+  const [city, setCity] = useState<CityId>(DEFAULT_CITY);
   const [visible, setVisible] = useState(false);
   const host = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -36,7 +36,7 @@ export function CalculatorDemo() {
           onChange={(value) => setCity(value as CityId)}
           label={t("cityLabel")}
           placeholder={t("cityPlaceholder")}
-          options={CITIES.map((item) => ({ value: item.id, label: t(`cities.${item.id}`) }))}
+          options={CITY_OPTIONS}
         />
       </div>
       <div className={styles.scene}>

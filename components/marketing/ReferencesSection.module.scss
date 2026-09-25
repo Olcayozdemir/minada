@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as *;
 
-/* Image-led project index. The first record earns visual priority; the rest
-   keep a compact rhythm so the page reads like field work, not a card catalog. */
+/* Image-led project index. Every card is the same size — the client asked for
+   one even grid, not a lead photograph with smaller ones after it. */
 
 .galleryShell {
   min-width: 0;
@@ -97,22 +97,14 @@
   animation-delay: calc(var(--card-index, 0) * 45ms);
 }
 
-.featured {
-  grid-column: span 2;
-}
-
 .card {
   position: relative;
   isolation: isolate;
-  height: clamp(252px, 21vw, 300px);
+  aspect-ratio: 10 / 7;
   overflow: hidden;
   border-radius: var(--r-md);
   background: var(--green-850);
   box-shadow: 0 20px 48px -34px rgba(8, 26, 48, 0.58);
-}
-
-.leadRow .card {
-  height: clamp(340px, 28vw, 410px);
 }
 
 .coverImg {
@@ -197,10 +189,6 @@
   color: #fff;
 }
 
-.featured .cardTitle {
-  font-size: clamp(17px, 1.45vw, 22px);
-}
-
 .powerMetrics {
   display: flex;
   align-items: center;
@@ -211,20 +199,6 @@
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.82);
   white-space: nowrap;
-
-  span + span {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    &::before {
-      content: "";
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--gold-300);
-    }
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -280,14 +254,6 @@
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .leadRow:not(.featured) .card {
-    height: clamp(252px, 34vw, 320px);
-  }
-
-  .featured .card {
-    height: clamp(340px, 54vw, 460px);
-  }
 }
 
 @include bp-down(640px) {
@@ -315,21 +281,6 @@
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .featured {
-    grid-column: auto;
-  }
-
-  .card,
-  .leadRow .card,
-  .featured .card {
-    height: clamp(270px, 84vw, 338px);
-  }
-
-  .featured .cardTitle {
-    font-size: clamp(17px, 4.8vw, 20px);
-  }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

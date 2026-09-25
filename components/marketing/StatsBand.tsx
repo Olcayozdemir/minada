@@ -16,7 +16,9 @@ export async function StatsBand() {
 
   return (
     <Section tone="band">
-      <SectionHeading tone="dark" title={t("statsTitle")} />
+      {/* The figures are the founding team's track record, not the company's:
+          the note says so before anyone reads them as MİNADA's own. */}
+      <SectionHeading tone="dark" title={t("statsTitle")} note={t("statsNote")} />
       <dl className={styles.stats}>
         {STATS.map((k) => (
           <div key={k} className={styles.stat}>

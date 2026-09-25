@@ -5,8 +5,11 @@ import { SITE } from "@/lib/site";
 
 // Varsayılan da üretimdeki alan adı olmalı: env eksik kaldığında canonical ve
 // sitemap bizim olmayan bir alan adını işaret ediyordu (minada.com bir park
-// sayfası), yani Google'a "asıl sayfa orada" deniyordu.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://minada.com.tr";
+// sayfası), yani Google'a "asıl sayfa orada" deniyordu. Site www'de yayında;
+// çıplak alan adı www'ye 308 ile yönleniyor, bu yüzden canonical, hreflang ve
+// sitemap de www'yi göstermeli — yönlenen bir URL'yi canonical vermek
+// Google'a çelişkili sinyal gönderir.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.minada.com.tr";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -28,6 +31,11 @@ export function organizationLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "MİNADA Enerji",
+    // "Minada" alone is read as Mina, the pilgrimage site near Mecca. Spelling
+    // out the variants people type ties them to this company.
+    alternateName: ["MİNADA", "Minada Enerji", "MINADA Enerji"],
+    description:
+      "Malatya merkezli güneş enerjisi (GES), enerji depolama, ısı pompası ve EV şarj çözümleri şirketi.",
     url: SITE_URL,
     logo: `${SITE_URL}/logo/logo1.png`,
     sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin].filter(

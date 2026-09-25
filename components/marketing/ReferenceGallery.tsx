@@ -2,25 +2,11 @@
 
 import Image from "next/image";
 import { useId, useState, type CSSProperties, type ReactNode } from "react";
+import type { ReferenceCategory, ReferenceItem } from "@/lib/references";
 import styles from "./ReferencesSection.module.scss";
 
-export type ReferenceCategory = "residential" | "commercial" | "industrial";
-
-export type ReferenceCard = {
-  id: string;
-  title: string;
-  location: string;
-  power: string[];
-  category?: ReferenceCategory;
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  } | null;
-};
-
 type ReferenceGalleryProps = {
-  cards: ReferenceCard[];
+  cards: ReferenceItem[];
   children: ReactNode;
   filterLabel: string;
   allLabel: string;
@@ -28,7 +14,7 @@ type ReferenceGalleryProps = {
   resultLabel: string;
 };
 
-const CATEGORY_ORDER: ReferenceCategory[] = ["residential", "commercial", "industrial"];
+const CATEGORY_ORDER: ReferenceCategory[] = ["residential", "business"];
 
 export function ReferenceGallery({
   cards,
@@ -84,9 +70,7 @@ export function ReferenceGallery({
         {visibleCards.map((project, index) => (
           <li
             key={`${activeCategory}:${project.id}`}
-            className={`${styles.item} ${index === 0 ? styles.featured : ""} ${
-              index < 2 ? styles.leadRow : ""
-            }`}
+            className={styles.item}
             style={{ "--card-index": Math.min(index, 5) } as CSSProperties}
           >
             <article className={`${styles.card} ${project.image ? "" : styles.cardWithoutImage}`}>
@@ -96,12 +80,8 @@ export function ReferenceGallery({
                   alt=""
                   width={project.image.width}
                   height={project.image.height}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  sizes={
-                    index === 0
-                      ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
-                      : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  }
+                  loading={index < 3 ? "eager" : "lazy"}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className={styles.coverImg}
                 />
               ) : null}
@@ -119,13 +99,7 @@ export function ReferenceGallery({
                   </p>
                 ) : null}
                 <h3 className={styles.cardTitle}>{project.title}</h3>
-                {project.power.length ? (
-                  <p className={styles.powerMetrics}>
-                    {project.power.map((value) => (
-                      <span key={value}>{value}</span>
-                    ))}
-                  </p>
-                ) : null}
+                {project.power ? <p className={styles.powerMetrics}>{project.power}</p> : null}
               </div>
             </article>
           </li>

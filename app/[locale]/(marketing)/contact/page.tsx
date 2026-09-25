@@ -43,7 +43,7 @@ export default async function Page({
 
   return (
     <Section tone="dark">
-      <SectionHeading tone="dark" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeading as="h1" tone="dark" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className={styles.layout}>
         <div className={styles.formCol}>
           <LeadForm

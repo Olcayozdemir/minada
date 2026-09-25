@@ -6,10 +6,12 @@ import { useTranslations, useLocale } from "next-intl";
 import clsx from "clsx";
 import { Link } from "@/i18n/navigation";
 import {
-  CITIES,
+  CITY_OPTIONS,
+  DEFAULT_CITY,
   ORIENTATIONS,
   ROOF_PITCHES,
   calculateSolar,
+  cityName,
   panelCapacityForArea,
   type CityId,
   type Orientation,
@@ -113,7 +115,7 @@ function Gauge({ pct, value, label }: { pct: number; value: string; label: strin
   );
 }
 
-export function Calculator({ initialBill = "1500", initialCity = "antalya", fromDemo = false }: { initialBill?: string; initialCity?: string; fromDemo?: boolean }) {
+export function Calculator({ initialBill = "1500", initialCity = DEFAULT_CITY, fromDemo = false }: { initialBill?: string; initialCity?: string; fromDemo?: boolean }) {
   const t = useTranslations("Calculator");
   const locale = useLocale();
   const [mode, setMode] = useState<"bill" | "consumption">("bill");
@@ -254,7 +256,7 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
             onChange={setCityId}
             label={t("cityLabel")}
             placeholder={t("cityPlaceholder")}
-            options={CITIES.map((city) => ({ value: city.id, label: t(`cities.${city.id}`) }))}
+            options={CITY_OPTIONS}
           />
           </div>
           {showStepError && <p className={styles.stepError} role="alert">{locale === "tr" ? "Devam etmek için geçerli bir değer ve şehir seçin." : "Enter a valid value and select a city to continue."}</p>}
@@ -337,7 +339,7 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
 
         {step === 3 && !resultsRevealed && (
           <CalculatorLeadGate
-            city={t(`cities.${cityId}`)}
+            city={cityName(cityId)}
             bill={mode === "bill" ? String(Math.round(num)) : `${Math.round(num)} kWh/ay`}
             message={leadMessage}
             onBack={() => setStep(2)}
@@ -346,7 +348,7 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
         )}
 
         {step === 3 && resultsRevealed && <div className={styles.selectionSummary}>
-          <div><span>{stepLabels[0]}</span><strong>{mode === "bill" ? `${fmt(num)} ${t("unitBill")}` : `${fmt(num)} ${t("unitKwh")}`} · {t(`cities.${cityId}`)}</strong></div>
+          <div><span>{stepLabels[0]}</span><strong>{mode === "bill" ? `${fmt(num)} ${t("unitBill")}` : `${fmt(num)} ${t("unitKwh")}`} · {cityName(cityId)}</strong></div>
           <div><span>{stepLabels[1]}</span><strong>{roofArea} m² · {t(ORIENTATION_KEY[orientation])} · {t(PITCH_KEY[pitch])}</strong></div>
           <div><span>{stepLabels[2]}</span><strong>{fmtPct(dayUse)} · {batteryKwh === 0 ? t("batteryNone") : `${batteryKwh} kWh`}</strong></div>
         </div>}
@@ -422,7 +424,7 @@ export function Calculator({ initialBill = "1500", initialCity = "antalya", from
                 href={{
                   pathname: "/contact",
                   query: {
-                    city: t(`cities.${cityId}`),
+                    city: cityName(cityId),
                     bill: mode === "bill" ? String(Math.round(num)) : "",
                   },
                 }}

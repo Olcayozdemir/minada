@@ -23,7 +23,9 @@ export function CountUp({ value }: { value: number }) {
         const t0 = performance.now();
         const dur = 1400;
         const tick = (t: number) => {
-          const p = Math.min(1, (t - t0) / dur);
+          // A frame timestamp can precede t0; unclamped, the first frame
+          // showed a negative count ("-2 MWp").
+          const p = Math.min(1, Math.max(0, (t - t0) / dur));
           const eased = 1 - Math.pow(1 - p, 4);
           setDisplay(Math.round(value * eased));
           if (p < 1) raf = requestAnimationFrame(tick);

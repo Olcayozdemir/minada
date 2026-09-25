@@ -72,11 +72,11 @@
     "calcCardDesc": "1 dakikada ortalama bir tablo görün.",
     "imageAlt": "Modern bir ev; çatısında güneş panelleri, duvarında batarya ve ısı pompası, önünde şarjdaki elektrikli araç",
     "ctaSolutions": "Çözümlerimiz",
-    "proof1v": "15+ yıl",
+    "proof1v": "10+ yıl",
     "proof1l": "sektör deneyimi",
     "proof2v": "300+",
     "proof2l": "tamamlanan proje",
-    "proof3v": "250 MWp+",
+    "proof3v": "200 MWp+",
     "proof3l": "devreye alınan güç",
     "marker1": "Çatı GES: Üretim buradan başlar.",
     "marker2": "Enerji Depolama: Bataryada depolanan fazla enerji üretimin olmadığı saatlerde veya elektrik kesintisi olduğunda kullanılmak için hazır bekler.",
@@ -252,28 +252,8 @@
       "quotesLabel": "Müşteri yorumları",
       "previousProject": "Önceki proje",
       "nextProject": "Sonraki proje",
-      "capacity": "Kurulu güç",
-      "location": "Konum",
-      "previousQuote": "Önceki yorum",
-      "nextQuote": "Sonraki yorum",
-      "localProjects": {
-        "tileRoof": {
-          "title": "Kiremit çatılı konut GES",
-          "kind": "Konut uygulaması"
-        },
-        "modernVilla": {
-          "title": "Modern villa çatı GES",
-          "kind": "Konut uygulaması"
-        },
-        "commercialRoof": {
-          "title": "Ticari çatı GES",
-          "kind": "Ticari uygulama"
-        },
-        "petrolStation": {
-          "title": "Akaryakıt istasyonu kanopi GES",
-          "kind": "Ticari uygulama"
-        }
-      },
+      "quotesHeading": "Müşterilerimiz ne diyor?",
+      "quotesPrivacy": "KVKK kapsamında müşterilerimize ait detaylı bilgiler paylaşılmamaktadır. Talep edilmesi hâlinde, ilgili kişinin onayı alınarak iletişim bilgileri paylaşılabilir.",
       "t1": {
         "quote": "Keşif talebimizden birkaç saat sonra ziyaret ettiler ve birçok soru işaretini giderdiler. Okan Bey'in mühendis olması ve konuyu bize teknik olarak detaylarıyla anlatması içimizi rahatlattı. Şeffaf bir şekilde işin başında anlattıkları her şeyi süreç içinde yaşayarak gördük. Artık elektrik kesintilerinden etkilenmiyoruz. Teşekkürler MİNADA Ailesi.",
         "name": "Emre E."
@@ -427,16 +407,6 @@
     "unitKwh": "kWh/ay",
     "cityLabel": "Şehir",
     "cityPlaceholder": "Şehir seçin",
-    "cities": {
-      "istanbul": "İstanbul",
-      "ankara": "Ankara",
-      "izmir": "İzmir",
-      "antalya": "Antalya",
-      "bursa": "Bursa",
-      "adana": "Adana",
-      "konya": "Konya",
-      "gaziantep": "Gaziantep"
-    },
     "note": "Bilgileriniz kaydedilmez; yalnızca tahmini hesap için kullanılır.",
     "emptyState": "Sonuçları görmek için fatura/tüketim ve şehir bilgisini girin.",
     "systemLabel": "Önerilen sistem",
@@ -599,16 +569,15 @@
   },
   "Projects": {
     "metaTitle": "Referanslar",
-    "metaDesc": "Konut çatısından endüstriyel tesise, MİNADA Enerji'nin devreye aldığı güneş enerjisi santralleri: konum ve kurulu güç bilgileriyle tamamlanan kurulumlar.",
+    "metaDesc": "Konut çatısından endüstriyel tesise, kurucu ekibimizin devreye aldığı güneş enerjisi santralleri: konum ve kurulu güç bilgileriyle tamamlanan kurulumlar.",
     "eyebrow": "Referanslar",
     "title": "Tamamlanan kurulumlar",
-    "intro": "Konut ve işletmelerde hayata geçirdiğimiz projeler.",
+    "intro": "Kurucu ekibimiz tarafından tamamlanan kurulumlardan bazıları.",
     "filterLabel": "Projeleri türüne göre filtrele",
     "filters": {
       "all": "Tümü",
       "residential": "Konut",
-      "commercial": "Ticari",
-      "industrial": "Endüstriyel"
+      "business": "İşletme"
     },
     "resultLabel": "proje gösteriliyor",
     "emptyTitle": "Referanslar yakında",
@@ -1198,19 +1167,20 @@
   },
   "About": {
     "metaTitle": "Hakkımızda",
-    "metaDesc": "MİNADA Enerji: 15 yılı aşkın saha deneyimiyle güneş enerjisi, enerji depolama, ısı pompası ve EV şarj çözümlerini tek elden tasarlayan, kuran ve işleten bütünleşik enerji ortağınız.",
+    "metaDesc": "MİNADA Enerji: 10 yılı aşkın saha deneyimiyle güneş enerjisi, enerji depolama, ısı pompası ve EV şarj çözümlerini tek elden tasarlayan, kuran ve işleten bütünleşik enerji ortağınız.",
     "eyebrow": "Hakkımızda",
     "title": "Enerji dönüşümünüzde güvenilir bir <em>liman</em>",
-    "intro": "MİNADA Enerji, elektriği yalnızca tüketilen bir kaynak değil, yönetilebilen ve değer üreten bir varlık olarak görüyor. 15 yılı aşkın sektör deneyimimizle güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini tek çatı altında sunuyor; projelendirmeden devreye almaya kadar tüm süreci yönetiyoruz.",
+    "intro": "MİNADA Enerji, elektriği yalnızca tüketilen bir kaynak değil, yönetilebilen ve değer üreten bir varlık olarak görüyor. 10 yılı aşkın sektör deneyimimizle güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini tek çatı altında sunuyor; projelendirmeden devreye almaya kadar tüm süreci yönetiyoruz.",
     "intro2": "Hedefimiz, konutları ve işletmeleri kendi enerjisini üretebilen, daha verimli ve daha bağımsız yapılara dönüştürmektir.",
     "storyTitle": "Hikayemiz",
-    "storyP1": "MİNADA, sahada edinilmiş mühendislik tecrübesinin doğal bir sonucu olarak doğdu. Kurucu ekibimiz, 15 yılı aşkın süredir yenilenebilir enerji projelerinde tasarım, uygulama ve devreye alma süreçlerinde aktif rol aldı. Bu deneyimi tek bir çatı altında bir araya getirerek; güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini entegre bir yaklaşımla sunan MİNADA Enerji'yi oluşturduk.",
+    "storyP1": "MİNADA, sahada edinilmiş mühendislik tecrübesinin doğal bir sonucu olarak doğdu. Kurucu ekibimiz, MİNADA Enerji'yi kurmadan önce 10 yılı aşkın süredir yenilenebilir enerji sektöründe; 300'ün üzerinde projede tasarım, uygulama ve devreye alma süreçlerinde aktif rol aldı ve toplam 200 MWp'nin üzerinde kurulu güce imza attı. Bu deneyimi tek bir çatı altında birleştirerek; güneş enerjisi, enerji depolama, ısı pompası ve elektrikli araç şarj çözümlerini entegre bir yaklaşımla sunan MİNADA Enerji'yi kurduk.",
     "storyP2": "Bizim için her proje yalnızca bir yatırım değil, aynı zamanda bir mühendislik sorumluluğudur. Bu nedenle keşiften devreye almaya kadar tüm süreci şeffaf ve planlı şekilde yönetir, müşterilerimizin her aşamayı net bir şekilde takip edebilmesini sağlarız. Açık iletişim, gerçekçi planlama ve ihtiyaca özel çözümlerle uzun vadeli güvene dayalı iş ortaklıkları kurmayı hedefleriz.",
     "storyImageAlt": "MİNADA yelekleri giymiş iki mühendis, çatı GES üzerinde tabletle keşif yaparken",
     "statsTitle": "Rakamlarla MİNADA",
+    "statsNote": "Yeni bir şirketiz, ama sıfırdan başlamıyoruz. Bu sayılar, kurucu kadromuzun enerji sektöründeki bireysel proje deneyimini gösteriyor.",
     "stats": {
       "years": {
-        "value": "15",
+        "value": "10",
         "suffix": "+",
         "label": "Yıl sektör deneyimi"
       },
@@ -1220,7 +1190,7 @@
         "label": "Tamamlanan proje"
       },
       "capacity": {
-        "value": "250",
+        "value": "200",
         "suffix": "MWp+",
         "label": "Devreye alınan kurulu güç"
       },

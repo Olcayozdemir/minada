@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Link } from "@/i18n/navigation";
-import { IconArrowRight, IconSolar } from "@/components/ui/icons";
+import { IconArrowRight } from "@/components/ui/icons";
 import styles from "./Proof.module.scss";
 
 export type ProofPhoto = {
@@ -11,8 +11,6 @@ export type ProofPhoto = {
   title: string;
   location: string;
   capacity: string;
-  /** The project type or short summary supplied with the record. */
-  kind: string;
   src: string;
   w: number;
   h: number;
@@ -26,17 +24,16 @@ type ProofGridProps = {
   allLabel: string;
   previousLabel: string;
   nextLabel: string;
-  capacityLabel: string;
-  locationLabel: string;
 };
 
 const AUTOPLAY_MS = 5000;
+const VISIBLE = 3;
 
-/* The reference uses one lead story and two compact previews rather than an
-   even gallery. The dataset rotates through those roles automatically while
-   the arrows keep manual control available. On phones all records remain in
-   the approved two-row swipe rail; reordering that rail would steal the
-   reader's scroll position, so autoplay is stood down there with the arrows. */
+/* Three equal cards step through the whole reference list, automatically and
+   with the arrows. Each card says only what the client asked for: the name,
+   then place and power on one line. On phones every record sits in a two-row
+   swipe rail; reordering that rail would steal the reader's scroll position,
+   so autoplay is stood down there with the arrows. */
 export function ProofGrid({
   photos,
   label,
@@ -45,8 +42,6 @@ export function ProofGrid({
   allLabel,
   previousLabel,
   nextLabel,
-  capacityLabel,
-  locationLabel,
 }: ProofGridProps) {
   const [active, setActive] = useState(0);
   const [announcedActive, setAnnouncedActive] = useState<number | null>(null);
@@ -54,7 +49,7 @@ export function ProofGrid({
   const held = useRef(false);
   const reduceMotion = useRef(false);
   const ordered = photos.map((_, index) => photos[(active + index) % photos.length]);
-  const canCycle = photos.length > 1;
+  const canCycle = photos.length > VISIBLE;
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 700px)");
@@ -158,64 +153,30 @@ export function ProofGrid({
         {ordered.map((project, index) => (
           <li
             key={project.id}
-            className={`${styles.projectCell} ${
-              index === 0 ? styles.featuredCell : index > 2 ? styles.offstageCell : ""
-            }`}
-            style={{ "--d": Math.min(index, 2) } as CSSProperties}
+            className={`${styles.projectCell} ${index >= VISIBLE ? styles.offstageCell : ""}`}
+            style={{ "--d": Math.min(index, VISIBLE - 1) } as CSSProperties}
           >
-            <article
-              className={`${styles.projectCard} ${index === 0 ? styles.featuredCard : styles.previewCard}`}
-            >
+            <article className={styles.projectCard}>
               <div className={styles.projectImage}>
                 <Image
                   src={project.src}
                   alt=""
                   width={project.w}
                   height={project.h}
-                  sizes={
-                    index === 0
-                      ? "(max-width: 700px) 92vw, (max-width: 900px) 100vw, 50vw"
-                      : "(max-width: 700px) 46vw, (max-width: 900px) 50vw, 25vw"
-                  }
+                  sizes="(max-width: 700px) 46vw, (max-width: 900px) 50vw, 33vw"
                   className={styles.projectPhoto}
                 />
               </div>
 
-              {index === 0 ? (
-                <div className={styles.featuredReadout}>
-                  <div className={styles.featuredIdentity}>
-                    {project.kind ? <p>{project.kind}</p> : null}
-                    <h3>{project.title}</h3>
-                  </div>
-
-                  <div className={styles.featuredFacts}>
-                    {project.capacity ? (
-                      <div className={styles.featuredFact}>
-                        <IconSolar size={23} />
-                        <div>
-                          <span className={styles.factValue}>{project.capacity}</span>
-                          <span className={styles.factLabel}>{capacityLabel}</span>
-                        </div>
-                      </div>
-                    ) : null}
-                    {project.location ? (
-                      <div className={styles.featuredPlace}>
-                        <span className={styles.factValue}>{project.location}</span>
-                        <span className={styles.factLabel}>{locationLabel}</span>
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              ) : (
-                <div className={styles.previewBody}>
-                  {project.kind ? <p className={styles.previewKind}>{project.kind}</p> : null}
-                  <h3>{project.title}</h3>
-                  <div className={styles.previewMeta}>
+              <div className={styles.projectBody}>
+                <h3>{project.title}</h3>
+                {project.location || project.capacity ? (
+                  <p className={styles.projectMeta}>
                     {project.location ? <span>{project.location}</span> : null}
                     {project.capacity ? <strong>{project.capacity}</strong> : null}
-                  </div>
-                </div>
-              )}
+                  </p>
+                ) : null}
+              </div>
             </article>
           </li>
         ))}
